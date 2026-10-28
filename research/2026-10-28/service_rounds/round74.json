@@ -1,0 +1,731 @@
+{
+  "question": "Does forcing automatic downward substitution materially affect the economic comparisons?",
+  "assumptions": "Round74: isolate the fixed automatic-substitution restriction.\n\nFreeze EACH input chosen for the three baseline classes in round73, then allow\noptional downward allocation. Only that decision rule is relaxed. This is a\nfixed-input sensitivity test, not reoptimization of input under the new model.\nSetup decisions precede success. B<D2 states cannot rework, so optional\nsubstitution cost bands can be merged with setup trades without future leakage.\n",
+  "structural_argument": "Optional downward allocation and pre-success setup in one service cover.\n\nThis is a separate extension of the frozen automatic-substitution baseline.\nUnder the surplus-only rework rule, B<D2 implies no rework. Substitution\ntradeoffs therefore occur in states disjoint from positive-return setup choices.\nDropping partial substitutions that cannot complete the whole order increases\nprofit without reducing the full-order service objective. Completable shortages\nk=D2-B cost30*k; pre-success setup trades lose F-G and gain binomial-tail b.\nCombine both sets in one weighted cover, retaining the original decision times.\n",
+  "headline": {
+    "small_joint_quality_summary_checks": 3,
+    "max_summary_error": 5.967448757360216e-16,
+    "independent_six_action_LP_vertex_checks": 3,
+    "max_LP_error": 0.0,
+    "frozen_input_variant_cases": 10,
+    "elapsed_seconds": 3.4728535000031115
+  },
+  "rows": [
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "target": 0.9,
+      "frozen_input": 1495,
+      "mode": "selective",
+      "automatic_reference_profit": 20327.33644445242,
+      "complete_only_reference_profit": 20363.084799900185,
+      "best_feasible_profit_at_this_input": 20485.740165312847,
+      "best_feasible_rule": "merged_threshold",
+      "gap_against_randomized_bound": 0.0005216684658080339,
+      "gain_vs_automatic_same_input": 158.4037208604277,
+      "joint_frontier": {
+        "mode": "selective",
+        "profit_best_no_substitution": {
+          "expected_profit": 21889.159152514545,
+          "fulfilment_probability": 0.0004311643928198716
+        },
+        "maximum_service": 0.9435866905887751,
+        "substitution_completion_mass": 0.9431555261958668,
+        "expected_automatic_substitution": 52.06075693438554,
+        "partial_unfulfillable_substitution": 1.1916118482589013,
+        "setup_tradeoff_states": 586,
+        "substitution_gap_bands": 350,
+        "frontier": [
+          {
+            "target": 0.9,
+            "feasible": true,
+            "randomized_optimum": {
+              "expected_profit": 20485.740686981313,
+              "fulfilment_probability": 0.9000000000000002,
+              "expected_rework": 1.4043121934763764e-08,
+              "activation_probability": 3.000641387230971e-10,
+              "expected_substitution": 46.78061551776939
+            },
+            "deterministic_feasible": {
+              "expected_profit": 20485.740165312847,
+              "fulfilment_probability": 0.9000002045758686,
+              "expected_rework": 1.4043121934763764e-08,
+              "activation_probability": 3.000641387230971e-10,
+              "expected_substitution": 46.780632906718196
+            },
+            "deterministic_gap_bound": 0.0005216684642164182,
+            "boundary": {
+              "index": 670,
+              "fraction": 0.8619315075488229,
+              "deterministic_fraction": 0.8619781412094952,
+              "ratio": 2550.0,
+              "kind": "substitution",
+              "gap": 85,
+              "fine_prefix": {
+                "selected_mass": 0.0037813871813858124,
+                "extra_mass": 2.0457586829333158e-07,
+                "boundary": {
+                  "capacity_order": "descending probability, stable original index on ties",
+                  "capacity_position": 137,
+                  "capacity_counts": [
+                    7,
+                    4,
+                    5,
+                    7,
+                    6
+                  ],
+                  "grade1_count": 673,
+                  "grade2_count": 265,
+                  "atom_probability": 8.04654011920989e-07,
+                  "interpretation": "Within this gap band, complete all earlier capacity states and all eligible grade1 counts up to this count in the boundary capacity state."
+                }
+              }
+            },
+            "loss_dual": 1403.4184655332333,
+            "primal_dual_gap": 4.547473508864641e-13
+          }
+        ]
+      }
+    },
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "target": 0.9,
+      "frozen_input": 1495,
+      "mode": "always",
+      "automatic_reference_profit": 20326.72341746904,
+      "complete_only_reference_profit": 20362.471772916804,
+      "best_feasible_profit_at_this_input": 20485.12713829906,
+      "best_feasible_rule": "merged_threshold",
+      "gap_against_randomized_bound": 0.0005216684621700551,
+      "gain_vs_automatic_same_input": 158.40372083002148,
+      "joint_frontier": {
+        "mode": "always",
+        "profit_best_no_substitution": {
+          "expected_profit": 21888.546125500605,
+          "fulfilment_probability": 0.0004311643929082454
+        },
+        "maximum_service": 0.9435866905887751,
+        "substitution_completion_mass": 0.9431555261958668,
+        "expected_automatic_substitution": 52.06075693438554,
+        "partial_unfulfillable_substitution": 1.1916118482589013,
+        "setup_tradeoff_states": 0,
+        "substitution_gap_bands": 350,
+        "frontier": [
+          {
+            "target": 0.9,
+            "feasible": true,
+            "randomized_optimum": {
+              "expected_profit": 20485.127659967522,
+              "fulfilment_probability": 0.9000000000000001,
+              "expected_rework": 0.0015619463646924815,
+              "activation_probability": 0.0003415791875817271,
+              "expected_substitution": 46.78061551776938
+            },
+            "deterministic_feasible": {
+              "expected_profit": 20485.12713829906,
+              "fulfilment_probability": 0.9000002045758686,
+              "expected_rework": 0.0015619463646924815,
+              "activation_probability": 0.0003415791875817271,
+              "expected_substitution": 46.780632906718196
+            },
+            "deterministic_gap_bound": 0.0005216684644437919,
+            "boundary": {
+              "index": 84,
+              "fraction": 0.8619315075487975,
+              "deterministic_fraction": 0.8619781412094952,
+              "ratio": 2550.0,
+              "kind": "substitution",
+              "gap": 85,
+              "fine_prefix": {
+                "selected_mass": 0.0037813871813858124,
+                "extra_mass": 2.0457586840435388e-07,
+                "boundary": {
+                  "capacity_order": "descending probability, stable original index on ties",
+                  "capacity_position": 137,
+                  "capacity_counts": [
+                    7,
+                    4,
+                    5,
+                    7,
+                    6
+                  ],
+                  "grade1_count": 673,
+                  "grade2_count": 265,
+                  "atom_probability": 8.04654011920989e-07,
+                  "interpretation": "Within this gap band, complete all earlier capacity states and all eligible grade1 counts up to this count in the boundary capacity state."
+                }
+              }
+            },
+            "loss_dual": 1403.4184655330814,
+            "primal_dual_gap": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "target": 0.9,
+      "frozen_input": 1495,
+      "mode": "none",
+      "automatic_reference_profit": 20327.33644445242,
+      "complete_only_reference_profit": 20363.084799900185,
+      "best_feasible_profit_at_this_input": 20485.740165282434,
+      "best_feasible_rule": "merged_threshold",
+      "gap_against_randomized_bound": 0.0005216682366153691,
+      "gain_vs_automatic_same_input": 158.4037208300142,
+      "joint_frontier": {
+        "mode": "none",
+        "profit_best_no_substitution": {
+          "expected_profit": 21889.15915248398,
+          "fulfilment_probability": 0.0004311643928198716
+        },
+        "maximum_service": 0.9435866905886867,
+        "substitution_completion_mass": 0.9431555261958668,
+        "expected_automatic_substitution": 52.06075693438554,
+        "partial_unfulfillable_substitution": 1.1916118482589013,
+        "setup_tradeoff_states": 0,
+        "substitution_gap_bands": 350,
+        "frontier": [
+          {
+            "target": 0.9,
+            "feasible": true,
+            "randomized_optimum": {
+              "expected_profit": 20485.74068695067,
+              "fulfilment_probability": 0.9000000000000001,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 46.780615517776894
+            },
+            "deterministic_feasible": {
+              "expected_profit": 20485.740165282434,
+              "fulfilment_probability": 0.9000002045757802,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 46.780632906718196
+            },
+            "deterministic_gap_bound": 0.0005216682388891059,
+            "boundary": {
+              "index": 84,
+              "fraction": 0.8619315075689425,
+              "deterministic_fraction": 0.8619781412094952,
+              "ratio": 2550.0,
+              "kind": "substitution",
+              "gap": 85,
+              "fine_prefix": {
+                "selected_mass": 0.0037813871813858124,
+                "extra_mass": 2.0457578003060112e-07,
+                "boundary": {
+                  "capacity_order": "descending probability, stable original index on ties",
+                  "capacity_position": 137,
+                  "capacity_counts": [
+                    7,
+                    4,
+                    5,
+                    7,
+                    6
+                  ],
+                  "grade1_count": 673,
+                  "grade2_count": 265,
+                  "atom_probability": 8.04654011920989e-07,
+                  "interpretation": "Within this gap band, complete all earlier capacity states and all eligible grade1 counts up to this count in the boundary capacity state."
+                }
+              }
+            },
+            "loss_dual": 1403.4184655333065,
+            "primal_dual_gap": 4.547473508864641e-13
+          }
+        ]
+      }
+    },
+    {
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "target": 0.9,
+      "frozen_input": 1352,
+      "mode": "selective",
+      "automatic_reference_profit": 24351.99601253261,
+      "complete_only_reference_profit": 24352.14188597189,
+      "best_feasible_profit_at_this_input": 24353.117642546462,
+      "best_feasible_rule": "merged_threshold",
+      "gap_against_randomized_bound": 0.0004007856514363084,
+      "gain_vs_automatic_same_input": 1.1216300138512452,
+      "joint_frontier": {
+        "mode": "selective",
+        "profit_best_no_substitution": {
+          "expected_profit": 24371.05022407467,
+          "fulfilment_probability": 0.8011715307000997
+        },
+        "maximum_service": 0.9429065696939295,
+        "substitution_completion_mass": 0.058789198777470436,
+        "expected_automatic_substitution": 0.38971030300697357,
+        "partial_unfulfillable_substitution": 0.004862447975951145,
+        "setup_tradeoff_states": 586,
+        "substitution_gap_bands": 250,
+        "frontier": [
+          {
+            "target": 0.9,
+            "feasible": true,
+            "randomized_optimum": {
+              "expected_profit": 24353.118043332113,
+              "fulfilment_probability": 0.9,
+              "expected_rework": 3.4425288157026017,
+              "activation_probability": 0.08945233324720533,
+              "expected_substitution": 0.27193009615513697
+            },
+            "deterministic_feasible": {
+              "expected_profit": 24353.117642546462,
+              "fulfilment_probability": 0.9000009542515492,
+              "expected_rework": 3.4425288157026017,
+              "activation_probability": 0.08945233324720533,
+              "expected_substitution": 0.27194345567682526
+            },
+            "deterministic_gap_bound": 0.00040078565064760596,
+            "boundary": {
+              "index": 599,
+              "fraction": 0.10422131230792431,
+              "deterministic_fraction": 0.10503081630728633,
+              "ratio": 420.0,
+              "kind": "substitution",
+              "gap": 14,
+              "fine_prefix": {
+                "selected_mass": 0.0001238113946937614,
+                "extra_mass": 9.542515491640176e-07,
+                "boundary": {
+                  "capacity_order": "descending probability, stable original index on ties",
+                  "capacity_position": 1,
+                  "capacity_counts": [
+                    6,
+                    6,
+                    7,
+                    8,
+                    6
+                  ],
+                  "grade1_count": 710,
+                  "grade2_count": 236,
+                  "atom_probability": 9.885724004372003e-07,
+                  "interpretation": "Within this gap band, complete all earlier capacity states and all eligible grade1 counts up to this count in the boundary capacity state."
+                }
+              }
+            },
+            "loss_dual": 17.93218074255468,
+            "primal_dual_gap": 1.7763568394002505e-14
+          }
+        ]
+      }
+    },
+    {
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "target": 0.9,
+      "frozen_input": 1357,
+      "mode": "always",
+      "automatic_reference_profit": 23502.403482115595,
+      "complete_only_reference_profit": 23502.544884487976,
+      "best_feasible_profit_at_this_input": 23512.182896048933,
+      "best_feasible_rule": "merged_threshold",
+      "gap_against_randomized_bound": 0.00045792841774527915,
+      "gain_vs_automatic_same_input": 9.779413933338219,
+      "joint_frontier": {
+        "mode": "always",
+        "profit_best_no_substitution": {
+          "expected_profit": 23512.474077141494,
+          "fulfilment_probability": 0.8916388507702492
+        },
+        "maximum_service": 0.9431450940786393,
+        "substitution_completion_mass": 0.051506243308390175,
+        "expected_automatic_substitution": 0.33568650086339175,
+        "partial_unfulfillable_substitution": 0.004713412412656437,
+        "setup_tradeoff_states": 0,
+        "substitution_gap_bands": 250,
+        "frontier": [
+          {
+            "target": 0.9,
+            "feasible": true,
+            "randomized_optimum": {
+              "expected_profit": 23512.18335397735,
+              "fulfilment_probability": 0.9,
+              "expected_rework": 20.493418208313923,
+              "activation_probability": 0.8918256606568188,
+              "expected_substitution": 0.009690772138179465
+            },
+            "deterministic_feasible": {
+              "expected_profit": 23512.182896048933,
+              "fulfilment_probability": 0.9000076321402448,
+              "expected_rework": 20.493418208313923,
+              "activation_probability": 0.8918256606568188,
+              "expected_substitution": 0.009706036418668951
+            },
+            "deterministic_gap_bound": 0.0004579284146845608,
+            "boundary": {
+              "index": 1,
+              "fraction": 0.2129010724070123,
+              "deterministic_fraction": 0.2141231413354026,
+              "ratio": 60.0,
+              "kind": "substitution",
+              "gap": 2,
+              "fine_prefix": {
+                "selected_mass": 0.0013372550486733664,
+                "extra_mass": 7.632140244743374e-06,
+                "boundary": {
+                  "capacity_order": "descending probability, stable original index on ties",
+                  "capacity_position": 4,
+                  "capacity_counts": [
+                    7,
+                    5,
+                    7,
+                    8,
+                    6
+                  ],
+                  "grade1_count": 692,
+                  "grade2_count": 248,
+                  "atom_probability": 7.970948544879568e-06,
+                  "interpretation": "Within this gap band, complete all earlier capacity states and all eligible grade1 counts up to this count in the boundary capacity state."
+                }
+              }
+            },
+            "loss_dual": 0.2907231641453839,
+            "primal_dual_gap": 5.551115123125783e-17
+          }
+        ]
+      }
+    },
+    {
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "target": 0.9,
+      "frozen_input": 1376,
+      "mode": "none",
+      "automatic_reference_profit": 24246.49023398258,
+      "complete_only_reference_profit": 24246.62981919277,
+      "best_feasible_profit_at_this_input": 24248.29682534281,
+      "best_feasible_rule": "merged_threshold",
+      "gap_against_randomized_bound": 7.7401491580531e-05,
+      "gain_vs_automatic_same_input": 1.806591360233142,
+      "joint_frontier": {
+        "mode": "none",
+        "profit_best_no_substitution": {
+          "expected_profit": 24252.562895692907,
+          "fulfilment_probability": 0.870763886202293
+        },
+        "maximum_service": 0.903213728467265,
+        "substitution_completion_mass": 0.03244984226497201,
+        "expected_automatic_substitution": 0.2024220570110316,
+        "partial_unfulfillable_substitution": 0.0046528403397507745,
+        "setup_tradeoff_states": 0,
+        "substitution_gap_bands": 250,
+        "frontier": [
+          {
+            "target": 0.9,
+            "feasible": true,
+            "randomized_optimum": {
+              "expected_profit": 24248.296902744303,
+              "fulfilment_probability": 0.9,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.1421997649534233
+            },
+            "deterministic_feasible": {
+              "expected_profit": 24248.29682534281,
+              "fulfilment_probability": 0.9000001984653687,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.14220234500321602
+            },
+            "deterministic_gap_bound": 7.740149378143713e-05,
+            "boundary": {
+              "index": 12,
+              "fraction": 0.5403830616730512,
+              "deterministic_fraction": 0.5406702936147371,
+              "ratio": 390.0,
+              "kind": "substitution",
+              "gap": 13,
+              "fine_prefix": {
+                "selected_mass": 0.00037358076724238273,
+                "extra_mass": 1.9846536867070995e-07,
+                "boundary": {
+                  "capacity_order": "descending probability, stable original index on ties",
+                  "capacity_position": 26,
+                  "capacity_counts": [
+                    6,
+                    5,
+                    6,
+                    7,
+                    6
+                  ],
+                  "grade1_count": 717,
+                  "grade2_count": 237,
+                  "atom_probability": 2.0119487149308096e-07,
+                  "interpretation": "Within this gap band, complete all earlier capacity states and all eligible grade1 counts up to this count in the boundary capacity state."
+                }
+              }
+            },
+            "loss_dual": 4.265992948602702,
+            "primal_dual_gap": -2.6645352591003757e-15
+          }
+        ]
+      }
+    },
+    {
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "target": 0.85,
+      "frozen_input": 1395,
+      "mode": "selective",
+      "automatic_reference_profit": 23906.709265491292,
+      "complete_only_reference_profit": 23906.709265759408,
+      "best_feasible_profit_at_this_input": 23906.709265761667,
+      "best_feasible_rule": "merged_threshold",
+      "gap_against_randomized_bound": 0.040576430699729826,
+      "gain_vs_automatic_same_input": 2.703745849430561e-07,
+      "joint_frontier": {
+        "mode": "selective",
+        "profit_best_no_substitution": {
+          "expected_profit": 23948.712449744085,
+          "fulfilment_probability": 0.6591615103546923
+        },
+        "maximum_service": 0.8613007341872387,
+        "substitution_completion_mass": 2.009415109456809e-08,
+        "expected_automatic_substitution": 6.822866904708529e-08,
+        "partial_unfulfillable_substitution": 8.937218345665972e-09,
+        "setup_tradeoff_states": 586,
+        "substitution_gap_bands": 200,
+        "frontier": [
+          {
+            "target": 0.85,
+            "feasible": true,
+            "randomized_optimum": {
+              "expected_profit": 23906.749842192366,
+              "fulfilment_probability": 0.85,
+              "expected_rework": 29.077863858804484,
+              "activation_probability": 0.7498752133436206,
+              "expected_substitution": 5.921624420603231e-08
+            },
+            "deterministic_feasible": {
+              "expected_profit": 23906.709265761667,
+              "fulfilment_probability": 0.8500701892937214,
+              "expected_rework": 29.08003972690985,
+              "activation_probability": 0.7499454026373421,
+              "expected_substitution": 5.921624420603231e-08
+            },
+            "deterministic_gap_bound": 0.040576430700348,
+            "boundary": {
+              "index": 573,
+              "fraction": 0.9030634826835638,
+              "deterministic_fraction": 1.0,
+              "ratio": 578.1000000000022,
+              "kind": "setup",
+              "A": 699,
+              "R": 31
+            },
+            "loss_dual": 41.96260755171751,
+            "primal_dual_gap": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "target": 0.85,
+      "frozen_input": 1395,
+      "mode": "always",
+      "automatic_reference_profit": 23797.53625656027,
+      "complete_only_reference_profit": 23797.536256828385,
+      "best_feasible_profit_at_this_input": 23797.536258607164,
+      "best_feasible_rule": "merged_threshold",
+      "gap_against_randomized_bound": 0.0,
+      "gain_vs_automatic_same_input": 2.046894223894924e-06,
+      "joint_frontier": {
+        "mode": "always",
+        "profit_best_no_substitution": {
+          "expected_profit": 23797.536258607164,
+          "fulfilment_probability": 0.8613007140930878
+        },
+        "maximum_service": 0.861300734187239,
+        "substitution_completion_mass": 2.009415109456809e-08,
+        "expected_automatic_substitution": 6.822866904708529e-08,
+        "partial_unfulfillable_substitution": 8.937218345665972e-09,
+        "setup_tradeoff_states": 0,
+        "substitution_gap_bands": 200,
+        "frontier": [
+          {
+            "target": 0.85,
+            "feasible": true,
+            "randomized_optimum": {
+              "expected_profit": 23797.536258607164,
+              "fulfilment_probability": 0.8613007140930878,
+              "expected_rework": 36.95036394505568,
+              "activation_probability": 0.9898048088532662,
+              "expected_substitution": 0.0
+            },
+            "deterministic_feasible": {
+              "expected_profit": 23797.536258607164,
+              "fulfilment_probability": 0.8613007140930878,
+              "expected_rework": 36.95036394505568,
+              "activation_probability": 0.9898048088532662,
+              "expected_substitution": 0.0
+            },
+            "deterministic_gap_bound": 0.0,
+            "boundary": null,
+            "loss_dual": 0.0,
+            "primal_dual_gap": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "target": 0.75,
+      "frozen_input": 1495,
+      "mode": "selective",
+      "automatic_reference_profit": 23034.32729959787,
+      "complete_only_reference_profit": 23034.327299597873,
+      "best_feasible_profit_at_this_input": 23034.327299597873,
+      "best_feasible_rule": "original_setup_complete_only_substitution",
+      "gap_against_randomized_bound": 0.16007378719950793,
+      "gain_vs_automatic_same_input": 3.637978807091713e-12,
+      "joint_frontier": {
+        "mode": "selective",
+        "profit_best_no_substitution": {
+          "expected_profit": 23053.70105306837,
+          "fulfilment_probability": 0.6411841983121587
+        },
+        "maximum_service": 0.7614719178751892,
+        "substitution_completion_mass": 1.6197198875434478e-20,
+        "expected_automatic_substitution": 6.185030088902815e-14,
+        "partial_unfulfillable_substitution": 6.185026996574168e-14,
+        "setup_tradeoff_states": 586,
+        "substitution_gap_bands": 150,
+        "frontier": [
+          {
+            "target": 0.75,
+            "feasible": true,
+            "randomized_optimum": {
+              "expected_profit": 23034.487373385073,
+              "fulfilment_probability": 0.75,
+              "expected_rework": 31.54470644500656,
+              "activation_probability": 0.768362059521702,
+              "expected_substitution": 3.092139214067223e-20
+            },
+            "deterministic_feasible": {
+              "expected_profit": 23034.32729959787,
+              "fulfilment_probability": 0.7503494297908823,
+              "expected_rework": 31.555538768523913,
+              "activation_probability": 0.7687114893125843,
+              "expected_substitution": 3.092139214067223e-20
+            },
+            "deterministic_gap_bound": 0.16007378720317433,
+            "boundary": {
+              "index": 412,
+              "fraction": 0.052807686148957304,
+              "deterministic_fraction": 1.0,
+              "ratio": 458.1000000000022,
+              "kind": "setup",
+              "A": 745,
+              "R": 31
+            },
+            "loss_dual": 19.213679683294732,
+            "primal_dual_gap": -1.7763568394002505e-14
+          }
+        ]
+      }
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "target": 0.75,
+      "frozen_input": 1495,
+      "mode": "always",
+      "automatic_reference_profit": 22968.463635555672,
+      "complete_only_reference_profit": 22968.463635555676,
+      "best_feasible_profit_at_this_input": 22968.463635555676,
+      "best_feasible_rule": "original_setup_complete_only_substitution",
+      "gap_against_randomized_bound": 0.0,
+      "gain_vs_automatic_same_input": 3.637978807091713e-12,
+      "joint_frontier": {
+        "mode": "always",
+        "profit_best_no_substitution": {
+          "expected_profit": 22968.463635555672,
+          "fulfilment_probability": 0.7614719178751893
+        },
+        "maximum_service": 0.7614719178751893,
+        "substitution_completion_mass": 1.6197198875434478e-20,
+        "expected_automatic_substitution": 6.185030088902815e-14,
+        "partial_unfulfillable_substitution": 6.185026996574168e-14,
+        "setup_tradeoff_states": 0,
+        "substitution_gap_bands": 150,
+        "frontier": [
+          {
+            "target": 0.75,
+            "feasible": true,
+            "randomized_optimum": {
+              "expected_profit": 22968.463635555672,
+              "fulfilment_probability": 0.7614719178751893,
+              "expected_rework": 38.24967715277073,
+              "activation_probability": 0.9601384077183064,
+              "expected_substitution": 0.0
+            },
+            "deterministic_feasible": {
+              "expected_profit": 22968.463635555672,
+              "fulfilment_probability": 0.7614719178751893,
+              "expected_rework": 38.24967715277073,
+              "activation_probability": 0.9601384077183064,
+              "expected_substitution": 0.0
+            },
+            "deterministic_gap_bound": 0.0,
+            "boundary": null,
+            "loss_dual": 0.0,
+            "primal_dual_gap": 0.0
+          }
+        ]
+      }
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T22:53:23.761164+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round74_optional_substitution_audit.py": "a614125ca664d32ba21cdc7aaa579410aac3eab599d4257581cbbf24dab0c4a4",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\joint_fulfilment_frontier.py": "efad1fed4f9d6345b77e95dd5ba064bf4ec3d9fe00272f4f625b8fc203747051",
+      "backbone\\adaptive_substitution.py": "9f4945e19bec7e30599fa621cb5beb139d6135f48ee201b08263e29dc54e8e83",
+      "backbone\\stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+      "backbone\\integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+      "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\round61_stochastic_setup_frontier.py": "136509a49755a4fe095a68bbd5ba1bb5557b77181e978c556040e4f1c6713dfd",
+      "backbone\\exact_batch_quality.py": "27ab264d45c4ac12c119558c3bea033279cf3a64bb72ee9f1e04b07a627f7f31",
+      "research\\2026-10-28\\service_rounds\\round73.json": "92b291a2557a50511aee5afb4bd647f54e4a604d95ec1330a80b7375a5af031b"
+    }
+  }
+}

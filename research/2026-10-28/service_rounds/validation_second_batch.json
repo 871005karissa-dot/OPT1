@@ -1,0 +1,264 @@
+{
+  "completed_at_utc": "2026-10-27T23:41:33.363212+00:00",
+  "mode": "saved_results_plus_fresh_checks",
+  "elapsed_seconds": 8.289626300000236,
+  "round_outputs_rewritten_by_checks": false,
+  "independent_small_numerics": [
+    {
+      "test": "iid_integer_success_all_outcomes",
+      "eta": 0.55,
+      "mode": "integer_mean",
+      "max_error": 5.684341886080801e-13
+    },
+    {
+      "test": "iid_integer_success_all_outcomes",
+      "eta": 0.55,
+      "mode": "binomial",
+      "max_error": 7.958078640513122e-13
+    },
+    {
+      "test": "iid_integer_success_all_outcomes",
+      "eta": 0.97,
+      "mode": "integer_mean",
+      "max_error": 4.547473508864641e-13
+    },
+    {
+      "test": "iid_integer_success_all_outcomes",
+      "eta": 0.97,
+      "mode": "binomial",
+      "max_error": 9.094947017729282e-13
+    },
+    {
+      "test": "DM_initial_plus_future_success_all_outcomes",
+      "kappa": 10.0,
+      "max_error": 5.002220859751105e-12
+    },
+    {
+      "test": "DM_initial_plus_future_success_all_outcomes",
+      "kappa": 100.0,
+      "max_error": 7.275957614183426e-12
+    },
+    {
+      "test": "known_p_batch_Pearson_moment_all_outcomes",
+      "kappa": null,
+      "max_error": 1.3322676295501878e-15
+    },
+    {
+      "test": "known_p_batch_Pearson_moment_all_outcomes",
+      "kappa": 5.0,
+      "max_error": 7.105427357601002e-15
+    }
+  ],
+  "full_observed_state_frozen_replays": [
+    {
+      "policy": "iid",
+      "input": 1495,
+      "profit_error": 0.0,
+      "service_error": 0.0
+    },
+    {
+      "policy": "batch_1000",
+      "input": 1523,
+      "profit_error": 0.0,
+      "service_error": 0.0
+    },
+    {
+      "policy": "batch_100",
+      "input": 1687,
+      "profit_error": 0.0,
+      "service_error": 0.0
+    }
+  ],
+  "full_observed_state_joint_and_baseline_replays": [
+    {
+      "key": "d550_350_proposed",
+      "input": 1495,
+      "replayed_profit": 20485.740165312847,
+      "replayed_service": 0.9000002045758685,
+      "profit_error": 0.0,
+      "service_error": 1.1102230246251565e-16
+    },
+    {
+      "key": "d550_350_always",
+      "input": 1495,
+      "replayed_profit": 20485.12713829906,
+      "replayed_service": 0.9000002045758685,
+      "profit_error": 3.637978807091713e-12,
+      "service_error": 1.1102230246251565e-16
+    },
+    {
+      "key": "d550_350_none",
+      "input": 1495,
+      "replayed_profit": 20485.740165282434,
+      "replayed_service": 0.9000002045757801,
+      "profit_error": 3.637978807091713e-12,
+      "service_error": 1.1102230246251565e-16
+    },
+    {
+      "key": "d650_250_proposed",
+      "input": 1352,
+      "replayed_profit": 24353.117642546462,
+      "replayed_service": 0.9000009542515492,
+      "profit_error": 0.0,
+      "service_error": 0.0
+    },
+    {
+      "key": "d650_250_always",
+      "input": 1357,
+      "replayed_profit": 23512.182896048933,
+      "replayed_service": 0.9000076321402448,
+      "profit_error": 7.275957614183426e-12,
+      "service_error": 0.0
+    },
+    {
+      "key": "d650_250_none",
+      "input": 1376,
+      "replayed_profit": 24248.29682534281,
+      "replayed_service": 0.9000001984653687,
+      "profit_error": 0.0,
+      "service_error": 0.0
+    },
+    {
+      "key": "d700_200_proposed",
+      "input": 1395,
+      "replayed_profit": 23906.709265761667,
+      "replayed_service": 0.8500701892937216,
+      "profit_error": 0.0,
+      "service_error": 2.220446049250313e-16
+    },
+    {
+      "key": "d700_200_always",
+      "input": 1395,
+      "replayed_profit": 23797.536258607164,
+      "replayed_service": 0.8613007140930878,
+      "profit_error": 3.2741809263825417e-11,
+      "service_error": 0.0
+    },
+    {
+      "key": "d750_150_proposed",
+      "input": 1495,
+      "replayed_profit": 23034.327299597873,
+      "replayed_service": 0.7503494297908824,
+      "profit_error": 3.637978807091713e-12,
+      "service_error": 1.1102230246251565e-16
+    },
+    {
+      "key": "d750_150_always",
+      "input": 1495,
+      "replayed_profit": 22968.463635555672,
+      "replayed_service": 0.7614719178751893,
+      "profit_error": 3.637978807091713e-12,
+      "service_error": 1.1102230246251565e-16
+    }
+  ],
+  "recorded_provenance_and_trace_outputs_checked": 58,
+  "current_source_inventory_sha256": {
+    "backbone\\adaptive_substitution.py": "9f4945e19bec7e30599fa621cb5beb139d6135f48ee201b08263e29dc54e8e83",
+    "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+    "backbone\\batch_stochastic_setup.py": "9c0cd244b6b37e19706b8288ec1643dba5c48ae8100d8c2fb2248d85bdf98471",
+    "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+    "backbone\\exact_batch_quality.py": "27ab264d45c4ac12c119558c3bea033279cf3a64bb72ee9f1e04b07a627f7f31",
+    "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+    "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+    "backbone\\final_station_service_control.py": "75ffb8f141daeccaa03ffb5c65ad306876e6837d5f95c58c822fd5385d7e173b",
+    "backbone\\frozen_policy.py": "933ea5aa151ca5e0fc3bd0dd37057f181efbb704eef7de9bb178877458ca5461",
+    "backbone\\integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+    "backbone\\joint_fulfilment_frontier.py": "efad1fed4f9d6345b77e95dd5ba064bf4ec3d9fe00272f4f625b8fc203747051",
+    "backbone\\joint_policy.py": "395ef41958297a30b5a53268c244793724a555f083b001a59d0cb7d784843c86",
+    "backbone\\jumper.py": "6c5dd8d6fe71eec3276f70772a99f75857b38d8a9f7a486ab29b38ef3bd47d14",
+    "backbone\\maximal_service_curve.py": "4918c910b2475804433fe7eb940bc043e7cb28d7bc06e2a26f8c94bd27ae241b",
+    "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+    "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+    "backbone\\recourse_value_curves.py": "a42f489600d3aa7196f1340a15b3752cd1a93ac6c20a3891124351e8f6906514",
+    "backbone\\round10_jumper_steps.py": "bdcc2ea68b1d274ebf401efe8f459eb90346fee4fad4c2a9f792fea92a1e4c18",
+    "backbone\\round11_expected_profit.py": "c4ccffe3b36896ee4ea3027e00dc79c70ff9698a02088b9153d98c4d2c7dc9f6",
+    "backbone\\round12_expected_across_orders.py": "92691d38c2afc3a91ed7a505faaff396e8b83b2b1c38d8b2268bbb9650ff79dd",
+    "backbone\\round13_storage_days.py": "30ccd939fb577d9e727a9326ca10929184f6c0e5e3cb847d8e8e429b9e9fe91c",
+    "backbone\\round14_expected_p1.py": "def35f7072372a9518a12f15f3e2f6f6faac6a5078f5cea5171b4055cd344c1d",
+    "backbone\\round15_p1_across_orders.py": "f362d6533024ee8dc491ec30384637e7364741afaae416379260985e16a6d9c2",
+    "backbone\\round16_p1_storage.py": "3dfc5b1cf48f8eaf2c566d5206e5a4e5beac838c25d1f8f2463c64b4e844e3da",
+    "backbone\\round17_jumper_p1.py": "e82a86768556417b6ad1fc3bd382b892a659715a83425e816f126914b8c7d6d8",
+    "backbone\\round18_jumper_p1_with_returns.py": "bdab299ca1260aa8a7a5504a42fb64d5037d9079de8fdfa2a711ed7fc866f1cb",
+    "backbone\\round19_enumeration_cost.py": "af620f24881961e87f5a6bf808ebddeca718d98b925b98cfbe9d2fcdefc6cfd9",
+    "backbone\\round1_reproduce.py": "9dfb4602a3ee0778334eb5787750773c14c66ee016637019737c9901884ce556",
+    "backbone\\round20_expected_grid.py": "f079642a675d7f54a3fb7117777b917a2305dd82f828e73292be0c462ed1555f",
+    "backbone\\round21_yield_shift.py": "cfddd69e54dd77b5d8a726bc32cdeaa9ba2ada91c0db2fdd4129f751258720c1",
+    "backbone\\round22_correlated_capacity.py": "3259e3bbd36c748ea855a9f193e0d22af50430c6918fcb825acf4d0598af978b",
+    "backbone\\round23_release_rework.py": "94a9035e424a8917e58f552716cb1a814ac9faaadd47bc8f1e2af925493f72cc",
+    "backbone\\round24_policy_three_four.py": "e03db4686e7857c0c607f8479d5336f0c5d43bf5bc895fd963fc543b443763be",
+    "backbone\\round25_state_policy.py": "42a9a1436e8d6a54761ce43cd62dde38e404669491244258027261feb43678cc",
+    "backbone\\round26_release_scan.py": "32eb053420ad3e4211da2e5cab9932855c878c2560c91e7e50a88a43babb0117",
+    "backbone\\round27_service_audit.py": "db72369f5d68c00707613b8034d4ee6eec1960a2b1c9e4ed301e94f8749a7731",
+    "backbone\\round28_accounting_audit.py": "08d751919f5fa04a5dce0aa350612ba4eda51bb7c9b04b2d6961d3d3134ab4b2",
+    "backbone\\round29_upgrade_yield.py": "4c1cc75ad293d3845f1757427dc39f12a85d152b9367ed23bb651f9b781a2236",
+    "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+    "backbone\\round30_setup_workload.py": "928de91cda20b290dc170a81682683e5c627ee2a0a902272222ff6c4a9dc1c70",
+    "backbone\\round31_capacity_allocation.py": "c39f0b9034b0040f1fcd1fe75ea4c72af68e494404dc3cdce21e84932664c2f2",
+    "backbone\\round32_nonanticipative_yield.py": "f6c01e14e31ee5f279ef1cecfd58f8dcaee6f829592f3e477cf2a0e1c423cbc6",
+    "backbone\\round33_service_constraint.py": "5787aeb07f0515a155bb02bd198966472cae221e50a64dc15f89376664b201d8",
+    "backbone\\round34_service_capacity.py": "ad700b0c701e68199497c84c6f97b6687a41f4e26c6bfc416719ecb1b1b3c6c4",
+    "backbone\\round35_release_service.py": "bd29021059e89853b1d893bb3582ca490634bf03333179fe04b0c08b7a9fd839",
+    "backbone\\round36_critical_release.py": "e152c2fc611e86ee36ea07ee0ef485ee00b2a05358cd7c93f6cd42f246bd9548",
+    "backbone\\round37_material_commitment.py": "d664d7d35dde543a64c38a3fc253f5a05072ff03139d5925bc06dc7071520bd3",
+    "backbone\\round38_upstream_control.py": "25d3b49e9966286b422570384a86d717c0993caabf69ced35dafb995b343750c",
+    "backbone\\round39_coordinated_commitment.py": "7aae5186a153e28f6358952b1ad32e07b4122787e0701e0e002e5d6ccee7f62c",
+    "backbone\\round3_profit.py": "356340a90b76a139178ee2ccef8b64d2663e4bf69ef39fd17418db3184da7e9b",
+    "backbone\\round40_quality_recoverability.py": "8477646c60d3fb420d8411305e8ac6a0fd4786b4f0a0fd3e57ef8e8662ca058b",
+    "backbone\\round41_selective_upgrade.py": "1b7ce8189fe0675960f92bef692fa5790ab85047f49b2e23a0c3cc9bc02cf51c",
+    "backbone\\round42_one_sided_repair.py": "405501a6e6272c6f000e8951338986cdc5c33a8395fc529dfd7ce1bfe8dd210a",
+    "backbone\\round43_failed_return_fate.py": "7e2aa7ef08b26effb78228873ca86d5eb595c24ccb0d20359b843789ed504615",
+    "backbone\\round44_random_quality_counts.py": "7b65eadc503cb25f5aa6ac1ceebb48fdb55bcd56cb1dcc1644cb211c2541065b",
+    "backbone\\round45_threshold_stability.py": "ad84ac8293899a4ad859af3d64763633e0fde0c5e94655f3b6d3dea4edde7caf",
+    "backbone\\round46_independent_service_validation.py": "2151959b14e2f99f53a291939fde4499082275922da271b4f7791f0704e90bff",
+    "backbone\\round47_exact_quality_service.py": "f0a26da0df12bd1cae722b8479a35b4b6ee5d5c3adf06e5e336e4b0ee712c806",
+    "backbone\\round48_exact_quality_profit.py": "b8e7127b3084f8ef303e7bdc02b82f75888197683e6f880c88a7e56bc6483a93",
+    "backbone\\round49_integer_release_exact.py": "ab60ad71b73dbb70284c3ded7683ef12cbc64094d961afd957448c1c0dc0ec3e",
+    "backbone\\round4_partial_substitution.py": "04d6c726b13a33df01f791136442443a376ad78b083cdb54c3500d4790801514",
+    "backbone\\round50_adaptive_substitution.py": "be9ca839689cc0567476baa89a88ae3b4985e29e488737d88c0b8aabd9352cc6",
+    "backbone\\round51_substitution_policy_validation.py": "14ca54093a220482ec93bd1ec53b8a8a4f3853965a61d6eafddaee4feee9e312",
+    "backbone\\round52_batch_quality_variation.py": "655e077380bd42a2b73905b3dbd36bade59bd670a7da11e953706cfbe30705a8",
+    "backbone\\round53_quality_setup_decision.py": "bd3b4ea182cb4b84f4bb0f83d3ce028e9d55e119b33002f45986a89ea056c835",
+    "backbone\\round54_setup_service_policy.py": "d4c41584f5640166272d9a75e1e81b8bc3529ffac3c2d4757b04deb3666a85fc",
+    "backbone\\round55_exact_batch_quality.py": "7f6751c40b701d8fdfcca3d7e3068f23f445cd1aa533f31fd20bfc36d1e7c763",
+    "backbone\\round56_correlated_release_exact.py": "c88432c6df352a4008690193b4ff5f882ae2abcc82c846a8797a5c62286b211b",
+    "backbone\\round57_process_route_audit.py": "8eeaf849e3d2d37d99d470ccd21db23a331b351809aad85ab8fd45fc05cd3864",
+    "backbone\\round58_integer_rework_success.py": "0513112170e3e760a07021b0012c28ade915dc38eda2ed0e3adb48e2989f7457",
+    "backbone\\round59_repairability_ceiling.py": "77951333cba23383c4f5a56dc1a547b8b910c58eea9200bbfdd309aa8d11d97d",
+    "backbone\\round5_rework_p1.py": "c5e72d3e5346c77ac62a540cc9e55a603506af682f053303d09aea2e03c8e71f",
+    "backbone\\round60_kqc_dependence_identification.py": "f30d9fb2ef521a469183b650ce3297c32b4cd129b231366ea5b464c29ed0d3c9",
+    "backbone\\round61_stochastic_setup_frontier.py": "136509a49755a4fe095a68bbd5ba1bb5557b77181e978c556040e4f1c6713dfd",
+    "backbone\\round62_stochastic_policy_replay.py": "2027de6c7a4d0da35ea14d7bccacd45d5eabad9595643e81f76b2539c7d9c453",
+    "backbone\\round63_matched_route_release.py": "42cd4c5e9a466ad4d0c60eb38063f84a6175ab7f010ba212991a13930ae20dca",
+    "backbone\\round64_selected_release_validation.py": "b6a560e822cfbb10fb85a680d2af112d0c3002de752fd8840ae9792a46f374e4",
+    "backbone\\round65_quality_policy_monotonicity.py": "094fb4823c3e5c0e3dcbe98bf7a0cd38db015ae861337199759b857da9e16b21",
+    "backbone\\round66_matched_route_batch_stress.py": "c6f10439c10876091936fdd2b7dbc5524a0a6320f38a9a64cf4e8621c768682d",
+    "backbone\\round67_batch_service_feasibility.py": "b42507e0fcc08ad0da7bb1e9d1381590d6e0f9fd0bab70fdda46ca3796d6b384",
+    "backbone\\round68_batch_release_policy.py": "69874c5f52820f53c1b0ede513f889fbba89164b6b2b33beaa2f000e8883c0c6",
+    "backbone\\round69_frozen_policy_batch_validation.py": "6238f0def03c76d87d8ee46990c4bd37636d65946f60e7cb0934de19a8bfe0ed",
+    "backbone\\round6_p1_table.py": "aa770dfd0baa7f0fe56e3dc79fe58dd6b7af01faaec45b904d562ef8bbe4ff41",
+    "backbone\\round70_nonanticipative_final_control.py": "4723d5c3c24cba3db29a21196ca1cf35a97d412a0ff1d04626460d83171cdc9f",
+    "backbone\\round71_source_order_coverage.py": "e9e445fe9430c7e33719c2106ebfadf81b7d01282bcde066284311dc51a2db60",
+    "backbone\\round72_profit_bound_kernel.py": "d10272ba2aa1e526bccfb35a718027148ae7d3c0952f18d733a8b36d5fb5067b",
+    "backbone\\round73_fair_economic_baselines.py": "a1f9c2275e4dd681542bac4f26bda2e52fc82e8366d71049792b14f5f9e0a3bf",
+    "backbone\\round74_optional_substitution_audit.py": "a614125ca664d32ba21cdc7aaa579410aac3eab599d4257581cbbf24dab0c4a4",
+    "backbone\\round75_joint_policy_execution.py": "a080219dfa0ce93d6e6026564258343eae2248b424f51ff4bfc47ab3108873f1",
+    "backbone\\round76_certainty_equivalent_audit.py": "fa55911e9810333826e53af701c4cabdbab8dab51415ee558613e98702503653",
+    "backbone\\round77_terminal_value_gate.py": "cdd708deaf55fcff6058b5a127d10b497d87e2c1dcf119cb2f6f1bf3decc30a3",
+    "backbone\\round78_optional_substitution_release.py": "bff15e50544a205f366d37e804b924541b21aae8ddb3471c4c67c43942dfbb75",
+    "backbone\\round79_full_grid_mean_quality.py": "2c5530ff9913fb864322e3fd89538cf1b81bb1b77f2bcdda0ef04a50596690a2",
+    "backbone\\round7_jumper_line.py": "e4a895094974b68976c53305f9003b6db841083024b03344013145c9393efc8e",
+    "backbone\\round80_mean_quality_witness_validation.py": "6eb20127d005a4bb78139786b5d0f4350697750d64a5b1dca2347c394661d9d7",
+    "backbone\\round81_mean_boundary_counterexample.py": "14cfb28c251b7116a818e027a6eaa70686745290cbf318972aba15ece640cbc0",
+    "backbone\\round82_global_policy_replay.py": "0c2cfbd35eb30e732e97ea2d35d04b5e46500b6d5e57ebddedb63f068e592d8d",
+    "backbone\\round83_service_target_release_calibration.py": "020447d78d43c3481f22cf294301c91f541c6828a9c94fb23ab90c28d15659bf",
+    "backbone\\round84_batch_dispersion_identification.py": "245af2ea537a1676435675b85eb271cf73c93634d32168b8005a24d4dc24b9eb",
+    "backbone\\round8_rework_p2.py": "034e753cffa850cd0d18ae538e4368afc5f4420df506399ea332a28ca453bcb9",
+    "backbone\\round9_rework_p3.py": "18b698c70d89ad796644b2a33a8bd520194fe39af836ed17c7be22883a983ca3",
+    "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+    "backbone\\stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+    "backbone\\__init__.py": "38037b5f55d5a0d905125c72ea9e3dc57093c24ae01783e82234476da4363f1b",
+    "research\\2026-10-28\\service_rounds\\run_second_batch.py": "885044ef0eaab7e67eba7cda3c423cfbee3318be4cc502f7d69d1d58c2628d46",
+    "research\\2026-10-28\\audit_artifacts.py": "0404f34c7e79e941cc02ffcea7feab10332d8e105ed633aca2ede581c9d8f15a"
+  },
+  "scope": "Recorded source/trace hashes checked; inventory is a current snapshot, not historical proof for every unrecorded transitive dependency. Numerical checks concern the specified model, not empirical validity."
+}

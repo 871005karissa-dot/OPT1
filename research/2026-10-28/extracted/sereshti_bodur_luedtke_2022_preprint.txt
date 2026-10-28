@@ -1,0 +1,1601 @@
+=== PDF PAGE 1 ===
+Stochastic Dynamic Lot-sizing with Supplier-Driven
+Substitution and Service Level Constraints
+Narges Sereshti
+Department of Decision Sciences, HEC Montr´ eal, Montr´ eal, Qu´ ebec H3T 2A7, Canada, narges.sereshti@hec.ca
+Merve Bodur
+Department of Mechanical and Industrial Engineering, University of Toronto, Toronto, Ontario M5S 3G8, Canada,
+bodur@mie.utoronto.ca
+James R. Luedtke
+Department of Industrial and Systems Engineering, University of Wisconsin, Madison, Wisconsin 53706, jim.luedtke@wisc.edu
+We consider a multi-stage stochastic lot-sizing problem with service level constraints and supplier-driven
+product substitution. A ﬁrm has multiple products and it has the option to meet demand from substitutable
+products at a cost. Considering the uncertainty in future demands, the ﬁrm wishes to make ordering decisions
+in every period such that the probability that all demands can be met in the next period meets or exceeds
+a minimum service level. We propose a rolling-horizon policy in which a two-stage joint chance-constrained
+stochastic program is solved to make decisions in each time period. We demonstrate how to eﬀectively
+solve this formulation. In addition, we propose two policies based on deterministic approximations. We
+demonstrate that the proposed chance-constraint policy can achieve the service levels more reliably and
+at a lower cost. We also explore the value of product substitution in this model, demonstrating that the
+substitution option allows achieving service levels while reducing costs by 7% to 25% in our experiments,
+and that the majority of the beneﬁt can be obtained with limited levels of substitution allowed.
+Key words : Stochastic lot-sizing; product substitution; joint service level; decision policy
+1. Introduction
+The basic lot-sizing problem is a multi-period production planning problem that considers the
+trade-oﬀ between setup costs and inventory holding costs and deﬁnes the optimal timing and
+quantity of production to minimize the total cost. When demand is uncertain, which is inevitable in
+real-world applications, the decision-maker needs to determine the production policy to minimize
+the expected cost over the distribution of demand outcomes. Demand uncertainty leads to the
+possibility of stock-outs (i.e., demand exceeds available inventory) and a key challenge then is to
+limit the frequency of such undesirable events. A common approach to deal with this challenge is
+to assume customer demands can be backlogged (i.e., met in a period later than when it arrived)
+and assign a cost per period that it is backlogged. Then, the incurred backlog cost needs to capture
+the costs associated with both tangible and intangible eﬀects which may be diﬃcult to estimate. In
+contrast, in this work we study the stochastic lot-sizing problem with an α service level constraint
+which instead requires that there is no stock-out in each period with probability at least α.
+1
+arXiv:2301.00258v1  [math.OC]  31 Dec 2022
+
+=== PDF PAGE 2 ===
+2
+The standard strategy for limiting stock-outs is to hold more product in inventory, which leads to
+a trade-oﬀ between inventory holding costs and service level. In some cases, when a ﬁrm is managing
+inventory and ordering decisions of multiple products the ﬁrm has the option to substitute one
+product for another to avoid a stock-out. This type of substitution is known as supplier-driven
+substitution and provides another mechanism to avoid stock-outs which can be interpreted as a
+risk-pooling strategy for handling uncertain demand (Shin et al. 2015). Supplier-driven substitution
+has practical relevance in the electronics and steel industries where it is possible to substitute a
+lower-grade product with a higher-grade one (Lang and Domschke 2010).
+To explore the potential beneﬁts of supplier-driven substitution, we study the stochastic lot-sizing
+problem with substitution and joint service level constraint over multiple products. A joint service
+level constraint ensures that no products have a stock-out to exceed the target α in each period.
+A joint service level is necessary in our model because, given on-hand inventory and observed
+costumer demands, we jointly determine what substitutions should be made in order to avoid a
+stock-out. Such joint determination links the stock-out event of diﬀerent products together, making
+it impossible to separately control the probability of each individual product having a stock-out.
+Note that, if the substitution policy is ﬁxed (e.g., one always substitutes product 1 for product 2
+if there is a shortfall in product 2, etc.) then it would be possible to constrain individual product
+service levels. We do not pursue this option, as we prefer to allow substitution decisions to be
+ﬂexibly optimized in each period given the available inventory and current product demands.
+We consider an inﬁnite-horizon problem in which the ﬁrm sequentially makes setup, production,
+and substitution decisions based on the current state of the system, reﬂected as the amount of
+available inventory and backlog amounts of each product. We follow the “dynamic” strategy (Book-
+binder and Tan 1988) in which decisions are made throughout the planning horizon in response to
+the latest observed information. As the inﬁnite-horizon problem is computationally intractable, we
+propose to solve a ﬁnite-horizon problem and apply it in a rolling-horizon fashion. The aim is to
+propose decision policies that make the current period decisions by solving a ﬁnite-horizon problem
+that looks ahead a certain number of periods. Ideally, this ﬁnite-horizon problem would take the
+form of a multi-stage stochastic program that considers all possible sample paths over the horizon
+and anticipates the future optimal decisions. While we begin by formulating this ideal model, it
+is also computationally intractable. Thus, we propose to solve approximations of this problem to
+drive our decision policy. The ﬁrst approximation is purely deterministic, as commonly employed
+in practice for various application domains, and hence is not able to explicitly consider the service
+level constraint. We then propose a chance-constrained approximation that considers scenarios of
+possible joint demands in the next stage and hence is able to enforce that the chosen decisions sat-
+isfy the service level constraint. This two-stage model contains a joint chance constraint, for which
+
+=== PDF PAGE 3 ===
+3
+we apply results in (Luedtke 2014) to derive an eﬃcient branch-and-cut (B&C) algorithm. This
+model diﬀers from standard two-stage approximations of multi-stage stochastic programming mod-
+els in that it considers a distribution of scenarios of product demands in the immediate next stage,
+but for stages beyond that it merges these approximations back into a deterministic approximation,
+which is done to improve tractability of the model.
+We use simulation to evaluate our proposed policies in a steady-state system and demonstrate
+that over a range of problem characteristics the policy driven by our proposed chance-constrained
+model respects the service level targets more reliably and at a lower cost than the policies driven by
+solving deterministic models. We also explore the value of product substitution and ﬁnd that using
+substitution achieves the target service levels at signiﬁcantly reduced costs compared to without
+substitution and that the majority of the beneﬁts can be obtained even when limiting substitution
+to be between products of the most similar quality.
+We summarize our main contributions as follows.
+• We study an inﬁnite-horizon multi-stage lot-sizing problem with substitution and joint service
+level constraints, which to the best of our knowledge is new to the literature.
+• We propose rolling-horizon policies based on solving ﬁnite-horizon deterministic and two-stage
+chance-constrained optimization models to make decisions in each period.
+• We describe a branch-and-cut algorithm to solve the two-stage chance-constrained optimiza-
+tion model and demonstrate its computational eﬃciency.
+• We conduct a simulation study that demonstrates the value of the chance-constrained opti-
+mization driven policy and the value of supplier-driven substitution. We also provide insights
+obtained through sensitivity analysis on important parameters of the problem, such as when sub-
+stitution is most valuable.
+The rest of the paper is organized as follows. In Section 2, we review the related literature. In
+Section 3, we deﬁne the problem and the dynamics of decisions in the system and provide a dynamic
+programming formulation for the ﬁnite-horizon multi-stage stochastic program. In Section 4, we
+describe the optimization models (approximations of the model from Section 3) that we propose
+to use to make decisions and present the B&C algorithm to solve the chance-constrained model.
+In Section 5, we present results from the computational experiments, including policy comparison
+and insights about the value of substitution. We provide concluding remarks in Section 6.
+2. Literature review
+The related literature to this work can be categorized in two streams. The ﬁrst part is dedicated to
+the lot-sizing and inventory models with substitution in both deterministic and stochastic versions
+and the second part is dedicated to the stochastic lot-sizing problem with joint service level. In
+
+=== PDF PAGE 4 ===
+4
+what follows, we review the related works, whose main characteristics are summarized in Table 1.
+To the best of our knowledge, no research has investigated the stochastic lot-sizing problem with
+substitution and joint service levels.
+Table 1 Summary of related papers.
+PlanningYear Horizon Uncertainty Problem Subst. Service level Strategy Model Method.
+Bitran and Leong 1992 F Yield Co-production SD J (Products) S,D LP ABitran and Dasu 1992 I Yield Co-production SD I D LP HBassok et al. 1999 S Dem, Yield Periodic review inventory SD GHsu and Bassok 1999 S Dem, Yield Co-production SD MILP GRao et al. 2004 S Dem Inventory planning + setup SD MILP HHsu et al. 2005 F Det Lot sizing SD MILP DPNagarajan and Rajagopalan 2008 S, F Dem Inventory planning CD D HLang and Domschke 2010 F Det Lot sizing SD MILPNg et al. 2012 S Dem Co-production CD M LP, MILPZhang et al. 2014 F Dem Inventory planning J (Periods) D MILP B&CJiang et al. 2017 F Dem Production planning J (Periods) S MILP SAAGicquel and Cheng 2018 F, I Dem Lot sizing J (Periods) S MILP SAALiu and K¨ u¸ c¨ ukyavuz 2018 F Dem Lot sizing J (Periods) S MILP B&CChen and Chao 2020 F Dem Inventory control CD OLAk¸ cay et al. 2020 S Dem Inventory planning CD I AOur work I Dem Lot sizing SD J (Products) D MILP B&C
+AcronymsPlanning Horizon .. I: inﬁnite, F: Finite, S: Single periodUncertainty .. Det: Deterministic, Dem: Random Demand, Yield : Random YieldSubstitution .. SD: Supplier-driven, CD: Customer-drivenService level .. I: Individual, J (Periods): Joint over multiple periods, J (Products): Joint over multiple products, M: Maximizing service levelStrategy .. S: Static, D: DynamicModel .. MILP: Mixed-integer linear programming, LP: Linear programmingMethodology .. B&C: Branch-and-cut algorithm, G: Greedy algorithm, A: Model approximation, H: Heuristics, DP: Dynamic programming,SAA: Sample average approximation, OL: Online learning
+2.1. Lot-sizing and inventory problems with substitution
+There are two types of substitution: customer-driven and supplier-driven (Shin et al. 2015). In
+customer-driven substitution, the customer decides which product to substitute (Zeppetella et al.
+2017), while in the supplier-driven (ﬁrm-driven) case, it is the supplier, ﬁrm, or the vendor who
+makes the substitution decisions (Rao et al. 2004). The substitution possibility is addressed in both
+deterministic and stochastic settings which are explained as follows.
+Deterministic models. Hsu et al. (2005) study two versions of the dynamic uncapacitated lot-
+sizing problem with supplier-driven substitution, when there is a need for physical conversion before
+substitution, and when no conversion is needed. They propose a mixed-integer linear programming
+(MILP) model and solve it using a backward dynamic programming algorithm and an algorithm
+based on Silver-Meal heuristic. Lang and Domschke (2010) consider the uncapacitated lot-sizing
+problem with general substitution in which a speciﬁc class of demand can be satisﬁed by diﬀerent
+products based on a substitution graph. They propose a MILP model along with some valid
+inequalities, also a plant location reformulation in which the amount of production for an item is
+broken down into diﬀerent amounts based on the period where they are used to satisfy the demand.
+
+=== PDF PAGE 5 ===
+5
+Stochastic models. The majority of studies in stochastic inventory planning have considered
+customer-driven substitution. This is also known as “stock-out substitution”. Ak¸ cay et al. (2020)
+investigate a single-period inventory planning problem with substitutable products. Considering
+the stock-out substitution, they propose an optimization based method, which jointly deﬁnes the
+ordering decisions of each product, while satisfying a service level. Nagarajan and Rajagopalan
+(2008) consider the inventory planning problem with customer-driven substitution. They propose
+an optimal policy for speciﬁc cases in terms of planning periods and the number of products, and a
+heuristic algorithm for the general form of the problem. In the inventory planning problem, there
+is no setup cost and they try to optimize the proﬁt in the system which is equal to selling revenue
+minus the holding, substitution, and lost sales costs.
+Our model considers supplier-driven substitution. Bassok et al. (1999) investigate the single-
+period inventory management problem with random demand and downward supplier-driven substi-
+tution in which a lower-grade item can be substituted with ones with a higher-grade. This model is
+an extension of the newsvendor problem and there is no setup cost in case of ordering. The authors
+propose a proﬁt maximization formulation and characterize the structure of the optimal policy for
+this single-period problem. They propose bounds on the optimal order amount and use them in an
+iterative algorithm to solve the model. Rao et al. (2004) also consider a single-period problem with
+stochastic demand and downward substitution, and model it as a two-stage stochastic program.
+Their model considers the initial inventory and the ordering cost. They derive a deterministic
+equivalent formulation (extensive form) and propose two heuristic algorithms to solve this problem.
+Another related research stream considers the possibility of having multiple graded output items
+from a single input item, which is known as “co-production” (Ng et al. 2012). In these problems,
+there is a hierarchy in the grade of output items and it is possible to substitute a lower-grade
+item with the ones with higher-grade (Bitran and Dasu 1992). Hsu and Bassok (1999) consider the
+single-period production system with random demand and random yields. They model the problem
+as a two-stage stochastic program which deﬁnes the production amount of a single item and the
+allocation of its output items to diﬀerent demand classes. They propose two decomposition based
+methods, in which the subproblems are network ﬂow problems. Bitran and Dasu (1992) study an
+inﬁnite-horizon, multi-item, multi-period co-production problem with deterministic demand and
+random yields. As solving this problem in an inﬁnite-horizon is intractable, they propose two
+approximation approaches. The ﬁrst approximation is based on a rolling-horizon implementation
+of the ﬁnite-horizon stochastic model, which is related to the overall approach we take. For the
+second approximation, they consider a simple heuristic based on the optimal allocation policy, in
+a multi-period setting. This heuristic includes two modules; a module to determine the production
+quantities, and a module to allocate produced items to the customers. This heuristic can be also
+
+=== PDF PAGE 6 ===
+6
+applied in a rolling-horizon procedure. Bitran and Leong (1992) consider the same problem and
+propose deterministic near-optimal approximations within a ﬁxed planning horizon. To adapt their
+model to the revealed information, they apply the proposed model using simple heuristics in a
+rolling planning horizon. Bitran and Gilbert (1994) consider the co-production and random yield
+in a semiconductor industry and propose heuristic methods to solve their proposed model.
+2.2. Stochastic lot-sizing problem and service level constraints
+Most of the research about stochastic lot-sizing problem with stochastic demands consider a sce-
+nario set or a scenario tree to represent the randomness in demand. Much of this research assumes
+backlogging has a cost that is included in the objective. Haugen et al. (2001) consider the multi-
+stage uncapacitated lot-sizing problem and propose a progressive hedging algorithm to solve their
+proposed model. Guan and Miller (2008) propose a dynamic programming algorithm for a similar
+model. Using the same algorithm, Guan (2011) studies the capacitated version of the problem
+with the possibility of backlogging. Lulli and Sen (2004) propose a branch-and-price algorithm
+for multi-stage stochastic integer programming and apply their general method to the stochas-
+tic batch-sizing problem. In this problem, they consider that the demand, production, inventory
+and setup costs are uncertain. The diﬀerence between this problem and the lot-sizing problem is
+that the production quantities are in batches and the production decisions are the integer-valued
+number of batches that will be produced. Lulli and Sen (2006) also proposed a heuristic scenario
+updating method for the stochastic batch-sizing problem.
+Stochastic lot-sizing problems with service level constraints have been studied extensively (Tem-
+pelmeier 2007) and many types of service levels exist in the literature. One of the main service levels
+is the α service level which is an event-oriented service level, and imposes limits on the probability
+of a stock-out. This service level is represented as a chance-constraint and is usually deﬁned for
+each period and product separately. Bookbinder and Tan (1988) investigate stochastic lot-sizing
+problems with an α service level and propose three diﬀerent strategies for this problem based on
+the timing of the setup and production decisions. These strategies are the static, dynamic, and
+static-dynamic strategies. In the static strategy, both the setup and production decisions are deter-
+mined at the beginning of the planning horizon and they remain ﬁxed when the demand is realized.
+In the dynamic strategy, both the setup and production decisions are dynamically changed with
+the demand realizations throughout the planning horizon. The static-dynamic strategy is between
+these two strategies in which the setups are ﬁxed at the beginning of the planning horizon and the
+production decisions are updated when the demands are realized. In this work, we will follow the
+dynamic strategy and all the decisions are updated dynamically with the demand realization.
+Some studies deﬁne the service level constraint jointly over periods in the planning horizon.
+Liu and K¨ u¸ c¨ ukyavuz (2018) consider the uncapacitated lot-sizing problem with a joint service
+
+=== PDF PAGE 7 ===
+7
+level constraint. They study the polyhedral structure of the problem, and propose diﬀerent valid
+inequalities and a reformulation of the problem. Zhang et al. (2022) extend this line of work
+with additional valid inequalities and formulations. Jiang et al. (2017) consider the same problem
+with and without pricing decisions. Gicquel and Cheng (2018) investigate the capacitated version
+of the same problem. Jiang et al. (2017) and Gicquel and Cheng (2018) use a sample average
+approximation method to solve their problems, which is a variation of the method proposed by
+Luedtke and Ahmed (2008) to solve models with chance-constraints using scenario sets. All of these
+studies consider single item models in which the joint service level is deﬁned over all periods. Few
+studies consider the service level jointly over all the products. Ak¸ cay et al. (2020) adapt the Type
+II service level or “ﬁll rate” for each individual product and overall within a category of products
+in the customer-driven substitution model. This type of service level considers the expected value
+of backlog and it is not modeled as a chance constraint. Sereshti et al. (2021) study diﬀerent types
+of aggregate service level for the lot-sizing problem which are deﬁned over multiple products, but
+they do not consider substitution. In this work, we consider supplier-driven substitution and a joint
+service level that is deﬁned over all products, but separately for each time period.
+3. Problem deﬁnition and formulation
+We consider a stochastic lot-sizing problem with the possibility of supplier-driven substitution in
+an inﬁnite time horizon which is discretized into planning periods. There are multiple types of
+products K = {1,...,K } with random demand, and at each period, we need to make decisions about
+the production setups, production and substitution amounts, and accordingly deﬁne the inventory
+and backlog levels. There is a production lead time of one period, i.e., what is produced in the
+current period is available to meet demand in the next period or later. These decisions are made
+sequentially in each period based on the available inventory and backlog in the system in that
+period, such that a joint service level over all products is to be satisﬁed in the following period.
+This ﬁts into the category of the “dynamic” strategy that is deﬁned for the stochastic lot-sizing
+problem (Bookbinder and Tan 1988).
+To provide a decision policy for this inﬁnite-horizon problem we propose a rolling-horizon
+approach, where at each time period we solve a ﬁnite-horizon problem that looks ahead T time
+periods and implement the ﬁrst-period decisions obtained from this problem, as illustrated in Fig-
+ure 1. When the current period is ˆt, this ﬁnite-horizon model considers periods ˆt,..., ˆt +T − 1. For
+notational convenience, when describing this model we shift all periods back by ˆt − 1, so that the
+planning horizon is T = {1,...,T }.
+In this section we formulate a ﬁnite-horizon multi-stage stochastic programming problem that
+we would ideally solve in each time period to make the current period decisions. This problem is
+
+=== PDF PAGE 8 ===
+8
+Figure 1 Rolling-horizon framework
+a dynamic stochastic program with chance constraints to represent the service level requirements,
+and hence is intractable to solve exactly. In Section 4 we discuss our proposed approximate solution
+strategies which are based on solving approximations of this ﬁnite-horizon problem.
+Being at period t = 1, given the state of the system, the model considers decisions for the T
+stages to guide the implementable ﬁrst-stage (t = 1) decisions that satisfy a joint service level in the
+next period, t = 2. Figure 2 illustrates the dynamics of decisions at each stage t. First, the demand
+Figure 2 Dynamics of decisions at each stage
+realizations ˆDtk for k ∈ K are observed and we also know the initial state of the system, described
+by the on-hand inventory amounts ˆvt−1,k and backlog amounts ˆbt−1,k for k ∈ K. Based on this
+information, two sets of decisions are made. The ﬁrst set of decisions are the substitution decisions,
+which then imply the intermediate inventory and backlog amounts. The inventory of a product
+k ∈ K can be used to satisfy demand of any product in the set K+
+k ⊆ K, where we assume k ∈ K+
+k
+indicating that inventory of a product can certainly be used to meet its own demand. For each
+k ∈ K we also deﬁne the set K−
+k ⊆ K to be the set of products whose inventory can be used to meet
+demand of product k, and observe that for a pair of products ( k,j ), j ∈ K+
+k if and only if k ∈ K−
+j .
+Thus, for eachk ∈ K andj ∈ K+
+k ,stkj represents the amount of inventory of productk that is used to
+meet demand or backlog of productj. Note thatstkk corresponds to the amount of productk which
+is used to satisfy its own demand. The substitution decisions, together with the demand, on-hand
+inventory, and backlog amounts then deﬁne the intermediate inventory and backlog amounts itk
+
+=== PDF PAGE 9 ===
+9
+andbtk fork ∈ K, respectively. The second set of decisions are the setup and production decisions,
+which combined with the intermediate inventory levels determine the available inventory at the
+end of current period. For each product k ∈ K,xtk represents the production amount of product k,
+ytk is a binary variable indicating if a setup is done (ytk = 1) or not (ytk = 0), andvtk represents the
+available inventory at the end of this period (equivalently, the beginning of the next period). Note
+that the substitution and production decisions are made simultaneously, but our convention that
+demand is observed at the beginning of a period and the production lead time is one period implies
+that the production amounts decided in period t can only be used to meet demand or ﬁll backlog
+in the next period or later. This is why we have two diﬀerent inventory levels for each product,
+namely,itk as the inventory level immediately after demand satisfaction, but before production,
+and vtk as the available inventory at the end of the period. The values of vtk and btk for all k ∈K
+are the inputs for the next period, describing the next state of the system.
+For eachk ∈ K and j ∈ K+
+k , csub
+tkj represents the cost incurred at period t when a unit of product
+k is used to meet unit of demand of product j. Typically, csub
+tkk = 0 representing that there is no
+additional cost incurred when a product is used to meet its own demand. An inventory holding cost
+ofchold
+tk is charged for each unit of product k ∈ K held in inventory after the demand satisfaction in
+period t. The cost to produce a unit of product k ∈ K in period t is denoted by cprod
+tk . Furthermore,
+if a setup of product k ∈ K is done in period t, a setup cost of csetup
+tk is incurred.
+Table 2 Notation for the mathematical model
+Sets Deﬁnition
+T Set of planning periods, indexed by 1,...,T
+K Set of products, indexed by 1,...,K
+K+
+k Set of products whose demand can be fulﬁlled by productk
+K−
+k Set of products that can fulﬁll the demand of productk
+Parameters Deﬁnition
+csetup
+tk Setup cost for productk in periodt
+choldtk Inventory holding cost for productk in periodt
+csubtkj Substitution cost if productk is used to fulﬁll the demand of productj in periodt
+cprod
+tk Production cost for productk in periodt
+cbacktk Backlog cost for productk in periodt
+α Minimum required joint service level
+Mtk Maximum production of productk in periodt
+Dtk Random variable representing demand for productk in periodt
+DHisttk Vector of random demands from period 1 to periodt for productk
+ˆv0,k The amount of initial inventory level for productk
+ˆb0,k The amount of initial backlog for productk
+P The probability distribution of the demand process
+Decision variables Deﬁnition
+ytk Binary variable which is equal to 1 if there is a setup for productk at periodt, 0 otherwise
+xtk Amount of production for productk at periodt
+stkj Amount of productk used to fulﬁll the demand of productj at periodt
+itk Amount of physical inventory for productk immediately after the demand satisfaction for periodt
+btk Amount of backlog for productk at the end of periodt
+vtk The available inventory for productk at the end of periodt (beginning of periodt+ 1)
+
+=== PDF PAGE 10 ===
+10
+The product demands are modeled as a stochastic process, Dtk fort = 1,...,T andk ∈K, where
+Dtk is a random variable representing the demand of productk in periodt. We use the notation ˆDtk
+to indicate a particular observed realization of this random variable. DHist
+tk represents the random
+demand path from period 1 to period t for productk, and ˆDHist
+tk denotes its realization (the history)
+until period t.
+For notational convenience, when an index is dropped when referring to a parameter or decision
+variable, we are referring to the vector of all the parameters and decision variables over the range
+of that index. For instance, ˆDt := ( ˆDt1,..., ˆDtK) and likewise for st, it, bt, vt, etc.
+We now present the ﬁnite-horizon chance-constrained multi-stage stochastic programming model.
+Notation for diﬀerent sets, parameters, and decision variables is summarized in Table 2. We present
+a dynamic programming formulation where Ft(·) denotes the cost-to-go function at each period
+t = 1, 2,...,T and is deﬁned recursively as follows:
+Ft(ˆvt−1,ˆbt−1, ˆDHist
+t ) = min
+∑
+k∈K
+(
+csetup
+tk ytk +cprod
+tk xtk +chold
+tk itk +
+∑
+j∈K+
+k
+csub
+tkjstkj
+)
++
+EDt+1
+[
+Ft+1(vt,bt,D Hist
+t+1 )|DHist
+t = ˆDHist
+t
+]
+(1a)
+s.t. xtk ≤Mtkytk ∀k ∈ K (1b)
+∑
+j∈K−
+k
+stjk +btk = ˆDtk +ˆbt−1,k ∀k ∈ K (1c)
+∑
+j∈K+
+k
+stkj +itk = ˆvt−1,k ∀k ∈ K (1d)
+vtk =itk +xtk ∀k ∈ K (1e)
+PDt+1{(vt,bt) ∈Q(Dt+1)|DHist
+t = ˆDHist
+t } ≥α (1f)
+(ˆvt−1,ˆbt−1) ∈Q( ˆDt) ⇒bt = 0, (1g)
+xt,vt,it,bt ∈ RK
++,st ∈ RK×K
++ , yt ∈ {0, 1}K (1h)
+where FT+1(·) = 0 and 0 denotes the vector of zeros of appropriate dimension.
+The optimal value, denoted by Ft(ˆvt−1,ˆbt−1, ˆDHist
+t ), represents the optimal objective value from
+period t to the end of the horizon given the initial available inventory vector ˆvt−1, backlog vector
+ˆbt−1, and observed demand history ˆDHist
+t . The objective (1a) is to minimize the current stage total
+cost (setup, production, holding, and substitution costs) plus the expected optimal costs from
+stagest + 1 to the end of the horizon. Constraints (1b) are the setup constraints which ensure that
+if there is production of a product k ∈ K, the setup variable ytk takes the value 1. Here, Mtk is
+an upper bound on the maximum amount of product k that would be produced in period t in an
+optimal solution. Constraints (1c) enforce that the current demand plus last period’s backlog of
+
+=== PDF PAGE 11 ===
+11
+each product is satisﬁed or it will be recorded as backlog btk for the next period. Constraints (1d)
+model the use of available inventory ˆvt−1,k of each product k ∈ K. It may be used to meet demand
+of any product in the set K+
+k or it will be recorded as intermediate inventory and combined with
+current period production xtk to yield the next period’s available inventory vt, as described in
+constraints (1e).
+The stock-out free setQ(D), deﬁned for a vector of demandsD = (D1,...,D K) plays an important
+role in constraints (1f) and (1g). This set represents the set of available inventory and backlog
+vectors for which it is possible to avoid a stock-out of any product in the next period if the product
+demands are given by the vector D. Speciﬁcally, the set is deﬁned as:
+Q(D) :=
+{
+(v,b ) ∈ RK
++ × RK
++ : ∃skj ≥ 0, ∀k ∈ K,j ∈ K+
+k such that
+∑
+j∈K−
+k
+sjk =Dk +bk ∀k ∈ K and
+∑
+j∈K+
+k
+skj ≤vk ∀k ∈ K
+}
+(2)
+so that (v,b ) ∈Q(D) if and only if it is possible to meet all product demands D and backlogs
+b using available inventory v. Thus, constraint (1f) requires that there is suﬃcient inventory in
+the next period to avoid a stock-out with probability at least α, where this probability is over
+the distribution of the next-stage’s demand conditional on the current history ˆDHist
+t . While this
+constraint ensures that there is always at least an α probability that stock-outs can be avoided in
+the next stage, the constraint by itself is not suﬃcient to enforce the α service level, due to the
+possibility to allow a stock-out to occur when making substitution decisions (e.g., to save costs)
+even though it might be feasible to avoid one. This is the purpose of constraint (1g) – it states that
+if a stock-out can be avoided in the current stage (i.e., (ˆ vt−1,ˆbt−1) is in the stock-out free set for
+the current demands), then a stock-out is not allowed (i.e., btk = 0 for all k ∈ K). This constraint
+reﬂects a modeling assumption that the ﬁrm always wishes to avoid stock-outs when feasible, e.g.,
+to avoid diﬃcult-to-quantify costs such as loss of customer goodwill, an assumption we argue is
+consistent with the use of the α service level constraint. Although we do not pursue this possibility
+here, an alternative to constraint (1g) would be to introduce decision variables that deﬁne a policy
+for determining when a stock-out will be allowed, and include the optimization of those decision
+variables as part of the formulation.
+In order to assure that there is always a feasible solution to problem (1) we assume that for
+each product k ∈ K there is a product j ∈ K+
+k whose production limit Mtj is large enough that it
+is always possible to produce enough in the current period to avoid stock-outs in the next period
+with the desired minimum probability.
+
+=== PDF PAGE 12 ===
+12
+4. Approximate solution policies
+We now present our proposed approximate solution policies. As described in Section 3, our approach
+is to solve a ﬁnite-horizon optimization model in each time period to make the current decisions
+given the current available inventory and backlog. Ideally, we would solve model (1) and implement
+the solution from time period 1. Since this model is intractable due to its multi-stage nature and
+high-dimensional state space, we instead propose to solve an approximation of this model and
+implement the decision that the approximation yields in the ﬁrst period. We consider two types
+of approximations, one that is purely deterministic and one that incorporates a two-stage chance
+constraint to model the service level constraint. In both policies, the ﬁrst step is to solve a model
+that determines if stock-outs can be avoided in the current stage (i.e., to enforce constraint (1g)),
+which we describe in Section 4.1. The output of this model is then used to deﬁne constraints on
+backlog that are applied when we solve the ﬁnite-horizon approximate model to make decisions.
+These approximate models are described in Section 4.2. We describe a branch-and-cut algorithm
+for solving the two-stage chance-constrained model in Section 4.3.
+4.1. Stock-out determination
+Given the current available inventory vector ˆv0, backlog vector ˆb0, and observed demand ˆD1, the
+ﬁrst step is to determine whether a stock-out can be avoided in the ﬁrst period, i.e., to test if
+(ˆv0,ˆb0) ∈Q( ˆD1) as in (1g). To this end, we solve the following linear programming (LP) model
+which minimizes the total backlog in the current period:
+min
+∑
+k∈K
+bk (3a)
+s.t.
+∑
+j∈K−
+k
+sjk +bk = ˆD1k +ˆb0k ∀k ∈ K (3b)
+∑
+j∈K+
+k
+skj ≤ ˆv0k ∀k ∈ K (3c)
+b ∈ RK
++,s ∈ RK×K
++ . (3d)
+Constraints (3b) guarantee that the demand and current period backlog is either satisﬁed or it will
+be backlogged in the next period. Constraints (3c) limit the use of available inventory. Given an
+optimal solution (b∗,s∗) of (3), we set ˆK = {k ∈ K :b∗
+k = 0}, which represents the set of products
+for which we are able to achieve zero backlog. In all our policies, we enforce b1k = 0 for all k ∈ ˆK
+so that we only allow backlog when it is impossible to avoid. In particular, if the optimal value of
+(3) is zero, then backlogging will not be allowed for any product, and hence the period will not
+experience a stock-out. We stress that this model is only used to determine if we allow backlog at
+the end of the ﬁrst period – the actual substitution decisions are made after solving another model
+which we describe next.
+
+=== PDF PAGE 13 ===
+13
+4.2. Approximate models
+We now describe the deterministic approximation (Section 4.2.1) and two-stage chance-constrained
+approximation (Section 4.2.2) that we propose to solve to make the current decisions in each time
+period. The advantage of the deterministic approximation is that it is a MILP model, and hence is
+solvable by widely available MILP software. While the chance-constrained model is more diﬃcult to
+solve, we ﬁnd that it results in better policies, and can be solved eﬃciently with the branch-and-cut
+method we present in Section 4.3.
+4.2.1. Deterministic approximation The deterministic approximation is based on replac-
+ing all future uncertain demands with a deterministic estimate Dkt for t = 2,...,T and k ∈ K,
+resulting in the following multi-period deterministic MILP model:
+min
+∑
+t∈T
+∑
+k∈K
+(
+csetup
+tk ytk +cprod
+tk xtk +chold
+tk itk +
+∑
+j∈K+
+k
+csub
+tkjstkj
+)
+(4a)
+s.t. xtk ≤Mtkytk ∀t ∈ T, ∀k ∈ K (4b)
+∑
+j∈K−
+k
+s1jk +b1k = ˆD1k +ˆb0k ∀k ∈ K (4c)
+∑
+j∈K−
+k
+s2jk =Dk2 +b1k ∀k ∈ K (4d)
+∑
+j∈K−
+k
+stjk =Dkt ∀t ∈ T \ { 1, 2}, ∀k ∈ K (4e)
+∑
+j∈K+
+k
+stkj +itk =vt−1,k ∀t ∈ T, ∀k ∈ K (4f)
+vtk =itk +xtk ∀t ∈ T, ∀k ∈ K (4g)
+b1k = 0 ∀k ∈ ˆK (4h)
+xt,vt,it,bt ∈ RK
++,st ∈ RK×K
++ ,yt ∈ {0, 1}K ∀t ∈ T (4i)
+The objective function (4a) minimizes the total cost of setup, production, holding and substitution
+cost over the T planning periods. Constraints (4b) guarantee that in each planning period, when
+there is positive production, there will be a setup. In case the production level of a product k ∈ K
+is unconstrained in period t ∈ T , a suﬃciently large value of Mtk for use in constraint (4b) can be
+computed as:
+Mtk =
+∑
+j∈K+
+k
+(
+ˆb0j + ˆD1j +
+T∑
+t=2
+Dtj
+)
+. (5)
+Constraints (4c) to (4f) are the inventory, backlog, and substitution balance constraints. In con-
+straints (4f) for t = 1,v0,k := ˆv0k. Constraints (4c) and (4d) use the b1k variables, which according
+
+=== PDF PAGE 14 ===
+14
+to (4h) are only allowed to be positive when stock-out could not be avoided, as determined in the
+stock-out determination step. Constraints (4d) and (4e) do not use backlog variables for any t> 1,
+and hence this model enforces satisfaction of the deterministic estimates of demand in periods
+t> 1. Constraints (4g) deﬁne the available inventory after production.
+We consider two variations of the deterministic approximation based on using diﬀerent estimates
+for the future demands. In the ﬁrst policy, which we refer to as the “average policy”, the expected
+value of demand is used for the deterministic approximation, speciﬁcally Dtk = E[Dtk] for t =
+2,...,T and allk ∈ K. This average policy has little chance of meeting the service level constraints,
+since the decisions made in the current period are only planning for the expected demand of each
+product in the next period, so that the realized demand in the next period will often exceed the
+amount planned for. We thus consider a second policy, which we refer to as the “quantile policy”,
+where the demand in the next immediate period is approximated by the α quantile of the future
+demand distribution for each product, and the demand in periods beyond that are approximated by
+their expected value. So, in this case D2k = Qα[D2k] := min{q : P(D2k ≤q) ≥α} and Dtk = E[Dtk]
+fort = 3,...,T and all k ∈ K. Figure 3 illustrates the demand pattern for the average and quantile
+policies in sub-ﬁgures (a) and (b), respectively.
+(a) Average policy
+ (b) Quantile policy
+ (c) Chance-constraint policy
+Figure 3 Demand approximation in diﬀerent decision policies
+4.2.2. Two-stage chance-constrained approximation The deterministic policies that we
+explained in the previous section do not consider the service level constraint explicitly. To ensure the
+service level is met, we introduce a joint chance constraint that requires current ordering decisions
+be suﬃcient to ensure that all demand can be met in the next period in at least α fraction of the
+possible demand outcomes in the next period. To model the chance constraint, we approximate
+the joint distribution of product demands in period t = 2 using a ﬁnite set of equally likely joint
+demand scenarios Dω
+2 for ω ∈ Ω, where Dω
+2k denotes the demand of product k ∈ K in period 2
+under scenario ω ∈ Ω. The ﬁnite set of scenarios could be obtained, for example, via Monte Carlo
+sampling (Luedtke and Ahmed 2008).
+
+=== PDF PAGE 15 ===
+15
+Given a discrete approximation of the next period’s demand distribution, it is possible to for-
+mulate the service level constraint (1f) explicitly by introducing additional variables to represent
+which scenarios will not have a stock-out in the next stage. However, just modeling this constraint
+is likely to lead to poor policy performance because it would ignore the cost of the next-stage sub-
+stitution that is implicitly planned for when enforcing the chance constraint. Speciﬁcally, having
+only the chance constraint would ensure that with high probability there exists substitutions in the
+next stage that can meet all demands, but would ignore the cost of those substitutions. This would
+in turn lead to decisions that require potentially costly product substitutions to avoid stock-outs.
+To address this issue, we propose a model that both enforces a service level constraint and approxi-
+mates the cost of the decisions in period 2 for each single scenario ω ∈ Ω. To preserve compactness
+of the model, we continue to approximate the demand in periods t ≥ 3 with the expected values
+E[Dtk] for k ∈ K. The demand pattern used in this policy in depicted in sub-ﬁgure (c) in Figure 3.
+This model uses new decision variables representing the decisions that will be made in each
+scenario in period 2: I′ω
+2k and B′ω
+2k denote the inventory and backlog at period 2 for product k ∈ K
+under scenario ω ∈ Ω, respectively. The variable s′ω
+2jk represents the amount of product j used to
+meet demand of product k under scenario ω ∈ Ω in period 2. The proposed model is:
+min
+∑
+k∈K
+(
+csetup
+1k y1k +cprod
+1k x1k +
+∑
+j∈K+
+k
+csub
+1kjs1kj +chold
+1k i1k
+)
++
+∑
+k∈K
+(
+csetup
+2k y2k +cprod
+2k x2k +chold
+2k I2k +cback
+2k b2k + 1
+|Ω|
+∑
+ω∈Ω
+∑
+j∈K+
+k
+csub
+2kjs′ω
+2kj
+)
++
+T∑
+t=3
+∑
+k∈K
+(
+csetup
+tk ytk +cprod
+tk xtk +
+∑
+j∈K+
+k
+csub
+tkjstkj +chold
+tk itk
+)
+(6a)
+s.t. xtk ≤Mtkytk ∀t ∈ T, ∀k ∈ K (6b)
+∑
+j∈K−
+k
+s1jk +b1k = ˆD1k +ˆb0k ∀k ∈ K (6c)
+∑
+j∈K−
+k
+s′ω
+2jk +b′ω
+2k =Dω
+k +b1k ∀k ∈ K, ∀ω ∈ Ω (6d)
+∑
+j∈K−
+k
+stjk = E[Dtk] +bt−1,k ∀t ∈ T,t ≥ 3, ∀k ∈ K (6e)
+∑
+j∈K+
+k
+s1kj +i1k = ˆv0k ∀k ∈ K (6f)
+∑
+j∈K+
+k
+s′ω
+2kj +i′ω
+2k =v1k ∀k ∈ K, ∀ω ∈ Ω (6g)
+∑
+j∈K+
+k
+stkj +itk =vt−1,k ∀t ∈ T,t ≥ 3, ∀k ∈ K (6h)
+
+=== PDF PAGE 16 ===
+16
+vtk =itk +xtk ∀t ∈ T, ∀k ∈ K (6i)
+b1k = 0 ∀k ∈ ˆK (6j)
+1
+|Ω|
+∑
+ω∈Ω
+i′ω
+2k =i2k ∀k ∈ K (6k)
+1
+|Ω|
+∑
+ω∈Ω
+b′ω
+2k =b2k ∀k ∈ K (6l)
+∑
+ω∈Ω
+1{(v1,b 1) ∈Q(Dω
+2 )} ≥ ⌈α|Ω|⌉ (6m)
+xt,vt,it,bt ∈ RK
++,st ∈ RK×K
++ ,yt ∈ {0, 1}K ∀t ∈ T (6n)
+i′ω
+2 ,b′ω
+2 ,s′ω
+2 ∈ RK
++, ∀ω ∈ Ω (6o)
+The objective function in (6a) is broken into three parts representing the cost in period 1, the cost
+of period 2, and the cost of periods 3 to T . The cost is the same as the deterministic approximation
+in periods 1 and t ≥ 3. In period 2, the substitution cost is deﬁned for each scenario separately,
+and the average substitution cost over all scenarios is included in this period’s cost. Another key
+diﬀerence of the cost in period 2 is the presence of a backlog penalty term, with backlog “cost”
+parametercback
+2k fork ∈ K. This term is included to encourage the decisions the model selects for the
+diﬀerent scenarios in period 2 (the s′ω
+2 ,i′ω
+2 ,b′ω
+2 variables) to match the decisions that would actually
+be made when that period occurs and the stock-out determination step is applied to enforce that
+there are no stock-outs unless they cannot be avoided. To encourage this match, we suggest to
+select the backlog “cost” parameters cback
+2k so that the fraction of scenarios in which the backlog
+variablesb′m
+2 are zero across all products roughly approximates the desired service level. We stress
+that the valuescback
+2k should be considered as a parameter of the policy, and are not meant to reﬂect
+actual backlog costs.
+Constraints (6b) are production setup constraints. In the case when production for a product k
+does not have a given capacity, the Mtk values can be set as
+Mtk =
+∑
+j∈K+
+k
+(
+ˆb0j + ˆD1j + max
+ω∈Ω
+Dω
+2j +
+T∑
+t=3
+E[Dtj]
+)
+∀t ∈ T, ∀k ∈ K.
+Constraints (6c)-(6e) assure that demand plus carried over backlog are met or backlog is recorded
+in periods 1,2, and t ≥ 3, respectively. In period 1, the current observed demands and backlogs are
+what must be met (i.e., are in the right-hand side). In period 2, the demands for each diﬀerent
+scenario are used. In periods t ≥ 3, we use the expected demands. Constraints (6f)-(6h) relate the
+available inventory in each period with how it is used and the inventory carried over to the next
+period. Constraints (6f) use the current available inventory ˆv0k for the current period constraint
+and restrict the substitution decisions and ending inventory accordingly. Constraints (6g) consider
+
+=== PDF PAGE 17 ===
+17
+analogous constraints in period 2, but do so for each scenario ω ∈ Ω, whereas constraints (6h)
+present the analogous constraints for periodst ≥ 3. Constraints (6k) and (6l) deﬁne the variablesb2k
+andi2k to be the averages of the b′ω
+2k andi′ω
+2k variables over the set of scenarios ω ∈ Ω, respectively.
+These averaged variables are used in the inventory and backlog balance constraints for period 3,
+and hence these constraints provide a critical link between the scenario variables used in period
+2 to model the costs in diﬀerent scenarios. Finally, constraint (6m) represents the service level
+constraint. In this constraint, 1(·) is an indicator that takes the value 1 when the argument is true,
+and 0 otherwise. Thus, this constraint enforces that (v1,b 1) ∈Q(Dω
+2 ) (and hence (v1,b 1) is suﬃcient
+to meet demandsDω
+2 in period 2) in at least α fraction of the scenarios ω ∈ Ω. The constraint (6m)
+is not written in a form that can be given directly to a solver. In the next section we describe a
+branch-and-cut algorithm that can be used to solve the model with this constraint enforced.
+4.3. Solving the chance-constrained model
+We now discuss how to solve the proposed model (6). To do so, we deﬁne the binary variables zω
+for ω ∈ Ω to model the indicator functions in (6m) and replace (6m) with
+∑
+ω∈Ω
+zω ≤ ⌊(1 −α)|Ω|⌋. (7)
+We must then enforce
+zω = 0 ⇒ (v1,b 1) ∈Q(Dω
+2 ) ∀ω ∈ Ω (8)
+so that, for each scenario ω ∈ Ω, ifzω = 0 then the ending available inventoryv1 and backlogb1 are
+adequate to meet demands in period 2 without backlogging. We present two options for enforcing
+the constraints (8).
+4.3.1. Extensive form In the ﬁrst approach for enforcing the constraints (8), we introduce
+variables b
+ω
+to represent the vector of backlog decisions and sω to represent the vector of sub-
+stitution decisions in period 2 in scenario ω. The logical constraint (8) is then enforced with the
+following constraints:
+b
+ω
+k +
+∑
+j∈K−
+k
+sω
+jk =Dω
+k +b1k ∀ω ∈ Ω, ∀k ∈ K (9a)
+∑
+j∈K+
+k
+sω
+kj ≤v1k ∀ω ∈ Ω, ∀k ∈ K (9b)
+b
+ω
+k ≤M
+ω
+kzω ∀ω ∈ Ω, ∀k ∈ K (9c)
+Constraints (9a) and (9b) deﬁne the backlog and substitution for each scenario ω. Constraints (9c)
+guarantee that ifzω = 0 then the backlog variablesb
+ω
+k = 0 for allk ∈ K, so that the other constraints
+then enforce (v1,b 1) ∈Q(Dω
+2 ). In (9c), the M values are deﬁned as:
+M
+ω
+k =Dω
+k + ˆD1k +ˆb0k ∀ω ∈ Ω, ∀k ∈ K. (10)
+
+=== PDF PAGE 18 ===
+18
+The variables b
+ω
+and sω serve a similar role as the variables b′ω
+2 and s′ω
+2 as described in Section
+4.2.2 in that they also represent backlog and substitution decisions in period 2. The diﬀerence is
+that the variables b
+ω
+and sω are used to model the service level constraint, whereas the variables
+b′ω
+2 ands′ω
+2 are used to approximate the cost of the decisions in period 2. Our next approach, which
+we ﬁnd is computationally much more eﬃcient than using (9), does not introduce the variables b
+ω
+and sω.
+4.3.2. Branch-and-cut algorithm The second approach for enforcing (8) is to tailor the
+branch-and-cut algorithm proposed in (Luedtke 2014) to this problem. In this approach, a master
+problem that includes the zω variables and the cardinality constraint (7) (but not the b
+ω
+and sω
+variables or constraints (9)) is constructed and cuts are iteratively added to it to enforce the logical
+constraints (8).
+Assume we have solved a master problem and obtained a solution with (ˆz, ˆv1,ˆb1) as the values for
+(z,v 1,b 1). Note that this solution may or may not satisfy the integrality constraints (e.g., if we have
+solved an LP relaxation of the master problem). Given a demand scenario ω ∈ Ω with ˆzω< 1, our
+task is to assess if (ˆv1,ˆb1) ∈Q(Dω
+2 ), and if not, attempt to generate a cut to remove this solution.
+In the case of an integer feasible solution, we will always be able to do so when (ˆ v1,ˆb1)/∈Q(Dω
+2 ).
+We can test if given (ˆv1,ˆb1) ∈Q(Dω
+2 ) by solving the following LP:
+Vω(ˆv1,ˆb1) := min
+w,sω
+∑
+k∈K
+wk (11a)
+s.t.
+∑
+j∈K−
+k
+sω
+jk +wk =Dω
+2k +ˆb1k ∀k ∈ K (11b)
+∑
+j∈K+
+k
+sω
+kj ≤ ˆv1k ∀k ∈ K (11c)
+w ∈ RK
++,sω ∈ RK×K
++ (11d)
+By construction, (ˆv1,ˆb1) ∈Q(Dω
+2 ) if and only ifVω(ˆv1,ˆb1) ≤ 0, which means that there is no backlog
+for this scenario. Let π and β be the vectors of dual decision variables associated with constraints
+(11b) and (11c), respectively, and let Π be the set of dual feasible solutions. Observe that Π is
+independent of ω and (ˆv1,ˆb1). Thus, for any ( π,β ) ∈ Π and for any ω ∈ Ω, weak duality implies
+that the cut
+∑
+k∈K
+πk(Dω
+2k +b1k) +
+∑
+k∈K
+βkv1k ≤ 0 (12)
+is a valid inequality for Q(Dω
+2 ). Since this inequality must hold whenever zω = 0, the inequality
+∑
+k∈K
+πkb1k +
+∑
+k∈K
+βkv1k ≤ −
+∑
+k∈K
+πkDω
+2k + ¯Mβ,π
+ω zω (13)
+
+=== PDF PAGE 19 ===
+19
+is valid for suitably chosen (large enough) constant ¯Mβ,π
+ω . Furthermore, if (π,β ) is taken to be the
+optimal dual solution to (11) for a given (ˆv1,ˆb1) and scenarioω ∈ Ω, then if ˆzω = 0 andVω(ˆv1,ˆb1)> 0
+then the corresponding cut is violated by (ˆ z, ˆv1,ˆb1), and hence is suﬃcient for cutting oﬀ this
+solution whenever it violates (8).
+We next discuss how to choose ¯Mβ,π
+ω in (13) and use this inequality to derive a family of strong
+valid inequalities that can be used to improve the LP relaxation. First, for each ω ∈ Ω, deﬁne
+hω(π,β ) =
+∑
+k∈K
+πkDω
+2k.
+Using this notation in (13), we conclude that
+∑
+k∈K
+πkb1k +
+∑
+k∈K
+βkv1k ≤ −hω(π,β )
+must be satisﬁed whenever zω = 0. We then sort the values {hω(π,β ) :ω ∈ Ω} to obtain a permu-
+tation σ of Ω which satisﬁes:
+hσ1(π,β ) ≥hσ2(π,β ) ≥ · · · ≥hσ|Ω|(π,β ).
+Then, letting p = ⌊(1 −α)|Ω|⌋, the followings are valid for the master problem (Luedtke 2014):
+∑
+k∈K
+βkv1k +
+∑
+k∈K
+πkb1k ≤ −hσi(π,β ) +
+(
+hσi(π,β ) −hσp+1(π,β )
+)
+zσi, ∀i = 1,...,p
+and hence the coeﬃcient on zσi represents a valid value of ¯Mβ,π
+ω for ω =σi and i = 1,...,p .
+A family of additional valid inequalities can be obtained by then applying mixing inequalities
+(G¨ unl¨ uk and Pochet 2001, Luedtke 2014). Given a subsetT = {t1,t 2,...,t ℓ} ⊆ {σ1,σ 2,...,σ p} with
+t1<t 2< · · ·<tℓ and deﬁning htℓ+1 :=hσp+1, the inequality
+∑
+k∈K
+βkv1k +
+∑
+k∈K
+πkb1k ≤ −ht1(π,β ) +
+ℓ∑
+i=1
+(
+hti(π,β ) −hti+1(π,β )
+)
+zti (14)
+is valid for the master problem. Although the number of such inequalities grows exponentially with
+p, there is an eﬃcient algorithm for ﬁnding a most violated inequality (G¨ unl¨ uk and Pochet 2001)
+for given (ˆz, ˆb1, ˆv1), which we describe for completeness in Algorithm 2 in Appendix A.
+Thus, given a solution (ˆz, ˆb1, ˆv1) of the master problem, we proceed as follows to search for a
+cut. For any scenario ω ∈ Ω with ˆzω< 1, we solve problem (11) to obtain a dual solution (ˆπ, ˆβ). If
+Vω(ˆv1,ˆb1)> 0, we computehω′(ˆπ, ˆβ) for allω′ ∈ Ω and ﬁnally search for a most violated inequality of
+the form (14) and add it to the master problem, if violated. Within the branch-and-bound algorithm
+for solving the master problem, at the root node (i.e., the initial relaxation before branching) we
+carry out this process for any ω ∈ Ω with ˆzω< 1 in the LP relaxation. At other solutions obtained
+in the branch-and-bound search, we only attempt to generate cuts when the solution ˆz is integer-
+valued (and hence only for scenarios ω with ˆzω = 0). This is suﬃcient to guarantee that only
+solutions that satisfy (8) are accepted as feasible within the search process, thus leads to a correct
+solution. We refer to (Luedtke 2014) for more details of the convergence analysis for this algorithm.
+
+=== PDF PAGE 20 ===
+20
+5. Computational experiments
+We next report the results of our computational study which illustrate the ability of the proposed
+method to solve the chance-constrained model, demonstrate the beneﬁts of the chance-constrained
+model-driven policy over policies based on deterministic approximations, and explore the beneﬁts
+of substitution.
+5.1. Instance generation
+We generate a variety of test instances using (Rao et al. 2004) and (Hsu et al. 2005) as guidance
+for choosing substitution related parameters, and (Helber et al. 2013) for choosing the lot-sizing
+related parameters. Table 3 presents the key parameters we use to deﬁne an instance, their base
+value and the range of values we consider for this parameter when creating instances with diﬀerent
+characteristics. We use K = 10 products in all our tests. For the service level target α, we range
+this between 80% and 99%, with 95% as the base case. The parameters η,τ,ρ, and TBO are used
+to calculate the cost parameters as described in Table 4. Parameter η aﬀects the relative diﬀerence
+in cost between the diﬀerent products. Parameter τ impacts the cost of substitution (higher τ
+means substitution is more costly). The parameter ρ determines the holding cost relative to the
+production cost, and the parameter TBO (time between orders) controls the relative setup cost.
+Parameter Base Case Variation
+K 10
+η 0.2 0.1, 0.2, 0.5
+τ 1.5 1, 1.25, 1.5, 1.75, 2, 2.5
+ρ 0.05 0.02, 0.05, 0.1, 0.2 ,0.5
+TBO 1 1, 1.25, 1.5, 1.75, 2
+α 95% 80%, 90%, 95%, 99%
+Table 3 Base case and sensitivity analysis parameters
+¯cprod
+tk 1 +η × (K −k)
+csub
+tkj max{0,τ × (¯cprod
+tk − ¯cprod
+tj )}
+chold
+tk ρ × ¯cprod
+tk
+csetup
+tk E[Dtk] ×TBO 2 ×chold
+tk /2
+Table 4 Cost parameters
+In terms of the allowed substitution between products, we assume the products are ordered such
+that product 1 is the highest quality and product 10 is the lowest quality. In our base case, we
+assume that product k can be used to meet demand of product j if k ≤j (so it is a higher quality
+product) and k ≥j − 3 (so it is not more than three levels higher in the ranking). Observe that
+when τ = 1 the cost of substituting a unit of product k for a unit of product j is exactly equal to
+the diﬀerence in production costs for these products. Thus, τ = 1 is a natural minimum value for
+this parameter in order to reﬂect the diﬀerence in production costs when substitution is performed,
+whereas larger values of τ represent the desire of a ﬁrm to limit the use of substitution, e.g., for
+business policy reasons.
+In every model that we solve, we enforce that the end-of-horizon backlog is zero for all products
+and hence the total amount of production is the same regardless of the model used. Since diﬀerences
+
+=== PDF PAGE 21 ===
+21
+in production costs attributed to substitution are recorded in the substitution cost as described in
+the previous paragraph, we set all production costscprod
+tk equal to zero for allk ∈ K andt ∈ T in our
+experiments in order to exclude this cost from the cost comparison since it is constant across all
+policies. The parameters ¯cprod
+tk in Table 4 are used only to determine the values of the parameters
+csub
+tkj and chold
+tk as described in the table.
+Recall that the chance-constrained model uses an artiﬁcial backlog cost on the backlog variables
+in period 2 which needs to be tuned. We found that setting this parameter equal to the maximum
+possible cost of substitution yields reasonable results. Thus, we set
+cback
+2k = max
+l∈K,j∈K−
+k
+csub
+2jl ∀k ∈ K. (15)
+The demands are assumed to be independent across diﬀerent products, but demands for each
+product follow an auto-regressive (AR) model (Jiang et al. 2017) which induces correlation in
+demand across time periods:
+Dt+1,k =C +AR1Dtk +AR2ϵt+1,k ∀k ∈ K, ∀t ∈ T, (16)
+where C,AR 1, and AR2 are parameters of the model, and ϵt+1,k is a random noise with normal
+distribution with the mean of 0 and standard deviation of 1. In our data sets, we use C = 20,
+AR1 = 0.8, andAR2 = 10. Note that the expected demand for each product in each period is equal
+to C/(1 −AR1) = 100.
+As we have no production in the ﬁrst period, we assume that the demand in the ﬁrst period
+is zero, otherwise, if there is no initial inventory, the service level constraint will not be satisﬁed.
+We initialize the AR data generation procedure with D0k =C/(1 −AR1) (the expected demand),
+and then use (16) with randomly generated values of ϵt+1,k to determine the values of Dt+1,k for
+t ≥ 0. For the random perturbations ϵt+1,k, we generate a single ﬁxed sample of values {ˆϵℓ
+k :ℓ =
+1,...,m,k ∈ K} according to the standard normal distribution. Then, in each iteration of simulating
+demands following the AR process, we choose a sample from this ﬁxed set uniformly at random.
+The algorithms are implemented in Python and MILP/LP models are solved using IBM ILOG
+CPLEX version 12.8. All the experiments are performed on a 2.4 GHz Intel Gold processor with
+only one thread on the B´ eluga, Digital Research Alliance of Canada computing grid.
+5.2. Methodology evaluation
+In this section, we test the eﬃciency of the two methods for solving the two-stage chance-
+constrained model, the extensive form described in Section 4.3.1 and the proposed branch-and-cut
+(B&C) algorithm described in Section 4.3.2. To this end, we generate one instance of each of the
+following parameter combinations: T ∈ {6, 8, 10}, K = 10,η = 0.2, τ = 0.5, ρ = 0.1, TBO ∈ {1, 2},
+
+=== PDF PAGE 22 ===
+22
+α ∈ {80%, 90%, 95%, 99%}, and |Ω| ∈ {100, 200, 300, 500, 1000}. Thus, we have 120 instances in total.
+The initial state is set by running the simulation described in the next section through its warm-up
+period using a ﬁxed policy, and then using the initial state for the ﬁve iterations using the two
+policies. We emphasize that the policy used in the simulation is used just to generate the initial
+state for the next ﬁve iterations. Given one such ﬁxed instance, we then solve it with the two
+diﬀerent methods to compare the computational performance of the methods. We set a time limit
+of 7200 seconds to solve each of these instances.
+We analyze the performance of the two methods using three measures: the average CPU time
+in seconds (Time), the average optimality gap after the time limit is reached (Gap), and the
+percentage of instances that were solved to optimality within the time limit (% OPT).
+Table 5 Comparison of methodologies to solve the two-stage chance-constrained model.
+B&C Extensive form
+Time Gap (%) % Opt Time Gap(%) % Opt
+|Ω|
+100 10.3 0.0 100 74.6 0.0 100
+200 34.6 0.0 100 400.8 0.0 100
+300 60.6 0.0 100 1152.5 0.0 97
+500 206.1 0.0 100 3356.3 0.4 80
+1000 990.1 0.0 98 6170.3 1.7 26
+α (%)
+80 417.2 0.0 99 2486.6 0.4 78
+90 299.5 0.0 100 2690.7 0.6 76
+95 202.2 0.0 99 2166.3 0.5 79
+99 122.5 0.0 100 1579.9 0.4 89
+T
+6 131.4 0.0 100 1780.3 0.4 84
+8 261.8 0.0 99 2040.1 0.3 84
+10 387.9 0.0 99 2872.3 0.8 73
+Average 260.4 0.0 100 2230.9 0.5 80
+The results are given in Table 5, where each row presents results averaged over all instances
+sharing a particular parameter level as given in the ﬁrst column. For example, the ﬁrst row of data
+presents aggregate results over all instances with |Ω| = 100, and the ﬁrst row of data in α section
+presents aggregate results over all instances with α = 80%. From this table we see that the branch-
+and-cut method successfully solves nearly all instances within the time limit, and in signiﬁcantly
+less time than using the extensive form, and that this result is consistent across all ranges of
+parameters. Most signiﬁcantly, we observe that with the branch-and-cut method we are able to
+solve instances of varying size in terms of number of time periods and number of scenarios used
+to approximate the chance constraint. The results also indicate that instances with higher service
+level can be solved faster by both methods. Finally, as expected we observe that the solution time
+increases with the number of time periods and with the number of scenarios used to approximate
+the distribution of product demands.
+
+=== PDF PAGE 23 ===
+23
+5.3. Policy evaluation
+5.3.1. Evaluation via simulation Recall that the setting for the problem we study is an
+inﬁnite-horizon problem in which decisions are repeatedly made over time, and the proposed deci-
+sion policies are based on solving a ﬁnite-horizon problem to be used in a rolling-horizon framework.
+That is, in each period a model with T planning periods is solved, and only the decisions corre-
+sponding to the ﬁrst period are implemented. Based on these decisions and the observed demand,
+the state of the system is updated and the next T -period model is solved, and the process repeats.
+Algorithm 1: Rolling-horizon implementation
+OUTPUT: The conﬁdence intervals on the total cost and the service level
+INPUT: Demand simulation over TSim periods, Number of warm-up periods TWarm ,
+Production policy
+ˆt = 1, ˆv0 = 0,ˆb0 = 0, O = ∅, Z = ∅, ˆD1 = 0
+while ˆt ≤TSim do
+Solve the stock-out determination model (3) using ( ˆDˆt,ˆbˆt−1, ˆvˆt−1) as the input
+( ˆD1,ˆb0, ˆv0) and let b∗ be its optimal backlog solution.
+Let ˆK = {k ∈ K :b∗
+k = 0}
+Solve either (4) or a sample-approximation of (6), based on selected policy, using
+( ˆDˆt,ˆbˆt−1, ˆvˆt−1) as the input ( ˆD1,ˆb0, ˆv0) and the computed set ˆK.
+Let ˆxˆt, ˆyˆt, ˆsˆt,ˆbˆt,ˆiˆt, ˆvˆt be the ﬁrst-period components of the optimal solution, and let the
+Objˆt be the total cost in period ˆt based on this solution.
+if ∃k ∈ K with b∗
+ˆtk> 0 then
+Zˆt = 1
+else
+Zˆt = 0
+if ˆt ≥TWarm then
+Add Objˆt and Zˆt to the set O and Z, respectively
+for k ∈ K do
+if ˆt = 1 then
+ˆDˆtk ←C/(1 −AR1)
+Obtain a realization ˆϵ of ϵˆt+1,k
+ˆDˆt+1,k ←C +AR1 ˆDˆtk +AR2ˆϵ
+ˆt ← ˆt + 1Build conﬁdence intervals for the cost and service level using O and Z, respectively.
+We implement a steady-state simulation to test diﬀerent policies, as described in Algorithm
+1. At each time period ˆt we ﬁrst execute the stock-out determination model and then solve a
+ﬁnite-horizon model depending on the selected policy. Speciﬁcally, we test three diﬀerent policies:
+• Average: Based on solving the deterministic approximation (4), where we use the expected
+value of future demands as the demands in periods 2 ,...,T in (4), where the expected values are
+conditional on the current observed demands.
+
+=== PDF PAGE 24 ===
+24
+• Quantile: Based on solving the deterministic approximation (4), but with the α quantile of
+the random demand used as the demand for each product in period 2, and the expected values of
+future demands are used as the demands in periods 3 ,...,T .
+• CC: Based on solving a sample-average approximation of the two-stage chance-constrained
+model (6).
+For all policies we use a look-ahead horizon of T = 6 periods, which was determined based on
+preliminary experiments that indicated using more periods did not appear to yield better results.
+For the CC policy, we use a sample size of 100 scenarios for the sample average approximation. We
+use this relatively small number of scenarios to ease the computational burden of the experiments,
+since we must solve this model in each of the (over 4000) periods of the simulation run for each
+test instance. We emphasize that when using this policy in practice it would only be necessary to
+solve a single model in each period, and the results from Section 5.2 demonstrate that it would
+then be feasible to use signiﬁcantly more scenarios (and a longer time horizon to look ahead) in
+case that is necessary to yield a better approximation.
+We run the simulation forTSim = 4010 time periods, and ignore the ﬁrstTWarm = 10 time periods
+as a warm-up phase when computing estimates of the average cost and service level. In each time
+period after the warm-up phase, we record the actual cost (sum of setup costs, holding costs, and
+substitution costs) in that time period and an indicator of whether or not there was backlog in any
+product during that time period. Recall that we do not include production costs, as the long-run
+average of the total number of products made per period is the same for all policies, and diﬀerences
+in production costs that are incurred due to substitution are included in the substitution cost. For
+calculating the conﬁdence intervals on these measures, we use batch-means estimation, with 160
+batches of 25 time periods each.
+5.3.2. Policy comparison We ﬁrst compare the three policies against each other. This com-
+parison is based on the estimated average cost per period and the estimated service level, using
+the procedure explained in Section 5.3.1. Table 6 compares the three policies using these measures
+and their 95% conﬁdence interval at two diﬀerent levels of the TBO parameter and four diﬀerent
+service level targets. Among the three policies the CC policy is the only policy which respects
+the service level target in all the instances. In all the instances with acceptable service level the
+CC policy has the lowest cost. Among the three policies, the average policy consistently provides
+service level below the target. We thus do not report the performance of the average policy in the
+following experiments. The quantile policy, on the other hand, demonstrates better potential for
+meeting the service level targets.
+
+=== PDF PAGE 25 ===
+25
+Table 6 Policy comparison based on total cost and service level
+TBO α (%) Total cost Service level (%)
+Average Quantile CC Average Quantile CC
+1 80 74 .4 ± 0.4 66 .4 ± 0.2 66 .7 ± 0.2 21 .4 ± 1.4 76 .5 ± 1.4 84 .9 ± 1.3
+90 74 .4 ± 0.4 68 .2 ± 0.1 67 .1 ± 0.2 21 .4 ± 1.4 90 .6 ± 1.1 90 .3 ± 1.1
+95 74 .4 ± 0.4 71 .0 ± 0.1 67 .6 ± 0.2 21 .4 ± 1.4 94 .1 ± 0.9 95 .3 ± 0.7
+99 74 .4 ± 0.4 76 .1 ± 0.1 69 .1 ± 0.2 21 .4 ± 1.4 99 .1 ± 0.3 99 .1 ± 0.3
+2 80 204 .3 ± 0.6 204 .3 ± 0.5 191 .2 ± 0.6 78 .1 ± 2.7 93 .2 ± 1.2 98 .7 ± 0.4
+90 204 .3 ± 0.6 207 .2 ± 0.4 192 .4 ± 0.6 78 .1 ± 2.7 97 .4 ± 0.6 99 .5 ± 0.3
+95 204 .3 ± 0.6 210 .0 ± 0.4 193 .5 ± 0.6 78 .1 ± 2.7 98 .5 ± 0.5 99 .8 ± 0.2
+99 204 .3 ± 0.6 215 .3 ± 0.4 195 .4 ± 0.6 78 .1 ± 2.7 99 .7 ± 0.2 100 .0 ± 0.0
+The rest of this section is dedicated to the comparison between the CC and quantile policies
+using the additional instances presented in Table 3. To this end, we use two measures, the joint
+service level and the relative cost change, ∆Cost, which is deﬁned as:
+∆Cost(%) = Total CostQuantile − Total CostCC
+Total CostQuantile
+× 100 (17)
+Positive ∆Cost means that the CC policy had lower costs than the Quantile policy. Figure 4 shows
+the comparison of the quantile policy and the CC policy under diﬀerent values of TBO. Figure 4-
+(a) shows the service level, labeled as SL, for each of the policies at diﬀerent values of TBO and
+Figure 4-(b) illustrate the ∆Cost for each value of TBO. In these and all following ﬁgures in this
+section, the point estimates of the quantities are displayed with a point and the whiskers represent
+the 95% conﬁdence interval of the estimated quantity. In all cases, the CC policy has a better
+performance in terms of service level. The CC policy has a lower cost in all cases in which both
+1 1.25 1.5 1.75 2
+TBO
+90
+92
+94
+96
+98
+100SL(%)
+Chance constraint policy
+Quantile policy
+(a) Service level
+1 1.25 1.5 1.75 2
+TBO
+10.0
+7.5
+5.0
+2.5
+0.0
+2.5
+5.0
+7.5
+10.0
+Cost(%)
+ (b) Total cost
+Figure 4 Comparison based on TBO
+
+=== PDF PAGE 26 ===
+26
+policies have an acceptable service level. When TBO is more than 1 the obtained service level
+exceeds the target. This is caused by a combination of the impact of higher setup cost when TBO
+is larger than 1 and the use of the stock-out determination step to enforce that backlog is positive
+only when necessary. Speciﬁcally, when the setup costs are higher, it is generally optimal to place
+orders less frequently, and thus more inventory is carried on average. When there is more inventory
+on-hand, the stock-out determination step will usually ﬁnd that it is possible to avoid any backlog.
+Figure 5 shows the comparison based on diﬀerent values of the production cost variability param-
+eter η under two diﬀerent values of TBO, 1 and 2. Higher η means higher variability in the
+production costs. When TBO is equal to 1, the quantile policy service level is slightly lower than
+the target service level. In all cases, the CC policy has a better performance in terms of service
+level and total cost.
+0.1 0.2 0.5
+90
+92
+94
+96
+98
+100SL(%)
+TBO =1
+Chance constraint policy
+Quantile policy
+0.1 0.2 0.5
+TBO = 2
+(a) Service level
+0.1 0.2 0.5
+10.0
+7.5
+5.0
+2.5
+0.0
+2.5
+5.0
+7.5
+10.0
+Cost(%)
+TBO =1
+0.1 0.2 0.5
+TBO =2 (b) Total cost
+Figure 5 Comparison based on η
+Figure 6 shows the comparison based on diﬀerent service level targets under two diﬀerent values
+of TBO, 1 and 2. In all cases, the CC policy respects the service level target and in cases where
+both policies have an acceptable service level, the CC policy has better performance in terms of
+the total cost. We observe that when the service level increases, the relative performance of the
+CC policy against the quantile policy improves.
+Figure 7 is complementary to Figure 6 and illustrates the trend of the total cost for diﬀerent
+values of service level. As can be seen in this ﬁgure, the total cost of the quantile policy increases
+signiﬁcantly with an increase in the target service level, whereas with the CC policy a higher service
+level can be achieved with signiﬁcantly less increase in cost.
+
+=== PDF PAGE 27 ===
+27
+80 90 95 99
+Target SL(%)
+75
+80
+85
+90
+95
+100SL(%)
+TBO =1
+Chance constraint policy
+Quantile policy
+80 90 95 99
+Target SL(%)
+TBO = 2
+(a) Service level
+80 90 95 99
+Target SL(%)
+10.0
+7.5
+5.0
+2.5
+0.0
+2.5
+5.0
+7.5
+10.0
+Cost(%)
+TBO =1
+80 90 95 99
+Target SL(%)
+TBO =2 (b) Total cost
+Figure 6 Comparison based on the target service level
+80 90 95 99
+Target SL(%)
+55
+60
+65
+70
+75
+80Total cost
+TBO =1
+Chance constraint policy
+Quantile policy
+80 90 95 99
+Target SL(%)
+190
+195
+200
+205
+210
+215
+220
+TBO =2
+Figure 7 Total cost trend comparison based on α
+Figure 8 shows a similar comparison based for varying values of the parameter τ, which impacts
+the substitution cost ( τ = 1 is the minimum case where substitution cost is just equal to the
+diﬀerence in production costs, whereas τ >1 adds a higher penalty for substitution). We see that
+the CC policy yields higher service levels and lower costs than the quantile policy over all tested
+values of τ.
+We can conclude that although the quantile policy has a reasonable performance in general in
+terms of meeting the service level target, the proposed CC policy consistently achieves both higher
+service levels and lower costs than the quantile policy.
+
+=== PDF PAGE 28 ===
+28
+1 1.25 1.5 1.75 2 2.5
+90
+92
+94
+96
+98
+100SL(%)
+TBO =1
+Chance constraint policy
+Quantile policy
+1 1.25 1.5 1.75 2 2.5
+TBO = 2
+(a) Service level
+1 1.25 1.5 1.75 2 2.5
+10.0
+7.5
+5.0
+2.5
+0.0
+2.5
+5.0
+7.5
+10.0
+Cost(%)
+TBO =1
+1 1.25 1.5 1.75 2 2.5
+TBO =2 (b) Total cost
+Figure 8 Comparison based on τ
+5.4. The importance of the stock-out determination step
+When TBO is greater than 1 the service level obtained with the CC policy exceeds the target (see
+Figure 4-(a)). This is because setup costs are higher when TBO is greater than 1, and hence when
+production occurs, the production quantities are higher to save on setup costs. This leads to higher
+inventory levels on average, and hence it is frequently possible to avoid having any backlog in a
+period. However, this raises the question of whether average costs could be reduced further if we did
+not use the stock-out determination model to avoiding backlog whenever possible. We thus conduct
+an experiment to estimate the service level and total cost when the stock-out determination step
+is skipped. Speciﬁcally, in this case we never enforce that the backlog variables equal to zero when
+solving the chance-constrained model (6).
+Figure 9-(a) presents the service level obtained with and without the stock-out determination
+step and Figure 9-(b) presents the cost decrease that is obtained when the stock-out determination
+step is skipped. We observe that skipping the stock-out determination step does lead to cost
+reductions, but the magnitude of the reductions is modest. On the other hand, without the stock-out
+determination step the service level falls below 20%. This gap indicates that there are many periods
+in which it is possible to meet all customer demands, but solving the chance-constrained model
+(6) without any constraints requiring this consistently leads to solutions in which demands are
+backlogged. This illustrates the need to have some mechanism that assures demands are fulﬁlled in
+the current period when possible. While the stock-out determination step is not the only possibility
+for achieving this, this experiment suggest that it is reasonably eﬀective, as the cost increase
+is modest even when compared to the extreme alternative of ignoring current period demands
+altogether.
+
+=== PDF PAGE 29 ===
+29
+1 1.25 1.5 1.75 2
+TBO
+20
+40
+60
+80
+100SL(%)
+With backlog determination
+Without backlog determination
+(a) Service level
+1 1.25 1.5 1.75 2
+TBO
+10.0
+7.5
+5.0
+2.5
+0.0
+2.5
+5.0
+7.5
+10.0
+Cost(%)
+ (b) Total cost
+Figure 9 The necessity of the stock-out determination step.
+The stock-out determination step can be interpreted as allowing backlogging only when abso-
+lutely necessary. While we do not pursue this here, a conceptually simple modiﬁcation to this policy
+would be to allow backlogging when the cost of meeting all current demands (e.g., via substitu-
+tions) exceeds some ﬁxed threshold. This threshold would need to be tuned so that the service level
+target is satisﬁed. This may allow a reduction in average cost by reducing the degree to which the
+achieved service level exceeds the target.
+5.4.1. Eﬀect of substitution We next investigate the extent to which substitution allows
+achieving service level targets at reduced costs. We also explore the relative beneﬁts from allowing
+a wider range of products to be substituted for each other. To this end, we evaluate the service
+level and average cost using the CC policy and three levels of substitution: (1) no substitution
+allowed, (2) partial substitution, which corresponds to our base case in which product k can be
+used to meet demand of product j ifj ≥k (sok is a higher quality product) and k ≥j − 3, and (3)
+full substitution, in which product k can be used to meet demand of any product j ≥k.
+In Figure 10 we display the cost reduction of the two cases in which substitution is allowed
+relative to the case with no substitution, for varying values of service level and TBO equal to 1 and
+2. These results indicate that substitution enables signiﬁcant cost savings, and that the savings are
+signiﬁcantly higher when TBO is higher (i.e., for instances where the setup costs are higher). We
+also observe that the cost savings are about the same with full and partial substitution, showing
+that a limited amount of allowed product substitution can capture the majority of the beneﬁt.
+6. Conclusion
+We study an inﬁnite-horizon stochastic lot-sizing problem with a supplier-driven product substi-
+tution option and the service level constraint which is deﬁned jointly over diﬀerent products. To
+
+=== PDF PAGE 30 ===
+30
+80 90 95 99
+Target SL(%)
+0
+5
+10
+15
+20
+25Cost(%)
+TBO =1
+Full substitution
+Partial substitution
+80 90 95 99
+Target SL(%)
+TBO =2
+Figure 10 Eﬀect of substitution (Relative cost decrease)
+solve this problem, we consider a ﬁnite-horizon version of this problem and apply it in a rolling-
+horizon framework. We propose diﬀerent policies based on solving a diﬀerent approximation of this
+multi-stage problem to make the decisions in each period. We propose two deterministic policies
+and a policy based on solving a two-stage chance-constrained stochastic program. We also present
+a branch-and-cut algorithm for eﬀectively solving the two-stage chance-constrained model.
+We conducted an extensive evaluation comparing these policies within a simulation study. The
+results indicate that the proposed chance-constraint policy leads to reliable satisfaction of the
+service level targets, and does so at signiﬁcantly lower cost than the approximations based on
+solving deterministic models. Most signiﬁcantly, we ﬁnd that allowing supplier-driven substitution
+can lead to very signiﬁcant reductions in costs to meet a desired service level target, and that these
+reductions can be obtained by allowing product substitution between a relatively limited range of
+products, and are most signiﬁcant when setup costs are relatively higher.
+Acknowledgments
+The authors gratefully acknowledge the support of the Digital Research Alliance of Canada and FRQNT
+International Internship Program.
+References
+Ak¸ cay Y, Li Y, Natarajan HP (2020) Category inventory planning with service level requirements and
+dynamic substitutions. Production and Operations Management 29(11):2553–2578.
+Bassok Y, Anupindi R, Akella R (1999) Single-period multiproduct inventory models with substitution.
+Operations Research 47(4):632–642.
+
+=== PDF PAGE 31 ===
+31
+Bitran GR, Dasu S (1992) Ordering policies in an environment of stochastic yields and substitutable demands.
+Operations Research 40(5):999–1017.
+Bitran GR, Gilbert SM (1994) Co-production processes with random yields in the semiconductor industry.
+Operations Research 42(3):476–491.
+Bitran GR, Leong TY (1992) Deterministic approximations to co-production problems with service con-
+straints and random yields. Management Science 38(5):724–742.
+Bookbinder JH, Tan JY (1988) Strategies for the probabilistic lot-sizing problem with service-level con-
+straints. Management Science 34(9):1096–1108.
+Chen B, Chao X (2020) Dynamic inventory control with stockout substitution and demand learning. Man-
+agement Science 66(11):5108–5127.
+Gicquel C, Cheng J (2018) A joint chance-constrained programming approach for the single-item capacitated
+lot-sizing problem with stochastic demand. Annals of Operations Research 264(1):123–155.
+Guan Y (2011) Stochastic lot-sizing with backlogging: computational complexity analysis. Journal of Global
+Optimization 49(4):651–678.
+Guan Y, Miller AJ (2008) Polynomial-time algorithms for stochastic uncapacitated lot-sizing problems.
+Operations Research 56(5):1172–1183.
+G¨ unl¨ uk O, Pochet Y (2001) Mixing mixed-integer inequalities.Mathematical Programming 90(3):429–457.
+Haugen KK, Løkketangen A, Woodruﬀ DL (2001) Progressive hedging as a meta-heuristic applied to stochas-
+tic lot-sizing. European Journal of Operational Research 132(1):116–122.
+Helber S, Sahling F, Schimmelpfeng K (2013) Dynamic capacitated lot sizing with random demand and
+dynamic safety stocks. OR Spectrum 35(1):75–105.
+Hsu A, Bassok Y (1999) Random yield and random demand in a production system with downward substi-
+tution. Operations Research 47(2):277–290.
+Hsu VN, Li CL, Xiao WQ (2005) Dynamic lot size problems with one-way product substitution. IIE Trans-
+actions 37(3):201–215.
+Jiang Y, Xu J, Shen S, Shi C (2017) Production planning problems with joint service-level guarantee: a
+computational study. International Journal of Production Research 55(1):38–58.
+Lang JC, Domschke W (2010) Eﬃcient reformulations for dynamic lot-sizing problems with product substi-
+tution. OR Spectrum 32(2):263–291.
+Liu X, K¨ u¸ c¨ ukyavuz S (2018) A polyhedral study of the static probabilistic lot-sizing problem.Annals of
+Operations Research 261(1):233–254.
+Luedtke J (2014) A branch-and-cut decomposition algorithm for solving chance-constrained mathematical
+programs with ﬁnite support. Mathematical Programming 146(1):219–244.
+
+=== PDF PAGE 32 ===
+32
+Luedtke J, Ahmed S (2008) A sample approximation approach for optimization with probabilistic constraints.
+SIAM Journal on Optimization 19(2):674–699.
+Lulli G, Sen S (2004) A branch-and-price algorithm for multistage stochastic integer programming with
+application to stochastic batch-sizing problems. Management Science 50(6):786–796.
+Lulli G, Sen S (2006) A heuristic procedure for stochastic integer programs with complete recourse. European
+Journal of Operational Research 171(3):879–890.
+Nagarajan M, Rajagopalan S (2008) Inventory models for substitutable products: Optimal policies and
+heuristics. Management Science 54(8):1453–1466.
+Ng TS, Fowler J, Mok I (2012) Robust demand service achievement for the co-production newsvendor. IIE
+Transactions 44(5):327–341.
+Rao US, Swaminathan JM, Zhang J (2004) Multi-product inventory planning with downward substitution,
+stochastic demand and setup costs. IIE Transactions 36(1):59–71.
+Sereshti N, Adulyasak Y, Jans R (2021) The value of aggregate service levels in stochastic lot sizing problems.
+Omega 102:102335.
+Shin H, Park S, Lee E, Benton W (2015) A classiﬁcation of the literature on the planning of substitutable
+products. European Journal of Operational Research 246(3):686–699.
+Tempelmeier H (2007) On the stochastic uncapacitated dynamic single-item lotsizing problem with service
+level constraints. European Journal of Operational Research 181(1):184–194.
+Zeppetella L, Gebennini E, Grassi A, Rimini B (2017) Optimal production scheduling with customer-driven
+demand substitution. International Journal of Production Research 55(6):1692–1706.
+Zhang M, K¨ u¸ c¨ ukyavuz S, Goel S (2014) A branch-and-cut method for dynamic decision making under joint
+chance constraints. Management Science 60(5):1317–1333.
+Zhang Z, Gao C, Luedtke J (2022) New valid inequalities and formulations for the static joint Chance-
+constrained Lot-sizing problem. Mathematical Programming 1–31.
+
+=== PDF PAGE 33 ===
+33
+Appendix A: Cut Separation Algorithm
+Algorithm 2: Finding a most violated inequality of the form (14).
+OUTPUT: A most violated mixing inequality deﬁned by the ordered index set T
+INPUT: ˆzω, hω(π,β ) for ω ∈ Ω, p
+Sort the ˆz components to obtain permutation σ of the indices satisfying:
+ˆzσ1 ≤ ˆzσ2 ≤ · · · ≤ˆzσp+1 ≤ · · ·
+v ←hσp+1(π,β )
+T ← {}
+i ← 1
+while v<h σ1(π,β ) do
+if hσi(π,β )>v then
+T ←T ∪ {σi}
+v ←hσi(π,β )
+i ←i + 1

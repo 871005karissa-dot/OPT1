@@ -1,0 +1,128 @@
+{
+  "question": "Does the recorded deterministic quality/capacity substitution threshold execute as predicted?",
+  "assumptions": "Round51: independently simulate the constructive deterministic substitution rule.\n\nValidate no substitution, automatic maximum substitution, and the round50\nwhole-order service rule on fresh multinomial quality histories. All policies\nshare a quality realization, so differences are paired. The implementation uses\nthe recorded observed-capacity/grade prefix, not an unimplemented randomized coin.\n",
+  "seed": 2026102851,
+  "replicas": 1024,
+  "input": 1614.9252030990174,
+  "target": 0.9,
+  "family_error_probability": 0.05,
+  "hoeffding_radius": 0.006593164832120611,
+  "trace": {
+    "path": "research\\2026-10-28\\service_rounds\\round51_replica_values.npz",
+    "sha256": "e8387d660583ed222c10261063f15bec1b731f404ee1083bce1a9e7e048116c1"
+  },
+  "headline": {
+    "elapsed_seconds": 6.52922110000145,
+    "policies": 3
+  },
+  "rows": [
+    {
+      "policy": "none",
+      "exact": {
+        "profit": 22927.79950753503,
+        "service": 0.3245767950807863
+      },
+      "MC_profit": {
+        "estimate": 22923.228219528057,
+        "standard_error": 4.112931384841324,
+        "normal_approximation_95_interval": [
+          22915.167022142883,
+          22931.28941691323
+        ],
+        "replicas": 1024
+      },
+      "MC_service": {
+        "estimate": 0.3290679725691455,
+        "standard_error": 0.002071435047926332,
+        "normal_approximation_95_interval": [
+          0.325008034478896,
+          0.333127910659395
+        ],
+        "replicas": 1024
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.32247480773702486,
+        0.33566113740126613
+      ]
+    },
+    {
+      "policy": "mandatory",
+      "exact": {
+        "profit": 22413.230401062872,
+        "service": 0.9485464513374998
+      },
+      "MC_profit": {
+        "estimate": 22410.711012310647,
+        "standard_error": 4.049244898738101,
+        "normal_approximation_95_interval": [
+          22402.77463814454,
+          22418.647386476754
+        ],
+        "replicas": 1024
+      },
+      "MC_service": {
+        "estimate": 0.9485619704573875,
+        "standard_error": 7.293914102646231e-06,
+        "normal_approximation_95_interval": [
+          0.94854767464844,
+          0.9485762662663351
+        ],
+        "replicas": 1024
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.941968805625267,
+        0.9551551352895081
+      ]
+    },
+    {
+      "policy": "deterministic_service_rule",
+      "exact": {
+        "profit": 22541.061022039758,
+        "service": 0.9000007747322292
+      },
+      "MC_profit": {
+        "estimate": 22537.93747825811,
+        "standard_error": 4.124969293351488,
+        "normal_approximation_95_interval": [
+          22529.85268700581,
+          22546.022269510413
+        ],
+        "replicas": 1024
+      },
+      "MC_service": {
+        "estimate": 0.900258251473351,
+        "standard_error": 0.00036466041104704443,
+        "normal_approximation_95_interval": [
+          0.8995435302011113,
+          0.9009729727455907
+        ],
+        "replicas": 1024
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8936650866412305,
+        0.9068514163054716
+      ]
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T18:44:54.927173+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round51_substitution_policy_validation.py": "14ca54093a220482ec93bd1ec53b8a8a4f3853965a61d6eafddaee4feee9e312",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\adaptive_substitution.py": "9f4945e19bec7e30599fa621cb5beb139d6135f48ee201b08263e29dc54e8e83",
+      "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+      "backbone\\round44_random_quality_counts.py": "7b65eadc503cb25f5aa6ac1ceebb48fdb55bcd56cb1dcc1644cb211c2541065b",
+      "backbone\\round50_adaptive_substitution.py": "be9ca839689cc0567476baa89a88ae3b4985e29e488737d88c0b8aabd9352cc6"
+    }
+  }
+}

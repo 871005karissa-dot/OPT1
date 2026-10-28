@@ -1,0 +1,1918 @@
+{
+  "question": "Would the canonical0-or-full return structure survive a more conservative terminal resale assumption?",
+  "assumptions": "Round77: the full-return simplification depends on terminal values.\n\nOne synthetic, reachable observed state, not population/factory results:\nA725,B300,E40,remaining work40,D=(750,150),eta.97,c12.4,F2000.\nOnly scale terminal values together: (v1,v2)=t*(90,30). Price/demand/fee/\nsuccess/initial counts remain fixed. Choose r BEFORE its future outcomes.\nThe existing binary0/R solvers must not be reused once their positive-marginal\ncondition fails; this script enumerates all integer amounts independently.\n",
+  "observed_state": {
+    "A": 725,
+    "B": 300,
+    "eligible": 40,
+    "spare": 40,
+    "demands": [
+      750,
+      150
+    ],
+    "eta": 0.97,
+    "setup_fee": 2000.0
+  },
+  "positive_excess_marginal_scale_threshold": 0.21640488656195464,
+  "headline": {
+    "terminal_scales": 6,
+    "integer_actions_per_scale": 41,
+    "direct_cash_vs_gain_max_error": 2.9103830456733704e-11,
+    "marginal_identity_max_error": 6.430411758628907e-13
+  },
+  "rows": [
+    {
+      "terminal_scale": 1.0,
+      "terminal_values": [
+        90.0,
+        30.0
+      ],
+      "excess_marginal": 44.9,
+      "binary_solver_sufficient_condition": true,
+      "best": {
+        "return": 40,
+        "expected_cash_before_normal_cost": 101046.0,
+        "gain_after_setup_vs_no_return": 546.0,
+        "gain_before_setup": 2545.9999999999995,
+        "conditional_full_order_probability": 0.9999999999999865
+      },
+      "always_return": {
+        "return": 40,
+        "expected_cash_before_normal_cost": 101046.0,
+        "gain_after_setup_vs_no_return": 546.0,
+        "gain_before_setup": 2545.9999999999995,
+        "conditional_full_order_probability": 0.9999999999999865
+      },
+      "profit_loss_from_forcing_maximal_return": 0.0,
+      "actions": [
+        {
+          "return": 0,
+          "expected_cash_before_normal_cost": 100500.0,
+          "gain_after_setup_vs_no_return": 0.0,
+          "gain_before_setup": 0.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 1,
+          "expected_cash_before_normal_cost": 98574.0,
+          "gain_after_setup_vs_no_return": -1926.0,
+          "gain_before_setup": 74.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 2,
+          "expected_cash_before_normal_cost": 98648.0,
+          "gain_after_setup_vs_no_return": -1852.0,
+          "gain_before_setup": 148.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 3,
+          "expected_cash_before_normal_cost": 98722.0,
+          "gain_after_setup_vs_no_return": -1778.0,
+          "gain_before_setup": 222.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 4,
+          "expected_cash_before_normal_cost": 98796.0,
+          "gain_after_setup_vs_no_return": -1704.0,
+          "gain_before_setup": 296.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 5,
+          "expected_cash_before_normal_cost": 98870.0,
+          "gain_after_setup_vs_no_return": -1630.0,
+          "gain_before_setup": 370.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 6,
+          "expected_cash_before_normal_cost": 98944.0,
+          "gain_after_setup_vs_no_return": -1556.0,
+          "gain_before_setup": 444.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 7,
+          "expected_cash_before_normal_cost": 99018.0,
+          "gain_after_setup_vs_no_return": -1482.0,
+          "gain_before_setup": 518.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 8,
+          "expected_cash_before_normal_cost": 99092.0,
+          "gain_after_setup_vs_no_return": -1408.0,
+          "gain_before_setup": 592.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 9,
+          "expected_cash_before_normal_cost": 99166.0,
+          "gain_after_setup_vs_no_return": -1334.0,
+          "gain_before_setup": 666.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 10,
+          "expected_cash_before_normal_cost": 99240.0,
+          "gain_after_setup_vs_no_return": -1260.0,
+          "gain_before_setup": 740.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 11,
+          "expected_cash_before_normal_cost": 99314.00000000001,
+          "gain_after_setup_vs_no_return": -1185.9999999999854,
+          "gain_before_setup": 814.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 12,
+          "expected_cash_before_normal_cost": 99387.99999999999,
+          "gain_after_setup_vs_no_return": -1112.0000000000146,
+          "gain_before_setup": 888.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 13,
+          "expected_cash_before_normal_cost": 99462.0,
+          "gain_after_setup_vs_no_return": -1038.0,
+          "gain_before_setup": 961.9999999999999,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 14,
+          "expected_cash_before_normal_cost": 99536.0,
+          "gain_after_setup_vs_no_return": -964.0,
+          "gain_before_setup": 1036.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 15,
+          "expected_cash_before_normal_cost": 99610.0,
+          "gain_after_setup_vs_no_return": -890.0,
+          "gain_before_setup": 1110.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 16,
+          "expected_cash_before_normal_cost": 99684.0,
+          "gain_after_setup_vs_no_return": -816.0,
+          "gain_before_setup": 1184.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 17,
+          "expected_cash_before_normal_cost": 99758.0,
+          "gain_after_setup_vs_no_return": -742.0,
+          "gain_before_setup": 1258.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 18,
+          "expected_cash_before_normal_cost": 99832.00000000001,
+          "gain_after_setup_vs_no_return": -667.9999999999854,
+          "gain_before_setup": 1332.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 19,
+          "expected_cash_before_normal_cost": 99906.0,
+          "gain_after_setup_vs_no_return": -594.0,
+          "gain_before_setup": 1406.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 20,
+          "expected_cash_before_normal_cost": 99980.0,
+          "gain_after_setup_vs_no_return": -520.0,
+          "gain_before_setup": 1480.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 21,
+          "expected_cash_before_normal_cost": 100054.00000000001,
+          "gain_after_setup_vs_no_return": -445.99999999998545,
+          "gain_before_setup": 1554.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 22,
+          "expected_cash_before_normal_cost": 100128.0,
+          "gain_after_setup_vs_no_return": -372.0,
+          "gain_before_setup": 1628.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 23,
+          "expected_cash_before_normal_cost": 100202.0,
+          "gain_after_setup_vs_no_return": -298.0,
+          "gain_before_setup": 1702.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 24,
+          "expected_cash_before_normal_cost": 100276.0,
+          "gain_after_setup_vs_no_return": -224.0,
+          "gain_before_setup": 1776.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 25,
+          "expected_cash_before_normal_cost": 100350.0,
+          "gain_after_setup_vs_no_return": -150.0,
+          "gain_before_setup": 1850.0,
+          "conditional_full_order_probability": 0.4669747052543717
+        },
+        {
+          "return": 26,
+          "expected_cash_before_normal_cost": 100410.4110360771,
+          "gain_after_setup_vs_no_return": -89.58896392289898,
+          "gain_before_setup": 1910.4110360770976,
+          "conditional_full_order_probability": 0.8172057341951506
+        },
+        {
+          "return": 27,
+          "expected_cash_before_normal_cost": 100460.63034921202,
+          "gain_after_setup_vs_no_return": -39.36965078797948,
+          "gain_before_setup": 1960.6303492120187,
+          "conditional_full_order_probability": 0.9537958354820546
+        },
+        {
+          "return": 28,
+          "expected_cash_before_normal_cost": 100506.8748903995,
+          "gain_after_setup_vs_no_return": 6.874890399500146,
+          "gain_before_setup": 2006.874890399491,
+          "conditional_full_order_probability": 0.9906751628295187
+        },
+        {
+          "return": 29,
+          "expected_cash_before_normal_cost": 100552.04624316115,
+          "gain_after_setup_vs_no_return": 52.04624316115223,
+          "gain_before_setup": 2052.0462431611522,
+          "conditional_full_order_probability": 0.9984198215724862
+        },
+        {
+          "return": 30,
+          "expected_cash_before_normal_cost": 100596.9922263534,
+          "gain_after_setup_vs_no_return": 96.99222635339538,
+          "gain_before_setup": 2096.9922263533927,
+          "conditional_full_order_probability": 0.9997673921937626
+        },
+        {
+          "return": 31,
+          "expected_cash_before_normal_cost": 100641.89899524057,
+          "gain_after_setup_vs_no_return": 141.89899524056818,
+          "gain_before_setup": 2141.898995240554,
+          "conditional_full_order_probability": 0.9999695277869541
+        },
+        {
+          "return": 32,
+          "expected_cash_before_normal_cost": 100686.79988198195,
+          "gain_after_setup_vs_no_return": 186.7998819819477,
+          "gain_before_setup": 2186.799881981954,
+          "conditional_full_order_probability": 0.9999963829443352
+        },
+        {
+          "return": 33,
+          "expected_cash_before_normal_cost": 100731.69998723829,
+          "gain_after_setup_vs_no_return": 231.69998723828758,
+          "gain_before_setup": 2231.699987238274,
+          "conditional_full_order_probability": 0.999999605563221
+        },
+        {
+          "return": 34,
+          "expected_cash_before_normal_cost": 100776.59999871638,
+          "gain_after_setup_vs_no_return": 276.5999987163814,
+          "gain_before_setup": 2276.599998716384,
+          "conditional_full_order_probability": 0.9999999600512983
+        },
+        {
+          "return": 35,
+          "expected_cash_before_normal_cost": 100821.4999998789,
+          "gain_after_setup_vs_no_return": 321.49999987889896,
+          "gain_before_setup": 2321.4999998788912,
+          "conditional_full_order_probability": 0.9999999962090823
+        },
+        {
+          "return": 36,
+          "expected_cash_before_normal_cost": 100866.3999999892,
+          "gain_after_setup_vs_no_return": 366.39999998919666,
+          "gain_before_setup": 2366.3999999892067,
+          "conditional_full_order_probability": 0.9999999996605071
+        },
+        {
+          "return": 37,
+          "expected_cash_before_normal_cost": 100911.2999999991,
+          "gain_after_setup_vs_no_return": 411.2999999991007,
+          "gain_before_setup": 2411.299999999086,
+          "conditional_full_order_probability": 0.9999999999711353
+        },
+        {
+          "return": 38,
+          "expected_cash_before_normal_cost": 100956.19999999992,
+          "gain_after_setup_vs_no_return": 456.19999999992433,
+          "gain_before_setup": 2456.199999999926,
+          "conditional_full_order_probability": 0.9999999999976581
+        },
+        {
+          "return": 39,
+          "expected_cash_before_normal_cost": 101001.1,
+          "gain_after_setup_vs_no_return": 501.1000000000058,
+          "gain_before_setup": 2501.099999999994,
+          "conditional_full_order_probability": 0.9999999999998179
+        },
+        {
+          "return": 40,
+          "expected_cash_before_normal_cost": 101046.0,
+          "gain_after_setup_vs_no_return": 546.0,
+          "gain_before_setup": 2545.9999999999995,
+          "conditional_full_order_probability": 0.9999999999999865
+        }
+      ]
+    },
+    {
+      "terminal_scale": 0.5,
+      "terminal_values": [
+        45.0,
+        15.0
+      ],
+      "excess_marginal": 16.25,
+      "binary_solver_sufficient_condition": true,
+      "best": {
+        "return": 40,
+        "expected_cash_before_normal_cost": 98775.0,
+        "gain_after_setup_vs_no_return": 525.0,
+        "gain_before_setup": 2524.999999999999,
+        "conditional_full_order_probability": 0.9999999999999865
+      },
+      "always_return": {
+        "return": 40,
+        "expected_cash_before_normal_cost": 98775.0,
+        "gain_after_setup_vs_no_return": 525.0,
+        "gain_before_setup": 2524.999999999999,
+        "conditional_full_order_probability": 0.9999999999999865
+      },
+      "profit_loss_from_forcing_maximal_return": 0.0,
+      "actions": [
+        {
+          "return": 0,
+          "expected_cash_before_normal_cost": 98250.0,
+          "gain_after_setup_vs_no_return": 0.0,
+          "gain_before_setup": 0.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 1,
+          "expected_cash_before_normal_cost": 96339.0,
+          "gain_after_setup_vs_no_return": -1911.0,
+          "gain_before_setup": 89.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 2,
+          "expected_cash_before_normal_cost": 96428.0,
+          "gain_after_setup_vs_no_return": -1822.0,
+          "gain_before_setup": 178.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 3,
+          "expected_cash_before_normal_cost": 96517.0,
+          "gain_after_setup_vs_no_return": -1733.0,
+          "gain_before_setup": 267.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 4,
+          "expected_cash_before_normal_cost": 96606.0,
+          "gain_after_setup_vs_no_return": -1644.0,
+          "gain_before_setup": 356.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 5,
+          "expected_cash_before_normal_cost": 96695.0,
+          "gain_after_setup_vs_no_return": -1555.0,
+          "gain_before_setup": 445.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 6,
+          "expected_cash_before_normal_cost": 96784.0,
+          "gain_after_setup_vs_no_return": -1466.0,
+          "gain_before_setup": 534.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 7,
+          "expected_cash_before_normal_cost": 96872.99999999999,
+          "gain_after_setup_vs_no_return": -1377.0000000000146,
+          "gain_before_setup": 623.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 8,
+          "expected_cash_before_normal_cost": 96962.0,
+          "gain_after_setup_vs_no_return": -1288.0,
+          "gain_before_setup": 712.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 9,
+          "expected_cash_before_normal_cost": 97051.0,
+          "gain_after_setup_vs_no_return": -1199.0,
+          "gain_before_setup": 801.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 10,
+          "expected_cash_before_normal_cost": 97140.0,
+          "gain_after_setup_vs_no_return": -1110.0,
+          "gain_before_setup": 890.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 11,
+          "expected_cash_before_normal_cost": 97229.00000000001,
+          "gain_after_setup_vs_no_return": -1020.9999999999854,
+          "gain_before_setup": 979.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 12,
+          "expected_cash_before_normal_cost": 97317.99999999999,
+          "gain_after_setup_vs_no_return": -932.0000000000146,
+          "gain_before_setup": 1068.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 13,
+          "expected_cash_before_normal_cost": 97407.0,
+          "gain_after_setup_vs_no_return": -843.0,
+          "gain_before_setup": 1157.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 14,
+          "expected_cash_before_normal_cost": 97495.99999999999,
+          "gain_after_setup_vs_no_return": -754.0000000000146,
+          "gain_before_setup": 1246.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 15,
+          "expected_cash_before_normal_cost": 97585.0,
+          "gain_after_setup_vs_no_return": -665.0,
+          "gain_before_setup": 1335.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 16,
+          "expected_cash_before_normal_cost": 97674.00000000001,
+          "gain_after_setup_vs_no_return": -575.9999999999854,
+          "gain_before_setup": 1424.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 17,
+          "expected_cash_before_normal_cost": 97763.0,
+          "gain_after_setup_vs_no_return": -487.0,
+          "gain_before_setup": 1513.0000000000002,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 18,
+          "expected_cash_before_normal_cost": 97852.00000000001,
+          "gain_after_setup_vs_no_return": -397.99999999998545,
+          "gain_before_setup": 1602.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 19,
+          "expected_cash_before_normal_cost": 97941.0,
+          "gain_after_setup_vs_no_return": -309.0,
+          "gain_before_setup": 1691.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 20,
+          "expected_cash_before_normal_cost": 98030.00000000001,
+          "gain_after_setup_vs_no_return": -219.99999999998545,
+          "gain_before_setup": 1780.0000000000002,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 21,
+          "expected_cash_before_normal_cost": 98119.00000000001,
+          "gain_after_setup_vs_no_return": -130.99999999998545,
+          "gain_before_setup": 1869.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 22,
+          "expected_cash_before_normal_cost": 98208.0,
+          "gain_after_setup_vs_no_return": -42.0,
+          "gain_before_setup": 1958.0000000000002,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 23,
+          "expected_cash_before_normal_cost": 98297.0,
+          "gain_after_setup_vs_no_return": 47.0,
+          "gain_before_setup": 2047.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 24,
+          "expected_cash_before_normal_cost": 98386.0,
+          "gain_after_setup_vs_no_return": 136.0,
+          "gain_before_setup": 2136.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 25,
+          "expected_cash_before_normal_cost": 98475.0,
+          "gain_after_setup_vs_no_return": 225.0,
+          "gain_before_setup": 2225.0,
+          "conditional_full_order_probability": 0.4669747052543717
+        },
+        {
+          "return": 26,
+          "expected_cash_before_normal_cost": 98530.02759019274,
+          "gain_after_setup_vs_no_return": 280.027590192738,
+          "gain_before_setup": 2280.0275901927444,
+          "conditional_full_order_probability": 0.8172057341951506
+        },
+        {
+          "return": 27,
+          "expected_cash_before_normal_cost": 98559.57587303004,
+          "gain_after_setup_vs_no_return": 309.575873030044,
+          "gain_before_setup": 2309.575873030047,
+          "conditional_full_order_probability": 0.9537958354820546
+        },
+        {
+          "return": 28,
+          "expected_cash_before_normal_cost": 98579.18722599873,
+          "gain_after_setup_vs_no_return": 329.18722599872854,
+          "gain_before_setup": 2329.1872259987276,
+          "conditional_full_order_probability": 0.9906751628295187
+        },
+        {
+          "return": 29,
+          "expected_cash_before_normal_cost": 98596.11560790287,
+          "gain_after_setup_vs_no_return": 346.1156079028733,
+          "gain_before_setup": 2346.1156079028806,
+          "conditional_full_order_probability": 0.9984198215724862
+        },
+        {
+          "return": 30,
+          "expected_cash_before_normal_cost": 98612.48056588348,
+          "gain_after_setup_vs_no_return": 362.4805658834812,
+          "gain_before_setup": 2362.480565883482,
+          "conditional_full_order_probability": 0.9997673921937626
+        },
+        {
+          "return": 31,
+          "expected_cash_before_normal_cost": 98628.74748810139,
+          "gain_after_setup_vs_no_return": 378.74748810139135,
+          "gain_before_setup": 2378.747488101386,
+          "conditional_full_order_probability": 0.9999695277869541
+        },
+        {
+          "return": 32,
+          "expected_cash_before_normal_cost": 98644.99970495488,
+          "gain_after_setup_vs_no_return": 394.9997049548838,
+          "gain_before_setup": 2394.9997049548847,
+          "conditional_full_order_probability": 0.9999963829443352
+        },
+        {
+          "return": 33,
+          "expected_cash_before_normal_cost": 98661.24996809568,
+          "gain_after_setup_vs_no_return": 411.24996809568256,
+          "gain_before_setup": 2411.2499680956844,
+          "conditional_full_order_probability": 0.999999605563221
+        },
+        {
+          "return": 34,
+          "expected_cash_before_normal_cost": 98677.49999679095,
+          "gain_after_setup_vs_no_return": 427.49999679095345,
+          "gain_before_setup": 2427.49999679096,
+          "conditional_full_order_probability": 0.9999999600512983
+        },
+        {
+          "return": 35,
+          "expected_cash_before_normal_cost": 98693.74999969723,
+          "gain_after_setup_vs_no_return": 443.74999969723285,
+          "gain_before_setup": 2443.7499996972283,
+          "conditional_full_order_probability": 0.9999999962090823
+        },
+        {
+          "return": 36,
+          "expected_cash_before_normal_cost": 98709.99999997302,
+          "gain_after_setup_vs_no_return": 459.99999997302075,
+          "gain_before_setup": 2459.999999973017,
+          "conditional_full_order_probability": 0.9999999996605071
+        },
+        {
+          "return": 37,
+          "expected_cash_before_normal_cost": 98726.2499999977,
+          "gain_after_setup_vs_no_return": 476.2499999977008,
+          "gain_before_setup": 2476.2499999977153,
+          "conditional_full_order_probability": 0.9999999999711353
+        },
+        {
+          "return": 38,
+          "expected_cash_before_normal_cost": 98742.49999999983,
+          "gain_after_setup_vs_no_return": 492.4999999998254,
+          "gain_before_setup": 2492.4999999998154,
+          "conditional_full_order_probability": 0.9999999999976581
+        },
+        {
+          "return": 39,
+          "expected_cash_before_normal_cost": 98758.75,
+          "gain_after_setup_vs_no_return": 508.75,
+          "gain_before_setup": 2508.7499999999854,
+          "conditional_full_order_probability": 0.9999999999998179
+        },
+        {
+          "return": 40,
+          "expected_cash_before_normal_cost": 98775.0,
+          "gain_after_setup_vs_no_return": 525.0,
+          "gain_before_setup": 2524.999999999999,
+          "conditional_full_order_probability": 0.9999999999999865
+        }
+      ]
+    },
+    {
+      "terminal_scale": 0.25,
+      "terminal_values": [
+        22.5,
+        7.5
+      ],
+      "excess_marginal": 1.924999999999999,
+      "binary_solver_sufficient_condition": true,
+      "best": {
+        "return": 40,
+        "expected_cash_before_normal_cost": 97639.5,
+        "gain_after_setup_vs_no_return": 514.5,
+        "gain_before_setup": 2514.4999999999986,
+        "conditional_full_order_probability": 0.9999999999999865
+      },
+      "always_return": {
+        "return": 40,
+        "expected_cash_before_normal_cost": 97639.5,
+        "gain_after_setup_vs_no_return": 514.5,
+        "gain_before_setup": 2514.4999999999986,
+        "conditional_full_order_probability": 0.9999999999999865
+      },
+      "profit_loss_from_forcing_maximal_return": 0.0,
+      "actions": [
+        {
+          "return": 0,
+          "expected_cash_before_normal_cost": 97125.0,
+          "gain_after_setup_vs_no_return": 0.0,
+          "gain_before_setup": 0.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 1,
+          "expected_cash_before_normal_cost": 95221.50000000001,
+          "gain_after_setup_vs_no_return": -1903.4999999999854,
+          "gain_before_setup": 96.5,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 2,
+          "expected_cash_before_normal_cost": 95318.0,
+          "gain_after_setup_vs_no_return": -1807.0,
+          "gain_before_setup": 193.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 3,
+          "expected_cash_before_normal_cost": 95414.5,
+          "gain_after_setup_vs_no_return": -1710.5,
+          "gain_before_setup": 289.5,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 4,
+          "expected_cash_before_normal_cost": 95511.0,
+          "gain_after_setup_vs_no_return": -1614.0,
+          "gain_before_setup": 386.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 5,
+          "expected_cash_before_normal_cost": 95607.5,
+          "gain_after_setup_vs_no_return": -1517.5,
+          "gain_before_setup": 482.49999999999994,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 6,
+          "expected_cash_before_normal_cost": 95704.0,
+          "gain_after_setup_vs_no_return": -1421.0,
+          "gain_before_setup": 578.9999999999999,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 7,
+          "expected_cash_before_normal_cost": 95800.49999999999,
+          "gain_after_setup_vs_no_return": -1324.5000000000146,
+          "gain_before_setup": 675.5,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 8,
+          "expected_cash_before_normal_cost": 95897.0,
+          "gain_after_setup_vs_no_return": -1228.0,
+          "gain_before_setup": 772.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 9,
+          "expected_cash_before_normal_cost": 95993.5,
+          "gain_after_setup_vs_no_return": -1131.5,
+          "gain_before_setup": 868.5,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 10,
+          "expected_cash_before_normal_cost": 96090.0,
+          "gain_after_setup_vs_no_return": -1035.0,
+          "gain_before_setup": 964.9999999999999,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 11,
+          "expected_cash_before_normal_cost": 96186.50000000001,
+          "gain_after_setup_vs_no_return": -938.4999999999854,
+          "gain_before_setup": 1061.5,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 12,
+          "expected_cash_before_normal_cost": 96282.99999999999,
+          "gain_after_setup_vs_no_return": -842.0000000000146,
+          "gain_before_setup": 1158.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 13,
+          "expected_cash_before_normal_cost": 96379.5,
+          "gain_after_setup_vs_no_return": -745.5,
+          "gain_before_setup": 1254.5,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 14,
+          "expected_cash_before_normal_cost": 96475.99999999999,
+          "gain_after_setup_vs_no_return": -649.0000000000146,
+          "gain_before_setup": 1350.9999999999998,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 15,
+          "expected_cash_before_normal_cost": 96572.5,
+          "gain_after_setup_vs_no_return": -552.5,
+          "gain_before_setup": 1447.5,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 16,
+          "expected_cash_before_normal_cost": 96669.00000000001,
+          "gain_after_setup_vs_no_return": -455.99999999998545,
+          "gain_before_setup": 1544.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 17,
+          "expected_cash_before_normal_cost": 96765.5,
+          "gain_after_setup_vs_no_return": -359.5,
+          "gain_before_setup": 1640.5,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 18,
+          "expected_cash_before_normal_cost": 96862.00000000003,
+          "gain_after_setup_vs_no_return": -262.9999999999709,
+          "gain_before_setup": 1737.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 19,
+          "expected_cash_before_normal_cost": 96958.5,
+          "gain_after_setup_vs_no_return": -166.5,
+          "gain_before_setup": 1833.5,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 20,
+          "expected_cash_before_normal_cost": 97055.0,
+          "gain_after_setup_vs_no_return": -70.0,
+          "gain_before_setup": 1930.0000000000002,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 21,
+          "expected_cash_before_normal_cost": 97151.50000000001,
+          "gain_after_setup_vs_no_return": 26.500000000014552,
+          "gain_before_setup": 2026.5,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 22,
+          "expected_cash_before_normal_cost": 97248.0,
+          "gain_after_setup_vs_no_return": 123.0,
+          "gain_before_setup": 2123.0000000000005,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 23,
+          "expected_cash_before_normal_cost": 97344.5,
+          "gain_after_setup_vs_no_return": 219.5,
+          "gain_before_setup": 2219.5,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 24,
+          "expected_cash_before_normal_cost": 97441.0,
+          "gain_after_setup_vs_no_return": 316.0,
+          "gain_before_setup": 2315.9999999999995,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 25,
+          "expected_cash_before_normal_cost": 97537.5,
+          "gain_after_setup_vs_no_return": 412.5,
+          "gain_before_setup": 2412.5,
+          "conditional_full_order_probability": 0.4669747052543717
+        },
+        {
+          "return": 26,
+          "expected_cash_before_normal_cost": 97589.83586725057,
+          "gain_after_setup_vs_no_return": 464.835867250571,
+          "gain_before_setup": 2464.835867250568,
+          "conditional_full_order_probability": 0.8172057341951506
+        },
+        {
+          "return": 27,
+          "expected_cash_before_normal_cost": 97609.04863493907,
+          "gain_after_setup_vs_no_return": 484.0486349390703,
+          "gain_before_setup": 2484.0486349390612,
+          "conditional_full_order_probability": 0.9537958354820546
+        },
+        {
+          "return": 28,
+          "expected_cash_before_normal_cost": 97615.34339379836,
+          "gain_after_setup_vs_no_return": 490.34339379836456,
+          "gain_before_setup": 2490.3433937983464,
+          "conditional_full_order_probability": 0.9906751628295187
+        },
+        {
+          "return": 29,
+          "expected_cash_before_normal_cost": 97618.15029027374,
+          "gain_after_setup_vs_no_return": 493.1502902737411,
+          "gain_before_setup": 2493.1502902737443,
+          "conditional_full_order_probability": 0.9984198215724862
+        },
+        {
+          "return": 30,
+          "expected_cash_before_normal_cost": 97620.22473564852,
+          "gain_after_setup_vs_no_return": 495.2247356485168,
+          "gain_before_setup": 2495.2247356485263,
+          "conditional_full_order_probability": 0.9997673921937626
+        },
+        {
+          "return": 31,
+          "expected_cash_before_normal_cost": 97622.17173453182,
+          "gain_after_setup_vs_no_return": 497.1717345318175,
+          "gain_before_setup": 2497.1717345318016,
+          "conditional_full_order_probability": 0.9999695277869541
+        },
+        {
+          "return": 32,
+          "expected_cash_before_normal_cost": 97624.09961644135,
+          "gain_after_setup_vs_no_return": 499.0996164413518,
+          "gain_before_setup": 2499.09961644135,
+          "conditional_full_order_probability": 0.9999963829443352
+        },
+        {
+          "return": 33,
+          "expected_cash_before_normal_cost": 97626.0249585244,
+          "gain_after_setup_vs_no_return": 501.0249585244019,
+          "gain_before_setup": 2501.0249585243896,
+          "conditional_full_order_probability": 0.999999605563221
+        },
+        {
+          "return": 34,
+          "expected_cash_before_normal_cost": 97627.94999582825,
+          "gain_after_setup_vs_no_return": 502.94999582825403,
+          "gain_before_setup": 2502.9499958282477,
+          "conditional_full_order_probability": 0.9999999600512983
+        },
+        {
+          "return": 35,
+          "expected_cash_before_normal_cost": 97629.8749996064,
+          "gain_after_setup_vs_no_return": 504.8749996063998,
+          "gain_before_setup": 2504.8749996063966,
+          "conditional_full_order_probability": 0.9999999962090823
+        },
+        {
+          "return": 36,
+          "expected_cash_before_normal_cost": 97631.79999996492,
+          "gain_after_setup_vs_no_return": 506.79999996491824,
+          "gain_before_setup": 2506.799999964923,
+          "conditional_full_order_probability": 0.9999999996605071
+        },
+        {
+          "return": 37,
+          "expected_cash_before_normal_cost": 97633.72499999704,
+          "gain_after_setup_vs_no_return": 508.72499999703723,
+          "gain_before_setup": 2508.72499999703,
+          "conditional_full_order_probability": 0.9999999999711353
+        },
+        {
+          "return": 38,
+          "expected_cash_before_normal_cost": 97635.64999999976,
+          "gain_after_setup_vs_no_return": 510.64999999976135,
+          "gain_before_setup": 2510.6499999997595,
+          "conditional_full_order_probability": 0.9999999999976581
+        },
+        {
+          "return": 39,
+          "expected_cash_before_normal_cost": 97637.57499999998,
+          "gain_after_setup_vs_no_return": 512.5749999999825,
+          "gain_before_setup": 2512.574999999981,
+          "conditional_full_order_probability": 0.9999999999998179
+        },
+        {
+          "return": 40,
+          "expected_cash_before_normal_cost": 97639.5,
+          "gain_after_setup_vs_no_return": 514.5,
+          "gain_before_setup": 2514.4999999999986,
+          "conditional_full_order_probability": 0.9999999999999865
+        }
+      ]
+    },
+    {
+      "terminal_scale": 0.2,
+      "terminal_values": [
+        18.0,
+        6.0
+      ],
+      "excess_marginal": -0.9399999999999995,
+      "binary_solver_sufficient_condition": false,
+      "best": {
+        "return": 28,
+        "expected_cash_before_normal_cost": 97422.57462735828,
+        "gain_after_setup_vs_no_return": 522.5746273582772,
+        "gain_before_setup": 2522.57462735827,
+        "conditional_full_order_probability": 0.9906751628295187
+      },
+      "always_return": {
+        "return": 40,
+        "expected_cash_before_normal_cost": 97412.4,
+        "gain_after_setup_vs_no_return": 512.3999999999942,
+        "gain_before_setup": 2512.3999999999987,
+        "conditional_full_order_probability": 0.9999999999999865
+      },
+      "profit_loss_from_forcing_maximal_return": 10.174627358283033,
+      "actions": [
+        {
+          "return": 0,
+          "expected_cash_before_normal_cost": 96900.0,
+          "gain_after_setup_vs_no_return": 0.0,
+          "gain_before_setup": 0.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 1,
+          "expected_cash_before_normal_cost": 94998.0,
+          "gain_after_setup_vs_no_return": -1902.0,
+          "gain_before_setup": 98.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 2,
+          "expected_cash_before_normal_cost": 95096.0,
+          "gain_after_setup_vs_no_return": -1804.0,
+          "gain_before_setup": 196.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 3,
+          "expected_cash_before_normal_cost": 95194.0,
+          "gain_after_setup_vs_no_return": -1706.0,
+          "gain_before_setup": 294.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 4,
+          "expected_cash_before_normal_cost": 95292.0,
+          "gain_after_setup_vs_no_return": -1608.0,
+          "gain_before_setup": 392.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 5,
+          "expected_cash_before_normal_cost": 95390.0,
+          "gain_after_setup_vs_no_return": -1510.0,
+          "gain_before_setup": 490.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 6,
+          "expected_cash_before_normal_cost": 95488.0,
+          "gain_after_setup_vs_no_return": -1412.0,
+          "gain_before_setup": 588.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 7,
+          "expected_cash_before_normal_cost": 95586.0,
+          "gain_after_setup_vs_no_return": -1314.0,
+          "gain_before_setup": 686.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 8,
+          "expected_cash_before_normal_cost": 95684.0,
+          "gain_after_setup_vs_no_return": -1216.0,
+          "gain_before_setup": 784.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 9,
+          "expected_cash_before_normal_cost": 95782.0,
+          "gain_after_setup_vs_no_return": -1118.0,
+          "gain_before_setup": 882.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 10,
+          "expected_cash_before_normal_cost": 95880.0,
+          "gain_after_setup_vs_no_return": -1020.0,
+          "gain_before_setup": 980.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 11,
+          "expected_cash_before_normal_cost": 95978.00000000001,
+          "gain_after_setup_vs_no_return": -921.9999999999854,
+          "gain_before_setup": 1078.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 12,
+          "expected_cash_before_normal_cost": 96076.0,
+          "gain_after_setup_vs_no_return": -824.0,
+          "gain_before_setup": 1176.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 13,
+          "expected_cash_before_normal_cost": 96174.0,
+          "gain_after_setup_vs_no_return": -726.0,
+          "gain_before_setup": 1274.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 14,
+          "expected_cash_before_normal_cost": 96272.0,
+          "gain_after_setup_vs_no_return": -628.0,
+          "gain_before_setup": 1371.9999999999998,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 15,
+          "expected_cash_before_normal_cost": 96370.0,
+          "gain_after_setup_vs_no_return": -530.0,
+          "gain_before_setup": 1470.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 16,
+          "expected_cash_before_normal_cost": 96468.00000000001,
+          "gain_after_setup_vs_no_return": -431.99999999998545,
+          "gain_before_setup": 1568.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 17,
+          "expected_cash_before_normal_cost": 96566.0,
+          "gain_after_setup_vs_no_return": -334.0,
+          "gain_before_setup": 1666.0000000000002,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 18,
+          "expected_cash_before_normal_cost": 96664.00000000003,
+          "gain_after_setup_vs_no_return": -235.9999999999709,
+          "gain_before_setup": 1764.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 19,
+          "expected_cash_before_normal_cost": 96762.0,
+          "gain_after_setup_vs_no_return": -138.0,
+          "gain_before_setup": 1862.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 20,
+          "expected_cash_before_normal_cost": 96860.00000000001,
+          "gain_after_setup_vs_no_return": -39.99999999998545,
+          "gain_before_setup": 1960.0000000000002,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 21,
+          "expected_cash_before_normal_cost": 96958.0,
+          "gain_after_setup_vs_no_return": 58.0,
+          "gain_before_setup": 2058.0000000000005,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 22,
+          "expected_cash_before_normal_cost": 97056.0,
+          "gain_after_setup_vs_no_return": 156.0,
+          "gain_before_setup": 2156.0000000000005,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 23,
+          "expected_cash_before_normal_cost": 97154.0,
+          "gain_after_setup_vs_no_return": 254.0,
+          "gain_before_setup": 2254.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 24,
+          "expected_cash_before_normal_cost": 97252.0,
+          "gain_after_setup_vs_no_return": 352.0,
+          "gain_before_setup": 2352.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 25,
+          "expected_cash_before_normal_cost": 97350.0,
+          "gain_after_setup_vs_no_return": 450.0,
+          "gain_before_setup": 2450.0,
+          "conditional_full_order_probability": 0.4669747052543717
+        },
+        {
+          "return": 26,
+          "expected_cash_before_normal_cost": 97401.79752266212,
+          "gain_after_setup_vs_no_return": 501.7975226621202,
+          "gain_before_setup": 2501.797522662132,
+          "conditional_full_order_probability": 0.8172057341951506
+        },
+        {
+          "return": 27,
+          "expected_cash_before_normal_cost": 97418.94318732087,
+          "gain_after_setup_vs_no_return": 518.9431873208669,
+          "gain_before_setup": 2518.943187320864,
+          "conditional_full_order_probability": 0.9537958354820546
+        },
+        {
+          "return": 28,
+          "expected_cash_before_normal_cost": 97422.57462735828,
+          "gain_after_setup_vs_no_return": 522.5746273582772,
+          "gain_before_setup": 2522.57462735827,
+          "conditional_full_order_probability": 0.9906751628295187
+        },
+        {
+          "return": 29,
+          "expected_cash_before_normal_cost": 97422.55722674791,
+          "gain_after_setup_vs_no_return": 522.5572267479147,
+          "gain_before_setup": 2522.5572267479174,
+          "conditional_full_order_probability": 0.9984198215724862
+        },
+        {
+          "return": 30,
+          "expected_cash_before_normal_cost": 97421.77356960154,
+          "gain_after_setup_vs_no_return": 521.7735696015443,
+          "gain_before_setup": 2521.7735696015357,
+          "conditional_full_order_probability": 0.9997673921937626
+        },
+        {
+          "return": 31,
+          "expected_cash_before_normal_cost": 97420.85658381789,
+          "gain_after_setup_vs_no_return": 520.8565838178911,
+          "gain_before_setup": 2520.8565838178847,
+          "conditional_full_order_probability": 0.9999695277869541
+        },
+        {
+          "return": 32,
+          "expected_cash_before_normal_cost": 97419.91959873865,
+          "gain_after_setup_vs_no_return": 519.9195987386483,
+          "gain_before_setup": 2519.9195987386433,
+          "conditional_full_order_probability": 0.9999963829443352
+        },
+        {
+          "return": 33,
+          "expected_cash_before_normal_cost": 97418.97995661013,
+          "gain_after_setup_vs_no_return": 518.9799566101283,
+          "gain_before_setup": 2518.9799566101306,
+          "conditional_full_order_probability": 0.999999605563221
+        },
+        {
+          "return": 34,
+          "expected_cash_before_normal_cost": 97418.0399956357,
+          "gain_after_setup_vs_no_return": 518.0399956356996,
+          "gain_before_setup": 2518.0399956357055,
+          "conditional_full_order_probability": 0.9999999600512983
+        },
+        {
+          "return": 35,
+          "expected_cash_before_normal_cost": 97417.09999958824,
+          "gain_after_setup_vs_no_return": 517.0999995882448,
+          "gain_before_setup": 2517.0999995882303,
+          "conditional_full_order_probability": 0.9999999962090823
+        },
+        {
+          "return": 36,
+          "expected_cash_before_normal_cost": 97416.1599999633,
+          "gain_after_setup_vs_no_return": 516.1599999633036,
+          "gain_before_setup": 2516.1599999633036,
+          "conditional_full_order_probability": 0.9999999996605071
+        },
+        {
+          "return": 37,
+          "expected_cash_before_normal_cost": 97415.21999999689,
+          "gain_after_setup_vs_no_return": 515.219999996887,
+          "gain_before_setup": 2515.219999996893,
+          "conditional_full_order_probability": 0.9999999999711353
+        },
+        {
+          "return": 38,
+          "expected_cash_before_normal_cost": 97414.27999999975,
+          "gain_after_setup_vs_no_return": 514.2799999997515,
+          "gain_before_setup": 2514.2799999997487,
+          "conditional_full_order_probability": 0.9999999999976581
+        },
+        {
+          "return": 39,
+          "expected_cash_before_normal_cost": 97413.33999999997,
+          "gain_after_setup_vs_no_return": 513.3399999999674,
+          "gain_before_setup": 2513.3399999999806,
+          "conditional_full_order_probability": 0.9999999999998179
+        },
+        {
+          "return": 40,
+          "expected_cash_before_normal_cost": 97412.4,
+          "gain_after_setup_vs_no_return": 512.3999999999942,
+          "gain_before_setup": 2512.3999999999987,
+          "conditional_full_order_probability": 0.9999999999999865
+        }
+      ]
+    },
+    {
+      "terminal_scale": 0.1,
+      "terminal_values": [
+        9.0,
+        3.0
+      ],
+      "excess_marginal": -6.67,
+      "binary_solver_sufficient_condition": false,
+      "best": {
+        "return": 27,
+        "expected_cash_before_normal_cost": 97038.73229208446,
+        "gain_after_setup_vs_no_return": 588.7322920844599,
+        "gain_before_setup": 2588.7322920844695,
+        "conditional_full_order_probability": 0.9537958354820546
+      },
+      "always_return": {
+        "return": 40,
+        "expected_cash_before_normal_cost": 96958.2,
+        "gain_after_setup_vs_no_return": 508.1999999999971,
+        "gain_before_setup": 2508.1999999999985,
+        "conditional_full_order_probability": 0.9999999999999865
+      },
+      "profit_loss_from_forcing_maximal_return": 80.53229208446282,
+      "actions": [
+        {
+          "return": 0,
+          "expected_cash_before_normal_cost": 96450.0,
+          "gain_after_setup_vs_no_return": 0.0,
+          "gain_before_setup": 0.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 1,
+          "expected_cash_before_normal_cost": 94551.0,
+          "gain_after_setup_vs_no_return": -1899.0,
+          "gain_before_setup": 101.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 2,
+          "expected_cash_before_normal_cost": 94652.0,
+          "gain_after_setup_vs_no_return": -1798.0,
+          "gain_before_setup": 202.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 3,
+          "expected_cash_before_normal_cost": 94753.0,
+          "gain_after_setup_vs_no_return": -1697.0,
+          "gain_before_setup": 303.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 4,
+          "expected_cash_before_normal_cost": 94854.0,
+          "gain_after_setup_vs_no_return": -1596.0,
+          "gain_before_setup": 404.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 5,
+          "expected_cash_before_normal_cost": 94955.00000000001,
+          "gain_after_setup_vs_no_return": -1494.9999999999854,
+          "gain_before_setup": 504.9999999999999,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 6,
+          "expected_cash_before_normal_cost": 95056.0,
+          "gain_after_setup_vs_no_return": -1394.0,
+          "gain_before_setup": 606.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 7,
+          "expected_cash_before_normal_cost": 95156.99999999999,
+          "gain_after_setup_vs_no_return": -1293.0000000000146,
+          "gain_before_setup": 707.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 8,
+          "expected_cash_before_normal_cost": 95258.0,
+          "gain_after_setup_vs_no_return": -1192.0,
+          "gain_before_setup": 808.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 9,
+          "expected_cash_before_normal_cost": 95359.0,
+          "gain_after_setup_vs_no_return": -1091.0,
+          "gain_before_setup": 909.0000000000001,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 10,
+          "expected_cash_before_normal_cost": 95460.0,
+          "gain_after_setup_vs_no_return": -990.0,
+          "gain_before_setup": 1009.9999999999998,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 11,
+          "expected_cash_before_normal_cost": 95561.0,
+          "gain_after_setup_vs_no_return": -889.0,
+          "gain_before_setup": 1111.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 12,
+          "expected_cash_before_normal_cost": 95661.99999999999,
+          "gain_after_setup_vs_no_return": -788.0000000000146,
+          "gain_before_setup": 1212.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 13,
+          "expected_cash_before_normal_cost": 95763.0,
+          "gain_after_setup_vs_no_return": -687.0,
+          "gain_before_setup": 1313.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 14,
+          "expected_cash_before_normal_cost": 95863.99999999999,
+          "gain_after_setup_vs_no_return": -586.0000000000146,
+          "gain_before_setup": 1414.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 15,
+          "expected_cash_before_normal_cost": 95965.0,
+          "gain_after_setup_vs_no_return": -485.0,
+          "gain_before_setup": 1515.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 16,
+          "expected_cash_before_normal_cost": 96066.00000000001,
+          "gain_after_setup_vs_no_return": -383.99999999998545,
+          "gain_before_setup": 1616.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 17,
+          "expected_cash_before_normal_cost": 96167.0,
+          "gain_after_setup_vs_no_return": -283.0,
+          "gain_before_setup": 1717.0000000000002,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 18,
+          "expected_cash_before_normal_cost": 96268.00000000001,
+          "gain_after_setup_vs_no_return": -181.99999999998545,
+          "gain_before_setup": 1818.0000000000002,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 19,
+          "expected_cash_before_normal_cost": 96369.0,
+          "gain_after_setup_vs_no_return": -81.0,
+          "gain_before_setup": 1919.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 20,
+          "expected_cash_before_normal_cost": 96470.0,
+          "gain_after_setup_vs_no_return": 20.0,
+          "gain_before_setup": 2020.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 21,
+          "expected_cash_before_normal_cost": 96571.00000000001,
+          "gain_after_setup_vs_no_return": 121.00000000001455,
+          "gain_before_setup": 2121.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 22,
+          "expected_cash_before_normal_cost": 96672.0,
+          "gain_after_setup_vs_no_return": 222.0,
+          "gain_before_setup": 2222.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 23,
+          "expected_cash_before_normal_cost": 96773.0,
+          "gain_after_setup_vs_no_return": 323.0,
+          "gain_before_setup": 2323.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 24,
+          "expected_cash_before_normal_cost": 96874.0,
+          "gain_after_setup_vs_no_return": 424.0,
+          "gain_before_setup": 2424.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 25,
+          "expected_cash_before_normal_cost": 96975.0,
+          "gain_after_setup_vs_no_return": 525.0,
+          "gain_before_setup": 2525.0,
+          "conditional_full_order_probability": 0.4669747052543717
+        },
+        {
+          "return": 26,
+          "expected_cash_before_normal_cost": 97025.72083348528,
+          "gain_after_setup_vs_no_return": 575.7208334852767,
+          "gain_before_setup": 2575.720833485261,
+          "conditional_full_order_probability": 0.8172057341951506
+        },
+        {
+          "return": 27,
+          "expected_cash_before_normal_cost": 97038.73229208446,
+          "gain_after_setup_vs_no_return": 588.7322920844599,
+          "gain_before_setup": 2588.7322920844695,
+          "conditional_full_order_probability": 0.9537958354820546
+        },
+        {
+          "return": 28,
+          "expected_cash_before_normal_cost": 97037.03709447812,
+          "gain_after_setup_vs_no_return": 587.0370944781171,
+          "gain_before_setup": 2587.037094478117,
+          "conditional_full_order_probability": 0.9906751628295187
+        },
+        {
+          "return": 29,
+          "expected_cash_before_normal_cost": 97031.37109969626,
+          "gain_after_setup_vs_no_return": 581.3710996962618,
+          "gain_before_setup": 2581.371099696263,
+          "conditional_full_order_probability": 0.9984198215724862
+        },
+        {
+          "return": 30,
+          "expected_cash_before_normal_cost": 97024.87123750756,
+          "gain_after_setup_vs_no_return": 574.8712375075556,
+          "gain_before_setup": 2574.8712375075534,
+          "conditional_full_order_probability": 0.9997673921937626
+        },
+        {
+          "return": 31,
+          "expected_cash_before_normal_cost": 97018.22628239007,
+          "gain_after_setup_vs_no_return": 568.2262823900674,
+          "gain_before_setup": 2568.226282390051,
+          "conditional_full_order_probability": 0.9999695277869541
+        },
+        {
+          "return": 32,
+          "expected_cash_before_normal_cost": 97011.55956333323,
+          "gain_after_setup_vs_no_return": 561.5595633332268,
+          "gain_before_setup": 2561.5595633332296,
+          "conditional_full_order_probability": 0.9999963829443352
+        },
+        {
+          "return": 33,
+          "expected_cash_before_normal_cost": 97004.88995278161,
+          "gain_after_setup_vs_no_return": 554.8899527816102,
+          "gain_before_setup": 2554.8899527816125,
+          "conditional_full_order_probability": 0.999999605563221
+        },
+        {
+          "return": 34,
+          "expected_cash_before_normal_cost": 96998.21999525062,
+          "gain_after_setup_vs_no_return": 548.2199952506198,
+          "gain_before_setup": 2548.2199952506207,
+          "conditional_full_order_probability": 0.9999999600512983
+        },
+        {
+          "return": 35,
+          "expected_cash_before_normal_cost": 96991.5499995519,
+          "gain_after_setup_vs_no_return": 541.5499995519058,
+          "gain_before_setup": 2541.5499995518976,
+          "conditional_full_order_probability": 0.9999999962090823
+        },
+        {
+          "return": 36,
+          "expected_cash_before_normal_cost": 96984.87999996007,
+          "gain_after_setup_vs_no_return": 534.8799999600742,
+          "gain_before_setup": 2534.8799999600656,
+          "conditional_full_order_probability": 0.9999999996605071
+        },
+        {
+          "return": 37,
+          "expected_cash_before_normal_cost": 96978.20999999662,
+          "gain_after_setup_vs_no_return": 528.2099999966158,
+          "gain_before_setup": 2528.209999996619,
+          "conditional_full_order_probability": 0.9999999999711353
+        },
+        {
+          "return": 38,
+          "expected_cash_before_normal_cost": 96971.53999999972,
+          "gain_after_setup_vs_no_return": 521.5399999997171,
+          "gain_before_setup": 2521.539999999726,
+          "conditional_full_order_probability": 0.9999999999976581
+        },
+        {
+          "return": 39,
+          "expected_cash_before_normal_cost": 96964.86999999998,
+          "gain_after_setup_vs_no_return": 514.8699999999808,
+          "gain_before_setup": 2514.8699999999785,
+          "conditional_full_order_probability": 0.9999999999998179
+        },
+        {
+          "return": 40,
+          "expected_cash_before_normal_cost": 96958.2,
+          "gain_after_setup_vs_no_return": 508.1999999999971,
+          "gain_before_setup": 2508.1999999999985,
+          "conditional_full_order_probability": 0.9999999999999865
+        }
+      ]
+    },
+    {
+      "terminal_scale": 0.0,
+      "terminal_values": [
+        0.0,
+        0.0
+      ],
+      "excess_marginal": -12.4,
+      "binary_solver_sufficient_condition": false,
+      "best": {
+        "return": 27,
+        "expected_cash_before_normal_cost": 96658.52139684807,
+        "gain_after_setup_vs_no_return": 658.5213968480675,
+        "gain_before_setup": 2658.5213968480753,
+        "conditional_full_order_probability": 0.9537958354820546
+      },
+      "always_return": {
+        "return": 40,
+        "expected_cash_before_normal_cost": 96504.0,
+        "gain_after_setup_vs_no_return": 504.0,
+        "gain_before_setup": 2503.999999999998,
+        "conditional_full_order_probability": 0.9999999999999865
+      },
+      "profit_loss_from_forcing_maximal_return": 154.52139684806752,
+      "actions": [
+        {
+          "return": 0,
+          "expected_cash_before_normal_cost": 96000.0,
+          "gain_after_setup_vs_no_return": 0.0,
+          "gain_before_setup": 0.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 1,
+          "expected_cash_before_normal_cost": 94104.0,
+          "gain_after_setup_vs_no_return": -1896.0,
+          "gain_before_setup": 103.99999999999999,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 2,
+          "expected_cash_before_normal_cost": 94208.0,
+          "gain_after_setup_vs_no_return": -1792.0,
+          "gain_before_setup": 207.99999999999997,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 3,
+          "expected_cash_before_normal_cost": 94312.0,
+          "gain_after_setup_vs_no_return": -1688.0,
+          "gain_before_setup": 312.00000000000006,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 4,
+          "expected_cash_before_normal_cost": 94416.0,
+          "gain_after_setup_vs_no_return": -1584.0,
+          "gain_before_setup": 415.99999999999994,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 5,
+          "expected_cash_before_normal_cost": 94520.0,
+          "gain_after_setup_vs_no_return": -1480.0,
+          "gain_before_setup": 520.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 6,
+          "expected_cash_before_normal_cost": 94624.0,
+          "gain_after_setup_vs_no_return": -1376.0,
+          "gain_before_setup": 624.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 7,
+          "expected_cash_before_normal_cost": 94728.0,
+          "gain_after_setup_vs_no_return": -1272.0,
+          "gain_before_setup": 728.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 8,
+          "expected_cash_before_normal_cost": 94832.0,
+          "gain_after_setup_vs_no_return": -1168.0,
+          "gain_before_setup": 831.9999999999999,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 9,
+          "expected_cash_before_normal_cost": 94936.0,
+          "gain_after_setup_vs_no_return": -1064.0,
+          "gain_before_setup": 936.0000000000001,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 10,
+          "expected_cash_before_normal_cost": 95040.0,
+          "gain_after_setup_vs_no_return": -960.0,
+          "gain_before_setup": 1040.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 11,
+          "expected_cash_before_normal_cost": 95144.00000000001,
+          "gain_after_setup_vs_no_return": -855.9999999999854,
+          "gain_before_setup": 1144.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 12,
+          "expected_cash_before_normal_cost": 95247.99999999999,
+          "gain_after_setup_vs_no_return": -752.0000000000146,
+          "gain_before_setup": 1248.0000000000002,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 13,
+          "expected_cash_before_normal_cost": 95352.0,
+          "gain_after_setup_vs_no_return": -648.0,
+          "gain_before_setup": 1351.9999999999998,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 14,
+          "expected_cash_before_normal_cost": 95455.99999999999,
+          "gain_after_setup_vs_no_return": -544.0000000000146,
+          "gain_before_setup": 1456.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 15,
+          "expected_cash_before_normal_cost": 95560.0,
+          "gain_after_setup_vs_no_return": -440.0,
+          "gain_before_setup": 1559.9999999999998,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 16,
+          "expected_cash_before_normal_cost": 95664.0,
+          "gain_after_setup_vs_no_return": -336.0,
+          "gain_before_setup": 1663.9999999999998,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 17,
+          "expected_cash_before_normal_cost": 95768.0,
+          "gain_after_setup_vs_no_return": -232.0,
+          "gain_before_setup": 1768.0000000000002,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 18,
+          "expected_cash_before_normal_cost": 95872.00000000001,
+          "gain_after_setup_vs_no_return": -127.99999999998545,
+          "gain_before_setup": 1872.0000000000002,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 19,
+          "expected_cash_before_normal_cost": 95976.0,
+          "gain_after_setup_vs_no_return": -24.0,
+          "gain_before_setup": 1976.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 20,
+          "expected_cash_before_normal_cost": 96080.0,
+          "gain_after_setup_vs_no_return": 80.0,
+          "gain_before_setup": 2080.0000000000005,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 21,
+          "expected_cash_before_normal_cost": 96184.00000000001,
+          "gain_after_setup_vs_no_return": 184.00000000001455,
+          "gain_before_setup": 2184.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 22,
+          "expected_cash_before_normal_cost": 96288.0,
+          "gain_after_setup_vs_no_return": 288.0,
+          "gain_before_setup": 2288.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 23,
+          "expected_cash_before_normal_cost": 96392.0,
+          "gain_after_setup_vs_no_return": 392.0,
+          "gain_before_setup": 2392.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 24,
+          "expected_cash_before_normal_cost": 96496.0,
+          "gain_after_setup_vs_no_return": 496.0,
+          "gain_before_setup": 2496.0,
+          "conditional_full_order_probability": 0.0
+        },
+        {
+          "return": 25,
+          "expected_cash_before_normal_cost": 96600.0,
+          "gain_after_setup_vs_no_return": 600.0,
+          "gain_before_setup": 2600.0,
+          "conditional_full_order_probability": 0.4669747052543717
+        },
+        {
+          "return": 26,
+          "expected_cash_before_normal_cost": 96649.64414430839,
+          "gain_after_setup_vs_no_return": 649.6441443083895,
+          "gain_before_setup": 2649.644144308391,
+          "conditional_full_order_probability": 0.8172057341951506
+        },
+        {
+          "return": 27,
+          "expected_cash_before_normal_cost": 96658.52139684807,
+          "gain_after_setup_vs_no_return": 658.5213968480675,
+          "gain_before_setup": 2658.5213968480753,
+          "conditional_full_order_probability": 0.9537958354820546
+        },
+        {
+          "return": 28,
+          "expected_cash_before_normal_cost": 96651.49956159797,
+          "gain_after_setup_vs_no_return": 651.4995615979715,
+          "gain_before_setup": 2651.4995615979647,
+          "conditional_full_order_probability": 0.9906751628295187
+        },
+        {
+          "return": 29,
+          "expected_cash_before_normal_cost": 96640.18497264461,
+          "gain_after_setup_vs_no_return": 640.1849726446089,
+          "gain_before_setup": 2640.1849726446085,
+          "conditional_full_order_probability": 0.9984198215724862
+        },
+        {
+          "return": 30,
+          "expected_cash_before_normal_cost": 96627.96890541358,
+          "gain_after_setup_vs_no_return": 627.9689054135815,
+          "gain_before_setup": 2627.968905413571,
+          "conditional_full_order_probability": 0.9997673921937626
+        },
+        {
+          "return": 31,
+          "expected_cash_before_normal_cost": 96615.59598096223,
+          "gain_after_setup_vs_no_return": 615.5959809622291,
+          "gain_before_setup": 2615.5959809622173,
+          "conditional_full_order_probability": 0.9999695277869541
+        },
+        {
+          "return": 32,
+          "expected_cash_before_normal_cost": 96603.19952792782,
+          "gain_after_setup_vs_no_return": 603.1995279278199,
+          "gain_before_setup": 2603.1995279278153,
+          "conditional_full_order_probability": 0.9999963829443352
+        },
+        {
+          "return": 33,
+          "expected_cash_before_normal_cost": 96590.79994895309,
+          "gain_after_setup_vs_no_return": 590.7999489530921,
+          "gain_before_setup": 2590.799948953095,
+          "conditional_full_order_probability": 0.999999605563221
+        },
+        {
+          "return": 34,
+          "expected_cash_before_normal_cost": 96578.39999486554,
+          "gain_after_setup_vs_no_return": 578.3999948655401,
+          "gain_before_setup": 2578.399994865536,
+          "conditional_full_order_probability": 0.9999999600512983
+        },
+        {
+          "return": 35,
+          "expected_cash_before_normal_cost": 96565.99999951557,
+          "gain_after_setup_vs_no_return": 565.9999995155667,
+          "gain_before_setup": 2565.999999515565,
+          "conditional_full_order_probability": 0.9999999962090823
+        },
+        {
+          "return": 36,
+          "expected_cash_before_normal_cost": 96553.59999995683,
+          "gain_after_setup_vs_no_return": 553.5999999568303,
+          "gain_before_setup": 2553.5999999568276,
+          "conditional_full_order_probability": 0.9999999996605071
+        },
+        {
+          "return": 37,
+          "expected_cash_before_normal_cost": 96541.19999999634,
+          "gain_after_setup_vs_no_return": 541.1999999963446,
+          "gain_before_setup": 2541.1999999963446,
+          "conditional_full_order_probability": 0.9999999999711353
+        },
+        {
+          "return": 38,
+          "expected_cash_before_normal_cost": 96528.79999999971,
+          "gain_after_setup_vs_no_return": 528.7999999997119,
+          "gain_before_setup": 2528.799999999704,
+          "conditional_full_order_probability": 0.9999999999976581
+        },
+        {
+          "return": 39,
+          "expected_cash_before_normal_cost": 96516.39999999997,
+          "gain_after_setup_vs_no_return": 516.3999999999651,
+          "gain_before_setup": 2516.399999999977,
+          "conditional_full_order_probability": 0.9999999999998179
+        },
+        {
+          "return": 40,
+          "expected_cash_before_normal_cost": 96504.0,
+          "gain_after_setup_vs_no_return": 504.0,
+          "gain_before_setup": 2503.999999999998,
+          "conditional_full_order_probability": 0.9999999999999865
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T23:10:33.690770+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round77_terminal_value_gate.py": "cdd708deaf55fcff6058b5a127d10b497d87e2c1dcf119cb2f6f1bf3decc30a3",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed"
+    }
+  }
+}

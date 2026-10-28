@@ -1,0 +1,2503 @@
+[PDF PAGE 1]
+Int. J. Production Economics 274 (2024) 109308
+Available online 18 June 2024
+0925-5273/© 2024 The Author(s). Published by Elsevier B.V. This is an open access article under the CC BY license ( http://creativecommons.org/licenses/by/4.0/).
+Contents lists available at ScienceDirect
+International Journal of Production Economics
+journal homepage: www.elsevier.com/locate/ijpe
+Integration and substitution in hybrid manufacturing and refurbishing
+systems
+Y. Boutarfa a, A. Senoussia, N. Brahimib,∗, T. Aouamc
+a Laboratoire d’Automatique et de Productique, Département de Génie Industriel Université Batna 2 - Batna, Algeria
+b Department of Supply Chain Management, Rennes School of Business, Rennes, France
+c Faculty of Economics and Business Administration, Ghent University, Gent, Belgium
+A R T I C L E I N F O
+Keywords:
+Lot sizing
+Reverse logistics
+Refurbishing
+Substitution
+Uncertainty
+Relax-and-fix
+A B S T R A C T
+Inspired by a real-work case, this paper introduces a profit maximization model for dynamic lot sizing
+considering substitution and multiple usage of returns for refurbishing at different levels of quality or for
+disassembly to extract key parts that will be used in the manufacturing process. This model allows studying
+the interactions between different types of returns and decisions. To analyze the impact of uncertainty on
+these interactions, we develop a robust two-stage stochastic program with uncertainty on demands and returns.
+The resulting problems are mixed-integer linear programs that we solve using an efficient relax-and-fix and
+fix-and-optimize heuristic. Extensive numerical experiments are conducted to study the different trade-offs
+when integrating multi-usage of returns with substitution and accordingly derive managerial insights. The
+experiments have revealed, for example, that: (i) the profit margin of the refurbished items is the main
+determinant of the total profit and when such margin in high, the total profit becomes more sensitive to
+different cost variations; (ii) collection efficiency becomes very sensitive to collection cost and much less
+sensitive to refurbishing cost especially with large profit margins; (iii) when demand and returns are uncertain
+parameters, substitution becomes the best option as uncertainty and prices increase; (iv) when the gap
+between prices of different quality levels is high, lost sales occur mainly on the lowest quality product and
+downgrading decreases together with substitution; and (v) Sharing the production line between refurbishing
+and manufacturing for low-quality products is highly motivated by small upgrading costs and their substitution
+level increases with increasing upgrading costs.
+1. Introduction
+In 2022, there was 62 billion kg of e-waste (electronic waste) world-
+wide. This quantity can cover the area of an entire city. 1 These wastes
+can be considerably reduced if circular economy principles are imple-
+mented by companies, moving from the traditional linear systems (take,
+make, dispose) to a closed loop system in which products are reused,
+shared, repaired, refurbished, remanufactured and recycled (Invernizzi
+et al. , 2020 ). Companies are shifting to circular systems because of
+pressures from the society and governments in addition to the scarcity
+of resources. Hence companies have been urged to accelerate their
+search for more sustainable solutions ( Rogers et al. , 1999; Krajewski
+et al. , 2016 ). This is the case for a large consumer electronics with
+which the authors of this paper have collaborated. The company was
+looking for solutions to develop its closed-loop supply chain with the
+most efficient reverse logistics processes. The authors collaborated with
+∗ Corresponding author.
+E-mail addresses: y_boutarfa@yahoo.fr (Y. Boutarfa), a.senoussi@univ-batna2.dz (A. Senoussi), nadjib.brahimi@rennes-sb.fr (N. Brahimi),
+Tarik.Aouam@UGent.be (T. Aouam).
+1 https://www.itu.int/en/ITU-D/Environment/Pages/Publications/The-Global-E-waste-Monitor-2024.aspx.
+the company to develop mathematical models and efficient solution
+procedures for emerging optimization problems. In addition to the
+aforementioned reasons for implementing circularity, this company
+was motivated by the utilization of its resources. It has made large
+investments in acquiring new assembly lines that will become largely
+under utilized in the near future because of the shortage of imported
+parts.
+Hence, the purpose of this collaboration between the authors and
+the company is to help the latter in the design of a closed-loop supply
+chain by modeling and solving different but interrelated logistics and
+production planning problems. We started with the initial idea of the
+company which consists of using one line for manufacturing new prod-
+ucts and the newly installed line for refurbishing returned products.
+This model was then extended by proposing downward substitution at
+the finished items level. By downward substitution we mean that the
+https://doi.org/10.1016/j.ijpe.2024.109308
+Received 1 December 2022; Received in revised form 19 May 2024; Accepted 11 June 2024
+[PDF PAGE 2]
+International Journal of Production Economics 274 (2024) 109308
+2
+Y. Boutarfa et al.
+demand for refurbished products can be satisfied using new items. The
+downward substitution at the finished goods level occurs in practice
+when there are different market segments for new and refurbished
+products. In this situation a customer’s demand for some refurbished
+product arrives when such product is out of stock. The planner may
+choose to use the inventory of some new product to fulfill the demand
+and charge the price of the refurbished product. This can avoid shortage
+and setup cost of directly producing the refurbished product. It can also
+lead to opportunities to create greater flexibility in their production and
+inventory planning.
+The objective is to maximize profit while fully satisfying the demand
+for new products and attempting to meet the demand for used (refur-
+bished) products. The profit is calculated as the difference between the
+sales revenue and the total costs, which include disassembly, produc-
+tion and inventory holding costs among others. The demand for new
+products must be fully satisfied while shortages are allowed for used
+products. Over a discrete time horizon with a dynamic demand, the
+planner must decide for each time period the quantity of items that
+can be collected and stocked to enter the process, the quantity to be
+disassembled and whose key component is used for manufacturing new
+products, the quantity of the new key part to be purchased for the
+manufacturing of new products, the quantity of used items that will
+be refurbished, and the quantity of new items that will be used for
+substitution. From the disassembly process, we focus on the extraction
+of a single key part, resulting in a 1:1:1 relationship, i.e. one unit
+of a disassembled returned item generates one key part, which will
+be used in the manufacturing of one unit of the finished new item.
+This study explicitly distinguishes between refurbishing (used second
+hand finished products) and remanufacturing (spare parts) following
+the framework and terminology proposed by Thierry et al. (1995).
+The latter proposed that return options can be divided into repair, re-
+furbishing, remanufacturing, cannibalization, and recycling. Using old
+parts in the assembly of new products is considered as cannibalization
+and remanufacturing, according to the definitions presented by Thierry
+et al. (1995). More details on the description and formulation of the
+problem are presented in Section 3.1.
+This study can be divided into three main parts: A first part where
+a single type of products is sold either as a used refurbished item or as
+a new item. In the second part, a stochastic model with uncertainty on
+the collected items and demand for used items is proposed. A two-stage
+stochastic model is used in this case and several managerial insights are
+provided. In this same part, a risk averse stochastic programming model
+is proposed. Finally, we discuss different trade-offs that take place when
+products of different values and quality grading are considered in the
+process. Such a system results in more complex flows between different
+processes in the system. The paper also presents an efficient heuristic to
+solve the corresponding planning problems and analyzes the economic
+and ecological advantages of substitution and integration of decisions
+between used and new products.
+The main contributions of the paper can be summarized as follows:
+• It provides a literature review specific to lot sizing with refurbish-
+ing and substitution, which has not been done before, to the best
+of our knowledge.
+• It introduces a profit maximization integrated model for dynamic
+lot sizing considering substitution and multiple usage of returns
+for refurbishing at different levels of quality (through upgrading
+or downgrading) or for disassembly to extract key parts that will
+be used in the manufacturing process. The model was inspired by
+a real case from industry.
+• It proposes a stochastic optimization model with uncertainty on
+demand for used items and on the returned items.
+• It proposes an efficient relax-and-fix and fix-and-optimize heuris-
+tic to solve large instances of the integrated model.
+• It presents extensive numerical analysis and derives managerial
+insights that show the importance of substitution, multi-usage
+of returns, and consideration of uncertainty and multi-grades of
+products.
+Despite the increase in research on reverse logistics, to the best
+of our knowledge, there are no publications on the integrated deci-
+sions of the production planning of new products, refurbished products
+(with lower value than the new ones), and parts (as good as new
+parts) obtained from disassembly of returned products, alongside down-
+ward substitution (demand for refurbished products satisfied using new
+products). However, as indicated above, companies are interested in us-
+ing existing assembly lines for disassembly and refurbishing purposes,
+justifying the integration of such decisions. Furthermore, downward
+substitution is a significant tool used in the semiconductor industry and
+computer retail (e.g. Ervolina et al., 2006; Gallego et al., 2006).
+The remainder of the paper is organized as follows. Section 2
+presents a review of recent publications relevant to our work. The prob-
+lem is described in detail and formulated in Section 3. Section 4 details
+the heuristic solution approach. Section 5 presents the numerical exper-
+iments used to analyze the performance of the heuristic approach. This
+section also presents several managerial insights. Finally, conclusions
+are presented in Section 6.
+2. Literature review
+This section summarizes the publications relevant to our study. We
+start by presenting general papers related to reverse logistics and hybrid
+systems with substitution. Then, we present some production planning
+problems with returns, and we focus on studies that address the lot
+sizing problem with returns with substitution. The main aspects of these
+studies are summarized in Table 1.
+2.1. Reverse logistics and hybrid production systems with substitution
+Recent literature surveys on reverse logistics and closed loop supply
+chains have shown that thousands of scientific articles have been pub-
+lished on these topics during the last 30 years. Some of these surveys
+include those of Guide and Van Wassenhove (2009), Govindan et al.
+(2015), Govindan and Soleimani (2017), and Kazemi et al. (2019).
+For example, Rizova et al. (2020) identified hundreds of relevant
+publications in recent years. This literature review focuses on studies
+related to our research, namely production planning decisions related
+to returns rather than the design of closed loop supply chains and
+planning in reverse logistics in general.
+The literature on the processing options for returned products
+presents different streams and terminologies. For example, although
+there is a difference between the terms ‘‘refurbishing’’ (or ‘‘refurbish-
+ment’’) and ‘‘remanufacturing’’, several authors have been using them
+interchangeably (e.g. Vorasayan and Ryan, 2006). It can be deduced
+that there are two main streams. The first follows the classification
+and terminology proposed by Thierry et al. (1995), which has been
+considered by several authors (e.g., Gungor and Gupta, 1999; King
+et al., 2006; Zikopoulos and Tagaras, 2007; Konstantaras et al., 2010;
+Rachih et al., 2019). The article by Zacharaki et al. (2020), is related
+to a recent project funded by the European Commission. Thierry et al.
+(1995) proposed that product recovery can take the following forms:
+repair, refurbishing, remanufacturing, cannibalization, and recycling.
+In the second stream, researchers follow a simple categorization ini-
+tially proposed by Fleischmann et al. (1997), which classifies recovery
+into recycling (material recovery) and remanufacturing (value-added
+recovery). See also Guide and Van Wassenhove (2009).
+We followed the terminology used by Thierry et al. (1995). In par-
+ticular, distinction is clearly made between refurbishing where critical
+modules are inspected and upgraded to a specified quality level, and
+Remanufacturing where modules and parts are inspected and upgraded
+to as good as new quality.
+Companies may use their new product manufacturing plants to
+disassemble, remanufacture, or refurbish used products. These systems
+are referred to as hybrid systems. They can take different forms. For
+[PDF PAGE 3]
+International Journal of Production Economics 274 (2024) 109308
+3
+Y. Boutarfa et al.
+Table 1
+Summary of literature.
+Author Dem Plan. Hor. Ret inv Comp.
+inv.
+Proc.
+Capa.
+Setups Activity
+typea
+Usages of
+returns
+Subs. Objectives Solution
+approach
+Inderfurth (2004) sto Single
+period
+Yes No No No setup mf, rmf Mono Down Max Profit Markov
+Li et al. (2006) det Disc, fin Yes No No Separate mf, rmf Mono Down Min Cost DP
+Li et al. (2007) det Disc, fin Yes No Yes Separate mf, rmf Mono Down Min Cost GA, DP
+Bayındır et al. (2007) sto Single
+period
+No No Yes,
+Shared
+No setup mf, rmf Mono Down Max Profit Markov
+Piñeyro and Viera (2010) det Disc, fin No No No Separate mf, rmf Mono Down Min Cost Tabu Search
+Marshall and Archibald (2015) sto Cont., inf Yes Yes Yes Separate mf, rmf,
+cann
+Mono Bidirec Max Profit Semi-Markov
+Decision Process
+Ahiska et al. (2017) sto Cont., inf Yes No Yes Separate mf, rmf Mono Down Max Profit Heuristic
+Fang et al. (2017) sto Cont., inf Yes Yes Yes No setup mf, rmf,
+cann
+Mono Down Max Profit Multi-variate
+optim.
+Koken et al. (2018) det Disc, fin Yes No Yes Separate mf, rmf Mono Down Max Profit GA, Others
+Liu et al. (2019) sto Disc, fin Yes No Yes Separate mf, rmf,
+comp
+Mono Down Min Cost Ant Colony
+Optimization
+Afshar-Bakeshloo et al. (2021) sto Cont., inf. No No Yes No setup mf, rmf1
+and rmf2
+Mono Down (3
+levels)
+Max Profit,
+customer
+satisf.
+Markov
+Liu and Papier (2022) sto Cont, inf Yes No Yes No setup mf, rmf Mono Bidirec Max Profit Markov Decision
+process
+Our work det, sto Disc, fin Yes Yes Yes,
+Shared
+Joint mf, rfb,
+cann,
+comp
+Multi Down Max Profit Relax-and-fix
+and
+fix-and-optimize
+a mf: manufacturing, rmf: remanufacturing, cann: cannibalization, comp: component replenishment.
+example, the same assembly line of new products can be used to disas-
+semble, refurbish, or remanufacture returned products. In this case, the
+changeover times and costs should be considered. Other systems may
+use separate lines for new and used products.
+Managing production in hybrid systems is more challenging than in
+classical assembly lines of new products. Difficulties can arise from the
+complexity of the design decisions (e.g., Gungor and Gupta, 1998) and
+planning decisions on which items to refurbish or remanufacture and
+which parts to disassemble or recycle (Teunter et al., 2006; Cunha and
+Melo, 2016). Another source of complexity is the uncertainty in both
+the demand and returns of the used products (Fang et al., 2017; Naeem
+et al., 2013; Assid et al., 2019; Macedo et al., 2016; Kilic and Tunc,
+2019), the uncertainly in refurbishing duration (Slama et al., 2022),
+and the uncertainty on the quality of returned products (Quezada et al.,
+2020). Furthermore, such systems become harder to model and solve
+when considering different types of products with different levels of
+quality and when substitution is allowed between products.
+Substitution, particularly downward substitution, has been used
+as a strategy in the automotive industry (Ahiska and Kurtul, 2014).
+Earlier studies on substitution that did not consider returns or reverse
+logistics include Mcgillivray and Silver (1978), Pasternack and Drezner
+(1991) and Benkherouf et al. (2017). In dynamic demand models,
+contributions include those of Balakrishnan and Geunes (2000), Geunes
+(2003), Yaman (2009) and Jing and Mu (2020), in addition to the
+book by Lang and Domschke (2010). Shin et al. (2015) present a
+recent survey and literature classification. Substitution can occur both
+at the early stages of the production process (choice between used
+and new parts) and at the finished goods level. Substitution at the
+early stages raises several legal and technical issues. If it is possible to
+choose between a new purchased part and a used part which has been
+inspected and is considered as good as new (this is case in our paper),
+we would not consider this as substitution as it will not be possible to
+distinguish between finished goods containing either type of parts. If
+the parts are just refurbished (have undergone less rigorous inspections
+compared to remanufactured part), then the finished product cannot
+be considered as new. This is different from our model. As indicated in
+the Introduction section of the paper, downward substitution at the fin-
+ished goods level occurs when there are different market segments for
+new and refurbished products. Industrial applications where segmented
+market for manufactured new products and refurbished products occurs
+include photocopiers, tires and personal computers (Piñeyro and Viera,
+2010; Li et al., 2006) and memory chips (Leachman and Glassey,
+1987) It should be noted that despite the large number of publications
+on production planning for remanufacturing and hybrid systems, few
+publications consider substitution.
+2.2. Dynamic lot sizing with product returns
+The problem under consideration in this study is directly related
+to the lot sizing problem with product returns (Teunter, 2004) and
+more particularly to the dynamic version of the problem (Teunter
+et al., 2006). The earliest known publication on the dynamic lot sizing
+problem is the seminal paper by Wagner and Whitin (1958). They
+proposed dynamic programming algorithms for the single item lot
+sizing problem with time varying demand and without capacity re-
+strictions. Several extensions of this problem have been reported in
+the literature. Researchers have considered problems such as limited
+production capacity, parameter uncertainty, non-linear costs, and lost
+sales. Recent comprehensive surveys have been conducted on lot sizing
+problems and their extensions, complexity, and solution approaches
+(Jans and Degraeve, 2008; Buschkühl et al., 2010; Brahimi et al.,
+2017; Gicquel et al., 2008; Quadt and Kuhn, 2008; Suwondo and
+Yuliando, 2012). Most of the extensions of the uncapacitated single
+item lot sizing problem are NP-hard, although polynomial algorithms
+have been developed for certain special cases. For example, the single
+item capacitated dynamic lot sizing problem is NP-hard in general,
+but it becomes polynomial when the capacity is constant over all time
+periods. The consideration of lot sizing with returns is one of the most
+important research directions recommended in the survey by Brahimi
+et al. (2017). Here, a review of publications in this area is given with
+focus on the most relevant to current paper.
+When considering problems with returns, the corresponding publi-
+cations can be broadly classified into discrete and continuous models.
+[PDF PAGE 4]
+International Journal of Production Economics 274 (2024) 109308
+4
+Y. Boutarfa et al.
+The discrete models that address the dynamic lot sizing problem with
+product returns were first developed by Richter and Sombrutzki (2000),
+Richter and Weber (2001), and Teunter et al. (2006). Inventory control
+models with returns were discussed by Inderfurth (2004), Jaber and
+El Saadany (2009), Mitra (2016), Wang et al. (2017), and Fang et al.
+(2017).
+Because of the complexity of lot sizing decisions in remanufac-
+turing/refurbishing and hybrid systems, most proposed solution ap-
+proaches in the literature are heuristics. An exception is the polyno-
+mial time dynamic programming algorithm proposed by Teunter et al.
+(2006), for a problem with separate setups and time invariant costs,
+and Arulselvan and van den Heuvel (2022) for a problem with certain
+realistic assumptions on the cost structure. Retel Helmrich et al. (2014)
+discussed the complexity of dynamic lot sizing problems with returns
+and showed that all lot sizing problems with returns are NP-hard,
+except for the problem solved by Teunter et al. (2006). Heuristics used
+to solve NP-hard versions of this problem include extensions of the
+classical lot sizing heuristics such as Silver and Meal (1973) and Schulz
+(2011); a dynamic programming based heuristic proposed by Fazle
+Baki et al. (2014); metaheuristics such as the variable neighborhood
+search proposed by Sifaleras et al. (2015), the tabu search heuristic
+developed by Piñeyro and Viera (2009); a memetic algorithm and a
+hybrid algorithm suggested by Zouadi et al. (2015). For the multi-item
+problem, Sahling (2013) developed a column generation approach with
+particular capacity constraints, whereas (Sifaleras and Konstantaras,
+2017) solved another variant of the multi-item lot sizing problem with
+returns using a variable neighborhood descent heuristic.
+We will now discuss previous research work on lot sizing with
+returns and substitution. Though our focus will be on dynamic lot sizing
+models, we will present contributions on inventory control models
+considering returns and substitution. The closest references to our study
+are summarized in Table 1. The table lists the main attributes of each
+paper. References are classified as follows:
+• Demand (dem): stochastic (sto) or deterministic (det).
+• The planning horizon (horizon): finite (fin) or infinite (inf), dis-
+crete (disc), continuous (cont) or single period.
+• With returns inventory (ret inv): Yes/No.
+• Component inventory (Comp. inv.): Yes/No.
+• Processing Capacities (proc capa): ‘‘No’’ if the capacity is infinite,
+‘‘Yes’’ if any of the processes is capacitated, ‘‘Shared’’ if several
+processes share the same resource(s).
+• Setups: indicate cases with ‘‘no setup’’ costs or times and cases
+with ‘‘separate’’ or ‘‘joint’’ setups;
+• Activity type: manufacturing (mf), remanufacturing (rmf), refur-
+bishing (rfb), cannibalization (cann), and new component replen-
+ishment (comp).
+• Usage of Returns indicates whether returns are used in both man-
+ufacturing and remanufacturing/refurbishing processes (Multi) or
+not (Mono).
+• Substitution: whether it is downward, upward, or bidirectional
+substitution.
+• Objectives: indicates number and type of objectives.
+• Solution approaches: indicates which solution is used to solve the
+problem.
+Table 1 shows that only six (out of 12 references) have proposed dy-
+namic lot sizing models with returns and substitution. Also, more than
+half of the models have stochastic demands (8 out of 12 references).
+All these references consider continuous time or single period time
+horizons except for the study by Liu et al. (2019). The latter assume
+that both the amount of returns and demand for remanufactured items
+are stochastic. They proposed an ant colony algorithm with a random
+sampling method to solve the problem. Despite the importance and
+challenges of storing returns, some studies have ignored these aspects.
+For example, Bayındır et al. (2007) assumed that there is a continuous
+flow of returns with a fixed cost that can be included directly in the
+remanufacturing cost.
+To the best of our knowledge, only two papers consider cannibal-
+ization, i.e. the use of extracted parts from a returned items through
+disassembly: Fang et al. (2017) and Marshall and Archibald (2015).
+Compared to our work, the models in these two references assume
+infinite and continuous time horizons. In the current work, we study
+a dynamic demand finite time horizon model which is more suitable
+for production planning with high demand variability. While Inderfurth
+(2004), Li et al. (2006), and Piñeyro and Viera (2010) assumed infinite
+processing capacity, all the other references in Table 1 assume finite
+capacity processes. In all these studies, different processes (e.g., man-
+ufacturing and remanufacturing) have independent resources, each of
+which has its own capacity.
+In our contribution, we compare models with finite and infinite
+capacities and analyze the impact of line sharing on the decisions.
+With respect to setup costs and time, there are no studies on joint
+setups between manufacturing and remanufacturing/refurbishing even
+in the case of shared capacity presented by Bayındır et al. (2005) in
+their single period model. Further, we analyzed models with joint and
+separate setup times and costs. Besides the fact that this is different
+from the initial idea of the company (having two completely indepen-
+dent lines), sharing the same production line for manufacturing and
+remanufacturing has shown its advantages in several situations (Tang
+and Teunter, 2006).
+All studies on dynamic lot sizing models in Table 1 allow downward
+substitution, where the shortage of refurbished products is compen-
+sated by the higher value new product, but at the same price as the used
+one. Two inventory control models were proposed with bidirectional
+substitution. A particular case (also in a continuous time model) is
+that of Afshar-Bakeshloo et al. (2021) where the product (tires in this
+case) can have three different forms: new, remanufactured once, or
+remanufactured twice. The products are destined to prime, budget,
+and low budget market segments. The authors propose the successive
+downward substitution of products. Afshar-Bakeshloo et al. (2021) use
+Markov chains to the model the system. In the case of our study, we
+propose different levels of quality and allow downgrading and upgrading
+of returned products. In the refurbishing process, a premium returned
+electronic product, for example, can be downgraded by using lower
+quality components into it.
+In terms of objectives, the references in Table 1 can be classified
+as profit maximization (e.g., Ahiska et al., 2017; Bayındır et al., 2005)
+or cost minimization (e.g., Li et al., 2006; Piñeyro and Viera, 2009).
+The results from (Li et al., 2006) show that the cost savings due to
+downward substitution can reach 15%. While continuous time models
+mostly use Markovian decision processes, dynamic lot sizing model use
+metaheuristics such as genetic algorithms (Li et al., 2007), tabu search
+(Piñeyro and Viera, 2010) and ant colony optimization (Liu et al.,
+2019). In our case, we have proposed an efficient relax-and-fix and
+fix-and-optimize heuristic.
+The choice of the relax-and-fix and fix-and-optimize heuristic is
+motivated by its successful use in solving several lot sizing prob-
+lems. Pochet and Wolsey (2006) presents a general scheme of a relax-
+and-fix heuristic applied to a generic mixed integer program. For lot
+sizing problems, relax-and-fix heuristics have been used by Absi and
+van den Heuvel (2019) for the uncapacitated single-item lot sizing
+problem, by Federgruen et al. (2007) for the capacitated single level
+multi-item lot sizing problem and by Stadtler (2003) and Akartunalı
+and Miller (2009) for a multi-level lot sizing problem. Fix-and-optimize
+heuristics have been applied by Sahling et al. (2009) and Helber
+and Sahling (2010) to a multi-level capacitated lot sizing problem. A
+combined approach based on fix-and-relax and fix-and-optimize was
+applied by Stadtler and Sahling (2013) to a lot sizing and scheduling
+model for multi-stage flow lines with zero lead times and by Toledo
+et al. (2015) to multi-level lot sizing problems. Further details regarding
+the heuristics are presented in Section 4.
+[PDF PAGE 5]
+International Journal of Production Economics 274 (2024) 109308
+5
+Y. Boutarfa et al.
+2.3. Summary of contributions
+Based on the above literature review and on Table 1, we can
+summarize the contributions and particular aspects of our work as
+follows. To the best of our knowledge, this is the first time that a
+hybrid system combining refurbishing, manufacturing, and disassembly
+processes is modeled and solved. We have justified the usefulness of
+such a model in practice through examples from industry.
+Our paper is also the first to analyze a model with shared se-
+tups between the processing lines. Like several other studies, we have
+adopted downward substitution and we have shown the relevance of
+this choice in the previous paragraphs. This first deterministic model is
+followed by models where the amount of returns and refurbished item’s
+demand are input stochastic parameters. A two-stage and risk averse
+two-stage models are presented and solved. Finally, a multi-item model
+with different quality and finishing levels is considered. The amount of
+returns is an input parameter and it is correlated with the demand for
+new items of the same grade. Downgrading and upgrading are allowed
+at different costs. A detailed discussion of flows between processes is
+provided in the numerical experiments section. To solve hard instances
+of the problems, an efficient mathematical programming-based heuris-
+tic is proposed. The heuristic can obtain solutions close to optimum in
+less than 5 s for reasonable size instances.
+3. Problem description
+Here we describe the problem illustrated in Fig. 1. In this hybrid
+system, the production facility receives returned products. One unit of
+the returned item is composed of one core part (component) and several
+non-core parts (see Liu et al., 2019). The core part can be regarded
+as good as new (by undergoing some processes). While the non-core
+parts cannot be regarded as good as new. To produce one unit of a
+refurbished item (Path 1), we use one unit of a returned item (core
+part and non-core parts). But if we want to use a returned item in
+manufacturing of new item (Path 2), we disassemble the non-core parts
+(waste recovery) from the returned item and keep the one core part to
+be used in the assembly of the new item. Some of the returns will be
+discarded and sent directly to an independent recycling process (not
+shown here). The accepted items are eventually stored in inventory
+and separated into two sets. One set of items is refurbished (Path 1
+on Fig. 1) and used to satisfy the demand for second-hand products.
+The second set of returned items are disassembled to extract the core
+part (key component) that can be regarded as good as new as indicated
+previously. Most prior studies implicitly assume that all returns are
+of the same condition, i.e. homogeneous quality, and thus require the
+same processing and holding costs. For example, from each unit of TVs
+returned, the part or subassemblies recovered may be: control board ,
+power cables, mother board, etc. The key parts extracted from each unit
+of item returned are approximately the same. The group of components
+recovered from one unit of a returned item is called a part in the rest
+of paper. Each part is used in the manufacturing of one unit of the
+new product (Path 2). The latter can also be manufactured using the
+new purchased parts (Path 3). The remaining components and parts
+resulting from the disassembly can enter the recycling process. Given
+certain conditions, the company is also ready to substitute secondhand
+products with new ones at the same price, if this is economically feasi-
+ble. Fig. 2 illustrates the one-to-one relationship between refurbished,
+disassembled, and manufactured products and parts. The upper part of
+the figure shows that for one unit of the returned items, the process
+generates one unit of refurbished items after fixing, replacing, and
+upgrading operations. The lower part shows that from one unit of the
+returned and disassembled item, we extract one unit of the ‘‘key’’ part
+A. The dashed lines indicate the alternative option of the planner to use
+this extracted part or a purchased one from the supplier.
+Continuing with the description of the problem in Fig. 1, Path 3 in-
+dicates the case where the core part of the product is purchased instead
+of being recovered from a collected item. Finally, Path 4 represents the
+case where the refurbishing task is done on the same production line of
+the new items, requiring a changeover time between refurbishing and
+assembly of new items on this line.
+The objective is to maximize the total profit calculated as the
+difference between the revenue generated from the sales of items
+(new and refurbished) and the total cost which includes disassembly,
+manufacturing, stock-out penalty, and inventory holding costs.
+The demand for new items must be fully satisfied. However, stock-
+out is allowed for the refurbished items. When this happens, such
+demand can be either satisfied through downward substitution from
+new items, or is considered as a lost sale, which translates into a penalty
+cost in the objective function. Demand is time dependent over a discrete
+time horizon of 𝑇 time periods. For each time period of the planning
+horizon (𝑡 = 1...𝑇 ), the planner must decide on:
+• the quantity to be disassembled and used for manufacturing of
+new products,
+• the quantity of new parts to be purchased,
+• the quantity of new products to be manufactured,
+• the quantity of used products that will be refurbished or disas-
+sembled, and
+• the quantity of new products that will be used for substitution
+The quantity of products that can be collected and stored to enter
+the process is considered as decision variable in Section 3.1 and as input
+parameter in Sections 3.2.2 and 3.3.
+Assumptions
+The following assumptions are made to develop the model:
+• All the accepted returns can be used for refurbishing or manufac-
+turing.
+• Both market-driven and waste stream systems (Guide, 2001) are
+used to represent how used items are obtained.
+– The market-driven approach relies on end-users to return
+their products to a firm specializing in the reuse of those
+products. End-users are motivated to return end-of-life prod-
+ucts by financial incentives, such as deposit systems, credit
+toward a new unit, or cash paid for a specified level of
+quality. The level of returns is a decision variable in this
+case as suggested in the model of Section 3.1.
+– The waste stream approach relies on diverting discarded
+products from landfilling by making producers responsible
+for the collection and reuse of their products. In this situ-
+ation, firms passively accept all product returns from the
+waste stream and the level of returns is a parameter as
+suggested in Sections 3.2 and 3.3.
+• There are two alternatives (process flexibility) for refurbishing
+with a different costs. The first is to do the refurbishing in the
+specialized workshop with high setup but a reduced unit cost.
+The second is to integrate refurbishing with manufacturing with
+reduced setup cost but high unit cost and major (minor) setup
+times.
+In the next sections, we will detail the following models:
+1. A single grade (single quality level) model with shared or sepa-
+rate resources/capacities between refurbishing and manufactur-
+ing of new products and shared or separate inventory of returns
+for refurbishing and disassembly (Section 3.1).
+2. A single grade model with uncertainty on returns and used
+product demands.
+3. A multi grade (multi quality levels) model.
+[PDF PAGE 6]
+International Journal of Production Economics 274 (2024) 109308
+6
+Y. Boutarfa et al.
+Fig. 1. The reference problem.
+Fig. 2. The one-to-one relationships in the process. Dashed lines indicate the alternative for finished product to use Part A from external supplier or from a returned and
+disassembled product.
+3.1. Single grade deterministic problem formulation
+This section presents a MILP formulation for the first model, which
+is a deterministic single item problem. The process is as illustrated in
+Fig. 1 . The amount of collected items is a decision variable as it is
+the case in market-driven systems for obtaining used products ( Guide,
+2001). Over a planning horizon of 𝑇 discrete time periods ( 𝑡 = 1 ..𝑇 ),
+the planner should satisfy all demand for new (manufactured) products
+𝑑𝑎
+𝑡 and eventually that of refurbished products 𝑑𝑟
+𝑡 for each period 𝑡.
+If the latter is not satisfied, a stock-out penalty cost is incurred for
+each unsatisfied unit of the demand 𝑑𝑟
+𝑡 . There is only one level of
+product quality/grade. Only downward substitution is allowed, that
+is, the demand for refurbished items can be partially or completely
+satisfied using new products at the same price of the refurbished items.
+The main objective of starting with such simplified model (compared to
+model in Section 3.3) is to analyze the complexity of the problem, assess
+the performance of the heuristic solution approach, and to analyze the
+impact of different parameters of the problem on some economic and
+environmental indicators. The notation used in the model is presented
+in Table 2.
+Note that the unit refurbishing costs𝑐𝑟 and 𝑐𝑟𝑖 incurred on Path1 and
+Path4, respectively, correspond to all implicit costs associated with the
+refurbishing process (including, for example, the cleaning, upgrading,
+etc.). Similarly, the cost 𝑐𝑎 includes all costs corresponding to the
+manufacturing (final assembly) process of the new product. Hence in
+Path2 of Fig. 1, the total unit cost 𝑐𝑑 +𝑐𝑎 of a new product, corresponds
+to all implicit costs associated with disassembling the part from a used
+product and manufacturing of final new product. Finally, on Path3, the
+total cost 𝑐𝑎+𝑐𝑛 of a new product includes the unit cost of the purchased
+part together with all implicit costs associated with manufacturing of
+the new product.
+This problem is formulated as a mixed integer linear programming
+formulation (MILP) as follows. This is referred to as Single Grade
+Deterministic Model (SGDM). This represents the problem shown in
+Fig. 1.
+𝐌𝐨𝐝𝐞𝐥 𝐒𝐆𝐃𝐏 ∶ Maximize 𝑃 𝑟𝑜𝑓 𝑖𝑡 =
+𝑇∑
+𝑡=1
+(
+𝑝𝑎𝑑𝑎
+𝑡 + 𝑝𝑟(𝑑𝑟
+𝑡 − 𝐿𝑟
+𝑡 )
+)
+−
+( 𝑇∑
+𝑡=1
+(ℎ𝑐 𝐼 𝑐
+𝑡 + ℎ𝑟𝐼 𝑟
+𝑡 + ℎ𝑑 𝐼 𝑑
+𝑡 + ℎ𝑛𝐼 𝑛
+𝑡 + ℎ𝑎𝐼 𝑎
+𝑡 )
++
+𝑇∑
+𝑡=1
+(𝐶 𝑠𝑐𝑦𝑐
+𝑡 + 𝐶 𝑠𝑟𝑦𝑟
+𝑡 + 𝐶 𝑠𝑑 𝑦𝑑
+𝑡 + 𝐶 𝑠𝑛𝑦𝑛
+𝑡 + 𝐶 𝑠𝑎𝑦𝑆
+𝑡 )
++
+𝑇∑
+𝑡=1
+(𝑐𝑟𝑞𝑟
+𝑡 + 𝑐𝑖𝑟𝑞𝑖𝑟
+𝑡 + 𝑐𝑑 𝑞𝑑
+𝑡 + 𝑐𝑛𝑞𝑛
+𝑡 + 𝑐𝑎𝑞𝑎
+𝑡 + 𝑐𝑐 𝑞𝑐
+𝑡 )
+)
+(1)
+Subject to: 𝐼 𝑐
+𝑡 = 𝐼 𝑐
+𝑡−1 + 𝑞𝑐
+𝑡 − 𝑞𝑟
+𝑡 − 𝑞𝑖𝑟
+𝑡 − 𝑞𝑑
+𝑡 𝑡 = 1..𝑇 (2)
+[PDF PAGE 7]
+International Journal of Production Economics 274 (2024) 109308
+7
+Y. Boutarfa et al.
+Table 2
+Table of notations.
+Indices
+𝑡 Index for periods in the planning horizon, 𝑡 = 1, 2, … , 𝑇
+Parameters
+𝑑𝑎
+𝑡 Demand for new manufactured products.
+𝑑𝑟
+𝑡 Demand for refurbished (used) products.
+ℎ𝑐 Inventory holding cost for collected products.
+ℎ𝑟 Inventory holding cost for refurbished products.
+ℎ𝑑 Inventory holding cost for disassembled products.
+ℎ𝑛 Inventory holding cost for newly purchased parts.
+ℎ𝑎 Inventory holding cost for new manufactured products.
+𝑐𝑐 Collection cost for returned products.
+𝑐𝑟 Processing cost for refurbished products.
+𝑐𝑟𝑖 Processing cost for refurbished products in integrated case.
+𝑐𝑑 Disassembly cost for disassembled products.
+𝑐𝑛 Purchasing cost for newly purchased parts.
+𝑐𝑎 Manufacturing cost for new manufactured products.
+𝐶 𝑠𝑐 Fixed setup cost for collection.
+𝐶 𝑠𝑟 Fixed setup cost for refurbishing.
+𝐶 𝑠𝑑 Fixed setup cost for disassembling.
+𝐶 𝑠𝑛 Fixed ordering cost for new parts.
+𝐶 𝑠𝑎 Fixed setup cost for manufacturing.
+𝑄𝑟 Capacity of refurbishing expressed in time.
+𝑄𝑎 Capacity of manufacturing expressed in time
+𝑄𝑐 Inventory capacity for returned products.
+𝑇 𝑀 Changeover time if manufacturing and refurbishing are processed in
+a shared line.
+𝑡𝑎 Unit time for manufacturing.
+𝑡𝑟 Unit time for refurbishing.
+𝑡𝑖𝑟 Unit time for refurbishing in the shared line.
+𝑝𝑎 Price of new product.
+𝑝𝑟 Price of refurbished product.
+𝑀 A big number.
+Variables
+𝐼 𝑐𝑟
+𝑡 Inventory level of collected items for refurbishing in period 𝑡.
+𝐼 𝑐𝑑
+𝑡 Inventory level of collected items for disassembly in period 𝑡.
+𝐼 𝑐
+𝑡 Inventory level of collected items in period 𝑡.
+𝐼 𝑟
+𝑡 Inventory level of refurbished products in period 𝑡.
+𝐼 𝑑
+𝑡 Inventory level of disassembled products in period 𝑡.
+𝐼 𝑛
+𝑡 Inventory level of newly purchased parts in period 𝑡.
+𝐼 𝑎
+𝑡 Inventory level of new manufactured products in period 𝑡.
+𝑞𝑐𝑟
+𝑡 Quantity to be collected for refurbishing in period 𝑡.
+𝑞𝑐𝑑
+𝑡 Quantity to be collected for disassembly in period 𝑡.
+𝑞𝑐
+𝑡 Quantity to be collected in period 𝑡.
+𝑞𝑟
+𝑡 Quantity to be refurbished in period 𝑡.
+𝑞𝑖𝑟
+𝑡 Quantity to be refurbished in the shared line in period 𝑡.
+𝑞𝑟𝑑
+𝑡 Quantity of refurbished items in period 𝑡 used to satisfy demand for
+refurbished products.
+𝑞𝑢
+𝑡 Disassembled quantity used in the production in period 𝑡.
+𝑝𝑛
+𝑡 Quantity of new parts purchased in period 𝑡.
+𝑞𝑛
+𝑡 Quantity of new parts used in the production in period 𝑡.
+𝑞𝑎
+𝑡 Quantity of new items manufactured in period 𝑡.
+𝑞𝑠
+𝑡 Substitution quantity in period 𝑡.
+𝐿𝑟
+𝑡 Quantity to be loosed from 𝑑𝑟
+𝑡 in period 𝑡.
+𝑦𝑐𝑟
+𝑡 Binary variable equal to one if there is a collection in period 𝑡
+(items collected for refurbishing).
+𝑦𝑟
+𝑡 Binary variable equal to one if there is a refurbishment in period 𝑡.
+𝑦𝑑
+𝑡 Binary variable equal to one if there is a disassembly in period 𝑡.
+𝑦𝑛
+𝑡 Binary variable equal to one if there is a replenishment of new
+parts in period 𝑡.
+𝑦𝑎
+𝑡 Binary variable equal to one if there is a manufacturing in period 𝑡.
+𝑦𝑆
+𝑡 Binary variable equal to 1 if there is refurbishing or manufacturing
+in a shared line.
+𝑦𝑖𝑟
+𝑡 Binary variable equal to 1 if the refurbishing is processed in a
+shared line.
+𝑦𝑀
+𝑡 Binary variable equal to 1 if the refurbishing and manufacturing are
+processed in a shared line.
+𝐼 𝑟
+𝑡 = 𝐼 𝑟
+𝑡−1 + 𝑞𝑟
+𝑡 + 𝑞𝑖𝑟
+𝑡 − 𝑞𝑟𝑑
+𝑡 𝑡 = 1..𝑇 (3)
+𝐼 𝑑
+𝑡 = 𝐼 𝑑
+𝑡−1 + 𝑞𝑑
+𝑡 − 𝑞𝑢
+𝑡 𝑡 = 1..𝑇 (4)
+𝐼 𝑛
+𝑡 = 𝐼 𝑛
+𝑡−1 + 𝑝𝑛
+𝑡 − 𝑞𝑛
+𝑡 𝑡 = 1..𝑇 (5)
+𝐼 𝑎
+𝑡 = 𝐼 𝑎
+𝑡−1 + 𝑞𝑎
+𝑡 − 𝑞𝑠
+𝑡 − 𝑑𝑎
+𝑡 𝑡 = 1..𝑇 (6)
+𝐼 𝑐
+𝑡 ≤ 𝑄𝑐 𝑡 = 1..𝑇 (7)
+𝑞𝑟𝑑
+𝑡 + 𝑞𝑠
+𝑡 = 𝑑𝑟
+𝑡 − 𝐿𝑟
+𝑡 𝑡 = 1..𝑇 (8)
+𝑞𝑎
+𝑡 = 𝑞𝑢
+𝑡 + 𝑞𝑛
+𝑡 𝑡 = 1..𝑇 (9)
+𝑡𝑟𝑞𝑟
+𝑡 ≤ 𝑄𝑟 × 𝑦𝑟
+𝑡 𝑡 = 1..𝑇 (10)
+𝑡𝑖𝑟 × 𝑞𝑖𝑟
+𝑡 ≤ 𝑄𝑎 × 𝑦𝑖𝑟
+𝑡 𝑡 = 1..𝑇 (11)
+𝑡𝑎𝑞𝑎
+𝑡 ≤ 𝑄𝑎 × 𝑦𝑎
+𝑡 𝑡 = 1..𝑇 (12)
+𝑡𝑎 × 𝑞𝑎
+𝑡 + 𝑡𝑖𝑟 × 𝑞𝑖𝑟
+𝑡 + 𝑇 𝑀 × 𝑦𝑀
+𝑡 ≤ 𝑄𝑎 𝑡 = 1..𝑇 (13)
+𝑦𝑀
+𝑡 ≥ 𝑦𝑎
+𝑡 + 𝑦𝑖𝑟
+𝑡 − 1 𝑡 = 1..𝑇 (14)
+𝑦𝑆
+𝑡 ≥ 𝑦𝑖𝑟
+𝑡 𝑡 = 1..𝑇 (15)
+𝑦𝑆
+𝑡 ≥ 𝑦𝑎
+𝑡 𝑡 = 1..𝑇 (16)
+𝑞𝑑
+𝑡 ≤ 𝑀 × 𝑦𝑑
+𝑡 𝑡 = 1..𝑇 (17)
+𝑝𝑛
+𝑡 ≤ 𝑀 × 𝑦𝑛
+𝑡 𝑡 = 1..𝑇 (18)
+𝑞𝑐
+𝑡 ≤ 𝑀 × 𝑦𝑐
+𝑡 𝑡 = 1..𝑇 (19)
+𝑞𝑐
+𝑡 , 𝑞𝑟
+𝑡 , 𝑞𝑖𝑟
+𝑡 , 𝑞𝑟𝑑
+𝑡 , 𝑞𝑑
+𝑡 , 𝑞𝑢
+𝑡 , 𝑞𝑎
+𝑡 , 𝑞𝑛
+𝑡 , 𝑞𝑠
+𝑡 , 𝐿𝑟
+𝑡 , 𝐼𝑐
+𝑡 , 𝐼𝑟
+𝑡 , 𝐼𝑑
+𝑡 , 𝐼𝑛
+𝑡 , 𝐼𝑎
+𝑡 ≥ 0 𝑡 = 1..𝑇 (20)
+𝑦𝑐
+𝑡 , 𝑦𝑟
+𝑡 , 𝑦𝑑
+𝑡 , 𝑦𝑎
+𝑡 , 𝑦𝑛
+𝑡 , 𝑦𝑖𝑟
+𝑡 , 𝑦𝑀
+𝑡 , 𝑦𝑆
+𝑡 ∈ {0, 1} 𝑡 = 1..𝑇 (21)
+The objective (1) maximizes the total profit expressed as the dif-
+ference between the sales revenue and the total costs composed of the
+variable and fixed purchasing/processing costs and inventory holding
+costs. Constraints (2)–(6) represent the inventory balance equations
+for collected items, refurbishing, disassembly, new parts, and manufac-
+turing of new items, respectively. Constraints (7) represent inventory
+capacities of the returned products. Constraints (8) show that the
+demand for refurbished items can be partially satisfied using the output
+of refurbishing, substitution or lost. Constraints (9) indicate that the
+manufacturing of new items can use new purchased or disassembled
+parts. Constraints (10)–(12) link the continuous variables representing
+the quantities refurbished in the dedicated line, refurbished in the
+shared line, and manufactured to the corresponding binary variables,
+while respecting the capacities. If manufacturing and refurbishing are
+processed tougher in the shared line, constraints (13) and (14) indicate
+that a changeover time is considered. Constraints (15) and (16) link
+the binary variable 𝑦𝑆 to 𝑦𝑎 and 𝑦𝑖𝑟, that means the setup cost is
+incurred each time the shared line is activated. Constraints (17)–(19)
+link the continuous variables representing the quantities purchased,
+collected and disassembled to the corresponding binary variables. Big-
+M represents an upper bound on the variables on the right-hand side
+of the constraints. Finally, constraints (20) and (21) are non-negativity
+and integrality constraints, respectively.
+The main objective of starting with such simplified model (com-
+pared to model in Section 3.3) is to analyze the complexity of the
+problem, assess the performance of the heuristic solution approach, and
+to analyze the impact of different parameters of the problem on some
+economic and environmental indicators.
+[PDF PAGE 8]
+International Journal of Production Economics 274 (2024) 109308
+8
+Y. Boutarfa et al.
+This model is used for the following purposes:
+1. Assess the computational performance of the proposed heuristic
+approach.
+2. Analyze the impact of different parameters of the problem on
+some economic and environmental indicators.
+3.2. Single grade stochastic problem
+The following model attempts to represent the situation with un-
+certainty on some demands (here 𝑑𝑟
+𝑡 ) and the amount of returns. This
+model corresponds to the waste stream approach for obtaining used
+items. In this situation, firms passively accept all product returns from
+the waste stream and the level of returns is a parameter. We still assume
+a single type of products as in Section 3.1. However, the returns amount
+is an input parameter instead of being a decision variable. There exist
+different approaches to tackle optimization problems with uncertainty
+on parameters. These include, for example, robust optimization and
+stochastic programming. The latter has received a lot of importance in
+solving many different optimization problems with uncertainty. Com-
+pared to robust optimization, stochastic programming assumes that the
+uncertain parameters follow a known probability distribution. For an
+introduction to stochastic programming and its applications, we refer
+to the book of Birge and Louveaux (2011).
+In stochastic programming, the two-stage formulation has been
+widely used in the literature. Its basic idea is that decisions should
+be based on data available at the time the decisions are made. Such
+decisions should not depend on future observations. Hence, decisions
+are made in two stages and the observation of some random event takes
+place in between. The first set of decisions, that must be taken before
+the observation of any of the uncertain elements in the problem, are
+called first-stage decisions. The second set of decisions, that can be
+taken after the occurrence of uncertain events, are called second stage
+decisions.
+Return and demand uncertainties are the common uncertain param-
+eters in the literature of production planning with returns (Ferguson
+et al., 2009; Azizi et al., 2020). As problems with uncertain parameters
+represented with continuous distribution are computationally chal-
+lenging, scenarios are typically used to approximate the underlying
+continuous distributions. Each scenario is a set of discrete values show-
+ing returns from the primary markets and demands in the secondary
+markets (Azizi et al., 2020).
+In this section, a two-stage stochastic programming is proposed
+where demand for refurbished products 𝑑𝑟 and the amount of returned
+products 𝑞𝑐 are random parameters. In this case, the first-stage variables
+are used to define the quantities to be manufactured, refurbished,
+disassembled, and purchased (𝑞𝑎, 𝑞𝑟, 𝑞𝑑, 𝑝𝑛) and their respective setups
+(𝑦𝑎, 𝑦𝑟, 𝑦𝑑, 𝑦𝑛). The second stage refers to the inventory levels ( 𝐼 𝑎, 𝐼 𝑟,
+𝐼 𝑑, 𝐼 𝑛, 𝐼 𝑐), the quantities used for satisfying demand for refurbished
+products (𝑞𝑠, 𝑞𝑟𝑑) and the stock-out level 𝐿𝑟.
+However, the quality of the uncertain information may not be
+good enough to be expressed as probability distributions; even if the
+probability distributions are available, it could be difficult to reflect
+them in large scale models. Consequently, interval parameters are
+introduced into the stochastic programming framework to facilitate
+communication of the uncertainties into the optimization process, that
+can be reasonably well described by a finite set of realizations called
+scenarios. For each scenario, there is a corresponding probability of
+occurrence.
+3.2.1. Two-stage stochastic model
+We assume that the two parameters, amount of returned items and
+the demand for refurbished items, are random variables described by
+a finite set of 𝛯 scenarios. The scenario subscript 𝜉 = 1 ...𝛯 is added
+to all decision variables of second stage to represent a scenario with
+corresponding probability 𝜋𝜉.
+𝐌𝐨𝐝𝐞𝐥 𝐓𝐒𝐒𝐌 ∶ Maximize 𝑃 𝑟𝑜𝑓 𝑖𝑡 =
+𝑇∑
+𝑡=1
+𝑝𝑎𝑑𝑎
+𝑡
+−
+𝑇∑
+𝑡=1
+(𝐶 𝑠𝑟𝑦𝑟
+𝑡 + 𝐶 𝑠𝑑 𝑦𝑑
+𝑡 + 𝐶 𝑠𝑛𝑦𝑛
+𝑡 + 𝐶 𝑠𝑎𝑦𝑆
+𝑡 )
+−
+𝑇∑
+𝑡=1
+(𝑐𝑟𝑞𝑟
+𝑡 + 𝑐𝑖𝑟𝑞𝑖𝑟
+𝑡 + 𝑐𝑑 𝑞𝑑
+𝑡 + 𝑐𝑛𝑞𝑛
+𝑡 + 𝑐𝑎𝑞𝑎
+𝑡 )
+−
+𝑇∑
+𝑡=1
+𝛯∑
+𝜉=1
+𝜋𝜉(ℎ𝑐 𝐼 𝑐
+𝑡𝜉 + ℎ𝑟𝐼 𝑟
+𝑡𝜉 + ℎ𝑑 𝐼 𝑑
+𝑡𝜉 + ℎ𝑛𝐼 𝑛
+𝑡𝜉 + ℎ𝑎𝐼 𝑎
+𝑡𝜉 + 𝑐𝑐 𝑞𝑐
+𝑡𝜉 − 𝑝𝑟(𝑑𝑟
+𝑡𝜉 − 𝐿𝑟
+𝑡𝜉 ))
+(22)
+Subject to: (9)–(19).
+𝐼 𝑐
+𝑡𝜉 = 𝐼 𝑐
+(𝑡−1)𝜉 + 𝑞𝑐
+𝑡𝜉 − 𝑞𝑟
+𝑡 − 𝑞𝑖𝑟
+𝑡 − 𝑞𝑑
+𝑡 𝑡 = 1..𝑇 , 𝜉 = 1..𝛯 (23)
+𝐼 𝑟
+𝑡𝜉 = 𝐼 𝑟
+(𝑡−1)𝜉 + 𝑞𝑟
+𝑡 + 𝑞𝑖𝑟
+𝑡 − 𝑞𝑟𝑑
+𝑡𝜉 𝑡 = 1..𝑇 , 𝜉 = 1..𝛯 (24)
+𝐼 𝑑
+𝑡𝜉 = 𝐼 𝑑
+(𝑡−1)𝜉 + 𝑞𝑑
+𝑡 − 𝑞𝑢
+𝑡 𝑡 = 1..𝑇 , 𝜉 = 1..𝛯 (25)
+𝐼 𝑛
+𝑡𝜉 = 𝐼 𝑛
+(𝑡−1)𝜉 + 𝑝𝑛
+𝑡 − 𝑞𝑛
+𝑡 𝑡 = 1..𝑇 , 𝜉 = 1..𝛯 (26)
+𝐼 𝑎
+𝑡𝜉 = 𝐼 𝑎
+(𝑡−1)𝜉 + 𝑞𝑎
+𝑡 − 𝑞𝑠
+𝑡 − 𝑑𝑎
+𝑡 𝑡 = 1..𝑇 , 𝜉 = 1..𝛯 (27)
+𝐼 𝑐
+𝑡𝜉 ≤ 𝑄𝑐 𝑡 = 1..𝑇 , 𝜉 = 1..𝛯 (28)
+𝑞𝑟𝑑
+𝑡𝜉 + 𝑞𝑠
+𝑡𝜉 = 𝑑𝑟
+𝑡𝜉 − 𝐿𝑟
+𝑡𝜉 𝑡 = 1..𝑇 , 𝜉 = 1..𝛯 (29)
+𝑞𝑟
+𝑡 , 𝑞𝑖𝑟
+𝑡 , 𝑞𝑑
+𝑡 , 𝑞𝑢
+𝑡 , 𝑞𝑎
+𝑡 , 𝑞𝑛
+𝑡 ≥ 0 𝑡 = 1..𝑇 (30)
+𝑞𝑟𝑑
+𝑡𝜉 , 𝑞𝑠
+𝑡𝜉 , 𝐿𝑟
+𝑡𝜉 , 𝐼𝑐
+𝑡𝜉, 𝐼𝑟
+𝑡𝜉, 𝐼𝑑
+𝑡𝜉, 𝐼𝑛
+𝑡𝜉, 𝐼𝑎
+𝑡𝜉 ≥ 0 𝑡 = 1..𝑇 , 𝜉 = 1..𝛯 (31)
+𝑦𝑟
+𝑡 , 𝑦𝑑
+𝑡 , 𝑦𝑎
+𝑡 , 𝑦𝑛
+𝑡 , 𝑦𝑖𝑟
+𝑡 , 𝑦𝑀
+𝑡 , 𝑦𝑆
+𝑡 ∈ {0, 1} 𝑡 = 1..𝑇 (32)
+The objective (22) aims to maximize the expected total profit over
+the planning horizon. It consists of two parts: the first is linked to the
+first stage variables, while the second one is related to the second stage
+variables. Constraints (23)–(29) are equivalent to constraints (2)–(8)
+involving the second stage variables. Constraints (30) and (32) are non-
+negativity and integrality constraints for the first stage variables, and
+(31) are non-negativity constraints for the second stage variables.
+3.2.2. Risk-averse two-stage stochastic model
+The main idea of a risk averse stochastic models is to reduce the
+variability of specific outcome realizations over the scenarios by intro-
+ducing a variable that measures the robustness of the model. Common
+risk measures used include risk deviation that evaluate the dispersion
+of the second part related to the second stage variables in the objective
+function.
+Among the different risk deviation measures, we adopt the well-
+known upper partial mean that is defined as the expected value of the
+positive deviation (Mulvey et al., 1995), and we introduce a new deci-
+sion variable 𝛿𝜉 to evaluate the deviation between the total profit of the
+scenario 𝜉 and the expected total profit. This variable is inserted into
+constraints and penalized into the objective function by a parameter
+𝜆 > 0. A similar approach was proposed in Macedo et al. (2016) on a
+lot sizing problem with remanufacturing.
+[PDF PAGE 9]
+International Journal of Production Economics 274 (2024) 109308
+9
+Y. Boutarfa et al.
+The corresponding TSSM risk-averse model is presented as follows:
+𝐌𝐨𝐝𝐞𝐥 𝐑𝐀𝐓𝐒𝐒𝐏 ∶ Maximize 𝑃 𝑟𝑜𝑓 𝑖𝑡 =
+𝑇∑
+𝑡=1
+𝑝𝑎𝑑𝑎
+𝑡
+−
+𝑇∑
+𝑡=1
+(𝐶 𝑠𝑟𝑦𝑟
+𝑡 + 𝐶 𝑠𝑑 𝑦𝑑
+𝑡 + 𝐶 𝑠𝑛𝑦𝑛
+𝑡 + 𝐶 𝑠𝑎𝑦𝑆
+𝑡 )
+−
+𝑇∑
+𝑡=1
+(𝑐𝑟𝑞𝑟
+𝑡 + 𝑐𝑖𝑟𝑞𝑖𝑟
+𝑡 + 𝑐𝑑 𝑞𝑑
+𝑡 + 𝑐𝑛𝑞𝑛
+𝑡 + 𝑐𝑎𝑞𝑎
+𝑡 )
+−
+𝑇∑
+𝑡=1
+𝛯∑
+𝜉=1
+𝜋𝜉(ℎ𝑐 𝐼 𝑐
+𝑡𝜉 + ℎ𝑟𝐼 𝑟
+𝑡𝜉 + ℎ𝑑 𝐼 𝑑
+𝑡𝜉 + ℎ𝑛𝐼 𝑛
+𝑡𝜉 + ℎ𝑎𝐼 𝑎
+𝑡𝜉 + 𝑐𝑐 𝑞𝑐
+𝑡𝜉 − 𝑝𝑟(𝑑𝑟
+𝑡𝜉 − 𝐿𝑟
+𝑡𝜉 ))
+−𝜆
+𝛯∑
+𝜉=1
+𝜋𝜉𝛿𝜉
+(33)
+Subject to: (9)–(19) and (23)–(32).
+𝛿𝜉 ≥
+𝑇∑
+𝑡=1
+(ℎ𝑐 𝐼 𝑐
+𝑡𝜉 + ℎ𝑟𝐼 𝑟
+𝑡𝜉 + ℎ𝑑 𝐼 𝑑
+𝑡𝜉 + ℎ𝑛𝐼 𝑛
+𝑡𝜉 + ℎ𝑎𝐼 𝑎
+𝑡𝜉 + 𝑐𝑐 𝑞𝑐
+𝑡𝜉 − 𝑝𝑟(𝑑𝑟
+𝑡𝜉 − 𝐿𝑟
+𝑡𝜉))
+−
+𝑇∑
+𝑡=1
+𝛯∑
+𝜉′=1
+𝜋𝜉′ (ℎ𝑐 𝐼 𝑐
+𝑡𝜉′ + ℎ𝑟𝐼 𝑟
+𝑡𝜉′ + ℎ𝑑 𝐼 𝑑
+𝑡𝜉′ + ℎ𝑛𝐼 𝑛
+𝑡𝜉′ + ℎ𝑎𝐼 𝑎
+𝑡𝜉′
++𝑐𝑐 𝑞𝑐
+𝑡𝜉′ − 𝑝𝑟(𝑑𝑟
+𝑡𝜉′ − 𝐿𝑟
+𝑡𝜉′ )) 𝜉 = 1..𝛯
+(34)
+𝛿𝜉 ≥ 0 𝜉 = 1..𝛯
+(35)
+The objective (33) maximizes the profit while minimizing the risk
+represented by the expected deviation. By increasing 𝜆, we obtain solu-
+tions with low expected profit in favor of lower variability. Constraints
+(34) and (35) state the definition of the upper partial mean deviation.
+Profit maximization and risk minimization are two conflicting ob-
+jectives. They are jointly optimized in the objective function through
+the parameter 𝜆. The latter can be considered as the risk aversion
+control parameter . From a managerial point of view, higher values
+of 𝜆 correspond to highly risk averse decision makers who prefer to
+minimize risk at the expense of reducing the total profit.
+3.3. Multi grade deterministic problem formulation
+Vertical differentiation is a strategy that has been adopted by com-
+panies for a long time. Vertical differentiation is related to offering
+products with different quality levels but offering essentially the same
+functionalities. The products (models) can be classified in this case as
+high, medium, and low-quality; or equivalently as premium, standard
+and basic models (Randall et al., 1998). An example, is the Samsung
+Galaxy Note 10 Plus, Note 10, and Note 10 Lite. The three models offer
+basically the same functionalities but differ in some performance and
+finishing levels. Another example is the Nikon SLR 35 mm cameras
+N50, N70, and N90 models, which again differ only in quality level
+(Randall et al., 1998). Such differentiation is made to satisfy customers’
+different needs at different price levels.
+The quality level or grade should be taken considered when re-
+turned items are received. A priori, a product of a given quality level
+should be refurbished at the same level of quality. For example, a
+premium returned product should be refurbished to satisfy the demand
+for a premium used product. It is important to highlight the difference
+between the quality grading concept related to vertical differentiation
+as defined above from the grading of returns as an operational decision
+where returned items are tested for any technical issues are categorized
+(graded) based on the required efforts and costs to refurbish or reman-
+ufacture them (Ferguson et al., 2009). Though such grading systems
+have proven their importance to increase profitability as indicated in
+the paper of Ferguson et al. (2009), this option is not considered in
+the current work as our focus is on the analysis of upgrading and
+downgrading of different product models (grades).
+Upgrading and downgrading occur mainly in refurbishing. Upgrad-
+ing a low-quality product (a basic model, for example) consists of
+replacing worn-out parts of such model with parts extracted from a
+returned product of high quality (a premium model, for example).
+Downgrading occurs in the opposite direction where parts from a
+returned low-quality product are used in a high quality product. These
+operations are possible because the vertical differentiation usually al-
+lows some level of compatibility between spare parts of the products.
+For example, an S-pen can be used in the Samsung Galaxy Note 10 Lite,
+10, and 10 Plus models, though the S-pen of the Galaxy Note 10 Plus
+might have underdone higher quality inspection efforts compared to
+the one bundled with the Galaxy Note 10 Lite.
+In this section, we consider a Multi Grade Deterministic Model
+(MGDM) to consider a new product with 𝑛 quality grades. Each grade
+has its own associated returns, refurbished products, and new parts,
+leading to 𝑛 distinct cost structures. Each returned unit of quality 𝑖 =
+1, … , 𝑛 has several recovery options, namely:
+• refurbished to product of quality 𝑖,
+• refurbished to product of lower quality than 𝑖 (downgrading),
+• refurbished to product of higher quality than 𝑖 (upgrading), with
+an additional cost 𝑐𝑢𝑝
+𝑖𝑗 for upgrading, or
+• disassembled to extract a single key part to be used in manufac-
+turing of a new product of grade quality 𝑖.
+In the MGDM model, we employ the same notations used in the
+previous models with the addition of subscript𝑖 to denote a grade level.
+The variable 𝑞𝑟
+𝑖𝑗𝑡 (respectively, 𝑞𝑖𝑟
+𝑖𝑗𝑡) represents the quantity of returns of
+grade quality 𝑖 refurbished on the dedicated line (respectively, on the
+shared line) to obtain the refurbished product of quality𝑗 in time period
+𝑡.
+𝐌𝐨𝐝𝐞𝐥 𝐌𝐆𝐃𝐏 ∶ Maximize 𝑍 =
+𝑇∑
+𝑡=1
+𝑛∑
+𝑖=1
+(
+𝑝𝑎
+𝑖 𝑑𝑎
+𝑖𝑡 + 𝑝𝑟
+𝑖
+(
+𝑑𝑟
+𝑖𝑡 − 𝐿𝑟
+𝑖𝑡
+))
+−
+( 𝑛∑
+𝑖=1
+𝑇∑
+𝑡=1
+(
+ℎ𝑐
+𝑖 𝐼 𝑐
+𝑖𝑡 + ℎ𝑟
+𝑖 𝐼 𝑟
+𝑖𝑡 + ℎ𝑑
+𝑖 𝐼 𝑑
+𝑖𝑡 + ℎ𝑛
+𝑖 𝐼 𝑛
+𝑖𝑡 + ℎ𝑎
+𝑖 𝐼 𝑎
+𝑖𝑡
+)
++
+𝑇∑
+𝑡=1
+(
+𝐶 𝑠𝑟𝑦𝑟
+𝑡 + 𝐶 𝑠𝑑 𝑦𝑑
+𝑡 + 𝐶 𝑠𝑛𝑦𝑛
+𝑡 + 𝐶 𝑠𝑎𝑦𝑆
+𝑡
+)
++
+𝑛∑
+𝑖=1
+𝑇∑
+𝑡=1
+(
+𝑐𝑟
+𝑖
+𝑛∑
+𝑗
+𝑞𝑟
+𝑗𝑖𝑡 + 𝑐𝑖𝑟
+𝑖
+𝑛∑
+𝑗
+𝑞𝑖𝑟
+𝑗𝑖𝑡 + 𝑐𝑑
+𝑖 𝑞𝑑
+𝑖𝑡 + 𝑐𝑛
+𝑖 𝑞𝑛
+𝑖𝑡 + 𝑐𝑎
+𝑖 𝑞𝑎
+𝑖𝑡 + 𝑐𝑐
+𝑖 𝑞𝑐
+𝑖𝑡
++
+𝑛∑
+𝑗>𝑖
+𝑐𝑢𝑝
+𝑖𝑗 (𝑞𝑟
+𝑖𝑗𝑡 + 𝑞𝑖𝑟
+𝑖𝑗𝑡 )
+))
+(36)
+Subject to: 𝐼 𝑐
+𝑖𝑡 = 𝐼 𝑐
+𝑖𝑡−1 + 𝑞𝑐
+𝑖𝑡 − 𝑞𝑑
+𝑖𝑡 −
+𝑛∑
+𝑗=1
+(𝑞𝑟
+𝑖𝑗𝑡 + 𝑞𝑖𝑟
+𝑖𝑗𝑡 ) 𝑖 = 1..𝑛 , 𝑡 = 1..𝑇
+(37)
+𝐼 𝑟
+𝑖𝑡 = 𝐼 𝑟
+𝑖𝑡−1 +
+𝑛∑
+𝑗=1
+(𝑞𝑟
+𝑗𝑖𝑡 + 𝑞𝑖𝑟
+𝑗𝑖𝑡 ) − 𝑞𝑟𝑑
+𝑖𝑡 𝑖 = 1..𝑛 , 𝑡 = 1..𝑇 (38)
+𝐼 𝑑
+𝑖𝑡 = 𝐼 𝑑
+𝑖𝑡−1 + 𝑞𝑑
+𝑖𝑡 − 𝑞𝑢
+𝑖𝑡 𝑖 = 1..𝑛 , 𝑡 = 1..𝑇 (39)
+𝐼 𝑛
+𝑖𝑡 = 𝐼 𝑛
+𝑖𝑡−1 + 𝑝𝑛
+𝑖𝑡 − 𝑞𝑛
+𝑖𝑡 𝑖 = 1..𝑛 , 𝑡 = 1..𝑇 (40)
+𝐼 𝑎
+𝑖𝑡 = 𝐼 𝑎
+𝑖𝑡−1 + 𝑞𝑎
+𝑖𝑡 − 𝑞𝑠
+𝑖𝑡 − 𝑑𝑎
+𝑖𝑡 𝑖 = 1..𝑛 , 𝑡 = 1..𝑇 (41)
+𝑛∑
+𝑖=1
+𝐼 𝑐
+𝑖𝑡 ≤ 𝑄𝑐 𝑡 = 1..𝑇 (42)
+𝑞𝑟𝑑
+𝑖𝑡 + 𝑞𝑠
+𝑖𝑡 = 𝑑𝑟
+𝑖𝑡 − 𝐿𝑟
+𝑖𝑡 𝑖 = 1..𝑛 , 𝑡 = 1..𝑇 (43)
+[PDF PAGE 10]
+International Journal of Production Economics 274 (2024) 109308
+10
+Y. Boutarfa et al.
+𝑞𝑎
+𝑖𝑡 = 𝑞𝑢
+𝑖𝑡 + 𝑞𝑛
+𝑖𝑡 𝑖 = 1..𝑛 , 𝑡 = 1..𝑇 (44)
+𝑛∑
+𝑖=1
+𝑛∑
+𝑗=1
+𝑡𝑟
+𝑖 𝑞𝑟
+𝑗𝑖𝑡 ≤ 𝑄𝑟𝑦𝑟
+𝑡 𝑡 = 1..𝑇 (45)
+𝑛∑
+𝑖=1
+𝑛∑
+𝑗=1
+𝑡𝑖𝑟
+𝑖 𝑞𝑖𝑟
+𝑗𝑖𝑡 ≤ 𝑄𝑎𝑦𝑖𝑟
+𝑡 𝑡 = 1..𝑇 (46)
+𝑛∑
+𝑖=1
+𝑡𝑎
+𝑖 𝑞𝑎
+𝑖𝑡 ≤ 𝑄𝑎𝑦𝑎
+𝑡 𝑡 = 1..𝑇 (47)
+𝑛∑
+𝑖=1
+𝑡𝑑
+𝑖 𝑞𝑑
+𝑖𝑡 ≤ 𝑀𝑦 𝑑
+𝑡 𝑡 = 1..𝑇 (48)
+𝑛∑
+𝑖=1
+𝑝𝑛
+𝑖𝑡 ≤ 𝑀𝑦 𝑛
+𝑡 𝑡 = 1..𝑇 (49)
+𝑛∑
+𝑖=1
+𝑡𝑎
+𝑖 𝑞𝑎
+𝑖𝑡 +
+∑
+𝑖=1
+∑
+𝑗=1
+𝑡𝑖𝑟
+𝑖 𝑞𝑖𝑟
+𝑗𝑖𝑡 + 𝑇 𝑀 × 𝑦𝑀
+𝑡 ≤ 𝑄𝑎 𝑡 = 1..𝑇 (50)
+𝑦𝑀
+𝑡 ≥ 𝑦𝑎
+𝑡 + 𝑦𝑖𝑟
+𝑡 − 1 𝑡 = 1..𝑇 (51)
+𝑦𝑆
+𝑡 ≥ 𝑦𝑖𝑟
+𝑡 𝑡 = 1..𝑇 (52)
+𝑦𝑆
+𝑡 ≥ 𝑦𝑎
+𝑡 𝑡 = 1..𝑇 (53)
+𝑞𝑟
+𝑗𝑖𝑡 , 𝑞𝑖𝑟
+𝑖𝑗𝑡 , 𝑞𝑟𝑑
+𝑖𝑡 , 𝑞𝑑
+𝑖𝑡, 𝑞𝑢
+𝑖𝑡, 𝑞𝑎
+𝑖𝑡, 𝑞𝑛
+𝑖𝑡, 𝑞𝑠
+𝑖𝑡, 𝐼𝑐
+𝑖𝑡, 𝐼𝑟
+𝑖𝑡, 𝐼𝑑
+𝑖𝑡 , 𝐼𝑛
+𝑖𝑡, 𝐼𝑎
+𝑖𝑡, 𝐿𝑟
+𝑖𝑡 ≥ 0 𝑖, 𝑗 = 1..𝑛 , 𝑡 = 1..𝑇
+(54)
+𝑦𝑟
+𝑡 , 𝑦𝑑
+𝑡 , 𝑦𝑎
+𝑡 , 𝑦𝑛
+𝑡 , 𝑦𝑖𝑟
+𝑡 ∈ {0, 1} 𝑡 = 1..𝑇 (55)
+The objective (36) aims to maximize the total profit over the plan-
+ning horizon and grade qualities. It is expressed as the difference
+between the sales revenue and the total costs. Note that the upgrading
+cost is incurred when a returned item of grade 𝑖 is upgraded to an
+item of grade 𝑗 with an additional cost 𝑐𝑢𝑝
+𝑖𝑗 . Constraints (37)–(41)
+represent the inventory balance equations. Constraints (42) represent
+inventory capacities of the returned products. Constraints (43) show
+that the demand for refurbished items can be fully or partially satisfied
+and constraints (44) indicate that the new purchased or disassembled
+parts of grade 𝑖 can be used in manufacturing of new items of the
+same grade. Constraints (45)–(49) link the continuous variables to
+the corresponding binary variables, while respecting the capacities.
+Constraints (50) impose a processing capacity limit on the shared line.
+Constraints (51)–(53) link the binary variables.
+4. A heuristic solution approach
+It should be noted that this problem is NP-hard. This is a generaliza-
+tion of the One Warehouse Multi Retailer (OWMR) problem, which was
+proven to be NP-hard by Arkin et al. (1989). For this reason, heuristic
+techniques are adopted to solve it. With the growing performance of
+MILP-solvers, MILP-based heuristics have been employed to solve MILP
+models. Among the existing MILP-based heuristics, we have chosen
+relax-and-fix heuristic and fix-and-optimize heuristic.
+The main idea of relax-and-fix heuristics (RF) consists of decom-
+posing a MILP model to iteratively solve sub-problems with a reduced
+number of variables with integrality constraints. In the case of a MILP
+with binary variables, the latter are partitioned into three subsets
+in each iteration of the procedure. The first subset is set to fixed
+binary values (from previous iterations). The second subset is relaxed
+to take arbitrary continuous values between 0 and 1. The third subset
+is restricted with integrality constraints to take only values 0 or 1.
+This reduces the number of binary variables in the sub-problem of
+the current iteration. The solution time for a sub-problem is very
+small. Relax-and-fix heuristics were developed for different production
+planning and lot sizing problems. More details of the relax-and-fix
+heuristic for lot sizing problems can be found in Pochet and Wolsey
+(1991).
+Fix-and-optimize heuristic (FO) optimizes a subset of variables by
+solving a series of sub-problems in an iterative manner. A sub-problem
+is the reduced form of the original problem where a set of decision
+variables are fixed to integer values (sometimes randomly) whereas the
+remaining set are left to be optimized. Like the relax-and-fix heuristics,
+the FO heuristics are known for their ease of implementation, and thus,
+have been commonly adopted in various lot sizing problems over the
+last decade. For more information on the fix-and-optimize heuristic, the
+reader can refer to the studies of Pochet and Wolsey (1991) and Sahling
+et al. (2009).
+The next sections present the two phases of a Time-based relax-and-
+fix and fix-and-optimize heuristic (TRF-FO). In the first phase, a good
+feasible solution using time-based relax-and-fix construction heuristic
+(TRF) presented in Section 4.1. In the second phase, an improvement
+process is executed on this solution using fix-and-optimize heuristic
+(FO) as shown in Section 4.2.
+4.1. Time-based relax-and-fix heuristic (TRF)
+The time-based relax-and-fix heuristic is based on the decomposi-
+tion of the planning horizon into three intervals or windows of periods,
+which represent internally rolled horizons. In the first window of
+periods, which we call 𝑊 𝐹 , the binary variables are fixed to their
+optimal value from the solution of a MILP sub-problem solved in the
+previous iterations. In the second window of periods, called 𝑊 𝐼, the
+setup variables are forced to be binary. The binary variables in the last
+window, 𝑊 𝑅, are relaxed and take any real value between 0 and 1. The
+length of each window is determined using to two parameters, 𝛼 and
+𝛽, where 𝛼 and 𝛽 are integer values and 𝛽 < 𝛼 . Then, iteratively, the
+windows will be rolling from the beginning of the planning horizon
+to the end as illustrated in Fig. 3. In the first iteration, a MILP sub-
+problem forces integrality constraints on the binary variables in the first
+𝛼 periods (where 𝛼 < 𝑇 ), and all other binary variables are relaxed. In
+the second iteration, binary variables in periods 𝑡 = 1 to 𝛽 are fixed to
+their optimal values from the solution of the MILP sub-problem solved
+in the first iteration. The setup variables from period 𝛽 + 1 to period
+𝛽 + 𝛼 are then forced to be binary and relaxed from period 𝛽 + 𝛼 + 1 to
+period 𝑇 .
+In each iteration 𝑘, the three windows 𝑊 𝐹 , 𝑊 𝐼, and 𝑊 𝑅 are
+defined as follows:
+𝑊 𝐹 = [1, 𝑘 × 𝛽]
+𝑊 𝐼 = [𝑘 × 𝛽 + 1, 𝑘 × 𝛽 + 𝛼]
+𝑊 𝑅 = [𝑘 × 𝛽 + 𝛼 + 1, 𝑇 ]
+For 𝑘 = 0, 𝑊 𝐹 is empty, 𝑊 𝐼 = [1, 𝛼], and 𝑊 𝑅 = [𝛼 + 1, 𝑇 ].
+Where 𝛼 represents the length of window 𝑊 𝐼, and 𝛽 is the forward
+sliding step of window 𝑊 𝐼.
+From iteration 𝑘 to iteration 𝑘+1, the following 𝛽 periods are added
+to the window 𝑊 𝐹 . Window 𝑊 𝐼 is shifted forward by 𝛽 periods and
+the first 𝛽 periods are eliminated from window 𝑊 𝑅.
+Let 𝑦(𝑘)
+𝑡 be the integer value of 𝑦𝑡 found at iteration 𝑘.
+The following relax-and-fix lot sizing ( 𝑅𝐹 𝐿𝑆) model is solved at
+each iteration 𝑘:
+Model: 𝑇 𝑅𝐹 𝐿𝑆
+Maximize 𝑃 𝑟𝑜𝑓 𝑖𝑡 (See Eq. (1))
+subject to (2)–(20) and:
+𝑦𝑏
+𝑡 = 𝑦𝑏(𝑘−1)
+𝑡 𝑡 ∈ 𝑊 𝐹 , 𝑏 = {𝑐, 𝑟, 𝑑, 𝑛, 𝑎} (56)
+𝑦𝑏
+𝑡 ∈ {0, 1} 𝑡 ∈ 𝑊 𝐼 , 𝑏 = {𝑐, 𝑟, 𝑑, 𝑛, 𝑎} (57)
+𝑦𝑏
+𝑡 ∈ [0, 1] 𝑡 ∈ 𝑊 𝑅, 𝑏 = {𝑐, 𝑟, 𝑑, 𝑛, 𝑎} (58)
+[PDF PAGE 11]
+International Journal of Production Economics 274 (2024) 109308
+11
+Y. Boutarfa et al.
+Fig. 3. Forward sliding of windows in TRF algorithm.
+The sub-problems in each iteration of the TRFLS heuristic are solved
+using an MIP solver (CPLEX in this case), and the solution determines
+the production levels in each period in 𝑊 𝐼.
+The pseudo code of the TRF heuristic is presented in Algorithm 1.
+Algorithm 1 Pseudocode of time-based relax-and-fix heuristic (TRF)
+𝑘 = 0
+𝑊 𝐹 = ∅
+𝑊 𝐼 = [1, 𝛼]
+𝑊 𝑅 = [𝛼 + 1, 𝑇 ]
+𝑆𝑜𝑙𝑣𝑒 𝑅𝐹 𝐿𝑆
+𝑘 = 𝑘 + 1
+while 𝑘 × 𝛽 + 𝛼 < 𝑇 do
+𝑊 𝐹 = [1, 𝑘 × 𝛽]
+𝑊 𝐼 = [𝑘 × 𝛽 + 1, 𝑘 × 𝛽 + 𝛼]
+𝑊 𝑅 = [𝑘 × 𝛽 + 𝛼 + 1, 𝑇 ]
+𝑆𝑜𝑙𝑣𝑒 𝑅𝐹 𝐿𝑆
+𝑘 = 𝑘 + 1
+end while
+𝑊 𝐹 = [1, 𝑘 × 𝛽]
+𝑊 𝐼 = [𝑘 × 𝛽 + 1, 𝑇 ]
+𝑊 𝑅 = ∅
+𝑆𝑜𝑙𝑣𝑒 𝑅𝐹 𝐿𝑆
+4.2. Fix-and-optimize heuristic (FO)
+The FO heuristic (summarized in Algorithm 2) starts from an initial
+solution and considers all integrality constraints at every iteration
+(i.e. no binary variables are relaxed). It is based on the decomposition
+of the binary variables into two subsets. The first subset is made of
+variables whose values are fixed to 0 or 1. The second subset is com-
+posed of free binary variables (with integrality constraints). There are
+different ways to choose the fixed and the to-be-optimized variables.
+The most well known approach is a time-based approach where the
+planning horizon is divided into two windows of periods, 𝑊 𝐹 and
+𝑊 𝐼, which are internally rolled horizons. 𝑊 𝐼 is the subset of periods
+where the setup variables are to be re-optimized. The length of 𝑊 𝐼
+window is equal to parameter 𝛾 which can take its values arbitrarily
+between [𝛾𝑚𝑖𝑛, 𝛾𝑚𝑎𝑥]. The 𝑊 𝐹 subset includes the remaining periods
+where the binary variables are fixed to their optimal value from the
+solution of an MILP sub-problem solved in the previous iterations. An
+illustration of the sliding of window 𝑊 𝐼 is shown on Fig. 4. Starting
+with an initial solution 𝑆0 which can be obtained by a construction
+heuristic (TRF heuristic in case of TRF-FO approach), the first iteration
+solves a MILP sub-problem where binary variables in the first 𝛾 periods
+are reoptimized while the remaining variables are fixed. In the next
+iteration, if there is no improvement in the objective function compared
+to the best solution so far, then we slide the 𝑊 𝐼 window by 𝛾 periods,
+update 𝑊 𝐹 and solve a MILP sub-problem. If there is an improvement
+in the objective function, the best solution is updated as the current
+solution. Then we restart 𝑊 𝐼 window from the beginning of the hori-
+zon with a new value of 𝛾 (chosen randomly between [𝛾 𝑚𝑖𝑛, 𝛾 𝑚𝑎𝑥]) and
+we reset iteration counter to zero. The FO heuristic stops when there is
+no improvement and 𝑊 𝐼 window reaches the end of the horizon. The
+MILP sub-problem solved in FO heuristic (we call it 𝐹 𝑂𝐿𝑆) is the same
+as 𝑇 𝑅𝐹 𝐿𝑆 without constraints (58).
+Algorithm 2 Pseudocode of fix-and-optimize heuristic
+𝑆∗ = 𝑆0
+𝛾 = 𝑈 [𝛾 𝑚𝑖𝑛, 𝛾𝑚𝑎𝑥]
+𝑘 = 0
+while 𝑘 × 𝛾 < 𝑇 do
+𝑊 𝐼 = [𝑘 × 𝛾 + 1, (𝑘 + 1) × 𝛾]
+𝑊 𝐹 = [1, 𝑇 ]∖𝑊 𝐼
+𝑆𝑜𝑙𝑣𝑒 𝐹 𝑂𝐿𝑆
+if 𝑓 (𝑆) < 𝑓 (𝑆∗) then
+𝑆∗ = 𝑆
+𝛾 = 𝑈 [𝛾 𝑚𝑖𝑛, 𝛾𝑚𝑎𝑥]
+𝑘 = 0
+else
+𝑘 = 𝑘 + 1
+end if
+end while
+5. Numerical experiments
+The numerical experiments are divided into two sections: the first
+section focuses on computational performance of the exact (solver)
+approach and the heuristic procedure. The second section provides
+managerial insights.
+The computational experiments analyze the complexity of the single
+grade deterministic problem (SGDM) described in Section 3 under
+different as a function of different problem parameters. The experiment
+have two main objectives:
+• For small size instances, the numerical performance of the pro-
+posed heuristic is evaluated by comparing the best solution with
+the optimal solution obtained by a commercial MILP solver.
+• For larger size instances, where the MILP solver was not able to
+find any optimal solutions in reasonable CPU time, a limited time
+is fixed to the solver and the results obtained are compared with
+those obtained by heuristic approach.
+The managerial insight experiments study the environmental and
+economic impact of the key parameters. The objective of this experi-
+ments is threefold:
+• For the single grade deterministic model (SGDM), the impacts
+of variations in unit costs on different indicators were analyzed.
+The indicators include profit, collection efficiency, substitution,
+and lost sales. This analysis allows decision makers interested in
+hybrid refurbishing and manufacturing systems to identify condi-
+tions and parameters that impact such performance indicators.
+[PDF PAGE 12]
+International Journal of Production Economics 274 (2024) 109308
+12
+Y. Boutarfa et al.
+Fig. 4. Forward sliding of windows in FO algorithm.
+• For the Single Grade Stochastic Model (SGSM), the impact of
+uncertainty and risk aversion are analyzed. This enables decision-
+makers to make more informed and robust decisions by explicitly
+considering uncertainty and risk in their planning process.
+• For the multi grade deterministic model (MGDM), different flows
+are analyzed including the amounts upgraded and downgraded
+between and illustrated using Sankey diagrams.
+The heuristics were implemented in GAMS and solved using the
+commercial solver CPLEX 12.4.
+All experiments were run using a PC with AMD Ryzen 7 PRO 5850U,
+1.90 GHz, 16 GB RAM, under a Windows 10 professional operating
+system.
+5.1. Data generation
+The key parameters such as the length of the planning horizon 𝑇 ,
+the demand of new products 𝑑𝑎, the setup costs for manufacturing
+𝐶 𝑠𝑎, and the holding cost for new manufactured products ℎ𝑎 are gen-
+erated from Teunter et al. (2006), among others. The other parameters
+are generated according to the key parameters, within a reasonable
+range, and to make sure that all processes (collection, disassembly,
+refurbishing, refurbishing in shared line, purchasing) of new parts,
+manufacturing and substitution take place.
+The description of the default values (nominal value) of all param-
+eters is discussed as follows:
+• The length of the planning horizon is 𝑇 = 12.
+• Manufacturing and refurbishing capacities, 𝑄𝑎 and 𝑄𝑟 are fixed
+to 200 and 100, respectively.
+• Demands 𝑑𝑎 and 𝑑𝑟 are a ratio of capacities and have been
+generated randomly from a normal distribution with a mean 𝜇𝑎,
+𝜇𝑟 and a standard deviations 𝜎𝑎, 𝜎𝑟 respectively. 𝜇𝑎 = 0 .5 × 𝑄𝑎,
+𝜇𝑟 = 0.5 × 𝑄𝑟. 𝜎𝑎 = 0.15 × 𝜇𝑎, 𝜎𝑟 = 0.15 × 𝜇𝑟.
+• The holding cost ℎ𝑎 is set equal to 1, and the manufacturing cost
+𝑐𝑎 = ℎ𝑎∕0.15.
+• The others unit costs (collection, disassembling, refurbishing, and
+purchasing) are a percentage of manufacturing cost as follows:
+𝑐𝑐 = 0.25 ×𝑐𝑎, 𝑐𝑑 = 0.1 ×𝑐𝑎, 𝑐𝑟 = 0.7 ×𝑐𝑎, 𝑐𝑖𝑟 = 0.9 ×𝑐𝑎, 𝑐𝑛 = 0.5 ×𝑐𝑎.
+The choice of percentages is made within a reasonable range,
+aiming to create a conflict between disassembling and purchasing
+of new parts, and between refurbishing and substitution, i.e. the
+sum of the unit costs of collection and disassembling should be
+lower than the purchasing unit cost, and likewise, the same of
+unit costs of collection and refurbishing should be lower than the
+combined costs of purchasing and manufacturing.
+• The other holding costs at each stage are assumed to be a per-
+centage of the total unit costs until this stage, i.e. ℎ𝑐 = 0 .1 × 𝑐𝑐,
+ℎ𝑟 = 0.1 × (𝑐𝑐 + 𝑐𝑟), ℎ𝑑 = 0.1 × (𝑐𝑐 + 𝑐𝑑 ), ℎ𝑛 = 0.1 × 𝑐𝑛.
+Table 3
+Variation values of parameters in computational experiments.
+Parameter 𝐷𝑉 𝑎𝑙 𝐷𝑉 𝑎𝑟 Setup Changeover
+Low 0.5 × 𝜇 0.5 × 𝜎 0.5 × 𝐶 𝑠 0.5 × 𝑇 𝑀
+High 1.5 × 𝜇 1.5 × 𝜎 4 × 𝐶 𝑠 1.5 × 𝑇 𝑀
+• The setup cost for manufacturing 𝐶 𝑠𝑎 is set to 500, and the others
+setup costs are generated according to 𝐶 𝑠𝑎 as follows: 𝐶 𝑠𝑟 =
+0.7 × 𝐶 𝑠𝑎, 𝐶 𝑠𝑑 = 0 .8 × 𝐶 𝑠𝑎, 𝐶 𝑠𝑛 = 0 .2 × 𝐶 𝑠𝑎, 𝐶 𝑠𝑐 = 0 .8 × 𝐶 𝑠𝑎.
+The setup cost for purchasing should be lower than the setup cost
+of collection and disassembling, otherwise, there will never be a
+purchase.
+• The price of new products is fixed to 𝑃 𝑎 = 4 .5 × 𝑐𝑎; i.e. 𝑃 𝑎 = 30,
+and does not influence the value of the optimal solution but it
+is useful to express the net profit (total sales minus total cost) .
+Since lost sales of refurbished products are allowed, then price of
+refurbished products 𝑃 𝑟 has an influence on the optimal solution,
+and its defaults value is set to 3 × 𝑐𝑎; i.e. 𝑃 𝑟 = 0.66 × 𝑃 𝑎, which is
+a realistic value.
+• The changeover time 𝑇 𝑀 is estimated as 15% × 𝑄𝑎, and the unit
+time 𝑡𝑎, 𝑡𝑟 and 𝑡𝑖𝑟 for manufacturing and refurbishing in the shared
+line, respectively, are all equal to 1.
+For each combination of the parameters, five instances were ran-
+domly generated.
+5.2. Performance of the heuristic
+The performance of the heuristic described above (TRF-FO) was
+done on the Single Grade Deterministic Model under two levels (low or
+high) of the parameters: demands, setup costs, and changeover times.
+The level of values of each parameter is given as a ratio of its nominal
+value as shown in Table 3. Demand value ( 𝐷𝑉 𝑎𝑙) is a variation in the
+mean of demand 𝜇 whereas demand variability ( 𝐷𝑉 𝑎𝑟) is a variation
+in a standard deviation 𝜎. All other parameters are at their nominal
+values.
+In the case of small-size instances with 𝑇 = 12 time periods, the
+performance is measured using the 𝐺𝐴𝑃 between the value of the
+solutions obtained by the heuristic (𝑧𝐻) and the optimal solution (𝑧𝑂𝑃 𝑇 )
+obtained using the MILP solver CPLEX. The GAP was computed using
+the formula:
+𝐺𝐴𝑃 = 100 × 𝑧𝑂𝑃 𝑇 − 𝑧𝐻
+𝑧𝑂𝑃 𝑇
+For large size instances ( 𝑇 = 24 time periods), where the MILP
+solver CPLEX was not able to find any optimal solutions in reasonable
+CPU time, the performance of the heuristic was measured by calculating
+the distance of its solution from the best solution found by CPLEX
+within a time limit of 100 s
+[PDF PAGE 13]
+International Journal of Production Economics 274 (2024) 109308
+13
+Y. Boutarfa et al.
+Table 4
+Performance of the TRF-FO heuristic for small instances ( 𝑇 = 12).
+Parameter Case 1: Case 2: Case 3:
+Base case No line sharing Zero changeover time
+CPLEX TRF-FO TRF-FO CPLEX TRF-FO TRF-FO CPLEX TRF-FO TRF-FO
+CPU (s) CPU (s) GAP (%) CPU (s) CPU (s) GAP (%) CPU (s) CPU (s) GAP (%)
+𝐷𝑉 𝑎𝑟 Low 6.90 1.09 0.35 6.92 1.33 0.24 4.08 1.27 0.13
+High 5.11 0.99 0.30 5.02 1.30 0.13 2.73 1.18 0.30
+𝐷𝑉 𝑎𝑙 Low 1.47 0.86 0.89 1.46 0.97 0.89 1.16 0.89 1.23
+High 2.29 0.90 0.16 2.28 1.18 0.02 1.21 1.07 0.12
+SETUP Low 1.11 0.88 0.21 1.11 1.08 0.11 0.98 1.06 0.11
+High 2.64 0.73 0.57 2.64 0.92 0.00 1.22 0.88 0.00
+Changeover Low 6.83 1.08 0.41 6.77 1.32 0.26 – – –
+time High 10.60 1.04 0.31 10.66 1.31 0.10 – – –
+Average 4.62 0.95 0.40 4.61 1.18 0.22 1.90 1.06 0.32
+It should be noted that the performance of the heuristic strongly de-
+pends on the choice of its parameters. For the construction relax-and-fix
+heuristic TRF, the solution quality improves as 𝛼 increases and 𝛽 de-
+creases, but it will require longer computational times. To have a good
+compromise between quality and CPU time, several tests were per-
+formed over randomly chosen instances using different combinations
+of (𝛼, 𝛽).
+We found that a combination ( 𝛼, 𝛽) = (6,4) gave the best compro-
+mise on most tests. The improvement heuristic FO is characterized by a
+𝛾 parameter which can take its values arbitrarily between [ 𝛾 𝑚𝑖𝑛, 𝛾 𝑚𝑎𝑥].
+We recall that if there is an improvement in the solution, we restart the
+heuristic with a new value of 𝛾. Notice that when 𝛾 increases, both the
+performance and the running time of the heuristic increase. To set the
+values of 𝛾 𝑚𝑖𝑛 and 𝛾 𝑚𝑎𝑥, several tests were performed. We found a good
+compromise between the CPU time and solution quality where 𝛾 𝑚𝑖𝑛 = 4
+and 𝛾 𝑚𝑎𝑥 = 6.
+The numerical study is conducted to evaluate the performance of
+the TRF-FO heuristic on the following cases:
+(i) Case 1: The Single Grade Deterministic Model (SGDM).
+(ii) Case 2: The Single Grade Deterministic Model (SGDM) while pre-
+venting sharing of the new product line with refurbishing. In
+this case, the variable 𝑦𝑖𝑟 is set equal to 0.
+(iii) Case 3: The Single Grade Deterministic Model (SGDM) with zero
+changeover time between refurbishing and new item production
+on the shared line. In this case, 𝑇 𝑀 is set equal to 0.
+For instances with 𝑇 = 12 periods, Table 4 shows the CPU times of
+CPLEX and the heuristic CPU times and gaps from optimum in the three
+cases introduced previously. These results indicate that the heuristic is
+rather efficient with an average CPU time of 1 s and a gap of 0.3%
+from optimum. The solver converges faster when the changeover time
+is set to zero (Case 3). Results in both Cases 1 and 2 indicate that the
+changeover time has an important impact on the performance of the
+solver. CPLEX takes up to 10 s on average when the changeover time
+is high. Overall, the quality of the solutions obtained by the heuristic
+is rather stable though we can observe the following.
+Demand variability does not influence the performance of the
+heuristic in Case 1. In Case 2 lower variability results in higher gaps
+while it results in better solutions in Case 3. In all cases, larger average
+demands and changeover times result in better quality solutions of the
+heuristic contrary to the results obtained using CPLEX.
+Table 5 summarizes the results obtained on problems with a plan-
+ning horizon of 24 time periods where CPLEX maximum CPU time was
+set to 100 s. The average gap between heuristic solutions and those
+obtained using CPLEX is 0.2%. This is an excellent result knowing that
+the heuristic takes on average 4 s on these instances.
+5.3. Managerial insights
+The objective in these experiments is to study the impact of different
+problem parameters on a set of Key Performance Indicators (KPIs) for
+both environmental and economic aspects. The performance indicators
+will be presented in the next subsections as needed.
+5.3.1. Managerial insights from the single grade deterministic model
+Our focus from SGDM model is to determine the interval of in-
+fluence of each unit cost and to analyze its impact on the following
+KPIs:
+- Collection efficiency (CE) : the ratio of the collected items to the total
+demand for refurbished and new items and is used as an ecological
+indicator.
+𝐶𝐸 = 100 × 𝑞𝑐
+𝑑𝑎 + 𝑑𝑟
+- Amount of disassembled part used in manufacturing (UPIN) : indicates the
+value of integrating both manufacturing and refurbishing processes by
+sharing the returns.
+𝑈 𝑃 𝐼𝑁 = 100 × 𝑞𝑢
+𝑞𝑎
+- Substitution (SUB) : is an indicator that contributes to the overall
+flexibility of the production system, enabling manufacturers to re-
+spond promptly and effectively to the demand for refurbished products,
+thereby improving customer satisfaction.
+𝑆𝑈 𝐵 = 100 × 𝑞𝑠
+𝑑𝑟
+- Lost sales (LOST) : a metric used to quantify the amount of unfulfilled
+customer demand for refurbished products and is used as a customer
+service indicator.
+𝐿𝑂𝑆𝑇 = 100 × 𝐿𝑟
+𝑑𝑟
+- Net Profit Ratio (NPR) : It indicates the ratio of net profit at a given
+value of a unit cost (𝑐.) to the net profit obtained at the lowest value of
+this cost. This measures the sensitivity of profit in relation to variations
+in cost.
+𝑁𝑃 𝑅 = 100 × 𝑃 𝑟𝑜𝑓 𝑖𝑡(𝑐.)
+𝑃 𝑟𝑜𝑓 𝑖𝑡(𝑐. = 0)
+All parameters were set to their default values, unless indicated
+otherwise. The variation of each unit cost is made within its logical
+interval and expressed as a percentage of the manufacturing cost 𝑐𝑎.
+Each test is carried out for three different values of the price of
+refurbished items 𝑃 𝑟: 𝑃 𝑟 = 1.5𝑐𝑎, 𝑃 𝑟 = 2.25𝑐𝑎, 𝑃 𝑟 = 3𝑐𝑎.
+(a) Effect of varying collection cost
+Fig. 5 shows the effect of varying collection cost on the four KPIs: CE,
+UPIN, SUB, and LOST. The collection cost is varied from 0% to 30%
+[PDF PAGE 14]
+International Journal of Production Economics 274 (2024) 109308
+14
+Y. Boutarfa et al.
+Table 5
+Performance of the TRF-FO heuristic for instances with 𝑇 = 24 time periods. CPU CPLEX = 100 s.
+Parameter Case 1: Case 2: Case 3:
+Base case No line sharing Zero changeover time
+TRF-FO TRF-FO TRF-FO TRF-FO TRF-FO TRF-FO
+CPU (s) GAP (%) CPU (s) GAP (%) CPU (s) GAP (%)
+𝐷𝑉 𝑎𝑟 Low 7.27 0.02 5.00 0.00 5.42 0.10
+High 4.58 0.10 4.57 0.16 4.95 0.14
+𝐷𝑉 𝑎𝑙 Low 2.27 0.72 2.24 0.69 2.26 0.49
+High 4.28 0.04 4.28 0.04 4.30 0.04
+SETUP Low 2.72 0.00 2.74 0.00 3.04 0.00
+High 2.39 0.63 2.38 0.63 2.16 0.65
+Changeover Low 4.96 0.06 5.05 0.03 – –
+time High 5.31 0.00 5.26 −0.02 – –
+Average 4.22 0.20 3.94 0.19 3.69 0.24
+Fig. 5. Effect of varying collection cost on the KPIs.
+of the new product assembly cost. Fig. 5(a), (b), and (c) correspond to
+refurbished items selling price 𝑃 𝑟 = 1 .5𝑐𝑎, 𝑃 𝑟 = 2 .25𝑐𝑎, and 𝑃 𝑟 = 3 𝑐𝑎,
+respectively.
+The results indicate that as the collection cost increases, the col-
+lection efficiency decreases together with the amount of used parts
+(from disassembly) assembled in the new finished product. This is the
+opposite for substitution which increases as collection cost increases.
+High collection costs discourage collection and usage of used products.
+When collection cost becomes too high, it becomes more interesting to
+satisfy demand for refurbished items through substitution rather than
+through refurbishing.
+We notice that there are three intervals: two stability intervals
+where collection cost has no effect on the three indicators and the third
+interval in the middle where major changes take place. By analyzing
+the three figures together, we notice that when the collection cost 𝑐𝑐
+reaches a certain percentage of 𝑃 𝑟, the collection efficiency (CE) and
+the amount of disassembled part in the new product drop quickly. This
+is more remarkable when 𝑃 𝑟 is high in Figures (b) and (c). With an
+increase of 3% in the collection cost, collection efficiency decreases by
+75%. It becomes more relevant in this case to purchase new compo-
+nents rather than collecting and disassembling used products. Beyond
+another value of 𝑐𝑐 at the end of the middle zone of the figures, it
+becomes more relevant to either accept lost sales on the refurbished
+items or go for substitution. Beyond this value, the total collection
+and refurbishing cost becomes higher than the selling price of the
+refurbished products (𝑃 𝑟), which would generate negative profits.
+We can notice that lost sales decrease considerably when the selling
+price of refurbished items 𝑃 𝑟 increases from 1.5𝑐𝑎 to 3𝑐𝑎. Notice that
+in Fig. 5 case (a) where 𝑃 𝑟 is small ( 1.5𝑐𝑎), collection cost 𝑐𝑐 has a
+higher impact on the variation of lost sales and substitution. The range
+of variation of the indicators is much wider (Between 𝑐𝑐 = 3% and
+𝑐𝑐 = 2.25𝑐𝑎). In case (c) of Fig. 5, on the other hand, the range of 𝑐𝑐 is
+from 23 and 27% of 𝑐𝑎. Below or above this range, the system is not
+sensitive to variation of 𝑐𝑐.
+For the decision maker, these experiments indicate the threshold
+value of 𝑐𝑐 from which collection efficiency decreases considerably.
+However, this efficiency goes down to zero when the selling price 𝑃 𝑟 is
+low but stabilizes around 20% when 𝑃 𝑟 is high. It is interesting to note
+that this difference in interval length (the middle interval) is useful in
+the case where 𝑐𝑐 becomes a decision variable: The range of 𝑐𝑐 for the
+decision maker is very narrow in case 𝑃 𝑟 is high.
+(b) Effect of varying new component cost
+An increase in the new component cost motivates the use of col-
+lected items to extract the key component and to use them for refurbish-
+ing as shown in Fig. 6. This results in higher collection efficiency and
+higher amount of used components in the new product and a decrease
+in substitution. It is worth noting that average lost sales are high with
+low values of 𝑃 𝑟 (𝑃 𝑟 = 1.5𝑐𝑎) and are rather constant.
+In the case of average 𝑃 𝑟 (𝑃 𝑟 = 2.25𝑐𝑎), the lost sales of refurbished
+items are low and keep decreasing as 𝑐𝑛 increases. Finally, for 𝑃 𝑟 = 3𝑐𝑎,
+lost sales are always zero. When 𝑃 𝑟 = 1 .5𝑐𝑎, as 𝑐𝑛 increases, the gap
+between cost of new items and price of refurbished items increases,
+which discourages substitution notice that it stops at a maximum of
+60% in this case, compared with 90% and 95% on curves (b) and (c)
+in Fig. 6. Also, because lost sales are not allowed on the demand for
+new items, collected items are preferably used in the decomposition
+and satisfaction of the new items instead of refurbishing them. Which
+also contributes to the increase in lost sales of refurbished items.
+We can also notice the quick increase in collection efficiency with
+large values of 𝑃 𝑟. In Figure (b), for example, an increase of 4% in
+the price of purchased new parts, results in 80% increase in collection
+efficiency.
+[PDF PAGE 15]
+International Journal of Production Economics 274 (2024) 109308
+15
+Y. Boutarfa et al.
+Fig. 6. Effect of varying purchasing cost on KPIs.
+Fig. 7. Effect of varying refurbishing cost on KPIs.
+Fig. 8. Effect of varying disassembling cost on KPIs.
+(c) Effect of varying refurbishing cost
+For curve (a) in Fig. 7, when 𝑐𝑟 is low, there are no lost sales. As
+𝑐𝑟 increases beyond 25% of 𝑐𝑎, it becomes preferable to use collected
+items in the decomposition and use disassembled part in the new
+items without allowing substitution (because of the low price 𝑃 𝑟 of
+refurbished items). In a very small range, there is a trade-off between
+substitution and cost of lost sales. The system uses substitution to avoid
+high costs of lost sales, increasing the amount of decomposed items,
+until substitution reaches a threshold. Beyond that ‘‘reasonable’’ value
+of 𝑐𝑟, all demand for 𝑑𝑟 is satisfied from substitution and the rest is lost
+sales (85%). In other words, beyond a certain level of 𝑐𝑟, refurbishing
+stops and 𝑑𝑟 is only satisfied from substitution (Path 1 of Fig. 1).
+Looking across Fig. 7(a), (b), and (c), when 𝑐𝑟 is low, changing 𝑃 𝑟 has
+no impact on the decisions: all four indicators start at the same level.
+(d) Effect of varying disassembling cost
+In Fig. 8, when the disassembling cost 𝑐𝑑 increases beyond a certain
+level, it becomes less interesting economically (to satisfy demand for
+new items). This drop in level of disassembling, makes collection
+setup costs unjustifiable, hence it becomes preferable to stop collection
+completely (and hence refurbishing) and satisfy some of the demand
+[PDF PAGE 16]
+International Journal of Production Economics 274 (2024) 109308
+16
+Y. Boutarfa et al.
+Fig. 9. Profit evolution vs. varying unit costs. (For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)
+𝑑𝑟 from substitution while accepting an increase in lost sales (as 𝑃 𝑟 is
+small).
+(e) Analysis of profit evolution:
+This paragraph provides a discussion of the variation of total profit
+as a function of different costs. Fig. 9 shows the percentage decrease
+in Net Profit Ratio (NPR) described above. The decrease in NPR varies
+between 3.2% when varying 𝑐𝑑 in Fig. 9(d) and 12.2% when varying
+𝑐𝑐 in Fig. 9(a). We notice that in all cases, the worst decrease in total
+profit occurs for 𝑝𝑟 = 2 .25𝑐𝑎 (red curve). The variation of 𝑐𝑛 impacts
+the profit in the same manner regardless of the value of 𝑃 𝑟 with a fast
+decrease up to 𝑐𝑛 = 0.45𝑐𝑎 and a relative stabilization afterwards. When
+𝑐𝑛 gets high, we tend to stop purchasing new components. Hence, profit
+is no longer influenced by 𝑐𝑛 variation. Another particular remark in
+𝑐𝑛 variation is that the profit loss in the case of 𝑃 𝑟 = 1 .5𝑐𝑎 is more
+important compared to other cost variations in curves (a), (c) and (d) in
+Fig. 9. Another particularity of 𝑐𝑛 is that profit of 𝑃 𝑟 = 1.5𝑐𝑎 stabilizes
+after the other profits. The least profit loss happens when varying 𝑐𝑑
+while 𝑃 𝑟 = 1.5𝑐𝑎 (Curve (d) in Fig. 9). The profit decreases by less than
+1% even at very large values of 𝑐𝑑. This is an important observation
+showing the small impact of varying decomposition cost on the total
+profit. Even when 𝑃 𝑟 = 2 .25𝑐𝑎 and 𝑃 𝑟 = 3 𝑐𝑎, the profit loss does not
+exceed 3.2%.
+5.3.2. Managerial insights from stochastic model
+This section provides the insights from the stochastic model (SGSM),
+where demand 𝑑𝑟 for refurbished products and the quantity of returned
+items 𝑞𝑐 are uncertain parameters. Their values are identified as a
+random ratio of demand for new products. A discrete scenario-based
+approach is adopted to model the uncertainties. As such, the numerical
+experiments are conducted by considering five realizations ( 𝑅1 < 𝑅 2 <
+𝑅3 < 𝑅 4 < 𝑅 5) for each uncertain parameter. By combining them, a
+total of 25 scenarios, with equal probabilities, are generated as shown
+in Table 6. The five realizations are generated uniformly in the interval
+between the lower value of the ratio ( LR) and the higher value of the
+ratio (HR) as follows:
+𝑅𝑖 = 𝑈 (𝐿𝑅+(𝐻𝑅 −𝐿𝑅)∕5×(𝑖−1), 𝐿𝑅+(𝐻𝑅 −𝐿𝑅)∕5×𝑖)×𝜇𝑎, 𝑖 = 1, … , 5,
+where 𝜇𝑎 is the mean of demand for new products. For example, if
+𝐿𝑅 = 20% and 𝐻𝑅 = 80% then,
+𝑅1 = 𝑈 (0.20, 0.32) × 𝜇𝑎
+𝑅2 = 𝑈 (0.32, 0.44) × 𝜇𝑎
+𝑅3 = 𝑈 (0.44, 0.56) × 𝜇𝑎
+𝑅4 = 𝑈 (0.56, 0.68) × 𝜇𝑎
+𝑅5 = 𝑈 (0.68, 0.80) × 𝜇𝑎
+The values of 𝐿𝑅 and 𝐻𝑅 characterize the level of uncertainty. We
+considered 10 levels of uncertainty indexed from 1 to 10 as indicated
+in Table 7. A level of uncertainty equal to zero corresponds to the
+deterministic model.
+The objective is to analyze the model behavior facing uncertainty
+and to show how stochastic factors influence the system.
+[PDF PAGE 17]
+International Journal of Production Economics 274 (2024) 109308
+17
+Y. Boutarfa et al.
+Fig. 10. Rate of refurbishing and substitution in meeting the demand for refurbished products.
+Table 6
+Scenario generation.
+Scenario Dr R Scenario Dr R
+1 𝑅1 𝑅1 14 𝑅4 𝑅3
+2 𝑅2 𝑅1 15 𝑅5 𝑅3
+3 𝑅3 𝑅1 16 𝑅1 𝑅4
+4 𝑅4 𝑅1 17 𝑅2 𝑅4
+5 𝑅5 𝑅1 18 𝑅3 𝑅4
+6 𝑅1 𝑅2 19 𝑅4 𝑅4
+7 𝑅2 𝑅2 20 𝑅5 𝑅4
+8 𝑅3 𝑅2 21 𝑅1 𝑅5
+9 𝑅4 𝑅2 22 𝑅2 𝑅5
+10 𝑅5 𝑅2 23 𝑅3 𝑅5
+11 𝑅1 𝑅3 24 𝑅4 𝑅5
+12 𝑅2 𝑅3 25 𝑅5 𝑅5
+13 𝑅3 𝑅3 / / /
+Table 7
+Levels of uncertainty.
+Uncertainty
+level
+0 1 2 3 4 5 6 7 8 9 10
+𝐿𝑅 50% 45% 40% 35% 30% 25% 20% 15% 10% 5% 0%
+𝐻𝑅 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100%
+(a) Rate of refurbishing and substitution in meeting demand for
+refurbished products
+Curves (a), (b) and (c) in Fig. 10 present the variation of the quantity
+refurbished in the dedicated line ( 𝑞𝑟), the quantity refurbished in the
+shared line (𝑞𝑖𝑟), the quantity substituted (𝑞𝑠) and the lost sales (𝐿𝑟) as
+a function of the level of uncertainty for 𝑃 𝑟 = 1 .5𝑐𝑎, 𝑃 𝑟 = 2 .25𝑐𝑎 and
+𝑃 𝑟 = 3𝑐𝑎.
+In the deterministic models (uncertainty level = 0), the lost sales
+level is at minimum value. Its smallest value occurs for the largest
+value of profit from refurbished items ( 𝑃 𝑟 = 3 𝑐𝑎). While 𝑞𝑟 decreases
+with uncertainty increase, the substitution and lost sales level increase.
+Substitution increases as 𝑃 𝑟 increases for any uncertainty level.
+Figures (a), (b) and (c) show that the total amounts 𝑞𝑠 + 𝐿𝑠 and
+𝑞𝑟 + 𝑞𝑖𝑟 are independent of the selling price 𝑃 𝑟 for the same level of
+uncertainty. The upper part (𝑞𝑠 + 𝐿𝑠) of the three figures indicates that
+as profit margin increases, the best option to compensate for lost sales
+is through substitution instead of refurbishing.
+However, 𝑞𝑠 + 𝐿𝑠 (resp. 𝑞𝑟 + 𝑞𝑖𝑟) increase (resp. decrease) as uncer-
+tainty level increases. However, we notice that the amounts produced
+on the shared line (𝑞𝑖𝑟) are rather independent of the uncertainty level.
+In the case of high risks (high level of uncertainty), it is better to avoid
+higher fixed setup costs on the refurbishing line and keep using the
+shared line. This is different in the case of high profit margins on Figure
+(c), where the contribution of 𝑞𝑟 is higher than in Figures (a) and (b).
+Fig. 11. Effect of uncertainty level on total profit.
+Such high price of refurbished items justifies the use of more setup costs
+on the dedicated refurbishing line.
+(b) Effect of uncertainty level on the total profit
+Fig. 11 plots the percentage decrease of profit compared to the
+deterministic case profit (Uncertainty Level = 0) as a function of
+uncertainty level. This decrease in profit changes considerably between
+cases with low and high profit margins ( 𝑃 𝑟 = 1 .5𝑐𝑎, 𝑃 𝑟 = 2 .25𝑐𝑎, and
+𝑃 𝑟 = 𝑐𝑎). Percentage of profit decrease is higher (up to 21% from
+deterministic case) for 𝑃 𝑟 = 3𝑐𝑎. For small profit margin of refurbished
+items, the uncertainty level has much less effect on the total profit
+decrease (less than 7%). This can be helpful for the decision maker to
+set an appropriate price level for the refurbished item.
+(c) Sharing of costs among different processes
+Figs. 12, 13, and 14 provide a discussion of the sharing of costs
+among the different processes. They are also used to support the dis-
+cussion given in Section 5.3.2. For a sales price of𝑃 𝑟 = 1.5𝑐𝑎, Fig. 12(a),
+(b) and (c) show the sharing of holding costs, setup costs, and unit
+costs (respectively) among manufacturing, collection, purchasing and
+refurbishing as a function of the uncertainty level. Similarly, Figs. 13
+and 14 are used for the same analysis for 𝑃 𝑟 = 2 .25𝑐𝑎 and 𝑃 𝑟 = 3 𝑐𝑎.
+In terms of holding costs, uncertainty level has the highest impact
+on refurbished and collected Products. This reflects the fact that the
+uncertainty is on collection and demand for refurbished items. In terms
+of setup, the impact of uncertainty is higher on setup of refurbishing
+(decreases as uncertainty increases) and on setup of manufacturing new
+products (increases with uncertainty level). Finally, in terms of total
+variable processing costs, the uncertainty mainly impacts refurbishing
+costs which decrease with increasing uncertainty.
+[PDF PAGE 18]
+International Journal of Production Economics 274 (2024) 109308
+18
+Y. Boutarfa et al.
+Fig. 12. Contribution of different costs to total cost for 𝑃 𝑟 = 1.5𝑐𝑎.
+Fig. 13. Contribution of different costs to total cost for 𝑃 𝑟 = 2.25𝑐𝑎.
+Fig. 14. Contribution of different costs to total cost for 𝑃 𝑟 = 3𝑐𝑎.
+(d) Analysis of the risk averse model
+Fig. 15(a) and (b) plot the variation of profit reduction and risk,
+respectively, as a function of the risk parameter 𝜆. In plot 15(a), the
+reference value from which reduction percentage is calculated corre-
+sponds to the profit at 𝜆 = 0 . Preliminary tests suggested that it is
+sufficient to vary the risk parameter 𝜆 in the interval [0, 20] to analyze
+the trade-off between the decrease in the expected total profit and the
+reduction in the expected deviation.
+These results indicate that to decrease variability from 3.5% to
+0 and ensure robustness of the model, we need to sacrifice 7% of
+profit, which corresponds to the price of robustness. Comparing risk
+reductions with expected profit reduction, More specifically, we can
+notice that for 𝜆 = 4, the risk is reduced by more than 3% compared to
+𝜆 = 0, while the total profit decreased by 6%.
+5.3.3. Managerial insights from the multi-grade multi-quality level model
+For the Multi-Grade Deterministic Problem, there are three levels
+of quality, 𝑖 = 1, 2, 3, corresponding to low, medium, and high quality,
+respectively. These levels can be viewed also as basic, standard, and
+premium quality levels. The parameter default values of the medium
+quality ( 𝑖 = 2 ) are generated exactly as indicated in Section 5.1. The
+holding cost ℎ𝑎
+1 = 0.5, ℎ𝑎
+2 = 1, ℎ𝑎
+3 = 1.5. The manufacturing cost for each
+grade quality 𝑖 is 𝑐𝑎
+𝑖 = ℎ𝑎
+𝑖 ∕0.15. The other holding and unit processing
+costs are set as indicated in Section 5.1. The upgrading costs are a
+[PDF PAGE 19]
+International Journal of Production Economics 274 (2024) 109308
+19
+Y. Boutarfa et al.
+Fig. 15. Profit and variability evolution vs. varying 𝜆.
+Table 8
+Description of nodes in Sankey diagrams.
+Nodes Description
+Purchase Quantities purchased
+QC Quantities collected
+QR Quantities refurbished in the dedicated line
+Qir Quantities refurbished in the shared line
+LR Quantities lost of demand for refurbished items
+QA Quantities manufactured
+DA Demand for new items
+DR Demand for refurbished items
+QD Quantities disassembled
+percentage of manufacturing costs as follows: 𝑐𝑢𝑝
+(1,2) = 0 .2𝑐𝑎
+2, 𝑐𝑢𝑝
+(1,3) =
+0.4𝑐𝑎
+3, 𝑐𝑢𝑝
+(2,3) = 0.3𝑐𝑎
+3. All other parameters which are independent of the
+subscript 𝑖 are kept as in Section 5.1. The flow quantities correspond to
+the cumulative amounts over the whole planning horizon.
+Sankey diagrams are used to analyze and to represent the magnitude
+of flows between different nodes in the system through various process-
+ing stages to the final products. The description of nodes is given in
+Table 8.
+The results are presented in Figs. 16, 17, 18, and 19.
+Fig. 17 shows the flows when the gap between quality levels is low
+or high in subfigures (a) and (b), respectively. The gap is reflected in the
+difference between the holding costs of different levels. For low-quality
+gap, ℎ𝑎
+1 = 0.95, ℎ𝑎
+2 = 1, ℎ𝑎
+3 = 1.05. For high quality gap, ℎ𝑎
+1 = 0.25, ℎ𝑎
+2 = 1,
+ℎ𝑎
+3 = 1.75.
+Comparing Fig. 16(a) and (b), we can notice that downgrading is
+proportional to the quality gaps. When quality gap increases, lost sales
+occur mostly on the lowest quality product in this case, sharing of the
+production line between refurbishing and manufacturing increases for
+higher quality products, and substitution decreases.
+The second experiment concerns the consideration of finite vs.
+infinite storage capacity of returns. In the former case, the storage
+capacity is limited to two periods of returns. The results are shown on
+Fig. 17(a) and (b), respectively. When inventory capacity is limited,
+lost sales are higher while disassembly process is not activated at all.
+We can also notice that the shared line is utilized at higher volumes
+when the capacity is infinite. In this same situation, substitution for
+low-quality products has increased.
+In Fig. 18(a) and (b) we discuss the impact of the amount of returns
+(as a percentage of new items’ demand). It is easy to observe the
+increase in purchased new parts and substitution where returns rate is
+low in Figure (a). We have on the other hand an increase in the amount
+of disassembled returns when their rate is high as shown on Figure
+(b). In this case, refurbishing also increases both on the dedicated and
+the shared line. However, upgrading from low-quality to high quality
+products decreases considerably in this situation.
+Finally, Fig. 19 shows the impact of upgrading cost on the flows.
+The most remarkable result here is the fact that higher upgrading costs
+result (Figure (b)) result in higher amounts of disassembled items,
+higher substitution of low-quality items and lower substitution for
+higher quality items.
+6. Conclusions and future work
+We studied the production planning problem in a facility that
+receives returned products. We have proposed a profit maximization
+model for dynamic lot sizing considering substitution and multiple
+usage of returns for refurbishing at different levels of quality or for
+disassembly to extract key parts that will be used in the manufacturing
+process. Discussion started with a single grade (single level of quality)
+and was extended to multi grade case. This model allowed to study
+interactions between different types of returns and decisions. The im-
+pact of uncertainty on the different interactions was analyzed through
+a robust two-stage stochastic program with uncertainty on demands
+and returns. The models were implemented as mixed integer linear
+programming formulations. These optimization problems are NP-hard.
+Therefore, we proposed an efficient heuristic based on relax-and-fix and
+fix-and-optimize approaches. The heuristic give solutions very close to
+optimum in few seconds on problems with reasonable lengths of the
+planning horizon.
+Several managerial insights were derived through extensive numeri-
+cal experiments. The main findings are as follows. From an economical
+point of view, the profit margin of the refurbished items is the main
+determinant of the total profit and when such margin in high, the
+total profit becomes more sensitive to different cost variations. With
+respect to the collection efficiency (environment-related performance
+indicator), it becomes very sensitive to collection cost and much less
+sensitive to refurbishing cost. This was more remarkable with high
+profit margins on the refurbished items. A third finding was related to
+the two-stage stochastic model. As uncertainty level increases, risk of
+stock-out increases. The best option chosen by the model to compensate
+for these stock-outs is substitution instead of more refurbishing. Based
+[PDF PAGE 20]
+International Journal of Production Economics 274 (2024) 109308
+20
+Y. Boutarfa et al.
+Fig. 16. Flows in case of (a) low vs. (b) high quality gaps.
+Fig. 17. Returns storage capacity: (a) finite vs. (b) infinite.
+on the numerical experiments, the cost of robustness was 7% of the
+deterministic profit. That is, to ensure robustness of the model, we need
+to sacrifice 7% of the total profit. In the multi grade case, we have
+noticed that disassembly is considered as a preferred option mostly
+when upgrading cost (from low-quality to high quality products) is
+high. In this same situation, substitution occurs mainly on low-quality
+products.
+An interesting extension of the present work is to evaluate how
+different types of warranties on new and refurbished products affect
+lot sizing decisions. It will also be interesting to study the risk of
+obsolescence of refurbished items especially in the electronic products.
+Beyond a certain time limit, electronic products cannot be refurbished
+any more. In addition to the above extensions, there is clearly a
+need to study the link between product life cycle and refurbishing
+decisions. It will be useful to extend inventory management policies for
+remanufacturing (ex. Bayındır et al., 2007) to integrate obsolescence
+(See also Pierskalla, 1969; Van Jaarsveld and Dekker, 2011). In our
+models, the environmental impact of integration and substitution was
+measured through the ‘‘collection efficiency’’ indicator (Section 5.3).
+[PDF PAGE 21]
+International Journal of Production Economics 274 (2024) 109308
+21
+Y. Boutarfa et al.
+Fig. 18. Percentage of returns: (a) low vs. (b) high.
+Fig. 19. Upgrade cost: (a) low vs. (b) high.
+An important extension of our work could be the development of bi-
+objective models considering an ecological objective (such as the one
+mentioned previously) together with an economic indicator (cost or
+profit).
+CRediT authorship contribution statement
+Y. Boutarfa: Writing – original draft, Methodology, Formal analy-
+sis, Conceptualization. A. Senoussi: Writing – original draft, Methodol-
+ogy, Formal analysis, Conceptualization.N. Brahimi: Writing – original
+draft, Methodology, Formal analysis, Conceptualization. T. Aouam:
+Writing – original draft, Methodology, Formal analysis, Conceptualiza-
+tion.
+Data availability
+Data will be made available on request.
+References
+Absi, N., van den Heuvel, W., 2019. Worst case analysis of Relax and Fix heuristics
+for lot-sizing problems. European J. Oper. Res. 279 (2), 449–458.
+Afshar-Bakeshloo, M., Jolai, F., Bozorgi-Amiri, A., 2021. A bi-objective manufactur-
+ing/remanufacturing system considering downward substitutions between three
+markets. J. Manuf. Syst. 58, 75–92.
+Ahiska, S.S., Gocer, F., King, R.E., 2017. Heuristic inventory policies for a hybrid
+manufacturing/remanufacturing system with product substitution. Comput. Ind.
+Eng. 114, 206–222.
+[PDF PAGE 22]
+International Journal of Production Economics 274 (2024) 109308
+22
+Y. Boutarfa et al.
+Ahiska, S.S., Kurtul, E., 2014. Modeling and analysis of a product substitution strategy
+for a stochastic manufacturing/remanufacturing system. Comput. Ind. Eng. 72,
+1–11.
+Akartunalı, K., Miller, A.J., 2009. A heuristic approach for big bucket multi-level
+production planning problems. European J. Oper. Res. 193 (2), 396–411.
+Arkin, E., Joneja, D., Roundy, R., 1989. Computational complexity of uncapacitated
+multi-echelon production planning problems. Oper. Res. Lett. 8 (2), 61–66.
+Arulselvan, K., van den Heuvel, W., 2022. Economic lot-sizing problem with
+remanufacturing option: complexity and algorithms. Optim. Lett. 16 (2), 421–432.
+Assid, M., Gharbi, A., Hajji, A., 2019. Production planning of an unreliable hybrid
+manufacturing–remanufacturing system under uncertainties and supply constraints.
+Comput. Ind. Eng. 136, 31–45.
+Azizi, V., Hu, G., Mokari, M., 2020. A two-stage stochastic programming model for
+multi-period reverse logistics network design with lot-sizing. Comput. Ind. Eng.
+143, 106397.
+Balakrishnan, A., Geunes, J., 2000. Requirements planning with substitutions: exploiting
+bill-of-materials flexibility in production planning. Manuf. Serv. Oper. Manage. 2
+(2), 166–185.
+Bayındır, Z.P., Erkip, N., Güllü, R., 2005. Assessing the benefits of remanufacturing
+option under one-way substitution. J. Oper. Res. Soc. 56 (3), 286–296.
+Bayındır, Z.P., Erkip, N., Güllü, R., 2007. Assessing the benefits of remanufacturing
+option under one-way substitution and capacity constraint. Comput. Oper. Res. 34
+(2), 487–514.
+Benkherouf, L., Skouri, K., Konstantaras, I., 2017. Inventory decisions for a finite
+horizon problem with product substitution options and time varying demand. Appl.
+Math. Model. 51, 669–685.
+Birge, J.R., Louveaux, F., 2011. Introduction to Stochastic Programming. Springer
+Science & Business Media.
+Brahimi, N., Absi, N., Dauzère-Pérès, S., Nordli, A., 2017. Single-item dynamic lot-sizing
+problems: An updated survey. European J. Oper. Res. 263 (3), 838–863.
+Buschkühl, L., Sahling, F., Helber, S., Tempelmeier, H., 2010. Dynamic capacitated
+lot-sizing problems: a classification and review of solution approaches. Or Spectr.
+32 (2), 231–261.
+Cunha, J.O., Melo, R.A., 2016. A computational comparison of formulations for the
+economic lot-sizing with remanufacturing. Comput. Ind. Eng. 92, 72–81.
+Ervolina, T.R., Ettl, M., Lee, Y.M., Peters, D.J., 2006. Simulating order fulfillment with
+product substitutions in an assemble-to-order supply chain. In: Proceedings of the
+2006 Winter Simulation Conference. IEEE, pp. 2012–2020.
+Fang, C.-C., Lai, M.-H., Huang, Y.-S., 2017. Production planning of new and re-
+manufacturing products in hybrid production systems. Comput. Ind. Eng. 108,
+88–99.
+Fazle Baki, M., Chaouch, B.A., Abdul-Kader, W., 2014. A heuristic solution procedure
+for the dynamic lot sizing problem with remanufacturing and product recovery.
+Comput. Oper. Res. 43, 225–236.
+Federgruen, A., Meissner, J., Tzur, M., 2007. Progressive interval heuristics for
+multi-item capacitated lot-sizing problems. Oper. Res. 55 (3), 490–502.
+Ferguson, M., Guide, Jr., V.D., Koca, E., Souza, G.C., 2009. The value of quality grading
+in remanufacturing. Prod. Oper. Manage. 18 (3), 300–314.
+Fleischmann, M., Bloemhof-Ruwaard, J.M., Dekker, R., Van der Laan, E.,
+Van Nunen, J.A., Van Wassenhove, L.N., 1997. Quantitative models for reverse
+logistics: A review. European J. Oper. Res. 103 (1), 1–17.
+Gallego, G., Katircioglu, K., Ramachandran, B., 2006. Semiconductor inventory man-
+agement with multiple grade parts and downgrading. Prod. Plan. Control 17 (7),
+689–700.
+Geunes, J., 2003. Solving large-scale requirements planning problems with component
+substitution options. Comput. Ind. Eng. 44 (3), 475–491.
+Gicquel, C., Minoux, M., Dallery, Y., 2008. Capacitated Lot Sizing models: a literature
+review. hal-00255830 1, 36–49.
+Govindan, K., Soleimani, H., 2017. A review of reverse logistics and closed-loop supply
+chains: a Journal of cleaner production focus. J. Clean. Prod. 142, 371–384.
+Govindan, K., Soleimani, H., Kannan, D., 2015. Reverse logistics and closed-loop supply
+chain: A comprehensive review to explore the future. European J. Oper. Res. 240
+(3), 603–626.
+Guide, V.D.R., 2001. Managing product returns for remanufacturing. Prod. Oper.
+Manage. 10 (2), 142–155.
+Guide, Jr., V.D.R., Van Wassenhove, L.N., 2009. OR FORUM—The evolution of
+closed-loop supply chain research. Oper. Res. 57 (1), 10–18.
+Gungor, A., Gupta, S.M., 1998. Disassembly sequence planning for products with
+defective parts in product recovery. Comput. Ind. Eng. 35 (1–2), 161–164.
+Gungor, A., Gupta, S.M., 1999. Issues in environmentally conscious manufacturing and
+product recovery: a survey. Comput. Ind. Eng. 36 (4), 811–853.
+Helber, S., Sahling, F., 2010. A fix-and-optimize approach for the multi-level capacitated
+lot sizing problem. Int. J. Prod. Econ. 123 (2), 247–256.
+Inderfurth, K., 2004. Optimal policies in hybrid manufacturing/remanufacturing systems
+with product substitution. Int. J. Prod. Econ. 90 (3), 325–343.
+Invernizzi, D.C., Locatelli, G., Velenturf, A., Love, P.E., Purnell, P., Brookes, N.J., 2020.
+Developing policies for the end-of-life of energy infrastructure: Coming to terms
+with the challenges of decommissioning. Energy Policy 144, 111677.
+Jaber, M.Y., El Saadany, A.M., 2009. The production, remanufacture and waste disposal
+model with lost sales. Int. J. Prod. Econ. 120 (1), 115–124.
+Jans, R., Degraeve, Z., 2008. Modeling industrial lot sizing problems: a review. Int. J.
+Prod. Res. 46 (6), 1619–1643.
+Jing, F., Mu, Y., 2020. Dynamic lot-sizing model under perishability, substitution, and
+limited storage capacity. Comput. Oper. Res. 122, 104978.
+Kazemi, N., Modak, N.M., Govindan, K., 2019. A review of reverse logistics and
+closed loop supply chain management studies published in IJPR: a bibliometric
+and content analysis. Int. J. Prod. Res. 57 (15–16), 4937–4960.
+Kilic, O.A., Tunc, H., 2019. Heuristics for the stochastic economic lot sizing problem
+with remanufacturing under backordering costs. European J. Oper. Res. 276 (3),
+880–892.
+King, A.M., Burgess, S.C., Ijomah, W., McMahon, C.A., 2006. Reducing waste: repair,
+recondition, remanufacture or recycle? Sustain. Dev. 14 (4), 257–267.
+Koken, P., Raghavan, V.A., Yoon, S.W., 2018. A genetic algorithm based heuristic for
+dynamic lot sizing problem with returns and hybrid products. Comput. Ind. Eng.
+119, 453–464.
+Konstantaras, I., Skouri, K., Jaber, M.Y., 2010. Lot sizing for a recoverable product
+with inspection and sorting. Comput. Ind. Eng. 58 (3), 452–462.
+Krajewski, L.J., Ritzman, L.P., Malhotra, M.K., 2016. Operations Management. Pearson.
+Lang, J.C., Domschke, W., 2010. Efficient reformulations for dynamic lot-sizing
+problems with product substitution. OR Spectr. 32 (2), 263–291.
+Leachman, R., Glassey, R., 1987. Preliminary design and development of a corporate
+level production planning system for the semiconductor industry. In: Proceedings.
+IEEE International Conference on Robotics and Automation. Vol. 4, pp. 710–710.
+Li, Y., Chen, J., Cai, X., 2006. Uncapacitated production planning with multiple product
+types, returned product remanufacturing, and demand substitution. OR Spectrum
+28 (1), 101–125.
+Li, Y., Chen, J., Cai, X., 2007. Heuristic genetic algorithm for capacitated production
+planning problems with batch processing and remanufacturing. Int. J. Prod. Econ.
+105 (2), 301–317.
+Liu, W., Ma, W., Hu, Y., Jin, M., Li, K., Chang, X., Yu, X., 2019. Production planning for
+stochastic manufacturing/remanufacturing system with demand substitution using
+a hybrid ant colony system algorithm. J. Clean. Prod. 213, 999–1010.
+Liu, B., Papier, F., 2022. Remanufacturing of multi-component systems with product
+substitution. European J. Oper. Res..
+Macedo, P.B., Alem, D., Santos, M., Junior, M.L., Moreno, A., 2016. Hybrid manufac-
+turing and remanufacturing lot-sizing problem with stochastic demand, return, and
+setup costs. Int. J. Adv. Manuf. Technol. 82, 1241–1257.
+Marshall, S.E., Archibald, T.W., 2015. Substitution in a hybrid remanufacturing system.
+Procedia CIRP 26, 583–588.
+Mcgillivray, R., Silver, E., 1978. Some concepts for inventory control under substitutable
+demand. INFOR Inf. Syst. Oper. Res. 16 (1), 47–63.
+Mitra, S., 2016. Optimal pricing and core acquisition strategy for a hybrid
+manufacturing/remanufacturing system. Int. J. Prod. Res. 54 (5), 1285–1302.
+Mulvey, J.M., Vanderbei, R.J., Zenios, S.A., 1995. Robust optimization of large-scale
+systems. Oper. Res. 43 (2), 264–281.
+Naeem, M.A., Dias, D.J., Tibrewal, R., Chang, P.-C., Tiwari, M.K., 2013. Production
+planning optimization for manufacturing and remanufacturing system in stochastic
+environment. J. Intell. Manuf. 24 (4), 717–728.
+Pasternack, B.A., Drezner, Z., 1991. Optimal inventory policies for substitutable
+commodities with stochastic demand. Naval Res. Logist. 38 (2), 221–240.
+Pierskalla, W.P., 1969. An inventory problem with obsolescence. Nav. Res. Logist. Q.
+16 (2), 217–228.
+Piñeyro, P., Viera, O., 2009. Inventory policies for the economic lot-sizing problem with
+remanufacturing and final disposal options. J. Ind. Manage. Optim. 5 (2), 217–238.
+Piñeyro, P., Viera, O., 2010. The economic lot-sizing problem with remanufacturing
+and one-way substitution. Int. J. Prod. Econ. 124 (2), 482–488.
+Pochet, Y., Wolsey, L.A., 1991. Solving multi-item lot-sizing problems using strong
+cutting planes. Manage. Sci. 37 (1), 53–67.
+Pochet, Y., Wolsey, L., 2006. Production Planning by Mixed Integer Programming.
+Springer Science & Business Media.
+Quadt, D., Kuhn, H., 2008. Capacitated lot-sizing with extensions: a review. 4OR 6,
+61–83.
+Quezada, F., Gicquel, C., Kedad-Sidhoum, S., Vu, D.Q., 2020. A multi-stage stochastic
+integer programming approach for a multi-echelon lot-sizing problem with returns
+and lost sales. Comput. Oper. Res. 116, 104865.
+Rachih, H., Mhada, F.Z., Chiheb, R., 2019. Meta-heuristics for reverse logistics: A
+literature review and perspectives. Comput. Ind. Eng. 127, 45–62.
+Randall, T., Ulrich, K., Reibstein, D., 1998. Brand equity and vertical product line
+extent. Mark. Sci. 17 (4), 356–379.
+Retel Helmrich, M.J., Jans, R., van den Heuvel, W., Wagelmans, A.P., 2014. Economic
+lot-sizing with remanufacturing: complexity and efficient formulations. IIE Trans.
+46 (1), 67–86.
+Richter, K., Sombrutzki, M., 2000. Remanufacturing planning for the reverse
+Wagner/Whitin models. European J. Oper. Res. 121 (2), 304–315.
+Richter, K., Weber, J., 2001. The reverse Wagner/Whitin model with variable
+manufacturing and remanufacturing cost. Int. J. Prod. Econ. 71 (1), 447–456.
+Rizova, M.I., Wong, T., Ijomah, W., 2020. A systematic review of decision-making in
+remanufacturing. Comput. Ind. Eng. 147, 106681.
+Rogers, D.S., Tibben-Lembke, R.S., et al., 1999. Going Backwards: Reverse Logistics
+Trends and Practices, vol. 2, Reverse Logistics Executive Council Pittsburgh, PA.
+[PDF PAGE 23]
+International Journal of Production Economics 274 (2024) 109308
+23
+Y. Boutarfa et al.
+Sahling, F., 2013. A column-generation approach for a short-term production planning
+problem in closed-loop supply chains. Bus. Res. 6 (1), 55–75.
+Sahling, F., Buschkühl, L., Tempelmeier, H., Helber, S., 2009. Solving a multi-
+level capacitated lot sizing problem with multi-period setup carry-over via a
+fix-and-optimize heuristic. Comput. Oper. Res. 36 (9), 2546–2553.
+Schulz, T., 2011. A new Silver–Meal based heuristic for the single-item dynamic
+lot sizing problem with returns and remanufacturing. Int. J. Prod. Res. 49 (9),
+2519–2533.
+Shin, H., Park, S., Lee, E., Benton, W., 2015. A classification of the literature on the
+planning of substitutable products. European J. Oper. Res. 246 (3), 686–699.
+Sifaleras, A., Konstantaras, I., 2017. Variable neighborhood descent heuristic for solving
+reverse logistics multi-item dynamic lot-sizing problems. Comput. Oper. Res. 78,
+385–392.
+Sifaleras, A., Konstantaras, I., Mladenović, N., 2015. Variable neighborhood search for
+the economic lot sizing problem with product returns and recovery. Int. J. Prod.
+Econ. 160, 133–143.
+Silver, E., Meal, H., 1973. A heuristic for selecting lot size requirements for the
+case of a deterministic time varying demand rate and discrete opportunities for
+replenishment. Prod. Invent. Manage. J. 14 (2), 64–74.
+Slama, I., Ben-Ammar, O., Thevenin, S., Dolgui, A., Masmoudi, F., 2022. Stochastic
+program for disassembly lot-sizing under uncertain component refurbishing lead
+times. European J. Oper. Res. 303 (3), 1183–1198.
+Stadtler, H., 2003. Multilevel lot sizing with setup times and multiple constrained
+resources: Internally rolling schedules with lot-sizing windows. Oper. Res. 51 (3),
+487–502.
+Stadtler, H., Sahling, F., 2013. A lot-sizing and scheduling model for multi-stage flow
+lines with zero lead times. European J. Oper. Res. 225 (3), 404–419.
+Suwondo, E., Yuliando, H., 2012. DYNAMIC LOT-SIZING PROBLEMS: A review on
+model and efficient algorithm. Agroind. J. 1 (1), 36–49.
+Tang, O., Teunter, R., 2006. Economic lot scheduling problem with returns. Prod. Oper.
+Manage. 15 (4), 488–497.
+Teunter, R., 2004. Lot-sizing for inventory systems with product recovery. Comput. Ind.
+Eng. 46 (3), 431–441.
+Teunter, R.H., Bayindir, Z.P., Van Den Heuvel, W., 2006. Dynamic lot sizing with
+product returns and remanufacturing. Int. J. Prod. Res. 44 (20), 4377–4400.
+Thierry, M., Salomon, M., Van Nunen, J., Van Wassenhove, L., 1995. Strategic issues
+in product recovery management. Calif. Manage. Rev. 37 (2), 114–136.
+Toledo, C.F.M., da Silva, A.M., Hossomi, M.Y.B., França, P.M., Akartunalı, K., 2015.
+A relax-and-fix with fix-and-optimize heuristic applied to multi-level lot-sizing
+problems. J. Heuristics 21, 687–717.
+Van Jaarsveld, W., Dekker, R., 2011. Estimating obsolescence risk from demand data
+to enhance inventory control—A case study. Int. J. Prod. Econ. 133 (1), 423–431.
+Vorasayan, J., Ryan, S.M., 2006. Optimal price and quantity of refurbished products.
+Prod. Oper. Manage. 15 (3), 369–383.
+Wagner, H.M., Whitin, T.M., 1958. Dynamic version of the economic lot size model.
+Manage. Sci. 5 (1), 89–96.
+Wang, Y., Chen, W., Liu, B., 2017. Manufacturing/remanufacturing decisions for a
+capital-constrained manufacturer considering carbon emission cap and trade. J.
+Clean. Prod. 140, 1118–1128.
+Yaman, H., 2009. Polyhedral analysis for the two-item uncapacitated lot-sizing problem
+with one-way substitution. Discrete Appl. Math. 157 (14), 3133–3151.
+Zacharaki, A., Vafeiadis, T., Kolokas, N., Vaxevani, A., Xu, Y., Peschl, M., Ioanni-
+dis, D., Tzovaras, D., 2020. RECLAIM: Toward a new era of refurbishment and
+remanufacturing of industrial equipment. Front. Artif. Intell. 3.
+Zikopoulos, C., Tagaras, G., 2007. Impact of uncertainty in the quality of returns on
+the profitability of a single-period refurbishing operation. European J. Oper. Res.
+182 (1), 205–225.
+Zouadi, T., Yalaoui, A., Reghioui, M., El Kadiri, K.E., 2015. Lot-sizing for production
+planning in a recovery system with returns. RAIRO-Oper. Res. 49 (1), 123–142.

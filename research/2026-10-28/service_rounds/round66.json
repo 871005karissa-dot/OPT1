@@ -1,0 +1,152 @@
+{
+  "question": "Does the selected matched-route service policy survive mean-preserving batch-quality variation?",
+  "assumptions": "Round66: stress the selected canonical policy against initial batch variation.\n\nFreeze I1495 and round63's deterministic75% policy, fully committed material.\nOnly change initial quality to mean-preserving Dirichlet-multinomial kappa\n1000/100/10, keeping future repair successes independent binomial eta=.97.\nAlso retune the setup threshold at the SAME input, and calculate a perfect,\nfree unlimited-repair bound over all inputs. Hypothetical kappa, not fitted.\n",
+  "iid_reference": {
+    "material_basis": "fully_committed",
+    "target": 0.75,
+    "feasible": true,
+    "best_randomized_policy_input": 1495,
+    "profit_upper_bound": 23034.487373385073,
+    "best_deterministic_input": 1495,
+    "feasible_profit": 23034.32729959787,
+    "feasible_service": 0.7503494297908824,
+    "global_deterministic_gap_upper_bound": 0.1600737872031459,
+    "boundary": {
+      "A": 745,
+      "R": 31,
+      "ratio": 458.1000000000022,
+      "randomized_open_probability": 0.052807686148957304,
+      "observed_state_mass": 0.00036891113427809714,
+      "conditional_service_gain": 0.9999999999999966
+    },
+    "expected_rework": 31.55553876852391,
+    "activation_probability": 0.7687114893125845
+  },
+  "headline": {
+    "small_DM_plus_success_brute_cases": 27,
+    "max_joint_mass_error": 1.4979684159754925e-13,
+    "max_revenue_error": 3.9040060073602945e-10,
+    "max_service_error": 2.6290081223123707e-13,
+    "max_return_error": 1.836308882730009e-13,
+    "batch_cases": 3,
+    "elapsed_seconds": 51.80579289999878
+  },
+  "rows": [
+    {
+      "kappa": 1000.0,
+      "within_batch_correlation": 0.000999000999000999,
+      "input": 1495,
+      "frozen_policy": {
+        "expected_profit": 23047.50995093964,
+        "fulfilment_probability": 0.6817256935144904,
+        "expected_rework": 29.957949752795034,
+        "activation_probability": 0.7029261060490286
+      },
+      "retuned_at_same_input": {
+        "setup_fee": 2000.0,
+        "profit_best": {
+          "expected_profit": 23063.425971300087,
+          "fulfilment_probability": 0.6012390529304501,
+          "expected_rework": 27.219535335032244,
+          "activation_probability": 0.6221555486143902
+        },
+        "maximum_service": 0.7023848608905764,
+        "positive_service_tradeoff_states": 586,
+        "frontier": [
+          {
+            "target": 0.75,
+            "feasible": false
+          }
+        ]
+      },
+      "perfect_unlimited_repair_upper_bound_all_inputs": 0.8011066392998866,
+      "direct_full_return_service_difference": 7.882583474838611e-15,
+      "initial_tables_max_mass_error": 5.5351279115711804e-12
+    },
+    {
+      "kappa": 100.0,
+      "within_batch_correlation": 0.009900990099009901,
+      "input": 1495,
+      "frozen_policy": {
+        "expected_profit": 22983.363956829577,
+        "fulfilment_probability": 0.5516957874045227,
+        "expected_rework": 28.27848645744861,
+        "activation_probability": 0.5288051543631404
+      },
+      "retuned_at_same_input": {
+        "setup_fee": 2000.0,
+        "profit_best": {
+          "expected_profit": 22989.215358028017,
+          "fulfilment_probability": 0.525551692434228,
+          "expected_rework": 27.447032571086343,
+          "activation_probability": 0.5023439042206569
+        },
+        "maximum_service": 0.5810202896829233,
+        "positive_service_tradeoff_states": 586,
+        "frontier": [
+          {
+            "target": 0.75,
+            "feasible": false
+          }
+        ]
+      },
+      "perfect_unlimited_repair_upper_bound_all_inputs": 0.770685940038691,
+      "direct_full_return_service_difference": 6.106226635438361e-15,
+      "initial_tables_max_mass_error": 4.689582056016661e-12
+    },
+    {
+      "kappa": 10.0,
+      "within_batch_correlation": 0.09090909090909091,
+      "input": 1495,
+      "frozen_policy": {
+        "expected_profit": 21758.838735199904,
+        "fulfilment_probability": 0.5085797752239168,
+        "expected_rework": 27.931522784547436,
+        "activation_probability": 0.271745139381367
+      },
+      "retuned_at_same_input": {
+        "setup_fee": 2000.0,
+        "profit_best": {
+          "expected_profit": 21759.462252821682,
+          "fulfilment_probability": 0.5058731818969625,
+          "expected_rework": 27.8467137361075,
+          "activation_probability": 0.26899942084412565
+        },
+        "maximum_service": 0.5154595867315688,
+        "positive_service_tradeoff_states": 586,
+        "frontier": [
+          {
+            "target": 0.75,
+            "feasible": false
+          }
+        ]
+      },
+      "perfect_unlimited_repair_upper_bound_all_inputs": 0.6450472514330996,
+      "direct_full_return_service_difference": 5.662137425588298e-15,
+      "initial_tables_max_mass_error": 4.086508909040276e-12
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T21:57:57.584810+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round66_matched_route_batch_stress.py": "c6f10439c10876091936fdd2b7dbc5524a0a6320f38a9a64cf4e8621c768682d",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\batch_stochastic_setup.py": "9c0cd244b6b37e19706b8288ec1643dba5c48ae8100d8c2fb2248d85bdf98471",
+      "backbone\\stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+      "backbone\\integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+      "backbone\\exact_batch_quality.py": "27ab264d45c4ac12c119558c3bea033279cf3a64bb72ee9f1e04b07a627f7f31",
+      "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\round59_repairability_ceiling.py": "77951333cba23383c4f5a56dc1a547b8b910c58eea9200bbfdd309aa8d11d97d",
+      "research\\2026-10-28\\service_rounds\\round63.json": "06416f0b6ce66dcae7ce2737c3eb27eecf278f90fb5f2950b1944ab1713e9f78"
+    }
+  }
+}

@@ -1,0 +1,1907 @@
+=== PDF PAGE 1 ===
+Joint optimization for production operations
+considering reworking
+Yilan Shen a, Boyang Li a, Xi Zhang a∗
+aCollege of Engineering, Peking University, Beijing, China
+Abstract
+In pursuit of enhancing the comprehensive efficiency of production systems, our
+study focused on the joint optimization problem of scheduling and machine mainte-
+nance in scenarios where product rework occurs. The primary challenge lies in the
+interdependence between product q uality, machine reliability, and production schedul-
+ing, compounded by the uncertainties from machine degradation and product quality,
+which is prevalent in sophisticated manufacturing systems. To address this issue, we
+investigated the dynamic relationship among these three aspects, named as QRP-co-
+effect. On this basis, we constructed an optimization model that integrates production
+scheduling, machine maintenance, and product rework decisions, encompassing the con-
+text of stochastic degradation and product quality uncertainties within a mixed-integer
+programming problem. To effectively solve this problem, we proposed a dual-module
+solving framework that integrates planning and evaluation for solution improvement via
+dynamic communication. By analyzing the structural properties of this joint optimiza-
+tion problem, we devised an efficient solving algorithm with an interactive mechanism
+that leverages in-situ condition information regarding the production system’s state
+and computational resources. The proposed methodology has been validated through
+comparative and ablation experiments. The experimental results demonstrated the sig-
+nificant enhancement of production system efficiency, along with a reduction in machine
+maintenance costs in scenarios involving rework.
+Keywords: Production scheduling; Machine reliability; Quality control; Reworking.
+1 Introduction
+In contemporary manufacturing industries, production efficiency and quality are regarded
+by workshop operators as essential indicators of a production system’s operational effec-
+tiveness. Substantial research efforts have been dedicated to these areas. In the case of
+single-variety mass production, adept management of the production system allows opera-
+tors to achieve a harmonious equilibrium between product quality and production output
+within a reasonable cost range, employing continuous improvement techniques on the pro-
+duction line or optimizing machine configurations. However, challenges arise when dealing
+with diverse, sophisticated manufacturing systems like semiconductor, aerospace or heavy
+machinery production, wherein small batch production of customized products with dis-
+tinct characteristics predominates, causing deviations from specified quality requirements
+due to frequent process alterations (Mabkhot et al., 2020). Consequently, rectification tasks
+are often performed on defective components rather than discarding them, primarily driven
+1
+arXiv:2411.01772v1  [math.OC]  4 Nov 2024
+
+=== PDF PAGE 2 ===
+by economic considerations (Flapper et al., 2002). For instance, in the wafer fabrication
+industry, the photolithography process defines the graph of each layer, necessitating strin-
+gent quality control measures and subsequent rework for any non-conformance (Sha et al.,
+2006). Additionally, the stochastic degradation of machines further compounds the impact
+on product quality characteristics during the manufacturing process. Such occurrences can
+result in products failing to pass quality inspections, compelling them to be sent back for
+rework at previous stages of production. This phenomenon is commonplace in sophisti-
+cated manufacturing systems, exerting a substantial influence on the original production
+schedule and ultimately diminishing the overall production throughput of the manufactur-
+ing system. Moreover, ensuring the attainment of superior product quality is of paramount
+importance. Unfortunately, despite the urgency, the first pass yield (FPY) indicator, which
+gauges the proportion of products meeting quality specifications on the initial attempt, re-
+mains suboptimal, resulting in an inability to meet prevailing demands. As a consequence,
+the need for rework arises, rendering adherence to the original production schedule unten-
+able. In summary, the manufacturing system inherently encompasses stochastic properties,
+frequently grappling with uncertainties stemming from random disruptive events. The
+stochastic deterioration of machines profoundly impacts both the timeliness and quality of
+production outcomes. In addition, unpredictable quality defects introduce further random
+disruptions that influence system performance and necessitate rescheduling. This poses a
+challenge when designing system models and conducting performance analyses, particularly
+for real-time assessments of system performance during production.
+In the realm of production and quality management, the treatment of quality inspec-
+tion, production capacity, and machine maintenance as separate entities has been the norm.
+However, current literature has shed light on the profound impact of non-conforming prod-
+ucts undergoing rework on the overall performance of production systems (Gardner*, 2020;
+Amirkhani et al., 2017). These three elements, in fact, intricately intertwine and exhibit
+profound dependencies within advanced machine production systems. On one hand, fac-
+tors such as an increased volume of processing tasks and the presence of non-conforming
+products resulting from dimensional deviations in tools or processed items can accelerate
+the degradation rate of each machine. This acceleration subsequently leads to a decline
+in production rate. On the other hand, machine degradation can result in an upsurge of
+non-conforming products requiring rework, consequently causing disruptions to the origi-
+nal production planning and task scheduling. For instance, in the context of a single-stage
+manufacturing process (as depicted in Figure 1), jobs are initially assigned to independent
+parallel machines based on a predetermined production plan. Nonetheless, during the pro-
+cess, machine deterioration significantly impacts both the actual processing time of jobs
+and the occurrence of product defects. When the number of inspected non-conforming
+products exceeds a certain threshold, the jobs necessitating rework are rescheduled, taking
+into consideration the machine’s degradation state and the job sequence to ensure compli-
+ance with quality requirements. Furthermore, an appropriate maintenance policy becomes
+indispensable in addressing the machine’s reliability concerns, thereby ensuring prevention
+of product defects and facilitating a consistent production throughput that yields a rela-
+tively high proportion of qualified products. Moreover, the production scheduling itself,
+as it determines the sequencing of jobs, exerts a profound influence on both the machine’s
+degradation path and the product’s quality. Hence, it becomes crucial to meticulously ex-
+plore the significant interrelationships among quality, production, and maintenance. Such
+2
+
+=== PDF PAGE 3 ===
+Figure 1: The framework of the multi-component system with the reworking activity.
+exploration is essential in order to provide a comprehensive strategy for job scheduling and
+machine maintenance.
+Within the extant body of literature, numerous studies have emerged over the past
+two decades that delve into the intricate relationship among these elements. One pivotal
+study, originating from Chen and Jin (2005), pioneered the investigation of the dependency
+between product quality and machine reliability. This study introduced a model known
+as the q uality and r eliability chain (QR chain), which effectively integrated the reliability
+of manufacturing system components with product quality considerations in multi-stage
+manufacturing processes. Notably, this work examined the interaction between quality
+and reliability from the vantage point of system reliability, laying a solid foundation for
+optimizing machines’ operating parameters, such as the locator wear rate, to enhance qual-
+ity. Building upon this groundbreaking work, subsequent research efforts have devised
+comprehensive models of integrated analysis, focusing on elucidating the interrelationship
+between any two of the aforementioned elements. For instance, a representative study
+by Kang and Ju (2019) effectively examined the interaction between machine degradation
+and product throughput. By establishing a correlation between the workload imposed on
+each machine and the rate at which degradation occurs, this investigation illuminates the
+potential for optimizing machine degradation by dynamically adjusting workloads. Such
+optimization ensures the continuity of production throughput within the manufacturing
+system. Despite these notable contributions, a majority of studies tend to overlook cru-
+cial implementation possibilities. Specifically, the stochastic nature of machine degradation
+paths while processing various jobs from different orders is often neglected. Furthermore,
+even machines operating under the same workload but with different job sequences exhibit
+dissimilar degradation paths. This discrepancy in degradation paths necessitates distinct
+maintenance policies, which, in turn, interfere with job scheduling. Moreover, the simulta-
+neous assurance of both quantity and quality of products assumes paramount importance,
+thereby necessitating the optimization of production efficiency. In such cases, reworking
+activities become essential, along with the need to collectively address non-conforming
+products that require rework while accommodating existing pending jobs. This calls for
+a more efficacious approach to job sequencing. Unfortunately, prevailing studies tend to
+propose planning and scheduling solutions for production decisions independently, falling
+short of providing a comprehensive framework that effectively addresses the uncertain oc-
+3
+
+=== PDF PAGE 4 ===
+currence of rework events stemming from endogenous factors, including machine reliability
+and production scheduling.
+The advancement of sensor technologies has facilitated the seamless integration of ma-
+chines into a unified platform, thereby enabling the acquisition of vital in-situ process
+condition information such as job status and product quality. This platform presents an
+unparalleled opportunity to achieve a paramount objective: the simultaneous determination
+of maintenance, job arrangement, and reworking activities while considering the intricate
+interrelationship among quality, production, and machine degradation based on the inte-
+gration of condition information. By jointly analyzing these three pivotal elements, a more
+precise schedule can be obtained, a crucial aspect in the realm of sophisticated manufac-
+turing with a primary focus on attaining optimal production efficiency. These compelling
+factors serve as a significant impetus to undertake a comprehensive study of the interplay
+among quality, production, and machine degradation within production systems, endeav-
+oring to devise a comprehensive and decisive strategy in terms of maintenance and job
+scheduling optimization.
+While the imperative for quality, delivery efficiency, and reliability remains paramount
+in the realm of sophisticated manufacturing, there has been a lack of collective investigation
+into these three elements (Cheng and Li, 2020; Eben-Chaime, 2022) within a production
+system. The existing literature fails to comprehensively explore the intricate relationship
+that exists among these components, often oversimplifying their interplay and neglecting
+the nuances of the job production process (Tambe and Kulkarni, 2022).
+The current understanding of the co-effect of Quality-Reliability-Planning (QRP) em-
+phasizes the pervasive uncertainties surrounding job processing times, machine reliability,
+and rework activities. These uncertainties are attributed to the stochastic nature of machine
+degradation, which is influenced by a multitude of factors. This poses a unique challenge
+in formulating a solution that addresses job scheduling, machine maintenance, and rework,
+while simultaneously enhancing planning quality and optimizing computational efficiency
+within a dynamic production system. Adding to the complexity, this solution must ef-
+fectively account for both endogenous and exogenous uncertainties, providing appropriate
+production decisions that align harmoniously with real-world production conditions. Unfor-
+tunately, the prevailing methodologies lack the necessary adaptability to comprehensively
+encompass all three elements within uncertain production systems.
+To bridge these significant gaps, we develop an integrated approach that takes a holistic
+perspective, considering all the pivotal elements inherent in sophisticated manufacturing.
+Our approach ensures the delivery of high-quality products while concurrently maintaining
+cost-effectiveness. Our contributions are as follows:
+1. We propose a novel framework that elucidates the intricate relationship among
+quality, reliability, and job scheduling. This framework leverages the stochastic nature
+of sequence-dependent machine degradation, takes into account the uncertain influence of
+deterioration on job processing time, and considers the impact of job sequence and machine
+state on product quality characteristics.
+2. We specifically focus on the production reworking scenario and establish a model
+that captures the dynamic changes arising from job scheduling, maintenance, and reworking
+activities during production.
+3. Our solution framework offers flexibility, facilitating production decisions for systems
+operating under production uncertainties. This framework consists of two interconnected
+4
+
+=== PDF PAGE 5 ===
+modules: the planning module and the evaluation module. These modules leverage condi-
+tion information and seamlessly interface through a thoughtfully designed communication
+mechanism, enabling efficient adjustment of job re-arrangement and machine maintenance.
+The ensuing sections of this study are organized as follows: Section 2 presents a succinct
+review of the relevant literature. Section 3 provides an elaborate description of the problem,
+incorporating the QRP-co-effect. Section 4 formulates this specific problem based on the
+QRP-co-effect. Section 5 introduces the proposed two-module solution framework along
+with the tailored algorithms. In Section 6, an extensive array of numerical studies evaluates
+the effectiveness of the proposed solution method. Ultimately, Section 7 concludes the study
+and delves into prospects for future research.
+2 Related literature
+Quality control, production scheduling, and reliability are three fundamental production
+elements in manufacturing systems (Das et al., 2007; Wang, 1998; Sun et al., 2023), which
+are directly related to the production efficiency of the manufacturing system. Research on
+these elements has received considerable attention from scholars. However, in most exist-
+ing literature, these three elements are often studied individually or in pairs. Traditional
+research mainly focuses on the analysis of individual elements in manufacturing systems.
+For example, Zhao et al. (2020) proposed a two-stage cooperative evolution algorithm to
+solve a production scheduling problem in a non-waiting flow shop with the single consider-
+ation of production scheduling. Cheng et al. (2020) explored the way in which the internet
+promotes predictive maintenance, improving the feasibility of the assumed-based machine
+reliability maintenance strategy in manufacturing systems. Due to the close interaction
+among the elements in the manufacturing system, independent decision-making may lead
+to deviations from actual production situations. Following the demands, numerous schol-
+ars have attempted to collaboratively investigate the joint optimization of elements in the
+manufacturing system.
+2.1 Problem Formulation within a pair of elements
+Current research in this field can be broadly categorized into two areas. The first cate-
+gory analyzes both production scheduling and reliability. Notable studies include Aggoune
+(2004), who explored scheduling complexities in a process flow shop considering machine
+reliability, and uit het Broek et al. (2021), who investigated machine reliability control
+through production rate adjustments. Basciftci et al. (2020) proposed a data-driven degra-
+dation model that incorporates maintenance and production scheduling while accounting
+for load dependence. It should be emphasized that in this model, production scheduling
+is regarded as independent of the machine’s current operational status. A more recent
+line of research explores the interrelationship between a pair of the factors. Kim and Kim
+(2022) conducted a study on the interrelationship between machine degradation rate and
+job processing time in a single-machine scheduling problem. Briskorn et al. (2024) studied
+job-dependent and stochastic machine deterioration affected by processing jobs under a
+fixed job sequence.
+The second category of research involves an analysis of both the quality as well as either
+job scheduling or reliability within a production system. Chen and Jin (2005) established
+5
+
+=== PDF PAGE 6 ===
+the foundational coupling relationship between quality and reliability. Lu and Zhou (2017)
+proposed a novel maintenance strategy for multi-stage manufacturing systems that consid-
+ered the interaction between machine failure rate and quality. Furthermore, various studies
+have analyzed the relationship between quality and production scheduling. Eben-Chaime
+(2022) developed a model that establishes the relationship between production scheduling
+and quality, proposing an integrated production and quality inspection system. Azimpoor
+and Taghipour (2021) proposed an integrated approach for production, inspection, and
+quality planning, taking into account the delay time failure process. These studies pri-
+marily focus on monitoring and proposing robust planning strategies to address uncertain
+non-conforming products. For instance, Hao et al. (2015) devised a soft-decision-based
+approach to handle the uncertainty caused by quality considerations. Sabri-Laghaie et al.
+(2022) developed a method to monitor the quality error rate and its impact on product reli-
+ability. In sophisticated manufacturing systems, the attainment of high-quality production
+necessitates simultaneous consideration of job scheduling, machine reliability maintenance,
+and product quality checks throughout the entire production process. Due to their interde-
+pendence and interaction, it is imperative to analyze these three key elements concurrently.
+2.2 Refining the problem formulation through triadic elements
+In response to the escalating demand for production systems, recent research has incorpo-
+rated a synthesis of three foundational elements, including quality, production scheduling,
+and machine reliability. For instance, Cheng and Li (2020) conducted a comprehensive
+study encompassing these three elements within a manufacturing system but simplified the
+job scheduling aspect by setting an index based on machine production efficiency and as-
+suming a predefined deterioration path for the machine. Tasias (2022) proposed a Bayesian
+model that ingeniously merged quality and machine reliability in a single-machine system,
+where the production process was presumed to exhibit a constant production efficiency.
+Similarly, Rivera-G´ omez et al. (2021) treated production scheduling as a control variable
+in a manufacturing system, and Shi et al. (2024) assumed that products are produced at a
+constant rate in a imperfect manufacturing system. Fakher et al. (2018) integrated these
+three pivotal elements into a comprehensive model, wherein production scheduling pre-
+dominantly contributes to the overall product quality, while disregarding the impact of job
+scheduling on production decisions within a manufacturing system. Sinisterra et al. (2023)
+developed a model that incorporated the scheduling of a sequence of resumable jobs and in-
+spection policies in a critical single-component system, where the occurrence of defects was
+contingent upon the hypothesized deterioration process. Reflecting on the aforementioned
+literature, it is evident that research encompassing quality, job scheduling, production, and
+reliability tends to simplify the production scheduling aspect by representing it solely as
+the machine production rate. Consequently, there is currently a lack of a more comprehen-
+sive analysis for coordinating job scheduling, quality inspection, and machine maintenance
+within the manufacturing system.
+2.3 Studies on uncertainties in rework-based production sys-
+tems
+In order to achieve a high-quality output in terms of both quantity and quality, various
+research efforts have incorporated rework activities into the production process (Sonntag
+6
+
+=== PDF PAGE 7 ===
+and Kiesm¨ uller, 2018; Berling and Sonntag, 2022). These studies have considered the exis-
+tence of random defect rates within the production process. For instance, Gouiaa-Mtibaa
+et al. (2018) developed an analytical model for maintenance decision-making, where non-
+conforming products undergo rework and the rate of quality deterioration is pre-assumed.
+In a similar vein, Gautam et al. (2021) assumed a uniform distribution for the proportion of
+non-conforming products and established a green supply chain model that integrates prod-
+uct recovery management. Some other researchers have examined the impact of machine
+deterioration on products, where defective items are either added to the regular production
+queue at the end of the processing time or reworked promptly (Nobil et al., 2020).
+However, uncertainties arise in real production systems where rework is influenced by
+the QRP-effect. These uncertainties relate to the status of pending jobs and the degradation
+path of machines, as well as the initial product quality. Proactive measures are necessary
+to address uncertainties in manufacturing systems. Researchers have developed algorithms
+employing fuzzy methods to proactively mitigate uncertainties in advance (Gao et al., 2020).
+In addition, robust measures such as surrogate measures (Yang et al., 2020) and slack-
+based measures (Hazır et al., 2010) are commonly used to plan for uncertain production
+environments. Recently, flexible strategies have been introduced to dynamically schedule
+production and enhance efficiency. These flexible strategies utilize conditional information
+to adapt plans to uncertain production environments, outperforming static algorithms (Shi
+et al., 2020). For example, a two-stage framework comprising offline and online stages,
+which incorporate in-situ information, is frequently utilized in production problems. Online
+information including the work in progress and the buffer levels is employed to update
+the initial solution and improve its performance (Hoffman et al., 2021). Conditional job
+information is utilized to develop rescheduling strategies for updating the job arrangement
+(Wang et al., 2019). However, a limitation of these solution frameworks is the lack of
+communication between the two stages, which hampers the enhancement of the initial
+solution’s quality and restricts the performance of the updated solution by not leveraging
+valuable information from the digital platform.
+In conclusion, when dealing with production systems that involve rework influenced by
+the QRP co-effect, uncertainties permeate the entire production process. Therefore, it is
+crucial to develop an adaptive approach that jointly determines maintenance strategies,
+production scheduling, and rework activities in order to effectively navigate and optimize
+the complex dynamics of such production systems.
+3 Problem Definition
+3.1 Parallel Systems with Reworking Processes
+We consider an unrelated parallel system with rework consideration under the QRP-co-
+effect, where non-conforming products are reprocessed to meet quantity demands. The
+general problem can be formally described as follows: There are n independent jobs, de-
+noted as N = {1, 2, ..., n}, with different qualities, which need to be processed on m distinct
+parallel machines, denoted as M = {1, 2, ..., m}. The manufacturing system aims to output
+N conforming products. Due to machine degradation and variation in input job qualities,
+some non-conforming products require rework during the production process. These non-
+conforming products and their corresponding jobs are added to the list of pending jobs for
+7
+
+=== PDF PAGE 8 ===
+reprocessing. To mitigate production losses caused by machine degradation, appropriate
+maintenance strategies, including corrective maintenance (CM) with replacement capability
+and imperfect preventive maintenance (PM), are implemented to maintain system reliabil-
+ity. The entire manufacturing system exhibits uncertainty and dynamic characteristics due
+to factors such as machine degradation paths, job processing times, pending job sequences
+(including rework jobs). Consequently, the joint optimization problem involves determining
+the optimal job scheduling, maintenance strategy, and quality control concurrently.
+The joint optimization problem is based on the following assumptions:
+1. Initially, both jobs and machines are assumed to be in an available state.
+2. CM activity involves restoring a machine to its original operational status when it
+exceeds the failure threshold.
+3. Maintenance activity is not allowed while a machine is processing a job.
+3.2 Modeling QRP-co-effect
+Based on the analysis of the interrelationship between quality Qi,k, machine reliability Rk,
+and scheduling Pi in the production process, three intermediate variables with uncertainties
+need to be introduced: machine degradation, actual job processing time, and product
+quality. Considering the influence of the working environment on machine degradation
+state Wi,k and the QRP-co-effect, the degradation path of the machine can be represented
+by:
+∆Wi,k = ∆U (−)
+i,k + ∆U (+)
+i,k + ∆Vi,k, (1)
+where ∆ Wi,k denotes the change in machine degradation resulting from processing a job,
+while Ui,k and Vi,k represent the influence induced by the job and the environment, re-
+spectively. Specifically, ∆ U (−)
+i,k represents the wear of machine k after processing job
+i whose initial quality is ineligible, following a Gaussian distribution (Ye et al., 2019):
+∆U (−)
+i,k ∼ N ormal(δiµ(−)
+k , σ(−)
+k ), where the product quality deviation δi = |Di − SL(+)
+i |,
+where Di and SL(+)
+i represent the quality characteristic and the specification limit of the
+product corresponding to job i, respectively. ∆ U (+)
+i,k represents the effect of job i , and
+∆U (+)
+i,k (pi) ∼ N ormal(piµ(+)
+k , σ(+)
+k ), where pi represents the actual processing time of job i.
+∆Vi,k illustrates the effect caused by the external environment, which is characterized by
+a Gamma distribution: Vi,k(∆ti,k) ∼ Gamma(αk∆ti,k, βk), where ∆ ti,k denotes the time
+interval between the start time of job i and the next job on machine k, expecting the
+maintenance time.
+The actual processing time of jobs is determined by the degradation state of the assigned
+machine and the nominal processing time, obtained as follows:
+pi,k = Oi,k(1 + ηWi′ ,k), (2)
+where pi,k and Oi,k represent the actual and nominal processing time of job i processed
+on machine k, respectively. Job i
+′
+is the job processed prior to job i on machine k. The
+actual processing time of the job increases with the deterioration of the assigned machine.
+The decline in machine condition leads to a decrease in the quality of processed jobs,
+8
+
+=== PDF PAGE 9 ===
+Table 1: Decision variables for Modeling.
+Job scheduling xi′ ,i ∈ {0, 1} 1, job i is processed directly after job i
+′
+on the same
+machine, and 0 otherwise;
+xi,k ∈ {0, 1} 1, job i is assigned on machine k, and 0 otherwise;
+Si ≥ 0 Start time of job i;
+Ci ≥ 0 Completion time of job i.
+Maintenance zi ∈ {0, 1} 1, the CM activity is performed after processing job
+i, and 0 otherwise;
+yi,g ∈ {0, 1} 1, the PM activity belonging to the jointly mainte-
+nance group g is performed after processing job i,
+and 0 otherwise;
+T pm
+g ≥ 0 The maintenance time interval of group g for the PM.
+Quality T hrr ∈ [0, 1] The rescheduling decision point.
+resulting in an increased number of non-conforming products and the need for reworking
+activities. To ensure high sustainability and efficient operation of the system, an appropriate
+maintenance strategy is necessary to maintain machine’s condition. Production scheduling,
+which determines job sequencing, serves as the link between product quality and machine
+reliability. The impact of machine degradation on product quality is expressed as follows:
+D = f(υ, W ), (3)
+where D is a dimensional vector representing the quality characteristics of products under
+the degradation states of machines W and the initial job quality υ, with the characteristics
+of machines being independent of each other, as well as the initial jobs. In this production
+system, the output of non-conforming products from the manufacturing system can lead to
+delivery delays and necessitate rework, which also affects the assigned machine’ condition.
+4 Joint formulation with QRP-co-effect
+The decision variables in our formulation are summarized in Table 1. The binary decision
+variables encompass job scheduling decisions, which involve determining the sequence of
+jobs and assigning them to specific machines. Additionally, maintenance decisions are
+incorporated, including the type of maintenance and the timing of its execution. Several
+continuous decision variables are defined, such as the start time of jobs and the reworking
+criteria, which are based on the current rate of non-conformance. Formulas ( ??-5) in the
+introduction section outline the framework of the model, while the subsequent subsections
+will provide detailed explanations and attributes of this integrated model.
+9
+
+=== PDF PAGE 10 ===
+Table 2: Miscellaneous variables for problem formulation.
+Symbol Description
+pi The actual processing time of job i;
+∆Wi,k Deterioration amount under job-sequence affect during job i processed on
+machine k;
+∆U (−)
+i,k The non-conforming workload-effect deterioration of machine k caused by job
+i;
+∆U (+)
+i,k The qualified workload-effect deterioration of machine k caused by job i;
+∆Vi,k Deterioration amount under environmental noise during job i processed on
+machine k;
+Di The quality characteristic of the product corresponding to job i;
+qi The record variable indicating whether the product corresponding to job i is
+qualified;
+Cmax The makespan of the series-parallel multistage production system;
+Cm The total cost of maintenance;
+Cpm
+g The maintenance cost of group g for the PM.
+4.1 Modeling the QRP-co-effect
+The QRP-co-effect of this problem can be addressed by formulating constraints within
+three main parts: job scheduling, maintenance, and quality considerations. In the first
+part, decisions concerning the assignment of machines to jobs and the sequencing of jobs
+on the machines need to be made. Furthermore, the impact of machine reliability on
+production scheduling is also considered. The second part encompasses constraints related
+to maintenance activities. This includes characterizing the constraints among different
+maintenance actions. Additionally, the machine’s degradation path, changes in product
+quality, and the actual processing time of jobs under the QRP-co-effect during production
+are formulated. Lastly, in the third part, constraints regarding the relationship between the
+quality states of products and the rescheduling point of the production system are provided.
+4.1.1 Constraints for job scheduling
+Within the production system, each job is assigned to a single machine and can only be
+processed on that machine. Additionally, for any given machine, only one job (except for
+the last job) can be processed consecutively after another job, denoted as jobi
+′
+. The specific
+10
+
+=== PDF PAGE 11 ===
+Table 3: Parameter setups in the formulation.
+N = {1, 2, ..., n}, The set of job indexes;
+K = {1, 2, ..., k}, The set of machine indexes;
+Nk = {1, 2, ..., nk} The set of job indexes processed on machine k;
+Oi,k The nominal processing time of job i scheduled on machine k;
+η The deterioration factor for the job actual processing time;
+(T pm
+k , T ps
+k , Cpm
+k ) The preventive maintenance (PM) time duration, the associated
+setup time and PM cost for machine k;
+(T cm
+k , Ccm
+k ) The corrective maintenance (CM) time duration and the CM cost
+for machine k;
+Lk The CM threshold for machine k;
+(αk, βk) The shape and the scale parameters of Gamma distribution for ma-
+chine k in degradation model;
+(µ(−)
+k , σ(−)
+k ) The mean and the variance parameters of Gaussian distribution for
+machine k in degradation model, where the processed job is non-
+conforming;
+(µ(+)
+k , σ(+)
+k ) The mean and the variance parameters of Gaussian distribution for
+machine k in degradation model, where the processed job is qualified;
+(θ, φ) The machine status influence factor and PM times influence factor
+in the imperfect PM policy;
+(υi, εi) The initial quality of the job, and the vector of noise-variables for
+the quality characteristic;
+(a, b, Γ) The coefficient vectors for the quality characteristics;
+(SL(+)
+i , ξi) The specification and the qualified threshold for the product corre-
+sponding to job i;
+(µ, σ) The mean and the variance parameters of Gaussian distribution for
+the characteristic of the job’s initial quality.
+conditions for these constraints are expressed as follows:
+X
+k∈K
+xi,k = 1, ∀i ∈ Nk, (4)
+xi′ ,i + xi,i′ ≤ 1, ∀i ∈ Nk, (5)
+X
+i′ ∈Nk
+xi′ ,i ≤ 1, ∀i ∈ Nk, (6)
+X
+i∈Nk
+xi,kx0,i = 1, ∀k ∈ K. (7)
+Constrain (7) enforces that the dummy job 0 can only serve as a predecessor to one job on
+each machine. Additionally, inequality (8) restricts the start time of job i to be greater than
+or equal to the completion time of the previous job i
+′
+on the same machine, considering the
+cost of maintenance time. Moreover, the completion time of a job must be greater than the
+11
+
+=== PDF PAGE 12 ===
+sum of its start time and the actual processing time, as governed by condition (9).
+Si − Si′ ≥ pi′ +
+X
+g∈G
+yi′ ,gT pm
+g +
+X
+k∈K
+xi′ ,k
+X
+i′ ∈Nk
+zi′ T cm
+k
+− (1 − xi′ ,i)M, ∀i ∈ N, i
+′
+∈ N, (8)
+Ci ≥ Si + pi, ∀i ∈ N, (9)
+xi′ ,i ∈ {0, 1}, ∀i ∈ N, i
+′
+∈ N, i ̸= i
+′
+(10)
+xi,k ∈ {0, 1}, ∀i ∈ N, k ∈ K, i ̸= i
+′
+(11)
+Si > 0, ∀i ∈ N. (12)
+Constraints (10-12) determine the range of the decision variables for the job assignment.
+4.1.2 Constraints for machine maintenance
+Constraint (13) guarantees that consecutive or simultaneous maintenance activities are
+not allowed. Constraint (14) addresses the concept of maintenance grouping, where T pm
+g
+represents the duration of the preventive maintenance activity, and yi,g is an intermediate
+variable defined in (18) to determine whether maintenance grouping should be executed.
+Constraints (15-16) ensure that each preventive maintenance activity is assigned to a single
+maintenance group, and prevent two preventive maintenance events for a machine from
+belonging to the same maintenance group. Finally, constraint (17) specifies that corrective
+maintenance events must be promptly carried out upon machine failure. Constraint (18)
+indicates whether the PM should be executed.
+X
+g∈G
+yi,g + zi ≤ 1, ∀i ∈ N, (13)
+T pm
+g ≥
+X
+i∈Nk
+xi,kyi,g(T pm
+k + T ps
+k ), ∀k ∈ K, (14)
+X
+g∈G
+yi,g ≤ 1, ∀i ∈ N, (15)
+X
+i∈Nk
+xi,kyi,g ≤ 1, ∀k ∈ K, g ∈ G, (16)
+zi =
+
+
+
+0, P
+k∈K xi,k(Wi,k − Lk) < 0,
+1, P
+k∈K xi,k(Wi,k − Lk) > 0,
+∀i ∈ N, (17)
+yi,g ∈ {0, 1}, ∀i ∈ N, g ∈ G. (18)
+12
+
+=== PDF PAGE 13 ===
+4.1.3 Characterization for machine deterioration, quality and produc-
+tion scheduling dynamics in production systems
+(1) The deterioration of each machine
+The deterioration state of the machine depends on the job scheduling and the mainte-
+nance activity, and the external environmental factors, which can be expressed as follows:
+Wi,k = (1 −
+X
+i′ ∈Nk
+xi′ ,izi′)[I(
+X
+i′ ∈Nk
+xi′ ,i
+(Wi′ ,k + ∆Wi,k)|
+X
+i′ ∈Nk
+xi′ ,iyi′ ,g)], ∀i ∈ Nk, k ∈ K, (19)
+where function I(d|e) can be represented as follows:
+I(d|e) =
+
+
+
+d, e = 0
+θd + φN pm
+i,k , e = 1
+. (20)
+In formula (20), term θx + φN pm
+i,k describes the impact of imperfect preventive maintenance
+(PM) on the machine’s state Wi′,k and the number of PMs performed since the most recent
+corrective maintenance (CM) or the startup time of the machineN pm
+i,k . Details for obtaining
+N pm
+i,k can be seen in Appendix A. The change ∆Wi,k for machine k under job-sequence affect
+during job i in equation (19) can be calculated as follows:
+∆Wi,k = ∆U (+)
+i,k (pi) + ∆U (−)
+i,k (δi) + ∆Vi,k(∆ti), ∀i ∈ Nk, k ∈ K, (21)
+where intermediate variable ∆ti can be obtained by:
+∆ti = Si −
+X
+i′ ∈N
+xi′ ,iSi′ −
+X
+i′ ∈N
+xi′ ,i
+(
+X
+g∈G
+yi′ ,gT pm
+g +
+X
+k∈K
+xi′ ,k
+X
+i′ ∈Nk
+zi′ T cm
+k ),∀i ∈ N. (22)
+In formula (22), ∆ti represents the time interval (excluding maintenance time) between the
+start time of the production of job i′ and the start time of the production of job i.
+(2) Product quality
+The quality of the output product is influenced by both the degradation state of the
+machine assigned through production scheduling and the initial quality of the input job.
+13
+
+=== PDF PAGE 14 ===
+The quality attribute of product i can be calculated using the following equation:
+Di =
+X
+k∈K
+xi,k(υ0
+k + ak
+X
+i′ ∈N
+xi′ ,iWi′ ,k + b0
+k · εi +
+X
+i′ ∈N
+xi′ ,iWi′ ,kΓk · εi), (23)
+where υi = xi,kυ0
+k represents the initial quality of the job. Parameters bi = xi,kb0
+k, ak, vk
+and Γk are impact vectors. εi denotes the vector of noise-variables. Here the characteristic
+of the job’s initial quality is assumed as following a Truncated normal distribution N(µ, σ).
+where D is a dimensional vector representing the quality characteristics of products
+under the degradation states of machines W , with the characteristics being independent
+of each other. υ is the initial job quality vector following a truncated normal distribution.
+ε denotes the vector of noise variables. a and b are impact vectors that describe the effect
+of machine degradation states and noise on the products, respectively. Γ characterizes the
+interaction effect between machine degradation W and noise ε. In this production system,
+the output of non-conforming products from the manufacturing system can lead to delivery
+delays and necessitate rework, which also affects the assigned machine’ condition.
+The quality of the product is assessed based on the specification SL(+)
+i and the qualified
+threshold ξi for the characteristic of job i:
+qi =
+
+
+
+1, |Di − SL(+)
+i | < ξ i
+0, |Di − SL(+)
+i | ≥ ξi,
+(24)
+where qi is used to record the qualified products.
+(3) Job actual processing time
+The actual processing time of the job in production is influenced by the deteriorating
+condition of the assigned machine, as indicated by formula (2):
+pi =
+X
+k∈K
+xi,kOi,k(1 + ηWi,k), ∀i ∈ N. (25)
+(4) Reworking for non-eligible products
+We employ a partial rescheduling strategy, which is triggered when a non-conforming
+rate reaches a certain threshold:
+X
+i∈Nl
+(1 − qi)/|Nl| ≥ T hrr, (26)
+where Nl represents the set of jobs processed from the start of scheduling or since the
+(l − 1)th rescheduling point.
+14
+
+=== PDF PAGE 15 ===
+A fitness function is formulated as follows to evaluate the rescheduling scheme, consid-
+ering both the time cost and maintenance cost associated with processing unit jobs:
+f r = ((
+X
+i∈Nl
+qi)2/(Cm,r
+l T r
+l ), ∀l ∈ L. (27)
+Here, P
+i∈Nl qi, Cm,r
+l and T r
+l represent the number of conforming products, maintenance
+cost, and time cost generated during the lth rescheduling in the production process, respec-
+tively.
+4.2 Objective function
+The objective of this study is to maximize overall productivity while minimizing mainte-
+nance costs. This is determined by two key factors: the makespan Cmax of jobs and the
+overall maintenance cost Cm. The objective function can be expressed as follows:
+Cmax = max(Ci), ∀i ∈ N, (28)
+Cm =
+X
+i∈N
+zi
+X
+k∈K
+xi,kCcm
+k +
+X
+g∈G
+Cpm
+g , (29)
+Cpm
+g =P
+i∈Nk xi,kyi,g(Cpm
+k + Cps
+k ), ∀k ∈ K, g ∈ G, (30)
+where the setup cost of preventive maintenance (PM) is distributed evenly among the
+machines within the joint maintenance group g.
+5 Dual-module algorithm
+This integrated optimization problem considering rework, is known to have NP-hard compu-
+tational complexity (Hu et al., 2022), thereby posing a substantial computational challenge,
+particularly when the number of jobs and machines involved grows significantly. Determin-
+istic optimization methods may encounter difficulties in efficiently optimizing the objective
+function, both in terms of time and due to inherent uncertainties.
+However, leveraging the capabilities of a data platform enables the acquisition of real-
+time information on machine status and rework progress after job task execution. This,
+in turn, allows for dynamic updates to the existing plan. In this section, an algorithmic
+framework called D ual-module P lanning and E valuation Integration Algorithm (DPEIA)
+15
+
+=== PDF PAGE 16 ===
+Figure 2: The framework of the dual-module algorithm.
+is introduced to address this integrated optimization challenge. The goal of DPEIA is
+to facilitate more effective and integrated decision-making in scheduling and maintenance,
+ultimately enhancing overall efficiency. Compared to the traditional two-stage approach
+where planning and scheduling are performed independently, DPEIA introduces a dynamic
+dual-module communication mechanism to enhance the planning efficiency by actively in-
+teracting with the simulation environment. This mechanism also improves computational
+efficiency by reducing the need for frequent rescheduling caused by non-conforming prod-
+ucts.
+The dual-module algorithmic framework, as illustrated in Figure 2, consists of a plan-
+ning module (static optimization without rescheduling) and an evaluation module (online
+improvement with rescheduling). The planning module aims to obtain a stable production
+scheduling plan with computational efficiency, while the evaluation module dynamically
+adjusts the search direction of the planning module through communications between the
+modules. Specifically, elite individuals are generated through static optimization and un-
+dergo practical reevaluation by interacting with the evaluation module. This guides the
+search direction of the planning module in the next iteration. Multiple rounds of static
+optimization and online improvement are performed in an interactive session to obtain an
+ultimate plan. Furthermore, this section proposes an adaptive maintenance strategy based
+on system condition information, such as machines’ degradation status, job pending list,
+and product quality, among others.
+The following subsections will provide detailed explanations of the DPEIA method.
+16
+
+=== PDF PAGE 17 ===
+5.1 Static optimization
+In the planning module, our objective is to generate a resilient plan for job scheduling
+that includes idle spaces, without the need for rescheduling. This framework is adaptable
+and can accommodate various optimization algorithms. We have chosen to incorporate an
+Enhanced version of the M ulti-Objective Differential Evolution algorithm (EMODE), due
+to its flexible search capability. To address the impact of uncertain rework activities on the
+schedule, idle spaces are introduced as a mitigation strategy. The fitness function used in
+the static optimization module can be defined as follows:
+f s = ((
+X
+i∈N
+qi)2/(CmCmax). (31)
+This evaluation is conducted by minimizing both the time cost and maintenance cost related
+to processing unit jobs.
+In this module, the quantity of idle space ne is obtained using formula (32-33), given
+that the impact of idle space on machine degradation is equivalent to that of qualified jobs
+on the machine’s degradation path. To accommodate the differing processing capabilities
+of machines for various types of jobs, the jobs are divided based on their types. Specifically,
+jobs of the same type are assigned to machines with corresponding processing capabilities.
+All machines are initially set to their initial states, denoted as W 0. The total number of
+non-conforming products n0
+e =P
+i∈N(1 − qi), considering the machine’s degradation state
+W 0
+i,k.
+The number of idle spaces neth caused by jobs of the eth type can be expressed as:
+neth = n0
+eth/Meth, (32)
+ne =
+X
+eth
+neth, (33)
+where Meth denotes the number of machines capable of processing jobs of the eth type. The
+efficiency of this algorithm can be further enhanced based on the following proposition.
+Proposition 1 : For the proposed problem, If two consecutive jobs processed on the
+same machine meet any of the following conditions, their processing sequences should be
+interchanged:
+(1) Both output products are non-conforming, and the nominal processing time of the
+first job i
+′
+, exceeds that of the second job i.
+17
+
+=== PDF PAGE 18 ===
+(2) Both output products belong to the same type and are conforming. The nominal
+processing time of the first job i
+′
+exceeds that of the second job i and satisfies the following
+condition:
+∆Wi,k(ak + Γkεi) < ∆Di′ . (34)
+Here, ∆ Wi,k represents the difference of machine’s states between two solution after
+finishing these two jobs. Furthermore, ∆Di′ represents the discrepancy between the quality
+feature of job i
+′
+and the specification SL(+)
+i . The proof is represented in Appendix B.
+In the production process, job processing plays a pivotal role in the machine’s degrada-
+tion process, encompassing the impact of factors such as job sequence, quality, and quantity
+on the machine’s degradation trajectory. The EMODE algorithm incorporates two crucial
+differential evolution operators: the decoding-based Differential Evolution (DE) operator
+(Zhou et al., 2019) and the similarity-oriented Ranking Evolution (RE) operator (Hou et al.,
+2023). The DE operator introduces a significant amount of randomness, contributing to
+the enhancement of solution diversity. The RE operator takes advantage of the inherent
+data associations among different jobs, refining solutions to optimize the process. The con-
+trol parameter ν in the EMODE algorithm is used to allocate computational resources for
+algorithm exploration and exploitation. In the early stages of the iterative process, the
+algorithm focuses on exploration to avoid getting trapped in local optima. As the process
+continues, the algorithm gradually shifts its emphasis to exploitation, leading to faster con-
+vergence. The algorithm performs well, particularly when the control parameter ν decreases
+over the iterations. This relationship is mathematically expressed as follows:
+ν = 2(1 − ( ϱ
+ϱ0 )), (35)
+where ϱ0 represents the total number of iterations, and the current iteration number ϱ ∈
+[0, ϱ0]. In each iteration, the control parameter ν is randomly selected within the range
+[0, 2] using this function and rand is utilized to generate a random number within the
+range (0,1). In this algorithm, when ν > 1 and rand < 0.7, the similarity-oriented RE
+operator is used to balance the number of pending jobs on each machine. Otherwise, the
+DE operator is utilized to generate a new solution. To enhance the ability of local search,
+two jobs are randomly selected from an individual. If one of the conditions in Proposition
+1 is satisfied, the processing sequence of the jobs will be swapped. Otherwise, a job will
+18
+
+=== PDF PAGE 19 ===
+be randomly selected from the machine with the longest total work completion time and
+moved to the most idle machine. This algorithm is detailed in Algorithm 1(presented in
+Appendix G), where the idle spaces are randomly assigned to the machine at the initial
+stage. A planning solution can be obtained through the EMODE algorithm to provide a
+job allocation strategy.
+5.2 Online Improvement through Environmental Interaction
+In the context of an online improvement module that incorporates rescheduling, each elite
+individual undergoes a reevaluation by interacting with the actual production environment.
+A partial rescheduling strategy is employed, which relies on conditional information to
+determine the rescheduling point. This point is determined based on the rate of non-
+conforming products, denoted as T hrr in formula (26). The determination of the decision
+rescheduling scope relies on the rescheduling strategy as presented in the referenced work
+(Wang et al., 2019), involving the aggregation of available idle spaces on machines within
+the current planning module to accommodate the inclusion of a new job. In this module,
+the evaluation function is designed as follows:
+f (eva) = (1/(
+X
+l∈L
+Cm,o
+l
+X
+l∈L
+T o
+l do), (36)
+whereP
+l∈L Cm,o
+l andP
+l∈L T o
+l represent the time and maintenance cost incurred for schedul-
+ing and maintenance in the production process, respectively, and L represents the number
+of rounds re-scheduled during the actual production. Variable do represents the deviation
+between the planned and actual scheduling in terms of job start times and assignments,
+with further details available in reference (An et al., 2023).
+For each rescheduling, the promising region always exists in the neighborhood of the
+initial plan when new jobs are inserted in the unrelated parallel machines system (Peng
+et al., 2019). Algorithm 2 outlines a fast local search method, which utilizes the JS (Job
+Swapping) and JI (Job Insertion) operators to search for high-quality solutions (Ulaga et al.,
+2022). This method is particularly effective in scenarios where new jobs are inserted into
+an unrelated parallel machines system. The combination of JS and JI operators has been
+shown to yield favorable results. In this approach, a job is chosen with a 0.5 probability to
+be inserted at position j on the machine with the earliest completion time. This condition
+19
+
+=== PDF PAGE 20 ===
+is met when the nominal processing time of the selected job is shorter than the processing
+time of the job assigned at the ( j + 1)th position, but longer than the job assigned at the
+(j −1)th position. Alternatively, with a probability of 0.5, the positions of randomly selected
+jobs are swapped. We introduce Lemma 1 to guide the job scheduling decision.
+Lemma 1 : In a parallel system, there always exists an optimal schedule where no idle
+time exists between two consecutive jobs on a machine.
+The proof of Lemma 1 is provided in Appendix C.
+Based on Lemma 1 , idle spaces in the scheduling are filled either by rescheduled jobs
+or pending jobs as per the plan. An example is given to illustrate this decoding process,
+which is represented in Figure 7, provided in Appendix D.
+5.3 Communication scheme and the enhanced maintenance de-
+cision
+5.3.1 Communication scheme
+To address the challenge of obtaining a high-quality solution initially and the resource-
+intensive nature of high-frequency rescheduling, a communication scheme is designed to
+allocate computing resources between the static optimization module and the online im-
+provement module. This scheme involves dividing the entire solving process into N s in-
+teractive rounds or communication cycles, with maxIter representing the total computing
+resource. The allocation of computational resources for the two modules follows a Gaussian
+distribution pattern, as depicted in Figure 8 in Appendix F, which adjusts the computa-
+tional proportions of the static planning module and the online improvement module in
+each communication cycle. The proportion of computational resources allocated to the on-
+line improvement module increases over time. In each round, the top popSize P individuals
+are selected based on the estimation of the function f s value, using maxIter r iterations
+from the previous cycle in the planning module. These selected individuals then undergo
+maxIter R
+r iterations in the online improvement module to obtain a new label through func-
+tion f (eva). This new label replaces the original f s in the static module and adjusts the
+search direction for the next round. The parameters maxIter s
+r and maxIter R
+r are updated
+at the end of each interaction, and the interaction is repeated N s times. Details of the
+20
+
+=== PDF PAGE 21 ===
+computational resource allocation for each cycle are provided in Appendix F.
+5.3.2 Maintenance decision powered by DPEIA
+To improve the effectiveness of maintenance decisions, we introduce a proposition within
+the framework of the DPEIA. Here, the term “life cycle” of a machine refers to the time
+interval from its initial state to the occurrence of failure. To refine the maintenance decision,
+we then derive Proposition 2 of the above optimization problem as follows.
+Proposition 2 : Considered both jobs and maintenance tasks, an optimal schedule exists
+where the PM activity should be suspended until machine failure occurs, given the following
+conditions:
+npm
+nc < ς m, (37)
+where ς m = min{ T pm
+T c , Cpm
+Cc }, and npm represents the additional number of processed jobs
+on the machine when performing the PM task compared to not performing it during the
+current life cycle. nc, T c, and Cc denote the number of processed jobs, job processing time,
+and maintenance cost, respectively, when the PM task is not executed on the machine in
+the current life cycle. The proof can be found in Appendix E.
+The “PM-suspension period” refers to the machine not performing the PM activity from
+the current point until it fails. In the DPEIA’s maintenance decision process, a machine
+is classified as being in the “PM-suspension period” if the condition stated in Proposition
+2 is satisfied. No PM event should be carried out during the machine’s current life cycle.
+Additionally, machines in this period will be screened out before joint maintenance is per-
+formed. Please refer to Appendix K for a detailed explanation of the algorithm’s encoding
+and decoding components.
+6 Numerical Studies
+6.1 Experiment setups
+This section presents numerical experiments to showcase the effectiveness of the proposed
+approach, encompassing the maintenance strategy and dynamic exchange module within
+the production process. A heterogeneous parallel production system is considered, with
+21
+
+=== PDF PAGE 22 ===
+careful consideration given to rework in order to address potential defects and maintain
+exceptional quality. The experiment focuses on the utilization of four unrelated parallel
+processing machines with distinct capacities, taking into account different initial statuses
+W 0. Additionally, two types of jobs are considered, characterized by different nominal
+processing times. We follow Ye et al. (2019) to initiate the production conditions as follows:
+The first type of jobs can be processed on machines 1, 3, and 4, with corresponding nominal
+processing times following a uniform distribution: U (2.616, 0.3). The second type of jobs
+can be processed on machines 2 and 4, with nominal processing times following a uniform
+distribution: U (1.92, 0.5). The quality of input jobs is assumed to follow a truncated normal
+distribution: N(µq, σq). The experiment explores three instances of job sizes, consisting
+of 100, 200, and 300 jobs, respectively. Table 9, presented in Appendix I, outlines the
+parameter settings for this problem, where SL(+)
+eth and ξeth denote the specification limit
+and qualified threshold for the quality characteristic of the eth job.
+In order to assess the effectiveness of the proposed method, four comparative algorithms
+are utilized: EMA (Enhanced Memetic Algorithm) (Afsar et al., 2022), MOEA-D (Multi-
+objective Evolutionary Algorithm based on Decomposition) (de Moraes and Coelho, 2022),
+MVO (Multi-Verse Optimizer) (Kumar et al., 2023), and NSGAII (Non-dominated Sorting
+Genetic Algorithm-II) (L´ opez et al., 2021). The maintenance strategy employed by these
+comparative algorithms is based on the MCIM approach (Chen et al., 2022), where the
+maximum number of preventive maintenance actions for new machines is obtained through
+static optimization, and a right-shift rescheduling policy is adopted. In evaluating the rela-
+tive performance of the algorithms, three metrics are employed. The IGD-metric (Inverted
+Generational Distance) and hypervolume-metric are used to assess the approximation and
+distribution quality of the non-dominated solution set. Additionally, the RPD-metric (Rel-
+ative Percentage Deviation) is utilized to analyze the maximum completion time Cmax and
+maintenance cost aspects of the results. Details of the metric calculations and algorithm
+parameter settings are provided in Appendix I.
+6.2 Performance comparison with benchmarks
+The results of the algorithm comparison experiment based on the IGD-metric and hypervolume-
+metric are presented in Table 4. Smaller values of the IGD-metric and larger values of the
+22
+
+=== PDF PAGE 23 ===
+Table 4: Comparison of algorithms performance based on various evaluation criteria.
+Assessment criteria Job sizes N EMA MOEA-D MVO NSGAII DPEIA
+IGD
+small-sized 100 0.74 0.41 0.54 0.54 0.04
+medium-sized 200 1.07 0.85 0.93 0.99 0.03
+large-sized 300 1.18 0.91 1.01 1.06 0.01
+HV
+small-sized 100 0.11 0.23 0.18 0.18 0.49
+medium-sized 200 0.13 0.19 0.13 0.10 0.49
+large-sized 300 0.01 0.04 0.02 0.00 0.27
+Table 5: Comparison of algorithms performance based on the RPD-metric.
+N EMA MOEA-D MVO NSGAII DPEIA
+Cmax Cm Cmax Cm Cmax Cm Cmax Cm Cmax Cm
+100 98.18 258.71 88.48 156.45 55.37 198.04 63.32 211.83 4.43 45.72
+200 96.17 99.62 70.96 85.56 68.67 102.77 70.65 100.38 3.39 4.63
+300 121.93 73.10 92.01 69.03 81.45 75.23 67.39 83.06 3.24 1.84
+hypervolume-metric indicate more competitive algorithms. It is evident from the results
+that the DPEIA algorithm consistently achieves smaller objective function values across all
+instances compared to other algorithms, indicating its superior performance. Additionally,
+the DPEIA algorithm outperforms other algorithms with the maximum hypervolume value.
+Table 5 shows the experimental results of the DPEIA algorithm and the four other algo-
+rithms in terms of two objectives: maximum completion time and total maintenance cost,
+under the RPD-metric. Smaller values indicate better algorithm performance. The DPEIA
+algorithm demonstrates the best performance in both dimensions of maximum completion
+time and total maintenance cost.
+To provide a clearer visualization of the experimental results, box plots of the four other
+benchmarks, along with three algorithms of ablation experiments, are shown in Figure 3
+and Figure 4, representing makespan and cost, respectively. The DPEIA and DPEIA-full
+methods show notable advantages in terms of makespan compared to the remaining four
+algorithms, highlighting the effectiveness of the proposed solution framework in uncertain
+manufacturing systems. Regarding maintenance cost, both DPEIA and DPEIA-full exhibit
+superior performance with minimal variance fluctuations compared to the other four algo-
+rithms, showcasing the advantages of simultaneous maintenance and production scheduling.
+Figure 5 and Figure 6 display the final set of non-dominated solutions obtained by
+DPEIA-full, DPEIA, and the four other algorithms. The solution set generated by the
+23
+
+=== PDF PAGE 24 ===
+Figure 3: The box plot of makespan for 200
+jobs under basic standard deviation.
+Figure 4: The box plot of maintenance cost
+for 200 jobs under basic standard deviation.
+Figure 5: The Pareto optimal surface of
+maintenance cost for 200 jobs under basic
+standard deviation.
+Figure 6: The Pareto optimal surface of
+maintenance cost for 300 jobs under the de-
+viation of 0.09.
+DPEIA method exhibits superior approximation and distribution diversity compared to
+the other algorithms. Furthermore, the DPEIA method achieves results that are very close
+to those obtained by the DPEIA-full algorithm while consuming approximately half of the
+computational resources. Based on the analysis of the experimental results, we conclude
+that DPEIA demonstrates exceptional performance in addressing the studied problems.
+6.3 Sensitive analysis
+To validate the effectiveness of the proposed DPEIA algorithm, additional numerical ex-
+periments were conducted to analyze the sensitivity of the algorithm to different ranges
+of input job quality. Two qualified deviations, 0.03 and 0.09, were considered in the ex-
+24
+
+=== PDF PAGE 25 ===
+periments. The results of these experiments, presented in Table 6, can be observed that
+the DPEIA algorithm remains competitive compared to the other four algorithms in this
+experiment.
+In addition, ablation experiments were conducted to evaluate the performance of the
+communication mechanism and the integrated mechanism separately. The DPEIA-full algo-
+rithm, where the proposed communication mechanism was replaced by a fully rescheduling
+strategy, and the DPEIA-single algorithm, which considers scheduling and maintenance
+decisions separately, were used as comparative benchmarks. Detailed comparison results
+between the DPEIA algorithm and the DPEIA-full algorithm in terms of IGD and hyper-
+volume indicators are shown in Table 8.
+The experimental results show that as the number of jobs or non-conforming input jobs
+increases, along with an increased frequency of maintenance demands, the disparities in cost
+and completion time among the algorithms become more pronounced. This emphasizes the
+advantages of the proposed method in dynamic production environments and its suitability
+for making maintenance decisions. Based on the IGD and hypervolume indicators, when
+the job qualified deviation σq is 0.03, the performance of DPEIA is almost the same as that
+of DPEIA-full, while it is slightly worse when σq = 0.06. DPEIA-full has advantages when
+σq = 0.09, but situations with a high proportion of non-conforming jobs (about 45%) are
+rare, and using a fully rescheduling strategy consumes a lot of computing resources with-
+out meeting practical needs. For example, the computational resources consumed by the
+DPEIA-full algorithm are almost 1.5 times that of the DPEIA algorithm where σq = 0.09
+and qualified 300 products should be completed. Meanwhile, in all experimental situations,
+the DPEIA algorithm has significant advantages compared to the other four algorithms,
+validating the competitiveness of the proposed algorithm. Furthermore, in all experimen-
+tal situations, the DPEIA algorithm consistently outperforms the other four algorithms,
+validating its competitiveness. The DPEIA algorithm is superior in approximating the
+Pareto optimality and addressing joint optimization problems with uncertain factors such
+as quality, production scheduling, and reliability under the QRP-co-effect.
+25
+
+=== PDF PAGE 26 ===
+Table 6: Comparison of algorithms performance based on the IGD and HV metrics.
+Criteria Job quality std N EMA MOEA-D MVO NSGAII DPEIA
+IGD
+0.03
+100 1.31 0.88 0.77 0.98 0.00
+200 0.79 0.77 0.71 1.01 0.01
+300 0.83 0.38 0.51 0.49 0.10
+0.09
+100 0.89 0.85 0.96 0.88 0.05
+200 1.10 0.92 0.83 0.96 0.02
+300 0.98 0.87 0.90 0.92 0.02
+HV
+0.03
+100 0.00 0.07 0.08 0.03 0.41
+200 0.07 0.14 0.07 0.04 0.33
+300 0.01 0.10 0.06 0.06 0.28
+0.09
+100 0.06 0.10 0.07 0.06 0.42
+200 0.02 0.05 0.04 0.02 0.33
+300 0.04 0.07 0.04 0.03 0.38
+Table 7: Comparison of algorithms performance based on the RPD-metric.
+Job std ( σq) N DPEIA-full DPEIA
+Cmax Cm Cmax Cm
+0.03
+100 4.57 0.00 0.00 0.00
+200 2.27 8.67 2.48 15.32
+300 8.41 36.60 3.92 40.23
+0.06
+100 11.16 59.97 21.19 45.11
+200 7.03 10.30 5.82 6.23
+300 1.37 1.94 6.08 7.87
+0.09
+100 14.28 32.08 13.07 36.59
+200 3.34 6.90 5.56 5.33
+300 20.32 8.34 20.04 8.91
+7 Conclusion
+This study aims to address a joint optimization problem that encompasses quality, reliabil-
+ity, and production (QRP) for a multi-component production system incorporating rework-
+ing activities. The primary objective of the proposed methodology is to attain high-quality
+outputs, heightened productivity, and increased production system’s reliability, while si-
+multaneously minimizing costs. The study explores the interdependencies among quality,
+production scheduling, and machine reliability by considering the uncertainties associated
+with machine degradation, job processing time, and product quality throughout the pro-
+duction process. To address this problem, leveraging the available conditional information
+on the platform becomes pivotal for enhancing the efficacy of joint optimization. In light
+of this, we introduce a dual-module solution framework. Firstly, we harness the dynamic
+26
+
+=== PDF PAGE 27 ===
+Table 8: Comparison of algorithms under different rescheduling schemes and maintenance
+strategies.
+Assessment criteria Job sizes N DPEIA-full DPEIA-single DPEIA
+IGD
+small-sized 100 0.21 0.48 0.20
+medium-sized 200 0.45 0.67 0.40
+large-sized 300 0.28 0.78 0.26
+HV
+small-sized 100 0.10 0.05 0.11
+medium-sized 200 0.06 0.03 0.06
+large-sized 300 0.08 0.01 0.07
+interplay among communication mechanisms, maintenance strategies, and relevant prop-
+erties to enhance computational efficiency. Secondly, we integrate online data effectively,
+employing dynamic decision-making processes to derive adaptive outcomes. Ultimately,
+empirical validation through numerical studies substantiates the efficacy of this approach.
+References
+Afsar, S., J. J. Palacios, J. Puente, C. R. Vela, and I. Gonz´ alez-Rodr´ ıguez (2022). Multi-
+objective enhanced memetic algorithm for green job shop scheduling with uncertain times.
+Swarm and Evolutionary Computation 68 , 101016.
+Aggoune, R. (2004). Minimizing the makespan for the flow shop scheduling problem with
+availability constraints. European Journal of Operational Research 153 (3), 534–543.
+Amirkhani, F., A. Amiri, and R. Sahraeian (2017). A new method based on simulation-
+optimization approach to find optimal solution in dynamic job-shop scheduling problem
+with breakdown and rework. Production and Operations Management 8 (1), 157–174.
+An, Y., X. Chen, K. Gao, Y. Li, and L. Zhang (2023). Multiobjective flexible job-shop
+rescheduling with new job insertion and machine preventive maintenance. IEEE Trans-
+actions on Cybernetics 53 (5), 3101–3113.
+Azimpoor, S. and S. Taghipour (2021). Joint inspection and product quality optimization
+for a system with delayed failure. Reliability Engineering & System Safety 215 , 107793.
+Basciftci, B., S. Ahmed, and N. Gebraeel (2020). Data-driven maintenance and opera-
+tions scheduling in power systems under decision-dependent uncertainty. IISE transac-
+tions 52 (6), 589–602.
+Berling, P. and D. R. Sonntag (2022). Inventory control in production–inventory systems
+with random yield and rework: The unit-tracking approach. Production and Operations
+Management 31 (6), 2628–2645.
+Briskorn, D., J. G¨ onsch, and A. Thiemeyer (2024). Scheduling maintenance activities sub-
+ject to stochastic job-dependent machine deterioration. European Journal of Operational
+Research 319 (1), 62–78.
+Chen, L., C. Cheng, H. Dui, and L. Xing (2022). Maintenance cost-based importance anal-
+ysis under different maintenance strategies. Reliability Engineering & System Safety 222 ,
+108435.
+27
+
+=== PDF PAGE 28 ===
+Chen, Y. and J. Jin (2005). Quality-reliability chain modeling for system-reliability analysis
+of complex manufacturing processes. IEEE Transactions on Reliability 54 (3), 475–488.
+Cheng, G. and L. Li (2020). Joint optimization of production, quality control and mainte-
+nance for serial-parallel multistage production systems. Reliability Engineering & System
+Safety 204 , 107146.
+Cheng, J. C., W. Chen, K. Chen, and Q. Wang (2020). Data-driven predictive maintenance
+planning framework for mep components based on bim and iot using machine learning
+algorithms. Automation in Construction 112 , 103087.
+Das, K., R. Lashkari, and S. Sengupta (2007). Machine reliability and preventive main-
+tenance planning for cellular manufacturing systems. European Journal of Operational
+Research 183 (1), 162–180.
+de Moraes, M. B. and G. P. Coelho (2022). A diversity preservation method for expensive
+multi-objective combinatorial optimization problems using novel-first tabu search and
+moea/d. Expert Systems with Applications 202 , 117251.
+Eben-Chaime, M. (2022). On the relationships between the design of assembly manufac-
+turing and inspection systems and product quality. IISE Transactions 54 (3), 227–237.
+Fakher, H. B., M. Nourelfath, and M. Gendreau (2018). Integrating production, mainte-
+nance and quality: A multi-period multi-product profit-maximization model. Reliability
+Engineering & System Safety 170 , 191–201.
+Flapper, S. D. P., J. C. Fransoo, R. A. Broekmeulen, and K. Inderfurth (2002). Plan-
+ning and control of rework in the process industries: a review. Production Planning &
+Control 13 (1), 26–34.
+Gao, D., G.-G. Wang, and W. Pedrycz (2020). Solving fuzzy job-shop scheduling problem
+using de algorithm improved by a selection mechanism. IEEE Transactions on Fuzzy
+Systems 28 (12), 3265–3275.
+Gardner*, J. W. (2020). Managing production yields and rework through feedback on
+speed, quality, and quantity. Production and Operations Management 29 (9), 2182–2209.
+Gautam, P., A. Khanna, and C. K. Jaggi (2021). An integrated green supply chain model
+with product recovery management towards a cleaner system. Journal of Cleaner Pro-
+duction 320 , 128850.
+Gouiaa-Mtibaa, A., S. Dellagi, Z. Achour, and W. Erray (2018). Integrated maintenance-
+quality policy with rework process under improved imperfect preventive maintenance.
+Reliability Engineering & System Safety 173 , 1–11.
+Hao, J., M. Liu, S. Jiang, and C. Wu (2015). A soft-decision based two-layered scheduling
+approach for uncertain steelmaking-continuous casting process. European Journal of
+Operational Research 244 (3), 966–979.
+Hazır, ¨O., M. Haouari, and E. Erel (2010). Robust scheduling and robustness mea-
+sures for the discrete time/cost trade-off problem. European Journal of Operational
+Research 207 (2), 633–643.
+Hoffman, M., E. Song, M. P. Brundage, and S. Kumara (2021). Online improvement of
+condition-based maintenance policy via monte carlo tree search. IEEE Transactions on
+Automation Science and Engineering 19 (3), 2540–2551.
+Hou, Y., Y. Wu, and H. Han (2023). Multi-objective differential evolution algorithm bal-
+ancing multiple stakeholders for low-carbon order scheduling in e-waste recycling. IEEE
+Transactions on Evolutionary Computation .
+28
+
+=== PDF PAGE 29 ===
+Hu, K., Y. Che, and Z. Zhang (2022). Scheduling unrelated additive manufacturing ma-
+chines with practical constraints. Computers & Operations Research 144 , 105847.
+Kang, Y. and F. Ju (2019). Integrated analysis of productivity and machine condition degra-
+dation: Performance evaluation and bottleneck identification. IISE transactions 51 (5),
+501–516.
+Kim, H. and B.-I. Kim (2022). Optimal sequence for single server scheduling incorporating
+a rate-modifying activity under job-dependent linear deterioration. European Journal of
+Operational Research 298 (2), 439–450.
+Kumar, S., N. Panagant, G. G. Tejani, N. Pholdee, S. Bureerat, N. Mashru, and P. Patel
+(2023). A two-archive multi-objective multi-verse optimizer for truss design. Knowledge-
+Based Systems 270 , 110529.
+L´ opez, J. C. L., J. J. S. Noriega, J. R. Figueira, J. Liu, and D. A. G. Chavira (2021). Non-
+dominated sorting genetic-based algorithm for exploiting a large-sized fuzzy outranking
+relation. European Journal of Operational Research 293 (2), 615–631.
+Lu, B. and X. Zhou (2017). Opportunistic preventive maintenance scheduling for serial-
+parallel multistage manufacturing systems with multiple streams of deterioration. Reli-
+ability Engineering & System Safety 168 , 116–127.
+Mabkhot, M. M., S. K. Amri, S. Darmoul, A. M. Al-Samhan, and S. Elkosantini (2020).
+An ontology-based multi-criteria decision support system to reconfigure manufacturing
+systems. IISE Transactions 52 (1), 18–42.
+Nobil, A. H., E. Nobil, and B. R. Sarker (2020). Optimal decision-making for a single-stage
+manufacturing system with rework options. International Journal of Systems Science:
+Operations & Logistics 7 (1), 90–104.
+Peng, K., Q.-K. Pan, L. Gao, X. Li, S. Das, and B. Zhang (2019). A multi-start variable
+neighbourhood descent algorithm for hybrid flowshop rescheduling. Swarm and Evolu-
+tionary Computation 45 , 92–112.
+Rivera-G´ omez, H., A. Gharbi, J.-P. Kenn´ e, R. Ortiz-Zarco, and J. R. Corona-Armenta
+(2021). Joint production, inspection and maintenance control policies for deteriorating
+system under quality constraint. Journal of Manufacturing Systems 60 , 585–607.
+Sabri-Laghaie, K., M. Fathi, E. Zio, and M. Mazhar (2022). A novel reliability monitor-
+ing scheme based on the monitoring of manufacturing quality error rates. Reliability
+Engineering & System Safety 217 , 108065.
+Sha, D., S. Hsu, Z. Che, and C. Chen (2006). A dispatching rule for photolithography
+scheduling with an on-line rework strategy. Computers & Industrial Engineering 50 (3),
+233–247.
+Shi, L., X. Lv, Y. He, and Z. He (2024). Optimising production, maintenance, and quality
+control for imperfect manufacturing systems considering timely replenishment. Interna-
+tional Journal of Production Research 62 (10), 3504–3525.
+Shi, Y., W. Zhu, Y. Xiang, and Q. Feng (2020). Condition-based maintenance optimization
+for multi-component systems subject to a system reliability requirement. Reliability
+Engineering & System Safety 202 , 107042.
+Sinisterra, W. Q., V. H. R. Lima, C. A. V. Cavalcante, and A. A. Aribisala (2023). A delay-
+time model to integrate the sequence of resumable jobs, inspection policy, and quality
+for a single-component system. Reliability Engineering & System Safety 230 , 108902.
+29
+
+=== PDF PAGE 30 ===
+Sonntag, D. and G. P. Kiesm¨ uller (2018). Disposal versus rework–inventory control in a
+production system with random yield. European Journal of Operational Research 267 (1),
+138–149.
+Sun, Q., P. Chen, X. Wang, and Z.-S. Ye (2023). Robust condition-based production
+and maintenance planning for degradation management. Production and Operations
+Management 32 (12), 3951–3967.
+Tambe, P. P. and M. S. Kulkarni (2022). A reliability based integrated model of mainte-
+nance planning with quality control and production decision for improving operational
+performance. Reliability Engineering & System Safety 226 , 108681.
+Tasias, K. A. (2022). Integrated quality, maintenance and production model for multivariate
+processes: A bayesian approach. Journal of Manufacturing Systems 63 , 35–51.
+uit het Broek, M. A., R. H. Teunter, B. De Jonge, and J. Veldman (2021). Joint condition-
+based maintenance and condition-based production optimization. Reliability Engineering
+& System Safety 214 , 107743.
+Ulaga, L., M. ˙DJ urasevi´ c, and D. Jakobovi´ c (2022). Local search based methods for
+scheduling in the unrelated parallel machines environment. Expert Systems with Appli-
+cations 199 , 116909.
+Wang, R. Y. (1998). A product perspective on total data quality management. Communi-
+cations of the ACM 41 (2), 58–65.
+Wang, Z., J. Zhang, and S. Yang (2019). An improved particle swarm optimization algo-
+rithm for dynamic job shop scheduling problems with random job arrivals. Swarm and
+Evolutionary Computation 51 , 100594.
+Yang, Y., M. Huang, Z. Y. Wang, and Q. B. Zhu (2020). Robust scheduling based on ex-
+treme learning machine for bi-objective flexible job-shop problems with machine break-
+downs. Expert Systems with Applications 158 , 113545.
+Ye, Z., Z. Cai, F. Zhou, J. Zhao, and P. Zhang (2019). Reliability analysis for series man-
+ufacturing system with imperfect inspection considering the interaction between quality
+and degradation. Reliability Engineering & System Safety 189 , 345–356.
+Zhao, F., X. He, and L. Wang (2020). A two-stage cooperative evolutionary algorithm with
+problem-specific knowledge for energy-efficient scheduling of no-wait flow-shop problem.
+IEEE transactions on cybernetics 51 (11), 5291–5303.
+Zhou, S., L. Xing, X. Zheng, N. Du, L. Wang, and Q. Zhang (2019). A self-adaptive
+differential evolution algorithm for scheduling a single batch-processing machine with
+arbitrary job sizes and release times. IEEE transactions on cybernetics 51 (3), 1430–
+1442.
+30
+
+=== PDF PAGE 31 ===
+Appendices
+A
+The proof of obtaining for N pm
+i,k .
+To obtain the value of N pm
+i,k , variable za
+i,k is introduced to locate the time point of the
+most recent corrective maintenance (CM) activity for machine k, and variable zb
+i,k is used
+to determine whether the machine has or not undergone any CM activity before job i is
+completed. For ∀i ∈ Nk, k ∈ K, the formula for obtaining N pm
+i,k is designed as follows:
+lX
+w=1
+(
+X
+(i(1),...i(w))∈Nk
+(
+wY
+j=1
+xi(j),i(j−1))zi(w)) ≤ M za
+i,k, (A.1)
+lX
+w=1
+(
+X
+(i(1),...i(w))∈Nk
+(
+wY
+j=1
+xi(j),i(j−1))zi(w)) ≥ za
+i,k, (A.2)
+lX
+w=1
+(
+X
+(i(1),...i(w))∈Nk
+(
+wY
+j=1
+xi(j),i(j−1))
+X
+g∈G
+yi(w),g) = M(1 − zi(l) + za
+i,k) + N pn
+i,k , (A.3)
+ye
+i,k =
+0, N pn
+i,k ≤ 0,
+1, N pn
+i,k > 0 , (A.4)
+zb
+i,k =
+(
+0, Pl0
+w=1(P
+(i(1),...i(w))∈Nk(Qw
+j=1 xi(j),i(j−1))zi(w)) = 0
+1, Pl0
+w=1(P
+(i(1),...i(w))∈Nk(Qw
+j=1 xi(j),i(j−1))zi(w)) > 0
+, (A.5)
+N pm
+k,j =
+jX
+j′ =1
+ye
+k,j ′ ,jN pn
+i,k zb
+k,j +
+l0
+X
+w=1
+(
+X
+(i(1),...i(w))∈Nk
+(
+wY
+j=1
+xi(j),i(j−1))
+X
+g∈G
+yi(w),g)(1 − zb
+k,j), (A.6)
+za
+i,k ∈ {0, 1}, (A.7)
+where M = n, and subscript i(j) represents job i processed on the jth position on the
+machine. N pn
+i,k denotes the intermediate variable to obtain N pm
+k,j when at least one CM
+activity has been performed until complete job i. Index l denotes the position of job i
+processed on the machine, and index w is used to traverse the positions between the first
+position and position l of the machine.
+B
+The proof of Proposition 1.
+A solution can be evaluated from four perspectives based on the objective function: the
+completion time point and the qualities of jobs, the degradation state of the machines and
+the maintenance cost in the process. For solution So where job i and job i
+′
+is scheduled
+on the position j and j + 1 of machine k, respectively, we assume that T So
+k is the time
+required by machine k from the initial time to the completion time point of job i
+′
+. The
+alternative solution denotes So
+′
+where the sequence of jobs i and i
+′
+is reversed taking time
+T So
+′
+k until finishing job i. QSo
+k represents the number of the qualified products. W So
+k denotes
+the degradation of machine k after processing job i
+′
+in solution So, and W So
+′
+k denotes the
+degradation state after processing job i in solution So
+′
+. Let Wi′′ ,k represents the machine
+31
+
+=== PDF PAGE 32 ===
+k’s degradation state before processing job i and job i
+′
+. Meanwhile, all jobs are available
+in the initial time. Thus, we discuss in two conditions, and Proposition 1 can be derived
+as follows:
+1) The first condition.
+According to equation (8), the input jobs whose initial quality are eligible when the out-
+put products are qualified. Then, the degradation formulation (equation (6)) consists of the
+Gaussian distribution (according to the proof of Lemma ??) and the Gamma distribution.
+Under the additivity and the non-negativity for the gamma and Gaussian distributions
+along with the independent increment property, h(αk, ∆ti,k, βk, σk) denotes the increments
+in ∆ ti,k. Meanwhile, the job’s available time can be expressed as ta
+i′ ,k = ta
+i,k = 0. If
+Oi,k < O i′ ,k:
+T So
+k − T So′
+k (B.1)
+= ta
+i,k + pSo
+i + pSo
+i′ − (ta
+i′ ,k + pSo
+′
+i′ + pSo
+′
+i ) = pSo
+i + pSo
+i′ − (pSo
+′
+i′ + pSo
+′
+i ) < 0, (B.2)
+W So
+k − W So
+′
+k (B.3)
+= (Wi′′ ,k + (y(pSo
+i ) + y(pSo
+i′ ) + g(αk, (T So
+k ), βk, σk))) − (Wi′′ ,k + (y(pSo
+′
+i ) + y(pSo
+′
+i′ )))+
+g(αk, (T So
+′
+k ), βk, σk))) (B.4)
+= g(αk, pSo
+i′ , βk, σk) + y(pSo
+i′ ) − (g(αk, pSo
+′
+i , βk, σk) + y(pSo
+′
+i )) < 0. (B.5)
+According to equation (8), the quality characteristic can be obtained as follows:
+DSo
+i − DSo
+′
+i (B.6)
+= akW So
+i,k + W So
+i,k × Γk × εi − (akW So
+′
+i,k + W So
+′
+i,k × Γk × εi) (B.7)
+< (W So
+i,k − W So
+′
+i,k )(ak + Γk × εi) < 0, (B.8)
+where pSo
+i = Oi,k(1 + η(Wi′′ ,k + g(αk, ta
+i,k, βk, σk))),
+pSo
+i′ = Oi′ ,k(1 + η(Wi′′ ,k + g(αk, (ta
+i,k + pSo
+i ), βk, σk) + y(pSo
+i )), pSo
+′
+i′ = Oi′ ,k(1 + η(Wi′′ ,k +
+g(αk, ta
+i′ ,k, βk, σk))),
+pSo
+′
+i = Oi,k(1+η(Wi′′ ,k+g(αk, (ti′ ,k+pSo
+′
+i′ ), βk, σk)+y(pSo
+′
+i′ )). y(pSo,i) denotes normalization
+equation of pSo,i, and y is a linear function.
+2) The second condition.
+Similarly, jobs’ effects on the machine’s degradation follow the Gaussian distribution.
+Then, in this situation, the following formulas are also satisfied:
+T So
+k − T So′
+k < 0, W So
+k − W So
+′
+k , (B.9)
+∆Wi,k(ak + Γk × εi) < ∆Di′ , (B.10)
+⇒ (W So
+i,k − W So
+′
+i,k )(ak + Γk × εi) < ∆Di′ , (B.11)
+⇒ DSo
+i′ − DSo
+′
+i′ < ∆Di′ , (B.12)
+⇒ |DSo
+i′ − SL(+)
+i′ | < ξ i′ (B.13)
+⇒ QSo
+k = QSo
+′
+k = 2. (B.14)
+Meanwhile, for two output products, the number of conforming products can be ex-
+pressed as QSo
+′
+i,k,i′ = 0 under the second condition, while 0 ≤ QSo
+i,k,i′ ≤ 2, then QSo
+k ≥ QSo
+′
+i,k,i′.
+Proposition 1 is proved. ■
+32
+
+=== PDF PAGE 33 ===
+Figure 7: The diagram of the idle decoding.
+C
+The proof of Lemma 1.
+According to karimi et al. (2012), in the parallel system, the active schedule contains
+an optimum solution where the objective function is makespan. Then the completion
+time of jobs is shorter when applying for the active schedule. Meanwhile, the longer jobs’
+completion time can accelerate the machine deterioration and quality of output products
+jobs based on the proof of Proposition 1, where other conditions are kept the same.
+Lemma 1 is proved. ■
+D
+The diagram of the idle decoding.
+Figure 7(a) shows a schematic Gantt chart of idle spaces, represented by diagonal-stripe
+rectangles, added during the planning module. In Figure 7(b), plaid rectangles represent
+rework jobs, while other spaces in different colors denote jobs assigned based on the planned
+baseline. Jobs between the starting time point T (+) and the ending time point T e are
+rescheduled. In the evaluation module, it can be observed that the positions of the idle
+spaces are occupied by unprocessed jobs, as depicted in Figure 7(b).
+33
+
+=== PDF PAGE 34 ===
+E
+The proof of Proposition 2.
+npm
+nc < ς m, (E.1)
+⇒ ( npm
+nc + 1)2 < (ς m + 1)2, (E.2)
+⇒ ( nc + npm
+nc )2 < 1 + 2ς m + (ς m)2, (E.3)
+⇒ ( nc + npm
+nc )2 < 1 + Cpm
+Cc + T pm
+T c + T pmCpm
+T cCc , (E.4)
+⇒ ( nc + npm
+nc )2 < T cCc + (T cCpm + T pmCc) + T pmCpm
+T cCc , (E.5)
+⇒ ( nc + npm
+nc )2 < (T c + T pm)(Cc + Cpm)
+T cCc , (E.6)
+⇒ (nc)2
+T cCc > (nc + npm)2
+(T c + T pm)(Cc + Cpm) . (E.7)
+Proposition 2 is proved. ■
+F
+Figure 8: The diagram of the computing resource allocation.
+■
+G
+Procedure of the EMODE algorithm. ■
+34
+
+=== PDF PAGE 35 ===
+Algorithm 1: Procedure of the EMODE algorithm
+Input: N: the set of job indexes,
+K: the set of machine indexes,
+popSize P : the population size in the planning module,
+maxIter P : the number of iterations in the planning module
+Output: Planning
+1 Initialize: g = 0, popInit.initialize()
+2 while g < maxIter P do
+3 Select the number ν from 2 to 0 based on formula (35);
+4 if ν > 1 then
+5 for i = 1 to popSize P do
+6 if rand < 0.7 then
+7 Use the similarity-oriented RE operator to generate a new solution;
+8 end
+9 else
+10 Use the decoding-based DE operator to generate a new solution;
+11 end
+12 end
+13 end
+14 else
+15 for i = 1 to popSize P do
+16 randomly select two jobs assigned on two consecutive positions j and j
+′
+in a maintenance interval belonging to a machine;
+17 if these two jobs satisfy one of sub-conditions in Proposition 1 then
+18 generate new individual x
+′
+by swapping two jobs’ positions, and
+popInit ∪ x
+′
+;
+19 end
+20 else
+21 calculate the ratio of total processing time on each machine and
+makespan to obtain the busiest machine mb and the idlest machine
+md;
+22 if mb is not empty then
+23 generate new individual x
+′
+by randomly selecting a job on the
+most busiest machine md to assign to the idlest machine mb;
+24 popInit ∪ x
+′
+;
+25 end
+26 end
+27 end
+28 end
+29 update population popInit based on the roulette method with fitness
+function(31) value as probability and the popSize P ;
+30 g++;
+31 end
+35
+
+=== PDF PAGE 36 ===
+H
+Procedure of the EMODE rescheduling. ■
+I
+a
+′
+=
+h
+0.0112 0 .0173 0 .0147 0 .0158
+i
+,
+b0′
+=
+h
+0.0098 0 .0106 0 .0105 0 .0072
+i
+,
+Γ
+′
+=
+h
+0.0137 0 .0152 0 .0132 0 .0143
+i
+,
+µ
+′
+=
+h
+42.72 42 .72 42 .72 42 .72
+i
+,
+SL(+)
+eth′ =
+h
+42.72 42 .61
+i
+, ξ
+′
+eth =
+h
+0.08 0 .07
+i
+.
+■
+J
+The DPEIA algorithm is equipped with the following parameter settings: the mean µc and
+qualified deviation σc of the truncated normal distribution, the communication mechanism
+control parameter ϖ and the degradation coefficient are set to 0, 1.13, and 0.5, respectively.
+The degradation coefficient η is set to 0.2. The maximum iteration number maxIter P for
+all algorithms in the experiment is set to 100. Given the stochastic nature of the problem,
+each solution is repeated 50 times to obtain average results. Furthermore, the imperfect
+maintenance strategy incorporates influence coefficients ( θ and φ) set to 0.2 and 0.08,
+respectively.
+1) IGD-metric:
+IGD (P, P ∗) = 1
+|P ∗|
+X
+p∈P ∗
+dist(p, P), (D3.1)
+where P and P ∗ represent the set of points on the Pareto optimal surface obtained by the
+corresponding algorithm and all algorithms, respectively, and p = (obj∗
+1 , obj∗
+2). Value obj∗
+i
+is the normalized form of objective function values obji, namely, the makespan and the cost
+in this study:
+obj∗
+i = Obji − Obji,min
+Obji,max − Obji,min
+, (D3.2)
+36
+
+=== PDF PAGE 37 ===
+Algorithm 2: Procedure of rescheduling
+Input: N: the set of job indexes,
+K: the set of machine indexes,
+popSize R:the population size in the online improvement module,
+baseline: the current schedule plan,
+maxIter R: the number of iterations in the online improvement module
+Output: Schedule
+1 Initialize: g = 0, popRes.initialize()
+2 while g < maxIter R do
+3 if g mod 2==1 then
+4 determine machine mkey effecting the makspan and randomly select a job i
+assigned on the machine;
+5 determine machine merl with the earliest completion time;
+6 rearrange job i to a position on machine merl satisfying the following
+condition;
+7 for k = 1 to ninr
+merl - 1 do
+8 for j = 1 to ninr
+merl,u - 1 do
+9 if pi >= p
+i
+merl
+j
+and pi <= p
+i
+merl
+j+1
+then
+10 insert the job i into the position j on machine merl, and generate
+new individual x
+′
+;
+11 popRes ∪ x
+′
+;
+12 pass;
+13 end
+14 end
+15 end
+16 end
+17 else
+18 for m in K do
+19 randomly select positions j and j
+′
+on machine m and swap the jobs
+assigned on these positions, and generate new individual x
+′
+;
+20 popRes ∪ x
+′
+;
+21 end
+22 end
+23 randomly select two positions on different machines and swap the processing
+sequence of these two jobs;
+24 g + +;
+25 end
+26 Notes: ninr
+merl and ninr
+merl,u represent the number of intervals divided by maintenance
+activities and the uth interval for machine merl, respectively; p
+i
+merl
+j
+denotes the
+actual processing time of the job processed on jth position in the uth interval of
+machine merl.
+37
+
+=== PDF PAGE 38 ===
+Table 9: Parameter setups of each machine for the base case.
+Parameters M1 M2 M3 M4
+µ(−)
+k 82.4 66.4 74.72 66
+σ(−)
+k 0.00306 0.00296 0.00326 0.00254
+µ(+)
+k 0.0 0.0 0.0 0.0
+σ(+)
+k 0.015 0.015 0.015 0.015
+ak 91.1 98.95 103.5 86.5
+bk 0.57032 0.5664 0.5832 0.5612
+βk 5.792e-05 5.516e-05 6.423e-05 6.085e-05
+Cpm
+k 430 275 230 195
+Ccm
+k 1312 1028 876 832
+W 0
+k 0.1 0.105 0.11 0.99
+Lk 0.35 0.4025 0.385 0.315
+T ps
+k 12.6 10.85 10.5 10.15
+T pm
+k 12.54 10.92 10.49 10.15
+T cm
+k 44.75 40.50 36.64 36.64
+where Obji,min and Obji,max are the minimum and maximum values of objective obji in
+total algorithms.
+2) hypervolume-metric:
+HV = δ
+
+
+|S|[
+i=1
+ri
+
+ , (D3.3)
+where S denotes the set of non-dominated solutions obtained by the corresponding al-
+gorithm, while ri represents the area of the rectangle constructed using the normalized
+objective space in the range of [0 , 1] and the qualified point (1 , 1) as the opposite vertices,
+which represents the worst solution among all algorithms. Symbol δ measures the volume
+of the contents in parentheses. Furthermore, a larger value of the hypervolume indicator
+(HV ) corresponds to a better performance of the algorithm.
+38
+
+=== PDF PAGE 39 ===
+3) RPD-metric:
+RP Di = 100 × Obji,method − Obji,best
+Obji,best
+, (D3.4)
+where Obji,method represents the average value of the non-dominated solutions attained by
+the algorithm in question on the ith objective. Obji,best refers to the best value of the
+non-dominated solutions found by all the algorithms on the same ith objective. ■
+K
+The encoding and the decoding parts of DPEIA.
+Step 1. Encoding. All jobs are allocated to machines, forming an individual with five
+components. The initial part encompasses job assignments to machines, including the job
+sequence. The second component represents the threshold of the Preventive Maintenance
+(PM) coefficient ζ. The third part indicates the PM group proportion associated with
+the coefficient ψ. The fourth part involves the rescheduling triggering threshold linked to
+the coefficient T hrr. The fifth part denotes the maximum number of times a machine’s
+PM coefficient nu. In the primary component concerning job assignments, the integer part
+designates the assigned machine, while the decimal part determines the job order, similar to
+idle time. An illustrative example of an individual is presented in Figure 9. In the section
+related to job assignments, the integer part of the numbers signifies the number of assigned
+machines (with idle time being the remainder after division by 10). The decimal parts are
+sorted in ascending order, and the sequence is employed as the processing sequence of jobs
+on the machine. In the chromosome section, abc signifies that job b is allocated to the cth
+position on machine a.
+Figure 9: An illustration using keys and a chromosome in the random-key EMODE.
+Step 2. Decoding. Utilizing the established maintenance policy and the designed individ-
+ual, we employ a Monte Carlo simulation to replicate the system’s stochastic deterioration
+39
+
+=== PDF PAGE 40 ===
+process. This simulation is instrumental in obtaining the total cost and makespan based on
+the decision variables ζ, ψ, T hrr, and nu. The algorithm’s detailed procedure is outlined
+in Algorithm 1, where N s represents the sample size of the simulation.
+Step 3. Parameters Updating. The fundamental steps of EMODE, encompassing in-
+dividual selection, reproduction, crossover, and mutation, are executed to update the job
+assignment, sequencing plan, and the maintenance decision variables ζ, ψ, T hrr, and nu.
+Step 4. Solution. Steps 2 and 3 are iterated until the termination criterion is satisfied.
+Subsequently, the optimal job assignment and sequencing plan can be determined. Addi-
+tionally, the optimal decision variables for OM, i.e., ζ, ψ, T hrr, and nu, can be obtained.
+References
+Karimi, H., Rahmati, S. H. A., Zandieh, M. 2012. An efficient knowledge-based algorithm
+for the flexible job shop scheduling problem. Knowledge-Based Systems, 36, 236–244.
+40

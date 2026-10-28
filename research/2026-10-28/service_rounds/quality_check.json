@@ -1,0 +1,7 @@
+{
+  "state_quality_eta_eligibility_retention_cases": 1024,
+  "complete_action_feasible_checks": 512,
+  "max_profit_error": 2.1827872842550278e-11,
+  "max_complete_action_profit_error": 2.1827872842550278e-11,
+  "method": "independent scalar forward grades plus generic LP half-plane intersections with eligible-pool and complete-order constraints"
+}

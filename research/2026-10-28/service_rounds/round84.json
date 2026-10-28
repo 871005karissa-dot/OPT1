@@ -1,0 +1,92 @@
+{
+  "question": "What batch-ID count data can identify the overdispersion stress parameter, and what cannot?",
+  "assumptions": "Round84: an identifiable batch-dispersion diagnostic, with known-p scope.\n\nFor independent batches of known exogenous sizes N_b and common known category\nprobabilities p, DM gives E[Q_b]=(K-1)*(1+(N_b-1)*rho), rho=1/(kappa+1),\nQ_b=sum_j(X_bj-N_bp_j)^2/(N_bp_j). Thus the raw rho estimator below is unbiased.\nClipping or estimating p from the same counts changes that statement. This is\na synthetic diagnostic for planning data collection, not an empirical estimate\nof kappa or a proposed new statistical method.\n",
+  "seed": 2026102884,
+  "synthetic_datasets_per_law": 2048,
+  "batches_per_dataset": 128,
+  "known_category_probabilities": [
+    0.6251333806714808,
+    0.03461097712673928,
+    0.21944287634170817,
+    0.12081276586007172
+  ],
+  "batch_size_range": [
+    600,
+    1600
+  ],
+  "headline": {
+    "all_outcome_moment_checks": 6,
+    "max_moment_error": 1.474376176702208e-13
+  },
+  "rows": [
+    {
+      "kappa": null,
+      "true_rho": 0.0,
+      "known_p_raw": {
+        "estimate": 2.419707017247886e-06,
+        "standard_error": 1.4497361912426992e-06
+      },
+      "error_in_standard_errors": 1.6690671253600544,
+      "clipped_rho_mean": 2.7130970435285373e-05,
+      "raw_negative_fraction": 0.5087890625,
+      "same_data_p_raw": {
+        "estimate": -4.778840539270975e-06,
+        "standard_error": 1.4462433966584793e-06
+      },
+      "warning": "Known-p unbiasedness does not transfer to same-data p estimation or clipping; these synthetic rows do not calibrate the factory."
+    },
+    {
+      "kappa": 1000.0,
+      "true_rho": 0.000999000999000999,
+      "known_p_raw": {
+        "estimate": 0.0009996946826518836,
+        "standard_error": 3.130322326338773e-06
+      },
+      "error_in_standard_errors": 0.22160134917987656,
+      "clipped_rho_mean": 0.0009996946826518836,
+      "raw_negative_fraction": 0.0,
+      "same_data_p_raw": {
+        "estimate": 0.000984617529160015,
+        "standard_error": 3.0981869165847244e-06
+      },
+      "warning": "Known-p unbiasedness does not transfer to same-data p estimation or clipping; these synthetic rows do not calibrate the factory."
+    },
+    {
+      "kappa": 100.0,
+      "true_rho": 0.009900990099009901,
+      "known_p_raw": {
+        "estimate": 0.00991657497724072,
+        "standard_error": 2.013961480230547e-05
+      },
+      "error_in_standard_errors": 0.7738419221918107,
+      "clipped_rho_mean": 0.00991657497724072,
+      "raw_negative_fraction": 0.0,
+      "same_data_p_raw": {
+        "estimate": 0.009815232631598916,
+        "standard_error": 1.8896665874251076e-05
+      },
+      "warning": "Known-p unbiasedness does not transfer to same-data p estimation or clipping; these synthetic rows do not calibrate the factory."
+    }
+  ],
+  "trace": {
+    "path": "research\\2026-10-28\\service_rounds\\round84_validation.npz",
+    "sha256": "cfeb8fa6143b53cc18751373a1ad52c84057a9809a0dd002323ce76f87fdeae0"
+  },
+  "provenance": {
+    "run_at_utc": "2026-10-27T23:39:45.378795+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round84_batch_dispersion_identification.py": "245af2ea537a1676435675b85eb271cf73c93634d32168b8005a24d4dc24b9eb",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\round62_stochastic_policy_replay.py": "2027de6c7a4d0da35ea14d7bccacd45d5eabad9595643e81f76b2539c7d9c453",
+      "research\\2026-10-28\\service_rounds\\round63.json": "06416f0b6ce66dcae7ce2737c3eb27eecf278f90fb5f2950b1944ab1713e9f78"
+    }
+  }
+}

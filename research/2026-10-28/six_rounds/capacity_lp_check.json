@@ -1,0 +1,7 @@
+{
+  "state_order_eta_cases": 288,
+  "max_profit_error": 2.1827872842550278e-11,
+  "uncertain_cases": 128,
+  "max_uncertain_profit_error": 1.4551915228366852e-11,
+  "method": "independent generic two-variable LP half-plane vertex enumeration over scalar forward-flow and grade-sales regions"
+}

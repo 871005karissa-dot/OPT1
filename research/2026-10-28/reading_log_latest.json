@@ -1,0 +1,62 @@
+{
+  "updated_at": "2026-10-28T07:44:50.123448+08:00",
+  "literature": [
+    {
+      "file": "sereshti_bodur_luedtke_2022_preprint.pdf",
+      "sha256": "2d2d3239ca8d75c1bd177be2b2a50c45eb4ead161957bd1000fc735b731b1c04",
+      "version": "arXiv2301.00258v1 (2022); not2026 journal PDF",
+      "read_pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "visual_table_checked_pdf_pages": [
+        25
+      ],
+      "unread_pdf_pages": [],
+      "note": "Sereshti預印本續讀與比較修正.md"
+    },
+    {
+      "doi": "10.1287/mnsc.38.5.724",
+      "depth": "Publisher and SMU metadata/abstract only; full text absent",
+      "journal_pdf": "403",
+      "smu_accepted_pdf": "212 bytes HTML, rejected",
+      "mit_1989_working_pdf": "429; distinct version; not acquired"
+    },
+    {
+      "doi": "10.1093/biomet/49.1-2.65",
+      "depth": "Publisher metadata only, no original PDF read",
+      "use": "Background only; round84 conditional moment proof is self-contained"
+    }
+  ]
+}

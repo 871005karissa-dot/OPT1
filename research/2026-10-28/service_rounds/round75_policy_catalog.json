@@ -1,0 +1,160 @@
+{
+  "path": "research\\2026-10-28\\service_rounds\\round75_joint_policies.npz",
+  "sha256": "d8dd82069ea9e7fe1001bb780fd71424376b509f368b40005223f47c5e0d7bb1",
+  "policies": [
+    {
+      "key": "d550_350_none",
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "mode": "none",
+      "input": 1495,
+      "target": 0.9,
+      "boundary": {
+        "index": 84,
+        "fraction": 0.8619315075689425,
+        "deterministic_fraction": 0.8619781412094952,
+        "ratio": 2550.0,
+        "kind": "substitution",
+        "gap": 85,
+        "fine_prefix": {
+          "selected_mass": 0.0037813871813858124,
+          "extra_mass": 2.0457578003060112e-07,
+          "boundary": {
+            "capacity_order": "descending probability, stable original index on ties",
+            "capacity_position": 137,
+            "capacity_counts": [
+              7,
+              4,
+              5,
+              7,
+              6
+            ],
+            "grade1_count": 673,
+            "grade2_count": 265,
+            "atom_probability": 8.04654011920989e-07,
+            "interpretation": "Within this gap band, complete all earlier capacity states and all eligible grade1 counts up to this count in the boundary capacity state."
+          }
+        }
+      },
+      "expected": {
+        "expected_profit": 20485.740165282434,
+        "fulfilment_probability": 0.9000002045757802,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.780632906718196
+      },
+      "automatic_reference": {
+        "input": 1495,
+        "expected_profit": 20327.33644445242,
+        "fulfilment_probability": 0.9435866905886867,
+        "policy_kind": "no_repair",
+        "boundary": null
+      }
+    },
+    {
+      "key": "d650_250_selective",
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "mode": "selective",
+      "input": 1352,
+      "target": 0.9,
+      "boundary": {
+        "index": 599,
+        "fraction": 0.10422131230792431,
+        "deterministic_fraction": 0.10503081630728633,
+        "ratio": 420.0,
+        "kind": "substitution",
+        "gap": 14,
+        "fine_prefix": {
+          "selected_mass": 0.0001238113946937614,
+          "extra_mass": 9.542515491640176e-07,
+          "boundary": {
+            "capacity_order": "descending probability, stable original index on ties",
+            "capacity_position": 1,
+            "capacity_counts": [
+              6,
+              6,
+              7,
+              8,
+              6
+            ],
+            "grade1_count": 710,
+            "grade2_count": 236,
+            "atom_probability": 9.885724004372003e-07,
+            "interpretation": "Within this gap band, complete all earlier capacity states and all eligible grade1 counts up to this count in the boundary capacity state."
+          }
+        }
+      },
+      "expected": {
+        "expected_profit": 24353.117642546462,
+        "fulfilment_probability": 0.9000009542515492,
+        "expected_rework": 3.4425288157026017,
+        "activation_probability": 0.08945233324720533,
+        "expected_substitution": 0.27194345567682526
+      },
+      "automatic_reference": {
+        "input": 1352,
+        "expected_profit": 24351.99601253261,
+        "fulfilment_probability": 0.9000761924244809,
+        "expected_rework": 3.24345895087951,
+        "activation_probability": 0.08328032521775962,
+        "policy_kind": "threshold",
+        "boundary": {
+          "A": 649,
+          "R": 36,
+          "ratio": 353.60000000000053,
+          "randomized_open_probability": 0.8744371548851163,
+          "observed_state_mass": 0.0006068070886035119,
+          "conditional_service_gain": 0.9999999999999989
+        }
+      }
+    },
+    {
+      "key": "d700_200_selective",
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "mode": "selective",
+      "input": 1395,
+      "target": 0.85,
+      "boundary": {
+        "index": 573,
+        "fraction": 0.9030634826835638,
+        "deterministic_fraction": 1.0,
+        "ratio": 578.1000000000022,
+        "kind": "setup",
+        "A": 699,
+        "R": 31
+      },
+      "expected": {
+        "expected_profit": 23906.709265761667,
+        "fulfilment_probability": 0.8500701892937214,
+        "expected_rework": 29.08003972690985,
+        "activation_probability": 0.7499454026373421,
+        "expected_substitution": 5.921624420603231e-08
+      },
+      "automatic_reference": {
+        "input": 1395,
+        "expected_profit": 23906.709265491292,
+        "fulfilment_probability": 0.8500701892972282,
+        "expected_rework": 29.080039726909853,
+        "activation_probability": 0.7499454026373421,
+        "policy_kind": "threshold",
+        "boundary": {
+          "A": 699,
+          "R": 31,
+          "ratio": 578.1000000000022,
+          "randomized_open_probability": 0.9030634778407549,
+          "observed_state_mass": 0.0007240748446973863,
+          "conditional_service_gain": 0.9999999999999966
+        }
+      }
+    }
+  ],
+  "indices": "setup indexed by initialA,availableR; substitution by initialA,B and frozen capacity priority"
+}

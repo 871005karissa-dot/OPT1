@@ -1,0 +1,1849 @@
+=== PDF PAGE 1 ===
+International Journal of Production Research
+ISSN: 0020-7543 (Print) 1366-588X (Online) Journal homepage: www.tandfonline.com/journals/tprs20
+A ﬂexible planning approach for integrated
+lot sizing and rework planning with random
+proportion of defective products
+Pierre Kohlmann & Florian Sahling
+To cite this article: Pierre Kohlmann & Florian Sahling (2024) A ﬂexible planning
+approach for integrated lot sizing and rework planning with random proportion of
+defective products, International Journal of Production Research, 62:19, 6961-6978, DOI:
+10.1080/00207543.2024.2314717
+To link to this article:  https://doi.org/10.1080/00207543.2024.2314717
+© 2024 The Author(s). Published by Informa
+UK Limited, trading as Taylor & Francis
+Group.
+Published online: 16 Feb 2024.
+Submit your article to this journal 
+Article views: 2496
+View related articles 
+View Crossmark data
+Citing articles: 6 View citing articles 
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tprs20
+
+=== PDF PAGE 2 ===
+INTERNATIONALJOURNALOFPRODUCTIONRESEARCH
+2024,VOL.62,NO.19,6961–6978
+https://doi.org/10.1080/00207543.2024.2314717
+A flexible planning approach for integrated lot sizing and rework planning with
+random proportion of defective products
+Pierre Kohlmann and Florian Sahling
+RPTUSchoolofBusinessandEconomics,ChairofProductionManagement,UniversityofKaiserslautern-Landau(RPTU),Kaiserslautern,
+Germany
+ABSTRACT
+We consider a stochastic capacitated lot sizing problem with in-line rework. Both defective and
+defect-free products can be the result of an imperfect production process in real-world production
+systems. However, the proportion of defective items in a production lot is subject to uncertainty.
+For economic and environmental reasons, the possibility to rework defective products appears rea-
+sonable since these products usually have considerable value. In this paper, a nonlinear model
+formulation for integrated lot sizing and rework planning is proposed. We use a sample average
+approach to approximate the generic nonlinear model formulation. To cope with the randomness
+of the proportion of defective products, we apply a flexible planning approach that allows the
+adjustment of production and rework quantities. We conduct extensive numerical investigations to
+evaluate the performance of the proposed planning approach.
+ARTICLE HISTORY
+Received26April2023
+Accepted27January2024
+KEYWORDS
+Lotsizing;rework;stochastic
+proportionofdefective
+products;imperfect
+productionprocess;
+multistagestochastic
+programming
+1. Introduction
+In practice, an imperfect production process may result
+in a proportion of defective products. However, these
+d e f e c t i v ep r o d u c t sc a n n o tb eu s e dt os a t i s fyt h ed e m a n d
+for defect-free products; see Goerler, Lalla-Ruiz, and
+Voß (2020). Thus, neglecting defects that occur during
+production can result in unsatisfied demand. Therefore,
+it is necessary to integrate the assumption of an imper-
+fectproductionprocessintoproductionplanning.More-
+over, due to the use of raw materials, defective prod-
+ucts typically have a substantial value; see Goerler and
+Voß (2016). Hence, the possibility of reworking defec-
+tive products appears reasonable. According to Flap-
+p e re ta l .(2002), a rework operation transforms defec-
+tive products into defect-free products that meet quality
+requirements. Afterwards, these reworked products can
+beusedtosatisfydemand.
+In many cases, the rework of defective products
+requires less capacity consumption and costs less than
+manufacturing new products. Moreover, waste can be
+reduced; see Goerler and Voß (2016). Hence, there are
+both economic and environmental incentives to rework
+defectiveproducts.Theproductionplannertypicallyhas
+noexanteknowledgeoftheexactproportionofdefective
+products within a production lot, since the proportion
+CONTACT FlorianSahling ﬂorian.sahling@rptu.de RPTUSchoolofBusinessandEconomics,ChairofProductionManagement,Universityof
+Kaiserslautern-Landau(RPTU),Gottlieb-Daimler-Str.,Kaiserslautern67663,Germany
+Thisarticlehasbeencorrectedwithminorchanges.Thesechangesdonotimpacttheacademiccontentofthearticle.
+issubjecttouncertainty.Underestimationoroverestima-
+tion of the proportion of defective products has a direct
+impactontheplannedlotsize,e.g.underestimationmay
+lead to backlogs. Therefore, the uncertainty related to
+the proportion of defective products must be explicitly
+considered.
+Inthefieldofstaticlotsizing,numerousdeterministic
+andstochasticmodelsconsideranimperfectproduction
+p r o c e s sw i t hr e w o r k ,e . g .K a n ge ta l .(2017)a n dA s a d -
+khani, Mokhtari, and Tahmasebpoor (2022). However,
+these models cannot cope with time-varying demand.
+In contrast, the literature on dynamic lot sizing with
+rework is very limited and assumes only a determin-
+istic proportion of defective products, e.g. Goerler and
+Voß (2016).
+In this paper, we consider an imperfect production
+process with capacity constraints in a dynamic context.
+Theproportionofdefectiveproductsissubjecttouncer-
+tainty.Furthermore,defectiveproducts can be reworked
+tomeetqualityrequirements.Productionandreworkare
+performed on the same resource and both defect-free as
+wellasreworkedproductscanbeusedtosatisfydemand.
+In the literature, there are several approaches to deal
+with uncertainty. These approaches include robust opti-
+misation and stochastic programming, see Vladimirou
+©2024TheAuthor(s).PublishedbyInformaUKLimited,tradingasTaylor&FrancisGroup.
+ThisisanOpenAccessarticledistributedunderthetermsoftheCreativeCommonsAttributionLicense( http://creativecommons.org/licenses/by/4.0/),whichpermitsunrestricteduse,
+distribution, and reproduction in any medium, provided the original work is properly cited. The terms on which this article has been published allow the posting of the Accepted
+Manuscriptinarepositorybytheauthor(s)orwiththeirconsent.
+
+=== PDF PAGE 3 ===
+6962 P. KOHLMANN AND F. SAHLING
+and Zenios (1997) .T h eg o a lo fb o t ha p p r o a c h e si st o
+determine a solution that is resistant to uncertainty, i.e.
+thesolutionfoundcanberealisedeveniftheactualvalues
+of the uncertain parameter differ from the mean values.
+However, unlike stochastic optimisation, robust optimi-
+sation does not assume a concrete probability distribu-
+tion.Therefore,thechoicebetweenthesetwoapproaches
+dependsontheknowledgeoftheprobabilitydistribution.
+In this paper, we use a stochastic optimisation approach
+becauseweassumethattheprobabilitydistributionofthe
+proportion of defective products is known.
+We present a multistage stochastic programming
+approach to cope with the random proportion of defec-
+tive products in integrated lot sizing and rework plan-
+ning. A multistage stochastic optimisation approach is
+often used in situations where decisions must be made
+over multiple time periods and uncertainty exists in
+each of these time periods, cf. Pflug and Pichler (2014).
+Thus,accordingtoBookbinderandT an( 1988),wefollow
+a static-dynamic uncertainty strategy. First, production
+and rework periods are determined. In a flexible plan-
+ning approach, it is assumed that after production, the
+proportion of defective products for each production lot
+is known. Then, future production and rework quan-
+tities can be adjusted accordingly. This adjustment of
+productionandreworkquantitiesenablestheproduction
+planner to respond directly to the actual proportion of
+defectiveproducts.
+Thispaperisorganisedasfollows:Relatedliteratureis
+discussed in Section2. A generic model formulation for
+integrated dynamic lot sizing and rework planning with
+random proportion of defective products is presented in
+Section3.Inaddition,anapproximationapproachbased
+on sample averages is described. The flexible planning
+approach to handle the stochastic outcome of defective
+productsisdescribedinSection 4.InSection 5,theresults
+of our numerical experiments are presented and man-
+agerialinsightsaresummarised.Aconclusionandfuture
+researchdirectionsaregiveninSection 6.
+2. Related literature
+2.1. Integratedlotsizingandremanufacturing
+planning
+We focus on the literature on dynamic lot sizing prob-
+lems dealing with the integration of remanufacturing
+(Section 2.1)o rr e w o r k( S e c t i o n2.2). For an overview
+of deterministic lot sizing problems in general, see
+e.g. Brahimi et al. (2017, 2006) for the single-item case
+and, e.g. Karimi, Fatemi Ghomi, and Wilson (2003)
+and Buschkühl et al. (2010) for the multi-item case. For
+an overview of stochastic lot sizing problems, the reader
+is referred to Tempelmeier (2013) and Aloulou, Dolgui,
+andKovalyov( 2014).
+Rework and remanufacturing are similar concepts.
+They both deal with products that have already gone
+through a production process. In more detail, planning
+situations involving rework comprise an internal flow
+of defective products as a result of an imperfect pro-
+ductionprocess;c.f.Goerler,Lalla-Ruiz,andVoß( 2020)
+or Rudert and Buscher (2022). In contrast, planning
+approaches that consider remanufacturing assume an
+externalflowofusedproductsreturnedbycustomers(see
+e.g. Hilger, Sahling, and Tempelmeier2016 or Devoto,
+Fernández, and Piñero2021). Overviews on integrated
+lot sizing and remanufacturing planning can be found
+i n ,e . g .A k ç a l ıa n dÇ e t i n k a y a(2011)a n dS u z a n n e ,
+Absi, and Borodin (2020). Based on Teunter, Bayindir,
+and van den Heuvel (2006), several model formula-
+tions for the single-product uncapacitated lot sizing
+and remanufacturing problem have been presented, for
+example, by Schulz (2011) and Zouadi, Yalaoui, and
+Reghioui (2018). In the following, we focus on capac-
+i t a t e dp l a n n i n gp r o b l e m sd u et ot h el a r g en u m b e ro f
+publications on integrated lot sizing and remanufactur-
+ing planning. We start with problems considering the
+single-productcase.
+Li, Chen, and Cai (2007)p r o p o s e dac a p a c i t a t e dl o t
+sizing problem with remanufacturing that considered a
+singleproductwithtwodifferentperformancesandone-
+way substitution. Pan, Tang, and Liu (2009)p r e s e n t e d
+a lot sizing problem with the option of remanufactur-
+ing returned products. The proposed model included
+general cost functions. The maximum amount of pro-
+duction, remanufacturing, and disposal in each period
+was limited. Zhang, Liu, and Tu (2011)a n a l y s e da n
+integrated lot sizing and remanufacturing problem with
+constraints on the maximum amount of production
+and remanufacturing quantities in each period. Zhang,
+Jiang, and Pan (2012) considered a planning situation
+with a capacitated production system with the option
+of remanufacturing product returns. Haojie, Lixin, and
+Canrong (2017) assumed a capacitated planning situa-
+tion considering a single product with separate demand
+for newly produced and remanufactured items. In addi-
+tion, one-way substitution was considered. They also
+proposed a model formulation in which demand and
+r eturnswer eassumedtobeuncertain.
+In the following, we focus on the case of multi-
+ple products. Sahling (2013) proposed two model for-
+mulations for integrated lot sizing and remanufactur-
+ing planning assuming a capacitated production system.
+This work was extended by Hilger, Sahling, and Tem-
+pelmeier (2016), where the demand and return quanti-
+ties were assumed to be stochastic. A planning situation
+
+=== PDF PAGE 4 ===
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 6963
+Table 1. Contributionsintheﬁeldofdynamiccapacitatedlotsizingandremanufacturingplanning.
+Numberofproducts Demand Returns Setups Variablecosts
+Publications SI MU DET U DET U S J Yes No
+Li,Chen,andCai (2007 )X X X X X
+Pan,Tang,andLiu ( 2009)X X X
+Zhang,Liu,andTu (2011 )X X X X X
+Zhang,Jiang,andPan (2012 )X X X X X
+Sahling (2013)X X X X X X
+Hilger,Sahling,andTempelmeier (2016 )X X X X X
+Sahling (2016)X X X X X
+Fanget al. (2017)X X X X X
+Giglio,Paolucci,andRoshani (2017 )X X X X X
+Haojie,Lixin,andCanrong (2017 ) X XXXX X X
+Cunha,Kramer,andMelo (2019 )X X X X X
+Roshaniet al. (2023)X X X X X
+Abbreviations:SI–Single,MU–Multiple,DET–Deterministic,U–Uncertain,S–Separate,J–Joint
+with capacity restricted production and remanufactur-
+ing was combined with vendor selection and emission
+constraints by Sahling (2016). Fang et al. (2017)p r o -
+posedanintegratedlotsizingandremanufacturingprob-
+lem subject to demand uncertainty. Giglio, Paolucci,
+and Roshani (2017) analysed a lot sizing problem
+withremanufacturingandenergyconsiderations.Cunha,
+Kramer, and Melo (2019)e x a m i n e dac a p a c i t a t e dl o t
+sizing problem assuming a capacitated production sys-
+t e mw i t hr e m a n u f a c t u r i n go p t i o n .R o s h a n ie ta l .(2023)
+presented a capacitated lot sizing and remanufacturing
+problem with sequence-dependent setups and energy
+aspects.
+Table1 provides an overview of the discussed litera-
+ture on integrated lot sizing and remanufacturing plan-
+ning.
+As Goerler and Voß (2016) noted, planning appro-
+aches considering lot sizing and remanufacturing plan-
+ning cannot handle situations where quantities of
+reworkable products are linked to previous production
+decisions.Sincethispaperaddressesthereworkofdefec-
+tive products resulting from an imperfect production
+process,theliteratureonintegratedlotsizingandrework
+planningisdiscussedinthefollowingsection.
+2.2. Integratedlotsizingandreworkplanning
+The integration of reworking defective products in the
+context of lot sizing decisions requires adjustments to
+the model formulation; see Goerler and Voß (2016).
+T h efi r s ts t a t i cl o ts i z i n gp r o b l e m ,p r e s e n t e db yH a r -
+ris (1913), assumed a perfect production process. The
+assumption of a perfect production process has been
+dropped over time by various authors. Early publica-
+tions that considered a production process that also
+produced defective products can be found, for exam-
+ple, in Llewellyn (1959)a n dL e v i t a n(1960). As research
+progressed, several papers integrated the assumption of
+an imperfect production process into lot sizing models
+(see e.g. Dolgui, Kovalyov, and Shchamialiova2011). A
+clear distinction between different models can be seen
+in the way in which defective products are handled.
+F o rexam ple,so mea u tho rsassumedtha tdefectivep r od-
+ucts must be discarded and that no rework is possible
+(see e.g. Helber et al.2018). In other publications, all
+defective products could be reworked (see e.g. Goerler
+and Voß 2016). Other authors distinguished defective
+products as reworkable and non-reworkable products,
+with the latter requiring disposal (see e.g. Taleizadeh,
+Cárdenas-Barrón,andMohammadi 2014).Anothersug-
+gestion for handling non-reworkable defective products
+wastosellthematalowerprice(seee.g.Barzoki,Jahan-
+bazi,andBijari 2011).
+While all the above possibilities for handling defec-
+tive products are relevant to the particular planning
+situations,weconsideraplanningsituationthatincludes
+an imperfect production process and the possibility
+of reworking defective products. Rework can be per-
+formed using the same resource as the production
+of new products (in-line rework) or using a separate
+resource dedicated to rework (off-line rework); see Flap-
+peretal.( 2002).
+As mentioned before, in many planning situations,
+there is no ex ante knowledge of the number of defec-
+t i v ei t e m si nap l a n n e dl o t .A l m o s ta l lt h er e s e a r c ho n
+stochastic lot sizing and rework planning has been per-
+formed in a static environment. However, these static
+lot sizing problems often assume constant demand rates
+and a continuous time axis. Therefore, they cannot be
+properly used in the context of time-varying demand.
+Reviews of different static lot sizing approaches focus-
+ingonreworkcanbefoundinBiswasandSarker( 2008),
+Sarkar et al. (2014), Kang et al. (2017, 2019), and Asad-
+khani,Mokhtari,andTahmasebpoor( 2022).
+The literature on dynamic lot sizing under the
+assumption of an imperfect production process and the
+
+=== PDF PAGE 5 ===
+6964 P. KOHLMANN AND F. SAHLING
+Table 2. Contributionsintheﬁeldofdynamiclotsizingandreworkplanning.
+Numberofproducts Proportionofdefectives Processdesign Capacity Setups Variablecosts
+Publications SI MU DET U IL OL C UC S J Yes No
+GoerlerandVoß (2016 )X X X X X X
+Goerler,Lalla-Ruiz,andVoß ( 2020)X X XX X X
+vanZylandAdetunji ( 2022)X X X X X X X
+RudertandBuscher (2022 )X X X X X X
+Ourapproach X X X X X X
+Abbreviations:SI–Single,MU–Multiple,DET–Deterministic,U–Uncertain,IL–In-line,OL–Oﬀ-line,C–Capacitated,UC–Uncapacitated,S–Separate,
+J–Joint
+possibility of rework is very limited. For this reason, we
+discuss both uncapacitated and capacitated approaches.
+Anuncapacitatedplanningsituationcomprisingasingle
+product with two product types was considered by van
+Zyl and Adetunji (2022).Defectiveanddefect-freeprod-
+ucts resulted from an imperfect production process. The
+proportion of defective products was considered deter-
+ministic. In addition, van Zyl and Adetunji (2022)c o n -
+sidered used products returned by customers. These
+product returns could be remanufactured. The transfor-
+mation of defective or returned products into service-
+able products was performed in- or off-line, depending
+on the product type. Rudert and Buscher (2022)a n a l -
+ysedanimperfectproductionprocessproducingasingle
+item with deterministic proportion of defective prod-
+ucts.Productionandreworkwereperformedondifferent
+uncapacitatedlineswithseparatesetups.
+GoerlerandVoß( 2016)consideredanimperfectpro-
+duction process with deterministic proportion of defec-
+tive products and capacity restrictions. Production and
+rework of multiple products were performed using the
+s a m er e s o u r c e ,i . e .i n - l i n er e w o r k .T h e ya l s oi n t e g r a t e d
+minimum lot sizes for production and backorders into
+the mixed-integer model with separate setups for pro-
+ductionandrework.Goerler,Lalla-Ruiz,andVoß( 2020)
+included the assumption of a capacitated imperfect
+production process with in-line rework and deterio-
+rating defective products in a variant of the general
+lot sizing and scheduling problem considering multiple
+products.
+Table 2 provides an overview of dynamic lot siz-
+ing problems in the context of imperfect production
+processes with rework option and highlights the main
+contributionsofourpaper.
+In contrast to the existing literature on dynamic lot
+sizing with rework option, we refrain from the com-
+mon assumption of a deterministic proportion of defec-
+tive products and a random proportion is assumed.
+We explicitly consider a common capacity constrained
+resource for production and rework, i.e. in-line rework.
+Furthermore, the planning scenario is characterised by
+separate setup operations for production and rework.
+Since reworking of defective products often results in
+lowerresourceconsumptionandcosts,weexplicitlycon-
+siderdifferentcostsforproductionandrework.
+Tothebestofourknowledge,astochasticdynamiclot
+sizing and rework planning problem with random pro-
+portion of defective products has not been addressed in
+the literature. Thus, our contribution to the literature is
+asfollows:
+• A generic model formulation for integrated dynamic
+lot sizing and rework planning with random pro-
+portion of defective products, the SCLSP-RW, is pre-
+sented.
+• TheSCLSP-RWisapproximatedusingasampleaver-
+ageapproach.
+• A flexible planning approach is considered to address
+the randomness of the proportion of defective prod-
+uctsinadynamicenvironment.Thisapproachallows
+for adjustments in production and rework quantities.
+• Extensive numerical investigations are presented to
+analyse the performance of the suggested planning
+approach.
+3. The stochastic capacitated lot sizing problem
+with rework of defective products (SCLSP-RW)
+3.1. Modelassumptions
+We consider an imperfect production process with a
+commonresourceforproductionandrework,i.e.accord-
+ing to Flapper et al. (2002), an in-line rework setting is
+assumed. The production system producesK products
+(k = 1,... ,K) over a finite planning horizon consist-
+ing ofT discrete time periods(t = 1,... ,T).F i g u r e1
+illustratestheunderlyingimperfectproductionprocess.
+The model assumptions for the stochastic capacitated
+lot sizing problem with rework of defective products
+(SCLSP-RW)areasfollows:
+• The imperfect production process is subject to a
+stochastic outcome of defective products. The ran-
+dom variable/Omega1
+kt describes the proportion of defec-
+tive items of productk in periodt.T h ep r o d u c t i o n
+quantityqkt must be divided into defect-freeQg
+kt and
+defectiveproducts Qb
+kt.
+
+=== PDF PAGE 6 ===
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 6965
+Figure 1. Integratedproductionandreworkplanning(cf.Inderfurth,Lindner,andRachaniotis 2005andGoerlerandVoß 2016).
+• The rework process is perfect, i.e, all defective prod-
+uctscanbetransformedintodefect-freeproducts.
+• Theproduct-andperiod-specificdemand dkt mustbe
+metaccordingtoa δ-servicelevel.
+• The period-specific capacity ct of the common
+resourceislimitedandcanbeextendedbyusingover-
+time o
+t at overtime costsoc.T h em a x i m u ma m o u n t
+o fo v e r t i m ei sl i m i t e dt oaf r a c t i o nαof the period-
+specificcapacity ct.
+• The production of one unit of product k entails
+variable production costspck and requires produc-
+tion timeptk. Similarly, reworking one unit of defec-
+tive productk induces variable rework costspcr
+k and
+requires rework timeptr
+k.
+• Both,theproductionandreworkofproduct krequire
+separate setup operations that induce different setup
+costssc
+k andscr
+k aswellassetuptimes stk andstr
+k.The
+setup operations are modelled by binary variablesγkt
+and γr
+kt.
+• Defect-freeanddefectiveproductscanbeheldinstock
+at inventory holding costshc
+k andhcr
+k.
+Theplanningsituationischaracterisedbyuncertainty
+related to the proportion of defective products. This
+uncertaintymayleadtobacklogsofdefect-freeproducts
+ifthecumulateddemandexceedsthecumulatedquantity
+ofdefect-freeproducts.Tolimittheseexpectedbacklogs
+E[BL
+kt], we use theδ-service level proposed by Helber,
+Sahling, and Schimmelpfeng (2013). Theδ-service level
+canbeformallystatedasfollows:
+δk = 1 −
+∑
+t∈T E[BLkt]∑
+t∈T (T − t +1) ·dkt
+∀k ∈ K
+Inadditiontobacklogsofdefect-freeproducts,shortages
+ofdefectiveproductsmayoccur.Inperiod t,thephysical
+inventory of defective productk is increased by produc-
+tionQ
+b
+kt anddecreasedbyplannedreworkquantities qr
+kt
+.
+However, random quantities of defective productsQb
+kt
+manufacturedinperiod tcorrespondtotherandompro-
+portionofdefectiveproducts /Omega1kt.Thus,itmayoccurthat
+in some periods there are not enough defective products
+in stock to realise the planned rework quantityqr
+kt.I n
+this case, as shown in Figure2, a shortfall of defective
+productsmayoccur.
+This random shortfall can be stated formally as fol-
+lows:
+SFr
+kt = max
+{
+0,qr
+kt − (IPr
+k,t−1 +Qb
+kt
+)
+}
+∀k ∈ K, t ∈ T
+N o t a b l y ,s u c has h o r t f a l lr e s u l t si na ni n f e a s i b l ep r o -
+duction and rework plan. Hilger, Sahling, and Tem-
+pelmeier (2016)a d d r e s sas i m i l a rs i t u a t i o ni nt h ea r e a
+ofstochasticintegratedproductionandremanufacturing
+planning.Analogously ,weuseaconstraintthatlimitsthe
+expectedshortfalltoagivensmallamount ϵ.
+TheobjectiveoftheSCLSP-RWistofindanintegrated
+production and rework plan that takes into account the
+randomness of the proportion of defective products and
+minimisestheexpectedtotalcost.
+3.2. Modelformulation
+The generic SCLSP-RW can be formulated using the
+notationinTable 3:
+Model SCLSP-RW:
+minE[C] =
+∑
+k∈K
+∑
+t∈T
+(
+sck · γkt +hck ·E[IPkt] +pck ·qkt
+)
+(1)
+
+=== PDF PAGE 7 ===
+6966 P. KOHLMANN AND F. SAHLING
+Figure 2. Developmentofthephysicalinventoryofdefectiveproducts(cf.Hilger,Sahling,andTempelmeier 2016).
++
+∑
+k∈K
+∑
+t∈T
+(scr
+k · γr
+kt +hcr
+k ·E[IPr
+kt] +pcr
+k ·qr
+kt)
+(2)
++
+∑
+t∈T
+oc ·ot (3)
+subjectto
+Ik,t−1 +Qg
+kt +qr
+kt − dkt = Ikt ∀k ∈ K, t ∈ T (4)
+Ir
+k,t−1 +Qb
+kt
+− qr
+kt
+= Ir
+kt ∀k ∈ K, t ∈ T (5)
+IPkt = max{0,Ikt}∀ k ∈ K, t ∈ T (6)
+BLkt = max{0,−Ikt}∀ k ∈ K, t ∈ T (7)
+IPr
+kt = max{0,Ir
+kt}∀ k ∈ K, t ∈ T (8)
+SFr
+kt = max{0,−Ir
+kt}∀ k ∈ K, t ∈{t | γr
+kt = 1;
+t = 1,2, ... ,T} (9)
+∑
+t∈T
+(E[Qg
+kt] +qr
+kt) ≥
+∑
+t∈T
+dkt ∀k ∈ K (10)
+∑
+t∈T
+E[BLkt] ≤ (1 − δk)
+∑
+t∈T
+(T − t +1) ·dkt ∀k ∈ K
+(11)
+E[SFr
+kt] ≤ ϵ ∀k ∈ K, t ∈ T (12)
+∑
+k∈K
+(ptk ·qkt +stk · γkt +ptr
+k ·qr
+kt
++str
+k · γr
+kt) ≤ ct +ot
+∀t ∈ T (13)
+ot ≤ α ·ct ∀t ∈ T (14)
+qkt ≤ Mkt · γkt ∀k ∈ K, t ∈ T (15)
+qr
+kt
+≤ Mkt · γr
+kt ∀k ∈ K, t ∈ T (16)
+Qb
+kt
+= /Omega1kt ·qkt ∀k ∈ K, t ∈ T (17)
+Qg
+kt = (1 − /Omega1kt) ·qkt ∀k ∈ K, t ∈ T (18)
+qkt,qr
+kt ≥ 0 ∀k ∈ K, t ∈ T (19)
+ot ≥ 0 ∀t ∈ T (20)
+γkt,γr
+kt ∈{0,1}∀ k ∈ K, t ∈ T (21)
+The objective function (1)–(3) aims to minimise the
+expected total sum of costs. The term (1) contains the
+setup, expected inventory holding, and production costs
+related to the production process, whereas term (2)
+includes the costs regarding the rework process. The
+term(3)containsovertimecosts.
+The inventory balance constraints for defect-free
+products are given by constraints (4). Constraints (5)
+represent the inventory balance constraints for defective
+products.Equations(6)and(7)definethephysicalinven-
+tory and backlogs of defect-free products. Equations (8)
+and (9) define the physical inventory and shortfalls of
+defectiveproducts,respectively.
+Constraints (10) enforce that at least the cumulated
+demand of defect-free products is met by the cumulated
+expected quantity of defect-free products and reworked
+quantities. Constraints (11) limit the expected backlogs
+accordingtothetarget δ-servicelevel.Furthermore,con-
+straints (12) ensure that rework of defective quantities is
+planned only if the expected physical inventory is suf-
+ficient. The capacity for the common production and
+rework resource is limited by constraints (13). Con-
+straints(14)ensurethattheplannedamountofovertime
+does not exceed the allowed maximum. The production
+andreworkquantities q
+kt andqr
+kt arelinkedtothebinary
+setup variablesγkt and γr
+kt according to constraints (15)
+and(16).
+Notably, in the literature, there exist various reformu-
+lations to replace the parameterMkt in constraints (15)
+a n d( 1 6 )t os t r e n g t h e nt h eL Pr e l a x a t i o n ,s e ee . g .R e t e l
+Helmrichetal.( 2014),CunhaandMelo( 2016),andSyed
+
+=== PDF PAGE 8 ===
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 6967
+Table 3. NotationfortheSCLSP-RW.
+Indicesandindexsets:
+k ∈ K Setofproducts, K ={ 1,... , K}
+t ∈ T Setofperiods, T ={ 1,... , T}
+Parameters:
+α Fractionofallowedovertime
+δk Targetδ-servicelevelforproduct k
+ϵ Smallnumber
+ct Capacityforproductionandreworkinperiod t
+dkt Demandforproduct kinperiod t
+hck Costforholdingonedefect-freeunitofproduct kperperiod
+hcr
+k Costforholdingonedefectiveunitofproduct kperperiod
+Mkt Largenumberforproduct kinperiod t
+oc Overtimecost
+pck Productioncostofproduct k
+pcr
+k Reworkcostofproduct k
+ptk Productiontimeofproduct k
+ptr
+k Reworktimeofproduct k
+sck Setupcostforproductionofproduct k
+scr
+k Setupcostforreworkofproduct k
+stk Setuptimeforproductionofproduct k
+str
+k Setuptimeforreworkofproduct k
+Randomvariables:
+/Omega1kt Proportionofdefectiveitemsofproduct kinperiod t
+BLkt Backlogofdefect-freeitemsofproduct kattheendofperiod t
+Ikt Net inventory of defect-free items of productk at the end of
+period t
+Ir
+kt Netinventoryofdefectiveitemsofproduct kattheendofperiod t
+IPkt Physicalinventoryofdefect-freeitemsofproduct kattheendof
+period t
+IPr
+kt Physicalinventoryofdefectiveitemsofproduct k attheendof
+period t
+Qb
+kt Defectiveitemsofproduct kinperiod t
+Qg
+kt Defect-freeitemsofproduct kinperiod t
+SFr
+kt Shortfallofdefectiveitemsofproduct kinperiod t
+Decisionvariables:
+γkt Binarysetupvariableforproductionofproduct kinperiod t
+γr
+kt Binarysetupvariableforreworkofproduct kinperiod t
+ot Amountofovertimeinperiod t
+qkt Productionquantityofproduct kinperiod t
+qr
+kt Reworkquantityofproduct kinperiod t
+Ali et al. (2018). However, Helber and Sahling (2010)
+pointed out that these reformulations result in an
+increased number of additional variables, so that the
+computationaltimeoftheheuristicproposedinSection 4.2
+also increases substantially. Thus, the standard formula-
+tionisstillusedinthefollowing.
+T h ea m o u n t so fd e f e c t - f r e ea n dd e f e c t i v ep r o d u c t so f
+a lot are defined by the random proportion of defective
+products /Omega1
+kt.I npe r i odt, the random quantity of defec-
+tiveitems Qb
+kt relatedtoproductionquantity qkt isderived
+byrestrictions(17)forproduct k.Therandomquantityof
+defect-freeitems Qg
+kt isdefinedbyconstraints(18).These
+items can be used to satisfy demand directly. Finally,
+constraints (19) and (20) define production and rework
+quantities and overtime variables as nonnegative. Con-
+straints(21)definethesetupvariablesasbinary.
+Currently,nosolutionapproachexisttodirectlysolve
+thegenericnonlinearSCLSP-RW.Thus,asampleaverage
+approach is applied to approximate the SCLSP-RW.
+3.3. ApproximationofSCLSP-RWviasample
+averages
+I nt h es a m p l ea v e r a g ea p p r o a c h ,c f .K l e y w e g t ,S h a p i r o ,
+and Homem-de-Melo (2002) and Helber, Sahling, and
+Schimmelpfeng (2013), random variables are repre-
+sented by samples of randomly generated scenarios(s =
+1,2, ... ,S). In our case, each scenario corresponds to a
+possiblerealisationoftherandomproportionofdefective
+products. In advance, the scenario-specific proportion
+of defective productsω
+kts is determined following the
+distributioninformationoftherandomvariable /Omega1kt.
+Since the scenario-specific proportion of defective
+products ωkts isgeneratedbasedontheunderlyingprob-
+abilitydistributionof /Omega1kt,thesampleaverageoverallsce-
+nariosapproximatelymatchestheexpectedproportionof
+defectiveproducts
+E[/Omega1kt] ≈
+∑
+s∈S
+ωkts
+|S| ∀k ∈ K, t ∈ T
+Starting from a given proportion of defectivesωkts,t h e
+scenario-specific quantities of defectiveqb
+kts and defect-
+free products qg
+kts can be determined for production
+quantityqkt:
+qb
+kts = ωkts ·qkt ∀k ∈ K, t ∈ T , s ∈ S (17′)
+qg
+kts = (1 − ωkts) ·qkt ∀k ∈ K, t ∈ T , s ∈ S (18′)
+Using these scenario-specific quantities of defect-free
+productsqg
+kts,scenario-specificnetinventories ikts,ph ys-
+icalinventories ipkts andbacklogs blkts canbedetermined
+for rework quantityqr
+kt asfollows:
+ik,t−1,s +qg
+kts +qr
+kt − dkt = ikts ∀k ∈ K, t ∈ T ,s ∈ S
+(4′)
+ipkts ≥ ikts ∀k ∈ K, t ∈ T ,s ∈ S (6′)
+blkts ≥− ikts ∀k ∈ K, t ∈ T ,s ∈ S (7′)
+Sincethesampleaverageoverallscenariosapproximates
+theexpectedproportionofdefectiveproductsE[ /Omega1kt],the
+expected physical inventory E[IPkt]c a na l sobea p p r o x i -
+matedbysampleaverages:
+E[IPkt] ≈
+∑
+s∈S
+ipkts
+|S| ∀k ∈ K, t ∈ T
+Similarly, the expected backlog E[BLkt], the expected
+quantity of defect-free products E[Qg
+kt], the expected
+physical inventory E[IPr
+kt] and the expected shortfall
+E[SFr
+kt]ofdefectiveproductsareapproximatedbysample
+averages.
+On the basis of these scenario-based modifications
+and the additional notation in Table4,t h eg e n e r i cn o n -
+linearSCLSP-RWcanbeapproximatedasfollows.
+
+=== PDF PAGE 9 ===
+6968 P. KOHLMANN AND F. SAHLING
+Table 4. AdditionalnotationforSCLSP-RW SAA.
+Indicesandindexsets:
+s ∈ S Setofscenarios, S ={ 1,... , S}
+Scenario-speciﬁcparameters:
+ωkts Proportionofdefectiveitemsofproduct kinperiod tandscenario s
+Scenario-speciﬁcdecisionvariables:
+blkts Backlogofdefect-freeitemsofproduct kinperiod tandscenario s
+ikts Net inventory of defect-free items of productk at the end of
+period tinscenario s
+ir
+kts Netinventoryofdefectiveitemsofproduct kattheendofperiod t
+inscenario s
+ipkts Physicalinventoryofdefect-freeitemsofproduct kattheendof
+period tinscenario s
+ipr
+kts Physicalinventoryofdefectiveitemsofproduct k attheendof
+period tinscenario s
+qb
+kts Defectiveitemsofproduct kinperiod tandscenario s
+qg
+kts Defect-freeitemsofproduct kinperiod tandscenario s
+sf r
+kts Shortfallofdefectiveitemsofproduct kinperiod tandscenario s
+Model SCLSP-RWSAA:
+minE[C] =
+∑
+k∈K
+∑
+t∈T
+(
+sck · γkt +hck
+·
+∑
+s∈S
+ipkts
+|S| +pck ·qkt
+)
+(1′)
++
+∑
+k∈K
+∑
+t∈T
+(
+scr
+k · γr
+kt +hcr
+k
+·
+∑
+s∈S
+ipr
+kts
+|S| +pcr
+k ·qr
+kt
+)
+(2′)
++
+∑
+t∈T
+oc ·ot (3′)
+subject to (4’),(6’),(7’),(13)–(16),(17’),(18’),(19)–(21)
+and
+ir
+k,t−1,s +qb
+kts
+− qr
+kt
+= ir
+kts
+∀k ∈ K, t ∈ T ,s ∈ S (5′)
+ipr
+kts
+≥ ir
+kts
+∀k ∈ K, t ∈ T ,s ∈ S (8′)
+sfr
+kts ≥− ir
+kts
+∀k ∈ K, t ∈{t | γr
+kt = 1;
+t = 1,2, ... ,T},s ∈ S (9′)
+∑
+t∈T
+(∑
+s∈S
+qg
+kts
+|S| +qr
+kt
+)
+≥
+∑
+t∈T
+dkt ∀k ∈ K (10′)
+∑
+t∈T
+∑
+s∈S
+blkts
+|S| ≤ (1 − δk)
+∑
+t∈T
+(T − t +1) ·dkt
+∀k ∈ K (11′)
+∑
+s∈S
+sfr
+kts
+|S| ≤ ϵ ∀k ∈ K, t ∈ T (12′)
+blkts,ipkts,ipr
+kts
+,qb
+kts
+,qg
+kts,sfr
+kts ≥ 0
+∀k ∈ K, t ∈ T ,s ∈ S (22)
+The expected values of the physical inventory of defect-
+free E[IPkt] and defective products E[IPr
+kt]a r es u b s t i -
+tutedbythecorrespondingsampleaveragesintheobjec-
+tive function (1’) and (2’). Scenario-specific inventory
+balance constraints are defined by (4’) and (5’). Con-
+straints (6’) to (9’) define the scenario-specific physi-
+cal inventory and backlog of defect-free products and
+the scenario-specific physical inventory and shortfall of
+defective products. The expected value of defect-free
+productsE[Q
+g
+kt],expectedbacklogE[BL kt],andexpected
+shortfallE[SFr
+kt] are replaced by sample averages in (10’)
+to (12’). Constraints (22) are the nonnegativity con-
+straintsforthescenario-specificvariables.
+Since the setup pattern and production and rework
+quantities are not determined for a specific scenario, the
+solutionoftheSCLSP-RW
+SAA yieldsarobustproduction
+a n dr e w o r kp l a na tm i n i m a lt o t a le x p e c t e dc o s t s .T h i s
+robustplanmeetsthecapacityrestrictionsandthetarget
+δ-servicelevelonaverage.
+4. A flexible planning approach based on
+multistage stochastic programming
+4.1. Idea
+Following the static-dynamic uncertainty strategy of
+Bookbinder and Tan (1988), we present a multistage
+stochastic programming approach to cope with the ran-
+dom proportion of defective products in integrated lot
+sizing and rework planning. This approach enables a
+recourse,i.e.decisionsonperiod-specificproductionand
+rework quantities can be revisited in each period and
+adjusted if necessary. In the first stage, setup decisions
+are determined and then fixed for the entire planning
+horizon. In subsequent stages, based on the fixed setup
+pattern,adjustmentsofproductionandreworkquantities
+areallowedaccordingtotherealisedproportionofdefec-
+tiveproductunitsofaproductionlotinarollinghorizon
+fashion.
+4.2. Determinearobustsetuppatternvia
+fix-and-optimize
+Assumingaperfectproductionprocess,theproportionof
+defectiveproductsis0%andisthusknownwithcertainty.
+In this case, since there are only defect-free products,
+there is no need for a rework option. Furthermore, if
+the target service level requirement is 100%, the SCLSP-
+RW
+SAA canbereducedtothewell-knowncapacitatedlot
+sizingproblem(CLSP),whichisproventobe NP-hard;
+see Florian, Lenstra, and Kan (1980). Thus, the SCLSP-
+RWSAA isalso NP-hardandasuitableheuristicsolution
+approach is required.
+
+=== PDF PAGE 10 ===
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 6969
+Due to the flexibility of MP-based solution appro-
+aches,weapplyavariantofthefix-and-optimizeheuristic
+proposed by Helber and Sahling (2010) to determine
+a robust setup pattern in the first stage. The underly-
+ing idea of the heuristic is to iteratively solve a series
+ofsubproblemsderivedfromtheoriginalSCLSP-RW
+SAA
+using a product-oriented decomposition strategy. Thus,
+in each subproblem, only the binary setup variablesγ
+kt
+andγr
+kt aresolvedto(sub)optimalityforexactlyoneprod-
+uctkoverthecompleteplanninghorizon(t = 1,... ,T),
+while the remaining binary variables are fixed at values
+determinedinthesolutionofpreviouslytreatedsubprob-
+lems. In addition, the optimal values for all real-valued
+decision variables are determined in each subproblem.
+The resulting subproblems are solved by the standard
+MIP solver CPLEX. This approach substantially reduces
+the numerical effort required to solve each subproblem
+to (sub)optimality, since the number of simultaneously
+treated binary variables is significantly reduced. As sug-
+gested by Helber and Sahling (2010), we start with a
+lot-for-lotinitialsolution,i.e.allbinaryvariables γ
+kt and
+γr
+kt are set to 1. Subsequently, the products are treated
+inascendingindexingorder,startingwiththefirstprod-
+uct.Thesolutionprocessisterminatedwhenallproducts
+have been treated once. The resulting setup pattern is
+then fixed and serves as the basis for the flexible plan-
+ningapproachthatallowsadjustmentstoproductionand
+reworkquantitiesinsubsequentstages.
+4.3. Adaptationofproductionandrework
+quantities
+Solving the SCLSP-RW
+SAA r e s u l t si nar o b u s ta n ds t a b l e
+production and rework plan for the complete planning
+horizon. However, it may be useful to modify the pro-
+ductionandreworkplanoncetheproportionofdefective
+productsinaproductionlotisknown.Therefore,amul-
+tistage stochastic programming approach is proposed to
+allow flexibility, i.e. period-specific adjustments of the
+production and rework quantities.
+As explained previously, in the first stage, the SCLSP-
+RW
+SAA is solved to generate a setup pattern that
+minimises the total sum of expected costs according
+to (1’), (2’) and (3). This setup pattern is fixed, i.e. all
+binary setup variables γ
+kt and γr
+kt cannot be changed
+afterwards.
+Eachsubsequentstagecorrespondstoasingleperiod t.
+According to Figure3, which describes the sequence of
+eventsineachperiod t,productionquantities qkt arefirst
+manufactured on the common resource. It is assumed
+that the realised proportion of defective products˜/Omega1
+kt
+is known immediately after the production of a lot, i.e.
+the quantities of defect-freeq
+g
+kt and defective itemsqb
+kt
+are available. Subsequently, a reduced SCLSP-RWSAA
+t is
+solvedconsideringonlythecurrentandsubsequentperi-
+ods( τ= t,... ,T)bytakinginformationregardingphys-
+icalinventories,backlogsandshortfallsuptothisperiod
+intoaccount.InthereducedSCLSP-RW
+SAA
+t ,aconsidera-
+tionofscenariosisnecessaryonlyforfutureperiods( τ=
+t +1,... ,T). In addition to the setup pattern, which
+remainsfixed,theupdatedquantitiesofdefective qb
+kt and
+defect-freeproducts qg
+kt ofthecurrentperiod tareincor-
+porated. This provides the flexibility to adjust rework
+quantities for the current and subsequent periods. The
+same applies to the production quantities of future peri-
+ods (τ= t +1,... ,T). The multistage stochastic pro-
+grammingapproachisoutlinedinAlgorithm1.
+Algorithm 1: Multistage stochastic program-
+mingapproach
+1: SolveSCLSP-RWSAA viaafix-and-optimize
+heuristic
+2: Fixsetuppattern γkt = γkt and
+γr
+kt = γr
+kt ∀k ∈ K, t ∈ T
+3: Setqk1 = qk1 ∀k ∈ K
+4: Foreachperiod t = 1 ... ,T do
+5: Realizeproductionquantities qkt
+6: Getproportion of defective products˜/Omega1kt
+7: Setqb
+kt
+= ˜/Omega1kt ·qkt forall k ∈ K
+8: Setqg
+kt = (1 − ˜/Omega1kt) ·qkt ∀k ∈ K
+9: SolvereducedSCLSP-RWSAA
+t
+10: Setqk,t+1 = qk,t+1 ∀k ∈ K
+11: Setqr
+kt = qr
+kt
+∀k ∈ K
+12: end
+Parameters:
+γ(r)
+kt amp;Valueoffixedsetupvariables γ(r)
+kt
+q(r)
+kt amp; Value of fixedproduction or rework
+quantityq(r)
+kt
+˜/Omega1kt amp;Realizationofrandomproportiono
+defectiveproducts /Omega1kt
+5. Numerical analysis
+5.1. Descriptionoftestdesign
+Forournumericalstudy,wedefinedtwoproblemclasses
+(PC)withdifferentnumbersofproducts andperiods. In
+PC 1, K = 5p r o d u c t sa n dT= 10 periods were con-
+sidered. PC 2 containedK = 20 products andT = 16
+periods.Therewere144testinstancesineachPC.
+
+=== PDF PAGE 11 ===
+6970 P. KOHLMANN AND F. SAHLING
+Figure 3. Sequenceofeventsinperiod t(cf.Kirste 2017).
+Table 5. Varyingparameters.
+Numberofproductsandperiods (K/T) ∈{ (5/10),(20/16)}
+Meanproportionofdefectiveproducts /Omega1k ∈{0.02,0.04,0.06}
+Rangeoftheproportionofdefective
+products
+Range/Omega1∈{ ±0.1 · /Omega1k,±0.3 · /Omega1k}
+Variabilityofthedemand VCd ∈{0.2,0.3}
+Capacityutilisation Util ∈{0.6,0.9}
+Timebetweenorders TBO ∈{1,2,4}
+Targetservicelevel δ∈{0.9,0.95}
+Table 6. Constantparametervalues.
+Productioncostofproduct kp c k = 4
+Reworkcostofproduct kp c r
+k = 1.5
+Productiontimeofproduct kp tk = 0.08
+Reworktimeofproduct kp t r
+k = 0.03
+Setupcostforproductionofproduct ks ck = 12.5
+Setupcostforreworkofproduct ks c r
+k = 3.125
+Setuptimeforproductionofproduct ks t k = 0.25
+Setuptimeforreworkofproduct ks t r
+k = 0.0625
+Fractionofallowedovertime α = 0.1
+Smallnumber ϵ = 0.01
+Overtimecost oc = 75
+The generation of test instances is described in detail
+below. By systematically varying various parameters, the
+testinstancesweredefined.Table 5providesanoverview
+oftheseparameters.
+The demand data were created by randomly generat-
+ingtheaveragedemand dk followingauniformdistribu-
+tionwithintheinterval[50,100].Theaveragedemand dk
+was then used to generate two dynamic demand series
+following a normal distribution. The two series differed
+in the variability of demandVC
+d (see Table5). The pro-
+portion of defective products was also randomly gener-
+ated following a uniform and a triangular distribution
+with a mean proportion of defective products
+/Omega1k and a
+rangeRange /Omega1(seeTable 5).
+F o ra no v erviewo fth eco n s ta n tpa ra m et erval ues,see
+Table6.
+We assume that the setup costs for the production
+process are higher than those for the rework process;
+see Widyana and Wee (2012). Furthermore, the setup
+cost is proportional to the setup time; see Jamal, Sarker,
+and Mondal (2004).
+According to Tempelmeier (2011), the holding cost
+hc
+k iscalculatedby
+hck = 2 ·sck
+¯dk ·TBO2 ∀k ∈ K (23)
+based on the setup costsck, the average demanddk and
+the time between ordersTBO (see Table 5). Further-
+more, it is assumed that the cost of holding defective
+and defect-free items is the same; see Goerler and Voß
+(2016).
+Theproductioncost pc
+k isproportionaltotheproduc-
+tiontime,seeSahling( 2010).Thesameappliestorework
+cost and time. According to Goerler and Voß (2016),
+we assume that the production time is higher than the
+rework time.
+The capacity for production and rework in periodt is
+calculatedaccordingtoEquations(24).
+c
+t = 1
+Util ·
+∑
+k∈K
+(ptk · ¯dk +stk +ptr
+k · ¯dk · ¯/Omega1k +str
+k)
+∀t ∈ T (24)
+It is assumed that the capacity is sufficient to produce
+the average demand of each productk and to rework
+themeandefectiveproductsresultingfromtheseproduc-
+tionquantitiesinperiod t.Inaddition,aproductionand
+rework setup is assumed for each productk in periodt.
+Thecapacityisextendedbytheutilisation Utiltoensurea
+
+=== PDF PAGE 12 ===
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 6971
+feasiblesolution.Theparameter Mkt iscalculatedaccord-
+ingtoEquations(25):
+Mkt = 2 ·ct
+min{ptk,ptr
+k} ∀k ∈ K, t ∈ T . (25)
+Following, e.g. Sarkar et al. (2014), Kang et al. (2017)
+andAsadkhani,Mokhtari,andTahmasebpoor( 2022),we
+assumethattherandomvariable /Omega1kt describingthepro-
+portion of defective products is uniformly distributed.
+Furthermore, we investigate the influence of a triangu-
+larly distributed random variable/Omega1
+kt, as assumed, e.g.
+in Sarkar et al. (2014)a n dK a n ge ta l .(2017). For the
+values of the mean proportion of defective products, we
+followasurveybyLay ,Dreher ,andKinkel( 1996),which
+found that the average proportion of defective products
+among 1,305 companies in the German capital goods
+industrywas4.9%.Comparablevaluescanalsobefound
+in the literature; see e.g. Sarkar et al. (2014), Goerler
+and Voß (2016), Goerler, Lalla-Ruiz, and Voß (2020),
+and Asadkhani, Mokhtari, and Tahmasebpoor (2022).
+We analyse different ranges of the proportion of defec-
+tive products. Ranges found in the literature are, e.g.
+±0.4 ·
+/Omega1k (seeSarkaretal. 2014)or±0.5 · /Omega1k (seeAsad-
+khani,Mokhtari,andTahmasebpoor 2022).Tocoverdif-
+ferent planning scenarios and the influence of different
+ranges,weuseddifferentvalues:alowerrange ±0.1 ·
+/Omega1k,
+am e d i u mr a n g e±0.3· /Omega1k, and in Section5.4 ah i g h e r
+range±0.5 · /Omega1k.Additionalanalysedparametersarerep-
+resented by the coefficient of variation of the demand
+VC
+d, the capacity utilisation, the time between orders
+(TBO) used to determine holding costs, and the target
+servicelevel δ.
+Regarding the generation of scenarios, Helber, Sahl-
+ing,andSchimmelpfeng( 2013)statethatthedescriptive
+samplingproposedbySaliby( 1990)iss u perio rt oasim-
+ple random sampling approach. Consequently, we use
+descriptive sampling to reduce the number of scenar-
+ios considered and thus the numerical effort required to
+solve the scenario-based approximation model. Prelim-
+inary numerical tests have shown that ten scenarios are
+sufficient.
+Our numerical investigations were performed on an
+Intel Core CPU with six 2.90GHz threads and 16GB
+of RAM. We implemented the model formulation of
+the SCLSP-RW
+SAA and the multistage stochastic pro-
+gramming approach in GAMS 36.2.0. In the fix-and-
+optimizeheuristic,eachsubproblemwassolveduptoan
+integrality gap of 0.1% using the standard MIP solver
+CPLEX (ver. 20.1.0.1). The remaining linear programs
+of the reduced SCLSP-RW
+SAA were also solved with
+CPLEX.
+Table 7. Fractionofreplicationsfulﬁllingthetargetservicelevel
+foruniformlydistributedproportionofdefectiveproducts.
+ProblemClass1 ProblemClass2
+Robustplan Adjustedplan Robustplan Adjustedplan
+SL 6.0% 45.7% ∼ 0.0% 54.7%
+SL-0.1PP 47.4% 93.2% 23.5% 98.5%
+SL-0.5PP 94.2% 100.0% 86.9% 100.0%
+SL-1.0PP 99.9% 100.0% 99.8% 100.0%
+SL-2.0PP 100.0% 100.0% 100.0% 100.0%
+SL-3.0PP 100.0% 100.0% 100.0% 100.0%
+5.2. Simulation-basedanalysis
+5.2.1. Uniformly distributed proportion of defective
+products
+As described above, production and rework quantities
+can be adapted during the multistage stochastic pro-
+gramming approach. To analyse the advantage of flexi-
+ble planning, a simulation study with 1,000 replications
+was conducted. For each replication, which consists of
+different realizations of the random proportion of defec-
+tive products, the flexible approach is applied iteratively.
+Based on the fixed setup pattern, future production and
+reworkquantitiescanbeadjustedineachperiodafterthe
+proportion of defective items in a lot is known. We use
+slack variables in the demand constraints (10’) and the
+δ-servicelevelconstraints,(11’).Furthermore,slackvari-
+ables related to the violation of the shortfall constraints
+(12’) are incorporated in constraints (5’). These slack
+variables are required to ensure a mathematically feasi-
+ble solution. These additional variables are penalised in
+theobjectivefunctionandtheremaininglinearprogram
+issolvedtooptimality.
+We compared the adjusted production and rework
+planobtainedbytheflexibleplanningapproachwiththe
+robustandstableproductionandreworkplanderivedby
+solving the SCLSP-RW
+SAA, where no adjustments to the
+production and rework quantities are possible. A simi-
+lar simulation study was also performed to analyse the
+robust and stable production and rework plan. Table7
+evaluatestheprobleminstancesforwhichthetargetser-
+vice level is met for all products within a replication or
+the service level is missed by at most 0.1, 0.5, 1.0 to 3.0
+percentagepoints.
+Fortherobustandstableproductionandreworkplan,
+no adjustments to the production and rework quantities
+are allowed, even if new information about the realised
+proportion of defective products becomes known. Thus,
+the target service level is achieved for only 6.0% of the
+replications for PC 1 and almost 0.0% for PC 2. By an
+iterative adaptation of the production and rework plan,
+the flexible planning approach can respond to updated
+information. The simulation results of PC 1 show that
+by using the flexible approach, the service level targets
+
+=== PDF PAGE 13 ===
+6972 P. KOHLMANN AND F. SAHLING
+are met for 45.7% of the replications, and for PC 2, it is
+up to 54.7%. For more than 93% of the replications for
+both problem classes, the service level is missed by no
+more than 0.1 percentage points with the flexible plan-
+ningapproach,i.e.forexample,ifthetargetservicelevelis
+95%,aservicelevelof94.9%ormoreisachieved.Notably,
+violations of the demand constraints (5’) are negligible
+for both approaches. Furthermore, no violations of the
+shortfall constraints (12’) occur in the flexible approach
+since the exact number of defective products is known
+when the rework quantities are adjusted. Thus, our sim-
+ulation results clearly show that the adjusted production
+and reworkplan outperforms therobust and stableplan.
+Adetailedevaluationofthesimulationresultsaccord-
+ingtothenumberofproductswithinareplicationfailing
+t h et a r g e ts e r v i c el e v e li sp r o v i d e di nF i g u r e s4and 5.
+Bothfiguresshowthattherobustandstableplanyieldsa
+highernumberofproductsthatviolatethetargetservice
+level.
+F o rPC1,assho wninFigur e4,inapproximately76%
+of infeasible replications, the target service level is vio-
+latedformorethan oneproduct inthecase oftherobust
+and stable plan. The service level is mostly violated for
+twooutoffiveproducts.Thisisthecasein36.1%ofinfea-
+siblereplications.Incontrast,theservicelevelisviolated
+intheflexibleapproachinmorethan63%oftheinfeasible
+replicationsforatmostoneproduct.Inmorethan90%of
+theinfeasiblereplications,theservicelevelisviolatedfor
+only one ortwoproducts.
+The results of PC 2, as illustrated in Figure5,s h o w
+evenmoreclearlytheadvantageofflexibleplanning.The
+robustandstableplanfailstomeetthetargetservicelevel
+for more than five out of twenty products in more than
+90% of infeasible replications. Only in 0.1% of infeasible
+replications,thetargetservicelevelisviolatedforjustone
+product. In contrast, the service level is violated in the
+flexibleapproachinmorethan80%oftheinfeasiblerepli-
+cationsforatmosttwoproducts.Ifthereisaviolationof
+theservicelevel,theviolationmostlyaffectsonlyoneout
+of twenty products (57.2% of infeasible replications). In
+more than 90% of the infeasible replications, the service
+level is violated for a maximum of three products.
+5.2.2. Triangularly distributed proportion of defective
+products
+We also performed a comparable simulation study for
+a triangularly distributed proportion of defective prod-
+ucts.Here,wefocussedonthetestinstancesofPC1.The
+results are shown in Table8.
+T h er o b u s ta n ds t a b l ep l a nf a i l st om e e tt h et a r g e t
+s e r v i c el e v e lf o rm o r et h a n9 0 %o ft h er e p l i c a t i o n s .I n
+contrast,theflexibleplanningapproachachievesthetar-
+getedservicelevelformorethan50%ofthereplications.
+Table 8. Fractionofreplicationsfulﬁllingthetargetservicelevel
+fortriangularlydistributedproportionofdefectiveproducts.
+RobustPlan AdjustedPlan
+SL 6.7% 52.7%
+SL-0.1PP 60.1% 96.2%
+SL-0.5PP 98.0% ∼ 100.0%
+SL-1.0PP ∼ 100.0% 100.0%
+SL-2.0PP 100.0% 100.0%
+SL-3.0PP 100.0% 100.0%
+Table 9. Resultsofexpostanalysis.
+ADevFlex MDevFlex
+PC 1 0.19% 1.58%
+PC 2 0.15% 0.70%
+In this case, more than 90% of the replications miss the
+targeted service level by a maximum of 0.1 percentage
+points. As noted already by Helber, Sahling, and Schim-
+melpfeng(2013),ourresultsdemonstratethehighdegree
+offlexibilityofthescenarioapproachinthemodellingof
+probabilisticdependencies.
+A st h er e s u l t sf o rt h et r i a n g u l a rd i s t r i b u t i o na r eq u i t e
+similar to those of the uniform distribution, in the fol-
+lowing, we focus on a uniformly distributed proportion
+of defective products.
+5.3. Expostanalysis
+In the next step, we perform an ex post analysis. In this
+analysis, we compared the objective function value after
+t h el a s ti t e r a t i o no ft h em u l t i s t a g ea p p r o a c hw i t ht h e
+objective function value obtained by solving the deter-
+ministic CLSP-RW using the setup pattern determined
+in the first stage and knowing the proportion of defec-
+tive products for each lot ex ante. Notably, only those
+replications of the test instances of both problem classes
+wereconsideredforwhichtheflexibleplanningapproach
+violated the target service level by a maximum of 0.5
+percentagepoints.
+F o rasin gleTI,th edevia tio nDev
+Flex
+TI,r for each replica-
+tionr canbecalculatedasfollows:
+DevFlex
+TI,r =
+ZFlex
+TI,r − ZExPost
+TI,r
+ZExPost
+TI,r
+For each replicationr of a single TI, the objective func-
+tion value of the deterministic CLSP-RW is denoted
+by Z
+ExPost
+TI,r , and the respective objective function value
+determined in the last iteration of the flexible planning
+approach is denoted byZ
+Flex
+TI,r. The results of the ex post
+analysis areshown inTable9.
+In columnsADevFlex and MDevFlex, the average and
+maximum deviation are reported for both problem
+classes. With an average deviation of 0.19% in the case
+
+=== PDF PAGE 14 ===
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 6973
+Figure 4. DetailedevaluationofPC1accordingtothenumberofproductsmissingthetargetservicelevel.
+Figure 5. DetailedevaluationofPC2accordingtothenumberofproductsmissingthetargetservicelevel.
+of PC 1 and 0.15% in the case of PC 2, the average devi-
+ation is very moderate. The maximum deviation of a
+replicationis1.58%forPC1and0.70%forPC2.
+In addition, the replication with the highest devia-
+tion of 1.58% was analysed in more detail. For this TI,
+the optimal setup pattern was determined with ex ante
+knowledgeoftheexactproportionofdefectiveitemsper
+lot.Thiscanfurtherimprovetheobjectivefunctionvalue,
+asthesetuppatterncanbedifferentfromtherobustsetup
+pattern.However,thedeviationincreasedonlyslightlyto
+2.1%. Thus, the results of the flexible planning approach
+ar everyclosetotheexpostsol u tio n.
+
+=== PDF PAGE 15 ===
+6974 P. KOHLMANN AND F. SAHLING
+Table 10. Comparison of deterministic, robust, and adjusted
+productionandreworkplans.
+DeterministicPlan RobustPlan AdjustedPlan
+SL 2.3% 5.7% 61.8%
+SL-0.1PP 3.6% 8.4% 80.9%
+SL-0.5PP 14.0% 24.0% 96.8%
+SL-1.0PP 37.1% 51.2% 100.0%
+SL-2.0PP 83.8% 91.4% 100.0%
+SL-3.0PP 98.9% 99.7% 100.0%
+5.4. Importanceofflexibleplanning
+Weshowtheadvantageofourflexibleplanningapproach
+b yc o m p a r i n gt h er e s u l t i n ga d j u s t e dp l a nw i t had e t e r -
+ministicplanaswellaswitharobustandstableplan.For
+the deterministic production and rework plan, a variant
+of the CLSP-RW presented by Goerler and Voß (2016)
+wassolved.Here,theCLSP-RWisextendedby δ-service
+levelconstraints.AccordingtoKangetal.( 2017),wecon-
+sider the case of an imperfect production process with a
+higher mean proportion of defective products
+/Omega1k = 0.1
+andahigherrangeRange /Omega1=± 0.5 · /Omega1k oftheuniformly
+distributedproportionofdefectiveproducts.
+For this part of our numerical study, we generated 24
+new test instances for PC 1 by varying the remaining
+parametersaccordingtoTable 5.Furthermore,acompa-
+rable simulation study with 1,000 replications was con-
+ducted as presented in Subsection5.2. The results are
+presentedinTable 10.
+For the deterministic plan, more than 97% of the
+replications miss the target service level. In this case,
+more than 60% of the replications miss the target ser-
+vicelevelbymorethanonepercentagepoint.Theresults
+of the robust production and rework plan are slightly
+better. More than 94% of the replications fail to meet
+the target service level. However, the flexible planning
+approach meets the service level in 61.8% of the repli-
+cations. Notably, almost 97% of the replications of the
+flexibleplanningapproachhaveamaximumviolationof
+0.5percentagepoints.
+The results show that our flexible planning approach
+performs very well even in the presence of a higher
+proportion of defective products and a higher variabil-
+ity. Furthermore, the adjusted production and rework
+plansignificantlyoutperformsboththedeterministicand
+robust plans.
+5.5. Managerialinsights
+We now examine the effect of variability in the propor-
+tion of defective products on total costs. Therefor, we
+used four TIs derived from PC1 with K= 4p r o d u c t s
+and T= 6 periods and a uniformly distributed propor-
+tion of defective products, as described in Table11.F o r
+Table 11. Parametersetting.
+Meanproportionofdefectiveproducts /Omega1k = 0.1
+Rangeoftheproportionofdefective
+products
+Range/Omega1∈{ ±0.1 · /Omega1k,±0.5 · /Omega1k}
+Variabilityofthedemand VCd = 0.3
+Capacityutilisation Util = 0.8
+Timebetweenorders TBO ∈{1,4}
+Targetservicelevel δ= 0.95
+each TI, we first solved the SCLSP-RWSAA to optimality
+u s i n gC P L E X .T h e n ,f o re a c hi n s t a n c e ,w ep e r f o r m e da
+simulation study, as described in Section5.2, with 1,000
+replications.
+In Figure6,w er e p o r tt h eo b j e c t i v ef u n c t i o nv a l u e s
+o ft h er o b u s tp r o d u c t i o na n dr e w o r kp l a nf o re a c hT I .
+Note that the total cost is higher for a low TBO than it
+is for a high TBO. This can be explained by the deter-
+mination of the holding costhc
+k u s i n g( 2 3 ) .A c c o r d i n g
+to Tempelmeier (2011), we keep the setup costsck con-
+stant for our test instances. Thus, a lower TBO results
+in higher holding costhc
+k.H o w e v e r ,t h er e l a t i o n s h i p
+betweensetupandstoragecostsresultsinmorefrequent
+setu po pera tio nsa talo wTBOthana tahighTBO .
+With increasing uncertainty, i.e. a larger range of the
+proportion of defective products, the objective function
+valueincreases.Inaddition,theincreaseincostisslightly
+higherwhentheTBOislow.
+The results of the simulation study are visualised in
+Figure7.ForeachTI,wepresentthespreadoftheresult-
+ingtotalcostsoftheadjustedproductionandreworkplan
+inabo xplo tdiagram.
+A higher variability in the proportion of defective
+products leads to a significantly higher variability in the
+total costs. In summary, actions to reduce the variabil-
+ityoftheproportionofdefectiveproducts(e.g.employee
+training) will reduce the expected costs. Furthermore,
+the described effect is stronger in production systems
+with lower setup costs compared to inventory holding
+costs (lower TBO), i.e. in the case of lean production.
+Considering the total costs of the adjusted production
+and rework plan, actions to reduce the variability of the
+proportionofdefectiveproductswillalsoreducethevari-
+abilityofthetotalcosts.Thiseffectisstrongerinthecase
+of a higher TBO.
+6. Conclusion and outlook
+This paper presents a novel approach to integrated pro-
+duction and rework planning with random proportion
+of defective products. The resulting nonlinear generic
+model formulation was linearised through a scenario-
+based approach. Our simulation-based analysis shows
+that the adjusted production and rework plans obtained
+by the proposed flexible planning approach significantly
+
+=== PDF PAGE 16 ===
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 6975
+Figure 6. Totalexpectedcostsoftherobustproductionandreworkplan.
+Figure 7. Spreadofthetotalcostsoftheadjustedproductionandreworkplan.
+outperformboththedeterministicandrobustplans.Fur-
+thermore, an ex post analysis shows that the objective
+function values obtained under the application of the
+flexible planning approach and random proportion of
+defective products are close to those obtained under the
+assumption of complete knowledge of the proportion of
+defective products. Our managerial insights show that
+activities to reduce the variability of the proportion of
+defectiveproducts(e.g.employeetraining)areofgreater
+importance in the case of lean production regarding the
+reductionofexpectedcosts.
+In the future, uncertain demand should be consid-
+ered (see e.g. Helber, Sahling, and Schimmelpfeng2013
+or Hilger, Sahling, and Tempelmeier2016). Moreover,
+
+=== PDF PAGE 17 ===
+6976 P. KOHLMANN AND F. SAHLING
+in practice, rework times may depend on the severity
+of the failure of a particular defective item. Since the
+outcome of defective items is uncertain, the severity of
+defectsthatoccur,andthereforethereworktimerequired
+to fix defects, is also random. This results in a complex
+planningsituationwithstochasticproportionofdefective
+products and stochastic rework times.
+Acknowledgments
+We would like to thank both anonymous reviewers for their
+carefulreadingofourmanuscript.Theirmanyinsightfulcom-
+m e n t sa n ds u g g e s t i o n sh e l p e dt oi m p r o v ea n dc l a r i f yt h i s
+manuscript. Results of this work were presented at the 14
+th
+International Workshop on Lot Sizing 2023 in Cork, Ireland.
+Furthermore, a few parts of this article were developed from
+PierreKohlmann’sunpublishedmasterthesisattheUniversity
+of Kaiserslautern.
+Data availability statement
+The test instances of this study are available from the authors
+upon request.
+Disclosure statement
+No potential conflict of interest was reported by the author(s).
+Notes on contributors
+Pierre Kohlmann is a research assistant
+and doctoral student at the Chair of Pro-
+ductionManagementattheRPTUSchool
+of Business and Economics, University
+of Kaiserslautern-Landau, Germany. He
+received his M. Sc. in Business Manage-
+mentandEngineeringfromtheUniversity
+of Kaiserslautern, Germany. His research
+interestsincludelotsizing.
+Florian Sahling holds the Chair of Pro-
+ductionManagementattheRPTUSchool
+of Business and Economics, University
+of Kaiserslautern-Landau, Germany. He
+holdsadoctoraldegreefromLeibnizUni-
+versität Hannover, Germany. His main
+researchinterestsarerelatedtoproduction
+planningandscheduling.
+References
+Akçalı, E., and S. Çetinkaya.2011. “Quantitative Models for
+Inventory and Production Planning in Closed-loop Supply
+Chains.”InternationalJournalofProductionResearch 49(8):
+2373–2407.https://doi.org/10.1080/00207541003692021.
+A l o u l o u ,M .A . ,A .D o l g u i ,a n dM .Y .K o v a l y o v .2014.“ AB i b -
+liography of Non-deterministic Lot-sizing Models.”Inter-
+national Journal of Production Research52 (8): 2293–2310.
+https://doi.org/10.1080/00207543.2013.855336.
+Asadkhani,J.,H.Mokhtari,andS.Tahmasebpoor. 2022.“Opti-
+mal Lot-sizing Under Learning Effect in Inspection Errors
+with Different Types of Imperfect Quality Items.”Opera-
+tionalResearch–AnInternationalJournal 22(3):2631–2665.
+B a r z o k i ,M .R . ,M .J a h a n b a z i ,a n dM .B i j a r i .2011.“ E ff e c t s
+of Imperfect Products on Lot Sizing with Work in Process
+Inventory.”AppliedMathematicsandComputation 217(21):
+8328–8336.https://doi.org/10.1016/j.amc.2011.03.023.
+B i s w a s ,P . ,a n dB .R .S a r k e r .2008. “Optimal Batch Quantity
+Models for a Lean Production System with in-cycle Rework
+and Scrap.” International Journal of Production Research
+46(23):6585–6610. https://doi.org/10.1080/0020754080223
+0330.
+B o o k b i n d e r ,J .H . ,a n dJ .Y .T a n .1988.“ S t r a t e g i e sf o r
+the Probabilistic Lot-sizing Problem with Service-level
+Constraints.” Management Science 34 (9): 1096–1108.
+https://doi.org/10.1287/mnsc.34.9.1096.
+Brahimi, N, N. Absi, S. Dauzère-Pérès, and A. Nordli.2017.
+“Single-item Dynamic Lot-sizing Problems: An Updated
+Survey.”European Journal of Operational Research263 (3):
+838–863.https://doi.org/10.1016/j.ejor.2017.05.008.
+Brahimi, N., S. Dauzère-Pérès, N. M. Najid, and A. Nordli.
+2006.“SingleItemLotSizingProblems.” EuropeanJournalof
+OperationalResearch 168(1):1–16. https://doi.org/10.1016/
+j.ejor.2004.01.054.
+Buschkühl,L.,F .Sahling,S.Helber ,andH.T empelmeier .2010.
+“DynamicCapacitatedLot-sizingProblems:aClassification
+and Review of Solution Approaches.”OR Spectrum32 (2):
+231–261.https://doi.org/10.1007/s00291-008-0150-7.
+C u n h a ,J .O . ,H .H .K r a m e r ,a n dR .A .M e l o .2019.“ E ff e c -
+tiveMatheuristicsfortheMulti-itemCapacitatedLot-sizing
+Problem with Remanufacturing.”Computers & Operations
+Research 104:149–158. https://doi.org/10.1016/j.cor.2018 .
+12.012.
+Cunha, J. O., and R. A. Melo. 2016. “A Computational
+Comparison of Formulations for the Economic Lot-sizing
+withRemanufacturing.”Computers&IndustrialEngineering
+92:72–81.https://doi.org/10.1016/j.cie.2015.11.024.
+D
+evoto, C., E. Fernández, and P. Piñero.2021.“ T h eEc o n o m i c
+Lot-sizing Problem with Remanufacturing and Inspection
+for Grading Heterogeneous Returns.”Journal of Remanu-
+facturing11(1):71–87. https://doi.org/10.1007/s13243-020-
+00089-5.
+Dolgui,A.,M.Y.Kovalyov,andK.Shchamialiova. 2011.“Multi-
+product Lot-sizing and Sequencing on a Single Imperfect
+Machine.”Computational Optimization and Applications50
+(3):465–482. https://doi.org/10.1007/s10589-010-9346-2.
+Fang,C.,X.Liu,P.M.Pardalos,J.Long,J.Pei,andC.Zuo. 2017.
+“AStochasticProductionPlanningProbleminHybridMan-
+ufacturing and Remanufacturing Systems with Resource
+Capacity Planning.”Journal of Global Optimization68 (4):
+851–878.https://doi.org/10.1007/s10898-017-0500-6.
+F l a p p e r ,S .D .P . ,J .C .F r a n s o o ,R .A .C .M .B r o e k m e u l e n ,a n d
+K.Inderfurth. 2002.“PlanningandControlofReworkinthe
+Process Industries: a Review.”Production Planning & Con-
+trol13(1):26–34. https://doi.org/10.1080/09537280110061
+548.
+Florian, M., J. K. Lenstra, and A. H. G. R. Kan.1980.“ D e t e r -
+ministicProductionPlanning:AlgorithmsandComplexity.”
+Management Science26 (7): 669–679.https://doi.org/10.12
+87/mnsc.26.7.669.
+Giglio, D., M. Paolucci, and A. Roshani.2017.“ I n t e g r a t e d
+Lot Sizing and Energy-efficient Job Shop Scheduling Prob-
+leminManufacturing/remanufacturingSystems.” Journalof
+
+=== PDF PAGE 18 ===
+INTERNATIONAL JOURNAL OF PRODUCTION RESEARCH 6977
+Cleaner Production148:624–641. https://doi.org/10.1016/j.
+jclepro.2017.01.166.
+Goerler, A., E. Lalla-Ruiz, and S. Voß.2020. “Late Acceptance
+Hill-climbing Matheuristic for the General Lot Sizing and
+Scheduling Problem with Rich Constraints.”Algorithms13
+(6):138. https://doi.org/10.3390/a13060138.
+Goerler, A., and S. Voß. 2016. “Dynamic Lot-sizing with
+Rework of Defective Items and Minimum Lot-size Con-
+straints.” International Journal of Production Research54
+(8):2284–2297. https://doi.org/10.1080/00207543.2015.107
+0970.
+Haojie, Y., M. Lixin, and Z. Canrong. 2017.“ C a p a c i t a t e d
+Lot-Sizing Problem with One-way Substitution: A Robust
+Optimization Approach.” In2017 3rd International Confer-
+ence on Information Management (ICIM),C h e n g d u ,C h i n a ,
+159–163.https://doi.org/10.1109/INFOMAN.2017.7950367.
+Harris,F.W.1913.“HowManyPartstoMakeAtOnce.” Factory,
+The Magazine of Management10(2):135–136,152.Reprint
+in:OperationsResearch(1990),38(6),947–950
+H e l b e r ,S . ,K .I n d e r f u r t h ,F .S a h l i n g ,a n dK .S c h i m m e l p f e n g .
+2018. “Flexible Versus Robust Lot-scheduling Subject to
+Random Yield and Deterministic Dynamic Demand.”IISE
+Transactions50(3):217–229. https://doi.org/10.1080/24725
+854.2017.1357089.
+Helber,S.,andF.Sahling. 2010.“AFix-and-optimizeApproach
+for the Multi-level Capacitated Lot Sizing Problem.”Inter-
+national Journal of Production Economics123 (2): 247–256.
+https://doi.org/10.1016/j.ijpe.2009.08.022.
+Helber, S., F. Sahling, and K. Schimmelpfeng.2013.“ D y n a m i c
+CapacitatedLotSizingwithRandomDemandandDynamic
+Safety Stocks.”OR Spectrum35(1):75–105. https://doi.org/
+10.1007/s00291-012-0283-6.
+Hilger, T., F. Sahling, and H. Tempelmeier.2016.“ C a p a c i -
+tated Dynamic Production and Remanufacturing Planning
+Under Demand and Return Uncertainty.”OR Spectrum38
+(4):849–876. https://doi.org/10.1007/s00291-016-0441-3.
+Inderfurth, K., G. Lindner, and N. P. Rachaniotis.2005.“ L o t
+Sizing in a Production System with Rework and Product
+Deterioration.”International Journal of Production Research
+43 (7): 1355–1374.https://doi.org/10.1080/0020754042000
+298539.
+J a m a l ,A .M .M . ,B .R .S a r k e r ,a n dS .M o n d a l .2004.“ O p t i m a l
+Manufacturing Batch Size with Rework Process At a Single-
+stageProductionSystem.” Computers&IndustrialEngineer-
+ing 47(1):77–89. https://doi.org/10.1016/j.cie.2004.03.001.
+K
+ang, C. W., M. Ullah, B. Sarkar, I. Hussain, and R.
+Akhtar. 2017. “Impact of Random Defective Rate on Lot
+Size Focusing Work-in-process Inventory in Manufactur-
+ingSystem.” InternationalJournalofProductionResearch 55
+(6):1748–1766. https://doi.org/10.1080/00207543.2016.123
+5295.
+Kang,C.W .,M.Ullah,M.Sarkar,M.Omair,andB.Sarkar. 2019.
+“ASingle-stageManufacturingModelwithImperfectItems,
+Inspections, Rework, and Planned Backorders.”Mathemat-
+ics7(5):446. https://doi.org/10.3390/math7050446.
+Karimi, B., S. M. T. Fatemi Ghomi, and J. M. Wilson.
+2003. “The Capacitated Lot Sizing Problem: a Review
+of Models and Algorithms.” Omega 31 (5): 365–378.
+https://doi.org/10.1016/S0305-0483(03)00059-8.
+Kirste, M.2017. Dynamic Lot Sizing Problems with Stochastic
+ProductionOutput. Norderstedt: Books on Demand.
+Kleywegt, A. J., A Shapiro, and T. Homem-de-Melo.2002.
+“TheSampleAverageApproximationMethodforStochastic
+Discrete Optimization.”SIAM Journal on Optimization12
+(2):479–502. https://doi.org/10.1137/S1052623499363220.
+L a y ,G . ,C .D r e h e r ,a n dS .K i n k e l .1996.“ N e u eP r o d u k t i o n -
+skonzepte leisten einen Beitrag zur Sicherung des Stan-
+dorts Deutschland.” Positiver Zusammenhang zwischen
+der Verwirklichung neuer Konzepte und der Steigerung
+betrieblicherLeistungskennziffernbelegt.Bulletins‘German
+ManufacturingSurvey’(1),FraunhoferInstituteforSystems
+andInnovationResearch(ISI).
+Levitan, R. E.1960.“ T h eO p t i m u mR e j e c tA l l o w a n c eP r o b -
+lem.”ManagementScience6(2):172–186. https://doi.org/10.
+1287/mnsc.6.2.172.
+Li,Y.,J.Chen,andX.Cai. 2007.“HeuristicGeneticAlgorithm
+for Capacitated Production Planning Problems with Batch
+Processing and Remanufacturing.”International Journal of
+Production Economics105 (2): 301–317.https://doi.org/10.
+1016/j.ijpe.2004.11.017.
+Llewellyn,R.W. 1959.“OrderSizesforJobLotManufacturing.”
+Journal of Industrial Engineering10(3):176–180.
+Pan, Z., J. Tang, and O. Liu.2009.“ C a p a c i t a t e dD y n a m i c
+Lot Sizing Problems in Closed-loop Supply Chain.”Euro-
+pean Journal of Operational Research 198 (3): 810–821.
+https://doi.org/10.1016/j.ejor.2008.10.018.
+Pflug, G. C., and A. Pichler.2014. Multistage Stochastic Opti-
+mization.Heidelberg:SpringerCham.
+RetelH elmrich,M.J .,R.J ans,W .vandenH euvel,andA.P .M.
+Wagelmans.2014. “Economic Lot-sizing with Remanufac-
+turing:ComplexityandEfficientFormulations.” IIETransac-
+tions46
+(1): 67–86. https://doi.org/10.1080/0740817X.2013.
+802842.
+Roshani, A., M. Paolucci, D. Giglio, M. Demartini, F. Tonelli,
+and M. A. Dulebenets.2023. “The Capacitated Lot-sizing
+and Energy Efficient Single Machine Scheduling Problem
+with Sequence Dependent Setup Times and Costs in a
+Closed-loop Supply Chain Network.”Annals of Operations
+Research321(1–2):469–505. https://doi.org/10.1007/s1047
+9-022-04783-4.
+R u d e r t ,S . ,a n dU .B u s c h e r .2022. “Heuristics for the Single-
+Item Dynamic Lot-Sizing Problem with Rework of Internal
+Returns.”In ComputationalLogistics,ICCL2022 .Vol.13557
+ofLecture Notes in Computer Science,ed i t edb yJ .d eA rm a s ,
+H. Ramalhinho, and S. Voß, 425–440. Barcelona: Springer
+Cham.
+Sahling, F. 2010. Mehrstufige Losgrößenplanung Bei Kapaz-
+itätsrestriktionen.Wiesbaden:GablerVerlag. https://doi.org/
+10.1007/978-3-8349-8708-2.
+Sahling, F. 2013. “A Column-Generation Approach for a
+Short-Term Production Planning Problem in Closed-Loop
+Supply Chains.” BuR – Business Research 6 (1): 55–75.
+https://doi.org/10.1007/BF03342742.
+Sahling, F.2016.“ I n t e g r a t i o no fV e n d o rS e l e c t i o nI n t oP r o -
+ductionandRemanufacturingPlanningSubjecttoEmission
+Constraints.”InternationalJournalofProductionResearch 54
+(13):3822–3836. https://doi.org/10.1080/00207543.2016.11
+48276.
+Saliby, E. 1990. “Descriptive Sampling: a Better Approach
+to Monte Carlo Simulation.” Journal of the Operational
+ResearchSociety 41(12):1133–1142. https://doi.org/10.1057
+/jors.1990.180.
+
+=== PDF PAGE 19 ===
+6978 P. KOHLMANN AND F. SAHLING
+Sarkar,B.,L.E.Cárdenas-Barrón,M.Sarkar,andM.L.Singgih.
+2014.“AnEconomicProductionQuantityModelwithRan-
+dom Defective Rate, Rework Process and Backorders for a
+Single Stage Production System.”Journal of Manufacturing
+Systems33(3):423–435. https://doi.org/10.1016/j.jmsy.2014
+.02.001.
+Schulz, T. 2011.“ AN e wS i l v e r - M e a lB a s e dH e u r i s t i cf o r
+the Single-item Dynamic Lot Sizing Problem with Returns
+and Remanufacturing.”International Journal of Production
+Research49(9):2519–2533. https://doi.org/10.1080/002075
+43.2010.532916.
+S u z a n n e ,E . ,N .A b s i ,a n dV .Bo r od i n .2020.“ T o w a r d sC i r cul a r
+Economy in Production Planning: Challenges and Oppor-
+tunities.”European Journal of Operational Research287 (1):
+168–190.https://doi.org/10.1016/j.ejor.2020.04.043.
+S y e dA l i ,S .A . ,M .D o o s t m o h a m m a d i ,K .A k a r t u n a l ı ,a n d
+R. van der Meer. 2018. “A Theoretical and Computa-
+tional Analysis of Lot-sizing in Remanufacturing with Sep-
+arateSetups.” InternationalJournal ofProductionEconomics
+203:276–285.https://doi.org/10.1016/j.ijpe.2018.07.002.
+T aleizadeh,A.A.,L.E.Cár denas-Ba rrón,a ndB .M oha mmadi.
+2014. “A Deterministic Multi Product Single Machine EPQ
+Model with Backordering, Scraped Products, Rework and
+Interruption in Manufacturing Process.”International Jour-
+nal of Production Economics150:9–27. https://doi.org/10.10
+16/j.ijpe.2013.11.023.
+Tempelmeier, H.2011. “A Column Generation Heuristic for
+Dynamic Capacitated Lot Sizing with Random Demand
+Under a Fill Rate Constraint.” Omega 39 (6): 627–633.
+https://doi.org/10.1016/j.omega.2011.01.003.
+Tempelmeier, H. 2013. “Stochastic Lot Sizing Problems.”
+In Handbook of Stochastic Models and Analysis of Man-
+ufacturing System Operations. Vol. 192 of International
+Series in Operations Research & Management Science ,
+edited by J. M. Smith, B. Tan, 313–344. New York, NY:
+Springer.
+T e u n t e r ,R .H . ,Z .P .B a y i n d i r ,a n dW .v a nd e nH e u v e l .2006.
+“DynamicLotSizingwithProductReturnsandRemanufac-
+turing.”InternationalJournalofProductionResearch 44(20):
+4377–4400.https://doi.org/10.1080/00207540600693564.
+vanZyl,A.,andO.Adetunji.2022.“ALotSizingModelforTwo
+ItemswithImperfectManufacturingProcess,TimeVarying
+Demand and Return Rates, Dependent Demand and Dif-
+ferent Quality Grades.”Journal of Remanufacturing12 (2):
+227–252.https://doi.org/10.1007/s13243-022-00110-z.
+Vladimirou, H., and S. A. Zenios.1997.“ S t o c h a s t i cP r o g r a m -
+ming and Robust Optimization.” InAdvances in Sensitivity
+Analysis and Parametric Programming.V o l .6 .o fInterna-
+tional Series in Operations Research & Management Science,
+edited by T. Gal, H. J. Greenberg, 395–447. Boston, MA:
+Spr
+inger.
+Widyana,G.A.,andH.M.Wee. 2012. “An Economic Produc-
+tion Quantity Model for Deteriorating Items with Multiple
+Production Setups and Rework.”International Journal of
+Production Economics138 (1): 62–67.https://doi.org/10.10
+16/j.ijpe.2012.02.025.
+Zhang,Z.-H.,H.Jiang,andX.Pan. 2012.“ALagrangianRelax-
+ation Based Approach for the Capacitated Lot Sizing Prob-
+lem in Closed-loop Supply Chain.”International Journal of
+ProductionEconomics140(1):249–255. https://doi.org/10.10
+16/j.ijpe.2012.01.018.
+Z h a n g ,J . ,X .L i u ,a n dY .L .T u .2011. “A Capacitated
+Production Planning Problem for Closed-loop Supply
+Chain with Remanufacturing.” The International Journal
+of Advanced Manufacturing Technology54 (5–8): 757–766.
+https://doi.org/10.1007/s00170-010-2948-0.
+Zouadi, T., A. Yalaoui, and M. Reghioui. 2018.“ H y b r i d
+Manufacturing/remanufacturing Lot-sizing and Supplier
+Selection with Returns, Under Carbon Emission Con-
+straint.” International Journal of Production Research 56
+(3):1233–1248. https://doi.org/10.1080/00207543.2017.141
+2524.

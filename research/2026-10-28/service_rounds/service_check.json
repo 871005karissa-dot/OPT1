@@ -1,0 +1,10 @@
+{
+  "service_LP_cases": 432,
+  "feasible_service_LP_cases": 195,
+  "max_complete_action_profit_error": 2.1827872842550278e-11,
+  "exhaustive_eight_state_covering_cases": 40,
+  "max_fractional_profit_error": 1.4210854715202004e-14,
+  "max_actual_deterministic_gap_in_synthetic_cases": 12.45769761301964,
+  "max_certified_gap_in_synthetic_cases": 17.627848087234923,
+  "note": "Synthetic checks verify bound logic; their gap size is not a real manufacturing estimate."
+}

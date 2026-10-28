@@ -1,0 +1,378 @@
+{
+  "question": "What fraction of low-grade output can possibly be upgraded by repairing one quality characteristic?",
+  "assumptions": "Round40: can one-feature rework upgrade an arbitrary grade-2 item?\n\nAssume independent KQCs, nested strict/wide specifications, and rework that can\nperfectly repair a chosen KQC without changing others. Among grade2 items, only\nthose failing that feature alone can reach grade1. This is an optimistic upper\nbound; actual one-sided machining, damage, and imperfect repair may reduce it.\nUse actual-normal and manuscript-rounded probabilities as separate data sources.\nNo station-to-KQC mapping or observed rework success is inferred.\n",
+  "headline": {
+    "largest_single_feature_bound_by_source": {
+      "normal_parameters_and_tolerances": 0.3974740141675911,
+      "manuscript_component_probabilities_rounded": 0.4295362149083248
+    }
+  },
+  "rows": [
+    {
+      "source": "normal_parameters_and_tolerances",
+      "component_probabilities": [
+        [
+          0.8413447460672632,
+          0.9772498680505408
+        ],
+        [
+          0.91951764298309,
+          0.964755623785597
+        ],
+        [
+          0.9331917816478953,
+          0.9772495814002466
+        ],
+        [
+          0.86589998238826,
+          0.9542297250726708
+        ]
+      ],
+      "implied_grade1_share": 0.6251333806714808,
+      "implied_grade2_share": 0.25405385346844744,
+      "single_feature_bounds": [
+        {
+          "KQC_index": 0,
+          "KQC_name": "surface roughness",
+          "single_feature_perfect_repair_upper_bound": 0.3974740141675911
+        },
+        {
+          "KQC_index": 1,
+          "KQC_name": "center hole diameter",
+          "single_feature_perfect_repair_upper_bound": 0.1210570394269475
+        },
+        {
+          "KQC_index": 2,
+          "KQC_name": "external diameter",
+          "single_feature_perfect_repair_upper_bound": 0.11617128746661458
+        },
+        {
+          "KQC_index": 3,
+          "KQC_name": "screw diameter",
+          "single_feature_perfect_repair_upper_bound": 0.251007176026881
+        }
+      ],
+      "grade2_fraction_failing_multiple_KQCs": 0.11429048291196582,
+      "subtypes": [
+        {
+          "strict_failures": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "unconditional_mass": 2.3925928833637532e-05,
+          "fraction_of_grade2": 9.417660274383141e-05
+        },
+        {
+          "strict_failures": [
+            0,
+            1,
+            2
+          ],
+          "unconditional_mass": 0.00023454683242642247,
+          "fraction_of_grade2": 0.0009232169842113902
+        },
+        {
+          "strict_failures": [
+            0,
+            1,
+            3
+          ],
+          "unconditional_mass": 0.0005067770129544734,
+          "fraction_of_grade2": 0.001994762157848604
+        },
+        {
+          "strict_failures": [
+            0,
+            1
+          ],
+          "unconditional_mass": 0.004967955223869346,
+          "fraction_of_grade2": 0.0195547328097755
+        },
+        {
+          "strict_failures": [
+            0,
+            2,
+            3
+          ],
+          "unconditional_mass": 0.0004863239538328011,
+          "fraction_of_grade2": 0.0019142553722106825
+        },
+        {
+          "strict_failures": [
+            0,
+            2
+          ],
+          "unconditional_mass": 0.00476745307142316,
+          "fraction_of_grade2": 0.018765521586608252
+        },
+        {
+          "strict_failures": [
+            0,
+            3
+          ],
+          "unconditional_mass": 0.010300866577229822,
+          "fraction_of_grade2": 0.040545996199617386
+        },
+        {
+          "strict_failures": [
+            0
+          ],
+          "unconditional_mass": 0.10097980495284879,
+          "fraction_of_grade2": 0.3974740141675911
+        },
+        {
+          "strict_failures": [
+            1,
+            2,
+            3
+          ],
+          "unconditional_mass": 0.00014811770318293857,
+          "fraction_of_grade2": 0.0005830169515666655
+        },
+        {
+          "strict_failures": [
+            1,
+            2
+          ],
+          "unconditional_mass": 0.0014520037382621258,
+          "fraction_of_grade2": 0.005715338375855257
+        },
+        {
+          "strict_failures": [
+            1,
+            3
+          ],
+          "unconditional_mass": 0.003137292922112019,
+          "fraction_of_grade2": 0.012348928698700724
+        },
+        {
+          "strict_failures": [
+            1
+          ],
+          "unconditional_mass": 0.030755007355897777,
+          "fraction_of_grade2": 0.12105703942694747
+        },
+        {
+          "strict_failures": [
+            2,
+            3
+          ],
+          "unconditional_mass": 0.003010674634427914,
+          "fraction_of_grade2": 0.011850537172827526
+        },
+        {
+          "strict_failures": [
+            2
+          ],
+          "unconditional_mass": 0.029513763243284186,
+          "fraction_of_grade2": 0.11617128746661458
+        },
+        {
+          "strict_failures": [
+            3
+          ],
+          "unconditional_mass": 0.06376934031786202,
+          "fraction_of_grade2": 0.251007176026881
+        },
+        {
+          "strict_failures": [],
+          "unconditional_mass": 0.6251333806714808,
+          "fraction_of_grade2": null
+        }
+      ]
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "component_probabilities": [
+        [
+          0.8413,
+          0.9999
+        ],
+        [
+          0.9195,
+          0.9647
+        ],
+        [
+          0.9332,
+          0.9772
+        ],
+        [
+          0.8659,
+          0.9542
+        ]
+      ],
+      "implied_grade1_share": 0.625093657341258,
+      "implied_grade2_share": 0.27434534809090927,
+      "single_feature_bounds": [
+        {
+          "KQC_index": 0,
+          "KQC_name": "surface roughness",
+          "single_feature_perfect_repair_upper_bound": 0.4295362149083248
+        },
+        {
+          "KQC_index": 1,
+          "KQC_name": "center hole diameter",
+          "single_feature_perfect_repair_upper_bound": 0.11200417022812646
+        },
+        {
+          "KQC_index": 2,
+          "KQC_name": "external diameter",
+          "single_feature_perfect_repair_upper_bound": 0.10742996595332673
+        },
+        {
+          "KQC_index": 3,
+          "KQC_name": "screw diameter",
+          "single_feature_perfect_repair_upper_bound": 0.2323488116752152
+        }
+      ],
+      "grade2_fraction_failing_multiple_KQCs": 0.11868083723500646,
+      "subtypes": [
+        {
+          "strict_failures": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "unconditional_mass": 2.7851910943999972e-05,
+          "fraction_of_grade2": 0.00010152135306034327
+        },
+        {
+          "strict_failures": [
+            0,
+            1,
+            2
+          ],
+          "unconditional_mass": 0.00027312536451199956,
+          "fraction_of_grade2": 0.0009955531100220973
+        },
+        {
+          "strict_failures": [
+            0,
+            1,
+            3
+          ],
+          "unconditional_mass": 0.0005907137112032004,
+          "fraction_of_grade2": 0.0021531756062707387
+        },
+        {
+          "strict_failures": [
+            0,
+            1
+          ],
+          "unconditional_mass": 0.005792740685513601,
+          "fraction_of_grade2": 0.021114776415286883
+        },
+        {
+          "strict_failures": [
+            0,
+            2,
+            3
+          ],
+          "unconditional_mass": 0.0005665892060399992,
+          "fraction_of_grade2": 0.00206524079953508
+        },
+        {
+          "strict_failures": [
+            0,
+            2
+          ],
+          "unconditional_mass": 0.005556167536919989,
+          "fraction_of_grade2": 0.020252457625338897
+        },
+        {
+          "strict_failures": [
+            0,
+            3
+          ],
+          "unconditional_mass": 0.012016841979012002,
+          "fraction_of_grade2": 0.04380187986650317
+        },
+        {
+          "strict_failures": [
+            0
+          ],
+          "unconditional_mass": 0.11784126239667596,
+          "fraction_of_grade2": 0.4295362149083247
+        },
+        {
+          "strict_failures": [
+            1,
+            2,
+            3
+          ],
+          "unconditional_mass": 0.00014774156795199992,
+          "fraction_of_grade2": 0.0005385240499978993
+        },
+        {
+          "strict_failures": [
+            1,
+            2
+          ],
+          "unconditional_mass": 0.0014488043452959983,
+          "fraction_of_grade2": 0.005280951018042817
+        },
+        {
+          "strict_failures": [
+            1,
+            3
+          ],
+          "unconditional_mass": 0.0031334643457456035,
+          "fraction_of_grade2": 0.011421605533137284
+        },
+        {
+          "strict_failures": [
+            1
+          ],
+          "unconditional_mass": 0.030727823068868818,
+          "fraction_of_grade2": 0.11200417022812649
+        },
+        {
+          "strict_failures": [
+            2,
+            3
+          ],
+          "unconditional_mass": 0.0030054949498199966,
+          "fraction_of_grade2": 0.010955151857811242
+        },
+        {
+          "strict_failures": [
+            2
+          ],
+          "unconditional_mass": 0.02947291140485995,
+          "fraction_of_grade2": 0.10742996595332671
+        },
+        {
+          "strict_failures": [
+            3
+          ],
+          "unconditional_mass": 0.06374381561754604,
+          "fraction_of_grade2": 0.2323488116752152
+        },
+        {
+          "strict_failures": [],
+          "unconditional_mass": 0.625093657341258,
+          "fraction_of_grade2": null
+        }
+      ]
+    }
+  ],
+  "selection_caution": "If inspection identifies repairable subtypes, conditional success among selected items may be high, but return volume must also be limited by the eligible pool; aggregate grade2 success and selected-item success are different parameters.",
+  "provenance": {
+    "run_at_utc": "2026-10-27T18:15:32.421149+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round40_quality_recoverability.py": "8477646c60d3fb420d8411305e8ac6a0fd4786b4f0a0fd3e57ef8e8662ca058b",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed"
+    }
+  }
+}

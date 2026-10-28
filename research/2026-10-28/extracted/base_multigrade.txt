@@ -1,0 +1,4146 @@
+=== PDF PAGE 1 ===
+Journal of the Operational Research Society
+ISSN: 0160-5682 (Print) 1476-9360 (Online) Journal homepage: www.tandfonline.com/journals/tjor20
+Assessing system reliability in multi-grade
+production under diﬀerent demand fulﬁlment
+policies via a multistate ﬂow network
+Hsuan-Yu Chen & Yi-Kuei Lin
+To cite this article: Hsuan-Yu Chen & Yi-Kuei Lin (02 Aug 2026): Assessing system reliability
+in multi-grade production under diﬀerent demand fulﬁlment policies via a multistate ﬂow
+network, Journal of the Operational Research Society, DOI: 10.1080/01605682.2026.2708981
+To link to this article:  https://doi.org/10.1080/01605682.2026.2708981
+© 2026 The Author(s). Published by Informa
+UK Limited, trading as Taylor & Francis
+Group
+Published online: 02 Aug 2026.
+Submit your article to this journal 
+Article views: 270
+View related articles 
+View Crossmark data
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tjor20
+
+=== PDF PAGE 2 ===
+Assessing system reliability in multi-grade production under different 
+demand fulfilment policies via a multistate flow network
+Hsuan-Yu Chen
+a 
+and Yi-Kuei Lin
+a ,b ,c ,d 
+a
+National Yang Ming Chiao Tung University, Hsinchu, Taiwan; 
+b
+National Chin-Yi University of Technology, Taichung, Taiwan; 
+c
+Chaoyang University of Technology, Taichung, Taiwan; 
+d
+Asia University, Taichung, Taiwan 
+ABSTRACT 
+The classification of products into grades based on the tolerances of key quality characteris -
+tics specified by customers is a common practice aligning with diverse customer needs and 
+reducing scrap. This study is mainly to assess system reliability, the probability that the man -
+ufacturing system fulfils orders of all grades, as a performance index to determine the man -
+ageable order quantity to accept. The manufacturing system is first modelled as a multistate 
+flow network (MFN) to analyse material flows across workstations required to satisfy the 
+demands of all grades while incorporating the multiple capacities of each workstation 
+caused by machine uncertainty. Then, two practical demand fulfilment policies are consid -
+ered: satisfying demand for a grade with products of the same grade or through downward 
+substitution. Lastly, the determination of the lower capacity vector (LCV) that meets the 
+demands of all grades is utilised as an efficient method for calculating system reliability, 
+with an algorithm proposed to generate the LCV under two policies. Several experiments 
+are conducted to observe the changes in system reliability and profit of varying demands 
+under the two policies, enabling managers of manufacturing companies to adjust order vol -
+umes and select the policy that best aligns with the objective of the company.
+PRACTITIONER SUMMARY 
+A production system naturally produces products of different quality due to process variabil -
+ity. These products are often divided into different quality grades, each with its own demand. 
+This study provides actionable insights to support production managers in making order man -
+agement decisions when facing orders of products across these grades. Same-grade fulfilment 
+(Policy I) and downward substitution (Policy II) are considered. System reliability, the probabil -
+ity that a manufacturing system can produce enough products to meet demand for all grades, 
+is adopted as a performance index. By evaluating system reliability and associated profit, we 
+observe a trade-off between the two policies: one performs better in profit, while the other 
+performs better in system reliability. When profit is the priority, Policy I is preferred, although 
+its system reliability is relatively low. For important or urgent orders, where unmet demand 
+could hurt customer satisfaction or long-term relationships, Policy II is recommended to 
+ensure higher system reliability. Managers should also be aware that prolonged storage under 
+Policy I may gradually reduce its profit advantage. These findings help managers adjust order 
+volumes and select the fulfilment policy that aligns with their objectives. 
+ARTICLE HISTORY 
+Received 21 January 2025 
+Accepted 21 July 2026 
+KEYWORDS 
+Key quality characteristics; 
+tolerances; downward 
+substitution; multistate flow 
+network (MFN); system 
+reliability   
+1. Introduction
+The same manufacturing system, operating under 
+identical processes, may simultaneously produce prod -
+ucts with varying quality levels (Kalay & Tas ¸kın, 2021 ; 
+Lu et al., 2019 ). Manufacturers typically aim to meet 
+specified quality requirements, and products failing to 
+conform are often discarded. However, customer 
+expectations for the same product vary, with some 
+accepting more relaxed standards (Gupta & Khanna, 
+2024 ; Kazemi et al., 2018 ). Ignoring these variations 
+can result in significant losses from scrapped products 
+and missed opportunities in lower-quality markets. To 
+address this challenge, categorising products into mul -
+tiple grades has been widely adopted as an effective 
+approach to allocate products according to customer- 
+specific quality requirements (Transchel et al., 2016 ). 
+For instance, in the semiconductor industry, binning 
+enables the sale of chips with slightly lower perform -
+ance to customers with lower quality demands, 
+thereby reducing scrap rates and enhancing overall 
+profitability (Hsieh et al., 2011 ). Moreover, product 
+grading creates demands for multiple quality levels, 
+making it a critical concern for manufacturers to fulfil 
+all grade-specific demands.
+CONTACT Yi-Kuei Lin 
+ yklin@nycu.edu.tw 
+ Department of Industrial Engineering and Management, National Yang Ming Chiao Tung University, 
+Hsinchu 300, Taiwan. 
+� 2026 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group 
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/), which permits 
+unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. The terms on which this article has been published allow 
+the posting of the Accepted Manuscript in a repository by the author(s) or with their consent.
+JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY 
+https://doi.org/10.1080/01605682.2026.2708981 
+
+=== PDF PAGE 3 ===
+When products are classified into multiple grades, 
+demand fulfilment becomes more complex than in the 
+single-grade case. Higher-quality products, due to 
+tighter tolerances, are generally associated with super -
+ior functionality and higher market prices (Zhang 
+et al., 2019 ). To maintain consistency between product 
+value and customer expectations, orders are usually 
+fulfilled with products of the same grade (Lu et al., 
+2019 ), referred to as same-grade fulfilment (named 
+Policy I herein). However, the output of a particular 
+grade may sometimes be insufficient to satisfy its 
+demand, which can result in customer dissatisfaction 
+and penalties. To address this issue, using higher-qual -
+ity products to fulfil orders for lower-quality products 
+has been adopted in practice (Ahiska et al., 2017 ; Wu 
+et al., 2020 ), allowing manufacturers to meet demand 
+while mitigating negative consequences, referred to 
+downward substitution (named Policy II herein). The 
+ability of a manufacturing system to fulfil multi-grade 
+demand is directly influenced by these two policies. 
+Therefore, their impacts on system performance are 
+systematically assessed in this study.
+A manufacturing system is a complex network in 
+which raw materials and work-in-progress (WIP) are 
+sequentially processed across multiple workstations to 
+meet the required specifications. Whether the target 
+quantity can be achieved depends on the capacity 
+available at each workstation. When multiple grade 
+orders are placed from diverse customers, order fulfil -
+ment capability becomes a critical concern for manag -
+ers, since failing to satisfy demand may lead to 
+breaches of contract, loss of customer trust, or even 
+penalties (Craig et al., 2021 ; Shen et al., 2022 ). To 
+assess such capability, many studies (Chang et al., 
+2024 ; Niu et al., 2023 ; Su et al., 2024 ; Yeh et al., 2023 ) 
+have adopted system reliability as an effective metric, 
+as it intuitively reflects the probability of successfully 
+achieving the intended function of a system, while also 
+allowing other considerations such as cost and time to 
+be incorporated as constraints to address various man -
+agerial concerns. In this study, system reliability is 
+defined as the probability that the manufacturing sys -
+tem can fulfil demand across all product grades, serv -
+ing as a decision-support metric for managers in 
+order acceptance.
+In manufacturing systems, parallel configurations 
+are commonplace, where each workstation is config -
+ured with multiple identical machines arranged in 
+parallel (Ahmadi et al., 2024 ; Lin et al., 2016 ). Even 
+if some machines are under maintenance, the work -
+station can continue to operate based on the num -
+ber of machines in service, reflecting its multiple 
+capacities. Therefore, the manufacturing system is 
+modelled as a multistate flow network (MFN) to 
+assess system reliability in many studies (Chang 
+et al., 2017 ; Lin & Chang, 2012 ; Yang et al., 2024 ; 
+Yao et al., 2024 ). By transforming the system into a 
+network topology composed of nodes and edges, 
+network analysis and the concept of minimal paths 
+can be applied to analyse material flows that fulfil 
+demand (Niu et al., 2020 ; Yeh, 2018 ). The concept 
+of lower capacity vector (LCV), an efficient tech -
+nique to calculate system reliability, is widely 
+applied in related studies (Chang et al., 2024 ; Huang 
+& Lin, 2024 ; Lin et al., 1995 ; Lin & Chang, 2012 ).
+Although various MFN models have been devel -
+oped to evaluate system reliability, existing studies 
+primarily focus on single-product demands and 
+have not addressed multi-grade demand and related 
+fulfilment policies. Moreover, research on product 
+grading and downward substitution has not consid -
+ered the multistate nature of manufacturing systems. 
+To address this gap, the aim of this study is to 
+evaluate the system reliability of a manufacturing 
+system under two demand fulfilment policies: same- 
+grade fulfilment and downward substitution. When 
+applying product grading, higher-quality grades nat -
+urally have higher value (market price), and demand 
+is typically fulfilled using the same-grade products. 
+However, due to variability in the manufacturing 
+system, each grade is produced in a different pro -
+portion of the total output. Fulfilling demand using 
+the same-grade products can result in either the 
+overproduction of higher-quality grades or lower- 
+quality grades, or in a shortfall of products for a 
+specific grade. Compared with same-grade fulfil -
+ment, downward substitution is a widely adopted 
+alternative in practice, provides greater flexibility in 
+resource utilisation. When excess higher-grade prod -
+ucts are available, they can be used to satisfy lower- 
+grade demand. Thus, overproduction of a specific 
+grade is less likely to occur under downward substi -
+tution; however, revenue loss will be incurred due 
+to high-value products being sold at lower prices. 
+Since the probability of successful order fulfilment 
+and profit are regarded as major considerations by 
+manufacturing managers, these two demand fulfil -
+ment policies are taken into account in this study. 
+An algorithm is developed to generate the lower 
+capacity vector (LCV) for either policy, enabling 
+efficient assessment of system reliability. Profit ana -
+lysis is further conducted for both policies to 
+observe the influence on system reliability. By inte -
+grating system reliability and profit analysis, man -
+agerial insights are provided to assist in the 
+selection of appropriate fulfilment policies and the 
+adjustment of order quantities for effective order 
+acceptance decisions.
+The remainder of this study is organised as fol -
+lows: In Section 2 , the relevant works of literature 
+are reviewed and analysed. The model formulation 
+is represented in Section 3 . The proposed algorithm 
+2
+ H.-Y. CHEN AND Y.-K. LIN
+
+=== PDF PAGE 4 ===
+to generate the LCV under two practical policies for 
+evaluating system reliability is demonstrated in 
+Section 4 . In Section 5 , the system reliability of a 
+manufacturing system producing ball screw pairs is 
+assessed to validate the proposed algorithm, fol -
+lowed by experimental analysis and discussion. In 
+Section 6 , profit analysis and managerial implica -
+tions are presented. Finally, conclusions are drawn 
+in Section 7 .
+2. Literature review
+The relevant literature for this study is focused on 
+product grading, downward substitution, and system 
+reliability assessment. The relevance of this study to 
+these research areas is discussed below.
+2.1. Product grading
+Products are typically classified through full inspec -
+tion based on multiple acceptable standards or toler -
+ances for key quality characteristics (KQCs) or 
+attributes to match them to their corresponding 
+applications (Kolus & Duffuaa, 2025 ). Several stud -
+ies (Kolus & Duffuaa, 2025 ; Lahmar et al., 2025 ; 
+Park et al., 2021 ; Raza & Turiac, 2016 ; Tang, 1990 ; 
+Zhang et al., 2019 ) have developed models to assess 
+product grades and evaluate their impact on profit. 
+Zhang et al. ( 2019 ) proposed a piecewise quadratic 
+loss function for hierarchical products to estimate 
+expected losses across different grades and select the 
+most economical material. Lahmar et al. ( 2025 ) clas -
+sified remanufactured products into different quality 
+grades, each with distinct manufacturing processes 
+and CO
+2 
+emission coefficients, and applied the non- 
+dominated genetic sorting algorithm (NSGA-II), 
+entropy, and technique for order preference by simi -
+larity to ideal solution (TOPSIS) to prioritise high- 
+quality order demand while minimising cost and 
+emissions. The improvement of product grading 
+efficiency has also attracted attention in several 
+studies (Hsieh et al., 2011 ; Jia et al., 2021 ; Kim & 
+Lee, 2023 ). Hsieh et al. ( 2011 ) proposed an adaptive 
+error-tolerance-based testing method to enhance 
+yield by grading chips according to error rates 
+while minimising test costs. Jia et al. ( 2021 ) used 
+27-dimensional RGB colour-difference vectors as 
+input and applied partial least squares discriminant 
+analysis to build a “small-sample, high-dimensional” 
+model that reduces dimensionality while enhancing 
+classification performance, enabling quick identifica -
+tion of tea product categories and grades. Kim 
+and Lee ( 2023 ) developed a neural-network-based 
+approach using in-mold sensors and vibration data 
+to predict the quality grade of each moulded part in 
+real time, enabling timely reduction of defects and 
+waste. While these studies investigate how to more 
+efficiently classify products, improve grading effi -
+ciency, and achieve higher profitability, they either 
+do not address demand satisfaction or assume fixed 
+capacity values, without considering the multistate 
+nature of capacity in manufacturing systems.
+2.2. Downward substitution
+Downward substitution is commonly applied in 
+manufacturing and inventory management when 
+orders for lower-quality products cannot be fulfilled 
+and are instead satisfied using available higher-qual -
+ity or premium products (Ahiska et al., 2017 ; 
+Freeman et al., 2021 ; Luo & Chen, 2022 ; Transchel 
+et al., 2016 ; Wu et al., 2020 ; Yu et al., 2017 ; Zheng & 
+Gershwin, 2015 ). Downward substitution between 
+products produced on distinct production lines has 
+been the focus of some studies (Ahiska et al., 2017 ; 
+Notz & Pibernik, 2022 ; Yu et al., 2017 ) supporting 
+production planning. Notz and Pibernik ( 2022 ) 
+developed a kERM-based two-stage capacity plan -
+ning model with fixed capacities for multiple produc -
+tion lines, each producing a specific product grade; 
+downward substitution is incorporated, allowing 
+higher-level production lines to satisfy demands 
+requiring lower expertise. Yu et al. ( 2017 ) used a 
+Markov decision process to determine the optimal 
+joint policy for a manufacturing system with pre -
+mium and standard production lines, considering 
+production and substitution decisions alongside 
+dynamic pricing strategies. Some studies (Luo & 
+Chen, 2022 ; Wu et al., 2020 ) have investigated sourc -
+ing products of different quality directly from suppli -
+ers to determine optimal ordering policies. Wu et al. 
+( 2020 ) developed a mathematical model that incor -
+porates product substitution and dual sourcing strat -
+egies under partial production line disruptions, using 
+a greedy allocation algorithm to determine optimal 
+allocation and minimise expected costs. Luo and 
+Chen ( 2022 ) investigated a single-period hospital 
+platelet inventory problem, considering heteroge -
+neous age-based demand, random supply of young 
+platelets, and the effect of unidirectional substitution. 
+They determined the optimal ordering policies using 
+dynamic programming and analysed their impact on 
+service level and expected cost. Overall, these studies 
+have primarily addressed issues related to maximis -
+ing profit in production planning and purchasing 
+from the perspective of inventory management. In 
+addition, studies related to manufacturing system 
+capacity either ignore uncertainty and treat capacity 
+as a fixed value, or consider only the capacity of an 
+entire production line in binary states, without 
+accounting for multiple possible capacities. In this 
+study, downward substitution is treated as an 
+JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY
+ 3
+
+=== PDF PAGE 5 ===
+alternative policy within a single production line, 
+under which only internally produced higher-quality 
+products are used to satisfy shortfalls in lower-grade 
+products. The ability of the manufacturing system to 
+fulfil all grade orders under two policies is assessed 
+considering multiple capacities and corresponding 
+probabilities.
+2.3. System reliability assessment
+Over the past decades, the system reliability assess -
+ment has received increasing attention, as it offers a 
+comprehensive overview of the performance of real- 
+world systems. Because such systems often exhibit 
+complex configurations and are concerned with ful -
+filling demand rather than simply maintaining oper -
+ation, network analysis is commonly employed in 
+system reliability assessment models to facilitate the 
+effective representation and analysis of material or 
+information flows (Lin et al., 2016 ; Wang et al., 
+2022 ). For system reliability assessment in manufac -
+turing systems, many studies (Chang, 2019 ; Huang 
+& Lin, 2024 ; Liao et al., 2023 ; Lin & Chang, 2012 ; 
+Yang et al., 2024 ; Yao et al., 2024 ) model the prac -
+tical manufacturing system as a MFN based on dif -
+ferent production scenarios, with multiple capacities 
+and their associated probabilities used to evaluate 
+system reliability. Yao et al. ( 2024 ) proposed an 
+extended MFN that integrates a Markov process to 
+capture degradation driven by heterogeneous feed -
+stock and thereby more accurately assess system 
+reliability. Huang and Lin ( 2024 ) further developed 
+a long short-term memory recurrent neural network 
+model designed to enhance the efficiency of system 
+reliability prediction and provide a basis for main -
+tenance decision-making. As many studies assume 
+buffer to be infinite, to address finite buffers which 
+cause material flow blockage and starvation between 
+workstations and buffers, Chang ( 2019 ) incorpo -
+rated a Monte Carlo simulation to estimate the sys -
+tem reliability. However, only the ability to fulfil a 
+single demand is considered in these studies, while 
+scenarios involving multiple product grades have 
+not been addressed. To bridge this gap, system reli -
+ability in fulfilling orders across multiple product 
+grades is assessed using the proposed method, with 
+the two different demand fulfilment policies consid -
+ered specifically in the context of product grading.
+3. Model formulation and system reliability 
+assessment
+In this section, the problem description and 
+assumptions of this study are first outlined and dis -
+cussed. Next, the approach of product grading is 
+presented. Then, the formulation of a manufacturing 
+system into an MFN is introduced. Lastly, the sys -
+tem reliability assessment method is presented.
+3.1. Problem descriptions and assumptions
+Different from the references (Ahiska et al., 2017 ; 
+Notz & Pibernik, 2022 ; Yu et al., 2017 ), this study 
+considers that products of different grades are pro -
+duced on the same production line. Product grading 
+differentiates products according to heterogeneous 
+customer requirements. For example, in smartphone 
+camera lens module production, modules are classi -
+fied into two grades based on three KQCs: modula -
+tion transfer functions (MTFs) at the centre, middle, 
+and edge field. MTF reflects lens resolution and is 
+expressed as a percentage: 80%–100% for excellent 
+grade, 50%–80% for acceptable grade. A module is 
+classified as an excellent grade only if all field MTFs 
+are 80%–100%; if any field MTF is 50%–80% and 
+the others are 80%–100%, it is an acceptable grade; 
+otherwise, it is defective. Excellent-grade modules 
+are primarily intended for top-tier devices, whereas 
+acceptable-grade modules are used for lower-tier 
+devices. Customers demand both grades, with excel -
+lent-grade products featuring tighter tolerances and 
+higher market value. Therefore, the problem 
+addressed in this study is assessing system reliability 
+for fulfilling multi-grade orders; in other words, it 
+examines the extent that a manufacturing system 
+has sufficient capacity to meet multi-grade demand 
+under machine uncertainties and limited resources. 
+We consider a manufacturing system that consists 
+of multiple workstations arranged in series, where 
+raw materials or WIPs must visit all workstations 
+sequentially to meet the specified tolerances of all 
+KQCs. Typically, each workstation is composed of 
+one or multiple identical machines arranged in a 
+parallel configuration. To facilitate analysis of 
+material flow, the manufacturing system is modelled 
+as a network topology, with workstations repre -
+sented as edges and inspections/buffer storage repre -
+sented as nodes. Then, the system reliability of the 
+manufacturing system is assessed for multi-grade 
+order acceptance decision. The problem is studied 
+under the following assumptions:
+1. The capacities of edges are statistically inde -
+pendent (Lin et al., 2016 ; Yang et al., 2022 ).
+2. Non-destructive quality inspections, movement 
+of WIP, and buffer storage between worksta -
+tions will not cause conforming items to 
+become defective.
+3. The specifications of KQCs are statistically inde -
+pendent. (He et al., 2017 ; Wang et al., 2022 ; 
+Yang et al., 2024 ).
+4
+ H.-Y. CHEN AND Y.-K. LIN
+
+=== PDF PAGE 6 ===
+4. Machine availability, yield rates, and percentage 
+of products in each grade are calculated based 
+on point estimation using historical data.
+Assumption 1 means that the machines at differ -
+ent workstations are of different types; their capaci -
+ties are inherently independent and do not influence 
+each other. Assumption 2 indicates that WIPs are 
+unlikely to be damaged during storage and transpor -
+tation, as they are typically protected by fixtures or 
+shipping trays. Assumption 3 states that in cases 
+where different key quality characteristics (KQCs) 
+are determined by separate processes or machines, 
+they do not affect each other. For instance, the 
+dimension and surface roughness of a part may 
+result from different machining operations, making 
+it reasonable to consider them independent. 
+Assumption 4 is established because, although the 
+estimates of the parameters mentioned above fall 
+within an interval, point estimation is used to pro -
+vide a simplified and representative value, facilitat -
+ing model calculations and analysis.
+Moreover, to prepare for the introduction of the 
+LCV concept for system reliability assessment in 
+Section 3.4 , the following vector operation rules are 
+first defined. Suppose there are two capacity vectors 
+Y ¼ (y
+1
+, y
+2
+, … , y
+n
+) and Z ¼ (z
+1
+, z
+2
+, … , z
+n
+),
+1. Y � Z if and only if y
+i 
+� z
+i 
+for each i ¼ 1, 2, 
+… , n.
+2. Y < Z if and only if Y � Z, and there exists at 
+least one i such that y
+i 
+< z
+i
+.
+Both capacity vectors Y and Z represent one pos -
+sible capacity state of all workstations in the manu -
+facturing system. For example, consider a 
+manufacturing system with three workstations, 
+where workstations 1, 2, and 3 contain three 
+machines each, with per-machine capacities of 50, 
+55, and 60 respectively. Suppose Y ¼ (50, 55, 60) 
+and Z ¼ (150, 165, 180). Y represents the state 
+where only one machine is operating in each work -
+station, while Z represents the state where all three 
+machines are operating in each workstation.
+3.2. Product grading
+The produced products are classified into grades 
+based on KQCs. Generally, quality characteristics 
+can be classified into three types: nominal-the-best 
+(NTB), smaller-the-best (STB), and larger-the-best 
+(LTB) characteristics. A product is accepted only if 
+all specifications meet the defined tolerances, which 
+are set either by both a lower specification limit 
+(LSL) and an upper specification limit (USL), or by 
+a target value together with either the LSL or the 
+USL. Specifications outside these tolerances are con -
+sidered defective. Some defective products may still 
+be sold at a discount or accepted by other custom -
+ers, depending on quality and price. Accordingly, 
+products can be classified into multiple grades based 
+on these tolerances. The simplest case of categoris -
+ing products into grades is based on the tolerances 
+of a single KQC. For grade g, the LSL and USL are 
+expressed as LSL
+g 
+and USL
+g
+, respectively, where 
+g ¼ 1, 2, … , h. Products are deemed as grade g 
+when the specification of the specific KQC that 
+exceeds the tolerance of grade g − 1 but remains 
+within the gth tolerance. An instance of grading 
+products based on each type of KQC is shown in 
+Figure 1 .
+For more general cases of multiple KQCs, cus -
+tomers may specify various tolerances and have dif -
+fering degrees of acceptance for imperfect products. 
+To simplify production and product offerings, prod -
+ucts can be categorised into several grades based on 
+Figure 1. Grading products based on a single KQC.
+JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY
+ 5
+
+=== PDF PAGE 7 ===
+tolerances specified by customers, ranging from 
+strict to lenient. Products that meet the first toler -
+ance of all KQCs are defined as grade 1. If the spe -
+cification of any KQC of the product exceeds the 
+first tolerances of all KQCs but still meets those of 
+the second tolerances, these products are deemed as 
+grade 2. This logic can be extended to cases with g 
+tolerances of all KQCs that the specification of any 
+KQC of a product exceeds the (g − 1)th tolerances 
+but still meets those of the gth tolerances is defined 
+as grade g. Suppose each KQC has h tolerances and 
+there are b KQCs in total, s
+a
+g 
+and s
+a
+g 
+are utilised to 
+denote the minimal and maximal values of the gth 
+tolerance for the ath KQC where a ¼ 1, 2, … , b 
+and g ¼ 1, 2, … , h. Without loss of generality, let s
+a
+1 
+� s
+a
+2 
+� … � s
+a
+h 
+and s
+a
+1 
+� s
+a
+2 
+� … � s
+a
+h
+:
+The percentage of products in each grade can be 
+determined based on tolerances and historical speci -
+fication data collected during previous manufactur -
+ing processes. The specifications of the ath KQC are 
+represented as a random variable X
+a 
+with x
+a 
+being a 
+single observed specification, where a ¼ 1, 2, … , b; 
+these random variables are generally assumed to fol -
+low a normal distribution (Raza & Turiac, 2016 ), 
+denoted as X
+a 
+� N( ^l
+X
+a
+; ^r
+X
+a
+); the distribution can 
+also be obtained from the historical data. The mean 
+^l
+X
+a 
+and standard deivation ^r
+X
+a 
+are calculated with 
+historical data of the ath KQC. The probability of 
+the ath KQC meets the gth tolerance is calculated as 
+below:
+q
+a
+g
+¼ U
+s
+a
+g
+− ^l
+X
+a
+^r
+X
+a
+ !
+− U
+s
+a
+g
+− ^l
+X
+a
+^r
+X
+a
+ !
+, g
+¼ 1, 2, :::, h: (1) 
+where U( �) represents the cumulative distribution 
+function of standard normal distribution. Moreover, 
+based on Assumption 1 that KQCs are assumed to 
+be statistically independent, the percentage of grade 
+1 products Q
+1 
+can be calculated as follows:
+Q
+1
+¼
+Y
+b
+a¼1
+q
+a
+1
+, a ¼ 1, 2, :::, b: (2) 
+Since grade 2 products are those with their speci -
+fication falls within the second tolerances of all 
+KQCs and at least one specification exceed its first 
+tolerance, the percentage of grade 2 can be obtained 
+by first calculating the probability that all KQCs’ 
+specification falls within the second tolerances of 
+all KQCs then subtracting the percentage Q
+1 
+of 
+grade 1. Similarly, the percentage Q
+g 
+of grade g can 
+be calculated as the percentage of products meeting 
+the gth tolerances of all KQCs subtracting the 
+cumulative percentage of from grade 1 to grade 
+g − 1 as below:
+Q
+g
+¼
+Y
+b
+a¼1
+q
+a
+g
+−
+Y
+b
+a¼1
+q
+a
+g −1
+, where g ¼ 2, :::, h: (3) 
+3.3. Formulation of an MFN and fulfilment 
+policies
+Let (N, E, S) denote a multistate flow network 
+(MFN), where N denotes the set of nodes represent -
+ing buffers and inspection procedures, E ¼ fe
+i
+j
+i ¼ 1, 2, … , ng with e
+i 
+denoting the ith edge (work -
+station), S ¼ f[ s
+a
+g
+; s
+a
+g
+]j a ¼ 1, 2, … , b, g ¼ 1, 2, … , 
+hg with s
+a
+g 
+and s
+a
+g 
+representing the minimum and 
+maximum of the gth tolerance of the ath KQC, 
+respectively. The capacity z
+i 
+of the ith (i ¼ 1, 2, … , 
+n) workstation takes values from 0, v
+i
+, 2v
+i
+, ���, (u
+i
+v
+i 
+¼ m
+i
+) where v
+i 
+is machine capacity, u
+i 
+is the max -
+imal number of machines in operation. Thus, m
+i 
+is 
+the maximal capacity of ith workstation. The 
+demand of all h grades is expressed as D ¼ (d
+1
+, d
+2
+, 
+… , d
+h
+).
+When products are categorised into grades and 
+sold at distinct prices, the demand D can be satisfied 
+by one of the following two policies:
+Policy I: The demand of each grade can be only 
+fulfilled with the output of the same grade, as 
+shown in Figure 2(a) .
+Policy II: The demand for any grade can be ful -
+filled with downward substitution, when there are 
+superior grades available, as shown in Figure 2(b)
+(Gallego et al., 2006 ).
+Policy I mandates that products of grade g be 
+used exclusively to fulfil the demand for grade g, 
+g ¼ 1, 2, … , h. It ensures the consistency of product 
+value and quality, thus meeting customer expecta -
+tions. In contrast, Policy II provides greater flexibil -
+ity by prioritising excess higher-quality products for 
+lower-quality demands, enhancing resource utilisa -
+tion, and reducing production burdens. However, it 
+may lead to potential losses by using higher-quality 
+products to meet demand for lower-quality ones.
+3.4. System reliability assessment
+System reliability is defined as the probability that a 
+manufacturing system can provide adequate capacity 
+to process the workloads (raw materials or WIPs 
+need to be processed) outputting sufficient products 
+for meeting the demands for all grades in a given 
+period of time. The capacity of a workstation is 
+determined by the number of operational machines 
+multiplied by the machine capacity in a specified 
+period of time. Therefore, the probability of a work -
+station providing a specific capacity can be obtained 
+by the binomial distribution (Chang, 2022 ). 
+6
+ H.-Y. CHEN AND Y.-K. LIN
+
+=== PDF PAGE 8 ===
+Generally, the more input, the more likely the man -
+ufacturing system to produce enough amount of 
+products to meet the demands as long as all work -
+stations can collectively provide adequate capacity to 
+process their corresponding workloads. Let h
+i 
+repre -
+sent the yield rate of the ith workstation, and let I 
+denote the amount of raw material input at the first 
+workstation. The workload of the first workstation, 
+denoted as w
+1
+, is equal to I. The workload for the 
+second to the jth workstations, denoted as w
+j
+, is 
+equal to the output of the previous workstation, 
+which is calculated as the amount of raw material 
+input multiplied by cumulative yield rates of the 
+preceding workstation, as shown below:
+w
+j
+¼ I �
+Y
+j−1
+i¼1
+h
+i
+, j ¼ 2; 3; :::; n: (4) 
+The workload of each workstation should not 
+surpass its maximal capacity, as shown below:
+w
+i
+� m
+i
+where i ¼ 2, 3, :::, n: (5) 
+In an MFN, the capacity of all workstations is 
+represented by the capacity vector Z ¼ (z
+i
+j i ¼ 1, 2, 
+… , n), where z
+i 
+is the (current) capacity of the ith 
+workstation. The probability PrfZg that the MFN 
+can provide the capacities specified by a capacity 
+vector Z can be calculated as Prfz
+1
+g � Prfz
+2
+g �
+… � Prfz
+n
+g by Assumption 1. Then, all capacity 
+vectors that meet the demand D are denoted as a 
+set X. System reliability can be calculated directly by 
+enumerating all capacity vectors in X, then sum -
+ming up all the probabilities that the MFN can pro -
+vide the capacities of all capacity vectors shown 
+below:
+R
+D
+¼
+X
+Z 2X
+PrfZ g: (6) 
+A more efficient method is to assess system reli -
+ability with the LCV. A capacity vector Z ¼ ( z
+i
+j
+i ¼ 1, 2, … , n) is the LCV if there is any capacity 
+vector Y that the output of at least one grade cannot 
+be satisfied such Y< Z : Then, the system reliability 
+R
+D 
+can be quickly calculated with the LCV as pre -
+sented below:
+R
+D
+¼
+Y
+n
+i¼1
+Pr z
+i
+� z
+i
+� �
+: (7) 
+The LCV is obtained by finding the smallest 
+number t
+i 
+of machines in operation of workstation i 
+that provides the adequate capacity to process the 
+workload w
+i
+, such that z
+i 
+¼ t
+i
+v
+i 
+� w
+i 
+> (t
+i 
+− 1)v
+i
+.
+4. Generation of LCV
+In this section, the inputs required to satisfy 
+demand D are first presented for both policies. The 
+definitions of the LCV under each policy are then 
+introduced, followed by an algorithm for generating 
+the LCV.
+4.1. Determination of input under Policy I
+The output of each grade determines whether the 
+demands can be fulfilled. The output O can be cal -
+culated by the multiplication of the amount I of raw 
+material input and yield rate h
+i 
+of the ith worksta -
+tion where i ¼ 1, 2, … , n, as O ¼ I �
+Q
+n
+i¼1
+h
+i
+: The 
+output O
+g 
+of grade g can be calculated as output 
+times the percentage Q
+g 
+of grade g, as shown below:
+O
+g
+¼ I � Q
+g
+, where g ¼ 1, 2, :::, h: (8) 
+To produce sufficient O
+g 
+for meeting the demand 
+d
+g 
+of grade g, the amount I
+g 
+of raw material input 
+required to meet the demand of grade g is obtained 
+by setting O
+g 
+¼ d
+g 
+in Equation (8) and is derived as 
+follows:
+I
+g
+¼
+d
+g
+Q
+g
+�
+Q
+n
+i¼1
+h
+i
+, g ¼ 1, 2, :::, h:, (9) 
+However, the amount of raw material input that 
+can output an adequate amount of grade g meeting 
+Figure 2. Demand fulfilment mechanisms under two policies.
+JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY
+ 7
+
+=== PDF PAGE 9 ===
+the demand d
+g 
+of grade g may not meet the 
+demands for other grades due to the percentage of 
+each grade. The amount of input I
+g 
+can only guar -
+antee the corresponding output meets the demand 
+of grade g. To ensure that the demand D is fully sat -
+isfied, the required amount I of raw material input 
+must take maximum among all I
+g 
+(g ¼ 1, 2, … , h) 
+is shown below:
+I ¼ max I
+1
+, I
+2
+, : ::, I
+h
+f g
+¼ max
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+,
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+, :::;
+d
+h
+Q
+h
+�
+Q
+n
+i¼1
+h
+i
+8
+>
+<
+>
+:
+9
+>
+=
+>
+;
+:
+(10) 
+4.2. Determination of input under Policy II
+Downward substitution can be adopted when lower- 
+quality products are insufficient to meet demand, 
+but higher-quality products are available in excess. 
+The excess amount and shortages of grade g is 
+(O
+g
+-d
+g
+) where g ¼ 1, 2, … , h. When (O
+g
+-d
+g
+) > 0, it 
+indicates an excess of products in that grade; when 
+O
+g
+-d
+g 
+< 0, it indicates that the demand for that 
+grade has not yet been met. Even under Policy II, 
+the demand d
+1 
+of grade 1 cannot be met by other 
+grades as grade 1 represents the highest value and 
+quality. The input satisfying d
+1 
+is obtained as below:
+I
+1
+¼
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+: (11) 
+To calculate the amount of required input to fulfil 
+the demands of all grades under Policy II, which 
+allows downward substitution, we start with the sim -
+plest case, where products are classified into only two 
+grades. The excess grade 1 products and the output 
+of grade 2 products can be used to fulfil the demand 
+of grade 2, namely (O
+1
+-d
+1
+) þ O
+2 
+� d
+2. 
+The input I
+0
+2 
+satisfying the demand of grade 2 through downward 
+substitution can be determined as below:
+I
+0
+2
+¼
+d
+1
+þ d
+2
+Q
+1
+þ Q
+2
+ð Þ �
+Q
+n
+i¼1
+h
+i
+: (12) 
+It seems that the input I
+0
+2 
+will satisfy the demand 
+of two grades. However, when the input I equals I
+0
+2
+, 
+the corresponding output is not guaranteed to sat -
+isfy the demand d
+1 
+of grade 1. To illustrate this phe -
+nomenon, Table 1 shows the data of amount of 
+input and output for two scenarios of a manufactur -
+ing system, each with different percentages and 
+the same demands for two grades. In scenario 1, the 
+output of grade 1 is less than its demand when the 
+input I equals I
+0
+2
+, whereas the demand of grade 1 is 
+met in scenario 2.
+Thus, the input for guaranteeing both d
+1 
+and d
+2 
+must be the maximum of I
+1 
+and I
+2
+0
+; as shown 
+below:
+I ¼ max I
+1
+, I
+0
+2
+ð Þ
+¼ max
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+,
+d
+1
+þ d
+2
+Q
+1
+þ Q
+2
+ð Þ �
+Q
+n
+i¼1
+h
+i
+0
+B
+@
+1
+C
+A
+:
+(13) 
+To validate Equation (13) , Propositions 1 , 2 , and 
+Lemma 1 are provided to further prove its 
+correctness.
+Proposition 1. If 
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+>
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+; then 
+d
+1
+þd
+2
+ðQ
+1
+þQ
+2
+Þ�
+Q
+n
+i¼1
+h
+i
+>
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+:
+Proof: see in Appendix A .
+Proposition 2 . If 
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+<
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+; then 
+d
+1
+þd
+2
+ðQ
+1
+þQ
+2
+Þ�
+Q
+n
+i¼1
+h
+i 
+>
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+:
+Proof: see in Appendix B .
+Lemma 1. 
+min
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+,
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+8
+>
+<
+>
+:
+9
+>
+=
+>
+;
+�
+d
+1
+þ d
+2
+Q
+1
+þQ
+2
+ð Þ �
+Q
+n
+i¼1
+h
+i
+� max
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+,
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+8
+>
+<
+>
+:
+9
+>
+=
+>
+;
+Table 1. Results of two scenarios for demand D ¼ (80, 60) and 
+Q
+n
+i¼1
+h
+i
+¼ 0:8:
+Scenario Q
+1
+Q
+2
+Amount of raw  
+material input I
+Amount of grade 1 output 
+O
+1
+Amount of grade 2 output 
+O
+2
+1 0.2 0.4 I
+1
+¼
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+¼ 500 80 160
+I
+0
+2 
+¼
+d 1 þd 2
+ðQ
+1
+þQ
+2
+Þ�
+Q
+n
+i¼1
+h
+i
+¼ 291:6667 46.6667 93.3333
+2 0.4 0.2 I
+1
+¼
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+¼ 250 80 40
+I
+0
+2 
+¼
+d
+1
+þd
+2
+ðQ
+1
+þQ
+2
+Þ�
+Q
+n
+i¼1
+h
+i
+¼ 291:6667 93.3333 46.6667
+8
+ H.-Y. CHEN AND Y.-K. LIN
+
+=== PDF PAGE 10 ===
+Proof: By Propositions 1 and 2 , we conclude the 
+proof.
+Propositions 1 and 2 describe how the three 
+input levels I
+1
+, I
+2 
+and I
+0
+2 
+are related when I
+2 
+> I
+1 
+and I
+1 
+> I
+2
+, respectively. Lemma 1 integrates these 
+two cases and provides an overall view of how I
+0
+2 
+compares with I
+1 
+and I
+2
+. When downward substitu -
+tion is allowed, the role of I
+2 
+becomes less critical 
+because I
+0
+2 
+already reflects the input requirement for 
+satisfying grade 2 demand under downward substi -
+tution. Based on Lemma 1 and the downward sub -
+stitution mechanism that any shortage in grade 2 
+can be compensated by reallocating higher-quality 
+products, the required material input is determined 
+by taking the maximum of I
+1 
+and I
+0
+2
+.
+According to the above derivation process, we 
+can extend the results to the more general case 
+where products are classified into h grades. Any 
+grade f with excess products, namely O
+f
+-d
+f 
+> 0, can 
+be used to meet the shortages of any grade g with 
+f < g. The fulfilment of demands of grade g can be 
+represented as 
+P
+g−1
+f¼1
+ðO
+f
+− d
+f
+Þ þ O
+g 
+� d
+g
+, 1 � f < g 
+� h, which is equivalent to (O
+1 
+þ O
+2
+þ … þ O
+g
+) �
+(d
+1 
+þ d
+2 
+þ … þ d
+g
+) and can be rewritten as 
+follows:
+I �
+X
+g
+g ¼1
+Q
+g
+ !
+�
+Y
+n
+i¼1
+h
+i
+�
+X
+d
+g ¼1
+d
+g
+: (14) 
+The input I
+0
+g 
+satisfies the demand of grade g 
+through downward substitution can be determined 
+as below:
+I
+0
+g ¼
+P
+g
+g ¼1
+d
+g
+P
+g
+g ¼1
+Q
+g
+�
+Q
+n
+i¼1
+h
+i
+, where g ¼ 2, 3, :::, h:
+(15) 
+Based on the logic of classifying products into 
+two grades, when the input is equal to I
+0
+g
+, it only 
+guarantees the demand of grade g. The input 
+required to meet the demand of all grades is calcu -
+lated similarly, by taking the maximum among I
+1
+, 
+I
+0
+2
+, … , I
+0
+h
+, as shown below:
+I ¼ maxðI
+1
+, I
+0
+2
+, :::, I
+0
+h
+Þ
+¼ max
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+,
+P
+2
+g ¼1
+d
+q
+P
+2
+g ¼1
+Q
+g
+� �
+�
+Q
+n
+i¼1
+h
+i
+, :::,
+P
+h
+g ¼1
+d
+q
+P
+h
+g ¼1
+Q
+g
+� �
+�
+Q
+n
+i¼1
+h
+i
+0
+B
+@
+1
+C
+A
+:
+(16) 
+4.3. Definition of LCV
+The LCV represents the lowest vector in X. 
+However, the capacity vectors satisfying the demand 
+D may vary depending on the policy applied. For 
+clarity, let X
+I 
+be the set of all feasible capacity vec -
+tors Z satisfying the demand D under Policy I, 
+that is X
+I
+¼ Z O
+g
+ðZ Þ � d
+g
+, g ¼ 1, 2, :::, h
+�
+�
+�
+n
+where O
+g
+(Z) is the maximal output of grade g 
+product under capacity vector Z. Similarly, let 
+X
+II 
+be the set of all feasible capacity vectors Z satis -
+fying the demand D under Policy II, X
+II
+¼
+Z
+P
+g
+g ¼1
+O
+g
+ðZ Þ �
+P
+g
+g ¼1
+d
+g
+, g ¼ 1, 2, :::, h
+�
+�
+�
+o
+:
+�
+The definition of the LCV under two policies are 
+defined as below,
+Definition 1. LCV under Policy I
+A capacity vector Z is considered as the LCV in 
+X
+I 
+if and only if (i) O
+g 
+( Z ) � d
+g 
+and (ii) O
+g
+(Y) < d
+g 
+for at least one g for any capacity vector Y such 
+that Y < Z :
+Definition 2. LCV under Policy II
+A capacity vector Z ¼ ð z
+1
+, z
+2
+, :::, z
+n
+Þ is an 
+LCV in X
+II 
+if and only if (i) 
+P
+g
+g ¼1
+O
+g
+ð Z Þ �
+P
+g
+g ¼1
+d
+g 
+and (ii) 
+P
+g
+g ¼1
+O
+g 
+(Y) <
+P
+g
+g ¼1
+d
+g 
+for at least one g 
+and for any capacity vector Y such that Y < Z :
+4.4. Algorithm to generate LCV
+The following algorithm is developed for generating 
+the LCV under either Policy I or Policy II, 
+where the shortages of a grade are replenished from 
+available grades with superior quality or perform -
+ance. The applied policy is denoted by w, where w 
+2 f1, 2g, representing Policy I and Policy II, 
+respectively. Below is the pseudocode of the pro -
+posed algorithm.
+JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY
+ 9
+
+=== PDF PAGE 11 ===
+5. Application examples
+In this section, the manufacturing system of the ball 
+screw pair is utilised for validating the applicability 
+of the proposed algorithm. System reliabilities under 
+two policies are calculated with identical demands 
+of two grades for comparing the difference between 
+the two policies. Lastly, numerical experiments and 
+discussions are conducted.
+5.1. Background
+The ball screw pair is a crucial component used in 
+products across various fields, including machine 
+tools, robotics, and measurement equipment manu -
+facturing, as it provides precise and durable linear 
+motion. This motion is achieved by converting the 
+rotational movement of balls rolling along a helical 
+groove into linear motion. The specifications of 
+KQCs impact the functionality of ball screw pairs, 
+influencing their precision, accuracy, and repeatabil -
+ity of movement. The five processes involved in 
+forming all required quality characteristics and 
+KQCs, namely left-end centre hole fine drilling (e
+1
+), 
+bottom diameter fine grinding (e
+2
+), centre hole 
+grinding (e
+3
+), external diameter fine grinding (e
+4
+), 
+and screw diameter fine grinding (e
+5
+), are illustrated 
+in the formulated MFN, as shown in Figure 3 . The 
+multiple capacities and corresponding probability 
+that each workstation can provide a specific capacity 
+is shown in Table 2 .
+The tolerances and specification data of all KQCs 
+of ball screw pairs are presented in Table 3 . Based 
+on these tolerances, ball screw pairs are classified 
+into two grades, offering customers a selection 
+according to their preferences. Although grade 2 is 
+considered to be of a lower quality than grade 1, its 
+reduced price makes it an acceptable option for 
+some customers. Therefore, the manufacturing com -
+pany may receive orders for both grades from 
+diverse customers, and the demands for the two 
+grades are obtained by summing all orders that are 
+planned to be accepted.
+5.2. System reliability assessment and 
+experimental findings
+Suppose the demands of the two grades are 550 and 
+350, the system reliability is 0.6036 under Policy I 
+and 0.9486 under Policy II. The detailed calculations 
+are provided in Appendices D and E , respectively. 
+The system reliability under Policy II is approxi -
+mately 34% higher than that under Policy I. To fur -
+ther understand the impacts of different demands 
+under two policies, the required raw material, system 
+reliability, and the excess/shortage of each grade are 
+summarised in Tables 4 and 5 , respectively. The sys -
+tem reliability under Policy II is higher than or equal 
+Algorithm: Generating LCV under either policy
+1:   Input: (N, E, S), D ¼ (d
+1
+, d
+2
+, … , d
+h
+), w 
+2:   For a  1 to b // Step 1. Calculate the percentage of the ath KQC meeting all tolerances, respectively. 
+3:     For g  1 to h 
+4:      q
+a
+g
+ U
+�s
+a
+g
+− ^l
+X a
+^r
+X a
+� �
+− U
+s
+a
+g
+− ^l
+X a
+^r
+X a
+� �
+5:     End For 
+6:   End For 
+7:   For g  1 to h // Step 2. Calculate the percentage of each grade. 
+8:   Q
+g
+ 
+Q
+b
+a¼1
+q
+a
+g
+−
+Q
+b
+a¼1
+q
+a
+g−1 
+9:   End For 
+10:   If w ¼ 1 //Step 3. Calculate the required amount of raw material meeting demands under policy w. 
+11:      I  max
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+,
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+, :::;
+d
+h
+Q
+h
+�
+Q
+n
+i¼1
+h
+i
+� �
+12:       w
+1 
+ I 
+13:   ELSE 
+14:      I  max
+d 1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+,
+P
+h
+g¼1
+d
+q
+ð
+P
+2
+g¼1
+Q
+g
+Þ�
+Q
+n
+i¼1
+h
+i
+, :::,
+P
+h
+g¼1
+d
+q
+ð
+P
+h
+g¼1
+Q
+g
+Þ�
+Q
+n
+i¼1
+h
+i
+ !
+15:       w
+1 
+ I 
+16:   End IF 
+17:   For j  2 to n// Step4. Determine the workload of all workstations. 
+18:     w
+j 
+ w
+j−1
+�h
+j−1 
+19:   End For 
+20:   IF 8i 2 f1, … , ng, w
+i
+� m
+i 
+// Step 5. Check whether any workstation violates the maximal capacity constraint. 
+21:     For i  1 to n // Step 6. Determine the smallest number ti of machines in operation at workstation i that provides sufficient       
+capacity to process the workload wi. 
+22:       For t
+i 
+ 1 to u
+i 
+23:         IF t
+i
+�v
+i 
+� w
+i 
+> (t
+i 
+− 1)�v
+i
+. 
+24:           z
+i
+ t
+i
+�v
+i 
+25:         End IF 
+26:       End For 
+27:       End For 
+28:   Else R
+D 
+ 0 
+29:   End IF 
+30:   Output: Z ¼ ( z
+1
+; z
+2
+; … , z
+n
+) or R
+D 
+¼ 0
+10
+ H.-Y. CHEN AND Y.-K. LIN
+
+=== PDF PAGE 12 ===
+to that under Policy I. Specifically, when the system 
+reliability under the two policies is identical, such as 
+(d
+1
+, d
+2
+) ¼ (650,250) and (700, 200), it indicates that 
+no excess products are available for downward sub -
+stitution. As a result, Policy II becomes essentially 
+equivalent to Policy I under these demand scenarios. 
+Excess products arise only under Policy I. In con -
+trast, under Policy II, the amount of excess products 
+may be zero when shortages of grade 2 are exactly 
+offset by excess grade 1 through downward substitu -
+tion, such as (d
+1
+, d
+2
+) equalling (500, 400) or 
+(550, 350).
+Differing demands D for the two grades may lead 
+to different input values while resulting in the same 
+system reliability. Motivated by this observation, we 
+further evaluate the system reliability corresponding 
+to all possible input levels, which reveals that when 
+the input derived from demand D falls within a spe -
+cific range, the system reliability remains unchanged, 
+as illustrated in Figure 4 . For instance, system reli -
+ability equals 0.6036 when the amount I of raw 
+material input is in the range of [1559, 1627].
+Policy II implements downward substitution 
+whenever higher-quality products are available. 
+Figure 3. Ball screw manufacturing system.
+Table 2. Probability table of workstations in ball screw pair manufacturing system.
+Workstation Machine capacity Yield rate Machine reliability Workstation capacity Probability
+e
+1
+300 0.95 0.91 0 0.0000
+300 0.0000
+600 0.0001
+900 0.0017
+1200 0.0175
+1500 0.1061
+1800 0.3578
+2100 0.5168
+e
+2
+350 0.97 0.92 0 0.0000
+350 0.0000
+700 0.0005
+1050 0.0080
+1400 0.0688
+1750 0.3164
+2100 0.6064
+e
+3
+250 0.94 0.91 0 0.0000
+250 0.0000
+500 0.0001
+750 0.0017
+1000 0.0175
+1250 0.1061
+1500 0.3578
+1750 0.5168
+e
+4
+225 0.96 0.93 0 0.0000
+225 0.0000
+450 0.0000
+675 0.0001
+900 0.0013
+1125 0.0134
+1350 0.0888
+1575 0.3370
+1800 0.5596
+e
+5
+300 0.95 0.94 0 0.0000
+300 0.0000
+600 0.0002
+900 0.0036
+1200 0.0422
+1500 0.2642
+1800 0.6899
+Table 3. Performance and tolerances of each KQC.
+KQC
+Mean and standard deviation 
+( ^l
+X
+a
+; ^r
+X
+a
+)
+The first tolerance 
+[ �s
+a
+1
+; s
+a
+1
+]
+The second 
+tolerance 
+[ �s
+a
+2
+; s
+a
+2
+]
+a ¼ 1 Surface roughness (0.0007, 0.0001) [0, 0.0008] [0, 0.0009]
+a ¼ 2 Centre hole diameter (36.124, 0.052) [36, 36.2] [35.98, 36.22]
+a ¼ 3 External diameter (26.86, 0.04) [26.8, 27.05] [26.78, 27.06]
+a ¼ 4 Screw diameter (40.481, 0.020) [40.45, 40.51] [40.44, 40.52]
+JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY
+ 11
+
+=== PDF PAGE 13 ===
+Although the effect of limited substitution—where 
+only a portion of higher-quality products is used— -
+has not been directly addressed in this study, its 
+impact on system reliability can be obtained from the 
+raw material inputs required under Policy I and 
+Policy II. The required amount of raw material under 
+Policy I is generally greater than that under Policy II. 
+Any raw material input below the amount required 
+under Policy I necessitates downward substitution; 
+otherwise, the demand cannot be satisfied. In other 
+words, varying the raw material input within the 
+range between the amounts required under Policy I 
+and Policy II represents different extents of limited 
+downward substitution. Since the system reliability of 
+inputting different amounts of raw material for pro -
+duction has been demonstrated in Figure 4 , the vari -
+ation in system reliability under different levels of 
+limited downward substitution can therefore be 
+observed. For example, according to Tables 4 and 5 , 
+given D ¼ (550, 350), the required amount of raw 
+material input under Policy I is 1615.1585 and 
+1266.6672 under Policy II. Depending on the extent 
+of limited downward substitution, system reliability 
+can range from approximately 0.6 to 0.9.
+Additionally, the above results pertain only to the 
+simplest case, where products are categorised into two 
+grades. Further experiments for the general case 
+involve ball screw pairs of three grades (see Tables 6
+and 7 ). For simplicity, the percentages of the three 
+grades are assumed to be 0.5, 0.25, and 0.2, respect -
+ively. The results of the general case are largely con -
+sistent with those of the simplest case. The key 
+difference is that, in the simplest case, any available 
+excess products are fully used to offset shortages after 
+substitution. In the general case, however, excess prod -
+ucts may remain after substitution, as illustrated by 
+(d
+1
+, d
+2
+, d
+3
+) ¼ (400, 100, 200) or (200, 400, 100).
+6. Profit analysis and managerial 
+implications
+In this section, a profit analysis of the two policies 
+is conducted. Based on the profit performance and 
+system reliability results, several managerial implica -
+tions are discussed to support decision-making.
+6.1. Profit analysis
+Regardless of whether demand is fulfilled using 
+Policy I or Policy II, profit is always a primary con -
+cern for manufacturing managers. Therefore, the key 
+cost components involved in the production process, 
+including material input cost and processing cost are 
+further analysed in this section. Compared with 
+Policy II, Policy I is more likely to produce a larger 
+number of excess products. Therefore, to ensure a 
+fair comparison of profit between the two policies, 
+both the revenue obtained from selling excess prod -
+ucts and the inventory cost incurred before these 
+products are sold are taken into account. 
+Accordingly, under ideal conditions, excess products 
+of grade g are assumed to be sold after t
+g 
+days. For 
+clarity, the cost components considered in the profit 
+analysis are summarised as follows:
+(1) Material cost:
+The amount of raw material input determines the 
+material cost, which is calculated as I � MC, where 
+MC is the per-unit cost of a raw material.
+(2) Manufacturing cost:
+Manufacturing cost is driven by the amount of 
+material or work-in-progress being handled at each 
+Table 4. System reliability and relevant data with varying 
+demands under Policy I.
+D ¼ (d
+1
+, d
+2
+) I R
+D
+O
+1
+-d
+1
+O
+2
+-d
+2
+(400, 500) 2307.3693 0 739.4459 0
+(450, 450) 2076.6323 0 575.5013 0
+(500, 400) 1845.8954 0.0625 411.5567 0
+(500, 300) 1384.4504 0.8346 183.6675 0
+(400, 400) 1845.9339 0.0625 511.5567 0
+(550, 350) 1615.1585 0.6036 247.6121 0
+(600, 300) 1384.4216 0.8346 83.6675 0
+(650, 250) 1316.2451 0.9359 0 35.2264
+(700, 200) 1417.4947 0.8346 0 107.1669
+(750, 150) 1518.7443 0.6633 0 179.1073
+(750, 337) 1555.1669 0.6633 17.9865 0
+(750, 338) 1559.7816 0.6036 20.2654 0
+(750, 339) 1564.396 0.6036 22.5443 0
+         
+… … … … …
+(750, 352) 1624.3880 0.6036 52.1699 0
+(750, 353) 1629.0027 0.3566 54.4488 0
+Note: The rows from (d
+1
+, d
+2
+) ¼ (750, d
+2
+), where d
+2 
+¼ 340, 341, … , 
+351 are omitted for brevity, as the system reliability remains constant 
+across all values of d
+2
+.
+Table 5. System reliability and relevant data with varying 
+demands under Policy II.
+D ¼ (d
+1
+, d
+2
+) I R
+D
+O
+1
+-d
+1
+O
+2
+-d
+2
+(400, 500) 1266.6672 0.9486 225.5170 −225.5170
+(450, 450) 1266.6672 0.9486 175.5170 −175.5170
+(500, 400) 1266.6672 0.9486 125.5170 −125.5170
+(500, 300) 1125.9264 0.9655 56.0151 −56.0151
+(400, 400) 1125.9264 0.9655 156.0151 −156.0151
+(550, 350) 1266.6672 0.9486 75.5170 −75.5170
+(600, 300) 1266.6672 0.9486 25.5170 −25.5170
+(650, 250) 1316.2451 0.9359 0 35.2264
+(700, 200) 1417.4947 0.8346 0 107.1669
+(750, 150) 1518.7443 0.6633 0 179.1073
+(750, 337) 1529.8525 0.6633 5.4855 −5.48555
+(750, 338) 1531.2599 0.6633 6.1806 −6.18056
+(750, 339) 1532.6673 0.6633 6.8756 −6.87558
+         
+… … … … …
+(750, 352) 1550.9637 0.6633 15.9108 −15.9108
+(750, 353) 1552.3711 0.6633 16.6058 −16.6058
+Note: The negative value of (O
+2
+-d
+2
+) indicates the amount of products 
+that are required to be replenished by excess products of grade 1 to 
+meet the demand for grade 2 products; the rows from (d
+1
+, d
+2
+) ¼ (750, 
+d
+2
+), where d
+2 
+¼ 340, 341, … , 351 are omitted for brevity, as the sys -
+tem reliability remains constant across all values of d
+2
+.
+12
+ H.-Y. CHEN AND Y.-K. LIN
+
+=== PDF PAGE 14 ===
+workstation, calculated as 
+P
+n
+i¼1
+ðq
+i
+� w
+i
+Þ; where q
+i 
+is the manufacturing cost per unit at workstation i.
+(3) Inventory cost:
+The inventory cost refers to the cost that arises 
+when finished products of each grade remain in 
+inventory after demand is satisfied and before they 
+are sold. For Policy I, the number of excess products 
+at grade g is given by O
+g 
+− d
+g
+. In contrast, for Policy 
+II, the excess amount at each grade is defined as the 
+remaining amount after all downward substitution 
+actions have been completed. Let s
+g 
+be the inventory 
+cost per unit per day for grade g, t
+g 
+the storage dur -
+ation of grade g before being sold, and r
+g,a 
+the num -
+ber of grade g used to fulfil the demand of grade a, 
+where 1 � g < a � h. The inventory cost is calculated 
+as 
+P
+h
+g ¼1
+ððo
+g
+− d
+g
+−
+P
+h
+a¼g þ1
+r
+g , a
+Þ � s
+g
+� t
+g
+Þ :
+(4) Revenue loss from downward substitution:
+Since higher-quality grades possess greater value 
+and are associated with higher market prices than 
+lower-quality grades, using them to satisfy demand 
+for lower-quality grades results in a revenue loss. 
+Let p
+g 
+denote the market price of grade g, where p
+1 
+> p
+2 
+> … > p
+h
+. When a product of grade g is 
+used to fulfil the demand of grade a (g < a), the rev -
+enue loss caused by downward substitution is 
+defined as the price difference (p
+g 
+− p
+a
+). The total 
+revenue loss is calculated by summing the price dif -
+ferences over all downward substitution cases, 
+shown in 
+P
+h
+a¼2
+P
+a−1
+g ¼1
+r
+g , a
+ðp
+g
+–p
+a
+Þ:
+As mentioned, sales revenue is calculated by con -
+sidering the revenue from satisfying current demand 
+and the revenue obtained from selling excess prod -
+ucts in future periods.Following the four cost com -
+ponents described above, the profit is 
+P
+h
+g ¼1
+ðd
+g
+� p
+g
+Þ þ
+P
+h
+g ¼1
+ððo
+g
+− d
+g
+−
+P
+h
+a¼g þ1
+r
+g , a
+Þ �
+p
+g
+Þ − I � MC −
+P
+h
+g ¼1
+ððo
+g
+− d
+g
+−
+P
+h
+a¼g þ1
+r
+g , a
+Þ �
+Figure 4. The relationship between the amount of input and system reliability.
+Table 6. Experiments for the three-grade case under Policy 
+I at different demands.
+D ¼ (d
+1
+, d
+2
+, d
+3
+) I R
+D
+O
+1
+-d
+1
+O
+2
+-d
+2
+O
+3
+-d
+3
+(250, 150, 100) 759.4937 0.9990 50 0 19.9
+(150, 250, 100) 1265.8228 0.9487 350 0 100
+(100, 250, 150) 1265.8228 0.9487 400 0 50
+(250, 100, 150) 949.3671 0.9955 125 87.5 0
+(150, 100, 250) 1582.2785 0.6036 475 212.5 0
+(100, 150, 250) 1582.2785 0.6036 525 162.5 0
+(400, 200, 100) 1012.6582 0.9955 0 0 60
+(400, 100, 200) 1265.8228 0.9487 100 150 0
+(200, 100, 400) 2531.6456 0 800 400 0
+(200, 400, 100) 2025.3165 0 600 0 220
+(100, 200, 400) 2531.6456 0 900 300 0
+(100, 400, 200) 2025.3165 0 700 0 120
+Table 7. Experiments for the three-grade case under Policy 
+II at different demands.
+D ¼ (d
+1
+, d
+2
+, d
+3
+) I R
+D
+O
+1
+-d
+1
+O
+2
+-d
+2
+O
+3
+-d
+3
+(250, 150, 100) 675.1055 0.9990 16.6667 −16.6667 6.6667
+(150, 250, 100) 675.1055 0.9997 116.6667 −116.6667 6.6667
+(100, 250, 150) 666.2225 0.9997 163.1579 −118.4211 −44.7368
+(250, 100, 150) 666.2225 0.9997 13.1579 31.5789 −44.7368
+(150, 100, 250) 666.2225 0.9997 113.1579 31.5789 −144.7368
+(100, 150, 250) 666.2225 0.9997 163.1579 −18.4211 −144.7368
+(400, 200, 100) 1012.6582 0.9955 0 0 60
+(400, 100, 200) 1012.6582 0.9955 0 100 −40
+(200, 100, 400) 932.7115 0.9955 168.4211 84.2105 −252.6316
+(200, 400, 100) 1012.6582 0.9955 200 −200 60
+(100, 200, 400) 932.7115 0.9955 268.4211 −15.7895 −252.6316
+(100, 400, 200) 932.7115 0.9955 268.4211 −215.7895 −52.6316
+Note: The negative values of (O
+2
+-d
+2
+) and (O
+3
+-d
+3
+) represent shortages of 
+grade 2 and grade 3 products, respectively. These shortages are offset 
+by excess products from higher-quality grades.
+JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY
+ 13
+
+=== PDF PAGE 15 ===
+s
+g
+t
+g
+Þ −
+P
+h
+a¼2
+P
+a−1
+g ¼1
+r
+ga
+ðp
+g
+− p
+a
+Þ: The manufactur -
+ing cost per unit for all five workstations (q
+1 
+to q
+5
+) 
+are 3.8, 5.5, 5.8, 7.6, and 12.4 USD, respectively; the 
+material cost MC is 20.7 USD; the market price for 
+grade 1 and grade 2, denoted by p
+1 
+and p
+2
+, are 120 
+and 60 USD, respectively; the holding cost is 1 USD 
+per unit per day, and excess grade 1 and grade 2 are 
+assumed to be sold after 30 days of storage. Taking 
+D ¼ (550, 350) for example, for calculating the 
+profit under Policy I, the costs are calculated as 
+follows:
+(1) material cost:
+I � MC ¼ 1, 615:1585 � 20:7 ¼ 33433:7809 
+(2) manufacturing cost:
+X
+5
+i¼1
+q
+i
+� w
+ið Þ
+¼ 1, 615:1585 � 3:8
+þ 1, 534:4006 � 5:5 þ 1, 488:3685 � 5:8 
+þ1, 399:0665 � 7:6 þ 1, 343:1038 � 12:4 
+¼ 50, 496:7354 
+(3) Inventory cost is calculated as follows:
+X
+2
+g ¼1
+o
+g
+− d
+g
+−
+X
+2
+a¼g þ1
+r
+g , a
+0
+@
+1
+A
+� s
+g
+� t
+g
+0
+@
+1
+A
+¼ ðð797:6121 − 550 − 0Þ � 1 � 30Þ
+þ 350—350 − 0ð Þ � 1 � 30ð Þ
+¼ 7428:3630:
+Then, sales revenue from the current order is 
+equal to 87,000 USD (550 � 120 þ 350 � 60); sales 
+revenue for future demand is equal to 29,713.452 
+USD (247.6121 � 120 þ 0 � 60). The profit is 
+25,354.5727 USD (87,000 þ 29,713.452 − 33,433.7809 
+− 50,496.7354 − 7,428.3630).
+For profit calculation under Policy II, the costs 
+are first calculated as follows:
+(1) material cost:
+I � MC ¼ 1, 266:6672 � 20:7 ¼ 26, 220:0110 
+(2) manufacturing cost:
+X
+5
+i¼1
+q
+i
+� w
+ið Þ
+¼ 1, 266:6672 � 3:8
+þ 1, 203:3338 � 5:5 þ 1, 167:2338 � 5:8 
+þ1, 097:1998 � 7:6 þ 1, 053:3118 � 12:4 
+¼ 39, 601:4121 
+(3) Inventory cost is calculated as follows:
+X
+2
+g ¼1
+o
+g
+− d
+g
+−
+X
+2
+a¼g þ1
+r
+g , a
+0
+@
+1
+A
+� s
+g
+� t
+g
+0
+@
+1
+A
+¼ ðð625:5170 − 550 − 75:5170Þ � 1 � 30Þ
+þ ð0 � 1 � 30Þ
+¼ 0 
+(4) Substitution cost is calculated as follows:
+r
+12
+� ðp
+1
+− p
+2
+Þ ¼ 75:5170 � ð120 − 60Þ ¼ 4531:02 
+Then, sales revenue from the current order is equal 
+to 87,000 USD (550 � 120 þ 350 � 60). With no excess 
+products, revenue from excess products is zero. 
+Therefore, the profit is 16,647.5569 USD (87,000 þ
+0 − 26,220.0110 − 39,601.4121 − 0 − 4531.02).
+Profit and system reliability results for the two 
+policies and various demands for the two grades are 
+summarised in Table 8 . A trade-off between profit 
+and system reliability is revealed: higher profit is 
+obtained under Policy I with lower system reliabil -
+ity, whereas higher system reliability is obtained 
+under Policy II with reduced profit. Furthermore, a 
+set of experiments with D ¼ (550, 350) is conducted 
+to investigate the effect of the storage duration of 
+excess products before being sold, with the results 
+summarised in Table 9 . With increasing storage 
+duration, Policy I yields lower profit than Policy II.
+6.2. Managerial implications
+There is a clear trade-off between system reliability 
+and profit for Policy I and Policy II. Policy I is asso -
+ciated with higher profit but lower system reliability, 
+whereas Policy II is associated with higher system 
+reliability but lower profit. Based on the results for 
+system reliability and profit, actionable insights for 
+managers are summarised as follows:
+1. Under a profit-oriented managerial objective, 
+Policy I is a preferable option for managers. 
+However, the main drawback of Policy I lies in 
+its relatively low system reliability. To avoid an 
+excessively low system reliability, a feasible 
+approach is to reduce the demand for a specific 
+grade. This reduction can be implemented at 
+the order acceptance stage, where the manufac -
+turer determines the maximum order quantity 
+that can be accepted for each grade to achieve 
+an acceptable level of system reliability, 
+and then communicates the available supply 
+quantity to customers. For example, if the 
+14
+ H.-Y. CHEN AND Y.-K. LIN
+
+=== PDF PAGE 16 ===
+acceptable system reliability threshold is 0.8 
+when D ¼ (500, 400), system reliability under 
+Policy I is below 0.1. By reducing the demand 
+d
+2 
+for grade 2 by 100 units, the system reliabil -
+ity increases by approximately 0.7, reaching 0.83 
+(See Table 4 ). In this case, the decision is made 
+to decrease d
+2 
+by 100 units, rather than reduc -
+ing the demand d
+1 
+for grade 1, because even if 
+the demand d
+1 
+for grade 1 is reduced to zero, 
+the required input is still dominated by d
+2
+, and 
+the system reliability remains below 0.1.
+2. Under a system reliability-oriented managerial 
+objective, such as when fulfilling orders from 
+important customers or those with urgent 
+demands, where failing to meet demand could 
+jeopardise customer satisfaction and long-term 
+partnerships, ensuring system reliability 
+becomes a priority in decision-making. In such 
+cases, adopting Policy II is more appropriate, as 
+it helps secure successful order fulfilment, even 
+if it leads to lower profit. However, if prolonged 
+storage reduces the profit under Policy I below 
+that under Policy II, Policy II holds an absolute 
+advantage. For example, when the storage dur -
+ation increases from 30 days to 75 days, both 
+system reliability and profit under Policy II out -
+perform those under Policy I.
+7. Conclusion
+This study is mainly to assess the system reliability 
+and profit of a manufacturing system in the context 
+of fulfilling demands for products of different grades 
+under the same-grade fulfilment (Policy I) and 
+downward substitution (Policy II). System reliability 
+refers to the probability that the manufacturing sys -
+tem can meet the demands of all grades, serving as 
+an intuitive performance index for order acceptance 
+decisions. To evaluate system reliability, the manu -
+facturing system is modelled as a multistate flow 
+network (MFN). Next, we derive the lower capacity 
+vector (LCV) based on the relationship between the 
+workload and the multiple capacities of each work -
+station, enabling efficient calculation of system reli -
+ability. Experimental results reveal a clear trade-off 
+between system reliability and profit. Policy II 
+improves system reliability and reduces inventory, 
+but results in lower profit. Conversely, Policy I 
+achieves higher profit despite lower system reliabil -
+ity; nevertheless, prolonged storage duration may 
+gradually offset its profit advantage.
+The main contributions of this study are three -
+fold. First, the gap in current system reliability 
+assessment studies is bridged, as production grading 
+and demand fulfilment policies have not been 
+addressed, and studies on product grading and 
+downward substitution have overlooked the multi -
+state nature of manufacturing systems. Therefore, a 
+novel MFN model is established to consider the ful -
+filment of multi-grade orders. Second, an algorithm 
+is developed to generate LCV for computing system 
+reliability under Policy I (same-grade fulfilment) 
+and Policy II (downward substitution), with a proof 
+provided for deriving the amount of input required 
+to fulfil demands under Policy II. Finally, the practi -
+cality of the proposed algorithm is demonstrated 
+through a case study of a ball screw pair manufac -
+turing system. By jointly considering system reliabil -
+ity and profit, managers can identify the most 
+appropriate policy. When profit is prioritised, Policy 
+I is preferred, whereas Policy II is adopted to ensure 
+higher system reliability and secure order fulfilment.
+Furthermore, based on the findings and assump -
+tions of this study, several directions for future 
+Table 8. Impact of different demands on profit and system reliability under two 
+policies.
+D ¼ (d
+1
+, d
+2
+)
+Policy I 
+R
+D
+Policy II 
+R
+D
+Policy I 
+profit
+Policy II 
+profit
+Profit difference 
+(Policy I − Policy II)
+(400, 500) 0 0.9486 24,649.3842 −1,352.4431 26,001.8273
+(450, 450) 0 0.9486 24,884.4466 4,647.5569 20,236.8897
+(500, 400) 0.0625 0.9486 25,119.5069 10,647.5569 14,471.9500
+(500, 300) 0.8346 0.9655 22,529.6324 16,131.1614 6,398.4710
+(400, 400) 0.0625 0.9655 21,999.5069 4,131.1614 17,868.3455
+(550, 350) 0.6036 0.9486 25,354.5727 16,647.5569 8,707.0158
+(600, 300) 0.8346 0.9486 25,589.6324 22,647.5569 2,942.0755
+(650, 250) 0.9359 0.9359 25,659.0908 25,659.0908 0
+(700, 200) 0.8346 0.8346 25,555.9417 25,555.9417 0
+(750, 150) 0.6633 0.6633 25,452.7969 25,452.7969 0
+(750, 337) 0.6633 0.6633 31,025.6879 30,393.2152 632.4727
+(750, 338) 0.6036 0.6633 31,050.9808 30,338.3835 712.5973
+(750, 339) 0.6036 0.6633 31,076.2858 30,283.5497 792.7361
+Table 9. Profit comparison for different storage durations 
+when D ¼ (550, 350).
+Storage duration  
+(days)
+Profit of  
+Policy I
+Profit difference
+(Policy I–Policy II)
+15 29,068.7542 12,421.1973
+30 25,354.5727 8,707.0158
+45 21,640.3912 4,992.8343
+60 17,926.2097 1,278.6528
+75 14,212.0281 −2,435.5288
+Note: The profit of Policy II is $16,647.5569, as no excess products 
+remain, regardless of the storage duration.
+JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY
+ 15
+
+=== PDF PAGE 17 ===
+research are proposed. First, since there is a trade- 
+off between system reliability and profit under the 
+two policies, manufacturers are interested in identi -
+fying the optimal policy, which could be Policy I, 
+Policy II, or a partial downward substitution policy 
+representing varying levels of downward substitu -
+tion, by balancing these two conflicting objectives. 
+Consequently, the current problem can be extended 
+to a bi-objective optimisation problem that simul -
+taneously maximises profit and system reliability. 
+Second, the impact of rework on products with mul -
+tiple grades requires further exploration, especially 
+in terms of which product grades are suitable for 
+rework, the potential improvement to higher-quality 
+grades, the risk of becoming scrap, and the associ -
+ated costs. Finally, the current assumption is that all 
+KQCs are statistically independent. However, in 
+reality, KQCs may not be statistically independent, 
+and it is worth exploring the impact of this aspect 
+on the calculations of the percentage for each grade.
+Author contributions
+CRediT: Hsuan-Yu Chen: Data curation, Formal analysis, 
+Methodology, Software, Visualization, Writing – original 
+draft; Yi-Kuei Lin: Conceptualization, Funding acquisi -
+tion, Methodology, Project administration, Supervision, 
+Validation, Writing – review & editing.
+Disclosure statement
+No potential conflict of interest was reported by the 
+authors.
+Funding
+This work was partially supported by the National 
+Science and Technology Council, Taiwan, ROC, under 
+Grant No. NSTC 112-2221-E-A49-110-MY3.
+References
+Ahiska, S. S., Gocer, F., & King, R. E. (2017). Heuristic 
+inventory policies for a hybrid manufacturing/remanu -
+facturing system with product substitution. Computers 
+& Industrial Engineering, 114, 206–222. https://doi.org/ 
+10.1016/j.cie.2017.10.014
+Ahmadi, R., Castro, I. T., & Bautista, L. (2024). Reliability 
+modeling and maintenance planning for a parallel 
+system with respect to the state-dependent mean 
+residual time. Journal of the Operational Research 
+Society, 75(2), 297–313. https://doi.org/10.1080/ 
+01605682.2023.2194316
+Chang, P. C. (2019). Reliability estimation for a stochastic 
+production system with finite buffer storage by a simu -
+lation approach. Annals of Operations Research, 277(1), 
+119–133. https://doi.org/10.1007/s10479-017-2580-6
+Chang, P. C. (2022). Simulation approaches for multi- 
+state network reliability estimation: Practical applica -
+tions. Simulation Modelling Practice and Theory, 115, 
+102457. https://doi.org/10.1016/j.simpat.2021.102457
+Chang, P. C., Lin, Y. K., & Chen, J. C. (2017). System 
+reliability for a multi-state manufacturing network with 
+joint buffer stations. Journal of Manufacturing Systems, 
+42, 170–178. https://doi.org/10.1016/j.jmsy.2016.12.009
+Chang, P. C., Yeng, L C. L., Cheng, Y. C., & Lin, Y. K. 
+(2024). Assessing network reliability in a hybrid flow 
+shop with rush order insertion. Reliability Engineering 
+& System Safety, 245, 109990. https://doi.org/10.1016/j. 
+ress.2024.109990
+Craig, N., DeHoratius, N., & Klabjan, D. (2021). 
+Execution quality and chargeback penalties in retail 
+supply chains. Journal of Operations Management, 
+67(1), 31–48. https://doi.org/10.1002/joom.1092
+Freeman, N. K., Narayanan, A., & Keskin, B. B. (2021). 
+Optimal use of downward substitution in a manufac -
+turing operation subject to uncertainty. Omega, 103, 
+102372. https://doi.org/10.1016/j.omega.2020.102372
+Gallego, G., Katircioglu, K., & Ramachandran, B. (2006). 
+Semiconductor inventory management with multiple 
+grade parts and downgrading. Production Planning & 
+Control, 17(7), 689–700. https://doi.org/10.1080/ 
+09537280600901152
+Gupta, A., & Khanna, A. (2024). A holistic approach to 
+sustainable manufacturing: Rework, green technology, 
+and carbon policies. Expert Systems with Applications, 
+244, 122943. https://doi.org/10.1016/j.eswa.2023.122943
+He, Y., Gu, C., Chen, Z., & Han, X. (2017). Integrated 
+predictive maintenance strategy for manufacturing sys -
+tems by combining quality control and mission reliabil -
+ity analysis. International Journal of Production 
+Research, 55(19), 5841–5862. https://doi.org/10.1080/ 
+00207543.2017.1346843
+Hsieh, T. Y., Lee, K. J., & Breuer, M. A. (2011). An error- 
+tolerance-based test methodology to support product 
+grading for yield enhancement. IEEE Transactions on 
+Computer-Aided Design of Integrated Circuits and 
+Systems, 30(6), 930–934. https://doi.org/10.1109/TCAD. 
+2011.2113690
+Huang, C. H., & Lin, Y. K. (2024). Manufacturing system 
+evaluation in terms of system reliability via long short- 
+term memory. Reliability Engineering & System Safety, 
+251, 110365. https://doi.org/10.1016/j.ress.2024.110365
+Jia, M., Pan, Y., Zhou, J., & Zhang, M. (2021). 
+Identification of Chinese teas by a colorimetric sensor 
+array based on tea polyphenol induced indicator dis -
+placement assay. Food Chemistry, 335, 127566. https:// 
+doi.org/10.1016/j.foodchem.2020.127566
+Kalay, S., & Tas ¸kın, Z. C. (2021). Single machine cam -
+paign planning under sequence dependent family set -
+ups and co-production. Journal of the Operational 
+Research Society, 72(9), 2091–2111. https://doi.org/10. 
+1080/01605682.2020.1772016
+Kazemi, N., Abdul-Rashid, S. H., Ghazilla, R. A. R., 
+Shekarian, E., & Zanoni, S. (2018). Economic order 
+quantity models for items with imperfect quality and 
+emission considerations. International Journal of 
+Systems Science: Operations & Logistics, 5(2), 99–115. 
+https://doi.org/10.1080/23302674.2016.1240254
+Kim, J., & Lee, J. Y. (2023). Development of a quality pre -
+diction algorithm for an injection molding process con -
+sidering cavity sensor and vibration data. International 
+Journal of Precision Engineering and Manufacturing, 
+24(6), 901–914. https://doi.org/10.1007/s12541-023- 
+00792-w
+Kolus, A., & Duffuaa, S. (2025). Determining optimal 
+process means in a multi-stage production system with 
+inspection errors in 100% inspection. Quality 
+16
+ H.-Y. CHEN AND Y.-K. LIN
+
+=== PDF PAGE 18 ===
+Technology & Quantitative Management, 22(1), 105– 
+130. https://doi.org/10.1080/16843703.2024.2312016
+Lahmar, H., Dahane, M., Mouss, K. N., & Haoues, M. 
+(2025). Multi-objective sustainable production planning 
+for a hybrid multi-stage manufacturing-remanufactur -
+ing system with grade-based classification of recovered 
+and remanufactured products. Journal of Intelligent 
+Manufacturing, 36(2), 1385–1407. https://doi.org/10. 
+1007/s10845-023-02308-9
+Liao, R., He, Y., Feng, T., Yang, X., Dai, W., & Zhang, W. 
+(2023). Mission reliability-driven risk-based predictive 
+maintenance approach of multistate manufacturing sys -
+tem. Reliability Engineering & System Safety, 236, 
+109273. https://doi.org/10.1016/j.ress.2023.109273
+Lin, J. S., Jane, C. C., & Yuan, J. (1995). On reliability 
+evaluation of a capacitated-flow network in terms of 
+minimal pathsets. Networks, 25(3), 131–138. https://doi. 
+org/10.1002/net.3230250306
+Lin, Y. K., & Chang, P.-C. (2012). System reliability of a 
+manufacturing network with reworking action and dif -
+ferent failure rates. International Journal of Production 
+Research, 50(23), 6930–6944. https://doi.org/10.1080/ 
+00207543.2011.638939
+Lin, Y. K., Huang, D. H., & Yeng, L C. L. (2016). 
+Reliability evaluation of a hybrid flow-shop with sto -
+chastic capacity within a time constraint. IEEE 
+Transactions on Reliability, 65(2), 867–877. https://doi. 
+org/10.1109/TR.2015.2503745
+Lu, T., Chen, Y. J., Tomlin, B., & Wang, Y. (2019). 
+Selling co-products through a distributor: the impact 
+on product line design. Production and Operations 
+Management, 28(4), 1010–1032. https://doi.org/10.1111/ 
+poms.12966
+Luo, Z., & Chen, X. (2022). Ordering policies for hetero -
+geneous platelets demand with unreliable supply and 
+substitution. Journal of the Operational Research 
+Society, 73(4), 919–935. https://doi.org/10.1080/ 
+01605682.2021.1877577
+Niu, Y. F., Zhao, X., Xu, X. Z., & Zhang, S. Y. (2023). 
+Reliability assessment of a stochastic-flow distribution 
+network with carbon emission constraint. Reliability 
+Engineering & System Safety, 230, 108952. https://doi. 
+org/10.1016/j.ress.2022.108952
+Niu, Y., Wan, X., Xu, X., & Ding, D. (2020). Finding all 
+multi-state minimal paths of a multi-state flow network 
+via feasible circulations. Reliability Engineering & 
+System Safety, 204, 107188. https://doi.org/10.1016/j. 
+ress.2020.107188
+Notz, P. M., & Pibernik, R. (2022). Prescriptive analytics 
+for flexible capacity management. Management Science, 
+68(3), 1756–1775. https://doi.org/10.1287/mnsc.2020. 
+3867
+Park, K., Kim, J., Ko, Y. D., & Song, B. D. (2021). 
+Redesign of reverse logistics network with managerial 
+decisions on the minimum quality level and remanu -
+facturing policy. Journal of the Operational Research 
+Society, 72(7), 1564–1577. https://doi.org/10.1080/ 
+01605682.2020.1745702
+Raza, S. A., & Turiac, M. (2016). Joint optimal determin -
+ation of process mean, production quantity, pricing, 
+and market segmentation with demand leakage. 
+European Journal of Operational Research, 249(1), 312– 
+326. https://doi.org/10.1016/j.ejor.2015.08.032
+Shen, X., Yu, Y., & Song, J. S. (2022). Optimal policies for 
+a multi-echelon inventory problem with service time 
+target and expediting. Manufacturing & Service 
+Operations Management, 24(4), 2310–2327. https://doi. 
+org/10.1287/msom.2022.1079
+Su, P., Zang, G., Zhao, G., & Qiu, Q. (2024). Reliability 
+analysis of multi-state series systems with k-out-of-n: G 
+subsystems consideringperformance sharing. Journal of 
+the Operational Research Society, 75(12), 2352–2364. 
+https://doi.org/10.1080/01605682.2024.2314246
+Tang, K. (1990). Design of product grading procedures. 
+Decision Sciences, 21(2), 434–445. https://doi.org/10. 
+1111/j.1540-5915.1990.tb01695.x
+Transchel, S., Bansal, S., & Deb, M. (2016). Managing 
+production of high-tech products with high production 
+quality variability. International Journal of Production 
+Research, 54(6), 1689–1707. https://doi.org/10.1080/ 
+00207543.2015.1053579
+Wang, W., He, Y., Liao, R., Cai, Y., Zheng, X., & Zhao, 
+Y. (2022). Functional healthy state evaluation approach 
+for manufacturing systems considering imperfect 
+inspection based on extended stochastic flow network. 
+Journal of Manufacturing Systems, 64, 170–180. https:// 
+doi.org/10.1016/j.jmsy.2022.06.006
+Wu, D., Gong, M., Peng, R., Yan, X., & Wu, S. (2020). 
+Optimal product substitution and dual sourcing strat -
+egy considering reliability of production lines. 
+Reliability Engineering & System Safety, 202, 107037. 
+https://doi.org/10.1016/j.ress.2020.107037
+Yang, X., He, Y., Liao, R., Cai, Y., & Ai, J. (2022). 
+Integrated mission reliability modeling based on 
+extended quality state task network for intelligent mul -
+tistate manufacturing systems. Reliability Engineering & 
+System Safety, 223, 108495. https://doi.org/10.1016/j. 
+ress.2022.108495
+Yang, X., He, Y., Liao, R., Cai, Y., & Dai, W. (2024). 
+Mission reliability-centered opportunistic maintenance 
+approach for multistate manufacturing systems. 
+Reliability Engineering & System Safety, 241, 109693. 
+https://doi.org/10.1016/j.ress.2023.109693
+Yao, J., Gao, Z., He, Y., & Peng, C. (2024). Integrated 
+mission reliability modeling for multistate manufactur -
+ing systems considering heterogeneous feedstocks based 
+on extended stochastic flow manufacturing network. 
+Reliability Engineering & System Safety, 243, 109840. 
+https://doi.org/10.1016/j.ress.2023.109840
+Yeh, C. T., Lin, Y. K., Yeng, L C. L., & Chao, Y. L. 
+(2023). Hybrid flow-shop manufacturing network reli -
+ability optimization using genetic algorithm and 
+absorbing Markov chain. Applied Mathematical 
+Modelling, 120, 595–611. https://doi.org/10.1016/j.apm. 
+2023.04.005
+Yeh, W. C. (2018). Fast algorithm for searching d-MPs for 
+all possible d. IEEE Transactions on Reliability, 67(1), 
+308–315. https://doi.org/10.1109/TR.2017.2771495
+Yu, Y., Shou, B., Ni, Y., & Chen, L. (2017). Optimal pro -
+duction, pricing, and substitution policies in continu -
+ous review production-inventory systems. European 
+Journal of Operational Research, 260(2), 631–649. 
+https://doi.org/10.1016/j.ejor.2017.01.012
+Zhang, Y., Li, L., Song, M., & Yi, R. (2019). Optimal toler -
+ance design of hierarchical products based on quality loss 
+function. Journal of Intelligent Manufacturing, 30(1), 185– 
+192. https://doi.org/10.1007/s10845-016-1238-6
+Zheng, W., & Gershwin, S. B. (2015). Heuristic produc -
+tion and sale policy for a two-product-type manufac -
+turing system with downward substitution. IEEE 
+Transactions on Systems, Man, and Cybernetics: 
+Systems, 45(6), 929–942. https://doi.org/10.1109/tsmc. 
+2014.2371876
+JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY
+ 17
+
+=== PDF PAGE 19 ===
+Appendix A: Proof of Proposition 1
+Proposition 1. If 
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+>
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+; then 
+d
+1
+þd
+2
+ðQ
+1
+þQ
+2
+Þ�
+Q
+n
+i¼1
+h
+i
+>
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+:
+Proof: 
+d
+1
+þd
+2
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+ 
+d
+1
+Q
+1
+�
+Y
+n
+i¼1
+h
+i
+¼
+Q
+1
+�
+Y
+n
+i¼1
+h
+i
+� d
+1
+þd
+2
+ð Þ − d
+1
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+Q
+1
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+�
+Y
+n
+i¼1
+h
+i
+¼
+Q
+1
+�
+Y
+n
+i¼1
+h
+i
+� d
+1
+þ Q
+1
+�
+Y
+n
+i¼1
+h
+i
+� d
+2
+− Q
+1
+�
+Y
+n
+i¼1
+h
+i
+� d
+1
+− d
+1
+� Q
+2
+�
+Y
+n
+i¼1
+h
+i
+Q
+1
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+�
+Y
+n
+i¼1
+h
+i
+¼
+Q
+1
+�
+Y
+n
+i¼1
+h
+i
+� d
+2
+− d
+1
+� Q
+2
+�
+Y
+n
+i¼1
+h
+i
+Q
+1
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+�
+Y
+n
+i¼1
+h
+i
+¼
+d
+2
+Q
+2
+�
+Y
+n
+i¼1
+h
+i
+−
+d
+1
+Q
+1
+�
+Y
+n
+i¼1
+h
+i
+0
+@
+1
+A
+� Q
+1
+�
+Y
+n
+i¼1
+h
+i
+� Q
+2
+�
+Y
+n
+i¼1
+h
+i
+Q
+1
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+�
+Y
+n
+i¼1
+h
+i 
+This value is positive, when 
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+>
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+:
+Appendix B: Proof of Proposition 2
+Proposition 2. If 
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+<
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+; then 
+d
+1
+þd
+2
+ðQ
+1
+þQ
+2
+Þ�
+Q
+n
+i¼1
+h
+i
+>
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+Proof: 
+d
+1
+þd
+2
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+ 
+d
+2
+Q
+2
+�
+Y
+n
+i¼1
+h
+i
+¼
+Q
+2
+�
+Y
+n
+i¼1
+h
+i
+� d
+1
+þd
+2
+ð Þ − d
+2
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+Q
+1
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+�
+Y
+n
+i¼1
+h
+i
+¼
+d
+1
+� Q
+2
+�
+Y
+n
+i¼1
+h
+i
+þ d
+2
+� Q
+2
+�
+Y
+n
+i¼1
+h
+i
+− d
+2
+� Q
+1
+�
+Y
+n
+i¼1
+h
+i
+− d
+2
+� Q
+2
+�
+Y
+n
+i¼1
+h
+i
+Q
+1
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+�
+Y
+n
+i¼1
+h
+i
+¼
+d
+1
+� Q
+2
+�
+Y
+n
+i¼1
+h
+i
+− d
+2
+� Q
+1
+�
+Y
+n
+i¼1
+h
+i
+Q
+1
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+�
+Y
+n
+i¼1
+h
+i
+¼
+d
+1
+Q
+2
+�
+Y
+n
+i¼1
+h
+i
+−
+d
+2
+Q
+1
+�
+Y
+n
+i¼1
+h
+i
+0
+@
+1
+A
+� Q
+1
+�
+Y
+n
+i¼1
+h
+i
+� Q
+2
+�
+Y
+n
+i¼1
+h
+i
+Q
+1
+ðQ
+1
+þQ
+2
+Þ �
+Y
+n
+i¼1
+h
+i
+�
+Y
+n
+i¼1
+h
+i 
+This value will be positive, when 
+d
+1
+Q
+1
+�
+Q
+n
+i¼1
+h
+i
+>
+d
+2
+Q
+2
+�
+Q
+n
+i¼1
+h
+i
+:
+18
+ H.-Y. CHEN AND Y.-K. LIN
+
+=== PDF PAGE 20 ===
+Appendix C: Acronyms and notations
+Acronyms
+KQC key quality characteristic
+MFN multistate flow network
+LCV lower capacity vector
+LSL lower specification limit
+USL upper specification limit
+WIP work in progress
+Notations
+b number of KQCs of the product
+h number of tolerances of a specific KQC specified by all orders.
+s
+a
+g
+minimum specification of the gth tolerance of the ath KQC, 
+a ¼ 1, 2, … , b, g ¼ 1, 2, … , h.
+�s
+a
+g
+maximum specification of the gth tolerance of the ath KQC, 
+a ¼ 1, 2, … , b, g ¼ 1, 2, … , h.
+S {[ s
+a
+g
+; �s
+a
+g
+]j a ¼ 1, 2, … , b, g ¼ 1, 2, … , h}: set of all tolerances 
+for all KQCs.
+X
+a
+a random variable represents the specifications of the ath 
+KQC, a ¼ 1, 2, … , b.
+^l
+X
+a
+the estimated mean of the ath KQC, a ¼ 1, 2, … , b.
+^r
+X
+a
+the estimated standard deviation of the ath KQC, a ¼ 1, 2, 
+… , b.
+q
+a
+g
+the probability of the ath KQC meets the gth tolerance, a ¼ 1, 
+2, … , b, g ¼ 1, 2, … , h.
+Q
+g
+the percentage of products belong to grade g in produced 
+products, g ¼ 1, 2, … , h.
+U( �) cumulative distribution function of standard normal 
+distribution.
+N set of nodes(buffers).
+n number of workstations in the manufacturing system
+e
+i
+ith arc(workstation), i ¼ 1, 2, … , n.
+E {e
+i
+j i ¼ 1, 2, … , n}: set of edges (workstation).
+G (N, E, S) an MFN.
+h
+i
+yield rate of the ith arc(workstation), i ¼ 1, 2, … , n.
+O
+q
+the amount of grade q products produced by the 
+manufacturing system, q ¼ 1, 2, … , s.
+d
+g
+the demand for grade g products, g ¼ 1, 2, … , h.
+D (d1, d2, … , dh): demands for products of all grades from all 
+orders.
+I the amounts of raw materials input into the manufacturing 
+system.
+I
+g
+the amount of raw material input that guarantees the 
+satisfaction of the demand of grade g through only grade g 
+products, g ¼ 1, 2, … , h.
+I
+0
+g
+the amount of input that guarantees the satisfaction of the 
+demand for grade g through downward substitution, g ¼ 2, 3, 
+… , h.
+m
+i
+number of identical machines in the ith workstation, i ¼ 1, 2, 
+… , n.
+t
+i
+number of functioning machines in workstation i, i ¼ 1, 2, 
+… , n.
+p
+i
+machine availability at the ith workstation, i ¼ 1, 2, … , n.
+w
+i
+workload of the ith workstation i, i ¼ 1, 2, … , n.
+z
+i
+current capacity of e
+i
+, i ¼ 1, 2, … , n.
+Z (z
+1
+, z
+2
+, … , z
+n
+): the capacity vector.
+O
+g
+(Z) the maximal cumulative output of products from grade 1 
+through grade r products when the amount of raw material 
+input is equal to I, given the capacity vector Z, r ¼ 1, 2, … , s.
+X
+I
+set of capacity vectors that provide sufficient capacity to 
+satisfy D under Policy I.
+X
+II
+set of capacity vectors that provide sufficient capacity to 
+satisfy D under Policy II.
+z
+i
+the minimal capacity that the ith workstation can provide to 
+satisfy the workload w
+i
+.
+Z ( z
+1
+; z
+2
+; … , z
+n
+): an LCV in X
+I 
+(under Policy I) or X
+II 
+(Policy II).
+R
+D
+system reliability, i.e., the probability that the MFN can meet 
+the demand across all grades D.
+MC per-unit cost of a raw material
+q
+i
+manufacturing cost per unit at workstation i, i ¼ 1, 2, … , n.
+s
+g
+inventory cost per unit per day for grade g, g ¼ 1, 2, … , h.
+t
+g
+(continued )
+storage duration of grade g before being sold, g ¼ 1, 2, 
+… , h.
+r
+g,a
+the amount of grade g used to fulfil the demand of grade a, 
+where 1 � g < a < h.
+p
+g
+the market price of grade g, g ¼ 1, 2, … , h.
+Appendix D: System reliability assessment 
+details under Policy I
+INPUT: (N, E, S), D ¼ (550, 350)
+Step 1. The calculation of the percentage of each KQC 
+meeting all different tolerances is as follows:
+q
+1
+1
+¼ U
+0:0008 − 0:0007
+0:0001
+� �
+− U
+0 − 0:0007
+0:0001
+� �
+¼ 0:8413, 
+q
+1
+2
+¼ U
+0:0009 − 0:0007
+0:0001
+� �
+− U
+0 − 0:0007
+0:0001
+� �
+¼ 0:9999, 
+q
+2
+1
+¼ U
+36:2 − 36:124
+0:052
+� �
+− U
+36 − 36:124
+0:052
+� �
+¼ 0:9195, 
+q
+2
+2
+¼ U
+36:22 − 36:124
+0:052
+� �
+− U
+35:98 − 36:124
+0:052
+� �
+¼ 0:9647, 
+q
+3
+1
+¼ U
+27:05 − 26:86
+0:04
+� �
+− U
+26:8 − 26:86
+0:04
+� �
+¼ 0:9332, 
+q
+3
+2
+¼ U
+27:06 − 26:86
+0:04
+� �
+− U
+26:78 − 26:86
+0:04
+� �
+¼ 0:9772, 
+q
+4
+1
+¼ U
+40:51 − 40:481
+0:02
+� �
+− U
+40:45 − 40:481
+0:02
+� �
+¼ 0:8659, 
+q
+4
+2
+¼ U
+40:52 − 40:481
+0:02
+� �
+− U
+40:44 − 40:481
+0:02
+� �
+¼ 0:9542:
+Step 2. The percentages of the two grades are
+Q
+1
+¼
+Y
+4
+a¼1
+q
+a
+1
+¼ 0:6251, 
+Q
+2
+¼
+Y
+4
+a¼1
+q
+a
+2
+−
+Y
+4
+a¼1
+q
+a
+1
+¼ 0:8994 − 0:6251 ¼ 0:2743:
+Step 3. The amount of input I fulfilling D ¼ (550, 350) is
+I ¼ max
+550
+0:6251 � 0:79
+,
+350
+0:2743 � 0:79
+� �
+¼ 1615:1585:
+The workload w
+1 
+of the first workstation is 1615.1585 
+units.
+Step 4. The workloads for the rest of the workstations are 
+listed as follows:
+w
+2 
+¼ 1615.1585 � 0.95 ¼ 1534.4006,
+w
+3 
+¼ 1534.4006 � 0.97 ¼ 1488.3686,
+w
+4 
+¼ 1488.3686 � 0.94 ¼ 1399.0665,
+w
+5 
+¼ 1399.0665 � 0.96 ¼ 1343.1038.
+Step 5. All workloads are below the corresponding max -
+imal capacities listed in Table 2 , i.e., w
+i 
+< m
+i
+, i ¼ 1, 2, 3, 
+4, 5.
+Step 6. The required capacity at the first workstation to 
+process the workload is 1800 ( z
+1 
+¼ 1800 � 1615.1585 >
+1500), and those at the remaining workstations are 
+JOURNAL OF THE OPERATIONAL RESEARCH SOCIETY
+ 19
+
+=== PDF PAGE 21 ===
+determined similarly. Consequently, the LCV is obtained 
+as Z ¼ (1800, 1750, 1500, 1575 , 1500).
+OUTPUT: Z ¼ (1800, 1750, 1500, 1575 , 1500).
+System reliability is assessed via  
+R
+D¼ð550; 350Þ
+¼ PrfZ jZ � Z g
+¼ PrfZ j z
+1
+, z
+2
+, :::, z
+nð Þ
+� ð1800; 1750; 1500; 1575; 1500Þg
+¼ 0:8745 � 0:9227 � 0:8745 � 0:8965 � 0:9541   
+¼ 0:6036:
+Appendix E: System reliability assessment 
+details under Policy II
+The system reliability of the MFN under Policy II, given 
+demands of 550 and 350 units for the two grades, is 
+obtained as follows:
+INPUT: (N, E, S), D ¼ (550, 350)
+Step 1. The percentages of each KQC meeting all differ -
+ent tolerances are the same as the results presented in 
+Appendix D , Step 1.
+Step 2. The percentages of two grades are the same as the 
+result shown in Appendix D .
+Step 3. The amount of input I fulfilling D ¼ (550, 350) is  
+I ¼ max
+550
+0:6251 � 0:79
+,
+550 þ 350
+0:6251 þ 0:2743ð Þ � 0:79
+� �
+¼ 1266:6672:
+The workload w
+1 
+of the first workstation is 1266.6672.
+Step 4. The workloads for the subsequent workstations 
+are as follows:
+w
+2 
+¼ 1203.3338,
+w
+3 
+¼ 1167.2338,
+w
+4 
+¼ 1097.1998,
+w
+5 
+¼ 1053.3118.
+Step 5. All workloads are below the corresponding max -
+imal capacities listed in Table 2 , i.e., w
+i 
+< m
+i
+, i ¼ 1, 2, 3, 
+4, 5.
+Step 6. The required capacity at the first workstation to 
+process the workload is 1500 ( z
+1 
+¼ 1500 � 1266.6672 >
+1200), and those at the remaining workstations are deter -
+mined similarly. Therefore, the LCV is obtained as 
+Z ¼ (1500, 1400, 1250, 1125, 1200).
+OUPUT: Z ¼ (1500, 1400, 1250, 1125, 1200)
+Then, system reliability is assessed via  
+R
+D¼ð550; 350Þ
+¼ PrfZ jZ � Z g
+¼ PrfZ j z
+1
+, z
+2
+, :::, z
+nð Þ
+� ð1500; 1400; 1250; 1125; 1200Þg
+¼ 0:9486:
+20
+ H.-Y. CHEN AND Y.-K. LIN

@@ -1,0 +1,269 @@
+{
+  "question": "Can independent direct outcome draws reproduce the full-grid CE error witnesses?",
+  "assumptions": "Round80: fresh independent count draws validate deterministic CE witnesses.\n\nSix points fixed before RNG: full-grid largest overestimate, its two neighbors,\nlargest underestimate, and the two original round76 witnesses at integer I.\nAnalytic values computed before simulation. Draw initial multinomial, freeze\nmaximal return, then draw future binomial. Both service profiles share histories.\nThese are model checks, not new factory data or empirical calibration.\n",
+  "seed": 2026102880,
+  "replicas_per_group": 65536,
+  "family_error_probability": 0.05,
+  "headline": {
+    "predefined_points": 6,
+    "service_profiles_checked": 12,
+    "all_exact_values_inside_simultaneous_intervals": true,
+    "elapsed_seconds": 6.660051599996223
+  },
+  "trace": {
+    "path": "research\\2026-10-28\\service_rounds\\round80_validation.npz",
+    "sha256": "5548b58e19de7ca1b8a57c40771be04d493192e0df365665ab2a0a46855c21c0"
+  },
+  "rows": [
+    {
+      "demands": [
+        500,
+        300
+      ],
+      "input": 1151,
+      "matched_CE": 0.0,
+      "exact_random_success": 0.47525747013409836,
+      "exact_mean_success": 0.47525746778747746,
+      "group_count": 42,
+      "sum_squared_group_weights": 0.5145535175441878,
+      "simulation": {
+        "random_success": {
+          "estimate": 0.47430807830560967,
+          "standard_error": 0.0014013489405999904,
+          "simultaneous_interval": [
+            0.46938500727321997,
+            0.4792311493379994
+          ]
+        },
+        "mean_success": {
+          "estimate": 0.47430807830560967,
+          "standard_error": 0.0014013489405999904,
+          "simultaneous_interval": [
+            0.46938500727321997,
+            0.4792311493379994
+          ]
+        }
+      },
+      "paired_mean_minus_random": {
+        "estimate": 0.0,
+        "standard_error": 0.0
+      },
+      "CE_bias_interval": [
+        -0.4792311493379994,
+        -0.46938500727321997
+      ]
+    },
+    {
+      "demands": [
+        500,
+        300
+      ],
+      "input": 1152,
+      "matched_CE": 0.965588170343986,
+      "exact_random_success": 0.5096676774039661,
+      "exact_mean_success": 0.509667675058769,
+      "group_count": 42,
+      "sum_squared_group_weights": 0.5145535175441878,
+      "simulation": {
+        "random_success": {
+          "estimate": 0.5101357097517025,
+          "standard_error": 0.0013971642038556541,
+          "simultaneous_interval": [
+            0.5052126387193128,
+            0.5150587807840923
+          ]
+        },
+        "mean_success": {
+          "estimate": 0.5101357097517025,
+          "standard_error": 0.0013971642038556541,
+          "simultaneous_interval": [
+            0.5052126387193128,
+            0.5150587807840923
+          ]
+        }
+      },
+      "paired_mean_minus_random": {
+        "estimate": 0.0,
+        "standard_error": 0.0
+      },
+      "CE_bias_interval": [
+        0.45052938955989374,
+        0.46037553162467326
+      ]
+    },
+    {
+      "demands": [
+        500,
+        300
+      ],
+      "input": 1153,
+      "matched_CE": 0.965588170343986,
+      "exact_random_success": 0.5096676774039661,
+      "exact_mean_success": 0.509667675058769,
+      "group_count": 42,
+      "sum_squared_group_weights": 0.5145535175441878,
+      "simulation": {
+        "random_success": {
+          "estimate": 0.5112004116964958,
+          "standard_error": 0.001398669035969742,
+          "simultaneous_interval": [
+            0.506277340664106,
+            0.5161234827288855
+          ]
+        },
+        "mean_success": {
+          "estimate": 0.5112004116964958,
+          "standard_error": 0.001398669035969742,
+          "simultaneous_interval": [
+            0.506277340664106,
+            0.5161234827288855
+          ]
+        }
+      },
+      "paired_mean_minus_random": {
+        "estimate": 0.0,
+        "standard_error": 0.0
+      },
+      "CE_bias_interval": [
+        0.4494646876151005,
+        0.45931082967988
+      ]
+    },
+    {
+      "demands": [
+        650,
+        250
+      ],
+      "input": 1297,
+      "matched_CE": 0.0,
+      "exact_random_success": 0.48917363945660314,
+      "exact_mean_success": 0.47312183631392907,
+      "group_count": 45,
+      "sum_squared_group_weights": 0.4968379586099337,
+      "simulation": {
+        "random_success": {
+          "estimate": 0.49024673580143063,
+          "standard_error": 0.0013775614249554448,
+          "simultaneous_interval": [
+            0.48540915523825257,
+            0.4950843163646087
+          ]
+        },
+        "mean_success": {
+          "estimate": 0.4743636865979003,
+          "standard_error": 0.0013780537830029125,
+          "simultaneous_interval": [
+            0.4695261060347222,
+            0.47920126716107836
+          ]
+        }
+      },
+      "paired_mean_minus_random": {
+        "estimate": -0.015883049203530272,
+        "standard_error": 0.0004072178930243493
+      },
+      "CE_bias_interval": [
+        -0.4950843163646087,
+        -0.48540915523825257
+      ]
+    },
+    {
+      "demands": [
+        650,
+        250
+      ],
+      "input": 1316,
+      "matched_CE": 0.9486622836415535,
+      "exact_random_success": 0.8457438282793046,
+      "exact_mean_success": 0.8386545383159933,
+      "group_count": 48,
+      "sum_squared_group_weights": 0.48372978673252565,
+      "simulation": {
+        "random_success": {
+          "estimate": 0.8454898690636501,
+          "standard_error": 0.0008310718679914388,
+          "simultaneous_interval": [
+            0.8407165304712982,
+            0.8502632076560019
+          ]
+        },
+        "mean_success": {
+          "estimate": 0.8387371130456571,
+          "standard_error": 0.0008546604443727569,
+          "simultaneous_interval": [
+            0.8339637744533053,
+            0.843510451638009
+          ]
+        }
+      },
+      "paired_mean_minus_random": {
+        "estimate": -0.006752756017992904,
+        "standard_error": 0.000274416734806188
+      },
+      "CE_bias_interval": [
+        0.09839907598555153,
+        0.10794575317025523
+      ]
+    },
+    {
+      "demands": [
+        750,
+        337
+      ],
+      "input": 1699,
+      "matched_CE": 0.6036078101523445,
+      "exact_random_success": 0.625033616526386,
+      "exact_mean_success": 0.6249417887696147,
+      "group_count": 59,
+      "sum_squared_group_weights": 0.12807381375820165,
+      "simulation": {
+        "random_success": {
+          "estimate": 0.625128192920251,
+          "standard_error": 8.767060799010808e-05,
+          "simultaneous_interval": [
+            0.6226720649133712,
+            0.6275843209271308
+          ]
+        },
+        "mean_success": {
+          "estimate": 0.62504374853061,
+          "standard_error": 8.758408802960193e-05,
+          "simultaneous_interval": [
+            0.6225876205237302,
+            0.6274998765374897
+          ]
+        }
+      },
+      "paired_mean_minus_random": {
+        "estimate": -8.44443896411111e-05,
+        "standard_error": 6.934359423153043e-06
+      },
+      "CE_bias_interval": [
+        -0.02397651077478624,
+        -0.01906425476102669
+      ]
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T23:24:38.108744+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round80_mean_quality_witness_validation.py": "6eb20127d005a4bb78139786b5d0f4350697750d64a5b1dca2347c394661d9d7",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\round76_certainty_equivalent_audit.py": "fa55911e9810333826e53af701c4cabdbab8dab51415ee558613e98702503653",
+      "backbone\\maximal_service_curve.py": "4918c910b2475804433fe7eb940bc043e7cb28d7bc06e2a26f8c94bd27ae241b",
+      "backbone\\stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+      "backbone\\integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+      "backbone\\round62_stochastic_policy_replay.py": "2027de6c7a4d0da35ea14d7bccacd45d5eabad9595643e81f76b2539c7d9c453",
+      "research\\2026-10-28\\service_rounds\\round79.json": "cc7a930bc607b2783d5d2557a50a5f018f4a77230893d9aa65a091c3525e9062",
+      "research\\2026-10-28\\service_rounds\\round63.json": "06416f0b6ce66dcae7ce2737c3eb27eecf278f90fb5f2950b1944ab1713e9f78"
+    }
+  }
+}

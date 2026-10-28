@@ -1,0 +1,71 @@
+{
+  "archive": "research\\2026-10-28\\service_rounds\\round69_frozen_policies.npz",
+  "sha256": "9342e210f0e47b960f38a5b8bf6485dc821deb46bb5ad8814ac3bdacbd60450e",
+  "shape": [
+    1601,
+    1601
+  ],
+  "indices": [
+    "initial grade1 count A",
+    "available maximal return R"
+  ],
+  "bitorder": "big",
+  "demands": [
+    750,
+    150
+  ],
+  "setup_fee": 2000.0,
+  "eta": 0.97,
+  "station": 5,
+  "warning": "Decisions reproducible; route and quality law still hypothetical and order-specific.",
+  "policies": [
+    {
+      "key": "iid",
+      "kappa": null,
+      "input": 1495,
+      "boundary": {
+        "A": 745,
+        "R": 31,
+        "ratio": 458.1000000000022,
+        "randomized_open_probability": 0.052807686148957304,
+        "observed_state_mass": 0.00036891113427809714,
+        "conditional_service_gain": 0.9999999999999966
+      },
+      "expected_profit": 23034.32729959787,
+      "expected_service": 0.7503494297908824,
+      "packed_decisions_sha256": "8f383c82e4ef6b4871e681bbaa00e25664955a4b17c1c68dc164a3eff022013f"
+    },
+    {
+      "key": "batch_1000",
+      "kappa": 1000.0,
+      "input": 1523,
+      "boundary": {
+        "A": 745,
+        "R": 27,
+        "ratio": 637.6999999999988,
+        "randomized_open_probability": 0.8638281360422297,
+        "observed_state_mass": 0.0001460316578094887,
+        "conditional_service_gain": 1.0000000000000016
+      },
+      "expected_profit": 22832.193204841224,
+      "expected_service": 0.7500198854030409,
+      "packed_decisions_sha256": "766eec7d5cb731bf8fb19995e45e749d5f09c939a727b66c20bb1e90914257b4"
+    },
+    {
+      "key": "batch_100",
+      "kappa": 100.0,
+      "input": 1687,
+      "boundary": {
+        "A": 748,
+        "R": 4,
+        "ratio": 1760.5890567867252,
+        "randomized_open_probability": 0.43588946228969516,
+        "observed_state_mass": 6.299917625383863e-06,
+        "conditional_service_gain": 0.9998944299999999
+      },
+      "expected_profit": 20738.993112965447,
+      "expected_service": 0.7500035534747392,
+      "packed_decisions_sha256": "83d747cbfd72aa4f888492d6666c7d878148cf28d220cf90d882cc1c77ddc1ab"
+    }
+  ]
+}

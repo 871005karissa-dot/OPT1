@@ -1,0 +1,588 @@
+{
+  "question": "Does replacing random class counts by their means preserve joint service claims across the source orders?",
+  "assumptions": "Round76: compare plug-in mean-quality service with finite-batch service.\n\nAll profiles send maximal allowed returns, with automatic substitution; no\neconomic setup choice is compared. Points are fixed in advance: every source\norder's mean-gradewise input and first service-maximizing integer input, plus\nround73's four selected economic inputs (used as input anchors only).\nMatched CE shares N=floor(normal output) and integer return capacity/counts;\nonly initial grades/eligible counts are replaced by means. Then separately\ncompare random initial quality with mean future successes vs binomial successes.\nThese are model comparisons, not claims that the source's own assumptions err.\n",
+  "grade_shares": [
+    0.6251333806714808,
+    0.25405385346844744
+  ],
+  "eligible_fraction": 0.13623480476369879,
+  "headline": {
+    "small_all_outcome_checks": 6,
+    "max_small_error": 4.440892098500626e-16,
+    "order_pairs": 15,
+    "predefined_input_points": 34,
+    "largest_matched_CE_overestimate": 0.10291845536224886,
+    "largest_matched_CE_underestimate": -0.021425806374041456,
+    "false80_claim_points": 0,
+    "elapsed_seconds": 6.315635500002827
+  },
+  "rows": [
+    {
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 2491.3009074725123,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9435866905883774,
+      "random_initial_quality_random_success": 0.9435866905885983,
+      "matched_CE_minus_finite_batch": 0.00507559305295513,
+      "fluid_CE_minus_finite_batch": 0.00507559305295513,
+      "mean_future_minus_random_future": -2.2093438190040615e-13,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1466.0,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9435866905887508,
+      "random_initial_quality_random_success": 0.943586690589649,
+      "matched_CE_minus_finite_batch": 0.005075593051904526,
+      "fluid_CE_minus_finite_batch": 0.005075593051904526,
+      "mean_future_minus_random_future": -8.981704269217516e-13,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 2242.170816725261,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9435866905883774,
+      "random_initial_quality_random_success": 0.9435866905885983,
+      "matched_CE_minus_finite_batch": 0.00507559305295513,
+      "fluid_CE_minus_finite_batch": 0.00507559305295513,
+      "mean_future_minus_random_future": -2.2093438190040615e-13,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1466.0,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9435866905887508,
+      "random_initial_quality_random_success": 0.943586690589649,
+      "matched_CE_minus_finite_batch": 0.005075593051904526,
+      "fluid_CE_minus_finite_batch": 0.005075593051904526,
+      "mean_future_minus_random_future": -8.981704269217516e-13,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1993.04072597801,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9435866905883774,
+      "random_initial_quality_random_success": 0.9435866905885983,
+      "matched_CE_minus_finite_batch": 0.00507559305295513,
+      "fluid_CE_minus_finite_batch": 0.00507559305295513,
+      "mean_future_minus_random_future": -2.2093438190040615e-13,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1466.0,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9435866905887508,
+      "random_initial_quality_random_success": 0.9435866905896488,
+      "matched_CE_minus_finite_batch": 0.005075593051904637,
+      "fluid_CE_minus_finite_batch": 0.005075593051904637,
+      "mean_future_minus_random_future": -8.980594046192891e-13,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1494.7805444835074,
+      "fluid_mean_quality_mean_success": 0.965588170343986,
+      "matched_floor_integer_return_mean_quality": 0.965588170343986,
+      "random_initial_quality_mean_success": 0.9655780876115555,
+      "random_initial_quality_random_success": 0.9655780876118729,
+      "matched_CE_minus_finite_batch": 1.0082732113114723e-05,
+      "fluid_CE_minus_finite_batch": 1.0082732113114723e-05,
+      "mean_future_minus_random_future": -3.1741276274033225e-13,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1466.0,
+      "fluid_mean_quality_mean_success": 0.965588170343986,
+      "matched_floor_integer_return_mean_quality": 0.965588170343986,
+      "random_initial_quality_mean_success": 0.9655780876117065,
+      "random_initial_quality_random_success": 0.9655780876129221,
+      "matched_CE_minus_finite_batch": 1.0082731063953965e-05,
+      "fluid_CE_minus_finite_batch": 1.0082731063953965e-05,
+      "mean_future_minus_random_future": -1.2155831896620839e-12,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1993.04072597801,
+      "fluid_mean_quality_mean_success": 0.965588170343986,
+      "matched_floor_integer_return_mean_quality": 0.965588170343986,
+      "random_initial_quality_mean_success": 0.9655780876116813,
+      "random_initial_quality_random_success": 0.9655780876119185,
+      "matched_CE_minus_finite_batch": 1.0082732067484557e-05,
+      "fluid_CE_minus_finite_batch": 1.0082732067484557e-05,
+      "mean_future_minus_random_future": -2.3725466036239595e-13,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1466.0,
+      "fluid_mean_quality_mean_success": 0.965588170343986,
+      "matched_floor_integer_return_mean_quality": 0.965588170343986,
+      "random_initial_quality_mean_success": 0.965578087612049,
+      "random_initial_quality_random_success": 0.965578087612953,
+      "matched_CE_minus_finite_batch": 1.0082731032978742e-05,
+      "fluid_CE_minus_finite_batch": 1.0082731032978742e-05,
+      "mean_future_minus_random_future": -9.04054608952265e-13,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1743.9106352307585,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9435866905886393,
+      "random_initial_quality_random_success": 0.9435866905894184,
+      "matched_CE_minus_finite_batch": 0.005075593052135119,
+      "fluid_CE_minus_finite_batch": 0.005075593052135119,
+      "mean_future_minus_random_future": -7.790434963794723e-13,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1466.0,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9435866905887269,
+      "random_initial_quality_random_success": 0.9435866905896468,
+      "matched_CE_minus_finite_batch": 0.005075593051906635,
+      "fluid_CE_minus_finite_batch": 0.005075593051906635,
+      "mean_future_minus_random_future": -9.199307982044047e-13,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input_role": "economic_input_anchor_maximal_returns_not_economic_policy",
+      "input": 1495.0,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9435866905886976,
+      "random_initial_quality_random_success": 0.9435866905887751,
+      "matched_CE_minus_finite_batch": 0.005075593052778382,
+      "fluid_CE_minus_finite_batch": 0.005075593052778382,
+      "mean_future_minus_random_future": -7.749356711883593e-14,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1494.7805444835074,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9435859011218508,
+      "random_initial_quality_random_success": 0.94358658168455,
+      "matched_CE_minus_finite_batch": 0.0050757019570034645,
+      "fluid_CE_minus_finite_batch": 0.0050757019570034645,
+      "mean_future_minus_random_future": -6.80562699195697e-07,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1428.0,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9435859011221759,
+      "random_initial_quality_random_success": 0.9435865816856177,
+      "matched_CE_minus_finite_batch": 0.005075701955935763,
+      "fluid_CE_minus_finite_batch": 0.005075701955935763,
+      "mean_future_minus_random_future": -6.805634418238782e-07,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1316.2022695330663,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.8386545383159933,
+      "random_initial_quality_random_success": 0.8457438282793046,
+      "matched_CE_minus_finite_batch": 0.10291845536224886,
+      "fluid_CE_minus_finite_batch": 0.10291845536224886,
+      "mean_future_minus_random_future": -0.007089289963311263,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1409.0,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9431099419008728,
+      "random_initial_quality_random_success": 0.9433223820880062,
+      "matched_CE_minus_finite_batch": 0.005339901553547244,
+      "fluid_CE_minus_finite_batch": 0.005339901553547244,
+      "mean_future_minus_random_future": -0.0002124401871334003,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input_role": "economic_input_anchor_maximal_returns_not_economic_policy",
+      "input": 1352.0,
+      "fluid_mean_quality_mean_success": 0.9486622836415535,
+      "matched_floor_integer_return_mean_quality": 0.9486622836415535,
+      "random_initial_quality_mean_success": 0.9426453132109824,
+      "random_initial_quality_random_success": 0.9429065696939296,
+      "matched_CE_minus_finite_batch": 0.005755713947623864,
+      "fluid_CE_minus_finite_batch": 0.005755713947623864,
+      "mean_future_minus_random_future": -0.00026125648294716974,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1417.4485979586868,
+      "fluid_mean_quality_mean_success": 0.9359685590330102,
+      "matched_floor_integer_return_mean_quality": 0.9359685590330102,
+      "random_initial_quality_mean_success": 0.8879027442485287,
+      "random_initial_quality_random_success": 0.8902178144239314,
+      "matched_CE_minus_finite_batch": 0.0457507446090788,
+      "fluid_CE_minus_finite_batch": 0.0457507446090788,
+      "mean_future_minus_random_future": -0.002315070175402778,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1699.0,
+      "fluid_mean_quality_mean_success": 0.9359685590330102,
+      "matched_floor_integer_return_mean_quality": 0.9359685590330102,
+      "random_initial_quality_mean_success": 0.8923723742491116,
+      "random_initial_quality_random_success": 0.8938665041250986,
+      "matched_CE_minus_finite_batch": 0.042102054907911635,
+      "fluid_CE_minus_finite_batch": 0.042102054907911635,
+      "mean_future_minus_random_future": -0.0014941298759869603,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input_role": "economic_input_anchor_maximal_returns_not_economic_policy",
+      "input": 1395.0,
+      "fluid_mean_quality_mean_success": 0.9359685590330102,
+      "matched_floor_integer_return_mean_quality": 0.9359685590330102,
+      "random_initial_quality_mean_success": 0.856809797174571,
+      "random_initial_quality_random_success": 0.861300734187239,
+      "matched_CE_minus_finite_batch": 0.07466782484577128,
+      "fluid_CE_minus_finite_batch": 0.07466782484577128,
+      "mean_future_minus_random_future": -0.004490937012668006,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1518.6949263843073,
+      "fluid_mean_quality_mean_success": 0.7993362698839475,
+      "matched_floor_integer_return_mean_quality": 0.7993362698839475,
+      "random_initial_quality_mean_success": 0.7833603218379882,
+      "random_initial_quality_random_success": 0.7845697859264389,
+      "matched_CE_minus_finite_batch": 0.01476648395750857,
+      "fluid_CE_minus_finite_batch": 0.01476648395750857,
+      "mean_future_minus_random_future": -0.0012094640884506846,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1699.0,
+      "fluid_mean_quality_mean_success": 0.7993362698839475,
+      "matched_floor_integer_return_mean_quality": 0.7993362698839475,
+      "random_initial_quality_mean_success": 0.7887204732120943,
+      "random_initial_quality_random_success": 0.7894483131190578,
+      "matched_CE_minus_finite_batch": 0.009887956764889627,
+      "fluid_CE_minus_finite_batch": 0.009887956764889627,
+      "mean_future_minus_random_future": -0.0007278399069635677,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input_role": "economic_input_anchor_maximal_returns_not_economic_policy",
+      "input": 1495.0,
+      "fluid_mean_quality_mean_success": 0.7993362698839475,
+      "matched_floor_integer_return_mean_quality": 0.7993362698839475,
+      "random_initial_quality_mean_success": 0.7585214972643838,
+      "random_initial_quality_random_success": 0.7614719178751892,
+      "matched_CE_minus_finite_batch": 0.03786435200875826,
+      "fluid_CE_minus_finite_batch": 0.03786435200875826,
+      "mean_future_minus_random_future": -0.0029504206108054154,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1679.1368116364733,
+      "fluid_mean_quality_mean_success": 0.6036078101523445,
+      "matched_floor_integer_return_mean_quality": 0.6036078101523445,
+      "random_initial_quality_mean_success": 0.6249417887136014,
+      "random_initial_quality_random_success": 0.6250336164712411,
+      "matched_CE_minus_finite_batch": -0.021425806318896568,
+      "fluid_CE_minus_finite_batch": -0.021425806318896568,
+      "mean_future_minus_random_future": -9.182775763971751e-05,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1699.0,
+      "fluid_mean_quality_mean_success": 0.6036078101523445,
+      "matched_floor_integer_return_mean_quality": 0.6036078101523445,
+      "random_initial_quality_mean_success": 0.6249417887696147,
+      "random_initial_quality_random_success": 0.625033616526386,
+      "matched_CE_minus_finite_batch": -0.021425806374041456,
+      "fluid_CE_minus_finite_batch": -0.021425806374041456,
+      "mean_future_minus_random_future": -9.182775677130106e-05,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1684.1194134514183,
+      "fluid_mean_quality_mean_success": 0.6036078101523445,
+      "matched_floor_integer_return_mean_quality": 0.6036078101523445,
+      "random_initial_quality_mean_success": 0.6230014856795308,
+      "random_initial_quality_random_success": 0.6230826220160363,
+      "matched_CE_minus_finite_batch": -0.01947481186369171,
+      "fluid_CE_minus_finite_batch": -0.01947481186369171,
+      "mean_future_minus_random_future": -8.11363365054163e-05,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1699.0,
+      "fluid_mean_quality_mean_success": 0.6036078101523445,
+      "matched_floor_integer_return_mean_quality": 0.6036078101523445,
+      "random_initial_quality_mean_success": 0.6230014856969198,
+      "random_initial_quality_random_success": 0.6230826220336335,
+      "matched_CE_minus_finite_batch": -0.019474811881288967,
+      "fluid_CE_minus_finite_batch": -0.019474811881288967,
+      "mean_future_minus_random_future": -8.113633671369413e-05,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1689.1020152663634,
+      "fluid_mean_quality_mean_success": 0.6036078101523445,
+      "matched_floor_integer_return_mean_quality": 0.6036078101523445,
+      "random_initial_quality_mean_success": 0.6211269319758189,
+      "random_initial_quality_random_success": 0.6211980069898616,
+      "matched_CE_minus_finite_batch": -0.017590196837517058,
+      "fluid_CE_minus_finite_batch": -0.017590196837517058,
+      "mean_future_minus_random_future": -7.107501404268746e-05,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1699.0,
+      "fluid_mean_quality_mean_success": 0.6036078101523445,
+      "matched_floor_integer_return_mean_quality": 0.6036078101523445,
+      "random_initial_quality_mean_success": 0.6211269319807033,
+      "random_initial_quality_random_success": 0.6211980069952229,
+      "matched_CE_minus_finite_batch": -0.017590196842878325,
+      "fluid_CE_minus_finite_batch": -0.017590196842878325,
+      "mean_future_minus_random_future": -7.107501451952825e-05,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1753.8758388606486,
+      "fluid_mean_quality_mean_success": 0.6036078101523445,
+      "matched_floor_integer_return_mean_quality": 0.6036078101523445,
+      "random_initial_quality_mean_success": 0.6040495415857254,
+      "random_initial_quality_random_success": 0.6040597687203463,
+      "matched_CE_minus_finite_batch": -0.0004519585680017313,
+      "fluid_CE_minus_finite_batch": -0.0004519585680017313,
+      "mean_future_minus_random_future": -1.0227134620843792e-05,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1744.0,
+      "fluid_mean_quality_mean_success": 0.6036078101523445,
+      "matched_floor_integer_return_mean_quality": 0.6036078101523445,
+      "random_initial_quality_mean_success": 0.6040495415857656,
+      "random_initial_quality_random_success": 0.604059768720922,
+      "matched_CE_minus_finite_batch": -0.00045195856857749295,
+      "fluid_CE_minus_finite_batch": -0.00045195856857749295,
+      "mean_future_minus_random_future": -1.0227135156415379e-05,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "input_role": "mean_gradewise_input",
+      "input": 1758.8584406755938,
+      "fluid_mean_quality_mean_success": 0.6036078101523445,
+      "matched_floor_integer_return_mean_quality": 0.6036078101523445,
+      "random_initial_quality_mean_success": 0.6030448927105123,
+      "random_initial_quality_random_success": 0.603054360383664,
+      "matched_CE_minus_finite_batch": 0.0005534497686805473,
+      "fluid_CE_minus_finite_batch": 0.0005534497686805473,
+      "mean_future_minus_random_future": -9.467673151686284e-06,
+      "CE_says80_finite_batch_below80": false
+    },
+    {
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "input_role": "first_maximal_service_integer_input",
+      "input": 1744.0,
+      "fluid_mean_quality_mean_success": 0.6036078101523445,
+      "matched_floor_integer_return_mean_quality": 0.6036078101523445,
+      "random_initial_quality_mean_success": 0.6030448927105347,
+      "random_initial_quality_random_success": 0.6030543603842219,
+      "matched_CE_minus_finite_batch": 0.0005534497681226602,
+      "fluid_CE_minus_finite_batch": 0.0005534497681226602,
+      "mean_future_minus_random_future": -9.46767368714685e-06,
+      "CE_says80_finite_batch_below80": false
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T23:03:42.338875+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round76_certainty_equivalent_audit.py": "fa55911e9810333826e53af701c4cabdbab8dab51415ee558613e98702503653",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\maximal_service_curve.py": "4918c910b2475804433fe7eb940bc043e7cb28d7bc06e2a26f8c94bd27ae241b",
+      "backbone\\stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+      "backbone\\integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+      "backbone\\round58_integer_rework_success.py": "0513112170e3e760a07021b0012c28ade915dc38eda2ed0e3adb48e2989f7457",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "research\\2026-10-28\\service_rounds\\round71.json": "f6cf19d7cf5a5b395441c1b185992142e067ebb294cd6a06e73a4f9383e0cd3e",
+      "research\\2026-10-28\\service_rounds\\round73.json": "92b291a2557a50511aee5afb4bd647f54e4a604d95ec1330a80b7375a5af031b",
+      "research\\2026-10-28\\service_rounds\\round63.json": "06416f0b6ce66dcae7ce2737c3eb27eecf278f90fb5f2950b1944ab1713e9f78"
+    }
+  }
+}

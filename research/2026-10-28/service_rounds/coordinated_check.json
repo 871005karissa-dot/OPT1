@@ -1,0 +1,7 @@
+{
+  "state_order_eta_recovery_cases": 720,
+  "max_profit_error": 2.9103830456733704e-11,
+  "complete_action_feasible_checks": 360,
+  "max_complete_action_profit_error": 2.9103830456733704e-11,
+  "method": "independent scalar flow/cost plus generic two-variable LP half-plane intersections, both profit-only and complete-order constraints"
+}

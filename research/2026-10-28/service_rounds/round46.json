@@ -1,0 +1,120 @@
+{
+  "question": "Does the fluid-policy service claim survive independent quality scenarios, and can an input buffer meet a lower target?",
+  "assumptions": "Round46: independent validation after selecting input from round45's sample.\n\nFreeze a finite-grid policy using training-only normal service lower limits;\nthen use a fresh random stream for two fixed policies (onset and selected input).\nFor each validation replica and capacity state, quality draws are independent.\nWeighted Hoeffding plus a union bound gives simultaneous two-sided intervals:\nepsilon = sqrt(sum_s p_s^2 * log(2*m/delta)/(2*N)).\nN is independent QUALITY REPLICAS PER CAPACITY STATE, not N*28224 unweighted\nBernoulli trials. Bounds address simulation error under the stated model only.\nNo continuous-input global optimum or empirical service guarantee is claimed.\n",
+  "training_round": 45,
+  "training_selection_rule": "Highest estimated profit among the nine local candidates whose training normal-approximation 95% service lower limit is at least .75; this rule is for candidate selection only.",
+  "validation_seed": 2026102846,
+  "replicas_per_capacity_state": 4096,
+  "family_error_probability": 0.05,
+  "sum_squared_capacity_probabilities": 0.018595582252734878,
+  "independent_validation_after_policy_selection": true,
+  "selected_input": 1538.7914361142653,
+  "anchor_input": 1518.7914361142653,
+  "paired_service_difference": {
+    "estimate": 0.05126340267845196,
+    "standard_error": 0.00039706793854055227,
+    "normal_approximation_95_interval": [
+      0.050485163819496935,
+      0.05204164153740699
+    ],
+    "replicas": 4096
+  },
+  "paired_profit_difference": {
+    "estimate": -62.68718581826065,
+    "standard_error": 0.30334331200131714,
+    "normal_approximation_95_interval": [
+      -63.281727784734315,
+      -62.09264385178699
+    ],
+    "replicas": 4096
+  },
+  "trace": {
+    "path": "research\\2026-10-28\\service_rounds\\round46_validation_values.npz",
+    "sha256": "32baa16bb0b80a1c63c3bce0b5354eb12a97a07f13e5e61a5505ff911e1f6b9f"
+  },
+  "headline": {
+    "elapsed_seconds": 58.34878920000119,
+    "validated_policies": 2,
+    "quality_capacity_outcomes": 231211008,
+    "radius": 0.003153896413603088
+  },
+  "rows": [
+    {
+      "input": 1518.7914361142653,
+      "role": "grade1_onset",
+      "service": {
+        "estimate": 0.7052491817870241,
+        "standard_error": 0.0004847315566637784,
+        "normal_approximation_95_interval": [
+          0.7042991253937931,
+          0.7061992381802551
+        ],
+        "replicas": 4096
+      },
+      "simultaneous_hoeffding_interval": [
+        0.702095285373421,
+        0.7084030782006272
+      ],
+      "hoeffding_radius": 0.003153896413603088,
+      "profit": {
+        "estimate": 28150.381922718483,
+        "standard_error": 2.5201896669873087,
+        "normal_approximation_95_interval": [
+          28145.442441736977,
+          28155.32140369999
+        ],
+        "replicas": 4096
+      },
+      "passes_75_percent_under_model": false,
+      "rejects_80_percent_under_model": true
+    },
+    {
+      "input": 1538.7914361142653,
+      "role": "selected_on_training",
+      "service": {
+        "estimate": 0.7565125844654761,
+        "standard_error": 0.00043359225350664727,
+        "normal_approximation_95_interval": [
+          0.7556627592646276,
+          0.7573624096663246
+        ],
+        "replicas": 4096
+      },
+      "simultaneous_hoeffding_interval": [
+        0.753358688051873,
+        0.7596664808790792
+      ],
+      "hoeffding_radius": 0.003153896413603088,
+      "profit": {
+        "estimate": 28087.694736900223,
+        "standard_error": 2.4735724039811937,
+        "normal_approximation_95_interval": [
+          28082.846624075268,
+          28092.542849725178
+        ],
+        "replicas": 4096
+      },
+      "passes_75_percent_under_model": true,
+      "rejects_80_percent_under_model": true
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T18:29:09.691290+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round46_independent_service_validation.py": "2151959b14e2f99f53a291939fde4499082275922da271b4f7791f0704e90bff",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+      "backbone\\round40_quality_recoverability.py": "8477646c60d3fb420d8411305e8ac6a0fd4786b4f0a0fd3e57ef8e8662ca058b",
+      "backbone\\round44_random_quality_counts.py": "7b65eadc503cb25f5aa6ac1ceebb48fdb55bcd56cb1dcc1644cb211c2541065b",
+      "backbone\\round45_threshold_stability.py": "ad84ac8293899a4ad859af3d64763633e0fde0c5e94655f3b6d3dea4edde7caf"
+    }
+  }
+}

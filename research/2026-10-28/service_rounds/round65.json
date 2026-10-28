@@ -1,0 +1,850 @@
+{
+  "question": "Can higher initial quality lower service under a reoptimized profit-only setup policy, despite improving capability?",
+  "assumptions": "Round65: distinguish physical service capability from an endogenous profit policy.\n\nFixed normal flow/input, q2 and eligible-subclass probability. Increase q1 by\nconverting some originally defective items to grade1, leaving B/E unchanged\nin a coupling. Maximal-return service is nondecreasing under that coupling.\nWith a setup fee, the profit-best policy can stop repairing when initial A\nimproves, because the fill-price benefit shrinks before the order is fully met.\nA pointwise counterexample does not by itself prove a population reversal;\nthe finite-law parameter sweep reports whether one occurs in this case.\n",
+  "fixed_input": 1518.6949263843073,
+  "q2": 0.25405385346844744,
+  "eligible_fraction": 0.13623480476369879,
+  "headline": {
+    "quality_points": 9,
+    "fee_quality_cases": 27,
+    "population_reversals_observed": 0,
+    "max_change_in_available_rework_mean": 4.511946372076636e-12,
+    "elapsed_seconds": 4.737920400002622
+  },
+  "pointwise_direct_all_action_example": [
+    {
+      "A": 725,
+      "B": 190,
+      "eligible": 30,
+      "spare": 30,
+      "best": {
+        "return": 30,
+        "net_revenue_before_normal_cost": 97296.99222635332,
+        "conditional_service": 0.9997673921937618
+      },
+      "no_return": {
+        "return": 0,
+        "net_revenue_before_normal_cost": 97200.0,
+        "conditional_service": 0.0
+      },
+      "all_return": {
+        "return": 30,
+        "net_revenue_before_normal_cost": 97296.99222635332,
+        "conditional_service": 0.9997673921937618
+      }
+    },
+    {
+      "A": 730,
+      "B": 190,
+      "eligible": 30,
+      "spare": 30,
+      "best": {
+        "return": 0,
+        "net_revenue_before_normal_cost": 97800.0,
+        "conditional_service": 0.0
+      },
+      "no_return": {
+        "return": 0,
+        "net_revenue_before_normal_cost": 97800.0,
+        "conditional_service": 0.0
+      },
+      "all_return": {
+        "return": 30,
+        "net_revenue_before_normal_cost": 97746.99999998196,
+        "conditional_service": 0.9999999994297428
+      }
+    }
+  ],
+  "population_reversals": [],
+  "rows": [
+    {
+      "q1": 0.59,
+      "q2": 0.25405385346844744,
+      "setup_fee": 1000.0,
+      "profit_best": {
+        "expected_profit": 19749.335722821426,
+        "fulfilment_probability": 0.3278606855706173,
+        "expected_rework": 38.663068612454914,
+        "activation_probability": 0.9590912277277092
+      },
+      "maximum_service": 0.32786405428376597,
+      "target_75": {
+        "target": 0.75,
+        "feasible": false
+      }
+    },
+    {
+      "q1": 0.59,
+      "q2": 0.25405385346844744,
+      "setup_fee": 2000.0,
+      "profit_best": {
+        "expected_profit": 18800.608933987678,
+        "fulfilment_probability": 0.30756134084113956,
+        "expected_rework": 37.21165013233157,
+        "activation_probability": 0.9085059083199135
+      },
+      "maximum_service": 0.3278640542837659,
+      "target_75": {
+        "target": 0.75,
+        "feasible": false
+      }
+    },
+    {
+      "q1": 0.59,
+      "q2": 0.25405385346844744,
+      "setup_fee": 3000.0,
+      "profit_best": {
+        "expected_profit": 18101.813444576077,
+        "fulfilment_probability": 0.11230478305916917,
+        "expected_rework": 17.581995386692274,
+        "activation_probability": 0.37963588656462677
+      },
+      "maximum_service": 0.32786405428376597,
+      "target_75": {
+        "target": 0.75,
+        "feasible": false
+      }
+    },
+    {
+      "q1": 0.6,
+      "q2": 0.25405385346844744,
+      "setup_fee": 1000.0,
+      "profit_best": {
+        "expected_profit": 20991.229610353217,
+        "fulfilment_probability": 0.5381950930037126,
+        "expected_rework": 38.662035838599984,
+        "activation_probability": 0.9590416143699325
+      },
+      "maximum_service": 0.5382035013709897,
+      "target_75": {
+        "target": 0.75,
+        "feasible": false
+      }
+    },
+    {
+      "q1": 0.6,
+      "q2": 0.25405385346844744,
+      "setup_fee": 2000.0,
+      "profit_best": {
+        "expected_profit": 20055.417918746054,
+        "fulfilment_probability": 0.48521402651973583,
+        "expected_rework": 35.4800960408513,
+        "activation_probability": 0.8599359384996802
+      },
+      "maximum_service": 0.5382035013709897,
+      "target_75": {
+        "target": 0.75,
+        "feasible": false
+      }
+    },
+    {
+      "q1": 0.6,
+      "q2": 0.25405385346844744,
+      "setup_fee": 3000.0,
+      "profit_best": {
+        "expected_profit": 19450.118479232468,
+        "fulfilment_probability": 0.15198451029074989,
+        "expected_rework": 13.322232533181479,
+        "activation_probability": 0.284620734180176
+      },
+      "maximum_service": 0.5382035013709897,
+      "target_75": {
+        "target": 0.75,
+        "feasible": false
+      }
+    },
+    {
+      "q1": 0.61,
+      "q2": 0.25405385346844744,
+      "setup_fee": 1000.0,
+      "profit_best": {
+        "expected_profit": 22164.844173993275,
+        "fulfilment_probability": 0.6926078039845828,
+        "expected_rework": 38.65990691668048,
+        "activation_probability": 0.9589400842481538
+      },
+      "maximum_service": 0.6926206778421531,
+      "target_75": {
+        "target": 0.75,
+        "feasible": false
+      }
+    },
+    {
+      "q1": 0.61,
+      "q2": 0.25405385346844744,
+      "setup_fee": 2000.0,
+      "profit_best": {
+        "expected_profit": 21256.32897508616,
+        "fulfilment_probability": 0.6004129249319039,
+        "expected_rework": 31.93400090308219,
+        "activation_probability": 0.7640320858134279
+      },
+      "maximum_service": 0.6926206778421532,
+      "target_75": {
+        "target": 0.75,
+        "feasible": false
+      }
+    },
+    {
+      "q1": 0.61,
+      "q2": 0.25405385346844744,
+      "setup_fee": 3000.0,
+      "profit_best": {
+        "expected_profit": 20784.872677279047,
+        "fulfilment_probability": 0.19775263098490392,
+        "expected_rework": 8.531865787003676,
+        "activation_probability": 0.18006137950740245
+      },
+      "maximum_service": 0.6926206778421531,
+      "target_75": {
+        "target": 0.75,
+        "feasible": false
+      }
+    },
+    {
+      "q1": 0.62,
+      "q2": 0.25405385346844744,
+      "setup_fee": 1000.0,
+      "profit_best": {
+        "expected_profit": 23296.371209390763,
+        "fulfilment_probability": 0.7674775738901345,
+        "expected_rework": 38.65715621146423,
+        "activation_probability": 0.9588096591957771
+      },
+      "maximum_service": 0.7674898612296847,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 23296.371209390763,
+          "fulfilment_probability": 0.7674775738901345,
+          "expected_rework": 38.65715621146423,
+          "activation_probability": 0.9588096591957771
+        },
+        "deterministic_feasible": {
+          "expected_profit": 23296.371209390763,
+          "fulfilment_probability": 0.7674775738901345,
+          "expected_rework": 38.65715621146423,
+          "activation_probability": 0.9588096591957771
+        },
+        "deterministic_gap_upper_bound": 0.0,
+        "boundary": null,
+        "lagrangian_loss_lower_bound": 0.0,
+        "primal_dual_gap": 0.0
+      }
+    },
+    {
+      "q1": 0.62,
+      "q2": 0.25405385346844744,
+      "setup_fee": 2000.0,
+      "profit_best": {
+        "expected_profit": 22426.692779205383,
+        "fulfilment_probability": 0.6617317254158431,
+        "expected_rework": 26.93065044708617,
+        "activation_probability": 0.6330843393056529
+      },
+      "maximum_service": 0.7674898612296847,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 22413.339385941377,
+          "fulfilment_probability": 0.75,
+          "expected_rework": 30.14718566876535,
+          "activation_probability": 0.7213953465436389
+        },
+        "deterministic_feasible": {
+          "expected_profit": 22413.313833673907,
+          "fulfilment_probability": 0.750069416646215,
+          "expected_rework": 30.14933758479801,
+          "activation_probability": 0.7214647631898539
+        },
+        "deterministic_gap_upper_bound": 0.02555226747172371,
+        "boundary": {
+          "A": 742,
+          "R": 31,
+          "ratio": 368.1000000000023,
+          "randomized_open_probability": 0.756632046929588,
+          "observed_state_mass": 0.0002852333075870002,
+          "conditional_service_gain": 0.9999999999999966
+        },
+        "lagrangian_loss_lower_bound": 13.35339326400447,
+        "primal_dual_gap": 1.2470025012589758e-12
+      }
+    },
+    {
+      "q1": 0.62,
+      "q2": 0.25405385346844744,
+      "setup_fee": 3000.0,
+      "profit_best": {
+        "expected_profit": 22093.720029365522,
+        "fulfilment_probability": 0.30926332496112846,
+        "expected_rework": 4.790546541152067,
+        "activation_probability": 0.1005190815520991
+      },
+      "maximum_service": 0.7674898612296845,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 21793.68154122396,
+          "fulfilment_probability": 0.7499999999999998,
+          "expected_rework": 23.24386525604399,
+          "activation_probability": 0.5430638775029731
+        },
+        "deterministic_feasible": {
+          "expected_profit": 21793.20920519682,
+          "fulfilment_probability": 0.7503451991720639,
+          "expected_rework": 23.255256828722107,
+          "activation_probability": 0.5434090766750374
+        },
+        "deterministic_gap_upper_bound": 0.4723360271353158,
+        "boundary": {
+          "A": 745,
+          "R": 33,
+          "ratio": 1368.2999999999968,
+          "randomized_open_probability": 0.30708611610747477,
+          "observed_state_mass": 0.0004981848106793715,
+          "conditional_service_gain": 1.0000000000000022
+        },
+        "lagrangian_loss_lower_bound": 300.0384881415638,
+        "primal_dual_gap": -7.958078640513122e-13
+      }
+    },
+    {
+      "q1": 0.6251333806714808,
+      "q2": 0.25405385346844744,
+      "setup_fee": 1000.0,
+      "profit_best": {
+        "expected_profit": 23869.303720095242,
+        "fulfilment_probability": 0.7845596816067728,
+        "expected_rework": 38.65587248453998,
+        "activation_probability": 0.958749010063763
+      },
+      "maximum_service": 0.7845697859264389,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 23869.303720095242,
+          "fulfilment_probability": 0.7845596816067728,
+          "expected_rework": 38.65587248453998,
+          "activation_probability": 0.958749010063763
+        },
+        "deterministic_feasible": {
+          "expected_profit": 23869.303720095242,
+          "fulfilment_probability": 0.7845596816067728,
+          "expected_rework": 38.65587248453998,
+          "activation_probability": 0.958749010063763
+        },
+        "deterministic_gap_upper_bound": 0.0,
+        "boundary": null,
+        "lagrangian_loss_lower_bound": 0.0,
+        "primal_dual_gap": 0.0
+      }
+    },
+    {
+      "q1": 0.6251333806714808,
+      "q2": 0.25405385346844744,
+      "setup_fee": 2000.0,
+      "profit_best": {
+        "expected_profit": 23019.77701066857,
+        "fulfilment_probability": 0.6882053369935941,
+        "expected_rework": 24.312426518677505,
+        "activation_probability": 0.566016427608746
+      },
+      "maximum_service": 0.7845697859264389,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 23013.121777837707,
+          "fulfilment_probability": 0.75,
+          "expected_rework": 26.629791686993364,
+          "activation_probability": 0.6278326714553322
+        },
+        "deterministic_feasible": {
+          "expected_profit": 23013.089150333344,
+          "fulfilment_probability": 0.7501396725357976,
+          "expected_rework": 26.634819898282082,
+          "activation_probability": 0.6279723439911299
+        },
+        "deterministic_gap_upper_bound": 0.032627504362351886,
+        "boundary": {
+          "A": 745,
+          "R": 36,
+          "ratio": 233.60000000000062,
+          "randomized_open_probability": 0.8239788310365967,
+          "observed_state_mass": 0.0007934985128225031,
+          "conditional_service_gain": 0.9999999999999989
+        },
+        "lagrangian_loss_lower_bound": 6.655232830862144,
+        "primal_dual_gap": 2.262190434976219e-12
+      }
+    },
+    {
+      "q1": 0.6251333806714808,
+      "q2": 0.25405385346844744,
+      "setup_fee": 3000.0,
+      "profit_best": {
+        "expected_profit": 22746.52156829318,
+        "fulfilment_probability": 0.3968516781097482,
+        "expected_rework": 3.5192811343949084,
+        "activation_probability": 0.07412339150807966
+      },
+      "maximum_service": 0.7845697859264389,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 22508.397460796205,
+          "fulfilment_probability": 0.7499999999999993,
+          "expected_rework": 18.587801537668263,
+          "activation_probability": 0.4282193005712753
+        },
+        "deterministic_feasible": {
+          "expected_profit": 22507.167954118442,
+          "fulfilment_probability": 0.7509965202445805,
+          "expected_rework": 18.625669306962347,
+          "activation_probability": 0.42921582081585646
+        },
+        "deterministic_gap_upper_bound": 1.2295066777641923,
+        "boundary": {
+          "A": 748,
+          "R": 38,
+          "ratio": 1233.8000000000034,
+          "randomized_open_probability": 0.038926539556770605,
+          "observed_state_mass": 0.001036882491918514,
+          "conditional_service_gain": 0.9999999999999973
+        },
+        "lagrangian_loss_lower_bound": 238.12410749697722,
+        "primal_dual_gap": -5.684341886080801e-13
+      }
+    },
+    {
+      "q1": 0.63,
+      "q2": 0.25405385346844744,
+      "setup_fee": 1000.0,
+      "profit_best": {
+        "expected_profit": 24410.139185383563,
+        "fulfilment_probability": 0.7937304807144365,
+        "expected_rework": 38.65488495277932,
+        "activation_probability": 0.9587024441847605
+      },
+      "maximum_service": 0.7937380928624029,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 24410.139185383563,
+          "fulfilment_probability": 0.7937304807144365,
+          "expected_rework": 38.65488495277932,
+          "activation_probability": 0.9587024441847605
+        },
+        "deterministic_feasible": {
+          "expected_profit": 24410.139185383563,
+          "fulfilment_probability": 0.7937304807144365,
+          "expected_rework": 38.65488495277932,
+          "activation_probability": 0.9587024441847605
+        },
+        "deterministic_gap_upper_bound": 0.0,
+        "boundary": null,
+        "lagrangian_loss_lower_bound": 0.0,
+        "primal_dual_gap": 0.0
+      }
+    },
+    {
+      "q1": 0.63,
+      "q2": 0.25405385346844744,
+      "setup_fee": 2000.0,
+      "profit_best": {
+        "expected_profit": 23577.375145170834,
+        "fulfilment_probability": 0.7139793761009003,
+        "expected_rework": 22.107987381189886,
+        "activation_probability": 0.5102276385326064
+      },
+      "maximum_service": 0.7937380928624029,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 23574.77330426517,
+          "fulfilment_probability": 0.75,
+          "expected_rework": 23.492077552753194,
+          "activation_probability": 0.5462572390794788
+        },
+        "deterministic_feasible": {
+          "expected_profit": 23574.717555263625,
+          "fulfilment_probability": 0.7503871458440559,
+          "expected_rework": 23.50756338651543,
+          "activation_probability": 0.5466443849235346
+        },
+        "deterministic_gap_upper_bound": 0.05574900154404079,
+        "boundary": {
+          "A": 748,
+          "R": 40,
+          "ratio": 144.00000000000256,
+          "randomized_open_probability": 0.6384109468737198,
+          "observed_state_mass": 0.0010706791057654929,
+          "conditional_service_gain": 0.999999999999987
+        },
+        "lagrangian_loss_lower_bound": 2.6018409056642784,
+        "primal_dual_gap": -1.0120793092482927e-12
+      }
+    },
+    {
+      "q1": 0.63,
+      "q2": 0.25405385346844744,
+      "setup_fee": 3000.0,
+      "profit_best": {
+        "expected_profit": 23349.609298738884,
+        "fulfilment_probability": 0.4885864381509641,
+        "expected_rework": 2.689337993046188,
+        "activation_probability": 0.0571624607906004
+      },
+      "maximum_service": 0.7937380928624029,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 23176.116910807898,
+          "fulfilment_probability": 0.7499999999999999,
+          "expected_rework": 14.051418562260695,
+          "activation_probability": 0.3190707252347436
+        },
+        "deterministic_feasible": {
+          "expected_profit": 23175.83514537414,
+          "fulfilment_probability": 0.7502462984560796,
+          "expected_rework": 14.061270500503882,
+          "activation_probability": 0.31931702369082327
+        },
+        "deterministic_gap_upper_bound": 0.28176543375513535,
+        "boundary": {
+          "A": 748,
+          "R": 40,
+          "ratio": 1144.0000000000155,
+          "randomized_open_probability": 0.7699605280859851,
+          "observed_state_mass": 0.0010706791057654929,
+          "conditional_service_gain": 0.999999999999987
+        },
+        "lagrangian_loss_lower_bound": 173.49238793098675,
+        "primal_dual_gap": -4.547473508864641e-13
+      }
+    },
+    {
+      "q1": 0.64,
+      "q2": 0.25405385346844744,
+      "setup_fee": 1000.0,
+      "profit_best": {
+        "expected_profit": 25517.766616297213,
+        "fulfilment_probability": 0.8053824576735249,
+        "expected_rework": 38.653633562012104,
+        "activation_probability": 0.9586435496023794
+      },
+      "maximum_service": 0.8053857960204456,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 25517.766616297213,
+          "fulfilment_probability": 0.8053824576735249,
+          "expected_rework": 38.653633562012104,
+          "activation_probability": 0.9586435496023794
+        },
+        "deterministic_feasible": {
+          "expected_profit": 25517.766616297213,
+          "fulfilment_probability": 0.8053824576735249,
+          "expected_rework": 38.653633562012104,
+          "activation_probability": 0.9586435496023794
+        },
+        "deterministic_gap_upper_bound": 0.0,
+        "boundary": null,
+        "lagrangian_loss_lower_bound": 0.0,
+        "primal_dual_gap": 0.0
+      }
+    },
+    {
+      "q1": 0.64,
+      "q2": 0.25405385346844744,
+      "setup_fee": 2000.0,
+      "profit_best": {
+        "expected_profit": 24708.550353968094,
+        "fulfilment_probability": 0.764976533016426,
+        "expected_rework": 18.942997897809793,
+        "activation_probability": 0.4312196259847626
+      },
+      "maximum_service": 0.8053857960204456,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 24708.550353968094,
+          "fulfilment_probability": 0.764976533016426,
+          "expected_rework": 18.942997897809793,
+          "activation_probability": 0.4312196259847626
+        },
+        "deterministic_feasible": {
+          "expected_profit": 24708.550353968094,
+          "fulfilment_probability": 0.764976533016426,
+          "expected_rework": 18.942997897809793,
+          "activation_probability": 0.4312196259847626
+        },
+        "deterministic_gap_upper_bound": 0.0,
+        "boundary": null,
+        "lagrangian_loss_lower_bound": 0.0,
+        "primal_dual_gap": 0.0
+      }
+    },
+    {
+      "q1": 0.64,
+      "q2": 0.25405385346844744,
+      "setup_fee": 3000.0,
+      "profit_best": {
+        "expected_profit": 24539.821638732108,
+        "fulfilment_probability": 0.6583040433546267,
+        "expected_rework": 1.8014379980055424,
+        "activation_probability": 0.03937399920185381
+      },
+      "maximum_service": 0.8053857960204456,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 24487.84590208682,
+          "fulfilment_probability": 0.75,
+          "expected_rework": 5.998968692182443,
+          "activation_probability": 0.13134282277914675
+        },
+        "deterministic_feasible": {
+          "expected_profit": 24487.784728582617,
+          "fulfilment_probability": 0.7500676548376525,
+          "expected_rework": 6.001810195363848,
+          "activation_probability": 0.13141047761679922
+        },
+        "deterministic_gap_upper_bound": 0.06117350420537346,
+        "boundary": {
+          "A": 743,
+          "R": 42,
+          "ratio": 904.1999999999933,
+          "randomized_open_probability": 0.8653674410800851,
+          "observed_state_mass": 0.0005025146828912699,
+          "conditional_service_gain": 1.0000000000000062
+        },
+        "lagrangian_loss_lower_bound": 51.97573664528524,
+        "primal_dual_gap": 1.5774048733874224e-12
+      }
+    },
+    {
+      "q1": 0.65,
+      "q2": 0.25405385346844744,
+      "setup_fee": 1000.0,
+      "profit_best": {
+        "expected_profit": 26621.057726247007,
+        "fulfilment_probability": 0.8225950605062026,
+        "expected_rework": 38.653119195575584,
+        "activation_probability": 0.9586192843787443
+      },
+      "maximum_service": 0.8225967954139211,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 26621.057726247007,
+          "fulfilment_probability": 0.8225950605062026,
+          "expected_rework": 38.653119195575584,
+          "activation_probability": 0.9586192843787443
+        },
+        "deterministic_feasible": {
+          "expected_profit": 26621.057726247007,
+          "fulfilment_probability": 0.8225950605062026,
+          "expected_rework": 38.653119195575584,
+          "activation_probability": 0.9586192843787443
+        },
+        "deterministic_gap_upper_bound": 0.0,
+        "boundary": null,
+        "lagrangian_loss_lower_bound": 0.0,
+        "primal_dual_gap": 0.0
+      }
+    },
+    {
+      "q1": 0.65,
+      "q2": 0.25405385346844744,
+      "setup_fee": 2000.0,
+      "profit_best": {
+        "expected_profit": 25822.303816401603,
+        "fulfilment_probability": 0.8073058379130906,
+        "expected_rework": 17.49601162480487,
+        "activation_probability": 0.3954871048991388
+      },
+      "maximum_service": 0.8225967954139211,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 25822.303816401603,
+          "fulfilment_probability": 0.8073058379130906,
+          "expected_rework": 17.49601162480487,
+          "activation_probability": 0.3954871048991388
+        },
+        "deterministic_feasible": {
+          "expected_profit": 25822.303816401603,
+          "fulfilment_probability": 0.8073058379130906,
+          "expected_rework": 17.49601162480487,
+          "activation_probability": 0.3954871048991388
+        },
+        "deterministic_gap_upper_bound": 0.0,
+        "boundary": null,
+        "lagrangian_loss_lower_bound": 0.0,
+        "primal_dual_gap": 0.0
+      }
+    },
+    {
+      "q1": 0.65,
+      "q2": 0.25405385346844744,
+      "setup_fee": 3000.0,
+      "profit_best": {
+        "expected_profit": 25679.095173327452,
+        "fulfilment_probability": 0.7631445790424728,
+        "expected_rework": 1.4676467123129706,
+        "activation_probability": 0.03268569762551299
+      },
+      "maximum_service": 0.822596795413921,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 25679.095173327452,
+          "fulfilment_probability": 0.7631445790424728,
+          "expected_rework": 1.4676467123129706,
+          "activation_probability": 0.03268569762551299
+        },
+        "deterministic_feasible": {
+          "expected_profit": 25679.095173327452,
+          "fulfilment_probability": 0.7631445790424728,
+          "expected_rework": 1.4676467123129706,
+          "activation_probability": 0.03268569762551299
+        },
+        "deterministic_gap_upper_bound": 0.0,
+        "boundary": null,
+        "lagrangian_loss_lower_bound": 0.0,
+        "primal_dual_gap": 0.0
+      }
+    },
+    {
+      "q1": 0.66,
+      "q2": 0.25405385346844744,
+      "setup_fee": 1000.0,
+      "profit_best": {
+        "expected_profit": 27716.796236932598,
+        "fulfilment_probability": 0.8530775650228877,
+        "expected_rework": 38.65278577694068,
+        "activation_probability": 0.9586030791675847
+      },
+      "maximum_service": 0.8530812602307698,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 27716.796236932598,
+          "fulfilment_probability": 0.8530775650228877,
+          "expected_rework": 38.65278577694068,
+          "activation_probability": 0.9586030791675847
+        },
+        "deterministic_feasible": {
+          "expected_profit": 27716.796236932598,
+          "fulfilment_probability": 0.8530775650228877,
+          "expected_rework": 38.65278577694068,
+          "activation_probability": 0.9586030791675847
+        },
+        "deterministic_gap_upper_bound": 0.0,
+        "boundary": null,
+        "lagrangian_loss_lower_bound": 0.0,
+        "primal_dual_gap": 0.0
+      }
+    },
+    {
+      "q1": 0.66,
+      "q2": 0.25405385346844744,
+      "setup_fee": 2000.0,
+      "profit_best": {
+        "expected_profit": 26922.05238931168,
+        "fulfilment_probability": 0.8449853070600102,
+        "expected_rework": 16.952164139569245,
+        "activation_probability": 0.38165633879086747
+      },
+      "maximum_service": 0.8530812602307699,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 26922.05238931168,
+          "fulfilment_probability": 0.8449853070600102,
+          "expected_rework": 16.952164139569245,
+          "activation_probability": 0.38165633879086747
+        },
+        "deterministic_feasible": {
+          "expected_profit": 26922.05238931168,
+          "fulfilment_probability": 0.8449853070600102,
+          "expected_rework": 16.952164139569245,
+          "activation_probability": 0.38165633879086747
+        },
+        "deterministic_gap_upper_bound": 0.0,
+        "boundary": null,
+        "lagrangian_loss_lower_bound": 0.0,
+        "primal_dual_gap": 0.0
+      }
+    },
+    {
+      "q1": 0.66,
+      "q2": 0.25405385346844744,
+      "setup_fee": 3000.0,
+      "profit_best": {
+        "expected_profit": 26790.768412783753,
+        "fulfilment_probability": 0.8129305860539054,
+        "expected_rework": 1.2456016092569502,
+        "activation_probability": 0.02782900632826203
+      },
+      "maximum_service": 0.8530812602307699,
+      "target_75": {
+        "target": 0.75,
+        "feasible": true,
+        "randomized_optimum": {
+          "expected_profit": 26790.768412783753,
+          "fulfilment_probability": 0.8129305860539054,
+          "expected_rework": 1.2456016092569502,
+          "activation_probability": 0.02782900632826203
+        },
+        "deterministic_feasible": {
+          "expected_profit": 26790.768412783753,
+          "fulfilment_probability": 0.8129305860539054,
+          "expected_rework": 1.2456016092569502,
+          "activation_probability": 0.02782900632826203
+        },
+        "deterministic_gap_upper_bound": 0.0,
+        "boundary": null,
+        "lagrangian_loss_lower_bound": 0.0,
+        "primal_dual_gap": 0.0
+      }
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T21:52:53.999555+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round65_quality_policy_monotonicity.py": "094fb4823c3e5c0e3dcbe98bf7a0cd38db015ae861337199759b857da9e16b21",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+      "backbone\\integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+      "research\\2026-10-28\\service_rounds\\round61.json": "28256be68fa373d09998063b71ee0a6c9da00b909fb47552bd2c778bb2e75dfa"
+    }
+  }
+}

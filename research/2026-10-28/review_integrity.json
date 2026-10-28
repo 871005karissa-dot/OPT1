@@ -1,0 +1,91 @@
+{
+  "checked_at_utc": "2026-10-27T23:45:05.427890+00:00",
+  "passed": true,
+  "local_links": [
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/最小模型規格_v0.1.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/文獻差異與候選貢獻矩陣.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/第二批模型收斂.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/資料需求與識別.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/進度.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/論文主軸與章節草稿.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/平均品質近似文獻定位.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/output/pdf/mean_quality_boundary.png",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/output/pdf/service_release_curve.png",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/output/pdf/service_release_curve.pdf",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/Boutarfa2024閱讀與貢獻邊界.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/six_rounds/manual_downloads.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/run_second_batch.py",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/模型版本與比較口徑.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/overnight_handoff.md",
+      "exists": true
+    }
+  ],
+  "source_manifest_inputs": 5,
+  "pdf_pages": 3,
+  "pdf_sha256": "ff973d830a0490d8dd0343b9972061048b2794852011ed47bad503c3a1a1ed8e",
+  "bibliography_keys": 17,
+  "scope": "Local existence, recorded figure-source hashes, page text and unique keys only. Visual PDF review was performed separately; external URLs, citation semantics and novelty are not certified."
+}

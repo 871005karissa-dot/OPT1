@@ -1,0 +1,117 @@
+{
+  "question": "Does increasing batch size make a mean-boundary service indicator reliable?",
+  "assumptions": "Round81: self-contained two-positive-grade example at a mean boundary.\n\nN=2m independent items, probabilities(high,low,scrap)=(1/4,1/4,1/2), no\nrework, free downward substitution. Demands(1,m-1), m>=2. Mean-count service\nis1, but actual service tends to1/2. This is an elementary illustration of an\nindicator discontinuity, not a claim of a novel probability theorem.\n",
+  "headline": {
+    "full_multinomial_checks": 3,
+    "max_error": 3.3306690738754696e-16
+  },
+  "proof": "Full service iff A>=1 and T=A+B>=m. T~Bin(2m,1/2), so service=1/2+P(T=m)/2-P(A=0,B>=m). The subtracted term is at most(3/4)^(2m). Central mass=product(k=1..m)(1-1/(2k))<=exp(-H_m/2)<=1/sqrt(m+1). Thus service tends to1/2 although the mean-count indicator is1.",
+  "scope": "Special symmetric example, not a universal one-half limit for arbitrary multi-grade demand boundaries.",
+  "rows": [
+    {
+      "N": 4,
+      "demands": [
+        1,
+        1
+      ],
+      "mean_count_service": 1.0,
+      "actual_service": 0.55859375,
+      "central_binomial_mass": 0.375,
+      "bad_high_zero_and_total_sufficient": 0.12890624999999997,
+      "proved_interval": [
+        0.18359375,
+        0.7886751345948129
+      ]
+    },
+    {
+      "N": 10,
+      "demands": [
+        1,
+        4
+      ],
+      "mean_count_service": 1.0,
+      "actual_service": 0.611044883728027,
+      "central_binomial_mass": 0.24609374999999936,
+      "bad_high_zero_and_total_sufficient": 0.01200199127197263,
+      "proved_interval": [
+        0.44368648529052734,
+        0.7041241452319316
+      ]
+    },
+    {
+      "N": 20,
+      "demands": [
+        1,
+        9
+      ],
+      "mean_count_service": 1.0,
+      "actual_service": 0.5878071050237852,
+      "central_binomial_mass": 0.17619705200195354,
+      "bad_high_zero_and_total_sufficient": 0.00029142097719159286,
+      "proved_interval": [
+        0.496828788061066,
+        0.6507556722888819
+      ]
+    },
+    {
+      "N": 100,
+      "demands": [
+        1,
+        49
+      ],
+      "mean_count_service": 1.0,
+      "actual_service": 0.539794618693587,
+      "central_binomial_mass": 0.07958923738717436,
+      "bad_high_zero_and_total_sufficient": 1.3449116367737035e-16,
+      "proved_interval": [
+        0.49999999999967926,
+        0.5700140042014005
+      ]
+    },
+    {
+      "N": 1000,
+      "demands": [
+        1,
+        499
+      ],
+      "mean_count_service": 1.0,
+      "actual_service": 0.5126125090891788,
+      "central_binomial_mass": 0.025225018178357553,
+      "bad_high_zero_and_total_sufficient": 1.5321999580238544e-152,
+      "proved_interval": [
+        0.5,
+        0.5223383525804385
+      ]
+    },
+    {
+      "N": 10000,
+      "demands": [
+        1,
+        4999
+      ],
+      "mean_count_service": 1.0,
+      "actual_service": 0.5039893230696333,
+      "central_binomial_mass": 0.007978646139266547,
+      "bad_high_zero_and_total_sufficient": 0.0,
+      "proved_interval": [
+        0.5,
+        0.5070703608111327
+      ]
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T23:25:08.427241+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round81_mean_boundary_counterexample.py": "14cfb28c251b7116a818e027a6eaa70686745290cbf318972aba15ece640cbc0",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed"
+    }
+  }
+}

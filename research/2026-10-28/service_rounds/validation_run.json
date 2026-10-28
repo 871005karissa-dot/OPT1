@@ -1,0 +1,75 @@
+{
+  "completed_at_utc": "2026-10-27T18:12:54.785556+00:00",
+  "rounds": [
+    {
+      "round": 33,
+      "passed": true,
+      "elapsed_seconds": 0.3594580999997561,
+      "module": "backbone.round33_service_constraint"
+    },
+    {
+      "round": 34,
+      "passed": true,
+      "elapsed_seconds": 9.333631499997864,
+      "module": "backbone.round34_service_capacity"
+    },
+    {
+      "round": 35,
+      "passed": true,
+      "elapsed_seconds": 30.269781399998465,
+      "module": "backbone.round35_release_service"
+    },
+    {
+      "round": 36,
+      "passed": true,
+      "elapsed_seconds": 117.45422260000123,
+      "module": "backbone.round36_critical_release"
+    },
+    {
+      "round": 37,
+      "passed": true,
+      "elapsed_seconds": 2.2209992999996757,
+      "module": "backbone.round37_material_commitment"
+    },
+    {
+      "round": 38,
+      "passed": true,
+      "elapsed_seconds": 6.920368600000074,
+      "module": "backbone.round38_upstream_control"
+    },
+    {
+      "round": 39,
+      "passed": true,
+      "elapsed_seconds": 95.98278859999846,
+      "module": "backbone.round39_coordinated_commitment"
+    }
+  ],
+  "checks": [
+    {
+      "checker": "check_service.py",
+      "checker_sha256": "10c87ec00316a3b7d85bf02048bd8bac56235316f6a0b401f4ac604895c86c67",
+      "result": {
+        "service_LP_cases": 432,
+        "feasible_service_LP_cases": 195,
+        "max_complete_action_profit_error": 2.1827872842550278e-11,
+        "exhaustive_eight_state_covering_cases": 40,
+        "max_fractional_profit_error": 1.4210854715202004e-14,
+        "max_actual_deterministic_gap_in_synthetic_cases": 12.45769761301964,
+        "max_certified_gap_in_synthetic_cases": 17.627848087234923,
+        "note": "Synthetic checks verify bound logic; their gap size is not a real manufacturing estimate."
+      }
+    },
+    {
+      "checker": "check_coordinated.py",
+      "checker_sha256": "afe0922ef0397b7c550b3f50c4235b7d81593bc5123023fb5037990d565c802f",
+      "result": {
+        "state_order_eta_recovery_cases": 720,
+        "max_profit_error": 2.9103830456733704e-11,
+        "complete_action_feasible_checks": 360,
+        "max_complete_action_profit_error": 2.9103830456733704e-11,
+        "method": "independent scalar flow/cost plus generic two-variable LP half-plane intersections, both profit-only and complete-order constraints"
+      }
+    }
+  ],
+  "run_all_sha256": "05931a61812f0012d3814bc35a5c08c562782c73e0acff8102b018eed645c05b"
+}

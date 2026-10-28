@@ -1,0 +1,1535 @@
+{
+  "question": "Does identifying repairable quality subtypes change the return decision and prevent overstating upgrade potential?",
+  "assumptions": "Round41: selected repairable subtypes versus an aggregate upgrade fraction.\n\nOne hypothetical rework operation can fix one KQC only. Inspection identifies\neligible low-grade items; reserve low-grade demand from ineligible items first.\nReturn <= min(eligible*total grade2, total grade2-demand2, station spare-setup).\nCompare this with random selection, whose fluid upgrade fraction is eligible*.97,\nand the optimistic relaxation that any grade2 item can upgrade with fraction .97.\nAll fail-to-upgrade returns are scrapped, as in earlier exploratory rounds.\n",
+  "parameters_are_hypothetical": true,
+  "grade_shares_recomputed_within_each_source": true,
+  "scope": "Fixed raw input, aggregate flow capacity, known conditional success .97; full quality-subtype inspection assumed free. No empirical station-KQC mapping or random subtype-count model.",
+  "headline": {
+    "elapsed_seconds": 9.065243000000919,
+    "cases": 32,
+    "max_selection_profit_gain": 5193.620603510602
+  },
+  "rows": [
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input": 1743.9106352307585,
+      "KQC_index": 0,
+      "KQC_name": "surface roughness",
+      "eligible_fraction_of_grade2": 0.3974740141675911,
+      "optimistic_any_grade2": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "unselected_grade2": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "maximum_service_selected": 0.9486622836415535,
+      "maximum_service_unselected": 0.9486622836415535,
+      "selection_profit_gain": 0.0,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input": 1743.9106352307585,
+      "KQC_index": 1,
+      "KQC_name": "center hole diameter",
+      "eligible_fraction_of_grade2": 0.1210570394269475,
+      "optimistic_any_grade2": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "unselected_grade2": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "maximum_service_selected": 0.9486622836415535,
+      "maximum_service_unselected": 0.9486622836415535,
+      "selection_profit_gain": 0.0,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input": 1743.9106352307585,
+      "KQC_index": 2,
+      "KQC_name": "external diameter",
+      "eligible_fraction_of_grade2": 0.11617128746661458,
+      "optimistic_any_grade2": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "unselected_grade2": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "maximum_service_selected": 0.9486622836415535,
+      "maximum_service_unselected": 0.9486622836415535,
+      "selection_profit_gain": 0.0,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input": 1743.9106352307585,
+      "KQC_index": 3,
+      "KQC_name": "screw diameter",
+      "eligible_fraction_of_grade2": 0.251007176026881,
+      "optimistic_any_grade2": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "unselected_grade2": {
+        "expected_profit": 19733.326630223302,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 26.79311255159869,
+        "expected_grade1_shortage": 1.0263243913783886,
+        "expected_grade2_shortage": 5.895898566104631
+      },
+      "maximum_service_selected": 0.9486622836415535,
+      "maximum_service_unselected": 0.9486622836415535,
+      "selection_profit_gain": 0.0,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input": 1316.2022695330663,
+      "KQC_index": 0,
+      "KQC_name": "surface roughness",
+      "eligible_fraction_of_grade2": 0.3974740141675911,
+      "optimistic_any_grade2": {
+        "expected_profit": 25277.745447675465,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 12.459610792457639,
+        "activation_probability": 0.8828591194583242,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.446398689304984,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 25277.745447675465,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 12.459610792457639,
+        "activation_probability": 0.8828591194583242,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.446398689304984,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "unselected_grade2": {
+        "expected_profit": 24630.640787654884,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.12592026882375867,
+        "activation_probability": 0.011813235040320605,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.49959933792507,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "maximum_service_selected": 0.9477817940733309,
+      "maximum_service_unselected": 0.9359685590330102,
+      "selection_profit_gain": 647.1046600205793,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input": 1316.2022695330663,
+      "KQC_index": 1,
+      "KQC_name": "center hole diameter",
+      "eligible_fraction_of_grade2": 0.1210570394269475,
+      "optimistic_any_grade2": {
+        "expected_profit": 25277.745447675465,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 12.459610792457639,
+        "activation_probability": 0.8828591194583242,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.446398689304984,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 25277.745447675465,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 12.459610792457639,
+        "activation_probability": 0.8828591194583242,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.446398689304984,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "unselected_grade2": {
+        "expected_profit": 24629.28513315737,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.548147871598077,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "maximum_service_selected": 0.9477817940733309,
+      "maximum_service_unselected": 0.9359685590330102,
+      "selection_profit_gain": 648.460314518097,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input": 1316.2022695330663,
+      "KQC_index": 2,
+      "KQC_name": "external diameter",
+      "eligible_fraction_of_grade2": 0.11617128746661458,
+      "optimistic_any_grade2": {
+        "expected_profit": 25277.745447675465,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 12.459610792457639,
+        "activation_probability": 0.8828591194583242,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.446398689304984,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 25277.745447675465,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 12.459610792457639,
+        "activation_probability": 0.8828591194583242,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.446398689304984,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "unselected_grade2": {
+        "expected_profit": 24629.28513315737,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.548147871598077,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "maximum_service_selected": 0.9477817940733309,
+      "maximum_service_unselected": 0.9359685590330102,
+      "selection_profit_gain": 648.460314518097,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input": 1316.2022695330663,
+      "KQC_index": 3,
+      "KQC_name": "screw diameter",
+      "eligible_fraction_of_grade2": 0.251007176026881,
+      "optimistic_any_grade2": {
+        "expected_profit": 25277.745447675465,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 12.459610792457639,
+        "activation_probability": 0.8828591194583242,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.446398689304984,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 25277.745447675465,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 12.459610792457639,
+        "activation_probability": 0.8828591194583242,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.446398689304984,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "unselected_grade2": {
+        "expected_profit": 24629.28513315737,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.548147871598077,
+        "expected_grade2_shortage": 1.4834080581626112
+      },
+      "maximum_service_selected": 0.9477817940733309,
+      "maximum_service_unselected": 0.9359685590330102,
+      "selection_profit_gain": 648.460314518097,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input": 1417.4485979586868,
+      "KQC_index": 0,
+      "KQC_name": "surface roughness",
+      "eligible_fraction_of_grade2": 0.3974740141675911,
+      "optimistic_any_grade2": {
+        "expected_profit": 27824.252458104565,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 72.7274449473995,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.278141616947923,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 27824.252458104565,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 72.7274449473995,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.278141616947923,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "unselected_grade2": {
+        "expected_profit": 24178.695122285102,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 8.549314344927181,
+        "activation_probability": 0.14385696505501652,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.503672811207492,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "maximum_service_selected": 0.9407545290704593,
+      "maximum_service_unselected": 0.834658821908279,
+      "selection_profit_gain": 3645.5573358194633,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input": 1417.4485979586868,
+      "KQC_index": 1,
+      "KQC_name": "center hole diameter",
+      "eligible_fraction_of_grade2": 0.1210570394269475,
+      "optimistic_any_grade2": {
+        "expected_profit": 27824.252458104565,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 72.7274449473995,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.278141616947923,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 25816.33517242274,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 31.067767532767945,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.787479241048182,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "unselected_grade2": {
+        "expected_profit": 24086.65341565077,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.799859193534502,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "maximum_service_selected": 0.9289412940301387,
+      "maximum_service_unselected": 0.834658821908279,
+      "selection_profit_gain": 1729.6817567719677,
+      "optimistic_relaxation_overstatement": 2007.9172856818222,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input": 1417.4485979586868,
+      "KQC_index": 2,
+      "KQC_name": "external diameter",
+      "eligible_fraction_of_grade2": 0.11617128746661458,
+      "optimistic_any_grade2": {
+        "expected_profit": 27824.252458104565,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 72.7274449473995,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.278141616947923,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 25751.19818463947,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 29.82916068303535,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.820051006618899,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "unselected_grade2": {
+        "expected_profit": 24086.65341565077,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.799859193534502,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "maximum_service_selected": 0.9289412940301387,
+      "maximum_service_unselected": 0.834658821908279,
+      "selection_profit_gain": 1664.544768988699,
+      "optimistic_relaxation_overstatement": 2073.0542734650912,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input": 1417.4485979586868,
+      "KQC_index": 3,
+      "KQC_name": "screw diameter",
+      "eligible_fraction_of_grade2": 0.251007176026881,
+      "optimistic_any_grade2": {
+        "expected_profit": 27824.252458104565,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 72.7274449473995,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.278141616947923,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 27396.588942765546,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 63.40550287127274,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.278141616947923,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "unselected_grade2": {
+        "expected_profit": 24086.65341565077,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.799859193534502,
+        "expected_grade2_shortage": 0.15836561893005086
+      },
+      "maximum_service_selected": 0.9407545290704593,
+      "maximum_service_unselected": 0.834658821908279,
+      "selection_profit_gain": 3309.9355271147756,
+      "optimistic_relaxation_overstatement": 427.6635153390143,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 0,
+      "KQC_name": "surface roughness",
+      "eligible_fraction_of_grade2": 0.3974740141675911,
+      "optimistic_any_grade2": {
+        "expected_profit": 29072.793737529533,
+        "fulfilment_probability": 0.8710458844180036,
+        "expected_rework": 126.2840175177049,
+        "activation_probability": 0.9241226681872599,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.715974961514076,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 28047.08752471041,
+        "fulfilment_probability": 0.8710458844180036,
+        "expected_rework": 104.91338024702046,
+        "activation_probability": 0.9241226681872599,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.796805304204204,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "unselected_grade2": {
+        "expected_profit": 23356.073674953746,
+        "fulfilment_probability": 0.7378862957062176,
+        "expected_rework": 19.083543912017017,
+        "activation_probability": 0.23314427774672036,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 16.004326948406472,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "maximum_service_selected": 0.8710458844180036,
+      "maximum_service_unselected": 0.7378862957062176,
+      "selection_profit_gain": 4691.013849756662,
+      "optimistic_relaxation_overstatement": 1025.7062128191253,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 1,
+      "KQC_name": "center hole diameter",
+      "eligible_fraction_of_grade2": 0.1210570394269475,
+      "optimistic_any_grade2": {
+        "expected_profit": 29072.793737529533,
+        "fulfilment_probability": 0.8710458844180036,
+        "expected_rework": 126.2840175177049,
+        "activation_probability": 0.9241226681872599,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.715974961514076,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 24571.005975123495,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 24.706490241563614,
+        "activation_probability": 0.6966809005613657,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.28002441951059,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "unselected_grade2": {
+        "expected_profit": 23150.620713531713,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.361983367561788,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "maximum_service_selected": 0.7162844112890252,
+      "maximum_service_unselected": 0.7162844112890252,
+      "selection_profit_gain": 1420.3852615917835,
+      "optimistic_relaxation_overstatement": 4501.787762406038,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 2,
+      "KQC_name": "external diameter",
+      "eligible_fraction_of_grade2": 0.11617128746661458,
+      "optimistic_any_grade2": {
+        "expected_profit": 29072.793737529533,
+        "fulfilment_probability": 0.8710458844180036,
+        "expected_rework": 126.2840175177049,
+        "activation_probability": 0.9241226681872599,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.715974961514076,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 24513.866764463815,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 23.711650643159196,
+        "activation_probability": 0.6966809005613657,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.51126065676032,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "unselected_grade2": {
+        "expected_profit": 23150.620713531713,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.361983367561788,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "maximum_service_selected": 0.7162844112890252,
+      "maximum_service_unselected": 0.7162844112890252,
+      "selection_profit_gain": 1363.2460509321054,
+      "optimistic_relaxation_overstatement": 4558.926973065717,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "normal_parameters_and_tolerances",
+      "shares": [
+        0.6251333806714808,
+        0.25405385346844744
+      ],
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 3,
+      "KQC_name": "screw diameter",
+      "eligible_fraction_of_grade2": 0.251007176026881,
+      "optimistic_any_grade2": {
+        "expected_profit": 29072.793737529533,
+        "fulfilment_probability": 0.8710458844180036,
+        "expected_rework": 126.2840175177049,
+        "activation_probability": 0.9241226681872599,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.715974961514076,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 26261.39484153058,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 67.13712688644847,
+        "activation_probability": 0.9241226681872599,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 12.258045153197523,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "unselected_grade2": {
+        "expected_profit": 23150.620713531713,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.361983367561788,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "maximum_service_selected": 0.776763412296144,
+      "maximum_service_unselected": 0.7162844112890252,
+      "selection_profit_gain": 3110.7741279988686,
+      "optimistic_relaxation_overstatement": 2811.3988959989547,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input": 1614.9252030990174,
+      "KQC_index": 0,
+      "KQC_name": "surface roughness",
+      "eligible_fraction_of_grade2": 0.4295362149083248,
+      "optimistic_any_grade2": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "unselected_grade2": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "maximum_service_selected": 0.9486622836415535,
+      "maximum_service_unselected": 0.9486622836415535,
+      "selection_profit_gain": 0.0,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input": 1614.9252030990174,
+      "KQC_index": 1,
+      "KQC_name": "center hole diameter",
+      "eligible_fraction_of_grade2": 0.11200417022812646,
+      "optimistic_any_grade2": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "unselected_grade2": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "maximum_service_selected": 0.9486622836415535,
+      "maximum_service_unselected": 0.9486622836415535,
+      "selection_profit_gain": 0.0,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input": 1614.9252030990174,
+      "KQC_index": 2,
+      "KQC_name": "external diameter",
+      "eligible_fraction_of_grade2": 0.10742996595332673,
+      "optimistic_any_grade2": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "unselected_grade2": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "maximum_service_selected": 0.9486622836415535,
+      "maximum_service_unselected": 0.9486622836415535,
+      "selection_profit_gain": 0.0,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input": 1614.9252030990174,
+      "KQC_index": 3,
+      "KQC_name": "screw diameter",
+      "eligible_fraction_of_grade2": 0.2323488116752152,
+      "optimistic_any_grade2": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "unselected_grade2": {
+        "expected_profit": 22951.871314374144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.027461836377199,
+        "expected_grade2_shortage": 4.989920361070484
+      },
+      "maximum_service_selected": 0.9486622836415535,
+      "maximum_service_unselected": 0.9486622836415535,
+      "selection_profit_gain": 0.0,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input": 1316.28591129903,
+      "KQC_index": 0,
+      "KQC_name": "surface roughness",
+      "eligible_fraction_of_grade2": 0.4295362149083248,
+      "optimistic_any_grade2": {
+        "expected_profit": 26901.844191669228,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 31.257918548604657,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.29428645507584,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 26901.844191669228,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 31.257918548604657,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.29428645507584,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "unselected_grade2": {
+        "expected_profit": 25342.51909854398,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 31.257918548604657,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.382093918917531,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "maximum_service_selected": 0.9477817940733309,
+      "maximum_service_unselected": 0.9477817940733309,
+      "selection_profit_gain": 1559.325093125255,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input": 1316.28591129903,
+      "KQC_index": 1,
+      "KQC_name": "center hole diameter",
+      "eligible_fraction_of_grade2": 0.11200417022812646,
+      "optimistic_any_grade2": {
+        "expected_profit": 26901.844191669228,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 31.257918548604657,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.29428645507584,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 26751.852769825622,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 28.36233125432638,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.29428645507584,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "unselected_grade2": {
+        "expected_profit": 25274.99940328191,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.550440040729375,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "maximum_service_selected": 0.9477817940733309,
+      "maximum_service_unselected": 0.9359685590330102,
+      "selection_profit_gain": 1476.8533665437114,
+      "optimistic_relaxation_overstatement": 149.99142184361233,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input": 1316.28591129903,
+      "KQC_index": 2,
+      "KQC_name": "external diameter",
+      "eligible_fraction_of_grade2": 0.10742996595332673,
+      "optimistic_any_grade2": {
+        "expected_profit": 26901.844191669228,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 31.257918548604657,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.29428645507584,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 26692.216633925545,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 27.211054499498797,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.29428645507584,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "unselected_grade2": {
+        "expected_profit": 25274.99940328191,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.550440040729375,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "maximum_service_selected": 0.9477817940733309,
+      "maximum_service_unselected": 0.9359685590330102,
+      "selection_profit_gain": 1417.2172306436405,
+      "optimistic_relaxation_overstatement": 209.62755774368344,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input": 1316.28591129903,
+      "KQC_index": 3,
+      "KQC_name": "screw diameter",
+      "eligible_fraction_of_grade2": 0.2323488116752152,
+      "optimistic_any_grade2": {
+        "expected_profit": 26901.844191669228,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 31.257918548604657,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.29428645507584,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 26901.844191669228,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 31.257918548604657,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.29428645507584,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "unselected_grade2": {
+        "expected_profit": 25274.99940328191,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.550440040729375,
+        "expected_grade2_shortage": 0.7473032585630738
+      },
+      "maximum_service_selected": 0.9477817940733309,
+      "maximum_service_unselected": 0.9359685590330102,
+      "selection_profit_gain": 1626.8447883873237,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input": 1417.5386737066476,
+      "KQC_index": 0,
+      "KQC_name": "surface roughness",
+      "eligible_fraction_of_grade2": 0.4295362149083248,
+      "optimistic_any_grade2": {
+        "expected_profit": 29393.236163773792,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 92.1455450007361,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.629524246446156,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 29393.236163773792,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 92.1455450007361,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.629524246446156,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "unselected_grade2": {
+        "expected_profit": 25033.157795193445,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 80.44299019306959,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.861303579720324,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "maximum_service_selected": 0.9407545290704593,
+      "maximum_service_unselected": 0.9289412940301387,
+      "selection_profit_gain": 4360.078368580344,
+      "optimistic_relaxation_overstatement": 0.0,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input": 1417.5386737066476,
+      "KQC_index": 1,
+      "KQC_name": "center hole diameter",
+      "eligible_fraction_of_grade2": 0.11200417022812646,
+      "optimistic_any_grade2": {
+        "expected_profit": 29393.236163773792,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 92.1455450007361,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.629524246446156,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 26498.27500946036,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 31.24208235443022,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.601991548923637,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "unselected_grade2": {
+        "expected_profit": 24754.036740632993,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.806463866994713,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "maximum_service_selected": 0.9289412940301387,
+      "maximum_service_unselected": 0.834658821908279,
+      "selection_profit_gain": 1744.2382688273653,
+      "optimistic_relaxation_overstatement": 2894.9611543134292,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input": 1417.5386737066476,
+      "KQC_index": 2,
+      "KQC_name": "external diameter",
+      "eligible_fraction_of_grade2": 0.10742996595332673,
+      "optimistic_any_grade2": {
+        "expected_profit": 29393.236163773792,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 92.1455450007361,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.629524246446156,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 26430.57529722526,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 29.966251506484447,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.656951724351341,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "unselected_grade2": {
+        "expected_profit": 24754.036740632993,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.806463866994713,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "maximum_service_selected": 0.9289412940301387,
+      "maximum_service_unselected": 0.834658821908279,
+      "selection_profit_gain": 1676.5385565922625,
+      "optimistic_relaxation_overstatement": 2962.660866548532,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input": 1417.5386737066476,
+      "KQC_index": 3,
+      "KQC_name": "screw diameter",
+      "eligible_fraction_of_grade2": 0.2323488116752152,
+      "optimistic_any_grade2": {
+        "expected_profit": 29393.236163773792,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 92.1455450007361,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.629524246446156,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 28117.52162673684,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 64.12015377599822,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.629524246446156,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "unselected_grade2": {
+        "expected_profit": 24754.036740632993,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.806463866994713,
+        "expected_grade2_shortage": 0.09977074660732801
+      },
+      "maximum_service_selected": 0.9407545290704593,
+      "maximum_service_unselected": 0.834658821908279,
+      "selection_profit_gain": 3363.484886103847,
+      "optimistic_relaxation_overstatement": 1275.714537036947,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.7914361142653,
+      "KQC_index": 0,
+      "KQC_name": "surface roughness",
+      "eligible_fraction_of_grade2": 0.4295362149083248,
+      "optimistic_any_grade2": {
+        "expected_profit": 30679.007478619693,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 146.24968970205197,
+        "activation_probability": 0.9242943106141268,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.009941018092146,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 29528.7150478417,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 122.19386228533423,
+        "activation_probability": 0.9242943106141268,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.009941018092146,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "unselected_grade2": {
+        "expected_profit": 24335.0944443311,
+        "fulfilment_probability": 0.7378862957062176,
+        "expected_rework": 108.90871414682748,
+        "activation_probability": 0.6692459747898847,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 14.567706559089663,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "maximum_service_selected": 0.8828591194583242,
+      "maximum_service_unselected": 0.7378862957062176,
+      "selection_profit_gain": 5193.620603510602,
+      "optimistic_relaxation_overstatement": 1150.2924307779956,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.7914361142653,
+      "KQC_index": 1,
+      "KQC_name": "center hole diameter",
+      "eligible_fraction_of_grade2": 0.11200417022812646,
+      "optimistic_any_grade2": {
+        "expected_profit": 30679.007478619693,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 146.24968970205197,
+        "activation_probability": 0.9242943106141268,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.009941018092146,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 25272.62153945853,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 24.698751047279544,
+        "activation_probability": 0.6968525429882324,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.284463481582083,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "unselected_grade2": {
+        "expected_profit": 23853.174061949787,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.37654182612753,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "maximum_service_selected": 0.7162844112890252,
+      "maximum_service_unselected": 0.7162844112890252,
+      "selection_profit_gain": 1419.4474775087428,
+      "optimistic_relaxation_overstatement": 5406.385939161167,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.7914361142653,
+      "KQC_index": 2,
+      "KQC_name": "external diameter",
+      "eligible_fraction_of_grade2": 0.10742996595332673,
+      "optimistic_any_grade2": {
+        "expected_profit": 30679.007478619693,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 146.24968970205197,
+        "activation_probability": 0.9242943106141268,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.009941018092146,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 25214.76231066082,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 23.69147268775804,
+        "activation_probability": 0.6968525429882324,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.51964556457504,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "unselected_grade2": {
+        "expected_profit": 23853.174061949787,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.37654182612753,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "maximum_service_selected": 0.7162844112890252,
+      "maximum_service_unselected": 0.7162844112890252,
+      "selection_profit_gain": 1361.5882487110325,
+      "optimistic_relaxation_overstatement": 5464.245167958876,
+      "candidate_pairs": 66
+    },
+    {
+      "source": "manuscript_component_probabilities_rounded",
+      "shares": [
+        0.625093657341258,
+        0.27434534809090927
+      ],
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.7914361142653,
+      "KQC_index": 3,
+      "KQC_name": "screw diameter",
+      "eligible_fraction_of_grade2": 0.2323488116752152,
+      "optimistic_any_grade2": {
+        "expected_profit": 30679.007478619693,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 146.24968970205197,
+        "activation_probability": 0.9242943106141268,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.009941018092146,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "selected_repairable_subtype": {
+        "expected_profit": 26951.82231609608,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 67.16189220638783,
+        "activation_probability": 0.9242943106141268,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 12.223306874075202,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "unselected_grade2": {
+        "expected_profit": 23853.174061949787,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.37654182612753,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "maximum_service_selected": 0.776763412296144,
+      "maximum_service_unselected": 0.7162844112890252,
+      "selection_profit_gain": 3098.6482541462988,
+      "optimistic_relaxation_overstatement": 3727.1851625236104,
+      "candidate_pairs": 66
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T18:15:41.506834+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round41_selective_upgrade.py": "1b7ce8189fe0675960f92bef692fa5790ab85047f49b2e23a0c3cc9bc02cf51c",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+      "backbone\\round40_quality_recoverability.py": "8477646c60d3fb420d8411305e8ac6a0fd4786b4f0a0fd3e57ef8e8662ca058b"
+    }
+  }
+}

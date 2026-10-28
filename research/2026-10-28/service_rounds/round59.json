@@ -1,0 +1,90 @@
+{
+  "question": "Can a physical eligibility limitation rule out a service target even under free perfect unlimited repair?",
+  "assumptions": "Round59: screen a single-feature route before fitting more parameters.\n\nAn optimistic bound gives free, perfect, instantaneous, unlimited rework of\nthe stated eligible class, without using any shared capacity. For a normal\nflow producing N iid categorical items, full fulfilment is possible iff\nH=A+E>=D1 and T=A+B>=D1+D2. For any forward rule chosen before initial-quality\nrealization, N<=Nmax(C) from the serial fluid normal-flow capacities.\nCouple all potential items in one categorical sequence: H and T cannot decrease\nwhen N increases. Thus E_C Pr(H>=D1,T>=sumD|Nmax(C)) bounds that policy class.\nIt is not an upper bound if forward yield distributions change, observed\nquality guides sequential normal production, more features are repairable,\nor arbitrary extra capacity/sourcing is available.\n",
+  "grade_shares": [
+    0.6251333806714808,
+    0.25405385346844744
+  ],
+  "demands": [
+    750.0,
+    150.0
+  ],
+  "headline": {
+    "small_brute_cases": 30,
+    "max_brute_probability_error": 1.5543122344752192e-15,
+    "candidate_bounds": 10,
+    "normal_output_groups": 31,
+    "elapsed_seconds": 0.7267638000012084
+  },
+  "rows": [
+    {
+      "eligible_class": "no repair",
+      "eligible_fraction": 0.0,
+      "optimistic_fulfilment_upper_bound": 0.6847373895219764
+    },
+    {
+      "eligible_class": "all grade2 perfect upgrade",
+      "eligible_fraction": 1.0,
+      "optimistic_fulfilment_upper_bound": 0.9435866905885324
+    },
+    {
+      "eligible_class": "surface roughness one-direction",
+      "eligible_fraction": 0.3974740141675911,
+      "optimistic_fulfilment_upper_bound": 0.9372150991546394
+    },
+    {
+      "eligible_class": "surface roughness bidirectional",
+      "eligible_fraction": 0.3974740141675911,
+      "optimistic_fulfilment_upper_bound": 0.9372150991546394
+    },
+    {
+      "eligible_class": "center hole diameter one-direction",
+      "eligible_fraction": 0.015357728081569929,
+      "optimistic_fulfilment_upper_bound": 0.6992751125791938
+    },
+    {
+      "eligible_class": "center hole diameter bidirectional",
+      "eligible_fraction": 0.1210570394269475,
+      "optimistic_fulfilment_upper_bound": 0.8008159646674005
+    },
+    {
+      "eligible_class": "external diameter one-direction",
+      "eligible_fraction": 1.92599694194874e-06,
+      "optimistic_fulfilment_upper_bound": 0.6847391513109078
+    },
+    {
+      "eligible_class": "external diameter bidirectional",
+      "eligible_fraction": 0.11617128746661458,
+      "optimistic_fulfilment_upper_bound": 0.7973381342300994
+    },
+    {
+      "eligible_class": "screw diameter one-direction",
+      "eligible_fraction": 0.13623480476369879,
+      "optimistic_fulfilment_upper_bound": 0.8103915687705819
+    },
+    {
+      "eligible_class": "screw diameter bidirectional",
+      "eligible_fraction": 0.251007176026881,
+      "optimistic_fulfilment_upper_bound": 0.8566156617990638
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T21:27:55.766418+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round59_repairability_ceiling.py": "77951333cba23383c4f5a56dc1a547b8b910c58eea9200bbfdd309aa8d11d97d",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\round42_one_sided_repair.py": "405501a6e6272c6f000e8951338986cdc5c33a8395fc529dfd7ce1bfe8dd210a",
+      "backbone\\round58_integer_rework_success.py": "0513112170e3e760a07021b0012c28ade915dc38eda2ed0e3adb48e2989f7457",
+      "research\\2026-10-28\\service_rounds\\round58.json": "7b2330a8514378bf3506fad148e217db23520c7b7374b621ae5489ccc87867f3"
+    }
+  }
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>先基幹，後論文</title>
+  <style>
+    :root {
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --line: #e4ddd2;
+      --paper: #f7f4ee;
+      --card: #fffdf9;
+      --phase: #2f4a3c;
+      --warn: #8a3d2f;
+      --keep: #1f4d3a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+      line-height: 1.65;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    p { margin: 0 0 0.9rem; }
+    h1 {
+      font-size: 2rem;
+      font-weight: 650;
+      letter-spacing: 0.02em;
+      margin: 0 0 0.4rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin: 2.4rem 0 0.8rem;
+    }
+    .source-file {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 1.6rem;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.92em;
+    }
+    .callout {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--phase);
+      padding: 16px 18px;
+      margin: 1.2rem 0 1.6rem;
+    }
+    .phases {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .phase {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+    .phase strong { display: block; margin-bottom: 0.35rem; }
+    .phase.later { color: var(--muted); }
+    .sources, .sentences, .steps, .bans {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sources li, .sentences li, .steps li, .bans li {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+    .sources li span, .steps li span {
+      display: block;
+      font-weight: 650;
+      margin-bottom: 0.25rem;
+    }
+    .sentences { counter-reset: sent; }
+    .sentences li {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 8px;
+      align-items: baseline;
+    }
+    .sentences li::before {
+      counter-increment: sent;
+      content: counter(sent);
+      color: var(--phase);
+      font-weight: 700;
+    }
+    .keep {
+      margin-top: 12px;
+      padding: 14px 16px;
+      background: #eef5f0;
+      border: 1px solid #c9ddd0;
+      color: var(--keep);
+    }
+    .steps li { display: grid; grid-template-columns: 2rem 1fr; gap: 8px; }
+    .steps .n {
+      font-weight: 700;
+      color: var(--phase);
+    }
+    .bans li { border-left: 4px solid var(--warn); }
+    @media (max-width: 640px) {
+      .phases { grid-template-columns: 1fr; }
+      main { padding: 28px 16px 56px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>先基幹，後論文</h1>
+    <p class="source-file">閱讀頁。規則原文在 <code>.cursor/rules/backbone-before-paper.mdc</code>。</p>
+
+    <div class="callout">
+      <p>筆者目前的判斷是：這個題目還沒有非用最佳化不可的理由，因為複雜度不高，也不知道複雜度可以加在哪裡。這仍是思考，還沒有實驗。</p>
+      <p>不把「一定要最佳化」寫成前提，也不用一篇論文把這個缺口補上。</p>
+    </div>
+
+    <h2>兩階段</h2>
+    <p>實驗可以超過半年。</p>
+    <div class="phases">
+      <article class="phase">
+        <strong>第一階段</strong>
+        一套經得起重複檢查的程式基幹，加上每次改動後給筆者的簡短說明。
+      </article>
+      <article class="phase later">
+        <strong>第二階段</strong>
+        才寫論文。基幹還沒被多輪實驗撐住之前，不寫章節、不寫貢獻句、不寫「為何必須最佳化」。
+      </article>
+    </div>
+
+    <h2>來源</h2>
+    <ul class="sources">
+      <li>
+        <span><code>JORS_manuscript_anonymous_R5.docx</code></span>
+        多等級多狀態流網路、Policy I（同等級履行）、Policy II（完全向下替代）、最低容量向量、系統可靠度，以及材料、製造、庫存、替代損失下的利潤。稿末的下一題是可靠度與利潤的取捨，以及介於兩種政策之間、替代程度可變的部分向下替代。
+      </li>
+      <li>
+        <span><code>重工case.docx</code></span>
+        六站與三條重工路徑 <code>P1=(2,2,1)</code>、<code>P2=(5,6,1)</code>、<code>P3=(2,6,1)</code>。只當重工機制，不取代原稿的分級模型。
+      </li>
+      <li>
+        <span><code>NSGA-II.ipynb</code>、<code>SPEA2.ipynb</code></span>
+        以後搜尋器的寫法。第一階段不必先上演化算法。不把 notebook 的新機／再製與 Scope 1/2/3 能耗目標搬進來，除非評估器真的算出這些量。
+      </li>
+    </ul>
+
+    <h2>每一輪</h2>
+    <p>一輪只做一件事，並用同一份評估器重跑。先寫簡短說明，再決定下一輪加什麼。說明固定四句：</p>
+    <ol class="sentences">
+      <li>這一步改了哪個函式。</li>
+      <li>筆者要看哪個數字。</li>
+      <li>複雜度實際變在哪裡。</li>
+      <li>這一輪留或丟的理由。</li>
+    </ol>
+    <p class="keep">留的標準：它改變了負荷、可行容量、可靠度或利潤，或使原本可枚舉的做法不再合理。只增加參數、註解或檔案長度，不算複雜度。</p>
+
+    <h2>輪次順序</h2>
+    <ol class="steps">
+      <li><span class="n">1</span><span>先重現原稿一個已知算例（兩等級、<code>D = (550, 350)</code> 的投入量、最低容量向量與系統可靠度）。對不上就不加新機制。</span></li>
+      <li><span class="n">2</span><span>咀嚼這一版。狀態還小、枚舉或原稿演算法仍做得完，就明講，不假裝需要搜尋。</span></li>
+      <li><span class="n">3</span><span>一次只加一個機制：部分替代程度，或一條重工路徑。重跑後再咀嚼。</span></li>
+      <li><span class="n">4</span><span>重複第 3 步。程式可以比兩份 notebook 大，但每一層都要能單獨關掉，以便看出是哪一層把問題變難。</span></li>
+      <li><span class="n">5</span><span>只有某一版已顯示枚舉不合理，或政策選擇不再一眼看得出時，才把 NSGA-II 接到同一個評估器。SPEA2 只用同一評估器、同一預算做對照，而且排在 NSGA-II 之後。</span></li>
+      <li><span class="n">6</span><span>多輪之後可以有一份簡要敘述，長度以讓筆者看懂基幹為止。那不是論文。</span></li>
+    </ol>
+
+    <h2>禁止</h2>
+    <ul class="bans">
+      <li>還沒重現原稿算例就加重新工或最佳化。</li>
+      <li>一輪裡同時加好幾個機制。</li>
+      <li>用敘事宣稱複雜，但程式裡指不出對應的狀態或數字。</li>
+      <li>在第一階段起草論文。</li>
+    </ul>
+  </main>
+</body>
+</html>

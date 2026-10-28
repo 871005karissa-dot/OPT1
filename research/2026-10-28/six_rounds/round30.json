@@ -1,0 +1,1669 @@
+{
+  "question": "Does startup work remove capacity that a cost-only setup model leaves available?",
+  "assumptions": "Hypothetical workload units equivalent to station-2 unit processing, not measured hours; eta=.97, F=0, cash ledger.",
+  "headline": {
+    "orders_with_lower_fulfilment": {
+      "0": 0,
+      "100": 1,
+      "350": 3,
+      "700": 3
+    },
+    "anchors": [
+      {
+        "setup_workload": 350.0,
+        "demands": [
+          650.0,
+          250.0
+        ],
+        "without_setup_workload": {
+          "expected_profit": 26973.580486184277,
+          "fulfilment_probability": 0.9486622836415535,
+          "expected_rework": 33.53970620618058,
+          "activation_probability": 0.965588170343986,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.274945236492892,
+          "expected_grade2_shortage": 0.7484379458211082
+        },
+        "with_setup_workload": {
+          "expected_profit": 26852.49923200678,
+          "fulfilment_probability": 0.9477817940733309,
+          "expected_rework": 31.21325259650331,
+          "activation_probability": 0.8986109562160793,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.293977143033365,
+          "expected_grade2_shortage": 0.7484379458211082
+        },
+        "expected_setup_capacity_used": 314.5138346756278
+      },
+      {
+        "setup_workload": 350.0,
+        "demands": [
+          700.0,
+          200.0
+        ],
+        "without_setup_workload": {
+          "expected_profit": 29904.609540254187,
+          "fulfilment_probability": 0.9477817940733309,
+          "expected_rework": 98.35067998911117,
+          "activation_probability": 0.9875975914790672,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 6.290594598514308,
+          "expected_grade2_shortage": 0.09988517584325836
+        },
+        "with_setup_workload": {
+          "expected_profit": 28888.324259199937,
+          "fulfilment_probability": 0.9367042770566352,
+          "expected_rework": 78.96555617560526,
+          "activation_probability": 0.9190937123013284,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 6.6951235156691435,
+          "expected_grade2_shortage": 0.09988517584325836
+        },
+        "expected_setup_capacity_used": 321.6827993054649
+      },
+      {
+        "setup_workload": 350.0,
+        "demands": [
+          750.0,
+          150.0
+        ],
+        "without_setup_workload": {
+          "expected_profit": 32192.257299106648,
+          "fulfilment_probability": 0.8828591194583242,
+          "expected_rework": 157.0997309850253,
+          "activation_probability": 0.9238475160096201,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 8.95155744568874,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "with_setup_workload": {
+          "expected_profit": 29297.92330053093,
+          "fulfilment_probability": 0.8076063318413647,
+          "expected_rework": 103.78153275546492,
+          "activation_probability": 0.6124229226949368,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 13.366601788505099,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "expected_setup_capacity_used": 214.34802294322787
+      }
+    ]
+  },
+  "rows": [
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "with_setup_workload": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "with_setup_workload": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "with_setup_workload": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "with_setup_workload": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "with_setup_workload": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "with_setup_workload": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "with_setup_workload": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 26973.580486184277,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.274945236492892,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "with_setup_workload": {
+        "expected_profit": 26973.580486184277,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.274945236492892,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 29904.609540254187,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.290594598514308,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "with_setup_workload": {
+        "expected_profit": 29904.609540254187,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.290594598514308,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 32192.257299106648,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.95155744568874,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "with_setup_workload": {
+        "expected_profit": 32192.257299106648,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.95155744568874,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "with_setup_workload": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "with_setup_workload": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "with_setup_workload": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "with_setup_workload": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 0.0,
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "with_setup_workload": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "with_setup_workload": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "with_setup_workload": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "with_setup_workload": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "with_setup_workload": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "with_setup_workload": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "with_setup_workload": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "with_setup_workload": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 26973.580486184277,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.274945236492892,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "with_setup_workload": {
+        "expected_profit": 26973.580486184277,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.274945236492892,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "expected_setup_capacity_used": 96.5588170343986
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 29904.609540254187,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.290594598514308,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "with_setup_workload": {
+        "expected_profit": 29710.753531609516,
+        "fulfilment_probability": 0.9407545290704593,
+        "expected_rework": 94.7863726196939,
+        "activation_probability": 0.9202945233025925,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.598090828809682,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "expected_setup_capacity_used": 92.02945233025926
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 32192.257299106648,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.95155744568874,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "with_setup_workload": {
+        "expected_profit": 32192.257299106648,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.95155744568874,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "expected_setup_capacity_used": 92.384751600962
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "with_setup_workload": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "with_setup_workload": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "with_setup_workload": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "with_setup_workload": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 100.0,
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "with_setup_workload": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "with_setup_workload": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "with_setup_workload": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "with_setup_workload": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "with_setup_workload": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "with_setup_workload": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "with_setup_workload": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "with_setup_workload": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 26973.580486184277,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.274945236492892,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "with_setup_workload": {
+        "expected_profit": 26852.49923200678,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 31.21325259650331,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.293977143033365,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "expected_setup_capacity_used": 314.5138346756278
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 29904.609540254187,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.290594598514308,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "with_setup_workload": {
+        "expected_profit": 28888.324259199937,
+        "fulfilment_probability": 0.9367042770566352,
+        "expected_rework": 78.96555617560526,
+        "activation_probability": 0.9190937123013284,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.6951235156691435,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "expected_setup_capacity_used": 321.6827993054649
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 32192.257299106648,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.95155744568874,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "with_setup_workload": {
+        "expected_profit": 29297.92330053093,
+        "fulfilment_probability": 0.8076063318413647,
+        "expected_rework": 103.78153275546492,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.366601788505099,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "expected_setup_capacity_used": 214.34802294322787
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "with_setup_workload": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "with_setup_workload": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "with_setup_workload": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "with_setup_workload": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 350.0,
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "with_setup_workload": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "with_setup_workload": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "with_setup_workload": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "with_setup_workload": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "with_setup_workload": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "with_setup_workload": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "with_setup_workload": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "with_setup_workload": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 26973.580486184277,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.274945236492892,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "with_setup_workload": {
+        "expected_profit": 26295.525462790294,
+        "fulfilment_probability": 0.9437315420595067,
+        "expected_rework": 20.51156599198789,
+        "activation_probability": 0.5905157712277094,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.381523913119542,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "expected_setup_capacity_used": 413.36103985939656
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 29904.609540254187,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.290594598514308,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "with_setup_workload": {
+        "expected_profit": 26404.76231383588,
+        "fulfilment_probability": 0.8966158750169297,
+        "expected_rework": 32.05489724200678,
+        "activation_probability": 0.60397586808373,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.481450602457775,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "expected_setup_capacity_used": 422.783107658611
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 32192.257299106648,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.95155744568874,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "with_setup_workload": {
+        "expected_profit": 23721.565155416185,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 1.231278099636336,
+        "activation_probability": 0.012204671131936304,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 22.175100253265807,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "expected_setup_capacity_used": 8.543269792355414
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "with_setup_workload": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "with_setup_workload": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "with_setup_workload": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "with_setup_workload": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "expected_setup_capacity_used": 0.0
+    },
+    {
+      "setup_workload": 700.0,
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "without_setup_workload": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "with_setup_workload": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "expected_setup_capacity_used": 0.0
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T17:36:44.531249+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\round30_setup_workload.py": "928de91cda20b290dc170a81682683e5c627ee2a0a902272222ff6c4a9dc1c70",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round25_state_policy.py": "42a9a1436e8d6a54761ce43cd62dde38e404669491244258027261feb43678cc",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed"
+    }
+  }
+}

@@ -1,0 +1,756 @@
+{
+  "scope": "Exploratory setup-cost ablation of Round 25, using its existing accounting.\n\nThis is not a new calibrated case or a globally optimal production policy.\nForward production, grade-2 reservation, and downward substitution stay fixed.\nOnly the decision to activate the surplus-upgrade batch is varied by state.\nSetup costs are illustrative USD per activated batch, not empirical estimates.\n",
+  "setup_costs_are_hypothetical": true,
+  "run_at_utc": "2026-10-27T17:13:55.576736+00:00",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "source_sha256": {
+    "backbone/ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+    "backbone/evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+    "backbone/round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+    "backbone/round25_state_policy.py": "42a9a1436e8d6a54761ce43cd62dde38e404669491244258027261feb43678cc"
+  },
+  "pilot_sha256": "f7f87227f76af018020857fca010fdae7fab118401414e371755fbacdeda66fa",
+  "upgrade_yield": 0.97,
+  "holding_per_unit": 30.0,
+  "marginal_gain_per_rework_input": {
+    "upgrade_fills_grade1_shortage": 80.89999999999999,
+    "upgrade_becomes_grade1_surplus": 51.8
+  },
+  "orders": [
+    {
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "release": 2307.3692857142855,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": -1067.1421338224227,
+      "no_upgrade_fulfilment_probability": 0.9486622836415534,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": -1067.1421338224227,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": -1067.1421338224227,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": -1067.1421338224227,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": -1067.1421338224227,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": -1067.1421338224227,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "release": 2076.632357142857,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 5249.809450912356,
+      "no_upgrade_fulfilment_probability": 0.9486622836415534,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 5249.809450912356,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 5249.809450912356,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 5249.809450912356,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 5249.809450912356,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 5249.809450912356,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "release": 1845.8954285714285,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 14378.31438869349,
+      "no_upgrade_fulfilment_probability": 0.9486622836415534,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 14378.31438869349,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 14378.31438869349,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 14378.31438869349,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 14378.31438869349,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 14378.31438869349,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "release": 1384.4215714285715,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 21804.902332743226,
+      "no_upgrade_fulfilment_probability": 0.9655881703439857,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 21804.902332743226,
+          "fulfilment_probability": 0.9655881703439857,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 21804.902332743226,
+          "fulfilment_probability": 0.9655881703439857,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 21804.902332743226,
+          "fulfilment_probability": 0.9655881703439857,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 21804.902332743226,
+          "fulfilment_probability": 0.9655881703439857,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 21804.902332743226,
+          "fulfilment_probability": 0.9655881703439857,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "release": 1845.8954285714285,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 11040.364648236442,
+      "no_upgrade_fulfilment_probability": 0.9655881703439857,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 11040.364648236442,
+          "fulfilment_probability": 0.9655881703439857,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 11040.364648236442,
+          "fulfilment_probability": 0.9655881703439857,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 11040.364648236442,
+          "fulfilment_probability": 0.9655881703439857,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 11040.364648236442,
+          "fulfilment_probability": 0.9655881703439857,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 11040.364648236442,
+          "fulfilment_probability": 0.9655881703439857,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "release": 1615.1585,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 21786.616035396204,
+      "no_upgrade_fulfilment_probability": 0.9486622836415534,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 21786.616035396204,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 21786.616035396204,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 21786.616035396204,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 21786.616035396204,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 21786.616035396204,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "release": 1384.4215714285715,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 24893.00889761112,
+      "no_upgrade_fulfilment_probability": 0.9486622836415534,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 24893.00889761112,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 24893.00889761112,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 24893.00889761112,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 24893.00889761112,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 24893.00889761112,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "release": 1316.2451083678393,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 25227.992405125362,
+      "no_upgrade_fulfilment_probability": 0.93596855903301,
+      "potential_activation_probability": 0.9655881703439857,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 26973.580486184277,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.9655881703439857,
+          "expected_rework": 33.53970620618058
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 26732.183443598286,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.9655881703439857,
+          "expected_rework": 33.53970620618058
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 26011.175319026395,
+          "fulfilment_probability": 0.9486622836415534,
+          "activation_probability": 0.9486622836415534,
+          "expected_rework": 33.369831255422525
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 25227.992405125362,
+          "fulfilment_probability": 0.93596855903301,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 25227.992405125362,
+          "fulfilment_probability": 0.93596855903301,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "release": 1417.4947320884423,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 24644.66489427898,
+      "no_upgrade_fulfilment_probability": 0.8346588219082791,
+      "potential_activation_probability": 0.987597591479067,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 29904.609540254234,
+          "fulfilment_probability": 0.9477817940733305,
+          "activation_probability": 0.987597591479067,
+          "expected_rework": 98.35067998911117
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 29657.710142384472,
+          "fulfilment_probability": 0.9477817940733305,
+          "activation_probability": 0.987597591479067,
+          "expected_rework": 98.35067998911117
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 28917.011948775176,
+          "fulfilment_probability": 0.9477817940733305,
+          "activation_probability": 0.987597591479067,
+          "expected_rework": 98.35067998911117
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 26960.031041118924,
+          "fulfilment_probability": 0.9477817940733305,
+          "activation_probability": 0.9076927607318509,
+          "expected_rework": 94.50108144482986
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 24644.66489427898,
+          "fulfilment_probability": 0.8346588219082791,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "release": 1518.7443558090454,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 23621.954757155698,
+      "no_upgrade_fulfilment_probability": 0.6633718222421919,
+      "potential_activation_probability": 0.9238475160096205,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 32192.257299106706,
+          "fulfilment_probability": 0.8828591194583243,
+          "activation_probability": 0.9238475160096205,
+          "expected_rework": 157.0997309850254
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 31961.295420104314,
+          "fulfilment_probability": 0.8828591194583243,
+          "activation_probability": 0.9238475160096205,
+          "expected_rework": 157.0997309850254
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 31268.4868977826,
+          "fulfilment_probability": 0.8828591194583243,
+          "activation_probability": 0.9236888243185442,
+          "expected_rework": 157.09872261660016
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 29422.59796489289,
+          "fulfilment_probability": 0.8828591194583243,
+          "activation_probability": 0.9220204381112661,
+          "expected_rework": 157.0552560792152
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 23622.752056977708,
+          "fulfilment_probability": 0.6751850572825125,
+          "activation_probability": 0.011813235040320605,
+          "expected_rework": 1.5527040867110313
+        }
+      ]
+    },
+    {
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "release": 1555.1668985714284,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 28588.593982932165,
+      "no_upgrade_fulfilment_probability": 0.6633718222421919,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 28588.593982932165,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 28588.593982932165,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 28588.593982932165,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 28588.593982932165,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 28588.593982932165,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "release": 1559.781637142857,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 28571.501643014362,
+      "no_upgrade_fulfilment_probability": 0.6633718222421919,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 28571.501643014362,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 28571.501643014362,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 28571.501643014362,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 28571.501643014362,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 28571.501643014362,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "release": 1564.3963757142856,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 28542.461294825225,
+      "no_upgrade_fulfilment_probability": 0.6633718222421919,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 28542.461294825225,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 28542.461294825225,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 28542.461294825225,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 28542.461294825225,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 28542.461294825225,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "release": 1624.3879771428572,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 28164.936768366253,
+      "no_upgrade_fulfilment_probability": 0.6633718222421919,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 28164.936768366253,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 28164.936768366253,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 28164.936768366253,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 28164.936768366253,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 28164.936768366253,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    },
+    {
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "release": 1629.0027157142856,
+      "mass": 0.9999999999999967,
+      "no_upgrade_expected_profit": 28119.757102847932,
+      "no_upgrade_fulfilment_probability": 0.6633718222421919,
+      "potential_activation_probability": 0.0,
+      "negative_gross_gain_states": 0,
+      "results": [
+        {
+          "setup_cost": 0.0,
+          "expected_profit": 28119.757102847932,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 250.0,
+          "expected_profit": 28119.757102847932,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 1000.0,
+          "expected_profit": 28119.757102847932,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 3000.0,
+          "expected_profit": 28119.757102847932,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        },
+        {
+          "setup_cost": 10000.0,
+          "expected_profit": 28119.757102847932,
+          "fulfilment_probability": 0.6633718222421919,
+          "activation_probability": 0.0,
+          "expected_rework": 0.0
+        }
+      ]
+    }
+  ]
+}

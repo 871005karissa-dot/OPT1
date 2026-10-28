@@ -1,0 +1,11 @@
+{
+  "signature": {
+    "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+    "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+    "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+    "CAPS": "fadb4bc8ead33ff5fc67ae148c9c5649af36d59dc7738be68549015af1903ca0",
+    "PROB": "52aa2eb128ee9b838354fb3a31b06d9e656e1e2080371c0fef0e148f8d5fd3c0"
+  },
+  "sha256": "12b15ade4645e37b8fdc277255988262cada20dfd6dc5e12c7f4902fdb74554a",
+  "scope": "Fixed forward, final station5, integer floor quality/return capacity, setup workload0, integer inputs0..2100. Independent of demand and quality law."
+}

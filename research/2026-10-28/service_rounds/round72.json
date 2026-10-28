@@ -1,0 +1,58 @@
+{
+  "question": "Can a cached exact profit-best value screen outer releases without discarding a better constrained policy?",
+  "assumptions": "Round72: validate a profit-best upper bound before comparing economic cases.\n\nSame fixed-forward binary-setup model. The direct enumeration chooses r based\non EXPECTED future cash, then reveals success, never maximizes after seeing Y.\nThis bound may safely exclude an input whose unconstrained profit is already\nbelow a known service-feasible value; it is not the constrained optimum itself.\n",
+  "headline": {
+    "small_all_action_future_success_enumerations": 72,
+    "max_revenue_error": 2.9558577807620168e-12,
+    "max_service_error": 1.1102230246251565e-15,
+    "full_size_comparisons": 3,
+    "elapsed_seconds": 2.044572999999218
+  },
+  "rows": [
+    {
+      "fee": 1000.0,
+      "expected_profit": 23869.303720095224,
+      "fulfilment_probability": 0.7845596816067727,
+      "profit_difference": 1.8189894035458565e-11,
+      "service_difference": 1.1102230246251565e-16
+    },
+    {
+      "fee": 2000.0,
+      "expected_profit": 23019.77701066855,
+      "fulfilment_probability": 0.6882053369935941,
+      "profit_difference": 2.1827872842550278e-11,
+      "service_difference": 0.0
+    },
+    {
+      "fee": 3000.0,
+      "expected_profit": 22746.52156829316,
+      "fulfilment_probability": 0.3968516781097482,
+      "profit_difference": 2.1827872842550278e-11,
+      "service_difference": 0.0
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T22:39:43.643680+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round72_profit_bound_kernel.py": "d10272ba2aa1e526bccfb35a718027148ae7d3c0952f18d733a8b36d5fb5067b",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\recourse_value_curves.py": "a42f489600d3aa7196f1340a15b3752cd1a93ac6c20a3891124351e8f6906514",
+      "backbone\\maximal_service_curve.py": "4918c910b2475804433fe7eb940bc043e7cb28d7bc06e2a26f8c94bd27ae241b",
+      "backbone\\stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+      "backbone\\batch_stochastic_setup.py": "9c0cd244b6b37e19706b8288ec1643dba5c48ae8100d8c2fb2248d85bdf98471",
+      "backbone\\integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+      "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\exact_batch_quality.py": "27ab264d45c4ac12c119558c3bea033279cf3a64bb72ee9f1e04b07a627f7f31",
+      "research\\2026-10-28\\service_rounds\\round61.json": "28256be68fa373d09998063b71ee0a6c9da00b909fb47552bd2c778bb2e75dfa"
+    }
+  }
+}

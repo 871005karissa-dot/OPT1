@@ -1,0 +1,13 @@
+{
+  "reportlab_version": "4.4.9",
+  "output": "output\\pdf\\service_release_curve.pdf",
+  "pages": 3,
+  "source_sha256": {
+    "research\\2026-10-28\\export_service_figure.py": "12136756ba05e2515936f03b8544ebad4d6655895fe4208303e23f1fc9e6a5b3",
+    "research\\2026-10-28\\service_rounds\\round63.json": "06416f0b6ce66dcae7ce2737c3eb27eecf278f90fb5f2950b1944ab1713e9f78",
+    "research\\2026-10-28\\service_rounds\\round67.json": "edf82aa8bba965cf1d3a81be82ac9cb72c5a5b02d03f439e028dde8925b447b0",
+    "research\\2026-10-28\\service_rounds\\round76.json": "95d2137895dc213e1e0c134df6f453665a9a2eb7bab92c6900860c3ee52977e7",
+    "research\\2026-10-28\\service_rounds\\round79.json": "cc7a930bc607b2783d5d2557a50a5f018f4a77230893d9aa65a091c3525e9062"
+  },
+  "scope": "Plot of exact finite-law integer-grid values; no empirical factory claim or continuous-input optimum."
+}

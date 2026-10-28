@@ -1,0 +1,50 @@
+{
+  "completed_at_utc": "2026-10-27T17:37:02.979409+00:00",
+  "rounds": [
+    {
+      "round": 27,
+      "module": "backbone.round27_service_audit",
+      "passed": true,
+      "elapsed_seconds": 1.9753302999997686
+    },
+    {
+      "round": 28,
+      "module": "backbone.round28_accounting_audit",
+      "passed": true,
+      "elapsed_seconds": 0.14788249999764957
+    },
+    {
+      "round": 29,
+      "module": "backbone.round29_upgrade_yield",
+      "passed": true,
+      "elapsed_seconds": 0.8727968999992299
+    },
+    {
+      "round": 30,
+      "module": "backbone.round30_setup_workload",
+      "passed": true,
+      "elapsed_seconds": 0.6662305999998352
+    },
+    {
+      "round": 31,
+      "module": "backbone.round31_capacity_allocation",
+      "passed": true,
+      "elapsed_seconds": 4.797786999999516
+    },
+    {
+      "round": 32,
+      "module": "backbone.round32_nonanticipative_yield",
+      "passed": true,
+      "elapsed_seconds": 7.782211400000961
+    }
+  ],
+  "independent_lp_checks": {
+    "state_order_eta_cases": 288,
+    "max_profit_error": 2.1827872842550278e-11,
+    "uncertain_cases": 128,
+    "max_uncertain_profit_error": 1.4551915228366852e-11,
+    "method": "independent generic two-variable LP half-plane vertex enumeration over scalar forward-flow and grade-sales regions"
+  },
+  "run_all_sha256": "177107f540c8499433c9349043be7f73d6f898c7fe8ad3899f6233aa46b5fceb",
+  "checker_sha256": "bf6699beaf46e9aa339d25e3f27bc1ac7487304d0d110cf2e9f760a99413fcbb"
+}

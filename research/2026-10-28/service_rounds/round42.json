@@ -1,0 +1,317 @@
+{
+  "question": "Does a one-direction physical adjustment further limit repairable quality subtypes?",
+  "assumptions": "Round42: a one-direction adjustment can repair only one tolerance tail.\n\nNormal KQC data only: rounded strict/wide probabilities cannot identify tails.\nMoving a value up can repair the lower tail; moving it down can repair the upper\ntail. These are hypothetical perfect capabilities; no actual machining direction\nor station-KQC correspondence is inferred. Other KQCs remain unchanged.\n",
+  "grade_shares": [
+    0.6251333806714808,
+    0.25405385346844744
+  ],
+  "bounds": [
+    {
+      "KQC_index": 0,
+      "KQC_name": "surface roughness",
+      "bidirectional_bound": 0.3974740141675911,
+      "increase_value_bound": 0.0,
+      "decrease_value_bound": 0.3974740141675911
+    },
+    {
+      "KQC_index": 1,
+      "KQC_name": "center hole diameter",
+      "bidirectional_bound": 0.1210570394269475,
+      "increase_value_bound": 0.015357728081569929,
+      "decrease_value_bound": 0.10569931134537756
+    },
+    {
+      "KQC_index": 2,
+      "KQC_name": "external diameter",
+      "bidirectional_bound": 0.11617128746661458,
+      "increase_value_bound": 0.11616936146967279,
+      "decrease_value_bound": 1.92599694194874e-06
+    },
+    {
+      "KQC_index": 3,
+      "KQC_name": "screw diameter",
+      "bidirectional_bound": 0.251007176026881,
+      "increase_value_bound": 0.11477237126318221,
+      "decrease_value_bound": 0.13623480476369879
+    }
+  ],
+  "headline": {
+    "cases": 8,
+    "source": "normal_parameters_and_tolerances"
+  },
+  "rows": [
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 0,
+      "KQC_name": "surface roughness",
+      "bidirectional_bound": 0.3974740141675911,
+      "increase_value_bound": 0.0,
+      "decrease_value_bound": 0.3974740141675911,
+      "direction": "increase_value_bound",
+      "bidirectional": {
+        "expected_profit": 28047.08752471041,
+        "fulfilment_probability": 0.8710458844180036,
+        "expected_rework": 104.91338024702046,
+        "activation_probability": 0.9241226681872599,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.796805304204204,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided": {
+        "expected_profit": 23150.620713531713,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.361983367561788,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided_service_ceiling": 0.6633718222421918
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 0,
+      "KQC_name": "surface roughness",
+      "bidirectional_bound": 0.3974740141675911,
+      "increase_value_bound": 0.0,
+      "decrease_value_bound": 0.3974740141675911,
+      "direction": "decrease_value_bound",
+      "bidirectional": {
+        "expected_profit": 28047.08752471041,
+        "fulfilment_probability": 0.8710458844180036,
+        "expected_rework": 104.91338024702046,
+        "activation_probability": 0.9241226681872599,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.796805304204204,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided": {
+        "expected_profit": 28047.08752471041,
+        "fulfilment_probability": 0.8710458844180036,
+        "expected_rework": 104.91338024702046,
+        "activation_probability": 0.9241226681872599,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.796805304204204,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided_service_ceiling": 0.8710458844180036
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 1,
+      "KQC_name": "center hole diameter",
+      "bidirectional_bound": 0.1210570394269475,
+      "increase_value_bound": 0.015357728081569929,
+      "decrease_value_bound": 0.10569931134537756,
+      "direction": "increase_value_bound",
+      "bidirectional": {
+        "expected_profit": 24571.005975123495,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 24.706490241563614,
+        "activation_probability": 0.6966809005613657,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.28002441951059,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided": {
+        "expected_profit": 23335.0593139683,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 3.0138454447975875,
+        "activation_probability": 0.6690743323630178,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 22.417936487692703,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided_service_ceiling": 0.6633718222421918
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 1,
+      "KQC_name": "center hole diameter",
+      "bidirectional_bound": 0.1210570394269475,
+      "increase_value_bound": 0.015357728081569929,
+      "decrease_value_bound": 0.10569931134537756,
+      "direction": "decrease_value_bound",
+      "bidirectional": {
+        "expected_profit": 24571.005975123495,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 24.706490241563614,
+        "activation_probability": 0.6966809005613657,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.28002441951059,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided": {
+        "expected_profit": 24391.380911990946,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 21.578967102170907,
+        "activation_probability": 0.6966809005613657,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 18.007053831452815,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided_service_ceiling": 0.7162844112890252
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 2,
+      "KQC_name": "external diameter",
+      "bidirectional_bound": 0.11617128746661458,
+      "increase_value_bound": 0.11616936146967279,
+      "decrease_value_bound": 1.92599694194874e-06,
+      "direction": "increase_value_bound",
+      "bidirectional": {
+        "expected_profit": 24513.866764463815,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 23.711650643159196,
+        "activation_probability": 0.6966809005613657,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.51126065676032,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided": {
+        "expected_profit": 24513.844238897847,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 23.71125844873212,
+        "activation_probability": 0.6966809005613657,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.511351821499517,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided_service_ceiling": 0.7162844112890252
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 2,
+      "KQC_name": "external diameter",
+      "bidirectional_bound": 0.11617128746661458,
+      "increase_value_bound": 0.11616936146967279,
+      "decrease_value_bound": 1.92599694194874e-06,
+      "direction": "decrease_value_bound",
+      "bidirectional": {
+        "expected_profit": 24513.866764463815,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 23.711650643159196,
+        "activation_probability": 0.6966809005613657,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.51126065676032,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided": {
+        "expected_profit": 23150.643843787606,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.00037796326900410386,
+        "activation_probability": 0.6690743323630178,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.361864975609933,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided_service_ceiling": 0.6633718222421918
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 3,
+      "KQC_name": "screw diameter",
+      "bidirectional_bound": 0.251007176026881,
+      "increase_value_bound": 0.11477237126318221,
+      "decrease_value_bound": 0.13623480476369879,
+      "direction": "increase_value_bound",
+      "bidirectional": {
+        "expected_profit": 26261.39484153058,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 67.13712688644847,
+        "activation_probability": 0.9241226681872599,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 12.258045153197523,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided": {
+        "expected_profit": 24497.50550359898,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 23.426782132897348,
+        "activation_probability": 0.6966809005613657,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.577478708715986,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided_service_ceiling": 0.7162844112890252
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.6949263843073,
+      "KQC_index": 3,
+      "KQC_name": "screw diameter",
+      "bidirectional_bound": 0.251007176026881,
+      "increase_value_bound": 0.11477237126318221,
+      "decrease_value_bound": 0.13623480476369879,
+      "direction": "decrease_value_bound",
+      "bidirectional": {
+        "expected_profit": 26261.39484153058,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 67.13712688644847,
+        "activation_probability": 0.9241226681872599,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 12.258045153197523,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided": {
+        "expected_profit": 24747.882730892576,
+        "fulfilment_probability": 0.7378862957062176,
+        "expected_rework": 27.796292134858202,
+        "activation_probability": 0.6966809005613657,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 16.5819762805897,
+        "expected_grade2_shortage": 0.011789875733235599
+      },
+      "one_sided_service_ceiling": 0.7378862957062176
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T18:15:43.103395+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round42_one_sided_repair.py": "405501a6e6272c6f000e8951338986cdc5c33a8395fc529dfd7ce1bfe8dd210a",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+      "backbone\\round40_quality_recoverability.py": "8477646c60d3fb420d8411305e8ac6a0fd4786b4f0a0fd3e57ef8e8662ca058b"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "question": "Can exact expected cash profit and return quantities replace Monte Carlo for this restricted policy?",
+  "assumptions": "Round48: exact expected-profit benchmark for fixed-forward random quality.",
+  "scope": "Exact expectation for fixed-forward, known eta=.97, maximal eligible return, multinomial initial quality and the specified cash accounting. No continuous-input or adaptive-forward optimality claim.",
+  "headline": {
+    "elapsed_seconds": 0.6667717000018456,
+    "small_batch_exhaustive_cases": 48,
+    "max_brute_revenue_error": 1.3642420526593924e-12,
+    "max_brute_return_error": 1.5543122344752192e-15,
+    "full_size_policies": 2
+  },
+  "rows": [
+    {
+      "input": 1518.7914361142653,
+      "expected_profit": 28146.044460393066,
+      "fulfilment_probability": 0.7050239932538349,
+      "expected_rework": 83.52498413292628,
+      "expected_normal_processing_and_material_cost": 77640.98090432391,
+      "capacity_groups": 166,
+      "round46_profit_estimate": 28150.381922718483,
+      "MC_profit_absolute_error": 4.337462325416709,
+      "MC_profit_error_in_standard_errors": 1.7210856715406697
+    },
+    {
+      "input": 1538.7914361142653,
+      "expected_profit": 28083.221313114016,
+      "fulfilment_probability": 0.7557204895269274,
+      "expected_rework": 84.34766584135224,
+      "expected_normal_processing_and_material_cost": 78457.6035731574,
+      "capacity_groups": 166,
+      "round46_profit_estimate": 28087.694736900223,
+      "MC_profit_absolute_error": 4.473423786206695,
+      "MC_profit_error_in_standard_errors": 1.8084871010877859
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T19:18:24.926416+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round48_exact_quality_profit.py": "b8e7127b3084f8ef303e7bdc02b82f75888197683e6f880c88a7e56bc6483a93",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+      "backbone\\round45_threshold_stability.py": "ad84ac8293899a4ad859af3d64763633e0fde0c5e94655f3b6d3dea4edde7caf",
+      "backbone\\round46_independent_service_validation.py": "2151959b14e2f99f53a291939fde4499082275922da271b4f7791f0704e90bff"
+    }
+  }
+}

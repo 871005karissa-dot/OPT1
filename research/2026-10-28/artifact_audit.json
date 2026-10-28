@@ -1,0 +1,356 @@
+{
+  "audited_at_utc": "2026-10-27T23:41:33.289705+00:00",
+  "round_outputs": 58,
+  "records": [
+    {
+      "path": "research\\2026-10-28\\six_rounds\\round27.json",
+      "sha256": "01e2ecfe06696a7053d5051d421b8105057be078f40e9c2bfc6b2bdc49517acb",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\six_rounds\\round28.json",
+      "sha256": "a354c384b977f21c5318f0bb384ac7ed5df005f8a9664bbd0abcf03a7110b6cc",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\six_rounds\\round29.json",
+      "sha256": "d9c90c2abe54d509e596049595473a8da0c7d560a8b7630c04fc6078dcaa6b20",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\six_rounds\\round30.json",
+      "sha256": "62fcecd0c98f1087ff6f5b4980ae6d180bf4bffc40d48b3c95bfcb5ae7e2b7f5",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\six_rounds\\round31.json",
+      "sha256": "c81ba982c9986482987f851753da64c6a8aa4da564cda602f8ae7f10b1b02ae8",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\six_rounds\\round32.json",
+      "sha256": "88f66ae9591d8b3228ceebf8bdc88a54474724eb8f1f68f74c6867a99d4b2f02",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round33.json",
+      "sha256": "284d0ff54c15ec19f287899bc4269d9e14cc5953fd4ff105bcd8a62cbd429d1c",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round34.json",
+      "sha256": "e8e2bcd28854febdb6698a02eebf91b5c307c9b70f8817cabb3270ef86eecb5a",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round35.json",
+      "sha256": "701b45ca462b3ce6bda1637e07cd71b25c5078bcd2288317e8591de5df15be63",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round36.json",
+      "sha256": "6870056e06247412fc57687b66fe4b180be8a9b585f76891a3f2c36d82b0ca79",
+      "source_count": 7,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round37.json",
+      "sha256": "b05ef836266760c1360f9edcb71b28390a18ccb89a5e836d822f83b9708e352c",
+      "source_count": 8,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round38.json",
+      "sha256": "210945ebea8d619025e929e6b96d539ef430140bf709ba83bf9eb1b8641ac0fa",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round39.json",
+      "sha256": "df058cd910afd2c1ccbf7ff4ca290e8620ec72c0069199dc226bd74d5cc6a61b",
+      "source_count": 8,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round40.json",
+      "sha256": "48943b8588fa4d40c2c05a14e10dd3f97018f2e4ec8da0f3c5ca3cb460c0a85f",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round41.json",
+      "sha256": "9fa62afcd0ac187785db2545cbb67dc4205d7c63bcfd2df3c43dd2e384df5389",
+      "source_count": 8,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round42.json",
+      "sha256": "b70409506d07ede60b600cbc14af0445629b238212aec08840b0122d680f711d",
+      "source_count": 8,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round43.json",
+      "sha256": "48299a85df89356127d6aa53ae9b100976c13a486648df6d28a42193d471a37a",
+      "source_count": 8,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round44.json",
+      "sha256": "89d2c91b499572a37073f5d94566bb473f919553114f26df09f555a6880abb51",
+      "source_count": 8,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round45.json",
+      "sha256": "a1c415e899e1124dd27bdf70997e35b33644ce0690218cc21d466506147387a4",
+      "source_count": 9,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round46.json",
+      "sha256": "fe6a7956597cc4cc3ab42c7a6be6411927d992eb1adf60ca6903653372e056c2",
+      "source_count": 10,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round47.json",
+      "sha256": "145fbcc3eb30d1c9c4a2bf3dece3d8fa5c59e4a6fdb05c5e3f5f5f50e83f9dc1",
+      "source_count": 11,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round48.json",
+      "sha256": "cd830f6711333e55417b0d85f0cec4a9c312b33bc89943c89d0e67f3e9ba4968",
+      "source_count": 11,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round49.json",
+      "sha256": "698727fb7e3b875e36209bddd37d3e0f76252f831df51ac611e6559695eda417",
+      "source_count": 10,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round50.json",
+      "sha256": "364c896d322f787d0c7eebfb2dbe0006e70cbbec43446546dcde489561d8b0e7",
+      "source_count": 11,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round51.json",
+      "sha256": "c3b74aca08f4bd43149a9c47bf2c410acb032d4a23ec66693dbd35494f80b17a",
+      "source_count": 12,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round52.json",
+      "sha256": "5f1550c42e5995eedf43ac6a74e01ad3b95f617d4f71bcff70ba52f8c681f34a",
+      "source_count": 10,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round53.json",
+      "sha256": "993cdbe29b90a9b7b639613b563e7e30bfc8e805316a5c757d6af57c9a481036",
+      "source_count": 10,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round54.json",
+      "sha256": "c2fd4cd1ba66f04fec1a4b360a8c577d7467599f74c077e4c761b08b0c5a33ea",
+      "source_count": 8,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round55.json",
+      "sha256": "47133164895220f0ccfca7b91ea990e65cd453e81017c5daa6167da473e0951b",
+      "source_count": 11,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round56.json",
+      "sha256": "ce583722d624de9b72d714a3b502a2c4ae8477a358259c4ced34461154cd5c89",
+      "source_count": 10,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round57.json",
+      "sha256": "851c099af88b06e3547897dd57c3da8e066e24878a9863c736d454c6b9f9c0ae",
+      "source_count": 12,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round58.json",
+      "sha256": "7b2330a8514378bf3506fad148e217db23520c7b7374b621ae5489ccc87867f3",
+      "source_count": 11,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round59.json",
+      "sha256": "0b1f0a262a670b8e8622f3a4baefeb04a54a07872e55bfed7ec99229f46f52e7",
+      "source_count": 10,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round60.json",
+      "sha256": "42cd6ce8aef6d046d50cf601c1c62e47b33fd0a98aa438270be5ac1fb27510e1",
+      "source_count": 9,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round61.json",
+      "sha256": "28256be68fa373d09998063b71ee0a6c9da00b909fb47552bd2c778bb2e75dfa",
+      "source_count": 12,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round62.json",
+      "sha256": "d26dd5bc495b669f24d002c7fe4edfa10802dfc4dbb281f4bcb5ae3e138ad70b",
+      "source_count": 12,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round63.json",
+      "sha256": "06416f0b6ce66dcae7ce2737c3eb27eecf278f90fb5f2950b1944ab1713e9f78",
+      "source_count": 12,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round64.json",
+      "sha256": "e40779088115cde23f5aa59926913b6fc72664c37da607e412a799549c746501",
+      "source_count": 12,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round65.json",
+      "sha256": "4425e584fac90cb410562a4b7b3cbcc6faa11af3aebe1a62186135fc1b57c4be",
+      "source_count": 11,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round66.json",
+      "sha256": "304c6ca56db1f29271be683c81ca56def9d575b1c2c0c13c034066acb38f8aa5",
+      "source_count": 14,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round67.json",
+      "sha256": "edf82aa8bba965cf1d3a81be82ac9cb72c5a5b02d03f439e028dde8925b447b0",
+      "source_count": 12,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round68.json",
+      "sha256": "d2a49d93d55f5d8a54d3f5cc14cc1daf2f02801364b5434f594d29b6360801df",
+      "source_count": 12,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round69.json",
+      "sha256": "651603f56d9a70af7773c5aad6ee18d2e4adcaf296790935d8265401dbb92a48",
+      "source_count": 18,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round70.json",
+      "sha256": "3466a50bbe5e9205fb718a1c0f2912712796652996bb27facb7413799f29dff4",
+      "source_count": 16,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round71.json",
+      "sha256": "f6cf19d7cf5a5b395441c1b185992142e067ebb294cd6a06e73a4f9383e0cd3e",
+      "source_count": 13,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round72.json",
+      "sha256": "7d5f68d95e0f23641489aeee46cec2705a2fc88f955156362c75fa990d21ff85",
+      "source_count": 15,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round73.json",
+      "sha256": "92b291a2557a50511aee5afb4bd647f54e4a604d95ec1330a80b7375a5af031b",
+      "source_count": 16,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round74.json",
+      "sha256": "756e84a212e3178b9520a946c86defb389efdb36c0bf87c69067ce9469dc1b9f",
+      "source_count": 15,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round75.json",
+      "sha256": "0521170540f9dfbab299916b8df7437c9d2c0e25144a739539f1c6a32deff101",
+      "source_count": 19,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round76.json",
+      "sha256": "95d2137895dc213e1e0c134df6f453665a9a2eb7bab92c6900860c3ee52977e7",
+      "source_count": 14,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round77.json",
+      "sha256": "86062f50c39dbf3e562f41e58a2f21596d869debc817ae076d77a71bd8586b23",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round78.json",
+      "sha256": "54be7f92b23d3fa307c82f43a8906d0393b3bdca7f48cbba10fb88cab667fb03",
+      "source_count": 16,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round79.json",
+      "sha256": "cc7a930bc607b2783d5d2557a50a5f018f4a77230893d9aa65a091c3525e9062",
+      "source_count": 13,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round80.json",
+      "sha256": "51ce2630e1c49d13b84e0957290a18ce1dd44b7d81085a125ca48fb3b44f3aa7",
+      "source_count": 13,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round81.json",
+      "sha256": "c720f41de169c6c3c6143e278613a29722a4d91c414ea436c5329b906e308333",
+      "source_count": 6,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round82.json",
+      "sha256": "60eb2f543c441334659f1625a3c12c8ef6cf381226ee84b32a552705f8658f34",
+      "source_count": 15,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round83.json",
+      "sha256": "b5fd54c8d6f24047a5c7aef4d748da38d9ec420a5f9100cb232ddc845dac68df",
+      "source_count": 7,
+      "source_and_trace_hashes_match": true
+    },
+    {
+      "path": "research\\2026-10-28\\service_rounds\\round84.json",
+      "sha256": "8f6a242c5249206025395183d1721b3a910b4a234cd65f551e569c1cec5dd355",
+      "source_count": 8,
+      "source_and_trace_hashes_match": true
+    }
+  ],
+  "audit_script_sha256": "0404f34c7e79e941cc02ffcea7feab10332d8e105ed633aca2ede581c9d8f15a",
+  "scope": "Source and saved-trace consistency, not an extra mathematical or empirical validation."
+}

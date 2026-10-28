@@ -1,0 +1,390 @@
+{
+  "question": "Do deterministic grade/subtype proportions overstate or understate whole-order fulfilment?",
+  "assumptions": "Round44: random grade/repairable-subtype counts, fixed forward flow.\n\nChoose raw release ex ante; machine capacities determine forward flow before\nquality is revealed. Inspect grades/subtypes, then choose return quantity.\nEnumerate C exactly; use independent multinomial quality replicas conditional\non each C. Upgrade eta=.97 is still a known fluid fraction, not random Bernoulli\nrework success. This is a hybrid uncertainty experiment, not an integer schedule.\nFloored finished counts and the same-floor fluid benchmark isolate rounding.\nMonte Carlo intervals quantify numerical sampling error, not empirical uncertainty.\n",
+  "grade_shares": [
+    0.625093657341258,
+    0.27434534809090927
+  ],
+  "replicas": 256,
+  "seed": 2026102844,
+  "headline": {
+    "elapsed_seconds": 9.997731100000237,
+    "cases": 4,
+    "capacity_quality_replica_outcomes_per_case": 7225344
+  },
+  "rows": [
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "KQC_name": "surface roughness",
+      "input": 1614.9252030990174,
+      "eligible_fraction": 0.4295362149083248,
+      "seed": 2026102844,
+      "unrounded_fluid": {
+        "expected_profit": 22570.842178056504,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.0274618363771988,
+        "expected_grade2_shortage": 4.989920361070483
+      },
+      "same_floor_fluid": {
+        "expected_profit": 22518.5535909886,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.174554070220006,
+        "expected_grade1_shortage": 1.0340730456541654,
+        "expected_grade2_shortage": 5.00774467026088
+      },
+      "random_quality": {
+        "profit": {
+          "estimate": 22415.936777228253,
+          "standard_error": 8.961912707051024,
+          "normal_approximation_95_interval": [
+            22398.371751089842,
+            22433.501803366664
+          ],
+          "replicas": 256
+        },
+        "met": {
+          "estimate": 0.948555504391615,
+          "standard_error": 1.6473880859284252e-05,
+          "normal_approximation_95_interval": [
+            0.9485232161784451,
+            0.9485877926047848
+          ],
+          "replicas": 256
+        },
+        "sent": {
+          "estimate": 2.4611272429554254,
+          "standard_error": 0.0671320933634235,
+          "normal_approximation_95_interval": [
+            2.329550757756339,
+            2.592703728154512
+          ],
+          "replicas": 256
+        },
+        "short1": {
+          "estimate": 1.0866094139514892,
+          "standard_error": 0.003195346475943877,
+          "normal_approximation_95_interval": [
+            1.0803466499405123,
+            1.0928721779624662
+          ],
+          "replicas": 256
+        },
+        "short2": {
+          "estimate": 4.953399436807503,
+          "standard_error": 0.0037567825741326413,
+          "normal_approximation_95_interval": [
+            4.946036278264455,
+            4.960762595350551
+          ],
+          "replicas": 256
+        },
+        "no_return_grade1_service": {
+          "estimate": 0.9720698692060896,
+          "standard_error": 0.00010114950537917757,
+          "normal_approximation_95_interval": [
+            0.9718716198184923,
+            0.9722681185936869
+          ],
+          "replicas": 256
+        }
+      },
+      "exact_no_return_grade1_service": 0.9720149605335366,
+      "binomial_validation_absolute_error": 5.490867255297793e-05,
+      "binomial_validation_error_in_standard_errors": 0.5428466738136054,
+      "joint_quality_replica_capacity_outcomes": 7225344,
+      "expected_finished_integer_count": 1209.4890748778619
+    },
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "KQC_name": "center hole diameter",
+      "input": 1614.9252030990174,
+      "eligible_fraction": 0.11200417022812646,
+      "seed": 2026102845,
+      "unrounded_fluid": {
+        "expected_profit": 22570.842178056504,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.01402747417206,
+        "expected_grade1_shortage": 1.0274618363771988,
+        "expected_grade2_shortage": 4.989920361070483
+      },
+      "same_floor_fluid": {
+        "expected_profit": 22518.5535909886,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.174554070220006,
+        "expected_grade1_shortage": 1.0340730456541654,
+        "expected_grade2_shortage": 5.00774467026088
+      },
+      "random_quality": {
+        "profit": {
+          "estimate": 22426.168203574452,
+          "standard_error": 7.999894538656756,
+          "normal_approximation_95_interval": [
+            22410.488698398567,
+            22441.847708750338
+          ],
+          "replicas": 256
+        },
+        "met": {
+          "estimate": 0.9485382847305095,
+          "standard_error": 1.6582738865264468e-05,
+          "normal_approximation_95_interval": [
+            0.9485057831595686,
+            0.9485707863014504
+          ],
+          "replicas": 256
+        },
+        "sent": {
+          "estimate": 2.6502909556747194,
+          "standard_error": 0.06861683548084667,
+          "normal_approximation_95_interval": [
+            2.5158044293991537,
+            2.784777481950285
+          ],
+          "replicas": 256
+        },
+        "short1": {
+          "estimate": 1.082746113822605,
+          "standard_error": 0.0030081448791327574,
+          "normal_approximation_95_interval": [
+            1.0768502581992265,
+            1.0886419694459837
+          ],
+          "replicas": 256
+        },
+        "short2": {
+          "estimate": 4.953235532538644,
+          "standard_error": 0.003844789098015582,
+          "normal_approximation_95_interval": [
+            4.9456998843783815,
+            4.960771180698906
+          ],
+          "replicas": 256
+        },
+        "no_return_grade1_service": {
+          "estimate": 0.9720469088950174,
+          "standard_error": 9.539743048066715e-05,
+          "normal_approximation_95_interval": [
+            0.9718599333670577,
+            0.9722338844229772
+          ],
+          "replicas": 256
+        }
+      },
+      "exact_no_return_grade1_service": 0.9720149605335366,
+      "binomial_validation_absolute_error": 3.194836148079361e-05,
+      "binomial_validation_error_in_standard_errors": 0.3348975053082602,
+      "joint_quality_replica_capacity_outcomes": 7225344,
+      "expected_finished_integer_count": 1209.4890748778619
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "KQC_name": "surface roughness",
+      "input": 1518.7914361142653,
+      "eligible_fraction": 0.4295362149083248,
+      "seed": 2026102846,
+      "unrounded_fluid": {
+        "expected_profit": 28255.453510303578,
+        "fulfilment_probability": 0.8076063318413647,
+        "expected_rework": 83.67714705329216,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.369473865704528,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "same_floor_fluid": {
+        "expected_profit": 28200.604933017712,
+        "fulfilment_probability": 0.5801645642154704,
+        "expected_rework": 83.61858050143759,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.546902232926982,
+        "expected_grade2_shortage": 0.00777813298920776
+      },
+      "random_quality": {
+        "profit": {
+          "estimate": 28154.088974297185,
+          "standard_error": 9.883652735154243,
+          "normal_approximation_95_interval": [
+            28134.717370900584,
+            28173.460577693786
+          ],
+          "replicas": 256
+        },
+        "met": {
+          "estimate": 0.7052803100643011,
+          "standard_error": 0.0020172335611581657,
+          "normal_approximation_95_interval": [
+            0.7013266049360257,
+            0.7092340151925766
+          ],
+          "replicas": 256
+        },
+        "sent": {
+          "estimate": 83.51523496261635,
+          "standard_error": 0.07453458818739597,
+          "normal_approximation_95_interval": [
+            83.36914985416654,
+            83.66132007106616
+          ],
+          "replicas": 256
+        },
+        "short1": {
+          "estimate": 15.112924628380195,
+          "standard_error": 0.04166603735605699,
+          "normal_approximation_95_interval": [
+            15.031260695783825,
+            15.194588560976566
+          ],
+          "replicas": 256
+        },
+        "short2": {
+          "estimate": 0.008729362758911579,
+          "standard_error": 3.137328444326892e-05,
+          "normal_approximation_95_interval": [
+            0.008667872251326042,
+            0.008790853266497116
+          ],
+          "replicas": 256
+        },
+        "no_return_grade1_service": {
+          "estimate": 0.36252778424421295,
+          "standard_error": 0.004149793535524901,
+          "normal_approximation_95_interval": [
+            0.35439433837130724,
+            0.37066123011711866
+          ],
+          "replicas": 256
+        }
+      },
+      "exact_no_return_grade1_service": 0.3607823916267805,
+      "binomial_validation_absolute_error": 0.0017453926174324508,
+      "binomial_validation_error_in_standard_errors": 0.42059745924484376,
+      "joint_quality_replica_capacity_outcomes": 7225344,
+      "expected_finished_integer_count": 1161.7024329194085
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "KQC_name": "center hole diameter",
+      "input": 1518.7914361142653,
+      "eligible_fraction": 0.11200417022812646,
+      "seed": 2026102847,
+      "unrounded_fluid": {
+        "expected_profit": 24884.70792015638,
+        "fulfilment_probability": 0.7162844112890252,
+        "expected_rework": 21.915543443995453,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 19.08595797189183,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "same_floor_fluid": {
+        "expected_profit": 24831.571394563663,
+        "fulfilment_probability": 0.48884264366313085,
+        "expected_rework": 21.90115318888248,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 19.282595688383427,
+        "expected_grade2_shortage": 0.00777813298920776
+      },
+      "random_quality": {
+        "profit": {
+          "estimate": 24789.193648669887,
+          "standard_error": 10.890085087560175,
+          "normal_approximation_95_interval": [
+            24767.84947410969,
+            24810.537823230083
+          ],
+          "replicas": 256
+        },
+        "met": {
+          "estimate": 0.6163002833764908,
+          "standard_error": 0.002270621882742679,
+          "normal_approximation_95_interval": [
+            0.6118499462638067,
+            0.6207506204891748
+          ],
+          "replicas": 256
+        },
+        "sent": {
+          "estimate": 21.869854977426858,
+          "standard_error": 0.04367348227554718,
+          "normal_approximation_95_interval": [
+            21.78425652508734,
+            21.955453429766376
+          ],
+          "replicas": 256
+        },
+        "short1": {
+          "estimate": 21.04456213598844,
+          "standard_error": 0.04524300303185725,
+          "normal_approximation_95_interval": [
+            20.955887479493565,
+            21.133236792483313
+          ],
+          "replicas": 256
+        },
+        "short2": {
+          "estimate": 0.008694633374032028,
+          "standard_error": 2.7097672183777703e-05,
+          "normal_approximation_95_interval": [
+            0.008641522912486953,
+            0.008747743835577103
+          ],
+          "replicas": 256
+        },
+        "no_return_grade1_service": {
+          "estimate": 0.36536469547687134,
+          "standard_error": 0.004556883691960804,
+          "normal_approximation_95_interval": [
+            0.3564333675588905,
+            0.3742960233948522
+          ],
+          "replicas": 256
+        }
+      },
+      "exact_no_return_grade1_service": 0.3607823916267805,
+      "binomial_validation_absolute_error": 0.004582303850090841,
+      "binomial_validation_error_in_standard_errors": 1.00557840837037,
+      "joint_quality_replica_capacity_outcomes": 7225344,
+      "expected_finished_integer_count": 1161.7024329194085
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T18:22:21.676769+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round44_random_quality_counts.py": "7b65eadc503cb25f5aa6ac1ceebb48fdb55bcd56cb1dcc1644cb211c2541065b",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+      "backbone\\round40_quality_recoverability.py": "8477646c60d3fb420d8411305e8ac6a0fd4786b4f0a0fd3e57ef8e8662ca058b"
+    }
+  }
+}

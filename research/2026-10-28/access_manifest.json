@@ -1,0 +1,186 @@
+[
+  {
+    "filename": "kohlmann_sahling_2024_full.html",
+    "requested_url": "https://www.tandfonline.com/doi/full/10.1080/00207543.2024.2314717",
+    "status": 200,
+    "final_url": "https://www.tandfonline.com/doi/full/10.1080/00207543.2024.2314717",
+    "content_type": "text/html;charset=UTF-8",
+    "saved": true,
+    "bytes": 714051,
+    "sha256": "8c4cd1df101388bbc8b5a787f6c19ee7384c8389ca05f7705f3850b13ea3e579"
+  },
+  {
+    "filename": "kohlmann_sahling_2024.pdf",
+    "requested_url": "https://www.tandfonline.com/doi/pdf/10.1080/00207543.2024.2314717?download=true",
+    "status": 200,
+    "final_url": "https://www.tandfonline.com/doi/pdf/10.1080/00207543.2024.2314717?download=true",
+    "content_type": "application/pdf;charset=UTF-8",
+    "saved": true,
+    "bytes": 2548559,
+    "sha256": "ad37bb3a1c1d36afa2ece024c016a9796f4217a4dd411d9e7e01a75fa3058b82"
+  },
+  {
+    "filename": "so_tang_1995.pdf",
+    "requested_url": "https://pubsonline.informs.org/doi/pdf/10.1287/mnsc.41.4.620",
+    "status": 200,
+    "final_url": "https://pubsonline.informs.org/action/cookieAbsent",
+    "content_type": "text/html;charset=UTF-8",
+    "saved": false,
+    "reason": "Response was not a PDF; not saved as a paper",
+    "bytes": 33641
+  },
+  {
+    "filename": "shen_et_al_2024_preprint.pdf",
+    "requested_url": "https://arxiv.org/pdf/2411.01772",
+    "status": 200,
+    "final_url": "https://arxiv.org/pdf/2411.01772",
+    "content_type": "application/pdf",
+    "saved": true,
+    "bytes": 812036,
+    "sha256": "62ed7a6197fe5cd338cc6247fc1c89ac9dd4297c3b33d5cf93ba1be1e29882c2"
+  },
+  {
+    "filename": "yeh_et_al_2024.pdf",
+    "requested_url": "https://link.springer.com/content/pdf/10.1007/s10479-023-05813-5.pdf",
+    "status": 200,
+    "final_url": "https://link.springer.com/content/pdf/10.1007/s10479-023-05813-5.pdf?error=cookies_not_supported&code=55b69ae2-bad8-4a1d-8d2f-419848f3bcd9",
+    "content_type": "application/pdf",
+    "saved": true,
+    "bytes": 1410586,
+    "sha256": "b9217fe467b3564f0df0b80c0020cd959f58fd20f7e1bceff4b7358481046155"
+  },
+  {
+    "filename": "berling_sonntag_2022.pdf",
+    "requested_url": "https://madoc.bib.uni-mannheim.de/61900/1/Production%20Oper%20Manag%20-%202022%20-%20Berling%20-%20Inventory%20control%20in%20production%20inventory%20systems%20with%20random%20yield%20and%20rework%20.pdf",
+    "status": 200,
+    "final_url": "https://madoc.bib.uni-mannheim.de/61900/1/Production%20Oper%20Manag%20-%202022%20-%20Berling%20-%20Inventory%20control%20in%20production%20inventory%20systems%20with%20random%20yield%20and%20rework%20.pdf",
+    "content_type": "text/html; charset=utf-8",
+    "saved": false,
+    "reason": "Response was not a PDF; not saved as a paper",
+    "bytes": 7375
+  },
+  {
+    "filename": "gerchak_et_al_1996.pdf",
+    "requested_url": "https://www.tandfonline.com/doi/pdf/10.1080/07408179608966286?download=true",
+    "status": 200,
+    "final_url": "https://www.tandfonline.com/action/cookieAbsent",
+    "content_type": "text/html;charset=UTF-8",
+    "saved": false,
+    "reason": "Response was not a PDF; not saved as a paper",
+    "bytes": 104307
+  },
+  {
+    "filename": "carabelli_et_al_2026.pdf",
+    "requested_url": "https://re.public.polimi.it/retrieve/66b1648a-296d-4b57-bfc6-41db79b48506/1-s2.0-S0278612526000816-main.pdf",
+    "saved": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+    "filename": "sereshti_bodur_luedtke_2022_preprint.pdf",
+    "requested_url": "https://arxiv.org/pdf/2301.00258v1",
+    "status": 200,
+    "final_url": "https://arxiv.org/pdf/2301.00258v1",
+    "content_type": "application/pdf",
+    "saved": true,
+    "bytes": 715851,
+    "sha256": "2d2d3239ca8d75c1bd177be2b2a50c45eb4ead161957bd1000fc735b731b1c04"
+  },
+  {
+    "filename": "tsai_et_al_2024.pdf",
+    "requested_url": "https://www.sciencedirect.com/science/article/pii/S0305054824000169/pdfft?isDTMRedir=true&download=true",
+    "saved": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+    "filename": "sereshti_et_al_2026_journal.pdf",
+    "requested_url": "https://www.sciencedirect.com/science/article/pii/S0377221726000056/pdfft?isDTMRedir=true&download=true",
+    "saved": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+    "filename": "dodd_et_al_multiple_quality_means_author.pdf",
+    "requested_url": "https://eprints.soton.ac.uk/375226/1/MultipleOptimalMeans_Manuscript.pdf",
+    "saved": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+    "filename": "hoeffding_1963_scan.pdf",
+    "requested_url": "https://www.cs.rpi.edu/academics/courses/spring06/random/hoefding.pdf",
+    "saved": false,
+    "error": "URLError: <urlopen error [WinError 10060] 連線嘗試失敗，因為連線對象有一段時間並未正確回應，或是連線建立失敗，因為連線的主機無法回應。>"
+  },
+  {
+    "filename": "hsu_bassok_1999.pdf",
+    "requested_url": "https://pubsonline.informs.org/doi/pdf/10.1287/opre.47.2.277",
+    "status": 200,
+    "final_url": "https://pubsonline.informs.org/action/cookieAbsent",
+    "content_type": "text/html;charset=UTF-8",
+    "saved": false,
+    "reason": "Response was not a PDF; not saved as a paper",
+    "bytes": 33641
+  },
+  {
+    "filename": "boutarfa_et_al_2024.pdf",
+    "requested_url": "https://backoffice.biblio.ugent.be/download/01K5RM17B3QF2GDJ5PVJMFZHX7/01K5V8CZVN6HFDZYHTXYBR2VT5",
+    "status": 200,
+    "final_url": "https://backoffice.biblio.ugent.be/download/01K5RM17B3QF2GDJ5PVJMFZHX7/01K5V8CZVN6HFDZYHTXYBR2VT5",
+    "content_type": "application/pdf",
+    "saved": true,
+    "bytes": 1695509,
+    "sha256": "987ce3d42cc03f4b69267c328c066bcb2b1c189056829f2c78c9b38433044d68"
+  },
+  {
+    "filename": "freeman_et_al_2021.pdf",
+    "requested_url": "https://www.sciencedirect.com/science/article/pii/S030504832030726X/pdfft?isDTMRedir=true&download=true",
+    "saved": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+    "filename": "kolus_duffuaa_2025.pdf",
+    "requested_url": "https://www.tandfonline.com/doi/pdf/10.1080/16843703.2024.2312016?download=true",
+    "saved": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+    "filename": "birge_1982.pdf",
+    "requested_url": "https://deepblue.lib.umich.edu/bitstream/handle/2027.42/47912/10107_2005_Article_BF01585113.pdf",
+    "saved": false,
+    "error": "HTTPError: HTTP Error 404: Not Found",
+    "attempts": [
+      {
+        "filename": "birge_1982.pdf",
+        "requested_url": "https://deepblue.lib.umich.edu/bitstream/2027.42/47912/1/10107_2005_Article_BF01585113.pdf",
+        "saved": false,
+        "error": "HTTPError: HTTP Error 404: Not Found"
+      },
+      {
+        "filename": "birge_1982.pdf",
+        "requested_url": "https://deepblue.lib.umich.edu/bitstream/handle/2027.42/47912/10107_2005_Article_BF01585113.pdf",
+        "saved": false,
+        "error": "HTTPError: HTTP Error 404: Not Found"
+      }
+    ]
+  },
+  {
+    "filename": "bitran_leong_1992.pdf",
+    "requested_url": "https://pubsonline.informs.org/doi/pdf/10.1287/mnsc.38.5.724",
+    "saved": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+    "filename": "bitran_leong_1992_accepted.pdf",
+    "requested_url": "https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=1154&context=sis_research",
+    "status": 200,
+    "final_url": "https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=1154&context=sis_research",
+    "content_type": "text/html",
+    "saved": false,
+    "reason": "Response was not a PDF; not saved as a paper",
+    "bytes": 212
+  },
+  {
+    "filename": "bitran_leong_1989_working.pdf",
+    "requested_url": "https://dspace.mit.edu/bitstreams/6f069a98-3475-41ce-9bc3-165a4ecaa652/download",
+    "saved": false,
+    "error": "HTTPError: HTTP Error 429: Too Many Requests"
+  }
+]

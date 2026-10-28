@@ -1,0 +1,827 @@
+{
+  "question": "Does knowing an upgrade-yield distribution differ from pretending its realization is known?",
+  "assumptions": "Round 32: choose forward/rework amounts before batch upgrade yield is revealed.\n\nThree hypothetical batch-yield scenarios are independent of machine availability.\nCapacity is observed first. The same x,r must be used for all future eta outcomes.\nThe clairvoyant policy is an information upper bound, not an implementable policy.\n",
+  "distributions": [
+    {
+      "label": "symmetric",
+      "etas": [
+        0.15,
+        0.35,
+        0.55
+      ],
+      "weights": [
+        0.25,
+        0.5,
+        0.25
+      ]
+    },
+    {
+      "label": "skewed",
+      "etas": [
+        0.05,
+        0.2,
+        0.8
+      ],
+      "weights": [
+        0.25,
+        0.4375,
+        0.3125
+      ]
+    }
+  ],
+  "mean_eta": 0.35,
+  "setup_workload": 350.0,
+  "distribution_is_hypothetical": true,
+  "optimality_scope": "Piecewise-linear vertices of the fluid fixed-release capacity-allocation model; exact probabilities for the specified three-point distribution, not a claim about an unknown real-world yield distribution.",
+  "headline": {
+    "elapsed_seconds": 7.768668200002139,
+    "joint_capacity_yield_outcomes": 84672,
+    "rows": [
+      {
+        "distribution": "symmetric",
+        "demands": [
+          550.0,
+          350.0
+        ],
+        "input": 1615.1585,
+        "mean_eta_policy_predicted": {
+          "expected_profit": 22949.865321235928,
+          "fulfilment_probability": 0.9486622836415535,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 13.030006851754443,
+          "expected_grade1_shortage": 1.0269069750710285,
+          "expected_grade2_shortage": 4.99137995872023
+        },
+        "mean_eta_policy_actual": {
+          "expected_profit": 22949.865321235928,
+          "fulfilment_probability": 0.9486622836415535,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 13.030006851754443,
+          "expected_grade1_shortage": 1.0269069750710285,
+          "expected_grade2_shortage": 4.99137995872023
+        },
+        "nonanticipative": {
+          "expected_profit": 22949.865321235928,
+          "fulfilment_probability": 0.9486622836415535,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 13.030006851754443,
+          "expected_grade1_shortage": 1.0269069750710285,
+          "expected_grade2_shortage": 4.99137995872023
+        },
+        "clairvoyant_information_bound": {
+          "expected_profit": 22949.865321235928,
+          "fulfilment_probability": 0.9486622836415535,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 13.030006851754443,
+          "expected_grade1_shortage": 1.0269069750710285,
+          "expected_grade2_shortage": 4.99137995872023
+        },
+        "gain_vs_mean_eta_policy": 0.0,
+        "mean_eta_optimism": 0.0,
+        "value_of_perfect_yield_information": 0.0,
+        "forward_return_vertex_pairs_checked": 140
+      },
+      {
+        "distribution": "symmetric",
+        "demands": [
+          650.0,
+          250.0
+        ],
+        "input": 1316.2451083678393,
+        "mean_eta_policy_predicted": {
+          "expected_profit": 25278.57666292919,
+          "fulfilment_probability": 0.9477817940733309,
+          "expected_rework": 0.44950823266691575,
+          "activation_probability": 0.02756507179807576,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.391994007684628,
+          "expected_grade2_shortage": 0.7484379458211083
+        },
+        "mean_eta_policy_actual": {
+          "expected_profit": 25278.139538155956,
+          "fulfilment_probability": 0.9448284853132507,
+          "expected_rework": 0.44950823266691575,
+          "activation_probability": 0.02756507179807576,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.406564833459001,
+          "expected_grade2_shortage": 0.7484379458211083
+        },
+        "nonanticipative": {
+          "expected_profit": 25278.139538155956,
+          "fulfilment_probability": 0.9448284853132507,
+          "expected_rework": 0.44950823266691575,
+          "activation_probability": 0.02756507179807576,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.406564833459001,
+          "expected_grade2_shortage": 0.7484379458211083
+        },
+        "clairvoyant_information_bound": {
+          "expected_profit": 25387.7792419473,
+          "fulfilment_probability": 0.9448284853132507,
+          "expected_rework": 8.028067265459287,
+          "activation_probability": 0.8986109562160793,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.423421392184011,
+          "expected_grade2_shortage": 0.7484379458211083
+        },
+        "gain_vs_mean_eta_policy": 0.0,
+        "mean_eta_optimism": 0.4371247732312622,
+        "value_of_perfect_yield_information": 109.63970379134518,
+        "forward_return_vertex_pairs_checked": 140
+      },
+      {
+        "distribution": "symmetric",
+        "demands": [
+          700.0,
+          200.0
+        ],
+        "input": 1417.4947320884423,
+        "mean_eta_policy_predicted": {
+          "expected_profit": 24824.879586416282,
+          "fulfilment_probability": 0.9289412940301387,
+          "expected_rework": 10.760593580393316,
+          "activation_probability": 0.14385696505501652,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 8.037034263352899,
+          "expected_grade2_shortage": 0.09988517584325839
+        },
+        "mean_eta_policy_actual": {
+          "expected_profit": 24812.70548136122,
+          "fulfilment_probability": 0.9053706759996737,
+          "expected_rework": 10.760593580393316,
+          "activation_probability": 0.14385696505501652,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 8.442837765188324,
+          "expected_grade2_shortage": 0.09988517584325839
+        },
+        "nonanticipative": {
+          "expected_profit": 24812.70548136122,
+          "fulfilment_probability": 0.9053706759996737,
+          "expected_rework": 10.760593580393316,
+          "activation_probability": 0.14385696505501652,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 8.442837765188324,
+          "expected_grade2_shortage": 0.09988517584325839
+        },
+        "clairvoyant_information_bound": {
+          "expected_profit": 25103.593882909958,
+          "fulfilment_probability": 0.9053706759996737,
+          "expected_rework": 25.485502659188704,
+          "activation_probability": 0.9206203773511606,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 8.84636002445305,
+          "expected_grade2_shortage": 0.09988517584325839
+        },
+        "gain_vs_mean_eta_policy": 0.0,
+        "mean_eta_optimism": 12.174105055062997,
+        "value_of_perfect_yield_information": 290.88840154873293,
+        "forward_return_vertex_pairs_checked": 140
+      },
+      {
+        "distribution": "symmetric",
+        "demands": [
+          750.0,
+          150.0
+        ],
+        "input": 1518.7443558090454,
+        "mean_eta_policy_predicted": {
+          "expected_profit": 23995.528735932625,
+          "fulfilment_probability": 0.7378862957062176,
+          "expected_rework": 21.72631192683439,
+          "activation_probability": 0.23331592017358715,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 15.76523083552102,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "mean_eta_policy_actual": {
+          "expected_profit": 23989.969852631926,
+          "fulfilment_probability": 0.7192576773402112,
+          "expected_rework": 21.72631192683439,
+          "activation_probability": 0.23331592017358715,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 15.950526945544315,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "nonanticipative": {
+          "expected_profit": 23989.969852631926,
+          "fulfilment_probability": 0.7192576773402112,
+          "expected_rework": 21.72631192683439,
+          "activation_probability": 0.23331592017358715,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 15.950526945544315,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "clairvoyant_information_bound": {
+          "expected_profit": 24390.044924195943,
+          "fulfilment_probability": 0.7192576773402112,
+          "expected_rework": 38.08205229399146,
+          "activation_probability": 0.6692459747898847,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 16.76526364280061,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "gain_vs_mean_eta_policy": 0.0,
+        "mean_eta_optimism": 5.5588833006990335,
+        "value_of_perfect_yield_information": 400.07507156402073,
+        "forward_return_vertex_pairs_checked": 140
+      },
+      {
+        "distribution": "skewed",
+        "demands": [
+          550.0,
+          350.0
+        ],
+        "input": 1615.1585,
+        "mean_eta_policy_predicted": {
+          "expected_profit": 22949.865321235928,
+          "fulfilment_probability": 0.9486622836415535,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 13.030006851754443,
+          "expected_grade1_shortage": 1.0269069750710285,
+          "expected_grade2_shortage": 4.99137995872023
+        },
+        "mean_eta_policy_actual": {
+          "expected_profit": 22949.865321235928,
+          "fulfilment_probability": 0.9486622836415535,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 13.030006851754443,
+          "expected_grade1_shortage": 1.0269069750710285,
+          "expected_grade2_shortage": 4.99137995872023
+        },
+        "nonanticipative": {
+          "expected_profit": 22949.865321235928,
+          "fulfilment_probability": 0.9486622836415535,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 13.030006851754443,
+          "expected_grade1_shortage": 1.0269069750710285,
+          "expected_grade2_shortage": 4.99137995872023
+        },
+        "clairvoyant_information_bound": {
+          "expected_profit": 22949.865321235928,
+          "fulfilment_probability": 0.9486622836415535,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 13.030006851754443,
+          "expected_grade1_shortage": 1.0269069750710285,
+          "expected_grade2_shortage": 4.99137995872023
+        },
+        "gain_vs_mean_eta_policy": 0.0,
+        "mean_eta_optimism": 0.0,
+        "value_of_perfect_yield_information": 0.0,
+        "forward_return_vertex_pairs_checked": 210
+      },
+      {
+        "distribution": "skewed",
+        "demands": [
+          650.0,
+          250.0
+        ],
+        "input": 1316.2451083678393,
+        "mean_eta_policy_predicted": {
+          "expected_profit": 25278.57666292919,
+          "fulfilment_probability": 0.9477817940733309,
+          "expected_rework": 0.44950823266691575,
+          "activation_probability": 0.02756507179807576,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.391994007684628,
+          "expected_grade2_shortage": 0.7484379458211083
+        },
+        "mean_eta_policy_actual": {
+          "expected_profit": 25277.347249504473,
+          "fulfilment_probability": 0.9396601949831106,
+          "expected_rework": 0.44950823266691564,
+          "activation_probability": 0.02756507179807576,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.432974455175053,
+          "expected_grade2_shortage": 0.7484379458211083
+        },
+        "nonanticipative": {
+          "expected_profit": 25277.511171294438,
+          "fulfilment_probability": 0.9396601949831106,
+          "expected_rework": 0.28558644270522004,
+          "activation_probability": 0.02756507179807576,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.449366634171222,
+          "expected_grade2_shortage": 0.7484379458211083
+        },
+        "clairvoyant_information_bound": {
+          "expected_profit": 25633.82292016601,
+          "fulfilment_probability": 0.9396601949831106,
+          "expected_rework": 9.754141436407286,
+          "activation_probability": 0.8986109562160793,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.477925278441743,
+          "expected_grade2_shortage": 0.7484379458211083
+        },
+        "gain_vs_mean_eta_policy": 0.16392178996164275,
+        "mean_eta_optimism": 1.2294134247128436,
+        "value_of_perfect_yield_information": 356.31174887157374,
+        "forward_return_vertex_pairs_checked": 210
+      },
+      {
+        "distribution": "skewed",
+        "demands": [
+          700.0,
+          200.0
+        ],
+        "input": 1417.4947320884423,
+        "mean_eta_policy_predicted": {
+          "expected_profit": 24824.879586416282,
+          "fulfilment_probability": 0.9289412940301387,
+          "expected_rework": 10.760593580393316,
+          "activation_probability": 0.14385696505501652,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 8.037034263352899,
+          "expected_grade2_shortage": 0.09988517584325839
+        },
+        "mean_eta_policy_actual": {
+          "expected_profit": 24789.918262805302,
+          "fulfilment_probability": 0.8678137303964604,
+          "expected_rework": 10.760593580393316,
+          "activation_probability": 0.14385696505501652,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 9.202411717052328,
+          "expected_grade2_shortage": 0.09988517584325839
+        },
+        "nonanticipative": {
+          "expected_profit": 24794.579772620098,
+          "fulfilment_probability": 0.8678137303964604,
+          "expected_rework": 6.099083765595593,
+          "activation_probability": 0.14385696505501652,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 9.668562698532103,
+          "expected_grade2_shortage": 0.09988517584325839
+        },
+        "clairvoyant_information_bound": {
+          "expected_profit": 25761.041882043814,
+          "fulfilment_probability": 0.8678137303964604,
+          "expected_rework": 28.782160020879772,
+          "activation_probability": 0.9206203773511606,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 10.276878107016053,
+          "expected_grade2_shortage": 0.09988517584325839
+        },
+        "gain_vs_mean_eta_policy": 4.661509814796711,
+        "mean_eta_optimism": 34.96132361098308,
+        "value_of_perfect_yield_information": 966.4621094237198,
+        "forward_return_vertex_pairs_checked": 210
+      },
+      {
+        "distribution": "skewed",
+        "demands": [
+          750.0,
+          150.0
+        ],
+        "input": 1518.7443558090454,
+        "mean_eta_policy_predicted": {
+          "expected_profit": 23995.528735932625,
+          "fulfilment_probability": 0.7378862957062176,
+          "expected_rework": 21.72631192683439,
+          "activation_probability": 0.23331592017358715,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 15.76523083552102,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "mean_eta_policy_actual": {
+          "expected_profit": 23956.83821940745,
+          "fulfilment_probability": 0.716120867737781,
+          "expected_rework": 21.72631192683439,
+          "activation_probability": 0.23331592017358715,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 17.05491471969342,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "nonanticipative": {
+          "expected_profit": 23961.996954944145,
+          "fulfilment_probability": 0.716120867737781,
+          "expected_rework": 16.567576390144772,
+          "activation_probability": 0.23331592017358715,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 17.570788273362382,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "clairvoyant_information_bound": {
+          "expected_profit": 25281.440593438223,
+          "fulfilment_probability": 0.7282699666721331,
+          "expected_rework": 45.68950237265161,
+          "activation_probability": 0.9242943106141268,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 19.09121555019402,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "gain_vs_mean_eta_policy": 5.158735536689324,
+        "mean_eta_optimism": 38.69051652517203,
+        "value_of_perfect_yield_information": 1319.4436384940773,
+        "forward_return_vertex_pairs_checked": 210
+      }
+    ]
+  },
+  "rows": [
+    {
+      "distribution": "symmetric",
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input": 1615.1585,
+      "mean_eta_policy_predicted": {
+        "expected_profit": 22949.865321235928,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.0269069750710285,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "mean_eta_policy_actual": {
+        "expected_profit": 22949.865321235928,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.0269069750710285,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "nonanticipative": {
+        "expected_profit": 22949.865321235928,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.0269069750710285,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "clairvoyant_information_bound": {
+        "expected_profit": 22949.865321235928,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.0269069750710285,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "gain_vs_mean_eta_policy": 0.0,
+      "mean_eta_optimism": 0.0,
+      "value_of_perfect_yield_information": 0.0,
+      "forward_return_vertex_pairs_checked": 140
+    },
+    {
+      "distribution": "symmetric",
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input": 1316.2451083678393,
+      "mean_eta_policy_predicted": {
+        "expected_profit": 25278.57666292919,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 0.44950823266691575,
+        "activation_probability": 0.02756507179807576,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.391994007684628,
+        "expected_grade2_shortage": 0.7484379458211083
+      },
+      "mean_eta_policy_actual": {
+        "expected_profit": 25278.139538155956,
+        "fulfilment_probability": 0.9448284853132507,
+        "expected_rework": 0.44950823266691575,
+        "activation_probability": 0.02756507179807576,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.406564833459001,
+        "expected_grade2_shortage": 0.7484379458211083
+      },
+      "nonanticipative": {
+        "expected_profit": 25278.139538155956,
+        "fulfilment_probability": 0.9448284853132507,
+        "expected_rework": 0.44950823266691575,
+        "activation_probability": 0.02756507179807576,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.406564833459001,
+        "expected_grade2_shortage": 0.7484379458211083
+      },
+      "clairvoyant_information_bound": {
+        "expected_profit": 25387.7792419473,
+        "fulfilment_probability": 0.9448284853132507,
+        "expected_rework": 8.028067265459287,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.423421392184011,
+        "expected_grade2_shortage": 0.7484379458211083
+      },
+      "gain_vs_mean_eta_policy": 0.0,
+      "mean_eta_optimism": 0.4371247732312622,
+      "value_of_perfect_yield_information": 109.63970379134518,
+      "forward_return_vertex_pairs_checked": 140
+    },
+    {
+      "distribution": "symmetric",
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input": 1417.4947320884423,
+      "mean_eta_policy_predicted": {
+        "expected_profit": 24824.879586416282,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 10.760593580393316,
+        "activation_probability": 0.14385696505501652,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.037034263352899,
+        "expected_grade2_shortage": 0.09988517584325839
+      },
+      "mean_eta_policy_actual": {
+        "expected_profit": 24812.70548136122,
+        "fulfilment_probability": 0.9053706759996737,
+        "expected_rework": 10.760593580393316,
+        "activation_probability": 0.14385696505501652,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.442837765188324,
+        "expected_grade2_shortage": 0.09988517584325839
+      },
+      "nonanticipative": {
+        "expected_profit": 24812.70548136122,
+        "fulfilment_probability": 0.9053706759996737,
+        "expected_rework": 10.760593580393316,
+        "activation_probability": 0.14385696505501652,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.442837765188324,
+        "expected_grade2_shortage": 0.09988517584325839
+      },
+      "clairvoyant_information_bound": {
+        "expected_profit": 25103.593882909958,
+        "fulfilment_probability": 0.9053706759996737,
+        "expected_rework": 25.485502659188704,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.84636002445305,
+        "expected_grade2_shortage": 0.09988517584325839
+      },
+      "gain_vs_mean_eta_policy": 0.0,
+      "mean_eta_optimism": 12.174105055062997,
+      "value_of_perfect_yield_information": 290.88840154873293,
+      "forward_return_vertex_pairs_checked": 140
+    },
+    {
+      "distribution": "symmetric",
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.7443558090454,
+      "mean_eta_policy_predicted": {
+        "expected_profit": 23995.528735932625,
+        "fulfilment_probability": 0.7378862957062176,
+        "expected_rework": 21.72631192683439,
+        "activation_probability": 0.23331592017358715,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 15.76523083552102,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "mean_eta_policy_actual": {
+        "expected_profit": 23989.969852631926,
+        "fulfilment_probability": 0.7192576773402112,
+        "expected_rework": 21.72631192683439,
+        "activation_probability": 0.23331592017358715,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 15.950526945544315,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "nonanticipative": {
+        "expected_profit": 23989.969852631926,
+        "fulfilment_probability": 0.7192576773402112,
+        "expected_rework": 21.72631192683439,
+        "activation_probability": 0.23331592017358715,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 15.950526945544315,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "clairvoyant_information_bound": {
+        "expected_profit": 24390.044924195943,
+        "fulfilment_probability": 0.7192576773402112,
+        "expected_rework": 38.08205229399146,
+        "activation_probability": 0.6692459747898847,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 16.76526364280061,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "gain_vs_mean_eta_policy": 0.0,
+      "mean_eta_optimism": 5.5588833006990335,
+      "value_of_perfect_yield_information": 400.07507156402073,
+      "forward_return_vertex_pairs_checked": 140
+    },
+    {
+      "distribution": "skewed",
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "input": 1615.1585,
+      "mean_eta_policy_predicted": {
+        "expected_profit": 22949.865321235928,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.0269069750710285,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "mean_eta_policy_actual": {
+        "expected_profit": 22949.865321235928,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.0269069750710285,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "nonanticipative": {
+        "expected_profit": 22949.865321235928,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.0269069750710285,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "clairvoyant_information_bound": {
+        "expected_profit": 22949.865321235928,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.0269069750710285,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "gain_vs_mean_eta_policy": 0.0,
+      "mean_eta_optimism": 0.0,
+      "value_of_perfect_yield_information": 0.0,
+      "forward_return_vertex_pairs_checked": 210
+    },
+    {
+      "distribution": "skewed",
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "input": 1316.2451083678393,
+      "mean_eta_policy_predicted": {
+        "expected_profit": 25278.57666292919,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 0.44950823266691575,
+        "activation_probability": 0.02756507179807576,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.391994007684628,
+        "expected_grade2_shortage": 0.7484379458211083
+      },
+      "mean_eta_policy_actual": {
+        "expected_profit": 25277.347249504473,
+        "fulfilment_probability": 0.9396601949831106,
+        "expected_rework": 0.44950823266691564,
+        "activation_probability": 0.02756507179807576,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.432974455175053,
+        "expected_grade2_shortage": 0.7484379458211083
+      },
+      "nonanticipative": {
+        "expected_profit": 25277.511171294438,
+        "fulfilment_probability": 0.9396601949831106,
+        "expected_rework": 0.28558644270522004,
+        "activation_probability": 0.02756507179807576,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.449366634171222,
+        "expected_grade2_shortage": 0.7484379458211083
+      },
+      "clairvoyant_information_bound": {
+        "expected_profit": 25633.82292016601,
+        "fulfilment_probability": 0.9396601949831106,
+        "expected_rework": 9.754141436407286,
+        "activation_probability": 0.8986109562160793,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.477925278441743,
+        "expected_grade2_shortage": 0.7484379458211083
+      },
+      "gain_vs_mean_eta_policy": 0.16392178996164275,
+      "mean_eta_optimism": 1.2294134247128436,
+      "value_of_perfect_yield_information": 356.31174887157374,
+      "forward_return_vertex_pairs_checked": 210
+    },
+    {
+      "distribution": "skewed",
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "input": 1417.4947320884423,
+      "mean_eta_policy_predicted": {
+        "expected_profit": 24824.879586416282,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 10.760593580393316,
+        "activation_probability": 0.14385696505501652,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.037034263352899,
+        "expected_grade2_shortage": 0.09988517584325839
+      },
+      "mean_eta_policy_actual": {
+        "expected_profit": 24789.918262805302,
+        "fulfilment_probability": 0.8678137303964604,
+        "expected_rework": 10.760593580393316,
+        "activation_probability": 0.14385696505501652,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.202411717052328,
+        "expected_grade2_shortage": 0.09988517584325839
+      },
+      "nonanticipative": {
+        "expected_profit": 24794.579772620098,
+        "fulfilment_probability": 0.8678137303964604,
+        "expected_rework": 6.099083765595593,
+        "activation_probability": 0.14385696505501652,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.668562698532103,
+        "expected_grade2_shortage": 0.09988517584325839
+      },
+      "clairvoyant_information_bound": {
+        "expected_profit": 25761.041882043814,
+        "fulfilment_probability": 0.8678137303964604,
+        "expected_rework": 28.782160020879772,
+        "activation_probability": 0.9206203773511606,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 10.276878107016053,
+        "expected_grade2_shortage": 0.09988517584325839
+      },
+      "gain_vs_mean_eta_policy": 4.661509814796711,
+      "mean_eta_optimism": 34.96132361098308,
+      "value_of_perfect_yield_information": 966.4621094237198,
+      "forward_return_vertex_pairs_checked": 210
+    },
+    {
+      "distribution": "skewed",
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "input": 1518.7443558090454,
+      "mean_eta_policy_predicted": {
+        "expected_profit": 23995.528735932625,
+        "fulfilment_probability": 0.7378862957062176,
+        "expected_rework": 21.72631192683439,
+        "activation_probability": 0.23331592017358715,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 15.76523083552102,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "mean_eta_policy_actual": {
+        "expected_profit": 23956.83821940745,
+        "fulfilment_probability": 0.716120867737781,
+        "expected_rework": 21.72631192683439,
+        "activation_probability": 0.23331592017358715,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.05491471969342,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "nonanticipative": {
+        "expected_profit": 23961.996954944145,
+        "fulfilment_probability": 0.716120867737781,
+        "expected_rework": 16.567576390144772,
+        "activation_probability": 0.23331592017358715,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.570788273362382,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "clairvoyant_information_bound": {
+        "expected_profit": 25281.440593438223,
+        "fulfilment_probability": 0.7282699666721331,
+        "expected_rework": 45.68950237265161,
+        "activation_probability": 0.9242943106141268,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 19.09121555019402,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "gain_vs_mean_eta_policy": 5.158735536689324,
+      "mean_eta_optimism": 38.69051652517203,
+      "value_of_perfect_yield_information": 1319.4436384940773,
+      "forward_return_vertex_pairs_checked": 210
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T17:36:57.112275+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\round32_nonanticipative_yield.py": "f6c01e14e31ee5f279ef1cecfd58f8dcaee6f829592f3e477cf2a0e1c423cbc6",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round25_state_policy.py": "42a9a1436e8d6a54761ce43cd62dde38e404669491244258027261feb43678cc",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed"
+    }
+  }
+}

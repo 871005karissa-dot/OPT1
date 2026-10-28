@@ -1,0 +1,566 @@
+{
+  "question": "Is the fluid service jump at the mean grade1-onset input stable under small input changes?",
+  "assumptions": "Round45: local input sensitivity with coupled random-quality replicas.\n\nFixed forward flow, same scenario as round44 roughness. Within each independent\nreplica, inputs are increased in order and extra finished items are assigned new\nindependent quality categories. This gives correct multinomial marginals and\nshared product histories across input choices. Return actions follow inspection.\nPaired intervals are normal approximations; this is a finite local comparison.\n",
+  "seed": 2026102845,
+  "replicas": 256,
+  "demands": [
+    750.0,
+    150.0
+  ],
+  "grade_shares": [
+    0.625093657341258,
+    0.27434534809090927
+  ],
+  "eligible_fraction": 0.4295362149083248,
+  "anchor_input": 1518.7914361142653,
+  "replica_trace": {
+    "path": "research\\2026-10-28\\service_rounds\\round45_replica_values.npz",
+    "sha256": "6562426ac56d75d6ec499a1a945c13a6355d5f9ff1f81ab17ae2b61b18323615"
+  },
+  "headline": {
+    "elapsed_seconds": 13.936188800002128,
+    "inputs": 9
+  },
+  "rows": [
+    {
+      "input": 1498.7914361142653,
+      "offset_from_grade1_onset": -20.0,
+      "unrounded_fluid": {
+        "expected_profit": 28286.96384132347,
+        "fulfilment_probability": 0.5801645642154704,
+        "expected_rework": 82.85955621551861,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 15.632226774807737,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "same_floor_fluid": {
+        "expected_profit": 28277.624089999743,
+        "fulfilment_probability": 0.5801645642154704,
+        "expected_rework": 82.84802228214804,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 15.67948832828845,
+        "expected_grade2_shortage": 0.00777813298920776
+      },
+      "random_quality_service": {
+        "estimate": 0.6573394868088938,
+        "standard_error": 0.0016549283695779778,
+        "normal_approximation_95_interval": [
+          0.6540958868075274,
+          0.6605830868102601
+        ],
+        "replicas": 256
+      },
+      "random_quality_profit": {
+        "estimate": 28242.04013354671,
+        "standard_error": 10.529725172946344,
+        "normal_approximation_95_interval": [
+          28221.40225144063,
+          28262.67801565279
+        ],
+        "replicas": 256
+      },
+      "paired_service_difference_vs_onset": {
+        "estimate": -0.04718514884033166,
+        "standard_error": 0.0015371561674457019,
+        "normal_approximation_95_interval": [
+          -0.050197919567138774,
+          -0.04417237811352455
+        ],
+        "replicas": 256
+      },
+      "paired_profit_difference_vs_onset": {
+        "estimate": 101.92365759557725,
+        "standard_error": 1.179474736191261,
+        "normal_approximation_95_interval": [
+          99.61192959196757,
+          104.23538559918694
+        ],
+        "replicas": 256
+      }
+    },
+    {
+      "input": 1513.7914361142653,
+      "offset_from_grade1_onset": -5.0,
+      "unrounded_fluid": {
+        "expected_profit": 28263.27373413387,
+        "fulfilment_probability": 0.5801645642154704,
+        "expected_rework": 83.47423762181239,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.93104315581012,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "same_floor_fluid": {
+        "expected_profit": 28205.935750433702,
+        "fulfilment_probability": 0.5801645642154704,
+        "expected_rework": 83.41309830962705,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 14.115591858356712,
+        "expected_grade2_shortage": 0.00777813298920776
+      },
+      "random_quality_service": {
+        "estimate": 0.6890239833827284,
+        "standard_error": 0.0017668545684759265,
+        "normal_approximation_95_interval": [
+          0.6855610120625957,
+          0.6924869547028611
+        ],
+        "replicas": 256
+      },
+      "random_quality_profit": {
+        "estimate": 28153.31786790354,
+        "standard_error": 10.428195016723395,
+        "normal_approximation_95_interval": [
+          28132.878981247002,
+          28173.75675456008
+        ],
+        "replicas": 256
+      },
+      "paired_service_difference_vs_onset": {
+        "estimate": -0.01550065226649698,
+        "standard_error": 0.0009820286371119255,
+        "normal_approximation_95_interval": [
+          -0.017425393027023256,
+          -0.013575911505970704
+        ],
+        "replicas": 256
+      },
+      "paired_profit_difference_vs_onset": {
+        "estimate": 13.201391952406624,
+        "standard_error": 0.6235537010757398,
+        "normal_approximation_95_interval": [
+          11.979249155871553,
+          14.423534748941695
+        ],
+        "replicas": 256
+      }
+    },
+    {
+      "input": 1517.7914361142653,
+      "offset_from_grade1_onset": -1.0,
+      "unrounded_fluid": {
+        "expected_profit": 28257.01755506962,
+        "fulfilment_probability": 0.5801645642154704,
+        "expected_rework": 83.6365651669962,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.481787723725656,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "same_floor_fluid": {
+        "expected_profit": 28241.436066459384,
+        "fulfilment_probability": 0.5801645642154704,
+        "expected_rework": 83.61858050143759,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.546902232926982,
+        "expected_grade2_shortage": 0.00777813298920776
+      },
+      "random_quality_service": {
+        "estimate": 0.7045246356492254,
+        "standard_error": 0.0018242883636410067,
+        "normal_approximation_95_interval": [
+          0.7009490961590736,
+          0.7081001751393772
+        ],
+        "replicas": 256
+      },
+      "random_quality_profit": {
+        "estimate": 28180.947609392802,
+        "standard_error": 10.371562951845785,
+        "normal_approximation_95_interval": [
+          28160.619719543796,
+          28201.27549924181
+        ],
+        "replicas": 256
+      },
+      "paired_service_difference_vs_onset": {
+        "estimate": 0.0,
+        "standard_error": 0.0,
+        "normal_approximation_95_interval": [
+          0.0,
+          0.0
+        ],
+        "replicas": 256
+      },
+      "paired_profit_difference_vs_onset": {
+        "estimate": 40.83113344166982,
+        "standard_error": 1.9482300233358143e-13,
+        "normal_approximation_95_interval": [
+          40.83113344166944,
+          40.831133441670204
+        ],
+        "replicas": 256
+      }
+    },
+    {
+      "input": 1518.6914361142653,
+      "offset_from_grade1_onset": -0.1,
+      "unrounded_fluid": {
+        "expected_profit": 28255.609914780198,
+        "fulfilment_probability": 0.5801645642154704,
+        "expected_rework": 83.67308886466256,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.380705251506605,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "same_floor_fluid": {
+        "expected_profit": 28204.68804636188,
+        "fulfilment_probability": 0.5801645642154704,
+        "expected_rework": 83.61858050143759,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.546902232926982,
+        "expected_grade2_shortage": 0.00777813298920776
+      },
+      "random_quality_service": {
+        "estimate": 0.7045246356492254,
+        "standard_error": 0.0018242883636410067,
+        "normal_approximation_95_interval": [
+          0.7009490961590736,
+          0.7081001751393772
+        ],
+        "replicas": 256
+      },
+      "random_quality_profit": {
+        "estimate": 28144.199589295305,
+        "standard_error": 10.37156295184578,
+        "normal_approximation_95_interval": [
+          28123.8716994463,
+          28164.52747914431
+        ],
+        "replicas": 256
+      },
+      "paired_service_difference_vs_onset": {
+        "estimate": 0.0,
+        "standard_error": 0.0,
+        "normal_approximation_95_interval": [
+          0.0,
+          0.0
+        ],
+        "replicas": 256
+      },
+      "paired_profit_difference_vs_onset": {
+        "estimate": 4.08311334416976,
+        "standard_error": 1.9832202894663922e-13,
+        "normal_approximation_95_interval": [
+          4.083113344169371,
+          4.083113344170149
+        ],
+        "replicas": 256
+      }
+    },
+    {
+      "input": 1518.7914361142653,
+      "offset_from_grade1_onset": 0.0,
+      "unrounded_fluid": {
+        "expected_profit": 28255.453510303578,
+        "fulfilment_probability": 0.8076063318413647,
+        "expected_rework": 83.67714705329216,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.369473865704528,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "same_floor_fluid": {
+        "expected_profit": 28200.604933017712,
+        "fulfilment_probability": 0.5801645642154704,
+        "expected_rework": 83.61858050143759,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.546902232926982,
+        "expected_grade2_shortage": 0.00777813298920776
+      },
+      "random_quality_service": {
+        "estimate": 0.7045246356492254,
+        "standard_error": 0.0018242883636410067,
+        "normal_approximation_95_interval": [
+          0.7009490961590736,
+          0.7081001751393772
+        ],
+        "replicas": 256
+      },
+      "random_quality_profit": {
+        "estimate": 28140.116475951138,
+        "standard_error": 10.37156295184578,
+        "normal_approximation_95_interval": [
+          28119.78858610213,
+          28160.444365800144
+        ],
+        "replicas": 256
+      },
+      "paired_service_difference_vs_onset": {
+        "estimate": 0.0,
+        "standard_error": 0.0,
+        "normal_approximation_95_interval": [
+          0.0,
+          0.0
+        ],
+        "replicas": 256
+      },
+      "paired_profit_difference_vs_onset": {
+        "estimate": 0.0,
+        "standard_error": 0.0,
+        "normal_approximation_95_interval": [
+          0.0,
+          0.0
+        ],
+        "replicas": 256
+      }
+    },
+    {
+      "input": 1518.8914361142652,
+      "offset_from_grade1_onset": 0.1,
+      "unrounded_fluid": {
+        "expected_profit": 28254.960164252916,
+        "fulfilment_probability": 0.8076063318413647,
+        "expected_rework": 83.68120524192175,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.369473865704528,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "same_floor_fluid": {
+        "expected_profit": 28196.521819673555,
+        "fulfilment_probability": 0.5801645642154704,
+        "expected_rework": 83.61858050143759,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.546902232926982,
+        "expected_grade2_shortage": 0.00777813298920776
+      },
+      "random_quality_service": {
+        "estimate": 0.7045246356492254,
+        "standard_error": 0.0018242883636410067,
+        "normal_approximation_95_interval": [
+          0.7009490961590736,
+          0.7081001751393772
+        ],
+        "replicas": 256
+      },
+      "random_quality_profit": {
+        "estimate": 28136.033362606977,
+        "standard_error": 10.37156295184578,
+        "normal_approximation_95_interval": [
+          28115.70547275797,
+          28156.361252455983
+        ],
+        "replicas": 256
+      },
+      "paired_service_difference_vs_onset": {
+        "estimate": 0.0,
+        "standard_error": 0.0,
+        "normal_approximation_95_interval": [
+          0.0,
+          0.0
+        ],
+        "replicas": 256
+      },
+      "paired_profit_difference_vs_onset": {
+        "estimate": -4.083113344157198,
+        "standard_error": 1.9597608103008474e-13,
+        "normal_approximation_95_interval": [
+          -4.0831133441575815,
+          -4.083113344156814
+        ],
+        "replicas": 256
+      }
+    },
+    {
+      "input": 1519.7914361142653,
+      "offset_from_grade1_onset": 1.0,
+      "unrounded_fluid": {
+        "expected_profit": 28250.520049796884,
+        "fulfilment_probability": 0.8076063318413647,
+        "expected_rework": 83.7177289395881,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.369473865704528,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "same_floor_fluid": {
+        "expected_profit": 28208.713154739256,
+        "fulfilment_probability": 0.8076063318413647,
+        "expected_rework": 83.66995104939022,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.43029173606579,
+        "expected_grade2_shortage": 0.00777813298920776
+      },
+      "random_quality_service": {
+        "estimate": 0.708231371901201,
+        "standard_error": 0.001819740874427862,
+        "normal_approximation_95_interval": [
+          0.7046647453261271,
+          0.7117979984762749
+        ],
+        "replicas": 256
+      },
+      "random_quality_profit": {
+        "estimate": 28146.41654278365,
+        "standard_error": 10.366400969770188,
+        "normal_approximation_95_interval": [
+          28126.0987702336,
+          28166.7343153337
+        ],
+        "replicas": 256
+      },
+      "paired_service_difference_vs_onset": {
+        "estimate": 0.003706736251975583,
+        "standard_error": 0.00044837504342245914,
+        "normal_approximation_95_interval": [
+          0.0028279373153010045,
+          0.004585535188650161
+        ],
+        "replicas": 256
+      },
+      "paired_profit_difference_vs_onset": {
+        "estimate": 6.30006683251365,
+        "standard_error": 0.2775570810094635,
+        "normal_approximation_95_interval": [
+          5.756064950081051,
+          6.84406871494625
+        ],
+        "replicas": 256
+      }
+    },
+    {
+      "input": 1523.7914361142653,
+      "offset_from_grade1_onset": 5.0,
+      "unrounded_fluid": {
+        "expected_profit": 28230.78620777013,
+        "fulfilment_probability": 0.8076063318413647,
+        "expected_rework": 83.88005648477194,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.369473865704528,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "same_floor_fluid": {
+        "expected_profit": 28181.711741744664,
+        "fulfilment_probability": 0.8076063318413647,
+        "expected_rework": 83.82406269324814,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.43029173606579,
+        "expected_grade2_shortage": 0.00777813298920776
+      },
+      "random_quality_service": {
+        "estimate": 0.7179248509999515,
+        "standard_error": 0.001843496254014325,
+        "normal_approximation_95_interval": [
+          0.714311664736449,
+          0.721538037263454
+        ],
+        "replicas": 256
+      },
+      "random_quality_profit": {
+        "estimate": 28124.757143606817,
+        "standard_error": 10.328039982096284,
+        "normal_approximation_95_interval": [
+          28104.51455721102,
+          28144.999730002615
+        ],
+        "replicas": 256
+      },
+      "paired_service_difference_vs_onset": {
+        "estimate": 0.013400215350726191,
+        "standard_error": 0.0008826859614620345,
+        "normal_approximation_95_interval": [
+          0.011670182656601542,
+          0.01513024804485084
+        ],
+        "replicas": 256
+      },
+      "paired_profit_difference_vs_onset": {
+        "estimate": -15.35933234431812,
+        "standard_error": 0.5713619516541507,
+        "normal_approximation_95_interval": [
+          -16.47918119169674,
+          -14.2394834969395
+        ],
+        "replicas": 256
+      }
+    },
+    {
+      "input": 1538.7914361142653,
+      "offset_from_grade1_onset": 20.0,
+      "unrounded_fluid": {
+        "expected_profit": 28156.784300169744,
+        "fulfilment_probability": 0.8076063318413647,
+        "expected_rework": 84.48878477921122,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.369473865704528,
+        "expected_grade2_shortage": 0.007730445861807517
+      },
+      "same_floor_fluid": {
+        "expected_profit": 28114.537223208048,
+        "fulfilment_probability": 0.8076063318413647,
+        "expected_rework": 84.44050926867978,
+        "activation_probability": 0.6124229226949368,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.43029173606579,
+        "expected_grade2_shortage": 0.00777813298920776
+      },
+      "random_quality_service": {
+        "estimate": 0.7557595478732612,
+        "standard_error": 0.001773112867587934,
+        "normal_approximation_95_interval": [
+          0.7522843105122644,
+          0.7592347852342579
+        ],
+        "replicas": 256
+      },
+      "random_quality_profit": {
+        "estimate": 28075.69520914043,
+        "standard_error": 10.245867036600663,
+        "normal_approximation_95_interval": [
+          28055.61367875831,
+          28095.776739522553
+        ],
+        "replicas": 256
+      },
+      "paired_service_difference_vs_onset": {
+        "estimate": 0.05123491222403569,
+        "standard_error": 0.001510137657278243,
+        "normal_approximation_95_interval": [
+          0.04827509680407273,
+          0.05419472764399866
+        ],
+        "replicas": 256
+      },
+      "paired_profit_difference_vs_onset": {
+        "estimate": -64.42126681070349,
+        "standard_error": 1.2262052712539426,
+        "normal_approximation_95_interval": [
+          -66.82458498001432,
+          -62.01794864139266
+        ],
+        "replicas": 256
+      }
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T18:25:07.997375+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round45_threshold_stability.py": "ad84ac8293899a4ad859af3d64763633e0fde0c5e94655f3b6d3dea4edde7caf",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+      "backbone\\round40_quality_recoverability.py": "8477646c60d3fb420d8411305e8ac6a0fd4786b4f0a0fd3e57ef8e8662ca058b",
+      "backbone\\round44_random_quality_counts.py": "7b65eadc503cb25f5aa6ac1ceebb48fdb55bcd56cb1dcc1644cb211c2541065b"
+    }
+  }
+}

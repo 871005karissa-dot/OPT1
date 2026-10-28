@@ -1,0 +1,89 @@
+{
+  "question": "Do the selected release and maximal-service point survive a separate integration and fresh policy execution?",
+  "assumptions": "Round64: independently check selected release and integer-domain maximum service.\n\nRound63 used a compressed observed-state distribution and LP. Here use the\nseparate conditional A,B,E integration for maximal-return service, plus fresh\ndirect multinomial/Bernoulli execution of the saved deterministic policy.\nBoth new simulations pay for fully committed material. Simulation intervals\ncover numerical sampling error, not uncertainty about the factory parameters.\n",
+  "seed": 2026102864,
+  "replicas_per_group": 65536,
+  "simultaneous_error_probability": 0.05,
+  "headline": {
+    "validated_points": 2,
+    "elapsed_seconds": 4.915829499997926,
+    "max_integrated_service_discrepancy": 8.659739592076221e-15
+  },
+  "trace": {
+    "path": "research\\2026-10-28\\service_rounds\\round64_validation.npz",
+    "sha256": "72b627e607a72cfc816d609b31b5f4c5e1d968e69c374380f3dbb7e9a3627e5d"
+  },
+  "rows": [
+    {
+      "policy": "selected_75",
+      "input": 1495,
+      "material_basis": "fully_committed",
+      "setup_fee": 2000.0,
+      "exact_service": 0.7503494297908824,
+      "exact_profit": 23034.32729959787,
+      "independent_maximal_return_service_discrepancy": 8.659739592076221e-15,
+      "simulated_service": {
+        "estimate": 0.7504360521444249,
+        "standard_error": 0.000513538906844337
+      },
+      "simultaneous_service_interval": [
+        0.7470597012531609,
+        0.7538124030356889
+      ],
+      "simulated_profit": {
+        "estimate": 23036.56419818445,
+        "standard_error": 2.925447924977613
+      },
+      "profit_error_in_standard_errors": 0.7646345598842768,
+      "groups": 53,
+      "sum_squared_group_weights": 0.34098090812695225,
+      "hoeffding_radius": 0.00337635089126401
+    },
+    {
+      "policy": "integer_domain_maximum_service",
+      "input": 1699,
+      "material_basis": "fully_committed",
+      "setup_fee": 0.0,
+      "exact_service": 0.7894483131190578,
+      "exact_profit": 22228.248427327828,
+      "independent_maximal_return_service_discrepancy": 1.5543122344752192e-15,
+      "simulated_service": {
+        "estimate": 0.7893468216979078,
+        "standard_error": 7.553975016384514e-05
+      },
+      "simultaneous_service_interval": [
+        0.7872775728867466,
+        0.791416070509069
+      ],
+      "simulated_profit": {
+        "estimate": 22227.347865647287,
+        "standard_error": 1.784328188695281
+      },
+      "profit_error_in_standard_errors": 0.5047063013666809,
+      "groups": 59,
+      "sum_squared_group_weights": 0.12807381375820165,
+      "hoeffding_radius": 0.0020692488111611726
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T21:48:38.938729+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round64_selected_release_validation.py": "b6a560e822cfbb10fb85a680d2af112d0c3002de752fd8840ae9792a46f374e4",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+      "backbone\\stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+      "backbone\\round62_stochastic_policy_replay.py": "2027de6c7a4d0da35ea14d7bccacd45d5eabad9595643e81f76b2539c7d9c453",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+      "research\\2026-10-28\\service_rounds\\round63.json": "06416f0b6ce66dcae7ce2737c3eb27eecf278f90fb5f2950b1944ab1713e9f78"
+    }
+  }
+}

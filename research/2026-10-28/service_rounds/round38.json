@@ -1,0 +1,3064 @@
+{
+  "question": "Is an ex-ante raw-release optimization meaningful if upstream processing can be curtailed and unused raw is free?",
+  "assumptions": "Round 38: can stage 1 avoid processing material that stage 2 will not use?\n\nCapacity is known before processing. Relax the old fixed first-station rule:\nstage-1 processing = stage-2 forward work / stage-1 yield. Raw material is still\ncharged only when processed. Thus raw release is a free upper bound on available\ninput: increasing it cannot worsen the optimized profit or service frontier.\nThis is a model degeneracy audit, not a recommendation to release unlimited raw.\n",
+  "parameter_is_hypothetical": true,
+  "analytic_conclusion": "Feasible recourse sets are nested in I, with no I-dependent committed cost; constrained and unconstrained optimal values cannot decrease. I=max first-station capacity is sufficient for a maximum, possibly on a plateau. A meaningful finite release tradeoff needs a commitment/carrying cost or a different information/processing restriction.",
+  "headline": {
+    "elapsed_seconds": 6.900616800001444,
+    "cases": 4,
+    "tested_inputs": 36
+  },
+  "cases": [
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "eta": 0.2,
+      "rows": [
+        {
+          "input": 0.0,
+          "fixed_stage1": {
+            "expected_profit": 0.0,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 549.9999999999995,
+            "expected_grade2_shortage": 349.9999999999997
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 0.0,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 549.9999999999995,
+              "expected_grade2_shortage": 349.9999999999997
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 0.0,
+          "gain_vs_fixed_stage1": 0.0
+        },
+        {
+          "input": 700.0,
+          "fixed_stage1": {
+            "expected_profit": 14206.531352839644,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 204.33824419514545,
+            "expected_grade2_shortage": 198.32023670190165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 14207.165646337158,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 204.33824419514545,
+              "expected_grade2_shortage": 198.32023670190165
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 699.9624541968888,
+          "gain_vs_fixed_stage1": 0.6342934975103649
+        },
+        {
+          "input": 1000.0,
+          "fixed_stage1": {
+            "expected_profit": 20266.301457842863,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 56.56833500920117,
+            "expected_grade2_shortage": 133.47735353214975
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 20280.708762093742,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 56.56833500920117,
+              "expected_grade2_shortage": 133.47735353214975
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 999.1954082429794,
+          "gain_vs_fixed_stage1": 14.407304250877228
+        },
+        {
+          "input": 1200.0,
+          "fixed_stage1": {
+            "expected_profit": 21676.890755001266,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 41.129030050657065,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 49.928379840121735
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 22563.53657009828,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 1.0269069750711384,
+              "expected_grade2_shortage": 109.10523102805843
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 1111.6663820301917,
+          "gain_vs_fixed_stage1": 886.6458150970186
+        },
+        {
+          "input": 1400.0,
+          "fixed_stage1": {
+            "expected_profit": 22237.815760024565,
+            "fulfilment_probability": 0.9486622836415535,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 46.185381842121174,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 4.99137995872023
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 22705.90243516511,
+              "fulfilment_probability": 0.834658821908279,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 38.915300911175805,
+              "expected_grade1_shortage": 1.0269069750710433,
+              "expected_grade2_shortage": 18.415698752053217
+            },
+            "maximum_fulfilment_probability": 0.9486622836415535,
+            "states_with_service_tradeoff": 162,
+            "probability_mass_with_service_tradeoff": 0.11400346173327444,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 22705.90243516511,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 38.915300911175805,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 22705.90243516511,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 38.915300911175805,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 22700.519399274865,
+                  "fulfilment_probability": 0.8499999999999999,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 39.77523514379837,
+                  "expected_grade1_shortage": 1.0269069750710418,
+                  "expected_grade2_shortage": 16.748808965253644
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 22700.347157797976,
+                  "fulfilment_probability": 0.8504908730362493,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 39.80275053572058,
+                  "expected_grade1_shortage": 1.0269069750710416,
+                  "expected_grade2_shortage": 16.695473344882956
+                },
+                "deterministic_optimality_gap_upper_bound": 0.17224147688573893,
+                "boundary_state": [
+                  6,
+                  5,
+                  5,
+                  7,
+                  5
+                ],
+                "boundary_state_probability": 0.001069525117595076,
+                "boundary_serve_probability": 0.5410364579814579,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 5.3830358902490785,
+                "primal_dual_loss_gap": -3.9959147102308634e-12
+              },
+              {
+                "target": 0.9,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 22682.974997345405,
+                  "fulfilment_probability": 0.9000000000000001,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 42.57793460886304,
+                  "expected_grade1_shortage": 1.026906975071036,
+                  "expected_grade2_shortage": 11.316078255676887
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 22681.809920705487,
+                  "fulfilment_probability": 0.9033203657913471,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 42.76405435740759,
+                  "expected_grade1_shortage": 1.0269069750710356,
+                  "expected_grade2_shortage": 10.955305191643305
+                },
+                "deterministic_optimality_gap_upper_bound": 1.1650766399238959,
+                "boundary_state": [
+                  7,
+                  5,
+                  5,
+                  8,
+                  6
+                ],
+                "boundary_state_probability": 0.006699032821550388,
+                "boundary_serve_probability": 0.5043514668765894,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 22.927437819700945,
+                "primal_dual_loss_gap": 3.2649438708176604e-12
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.0013377163584464835
+              }
+            ]
+          },
+          "expected_stage1_work": 1350.5909245155372,
+          "gain_vs_fixed_stage1": 468.0866751405438
+        },
+        {
+          "input": 1600.0,
+          "fixed_stage1": {
+            "expected_profit": 22940.83441806051,
+            "fulfilment_probability": 0.9486622836415535,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 15.01273866820957,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 4.99137995872023
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 24429.711574125413,
+              "fulfilment_probability": 0.834658821908279,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 7.742657737264201,
+              "expected_grade1_shortage": 1.0269069750710433,
+              "expected_grade2_shortage": 18.415698752053217
+            },
+            "maximum_fulfilment_probability": 0.9486622836415535,
+            "states_with_service_tradeoff": 162,
+            "probability_mass_with_service_tradeoff": 0.11400346173327444,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24429.711574125413,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 7.742657737264201,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24429.711574125413,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 7.742657737264201,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24424.328538235164,
+                  "fulfilment_probability": 0.8499999999999999,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 8.602591969886767,
+                  "expected_grade1_shortage": 1.0269069750710418,
+                  "expected_grade2_shortage": 16.748808965253644
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24424.156296758276,
+                  "fulfilment_probability": 0.8504908730362493,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 8.630107361808975,
+                  "expected_grade1_shortage": 1.0269069750710416,
+                  "expected_grade2_shortage": 16.695473344882956
+                },
+                "deterministic_optimality_gap_upper_bound": 0.17224147688573893,
+                "boundary_state": [
+                  6,
+                  5,
+                  5,
+                  7,
+                  5
+                ],
+                "boundary_state_probability": 0.001069525117595076,
+                "boundary_serve_probability": 0.5410364579814579,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 5.3830358902490785,
+                "primal_dual_loss_gap": -3.5793590313915047e-13
+              },
+              {
+                "target": 0.9,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24406.784136305712,
+                  "fulfilment_probability": 0.9000000000000001,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 11.405291434951437,
+                  "expected_grade1_shortage": 1.026906975071036,
+                  "expected_grade2_shortage": 11.316078255676887
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24405.619059665787,
+                  "fulfilment_probability": 0.9033203657913471,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 11.591411183495985,
+                  "expected_grade1_shortage": 1.0269069750710356,
+                  "expected_grade2_shortage": 10.955305191643305
+                },
+                "deterministic_optimality_gap_upper_bound": 1.1650766399238959,
+                "boundary_state": [
+                  7,
+                  5,
+                  5,
+                  8,
+                  6
+                ],
+                "boundary_state_probability": 0.006699032821550388,
+                "boundary_serve_probability": 0.5043514668765894,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 22.927437819700945,
+                "primal_dual_loss_gap": -3.730349362740526e-13
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.0013377163584464835
+              }
+            ]
+          },
+          "expected_stage1_work": 1494.4445233435665,
+          "gain_vs_fixed_stage1": 1488.8771560649052
+        },
+        {
+          "input": 1615.1585,
+          "fixed_stage1": {
+            "expected_profit": 22949.865321235928,
+            "fulfilment_probability": 0.9486622836415535,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 13.030006851754443,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 4.99137995872023
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 24539.354224774073,
+              "fulfilment_probability": 0.834658821908279,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 5.759925920809075,
+              "expected_grade1_shortage": 1.0269069750710433,
+              "expected_grade2_shortage": 18.415698752053217
+            },
+            "maximum_fulfilment_probability": 0.9486622836415535,
+            "states_with_service_tradeoff": 162,
+            "probability_mass_with_service_tradeoff": 0.11400346173327444,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24539.354224774073,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 5.759925920809075,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24539.354224774073,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 5.759925920809075,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24533.971188883825,
+                  "fulfilment_probability": 0.8499999999999999,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 6.61986015343164,
+                  "expected_grade1_shortage": 1.0269069750710418,
+                  "expected_grade2_shortage": 16.748808965253644
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24533.79894740694,
+                  "fulfilment_probability": 0.8504908730362493,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 6.647375545353848,
+                  "expected_grade1_shortage": 1.0269069750710416,
+                  "expected_grade2_shortage": 16.695473344882956
+                },
+                "deterministic_optimality_gap_upper_bound": 0.17224147688573893,
+                "boundary_state": [
+                  6,
+                  5,
+                  5,
+                  7,
+                  5
+                ],
+                "boundary_state_probability": 0.001069525117595076,
+                "boundary_serve_probability": 0.5410364579814579,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 5.3830358902490785,
+                "primal_dual_loss_gap": -3.5793590313915047e-13
+              },
+              {
+                "target": 0.9,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24516.426786954373,
+                  "fulfilment_probability": 0.9000000000000001,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 9.422559618496312,
+                  "expected_grade1_shortage": 1.026906975071036,
+                  "expected_grade2_shortage": 11.316078255676887
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24515.261710314448,
+                  "fulfilment_probability": 0.9033203657913471,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 9.608679367040857,
+                  "expected_grade1_shortage": 1.0269069750710356,
+                  "expected_grade2_shortage": 10.955305191643305
+                },
+                "deterministic_optimality_gap_upper_bound": 1.1650766399238959,
+                "boundary_state": [
+                  7,
+                  5,
+                  5,
+                  8,
+                  6
+                ],
+                "boundary_state_probability": 0.006699032821550388,
+                "boundary_serve_probability": 0.5043514668765894,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 22.927437819700945,
+                "primal_dual_loss_gap": -3.730349362740526e-13
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.0013377163584464835
+              }
+            ]
+          },
+          "expected_stage1_work": 1503.5943123337606,
+          "gain_vs_fixed_stage1": 1589.4889035381486
+        },
+        {
+          "input": 1800.0,
+          "fixed_stage1": {
+            "expected_profit": 20610.783273156485,
+            "fulfilment_probability": 0.9486622836415535,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 13.03000685175441,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 4.99137995872023
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 24539.354224774073,
+              "fulfilment_probability": 0.834658821908279,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 5.759925920809075,
+              "expected_grade1_shortage": 1.0269069750710433,
+              "expected_grade2_shortage": 18.415698752053217
+            },
+            "maximum_fulfilment_probability": 0.9486622836415535,
+            "states_with_service_tradeoff": 162,
+            "probability_mass_with_service_tradeoff": 0.11400346173327444,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24539.354224774073,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 5.759925920809075,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24539.354224774073,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 5.759925920809075,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24533.971188883825,
+                  "fulfilment_probability": 0.8499999999999999,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 6.61986015343164,
+                  "expected_grade1_shortage": 1.0269069750710418,
+                  "expected_grade2_shortage": 16.748808965253644
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24533.79894740694,
+                  "fulfilment_probability": 0.8504908730362493,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 6.647375545353848,
+                  "expected_grade1_shortage": 1.0269069750710416,
+                  "expected_grade2_shortage": 16.695473344882956
+                },
+                "deterministic_optimality_gap_upper_bound": 0.17224147688573893,
+                "boundary_state": [
+                  6,
+                  5,
+                  5,
+                  7,
+                  5
+                ],
+                "boundary_state_probability": 0.001069525117595076,
+                "boundary_serve_probability": 0.5410364579814579,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 5.3830358902490785,
+                "primal_dual_loss_gap": -3.5793590313915047e-13
+              },
+              {
+                "target": 0.9,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24516.426786954373,
+                  "fulfilment_probability": 0.9000000000000001,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 9.422559618496312,
+                  "expected_grade1_shortage": 1.026906975071036,
+                  "expected_grade2_shortage": 11.316078255676887
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24515.261710314448,
+                  "fulfilment_probability": 0.9033203657913471,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 9.608679367040857,
+                  "expected_grade1_shortage": 1.0269069750710356,
+                  "expected_grade2_shortage": 10.955305191643305
+                },
+                "deterministic_optimality_gap_upper_bound": 1.1650766399238959,
+                "boundary_state": [
+                  7,
+                  5,
+                  5,
+                  8,
+                  6
+                ],
+                "boundary_state_probability": 0.006699032821550388,
+                "boundary_serve_probability": 0.5043514668765894,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 22.927437819700945,
+                "primal_dual_loss_gap": -3.730349362740526e-13
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.0013377163584464835
+              }
+            ]
+          },
+          "expected_stage1_work": 1503.5943123337606,
+          "gain_vs_fixed_stage1": 3928.5709516175907
+        },
+        {
+          "input": 2100.0,
+          "fixed_stage1": {
+            "expected_profit": 17020.07944270295,
+            "fulfilment_probability": 0.9486622836415535,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 13.03000685175441,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 4.99137995872023
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 24539.354224774073,
+              "fulfilment_probability": 0.834658821908279,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 5.759925920809075,
+              "expected_grade1_shortage": 1.0269069750710433,
+              "expected_grade2_shortage": 18.415698752053217
+            },
+            "maximum_fulfilment_probability": 0.9486622836415535,
+            "states_with_service_tradeoff": 162,
+            "probability_mass_with_service_tradeoff": 0.11400346173327444,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24539.354224774073,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 5.759925920809075,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24539.354224774073,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 5.759925920809075,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24533.971188883825,
+                  "fulfilment_probability": 0.8499999999999999,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 6.61986015343164,
+                  "expected_grade1_shortage": 1.0269069750710418,
+                  "expected_grade2_shortage": 16.748808965253644
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24533.79894740694,
+                  "fulfilment_probability": 0.8504908730362493,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 6.647375545353848,
+                  "expected_grade1_shortage": 1.0269069750710416,
+                  "expected_grade2_shortage": 16.695473344882956
+                },
+                "deterministic_optimality_gap_upper_bound": 0.17224147688573893,
+                "boundary_state": [
+                  6,
+                  5,
+                  5,
+                  7,
+                  5
+                ],
+                "boundary_state_probability": 0.001069525117595076,
+                "boundary_serve_probability": 0.5410364579814579,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 5.3830358902490785,
+                "primal_dual_loss_gap": -3.5793590313915047e-13
+              },
+              {
+                "target": 0.9,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24516.426786954373,
+                  "fulfilment_probability": 0.9000000000000001,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 9.422559618496312,
+                  "expected_grade1_shortage": 1.026906975071036,
+                  "expected_grade2_shortage": 11.316078255676887
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24515.261710314448,
+                  "fulfilment_probability": 0.9033203657913471,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 9.608679367040857,
+                  "expected_grade1_shortage": 1.0269069750710356,
+                  "expected_grade2_shortage": 10.955305191643305
+                },
+                "deterministic_optimality_gap_upper_bound": 1.1650766399238959,
+                "boundary_state": [
+                  7,
+                  5,
+                  5,
+                  8,
+                  6
+                ],
+                "boundary_state_probability": 0.006699032821550388,
+                "boundary_serve_probability": 0.5043514668765894,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 22.927437819700945,
+                "primal_dual_loss_gap": -3.730349362740526e-13
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.0013377163584464835
+              }
+            ]
+          },
+          "expected_stage1_work": 1503.5943123337606,
+          "gain_vs_fixed_stage1": 7519.274782071128
+        }
+      ]
+    },
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "eta": 0.97,
+      "rows": [
+        {
+          "input": 0.0,
+          "fixed_stage1": {
+            "expected_profit": 0.0,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 549.9999999999995,
+            "expected_grade2_shortage": 349.9999999999997
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 0.0,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 549.9999999999995,
+              "expected_grade2_shortage": 349.9999999999997
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 0.0,
+          "gain_vs_fixed_stage1": 0.0
+        },
+        {
+          "input": 700.0,
+          "fixed_stage1": {
+            "expected_profit": 14206.531352839644,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 204.33824419514545,
+            "expected_grade2_shortage": 198.32023670190165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 14207.165646337158,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 204.33824419514545,
+              "expected_grade2_shortage": 198.32023670190165
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 699.9624541968888,
+          "gain_vs_fixed_stage1": 0.6342934975103649
+        },
+        {
+          "input": 1000.0,
+          "fixed_stage1": {
+            "expected_profit": 20266.301457842863,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 56.56833500920117,
+            "expected_grade2_shortage": 133.47735353214975
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 20280.708762093742,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 56.56833500920117,
+              "expected_grade2_shortage": 133.47735353214975
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 999.1954082429794,
+          "gain_vs_fixed_stage1": 14.407304250877228
+        },
+        {
+          "input": 1200.0,
+          "fixed_stage1": {
+            "expected_profit": 21676.890755001266,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 41.129030050657065,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 49.928379840121735
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 22563.53657009828,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 1.0269069750711384,
+              "expected_grade2_shortage": 109.10523102805843
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 1111.6663820301917,
+          "gain_vs_fixed_stage1": 886.6458150970186
+        },
+        {
+          "input": 1400.0,
+          "fixed_stage1": {
+            "expected_profit": 22237.815760024565,
+            "fulfilment_probability": 0.9486622836415535,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 46.185381842121174,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 4.99137995872023
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 22705.90243516511,
+              "fulfilment_probability": 0.834658821908279,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 38.915300911175805,
+              "expected_grade1_shortage": 1.0269069750710433,
+              "expected_grade2_shortage": 18.415698752053217
+            },
+            "maximum_fulfilment_probability": 0.9486622836415535,
+            "states_with_service_tradeoff": 162,
+            "probability_mass_with_service_tradeoff": 0.11400346173327444,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 22705.90243516511,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 38.915300911175805,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 22705.90243516511,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 38.915300911175805,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 22700.519399274865,
+                  "fulfilment_probability": 0.8499999999999999,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 39.77523514379837,
+                  "expected_grade1_shortage": 1.0269069750710418,
+                  "expected_grade2_shortage": 16.748808965253644
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 22700.347157797976,
+                  "fulfilment_probability": 0.8504908730362493,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 39.80275053572058,
+                  "expected_grade1_shortage": 1.0269069750710416,
+                  "expected_grade2_shortage": 16.695473344882956
+                },
+                "deterministic_optimality_gap_upper_bound": 0.17224147688573893,
+                "boundary_state": [
+                  6,
+                  5,
+                  5,
+                  7,
+                  5
+                ],
+                "boundary_state_probability": 0.001069525117595076,
+                "boundary_serve_probability": 0.5410364579814579,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 5.3830358902490785,
+                "primal_dual_loss_gap": -3.9959147102308634e-12
+              },
+              {
+                "target": 0.9,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 22682.974997345405,
+                  "fulfilment_probability": 0.9000000000000001,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 42.57793460886304,
+                  "expected_grade1_shortage": 1.026906975071036,
+                  "expected_grade2_shortage": 11.316078255676887
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 22681.809920705487,
+                  "fulfilment_probability": 0.9033203657913471,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 42.76405435740759,
+                  "expected_grade1_shortage": 1.0269069750710356,
+                  "expected_grade2_shortage": 10.955305191643305
+                },
+                "deterministic_optimality_gap_upper_bound": 1.1650766399238959,
+                "boundary_state": [
+                  7,
+                  5,
+                  5,
+                  8,
+                  6
+                ],
+                "boundary_state_probability": 0.006699032821550388,
+                "boundary_serve_probability": 0.5043514668765894,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 22.927437819700945,
+                "primal_dual_loss_gap": 3.2649438708176604e-12
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.0013377163584464835
+              }
+            ]
+          },
+          "expected_stage1_work": 1350.5909245155372,
+          "gain_vs_fixed_stage1": 468.0866751405438
+        },
+        {
+          "input": 1600.0,
+          "fixed_stage1": {
+            "expected_profit": 22940.83441806051,
+            "fulfilment_probability": 0.9486622836415535,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 15.01273866820957,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 4.99137995872023
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 24429.711574125413,
+              "fulfilment_probability": 0.834658821908279,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 7.742657737264201,
+              "expected_grade1_shortage": 1.0269069750710433,
+              "expected_grade2_shortage": 18.415698752053217
+            },
+            "maximum_fulfilment_probability": 0.9486622836415535,
+            "states_with_service_tradeoff": 162,
+            "probability_mass_with_service_tradeoff": 0.11400346173327444,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24429.711574125413,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 7.742657737264201,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24429.711574125413,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 7.742657737264201,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24424.328538235164,
+                  "fulfilment_probability": 0.8499999999999999,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 8.602591969886767,
+                  "expected_grade1_shortage": 1.0269069750710418,
+                  "expected_grade2_shortage": 16.748808965253644
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24424.156296758276,
+                  "fulfilment_probability": 0.8504908730362493,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 8.630107361808975,
+                  "expected_grade1_shortage": 1.0269069750710416,
+                  "expected_grade2_shortage": 16.695473344882956
+                },
+                "deterministic_optimality_gap_upper_bound": 0.17224147688573893,
+                "boundary_state": [
+                  6,
+                  5,
+                  5,
+                  7,
+                  5
+                ],
+                "boundary_state_probability": 0.001069525117595076,
+                "boundary_serve_probability": 0.5410364579814579,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 5.3830358902490785,
+                "primal_dual_loss_gap": -3.5793590313915047e-13
+              },
+              {
+                "target": 0.9,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24406.784136305712,
+                  "fulfilment_probability": 0.9000000000000001,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 11.405291434951437,
+                  "expected_grade1_shortage": 1.026906975071036,
+                  "expected_grade2_shortage": 11.316078255676887
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24405.619059665787,
+                  "fulfilment_probability": 0.9033203657913471,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 11.591411183495985,
+                  "expected_grade1_shortage": 1.0269069750710356,
+                  "expected_grade2_shortage": 10.955305191643305
+                },
+                "deterministic_optimality_gap_upper_bound": 1.1650766399238959,
+                "boundary_state": [
+                  7,
+                  5,
+                  5,
+                  8,
+                  6
+                ],
+                "boundary_state_probability": 0.006699032821550388,
+                "boundary_serve_probability": 0.5043514668765894,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 22.927437819700945,
+                "primal_dual_loss_gap": -3.730349362740526e-13
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.0013377163584464835
+              }
+            ]
+          },
+          "expected_stage1_work": 1494.4445233435665,
+          "gain_vs_fixed_stage1": 1488.8771560649052
+        },
+        {
+          "input": 1615.1585,
+          "fixed_stage1": {
+            "expected_profit": 22949.865321235928,
+            "fulfilment_probability": 0.9486622836415535,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 13.030006851754443,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 4.99137995872023
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 24539.354224774073,
+              "fulfilment_probability": 0.834658821908279,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 5.759925920809075,
+              "expected_grade1_shortage": 1.0269069750710433,
+              "expected_grade2_shortage": 18.415698752053217
+            },
+            "maximum_fulfilment_probability": 0.9486622836415535,
+            "states_with_service_tradeoff": 162,
+            "probability_mass_with_service_tradeoff": 0.11400346173327444,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24539.354224774073,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 5.759925920809075,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24539.354224774073,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 5.759925920809075,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24533.971188883825,
+                  "fulfilment_probability": 0.8499999999999999,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 6.61986015343164,
+                  "expected_grade1_shortage": 1.0269069750710418,
+                  "expected_grade2_shortage": 16.748808965253644
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24533.79894740694,
+                  "fulfilment_probability": 0.8504908730362493,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 6.647375545353848,
+                  "expected_grade1_shortage": 1.0269069750710416,
+                  "expected_grade2_shortage": 16.695473344882956
+                },
+                "deterministic_optimality_gap_upper_bound": 0.17224147688573893,
+                "boundary_state": [
+                  6,
+                  5,
+                  5,
+                  7,
+                  5
+                ],
+                "boundary_state_probability": 0.001069525117595076,
+                "boundary_serve_probability": 0.5410364579814579,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 5.3830358902490785,
+                "primal_dual_loss_gap": -3.5793590313915047e-13
+              },
+              {
+                "target": 0.9,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24516.426786954373,
+                  "fulfilment_probability": 0.9000000000000001,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 9.422559618496312,
+                  "expected_grade1_shortage": 1.026906975071036,
+                  "expected_grade2_shortage": 11.316078255676887
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24515.261710314448,
+                  "fulfilment_probability": 0.9033203657913471,
+                  "expected_rework": 0.0,
+                  "activation_probability": 0.0,
+                  "expected_substitution": 9.608679367040857,
+                  "expected_grade1_shortage": 1.0269069750710356,
+                  "expected_grade2_shortage": 10.955305191643305
+                },
+                "deterministic_optimality_gap_upper_bound": 1.1650766399238959,
+                "boundary_state": [
+                  7,
+                  5,
+                  5,
+                  8,
+                  6
+                ],
+                "boundary_state_probability": 0.006699032821550388,
+                "boundary_serve_probability": 0.5043514668765894,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 22.927437819700945,
+                "primal_dual_loss_gap": -3.730349362740526e-13
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.0013377163584464835
+              }
+            ]
+          },
+          "expected_stage1_work": 1503.5943123337606,
+          "gain_vs_fixed_stage1": 1589.4889035381486
+        },
+        {
+          "input": 1800.0,
+          "fixed_stage1": {
+            "expected_profit": 21119.70822182995,
+            "fulfilment_probability": 0.9486622836415535,
+            "expected_rework": 9.829778157213475,
+            "activation_probability": 0.396656560957255,
+            "expected_substitution": 13.03000685175441,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 4.99137995872023
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 25002.324784301487,
+              "fulfilment_probability": 0.834658821908279,
+              "expected_rework": 9.829778157213475,
+              "activation_probability": 0.396656560957255,
+              "expected_substitution": 5.759925920809053,
+              "expected_grade1_shortage": 1.0269069750710433,
+              "expected_grade2_shortage": 18.415698752053217
+            },
+            "maximum_fulfilment_probability": 0.9486622836415535,
+            "states_with_service_tradeoff": 162,
+            "probability_mass_with_service_tradeoff": 0.11400346173327444,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 25002.324784301487,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 5.759925920809053,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 25002.324784301487,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 5.759925920809053,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24996.94174841124,
+                  "fulfilment_probability": 0.8499999999999999,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 6.619860153431617,
+                  "expected_grade1_shortage": 1.0269069750710418,
+                  "expected_grade2_shortage": 16.748808965253644
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24996.76950693435,
+                  "fulfilment_probability": 0.8504908730362493,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 6.647375545353825,
+                  "expected_grade1_shortage": 1.0269069750710416,
+                  "expected_grade2_shortage": 16.695473344882956
+                },
+                "deterministic_optimality_gap_upper_bound": 0.17224147688573893,
+                "boundary_state": [
+                  6,
+                  5,
+                  5,
+                  7,
+                  5
+                ],
+                "boundary_state_probability": 0.001069525117595076,
+                "boundary_serve_probability": 0.5410364579814579,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 5.3830358902490785,
+                "primal_dual_loss_gap": -3.5793590313915047e-13
+              },
+              {
+                "target": 0.9,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24979.397346481786,
+                  "fulfilment_probability": 0.9000000000000001,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 9.422559618496287,
+                  "expected_grade1_shortage": 1.026906975071036,
+                  "expected_grade2_shortage": 11.316078255676887
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24978.23226984186,
+                  "fulfilment_probability": 0.9033203657913471,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 9.608679367040835,
+                  "expected_grade1_shortage": 1.0269069750710356,
+                  "expected_grade2_shortage": 10.955305191643305
+                },
+                "deterministic_optimality_gap_upper_bound": 1.1650766399238959,
+                "boundary_state": [
+                  7,
+                  5,
+                  5,
+                  8,
+                  6
+                ],
+                "boundary_state_probability": 0.006699032821550388,
+                "boundary_serve_probability": 0.5043514668765894,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 22.927437819700945,
+                "primal_dual_loss_gap": -3.730349362740526e-13
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.0013377163584464835
+              }
+            ]
+          },
+          "expected_stage1_work": 1548.95616874444,
+          "gain_vs_fixed_stage1": 3882.616562471535
+        },
+        {
+          "input": 2100.0,
+          "fixed_stage1": {
+            "expected_profit": 17379.81450810732,
+            "fulfilment_probability": 0.9486622836415535,
+            "expected_rework": 7.326670198223638,
+            "activation_probability": 0.33414833597729454,
+            "expected_substitution": 13.03000685175441,
+            "expected_grade1_shortage": 1.0269069750710285,
+            "expected_grade2_shortage": 4.99137995872023
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 25002.324784301487,
+              "fulfilment_probability": 0.834658821908279,
+              "expected_rework": 9.829778157213475,
+              "activation_probability": 0.396656560957255,
+              "expected_substitution": 5.759925920809053,
+              "expected_grade1_shortage": 1.0269069750710433,
+              "expected_grade2_shortage": 18.415698752053217
+            },
+            "maximum_fulfilment_probability": 0.9486622836415535,
+            "states_with_service_tradeoff": 162,
+            "probability_mass_with_service_tradeoff": 0.11400346173327444,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 25002.324784301487,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 5.759925920809053,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 25002.324784301487,
+                  "fulfilment_probability": 0.834658821908279,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 5.759925920809053,
+                  "expected_grade1_shortage": 1.0269069750710433,
+                  "expected_grade2_shortage": 18.415698752053217
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24996.94174841124,
+                  "fulfilment_probability": 0.8499999999999999,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 6.619860153431617,
+                  "expected_grade1_shortage": 1.0269069750710418,
+                  "expected_grade2_shortage": 16.748808965253644
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24996.76950693435,
+                  "fulfilment_probability": 0.8504908730362493,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 6.647375545353825,
+                  "expected_grade1_shortage": 1.0269069750710416,
+                  "expected_grade2_shortage": 16.695473344882956
+                },
+                "deterministic_optimality_gap_upper_bound": 0.17224147688573893,
+                "boundary_state": [
+                  6,
+                  5,
+                  5,
+                  7,
+                  5
+                ],
+                "boundary_state_probability": 0.001069525117595076,
+                "boundary_serve_probability": 0.5410364579814579,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 5.3830358902490785,
+                "primal_dual_loss_gap": -3.5793590313915047e-13
+              },
+              {
+                "target": 0.9,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24979.397346481786,
+                  "fulfilment_probability": 0.9000000000000001,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 9.422559618496287,
+                  "expected_grade1_shortage": 1.026906975071036,
+                  "expected_grade2_shortage": 11.316078255676887
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24978.23226984186,
+                  "fulfilment_probability": 0.9033203657913471,
+                  "expected_rework": 9.829778157213475,
+                  "activation_probability": 0.396656560957255,
+                  "expected_substitution": 9.608679367040835,
+                  "expected_grade1_shortage": 1.0269069750710356,
+                  "expected_grade2_shortage": 10.955305191643305
+                },
+                "deterministic_optimality_gap_upper_bound": 1.1650766399238959,
+                "boundary_state": [
+                  7,
+                  5,
+                  5,
+                  8,
+                  6
+                ],
+                "boundary_state_probability": 0.006699032821550388,
+                "boundary_serve_probability": 0.5043514668765894,
+                "marginal_profit_sacrifice": 350.888038589037,
+                "lagrangian_loss_lower_bound": 22.927437819700945,
+                "primal_dual_loss_gap": -3.730349362740526e-13
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.0013377163584464835
+              }
+            ]
+          },
+          "expected_stage1_work": 1548.95616874444,
+          "gain_vs_fixed_stage1": 7622.510276194163
+        }
+      ]
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "eta": 0.2,
+      "rows": [
+        {
+          "input": 0.0,
+          "fixed_stage1": {
+            "expected_profit": 0.0,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 749.9999999999993,
+            "expected_grade2_shortage": 149.9999999999999
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 0.0,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 749.9999999999993,
+              "expected_grade2_shortage": 149.9999999999999
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 0.0,
+          "gain_vs_fixed_stage1": 0.0
+        },
+        {
+          "input": 700.0,
+          "fixed_stage1": {
+            "expected_profit": 14155.906419375775,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 404.3382441951453,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 14156.54071287329,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 404.3382441951453,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 699.9624541968888,
+          "gain_vs_fixed_stage1": 0.6342934975103649
+        },
+        {
+          "input": 1000.0,
+          "fixed_stage1": {
+            "expected_profit": 18270.390029286442,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 256.56833500920106,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 18284.797333537317,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 256.56833500920106,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 999.1954082429794,
+          "gain_vs_fixed_stage1": 14.407304250877228
+        },
+        {
+          "input": 1200.0,
+          "fixed_stage1": {
+            "expected_profit": 20876.12282024314,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 159.89787692441377,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 20985.485591448953,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 159.89787692441377,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 1194.95235836264,
+          "gain_vs_fixed_stage1": 109.36277120580662
+        },
+        {
+          "input": 1400.0,
+          "fixed_stage1": {
+            "expected_profit": 23118.829291087324,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 69.01419843191101,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 23524.508248455928,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 69.01419843191101,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 1378.9911233568432,
+          "gain_vs_fixed_stage1": 405.6789573686096
+        },
+        {
+          "input": 1518.7443558090454,
+          "fixed_stage1": {
+            "expected_profit": 23854.3077084082,
+            "fulfilment_probability": 0.6633718222421918,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 23.369440009913053,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 24799.68854187487,
+              "fulfilment_probability": 0.6633718222421918,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 23.369440009913053,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.7162844112890251,
+            "states_with_service_tradeoff": 12,
+            "probability_mass_with_service_tradeoff": 0.05291258904683332,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24780.193226559248,
+                  "fulfilment_probability": 0.7,
+                  "expected_rework": 1.6952448100545636,
+                  "activation_probability": 0.036628177757808134,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 23.03039104790214,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24778.35984210812,
+                  "fulfilment_probability": 0.7034445983810536,
+                  "expected_rework": 1.8546695449353117,
+                  "activation_probability": 0.040072776138861746,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 22.99850610092599,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 1.833384451128558,
+                "boundary_state": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  5
+                ],
+                "boundary_state_probability": 0.004917375156244442,
+                "boundary_serve_probability": 0.2995046601885963,
+                "marginal_profit_sacrifice": 532.2491182753729,
+                "lagrangian_loss_lower_bound": 19.495315315627003,
+                "primal_dual_loss_gap": -3.11928260998684e-12
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.1337155887109749
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.18371558871097493
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.23371558871097486
+              }
+            ]
+          },
+          "expected_stage1_work": 1471.421415657746,
+          "gain_vs_fixed_stage1": 945.3808334666766
+        },
+        {
+          "input": 1600.0,
+          "fixed_stage1": {
+            "expected_profit": 23320.83211134851,
+            "fulfilment_probability": 0.6633718222421918,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 23.369440009913053,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 24799.68854187486,
+              "fulfilment_probability": 0.6633718222421918,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 23.369440009913205,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.7162844112890251,
+            "states_with_service_tradeoff": 12,
+            "probability_mass_with_service_tradeoff": 0.05291258904683332,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24780.193226559237,
+                  "fulfilment_probability": 0.7,
+                  "expected_rework": 1.6952448100545636,
+                  "activation_probability": 0.036628177757808134,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 23.03039104790229,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24778.359842108108,
+                  "fulfilment_probability": 0.7034445983810536,
+                  "expected_rework": 1.8546695449353117,
+                  "activation_probability": 0.040072776138861746,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 22.998506100926143,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 1.833384451128558,
+                "boundary_state": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  5
+                ],
+                "boundary_state_probability": 0.004917375156244442,
+                "boundary_serve_probability": 0.2995046601885963,
+                "marginal_profit_sacrifice": 532.2491182753729,
+                "lagrangian_loss_lower_bound": 19.495315315627003,
+                "primal_dual_loss_gap": -3.11928260998684e-12
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.1337155887109749
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.18371558871097493
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.23371558871097486
+              }
+            ]
+          },
+          "expected_stage1_work": 1471.4214156577455,
+          "gain_vs_fixed_stage1": 1478.8564305263533
+        },
+        {
+          "input": 1800.0,
+          "fixed_stage1": {
+            "expected_profit": 20871.817057457178,
+            "fulfilment_probability": 0.6633718222421918,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 23.369440009913053,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 24799.68854187486,
+              "fulfilment_probability": 0.6633718222421918,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 23.369440009913205,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.7162844112890251,
+            "states_with_service_tradeoff": 12,
+            "probability_mass_with_service_tradeoff": 0.05291258904683332,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24780.193226559237,
+                  "fulfilment_probability": 0.7,
+                  "expected_rework": 1.6952448100545636,
+                  "activation_probability": 0.036628177757808134,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 23.03039104790229,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24778.359842108108,
+                  "fulfilment_probability": 0.7034445983810536,
+                  "expected_rework": 1.8546695449353117,
+                  "activation_probability": 0.040072776138861746,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 22.998506100926143,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 1.833384451128558,
+                "boundary_state": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  5
+                ],
+                "boundary_state_probability": 0.004917375156244442,
+                "boundary_serve_probability": 0.2995046601885963,
+                "marginal_profit_sacrifice": 532.2491182753729,
+                "lagrangian_loss_lower_bound": 19.495315315627003,
+                "primal_dual_loss_gap": -3.11928260998684e-12
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.1337155887109749
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.18371558871097493
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.23371558871097486
+              }
+            ]
+          },
+          "expected_stage1_work": 1471.4214156577455,
+          "gain_vs_fixed_stage1": 3927.8714844176898
+        },
+        {
+          "input": 2100.0,
+          "fixed_stage1": {
+            "expected_profit": 17281.11322700364,
+            "fulfilment_probability": 0.6633718222421918,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 23.369440009913053,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 24799.68854187486,
+              "fulfilment_probability": 0.6633718222421918,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 23.369440009913205,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.7162844112890251,
+            "states_with_service_tradeoff": 12,
+            "probability_mass_with_service_tradeoff": 0.05291258904683332,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 24780.193226559237,
+                  "fulfilment_probability": 0.7,
+                  "expected_rework": 1.6952448100545636,
+                  "activation_probability": 0.036628177757808134,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 23.03039104790229,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 24778.359842108108,
+                  "fulfilment_probability": 0.7034445983810536,
+                  "expected_rework": 1.8546695449353117,
+                  "activation_probability": 0.040072776138861746,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 22.998506100926143,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 1.833384451128558,
+                "boundary_state": [
+                  5,
+                  6,
+                  7,
+                  8,
+                  5
+                ],
+                "boundary_state_probability": 0.004917375156244442,
+                "boundary_serve_probability": 0.2995046601885963,
+                "marginal_profit_sacrifice": 532.2491182753729,
+                "lagrangian_loss_lower_bound": 19.495315315627003,
+                "primal_dual_loss_gap": -3.11928260998684e-12
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.1337155887109749
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.18371558871097493
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.23371558871097486
+              }
+            ]
+          },
+          "expected_stage1_work": 1471.4214156577455,
+          "gain_vs_fixed_stage1": 7518.575314871227
+        }
+      ]
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "eta": 0.97,
+      "rows": [
+        {
+          "input": 0.0,
+          "fixed_stage1": {
+            "expected_profit": 0.0,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 0.0,
+            "activation_probability": 0.0,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 749.9999999999993,
+            "expected_grade2_shortage": 149.9999999999999
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 0.0,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 0.0,
+              "activation_probability": 0.0,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 749.9999999999993,
+              "expected_grade2_shortage": 149.9999999999999
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 0.0,
+          "gain_vs_fixed_stage1": 0.0
+        },
+        {
+          "input": 700.0,
+          "fixed_stage1": {
+            "expected_profit": 14292.353995146166,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 1.6866202196587066,
+            "activation_probability": 0.9992421696865132,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 402.7022225820764,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 14292.988288643679,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 1.6866202196587066,
+              "activation_probability": 0.9992421696865132,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 402.7022225820764,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 699.9624541968888,
+          "gain_vs_fixed_stage1": 0.6342934975103649
+        },
+        {
+          "input": 1000.0,
+          "fixed_stage1": {
+            "expected_profit": 23609.354652684517,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 65.99461833619384,
+            "activation_probability": 0.9912715247420334,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 192.553555223093,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 23623.761956935396,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 65.99461833619384,
+              "activation_probability": 0.9912715247420334,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 192.553555223093,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 999.1954082429794,
+          "gain_vs_fixed_stage1": 14.407304250877228
+        },
+        {
+          "input": 1200.0,
+          "fixed_stage1": {
+            "expected_profit": 29031.482656975546,
+            "fulfilment_probability": 0.0,
+            "expected_rework": 100.8466254752904,
+            "activation_probability": 0.9242943106141268,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 62.11703950404578,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 29379.330931660126,
+              "fulfilment_probability": 0.0,
+              "expected_rework": 105.72809544169708,
+              "activation_probability": 0.9912715247420334,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 63.05294789585261,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.0,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": false,
+                "infeasibility_gap": 0.7
+              },
+              {
+                "target": 0.85,
+                "feasible": false,
+                "infeasibility_gap": 0.85
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.9
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.95
+              }
+            ]
+          },
+          "expected_stage1_work": 1183.3869711551906,
+          "gain_vs_fixed_stage1": 347.84827468457337
+        },
+        {
+          "input": 1400.0,
+          "fixed_stage1": {
+            "expected_profit": 31309.475683233377,
+            "fulfilment_probability": 0.8828591194583242,
+            "expected_rework": 133.6410491941101,
+            "activation_probability": 0.9242943106141268,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 11.078587623651341,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 32265.939732673152,
+              "fulfilment_probability": 0.8828591194583242,
+              "expected_rework": 138.5225191605168,
+              "activation_probability": 0.9912715247420334,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 18.318566199909252,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.8828591194583242,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 32265.939732673152,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 138.5225191605168,
+                  "activation_probability": 0.9912715247420334,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 18.318566199909252,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 32265.939732673152,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 138.5225191605168,
+                  "activation_probability": 0.9912715247420334,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 18.318566199909252,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 32265.939732673152,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 138.5225191605168,
+                  "activation_probability": 0.9912715247420334,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 18.318566199909252,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 32265.939732673152,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 138.5225191605168,
+                  "activation_probability": 0.9912715247420334,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 18.318566199909252,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.01714088054167584
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.06714088054167577
+              }
+            ]
+          },
+          "expected_stage1_work": 1334.7246632182002,
+          "gain_vs_fixed_stage1": 956.46404943977
+        },
+        {
+          "input": 1518.7443558090454,
+          "fixed_stage1": {
+            "expected_profit": 30678.195591995285,
+            "fulfilment_probability": 0.8828591194583242,
+            "expected_rework": 146.2064075924851,
+            "activation_probability": 0.9242943106141268,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 9.008967894612114,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 32871.337129903986,
+              "fulfilment_probability": 0.8828591194583242,
+              "expected_rework": 147.04688356752175,
+              "activation_probability": 0.935826234345459,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 10.050191181446571,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.8828591194583242,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 32871.337129903986,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 147.04688356752175,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 32871.337129903986,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 147.04688356752175,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 32871.337129903986,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 147.04688356752175,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 32871.337129903986,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 147.04688356752175,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.01714088054167584
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.06714088054167577
+              }
+            ]
+          },
+          "expected_stage1_work": 1417.3913974200275,
+          "gain_vs_fixed_stage1": 2193.141537908706
+        },
+        {
+          "input": 1600.0,
+          "fixed_stage1": {
+            "expected_profit": 30110.042596693223,
+            "fulfilment_probability": 0.8828591194583242,
+            "expected_rework": 153.5291319574556,
+            "activation_probability": 0.9242943106141268,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 9.008967894612114,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 33216.22851425609,
+              "fulfilment_probability": 0.8828591194583242,
+              "expected_rework": 154.36960793249224,
+              "activation_probability": 0.935826234345459,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 10.050191181446571,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.8828591194583242,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 33216.22851425609,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 154.36960793249224,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 33216.22851425609,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 154.36960793249224,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 33216.22851425609,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 154.36960793249224,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 33216.22851425609,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 154.36960793249224,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.01714088054167584
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.06714088054167577
+              }
+            ]
+          },
+          "expected_stage1_work": 1451.1838559949963,
+          "gain_vs_fixed_stage1": 3106.1859175628647
+        },
+        {
+          "input": 1800.0,
+          "fixed_stage1": {
+            "expected_profit": 26693.764738685655,
+            "fulfilment_probability": 0.8828591194583242,
+            "expected_rework": 139.09254038831813,
+            "activation_probability": 0.8020049360897556,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 9.008967894612114,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 33330.48473799106,
+              "fulfilment_probability": 0.8828591194583242,
+              "expected_rework": 156.795492925141,
+              "activation_probability": 0.935826234345459,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 10.050191181446571,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.8828591194583242,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 33330.48473799106,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 156.795492925141,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 33330.48473799106,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 156.795492925141,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 33330.48473799106,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 156.795492925141,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 33330.48473799106,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 156.795492925141,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.01714088054167584
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.06714088054167577
+              }
+            ]
+          },
+          "expected_stage1_work": 1462.3786810404224,
+          "gain_vs_fixed_stage1": 6636.719999305399
+        },
+        {
+          "input": 2100.0,
+          "fixed_stage1": {
+            "expected_profit": 22938.040028802225,
+            "fulfilment_probability": 0.8828591194583242,
+            "expected_rework": 139.09254038831813,
+            "activation_probability": 0.8020049360897556,
+            "expected_substitution": 0.0,
+            "expected_grade1_shortage": 9.008967894612114,
+            "expected_grade2_shortage": 0.007734484030524165
+          },
+          "coordinated": {
+            "profit_best": {
+              "expected_profit": 33330.48473799106,
+              "fulfilment_probability": 0.8828591194583242,
+              "expected_rework": 156.795492925141,
+              "activation_probability": 0.935826234345459,
+              "expected_substitution": 0.0,
+              "expected_grade1_shortage": 10.050191181446571,
+              "expected_grade2_shortage": 0.007734484030524165
+            },
+            "maximum_fulfilment_probability": 0.8828591194583242,
+            "states_with_service_tradeoff": 0,
+            "probability_mass_with_service_tradeoff": 0.0,
+            "frontier": [
+              {
+                "target": 0.7,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 33330.48473799106,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 156.795492925141,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 33330.48473799106,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 156.795492925141,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.85,
+                "feasible": true,
+                "randomized_optimum": {
+                  "expected_profit": 33330.48473799106,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 156.795492925141,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_feasible": {
+                  "expected_profit": 33330.48473799106,
+                  "fulfilment_probability": 0.8828591194583242,
+                  "expected_rework": 156.795492925141,
+                  "activation_probability": 0.935826234345459,
+                  "expected_substitution": 0.0,
+                  "expected_grade1_shortage": 10.050191181446571,
+                  "expected_grade2_shortage": 0.007734484030524165
+                },
+                "deterministic_optimality_gap_upper_bound": 0.0,
+                "boundary_state": null,
+                "boundary_state_probability": 0.0,
+                "boundary_serve_probability": 0.0,
+                "marginal_profit_sacrifice": 0.0,
+                "lagrangian_loss_lower_bound": 0.0,
+                "primal_dual_loss_gap": 0.0
+              },
+              {
+                "target": 0.9,
+                "feasible": false,
+                "infeasibility_gap": 0.01714088054167584
+              },
+              {
+                "target": 0.95,
+                "feasible": false,
+                "infeasibility_gap": 0.06714088054167577
+              }
+            ]
+          },
+          "expected_stage1_work": 1462.3786810404224,
+          "gain_vs_fixed_stage1": 10392.444709188829
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T18:11:13.781015+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round38_upstream_control.py": "25d3b49e9966286b422570384a86d717c0993caabf69ced35dafb995b343750c",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed"
+    }
+  }
+}

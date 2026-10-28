@@ -1,0 +1,194 @@
+{
+  "question": "Does normal marginal KQC data alone justify the independent-grade repairability ceiling?",
+  "assumptions": "Round60: normal marginals alone do not identify joint grade/repairability.\n\nFor feature-wise allowed events S_i subset W_i, H=intersection S_i (potential\ngrade1 after the one specified perfect repair) and T=intersection W_i.\nUnion bounds give max(0,sum pS_i-m+1)<=Pr(H)<=min pS_i, likewise for T.\nThe perfect-unlimited service function is monotone in both nested probabilities.\nCoordinate lower endpoints give a conservative screen lower endpoint (not\nactual feasible-policy service), and upper endpoints are simultaneously attainable\nusing S_i=[0,pS_i],W_i=[0,pW_i] on a shared uniform variable.\nIndependence of features is thus a modeling assumption, not a consequence of\nnormal marginal means/standard deviations. This is within-item dependence,\ndistinct from the between-item batch dependence in rounds52/55/56.\n",
+  "headline": {
+    "random_joint_law_checks": 256,
+    "max_constructive_upper_error": 0.0,
+    "routes": 4,
+    "elapsed_seconds": 0.9603719000006095
+  },
+  "rows": [
+    {
+      "KQC": "surface roughness",
+      "direction": "decrease_value_bound",
+      "strict_marginals": [
+        0.8413447460672632,
+        0.91951764298309,
+        0.9331917816478953,
+        0.86589998238826
+      ],
+      "wide_marginals": [
+        0.9772498680505408,
+        0.964755623785597,
+        0.9772495814002466,
+        0.9542297250726708
+      ],
+      "allowed_marginals": [
+        0.9772498680505408,
+        0.91951764298309,
+        0.9331917816478953,
+        0.86589998238826
+      ],
+      "H_probability_interval": [
+        0.6958592750697861,
+        0.86589998238826
+      ],
+      "T_probability_interval": [
+        0.8734847983090557,
+        0.9542297250726708
+      ],
+      "independent_H_probability": 0.7261131856243296,
+      "independent_T_probability": 0.8791872341399283,
+      "optimistic_screen_lower_endpoint": 0.8742423504812323,
+      "independent_optimistic_screen": 0.9372150991546423,
+      "attainable_optimistic_screen_upper_endpoint": 0.9612778646482714,
+      "upper_joint_example": {
+        "grade1_probability": 0.8413447460672632,
+        "total_good_probability": 0.9542297250726708,
+        "potential_grade1_probability": 0.86589998238826,
+        "dependence": "nested events on a common item-wise uniform variable; items remain iid"
+      }
+    },
+    {
+      "KQC": "center hole diameter",
+      "direction": "increase_value_bound",
+      "strict_marginals": [
+        0.8413447460672632,
+        0.91951764298309,
+        0.9331917816478953,
+        0.86589998238826
+      ],
+      "wide_marginals": [
+        0.9772498680505408,
+        0.964755623785597,
+        0.9772495814002466,
+        0.9542297250726708
+      ],
+      "allowed_marginals": [
+        0.8413447460672632,
+        0.9252566946847751,
+        0.9331917816478953,
+        0.86589998238826
+      ],
+      "H_probability_interval": [
+        0.565693204788194,
+        0.8413447460672632
+      ],
+      "T_probability_interval": [
+        0.8734847983090557,
+        0.9542297250726708
+      ],
+      "independent_H_probability": 0.6290350706711243,
+      "independent_T_probability": 0.8791872341399283,
+      "optimistic_screen_lower_endpoint": 0.3814855361475495,
+      "independent_optimistic_screen": 0.6992751125791843,
+      "attainable_optimistic_screen_upper_endpoint": 0.9612778419592607,
+      "upper_joint_example": {
+        "grade1_probability": 0.8413447460672632,
+        "total_good_probability": 0.9542297250726708,
+        "potential_grade1_probability": 0.8413447460672632,
+        "dependence": "nested events on a common item-wise uniform variable; items remain iid"
+      }
+    },
+    {
+      "KQC": "external diameter",
+      "direction": "decrease_value_bound",
+      "strict_marginals": [
+        0.8413447460672632,
+        0.91951764298309,
+        0.9331917816478953,
+        0.86589998238826
+      ],
+      "wide_marginals": [
+        0.9772498680505408,
+        0.964755623785597,
+        0.9772495814002466,
+        0.9542297250726708
+      ],
+      "allowed_marginals": [
+        0.8413447460672632,
+        0.91951764298309,
+        0.933192512079566,
+        0.86589998238826
+      ],
+      "H_probability_interval": [
+        0.5599548835181789,
+        0.8413447460672632
+      ],
+      "T_probability_interval": [
+        0.8734847983090557,
+        0.9542297250726708
+      ],
+      "independent_H_probability": 0.6251338699784257,
+      "independent_T_probability": 0.8791872341399283,
+      "optimistic_screen_lower_endpoint": 0.36662087629930695,
+      "independent_optimistic_screen": 0.6847391513109078,
+      "attainable_optimistic_screen_upper_endpoint": 0.9612778419592607,
+      "upper_joint_example": {
+        "grade1_probability": 0.8413447460672632,
+        "total_good_probability": 0.9542297250726708,
+        "potential_grade1_probability": 0.8413447460672632,
+        "dependence": "nested events on a common item-wise uniform variable; items remain iid"
+      }
+    },
+    {
+      "KQC": "screw diameter",
+      "direction": "decrease_value_bound",
+      "strict_marginals": [
+        0.8413447460672632,
+        0.91951764298309,
+        0.9331917816478953,
+        0.86589998238826
+      ],
+      "wide_marginals": [
+        0.9772498680505408,
+        0.964755623785597,
+        0.9772495814002466,
+        0.9542297250726708
+      ],
+      "allowed_marginals": [
+        0.8413447460672632,
+        0.91951764298309,
+        0.9331917816478953,
+        0.9138411824762995
+      ],
+      "H_probability_interval": [
+        0.6078953531745479,
+        0.8413447460672632
+      ],
+      "T_probability_interval": [
+        0.8734847983090557,
+        0.9542297250726708
+      ],
+      "independent_H_probability": 0.6597443577982202,
+      "independent_T_probability": 0.8791872341399283,
+      "optimistic_screen_lower_endpoint": 0.6264763611394091,
+      "independent_optimistic_screen": 0.8103915687705784,
+      "attainable_optimistic_screen_upper_endpoint": 0.9612778419592607,
+      "upper_joint_example": {
+        "grade1_probability": 0.8413447460672632,
+        "total_good_probability": 0.9542297250726708,
+        "potential_grade1_probability": 0.8413447460672632,
+        "dependence": "nested events on a common item-wise uniform variable; items remain iid"
+      }
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T21:32:01.386916+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round60_kqc_dependence_identification.py": "f30d9fb2ef521a469183b650ce3297c32b4cd129b231366ea5b464c29ed0d3c9",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\round59_repairability_ceiling.py": "77951333cba23383c4f5a56dc1a547b8b910c58eea9200bbfdd309aa8d11d97d",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\round42_one_sided_repair.py": "405501a6e6272c6f000e8951338986cdc5c33a8395fc529dfd7ce1bfe8dd210a"
+    }
+  }
+}

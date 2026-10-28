@@ -1,0 +1,301 @@
+{
+  "question": "Do the merged setup/substitution policies execute using only the permitted information?",
+  "assumptions": "Round75: decode and directly execute the merged two-timepoint decisions.\n\nVerify three mechanisms: pure substitution with a fine capacity/A boundary,\nmerged setup/substitution with a substitution boundary, and a setup boundary.\nFreeze all decisions before success; compare paired automatic-rule histories.\nThis validates fixed-input policies from74, not an outer-input optimum.\n",
+  "seed": 2026102875,
+  "replicas_per_group": 32768,
+  "joint_service_family_error": 0.05,
+  "policy_archive": {
+    "path": "research\\2026-10-28\\service_rounds\\round75_joint_policies.npz",
+    "sha256": "d8dd82069ea9e7fe1001bb780fd71424376b509f368b40005223f47c5e0d7bb1",
+    "policies": [
+      {
+        "key": "d550_350_none",
+        "demands": [
+          550.0,
+          350.0
+        ],
+        "mode": "none",
+        "input": 1495,
+        "target": 0.9,
+        "boundary": {
+          "index": 84,
+          "fraction": 0.8619315075689425,
+          "deterministic_fraction": 0.8619781412094952,
+          "ratio": 2550.0,
+          "kind": "substitution",
+          "gap": 85,
+          "fine_prefix": {
+            "selected_mass": 0.0037813871813858124,
+            "extra_mass": 2.0457578003060112e-07,
+            "boundary": {
+              "capacity_order": "descending probability, stable original index on ties",
+              "capacity_position": 137,
+              "capacity_counts": [
+                7,
+                4,
+                5,
+                7,
+                6
+              ],
+              "grade1_count": 673,
+              "grade2_count": 265,
+              "atom_probability": 8.04654011920989e-07,
+              "interpretation": "Within this gap band, complete all earlier capacity states and all eligible grade1 counts up to this count in the boundary capacity state."
+            }
+          }
+        },
+        "expected": {
+          "expected_profit": 20485.740165282434,
+          "fulfilment_probability": 0.9000002045757802,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 46.780632906718196
+        },
+        "automatic_reference": {
+          "input": 1495,
+          "expected_profit": 20327.33644445242,
+          "fulfilment_probability": 0.9435866905886867,
+          "policy_kind": "no_repair",
+          "boundary": null
+        }
+      },
+      {
+        "key": "d650_250_selective",
+        "demands": [
+          650.0,
+          250.0
+        ],
+        "mode": "selective",
+        "input": 1352,
+        "target": 0.9,
+        "boundary": {
+          "index": 599,
+          "fraction": 0.10422131230792431,
+          "deterministic_fraction": 0.10503081630728633,
+          "ratio": 420.0,
+          "kind": "substitution",
+          "gap": 14,
+          "fine_prefix": {
+            "selected_mass": 0.0001238113946937614,
+            "extra_mass": 9.542515491640176e-07,
+            "boundary": {
+              "capacity_order": "descending probability, stable original index on ties",
+              "capacity_position": 1,
+              "capacity_counts": [
+                6,
+                6,
+                7,
+                8,
+                6
+              ],
+              "grade1_count": 710,
+              "grade2_count": 236,
+              "atom_probability": 9.885724004372003e-07,
+              "interpretation": "Within this gap band, complete all earlier capacity states and all eligible grade1 counts up to this count in the boundary capacity state."
+            }
+          }
+        },
+        "expected": {
+          "expected_profit": 24353.117642546462,
+          "fulfilment_probability": 0.9000009542515492,
+          "expected_rework": 3.4425288157026017,
+          "activation_probability": 0.08945233324720533,
+          "expected_substitution": 0.27194345567682526
+        },
+        "automatic_reference": {
+          "input": 1352,
+          "expected_profit": 24351.99601253261,
+          "fulfilment_probability": 0.9000761924244809,
+          "expected_rework": 3.24345895087951,
+          "activation_probability": 0.08328032521775962,
+          "policy_kind": "threshold",
+          "boundary": {
+            "A": 649,
+            "R": 36,
+            "ratio": 353.60000000000053,
+            "randomized_open_probability": 0.8744371548851163,
+            "observed_state_mass": 0.0006068070886035119,
+            "conditional_service_gain": 0.9999999999999989
+          }
+        }
+      },
+      {
+        "key": "d700_200_selective",
+        "demands": [
+          700.0,
+          200.0
+        ],
+        "mode": "selective",
+        "input": 1395,
+        "target": 0.85,
+        "boundary": {
+          "index": 573,
+          "fraction": 0.9030634826835638,
+          "deterministic_fraction": 1.0,
+          "ratio": 578.1000000000022,
+          "kind": "setup",
+          "A": 699,
+          "R": 31
+        },
+        "expected": {
+          "expected_profit": 23906.709265761667,
+          "fulfilment_probability": 0.8500701892937214,
+          "expected_rework": 29.08003972690985,
+          "activation_probability": 0.7499454026373421,
+          "expected_substitution": 5.921624420603231e-08
+        },
+        "automatic_reference": {
+          "input": 1395,
+          "expected_profit": 23906.709265491292,
+          "fulfilment_probability": 0.8500701892972282,
+          "expected_rework": 29.080039726909853,
+          "activation_probability": 0.7499454026373421,
+          "policy_kind": "threshold",
+          "boundary": {
+            "A": 699,
+            "R": 31,
+            "ratio": 578.1000000000022,
+            "randomized_open_probability": 0.9030634778407549,
+            "observed_state_mass": 0.0007240748446973863,
+            "conditional_service_gain": 0.9999999999999966
+          }
+        }
+      }
+    ],
+    "indices": "setup indexed by initialA,availableR; substitution by initialA,B and frozen capacity priority"
+  },
+  "headline": {
+    "fixed_input_policies": 3,
+    "elapsed_seconds": 4.225968300001114
+  },
+  "trace": {
+    "path": "research\\2026-10-28\\service_rounds\\round75_validation.npz",
+    "sha256": "8f4773aa0d9b1f162c39ef1678ddedf629bf48c9357a8bd15396a613532321bb"
+  },
+  "rows": [
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "mode": "none",
+      "input": 1495,
+      "decoded_exact_value": {
+        "expected_profit": 20485.740165282434,
+        "fulfilment_probability": 0.9000002045757801
+      },
+      "new_service": {
+        "estimate": 0.9003495687076124,
+        "standard_error": 0.00033052729551862894
+      },
+      "new_service_interval": [
+        0.8950368871822881,
+        0.9056622502329367
+      ],
+      "new_profit": {
+        "estimate": 20485.15691967315,
+        "standard_error": 3.327831596960713
+      },
+      "paired_profit_gain": {
+        "estimate": 157.44276349664062,
+        "standard_error": 0.9097268313489962
+      },
+      "exact_profit_gain": 158.4037208300142,
+      "hoeffding_radius": 0.005312681525324315,
+      "capacity_groups": 64,
+      "sum_squared_group_weights": 0.337501964231828
+    },
+    {
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "mode": "selective",
+      "input": 1352,
+      "decoded_exact_value": {
+        "expected_profit": 24353.117642546462,
+        "fulfilment_probability": 0.9000009542515492
+      },
+      "new_service": {
+        "estimate": 0.8999246816149329,
+        "standard_error": 0.0006803290928078434
+      },
+      "new_service_interval": [
+        0.894410598862716,
+        0.9054387643671498
+      ],
+      "new_profit": {
+        "estimate": 24354.044356142484,
+        "standard_error": 3.9396058481914014
+      },
+      "paired_profit_gain": {
+        "estimate": 1.2085169490550278,
+        "standard_error": 0.19260610621830407
+      },
+      "exact_profit_gain": 1.1216300138512452,
+      "hoeffding_radius": 0.005514082752216844,
+      "capacity_groups": 50,
+      "sum_squared_group_weights": 0.3635760766160475
+    },
+    {
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "mode": "selective",
+      "input": 1395,
+      "decoded_exact_value": {
+        "expected_profit": 23906.709265761667,
+        "fulfilment_probability": 0.8500701892937216
+      },
+      "new_service": {
+        "estimate": 0.8493449239359291,
+        "standard_error": 0.0008404709240662504
+      },
+      "new_service_interval": [
+        0.8436307869575725,
+        0.8550590609142856
+      ],
+      "new_profit": {
+        "estimate": 23903.742767695097,
+        "standard_error": 4.438153773103457
+      },
+      "paired_profit_gain": {
+        "estimate": 0.0,
+        "standard_error": 0.0
+      },
+      "exact_profit_gain": 2.703745849430561e-07,
+      "hoeffding_radius": 0.005714136978356497,
+      "capacity_groups": 51,
+      "sum_squared_group_weights": 0.39043616102553175
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T22:58:22.310193+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round75_joint_policy_execution.py": "a080219dfa0ce93d6e6026564258343eae2248b424f51ff4bfc47ab3108873f1",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\joint_policy.py": "395ef41958297a30b5a53268c244793724a555f083b001a59d0cb7d784843c86",
+      "backbone\\joint_fulfilment_frontier.py": "efad1fed4f9d6345b77e95dd5ba064bf4ec3d9fe00272f4f625b8fc203747051",
+      "backbone\\frozen_policy.py": "933ea5aa151ca5e0fc3bd0dd37057f181efbb704eef7de9bb178877458ca5461",
+      "backbone\\adaptive_substitution.py": "9f4945e19bec7e30599fa621cb5beb139d6135f48ee201b08263e29dc54e8e83",
+      "backbone\\stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+      "backbone\\integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+      "backbone\\round62_stochastic_policy_replay.py": "2027de6c7a4d0da35ea14d7bccacd45d5eabad9595643e81f76b2539c7d9c453",
+      "research\\2026-10-28\\service_rounds\\round73.json": "92b291a2557a50511aee5afb4bd647f54e4a604d95ec1330a80b7375a5af031b",
+      "research\\2026-10-28\\service_rounds\\round74.json": "756e84a212e3178b9520a946c86defb389efdb36c0bf87c69067ce9469dc1b9f",
+      "research\\2026-10-28\\service_rounds\\round75_joint_policies.npz": "d8dd82069ea9e7fe1001bb780fd71424376b509f368b40005223f47c5e0d7bb1",
+      "research\\2026-10-28\\service_rounds\\round75_policy_catalog.json": "4af9149d8e3cbc2f4832d4c14becfe93f506f96f0bd193ed233849a0fedc99ad"
+    }
+  }
+}

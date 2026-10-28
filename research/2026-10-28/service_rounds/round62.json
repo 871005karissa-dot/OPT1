@@ -1,0 +1,111 @@
+{
+  "question": "Does a frozen nonanticipative setup policy reproduce its finite-law service and profit when executed with fresh successes?",
+  "assumptions": "Round62: fresh direct execution of frozen pre-success setup policies.\n\nIndependent multinomial initial-quality draws and binomial rework successes;\nno analytic eligibility integration in the simulator. Equivalent capacity states\nare grouped by integer normal count and spare return capacity. Normal costs are\nintegrated exactly. Hoeffding uses squared GROUP weights, not original state\nweights or the raw number of draws. Same histories across compared policies.\n",
+  "seed": 2026102862,
+  "replicas_per_capacity_group": 32768,
+  "sum_squared_group_weights": 0.27693450964644606,
+  "simultaneous_error_probability": 0.05,
+  "headline": {
+    "policies": 3,
+    "capacity_groups": 55,
+    "hoeffding_radius": 0.0044978253992908656,
+    "elapsed_seconds": 1.1394053999974858
+  },
+  "paired_target_vs_always_profit": {
+    "estimate": 104.47882463205823,
+    "standard_error": 0.5986660294648859
+  },
+  "trace": {
+    "path": "research\\2026-10-28\\service_rounds\\round62_validation.npz",
+    "sha256": "d55d91cc9cfb1cac809706f3849faeca9c7ce7ee127bb4a85cfa5dd49dcb2bd3"
+  },
+  "rows": [
+    {
+      "policy": "profit_best",
+      "exact_model_value": {
+        "expected_profit": 23019.77701066857,
+        "fulfilment_probability": 0.6882053369935941,
+        "expected_rework": 24.312426518677505,
+        "activation_probability": 0.566016427608746
+      },
+      "simulated_service": {
+        "estimate": 0.6875585658175796,
+        "standard_error": 0.0009473690319727314
+      },
+      "simultaneous_service_interval": [
+        0.6830607404182887,
+        0.6920563912168705
+      ],
+      "simulated_profit": {
+        "estimate": 23017.438944682006,
+        "standard_error": 3.680339165910513
+      },
+      "profit_error_in_standard_errors": 0.6352854672258887
+    },
+    {
+      "policy": "deterministic_target_75",
+      "exact_model_value": {
+        "expected_profit": 23013.089150333344,
+        "fulfilment_probability": 0.7501396725357976,
+        "expected_rework": 26.634819898282082,
+        "activation_probability": 0.6279723439911299
+      },
+      "simulated_service": {
+        "estimate": 0.7502465475627224,
+        "standard_error": 0.0006192236778630026
+      },
+      "simultaneous_service_interval": [
+        0.7457487221634315,
+        0.7547443729620132
+      ],
+      "simulated_profit": {
+        "estimate": 23010.694615694218,
+        "standard_error": 3.693436246568107
+      },
+      "profit_error_in_standard_errors": 0.6483216385152106
+    },
+    {
+      "policy": "always_return",
+      "exact_model_value": {
+        "expected_profit": 22908.69899399114,
+        "fulfilment_probability": 0.7845697859264389,
+        "expected_rework": 38.67131673827908,
+        "activation_probability": 0.960138407718032
+      },
+      "simulated_service": {
+        "estimate": 0.7846333469431599,
+        "standard_error": 0.00026172071012339824
+      },
+      "simultaneous_service_interval": [
+        0.780135521543869,
+        0.7891311723424508
+      ],
+      "simulated_profit": {
+        "estimate": 22906.21579106216,
+        "standard_error": 3.4986303302745703
+      },
+      "profit_error_in_standard_errors": 0.7097643061890089
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T21:38:50.005555+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round62_stochastic_policy_replay.py": "2027de6c7a4d0da35ea14d7bccacd45d5eabad9595643e81f76b2539c7d9c453",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+      "backbone\\integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+      "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "research\\2026-10-28\\service_rounds\\round61.json": "28256be68fa373d09998063b71ee0a6c9da00b909fb47552bd2c778bb2e75dfa",
+      "research\\2026-10-28\\service_rounds\\round61_states.npz": "360b2b9aadf5887924299886e12afb811d662892488b8580265679ff5e85a594"
+    }
+  }
+}

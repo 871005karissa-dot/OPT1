@@ -1,0 +1,764 @@
+{
+  "question": "How much extra release is needed when a mean-count service recommendation is reevaluated under finite-batch quality?",
+  "assumptions": "Round83: translate service-estimation bias into minimal-release decisions.\n\nSame finite-batch model and always-maximal-return action as79, not economics.\nTargets(.75,.90,.95) were already used in71. Compare minimal integer release\nunder matched mean counts with minimal release under full random counts. Reuse\nthe full immutable79 grid, without another simulation or expensive integration.\n",
+  "headline": {
+    "order_target_cases": 45,
+    "mean_feasible_cases": 21,
+    "mean_minimal_choices_failing_true_target": 21,
+    "model_feasibility_disagreements": 1,
+    "largest_service_target_shortfall": {
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1152,
+      "full_service_at_mean_input": 0.5096676774039661,
+      "minimal_full_input": 1184,
+      "full_service_at_minimal_full_input": 0.9526441991922863,
+      "additional_input_needed": 32,
+      "target_violation_at_mean_choice": 0.44033232259603383,
+      "mean_choice_fails_target": true
+    }
+  },
+  "rows": [
+    {
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1297,
+      "full_service_at_mean_input": 0.507433658388209,
+      "minimal_full_input": 1308,
+      "full_service_at_minimal_full_input": 0.7545070186644249,
+      "additional_input_needed": 11,
+      "target_violation_at_mean_choice": 0.24256634161179103,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1297,
+      "full_service_at_mean_input": 0.507433658388209,
+      "minimal_full_input": 1322,
+      "full_service_at_minimal_full_input": 0.9037726494977912,
+      "additional_input_needed": 25,
+      "target_violation_at_mean_choice": 0.39256634161179105,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1297,
+      "full_service_at_mean_input": 0.507433658388209,
+      "minimal_full_input": 1308,
+      "full_service_at_minimal_full_input": 0.7545070186644249,
+      "additional_input_needed": 11,
+      "target_violation_at_mean_choice": 0.24256634161179103,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1297,
+      "full_service_at_mean_input": 0.507433658388209,
+      "minimal_full_input": 1322,
+      "full_service_at_minimal_full_input": 0.9037726494977913,
+      "additional_input_needed": 25,
+      "target_violation_at_mean_choice": 0.39256634161179105,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1297,
+      "full_service_at_mean_input": 0.507433658388209,
+      "minimal_full_input": 1308,
+      "full_service_at_minimal_full_input": 0.7545070186644249,
+      "additional_input_needed": 11,
+      "target_violation_at_mean_choice": 0.24256634161179103,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1297,
+      "full_service_at_mean_input": 0.507433658388209,
+      "minimal_full_input": 1322,
+      "full_service_at_minimal_full_input": 0.9037726494977913,
+      "additional_input_needed": 25,
+      "target_violation_at_mean_choice": 0.39256634161179105,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1152,
+      "full_service_at_mean_input": 0.5096676774039661,
+      "minimal_full_input": 1163,
+      "full_service_at_minimal_full_input": 0.7537644100699549,
+      "additional_input_needed": 11,
+      "target_violation_at_mean_choice": 0.24033232259603388,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1152,
+      "full_service_at_mean_input": 0.5096676774039661,
+      "minimal_full_input": 1174,
+      "full_service_at_minimal_full_input": 0.9066084107765635,
+      "additional_input_needed": 22,
+      "target_violation_at_mean_choice": 0.3903323225960339,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1152,
+      "full_service_at_mean_input": 0.5096676774039661,
+      "minimal_full_input": 1184,
+      "full_service_at_minimal_full_input": 0.9526441991922863,
+      "additional_input_needed": 32,
+      "target_violation_at_mean_choice": 0.44033232259603383,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1152,
+      "full_service_at_mean_input": 0.5096676776318861,
+      "minimal_full_input": 1163,
+      "full_service_at_minimal_full_input": 0.7537644102423282,
+      "additional_input_needed": 11,
+      "target_violation_at_mean_choice": 0.24033232236811386,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1152,
+      "full_service_at_mean_input": 0.5096676776318861,
+      "minimal_full_input": 1174,
+      "full_service_at_minimal_full_input": 0.906608410848402,
+      "additional_input_needed": 22,
+      "target_violation_at_mean_choice": 0.3903323223681139,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1152,
+      "full_service_at_mean_input": 0.5096676776318861,
+      "minimal_full_input": 1184,
+      "full_service_at_minimal_full_input": 0.9526441992130824,
+      "additional_input_needed": 32,
+      "target_violation_at_mean_choice": 0.4403323223681138,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1297,
+      "full_service_at_mean_input": 0.5074336583880623,
+      "minimal_full_input": 1308,
+      "full_service_at_minimal_full_input": 0.7545070186643187,
+      "additional_input_needed": 11,
+      "target_violation_at_mean_choice": 0.24256634161193769,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1297,
+      "full_service_at_mean_input": 0.5074336583880623,
+      "minimal_full_input": 1322,
+      "full_service_at_minimal_full_input": 0.903772649497755,
+      "additional_input_needed": 25,
+      "target_violation_at_mean_choice": 0.3925663416119377,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1297,
+      "full_service_at_mean_input": 0.5074253779870215,
+      "minimal_full_input": 1308,
+      "full_service_at_minimal_full_input": 0.7545009961227721,
+      "additional_input_needed": 11,
+      "target_violation_at_mean_choice": 0.24257462201297852,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1297,
+      "full_service_at_mean_input": 0.5074253779870215,
+      "minimal_full_input": 1322,
+      "full_service_at_minimal_full_input": 0.9037705902103067,
+      "additional_input_needed": 25,
+      "target_violation_at_mean_choice": 0.39257462201297855,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1298,
+      "full_service_at_mean_input": 0.5205794173091445,
+      "minimal_full_input": 1309,
+      "full_service_at_minimal_full_input": 0.7606707851335636,
+      "additional_input_needed": 11,
+      "target_violation_at_mean_choice": 0.22942058269085552,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1298,
+      "full_service_at_mean_input": 0.5205794173091445,
+      "minimal_full_input": 1323,
+      "full_service_at_minimal_full_input": 0.9037358418051015,
+      "additional_input_needed": 25,
+      "target_violation_at_mean_choice": 0.37942058269085555,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1347,
+      "full_service_at_mean_input": 0.502789211508904,
+      "minimal_full_input": 1373,
+      "full_service_at_minimal_full_input": 0.754603881907786,
+      "additional_input_needed": 26,
+      "target_violation_at_mean_choice": 0.247210788491096,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": true,
+      "full_model_feasible": false,
+      "minimal_mean_input": 1347,
+      "full_service_at_mean_input": 0.502789211508904,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": 0.39721078849109603,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": true,
+      "full_model_feasible": true,
+      "minimal_mean_input": 1444,
+      "full_service_at_mean_input": 0.4296792486479324,
+      "minimal_full_input": 1492,
+      "full_service_at_minimal_full_input": 0.7529182671555394,
+      "additional_input_needed": 48,
+      "target_violation_at_mean_choice": 0.3203207513520676,
+      "mean_choice_fails_target": true
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "target": 0.75,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "target": 0.9,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    },
+    {
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "target": 0.95,
+      "mean_model_feasible": false,
+      "full_model_feasible": false,
+      "minimal_mean_input": null,
+      "full_service_at_mean_input": null,
+      "minimal_full_input": null,
+      "full_service_at_minimal_full_input": null,
+      "additional_input_needed": null,
+      "target_violation_at_mean_choice": null,
+      "mean_choice_fails_target": false
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T23:35:00.114294+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round83_service_target_release_calibration.py": "020447d78d43c3481f22cf294301c91f541c6828a9c94fb23ab90c28d15659bf",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "research\\2026-10-28\\service_rounds\\round79.json": "cc7a930bc607b2783d5d2557a50a5f018f4a77230893d9aa65a091c3525e9062"
+    }
+  }
+}

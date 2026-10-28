@@ -1,0 +1,2194 @@
+{
+  "question": "Can a batch setup charge make service requirements change rework activation after quality is inspected?",
+  "assumptions": "Round53: quality-aware rework setup charge creates an activation decision.\n\nFixed forward, independent item quality, known fluid eta=.97 and workload350.\nSetup money F is hypothetical and charged only on positive return. Since both\nactive-return marginal profits are positive, the active optimum is its full cap;\ncompare it with no return. A preset service bonus lambda selects full return\nwhen gain-F+lambda*(met_full-met_zero)>0. Lambda is a policy parameter/dual\nweight, not a measured per-unit shortage penalty or a claim of frontier optimality.\nKeep downward substitution mandatory to isolate this setup mechanism.\n",
+  "parameters_are_hypothetical": true,
+  "replicas": 512,
+  "family_error_probability": 0.05,
+  "service_radius": 0.011574897180749416,
+  "scope": "Exact two-action recourse for each preset fee/bonus and observed quality realization; Monte Carlo expectation. Finite bonus grid is not the globally constrained frontier.",
+  "headline": {
+    "elapsed_seconds": 10.91589969999768,
+    "policies": 40
+  },
+  "rows": [
+    {
+      "input": 1333.0,
+      "setup_fee": 0.0,
+      "service_bonus": 0.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 30774.235104534368,
+        "standard_error": 6.1039771063973225,
+        "normal_approximation_95_interval": [
+          30762.27152924337,
+          30786.198679825364
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.9225643045099666,
+        "standard_error": 1.9259309617706526e-06,
+        "normal_approximation_95_interval": [
+          0.9225605297546449,
+          0.9225680792652884
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.27239300499825,
+        "standard_error": 0.06126174175105273,
+        "normal_approximation_95_interval": [
+          112.152322197536,
+          112.3924638124605
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 0.0,
+      "service_bonus": 1000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 30774.235104534368,
+        "standard_error": 6.1039771063973225,
+        "normal_approximation_95_interval": [
+          30762.27152924337,
+          30786.198679825364
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.9225643045099666,
+        "standard_error": 1.9259309617706526e-06,
+        "normal_approximation_95_interval": [
+          0.9225605297546449,
+          0.9225680792652884
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.27239300499825,
+        "standard_error": 0.06126174175105273,
+        "normal_approximation_95_interval": [
+          112.152322197536,
+          112.3924638124605
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 0.0,
+      "service_bonus": 2500.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 30774.235104534368,
+        "standard_error": 6.1039771063973225,
+        "normal_approximation_95_interval": [
+          30762.27152924337,
+          30786.198679825364
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.9225643045099666,
+        "standard_error": 1.9259309617706526e-06,
+        "normal_approximation_95_interval": [
+          0.9225605297546449,
+          0.9225680792652884
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.27239300499825,
+        "standard_error": 0.06126174175105273,
+        "normal_approximation_95_interval": [
+          112.152322197536,
+          112.3924638124605
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 0.0,
+      "service_bonus": 10000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 30774.235104534368,
+        "standard_error": 6.1039771063973225,
+        "normal_approximation_95_interval": [
+          30762.27152924337,
+          30786.198679825364
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.9225643045099666,
+        "standard_error": 1.9259309617706526e-06,
+        "normal_approximation_95_interval": [
+          0.9225605297546449,
+          0.9225680792652884
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.27239300499825,
+        "standard_error": 0.06126174175105273,
+        "normal_approximation_95_interval": [
+          112.152322197536,
+          112.3924638124605
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 0.0,
+      "service_bonus": 20000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 30774.235104534368,
+        "standard_error": 6.1039771063973225,
+        "normal_approximation_95_interval": [
+          30762.27152924337,
+          30786.198679825364
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.9225643045099666,
+        "standard_error": 1.9259309617706526e-06,
+        "normal_approximation_95_interval": [
+          0.9225605297546449,
+          0.9225680792652884
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.27239300499825,
+        "standard_error": 0.06126174175105273,
+        "normal_approximation_95_interval": [
+          112.152322197536,
+          112.3924638124605
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 1000.0,
+      "service_bonus": 0.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 29851.767675545274,
+        "standard_error": 6.104083217154434,
+        "normal_approximation_95_interval": [
+          29839.803892281016,
+          29863.731458809532
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.922309468785788,
+        "standard_error": 5.5361881246076895e-06,
+        "normal_approximation_95_interval": [
+          0.9222986180564522,
+          0.9223203195151238
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.27044046849255,
+        "standard_error": 0.06126237323022581,
+        "normal_approximation_95_interval": [
+          112.15036842335387,
+          112.39051251363124
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 1000.0,
+      "service_bonus": 1000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 29851.767675545274,
+        "standard_error": 6.104083217154434,
+        "normal_approximation_95_interval": [
+          29839.803892281016,
+          29863.731458809532
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.922309468785788,
+        "standard_error": 5.5361881246076895e-06,
+        "normal_approximation_95_interval": [
+          0.9222986180564522,
+          0.9223203195151238
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.27044046849255,
+        "standard_error": 0.06126237323022581,
+        "normal_approximation_95_interval": [
+          112.15036842335387,
+          112.39051251363124
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 1000.0,
+      "service_bonus": 2500.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 29851.767675545274,
+        "standard_error": 6.104083217154434,
+        "normal_approximation_95_interval": [
+          29839.803892281016,
+          29863.731458809532
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.922309468785788,
+        "standard_error": 5.5361881246076895e-06,
+        "normal_approximation_95_interval": [
+          0.9222986180564522,
+          0.9223203195151238
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.27044046849255,
+        "standard_error": 0.06126237323022581,
+        "normal_approximation_95_interval": [
+          112.15036842335387,
+          112.39051251363124
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 1000.0,
+      "service_bonus": 10000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 29851.767675545274,
+        "standard_error": 6.104083217154434,
+        "normal_approximation_95_interval": [
+          29839.803892281016,
+          29863.731458809532
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.922309468785788,
+        "standard_error": 5.5361881246076895e-06,
+        "normal_approximation_95_interval": [
+          0.9222986180564522,
+          0.9223203195151238
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.27044046849255,
+        "standard_error": 0.06126237323022581,
+        "normal_approximation_95_interval": [
+          112.15036842335387,
+          112.39051251363124
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 1000.0,
+      "service_bonus": 20000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 29851.767675545274,
+        "standard_error": 6.104083217154434,
+        "normal_approximation_95_interval": [
+          29839.803892281016,
+          29863.731458809532
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.922309468785788,
+        "standard_error": 5.5361881246076895e-06,
+        "normal_approximation_95_interval": [
+          0.9222986180564522,
+          0.9223203195151238
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.27044046849255,
+        "standard_error": 0.06126237323022581,
+        "normal_approximation_95_interval": [
+          112.15036842335387,
+          112.39051251363124
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 5000.0,
+      "service_bonus": 0.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 26169.41065119026,
+        "standard_error": 6.104205475265787,
+        "normal_approximation_95_interval": [
+          26157.446628304508,
+          26181.374674076014
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8594984384991118,
+        "standard_error": 0.0008663208486887396,
+        "normal_approximation_95_interval": [
+          0.8578004808366257,
+          0.8611963961615978
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.9184339600686495,
+        "standard_error": 2.954552824617231e-05,
+        "normal_approximation_95_interval": [
+          0.9183760518973828,
+          0.9184918682399162
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.11592104271466,
+        "standard_error": 0.06142356701022902,
+        "normal_approximation_95_interval": [
+          111.99553306357264,
+          112.23630902185668
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479235413183623,
+        0.8710733356798612
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 5000.0,
+      "service_bonus": 1000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 26169.410425699214,
+        "standard_error": 6.104204822538967,
+        "normal_approximation_95_interval": [
+          26157.44640409278,
+          26181.374447305647
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.9184374291616999,
+        "standard_error": 2.903332225313312e-05,
+        "normal_approximation_95_interval": [
+          0.9183805248957322,
+          0.9184943334276676
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.11618122469342,
+        "standard_error": 0.06142299077049477,
+        "normal_approximation_95_interval": [
+          111.99579437496052,
+          112.23656807442632
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 5000.0,
+      "service_bonus": 2500.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 26169.410425699214,
+        "standard_error": 6.104204822538967,
+        "normal_approximation_95_interval": [
+          26157.44640409278,
+          26181.374447305647
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.9184374291616999,
+        "standard_error": 2.903332225313312e-05,
+        "normal_approximation_95_interval": [
+          0.9183805248957322,
+          0.9184943334276676
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.11618122469342,
+        "standard_error": 0.06142299077049477,
+        "normal_approximation_95_interval": [
+          111.99579437496052,
+          112.23656807442632
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 5000.0,
+      "service_bonus": 10000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 26169.410425699214,
+        "standard_error": 6.104204822538967,
+        "normal_approximation_95_interval": [
+          26157.44640409278,
+          26181.374447305647
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.9184374291616999,
+        "standard_error": 2.903332225313312e-05,
+        "normal_approximation_95_interval": [
+          0.9183805248957322,
+          0.9184943334276676
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.11618122469342,
+        "standard_error": 0.06142299077049477,
+        "normal_approximation_95_interval": [
+          111.99579437496052,
+          112.23656807442632
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 5000.0,
+      "service_bonus": 20000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 26169.410425699214,
+        "standard_error": 6.104204822538967,
+        "normal_approximation_95_interval": [
+          26157.44640409278,
+          26181.374447305647
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.9184374291616999,
+        "standard_error": 2.903332225313312e-05,
+        "normal_approximation_95_interval": [
+          0.9183805248957322,
+          0.9184943334276676
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 112.11618122469342,
+        "standard_error": 0.06142299077049477,
+        "normal_approximation_95_interval": [
+          111.99579437496052,
+          112.23656807442632
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 10000.0,
+      "service_bonus": 0.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 22477.901301781952,
+        "standard_error": 8.388502997376328,
+        "normal_approximation_95_interval": [
+          22461.46013802289,
+          22494.342465541016
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.1291501147238455,
+        "standard_error": 0.0020680198515459604,
+        "normal_approximation_95_interval": [
+          0.12509687029550165,
+          0.13320335915218934
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.13803825382481028,
+        "standard_error": 0.002095026464174657,
+        "normal_approximation_95_interval": [
+          0.13393207740836977,
+          0.14214443024125079
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 18.805303485674212,
+        "standard_error": 0.28877381416607106,
+        "normal_approximation_95_interval": [
+          18.239317210230467,
+          19.371289761117957
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.11757521754309608,
+        0.1407250119045949
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 10000.0,
+      "service_bonus": 1000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 22287.763539849067,
+        "standard_error": 8.762966426052314,
+        "normal_approximation_95_interval": [
+          22270.58844125627,
+          22304.938638441865
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.4880145238336306,
+        "standard_error": 0.0028771348488582198,
+        "normal_approximation_95_interval": [
+          0.48237544315120356,
+          0.4936536045160576
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.4969026629345954,
+        "standard_error": 0.002878192084828332,
+        "normal_approximation_95_interval": [
+          0.49126151010774377,
+          0.502543815761447
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 64.3875917547621,
+        "standard_error": 0.3744110557305238,
+        "normal_approximation_95_interval": [
+          63.65375957011668,
+          65.12142393940752
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.4764396266528812,
+        0.49958942101438
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 10000.0,
+      "service_bonus": 2500.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 21750.007224425906,
+        "standard_error": 6.892036269477727,
+        "normal_approximation_95_interval": [
+          21736.499081557587,
+          21763.515367294225
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8330942889119184,
+        "standard_error": 0.0013228867027366361,
+        "normal_approximation_95_interval": [
+          0.8305014786189278,
+          0.835687099204909
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.8419824280128833,
+        "standard_error": 0.0012454299158053835,
+        "normal_approximation_95_interval": [
+          0.839541430232636,
+          0.8444234257931305
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 104.42993307393229,
+        "standard_error": 0.1669979403982694,
+        "normal_approximation_95_interval": [
+          104.10262312525933,
+          104.75724302260525
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.821519391731169,
+        0.8446691860926678
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 10000.0,
+      "service_bonus": 10000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 21674.159568305506,
+        "standard_error": 5.954677198812982,
+        "normal_approximation_95_interval": [
+          21662.48861545627,
+          21685.83052115474
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.8683900466931268,
+        "standard_error": 0.000702640145022037,
+        "normal_approximation_95_interval": [
+          0.8670128973147917,
+          0.8697671960714619
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 107.1280781805533,
+        "standard_error": 0.10876999638438405,
+        "normal_approximation_95_interval": [
+          106.91489290504137,
+          107.34126345606524
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1333.0,
+      "setup_fee": 10000.0,
+      "service_bonus": 20000.0,
+      "seed": 2026102853,
+      "profit": {
+        "estimate": 21674.159568305506,
+        "standard_error": 5.954677198812982,
+        "normal_approximation_95_interval": [
+          21662.48861545627,
+          21685.83052115474
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.8595019075921622,
+        "standard_error": 0.0008663592374874833,
+        "normal_approximation_95_interval": [
+          0.8578038746890132,
+          0.8611999404953111
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.8683900466931268,
+        "standard_error": 0.000702640145022037,
+        "normal_approximation_95_interval": [
+          0.8670128973147917,
+          0.8697671960714619
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 107.1280781805533,
+        "standard_error": 0.10876999638438405,
+        "normal_approximation_95_interval": [
+          106.91489290504137,
+          107.34126345606524
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8479270104114127,
+        0.8710768047729116
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 0.0,
+      "service_bonus": 0.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 28134.84031254242,
+        "standard_error": 7.075439384503479,
+        "normal_approximation_95_interval": [
+          28120.972706173998,
+          28148.70791891084
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6123787256751086,
+        "standard_error": 1.6237609995714862e-06,
+        "normal_approximation_95_interval": [
+          0.61237554316203,
+          0.6123819081881873
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.53707792404361,
+        "standard_error": 0.061916566764935274,
+        "normal_approximation_95_interval": [
+          83.41572368313797,
+          83.65843216494926
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 0.0,
+      "service_bonus": 1000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 28134.84031254242,
+        "standard_error": 7.075439384503479,
+        "normal_approximation_95_interval": [
+          28120.972706173998,
+          28148.70791891084
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6123787256751086,
+        "standard_error": 1.6237609995714862e-06,
+        "normal_approximation_95_interval": [
+          0.61237554316203,
+          0.6123819081881873
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.53707792404361,
+        "standard_error": 0.061916566764935274,
+        "normal_approximation_95_interval": [
+          83.41572368313797,
+          83.65843216494926
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 0.0,
+      "service_bonus": 2500.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 28134.84031254242,
+        "standard_error": 7.075439384503479,
+        "normal_approximation_95_interval": [
+          28120.972706173998,
+          28148.70791891084
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6123787256751086,
+        "standard_error": 1.6237609995714862e-06,
+        "normal_approximation_95_interval": [
+          0.61237554316203,
+          0.6123819081881873
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.53707792404361,
+        "standard_error": 0.061916566764935274,
+        "normal_approximation_95_interval": [
+          83.41572368313797,
+          83.65843216494926
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 0.0,
+      "service_bonus": 10000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 28134.84031254242,
+        "standard_error": 7.075439384503479,
+        "normal_approximation_95_interval": [
+          28120.972706173998,
+          28148.70791891084
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6123787256751086,
+        "standard_error": 1.6237609995714862e-06,
+        "normal_approximation_95_interval": [
+          0.61237554316203,
+          0.6123819081881873
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.53707792404361,
+        "standard_error": 0.061916566764935274,
+        "normal_approximation_95_interval": [
+          83.41572368313797,
+          83.65843216494926
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 0.0,
+      "service_bonus": 20000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 28134.84031254242,
+        "standard_error": 7.075439384503479,
+        "normal_approximation_95_interval": [
+          28120.972706173998,
+          28148.70791891084
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6123787256751086,
+        "standard_error": 1.6237609995714862e-06,
+        "normal_approximation_95_interval": [
+          0.61237554316203,
+          0.6123819081881873
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.53707792404361,
+        "standard_error": 0.061916566764935274,
+        "normal_approximation_95_interval": [
+          83.41572368313797,
+          83.65843216494926
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 1000.0,
+      "service_bonus": 0.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 27522.52209200873,
+        "standard_error": 7.075607809831472,
+        "normal_approximation_95_interval": [
+          27508.65415553273,
+          27536.39002848473
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6122150935572659,
+        "standard_error": 4.541549788290254e-06,
+        "normal_approximation_95_interval": [
+          0.6122061922832468,
+          0.612223994831285
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.53580317773434,
+        "standard_error": 0.06191349748353011,
+        "normal_approximation_95_interval": [
+          83.41445495250971,
+          83.65715140295896
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 1000.0,
+      "service_bonus": 1000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 27522.52209200873,
+        "standard_error": 7.075607809831472,
+        "normal_approximation_95_interval": [
+          27508.65415553273,
+          27536.39002848473
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6122150935572659,
+        "standard_error": 4.541549788290254e-06,
+        "normal_approximation_95_interval": [
+          0.6122061922832468,
+          0.612223994831285
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.53580317773434,
+        "standard_error": 0.06191349748353011,
+        "normal_approximation_95_interval": [
+          83.41445495250971,
+          83.65715140295896
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 1000.0,
+      "service_bonus": 2500.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 27522.52209200873,
+        "standard_error": 7.075607809831472,
+        "normal_approximation_95_interval": [
+          27508.65415553273,
+          27536.39002848473
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6122150935572659,
+        "standard_error": 4.541549788290254e-06,
+        "normal_approximation_95_interval": [
+          0.6122061922832468,
+          0.612223994831285
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.53580317773434,
+        "standard_error": 0.06191349748353011,
+        "normal_approximation_95_interval": [
+          83.41445495250971,
+          83.65715140295896
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 1000.0,
+      "service_bonus": 10000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 27522.52209200873,
+        "standard_error": 7.075607809831472,
+        "normal_approximation_95_interval": [
+          27508.65415553273,
+          27536.39002848473
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6122150935572659,
+        "standard_error": 4.541549788290254e-06,
+        "normal_approximation_95_interval": [
+          0.6122061922832468,
+          0.612223994831285
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.53580317773434,
+        "standard_error": 0.06191349748353011,
+        "normal_approximation_95_interval": [
+          83.41445495250971,
+          83.65715140295896
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 1000.0,
+      "service_bonus": 20000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 27522.52209200873,
+        "standard_error": 7.075607809831472,
+        "normal_approximation_95_interval": [
+          27508.65415553273,
+          27536.39002848473
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6122150935572659,
+        "standard_error": 4.541549788290254e-06,
+        "normal_approximation_95_interval": [
+          0.6122061922832468,
+          0.612223994831285
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.53580317773434,
+        "standard_error": 0.06191349748353011,
+        "normal_approximation_95_interval": [
+          83.41445495250971,
+          83.65715140295896
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 5000.0,
+      "service_bonus": 0.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 25079.087857129503,
+        "standard_error": 7.074957602209202,
+        "normal_approximation_95_interval": [
+          25065.221195037026,
+          25092.95451922198
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040654694254495,
+        "standard_error": 0.0013808089299206172,
+        "normal_approximation_95_interval": [
+          0.7013591336532738,
+          0.7067718051976251
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6089697144144218,
+        "standard_error": 8.866846019082852e-05,
+        "normal_approximation_95_interval": [
+          0.6087959274258832,
+          0.6091435014029605
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.39937427807811,
+        "standard_error": 0.06287304983067583,
+        "normal_approximation_95_interval": [
+          83.2761453648118,
+          83.52260319134443
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924905722447,
+        0.7156403666061989
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 5000.0,
+      "service_bonus": 1000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 25079.08769858667,
+        "standard_error": 7.074953994718414,
+        "normal_approximation_95_interval": [
+          25065.221043564747,
+          25092.954353608595
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6089709374790253,
+        "standard_error": 8.864380662048758e-05,
+        "normal_approximation_95_interval": [
+          0.6087971988105966,
+          0.609144676147454
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.39948106620501,
+        "standard_error": 0.06287390370722902,
+        "normal_approximation_95_interval": [
+          83.27625047937141,
+          83.52271165303861
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 5000.0,
+      "service_bonus": 2500.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 25079.08769858667,
+        "standard_error": 7.074953994718414,
+        "normal_approximation_95_interval": [
+          25065.221043564747,
+          25092.954353608595
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6089709374790253,
+        "standard_error": 8.864380662048758e-05,
+        "normal_approximation_95_interval": [
+          0.6087971988105966,
+          0.609144676147454
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.39948106620501,
+        "standard_error": 0.06287390370722902,
+        "normal_approximation_95_interval": [
+          83.27625047937141,
+          83.52271165303861
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 5000.0,
+      "service_bonus": 10000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 25079.08769858667,
+        "standard_error": 7.074953994718414,
+        "normal_approximation_95_interval": [
+          25065.221043564747,
+          25092.954353608595
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6089709374790253,
+        "standard_error": 8.864380662048758e-05,
+        "normal_approximation_95_interval": [
+          0.6087971988105966,
+          0.609144676147454
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.39948106620501,
+        "standard_error": 0.06287390370722902,
+        "normal_approximation_95_interval": [
+          83.27625047937141,
+          83.52271165303861
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 5000.0,
+      "service_bonus": 20000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 25079.08769858667,
+        "standard_error": 7.074953994718414,
+        "normal_approximation_95_interval": [
+          25065.221043564747,
+          25092.954353608595
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.6089709374790253,
+        "standard_error": 8.864380662048758e-05,
+        "normal_approximation_95_interval": [
+          0.6087971988105966,
+          0.609144676147454
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 83.39948106620501,
+        "standard_error": 0.06287390370722902,
+        "normal_approximation_95_interval": [
+          83.27625047937141,
+          83.52271165303861
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 10000.0,
+      "service_bonus": 0.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 23416.771574074675,
+        "standard_error": 8.658538281163448,
+        "normal_approximation_95_interval": [
+          23399.801150884836,
+          23433.741997264515
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.3679183551443899,
+        "standard_error": 0.0028508424751258854,
+        "normal_approximation_95_interval": [
+          0.3623308065675463,
+          0.37350590372123355
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.011565648693713142,
+        "standard_error": 0.000383110939491225,
+        "normal_approximation_95_interval": [
+          0.010814765050227057,
+          0.012316532337199227
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 1.6540319971714608,
+        "standard_error": 0.059715308200807206,
+        "normal_approximation_95_interval": [
+          1.5369921437721725,
+          1.771071850570749
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.35634345796364053,
+        0.3794932523251393
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 10000.0,
+      "service_bonus": 1000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 23389.17696355448,
+        "standard_error": 8.901170909905378,
+        "normal_approximation_95_interval": [
+          23371.73098915083,
+          23406.62293795813
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.4133048818338386,
+        "standard_error": 0.002769065270713899,
+        "normal_approximation_95_interval": [
+          0.4078776136323989,
+          0.41873215003527836
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.05695217538316184,
+        "standard_error": 0.0010349590956819884,
+        "normal_approximation_95_interval": [
+          0.05492369283015306,
+          0.058980657936170626
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 8.185157554889022,
+        "standard_error": 0.16488236138572013,
+        "normal_approximation_95_interval": [
+          7.861994064887102,
+          8.508321044890943
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.4017299846530892,
+        0.42487977901458807
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 10000.0,
+      "service_bonus": 2500.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 23009.444979820568,
+        "standard_error": 11.671088325634114,
+        "normal_approximation_95_interval": [
+          22986.57006704194,
+          23032.319892599196
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.6219064027873159,
+        "standard_error": 0.002247702953119051,
+        "normal_approximation_95_interval": [
+          0.6175009859512584,
+          0.6263118196233735
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.26555369633663917,
+        "standard_error": 0.002544555983234901,
+        "normal_approximation_95_interval": [
+          0.260566458252853,
+          0.2705409344204253
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 38.025731504687485,
+        "standard_error": 0.38257898732841367,
+        "normal_approximation_95_interval": [
+          37.27589046828201,
+          38.77557254109296
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6103315056065665,
+        0.6334812999680653
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 10000.0,
+      "service_bonus": 10000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 22773.333463456715,
+        "standard_error": 12.447282735219682,
+        "normal_approximation_95_interval": [
+          22748.937237590297,
+          22797.729689323132
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.34771398603937614,
+        "standard_error": 0.0025832808793287993,
+        "normal_approximation_95_interval": [
+          0.3426508485539409,
+          0.3527771235248114
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 48.83417581830099,
+        "standard_error": 0.3790345451698241,
+        "normal_approximation_95_interval": [
+          48.09128176087164,
+          49.577069875730345
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    },
+    {
+      "input": 1518.7914361142653,
+      "setup_fee": 10000.0,
+      "service_bonus": 20000.0,
+      "seed": 2026102854,
+      "profit": {
+        "estimate": 22773.333463456715,
+        "standard_error": 12.447282735219682,
+        "normal_approximation_95_interval": [
+          22748.937237590297,
+          22797.729689323132
+        ],
+        "replicas": 512
+      },
+      "service": {
+        "estimate": 0.7040666924900529,
+        "standard_error": 0.0013807927997407886,
+        "normal_approximation_95_interval": [
+          0.7013603883324488,
+          0.706772996647657
+        ],
+        "replicas": 512
+      },
+      "activation_probability": {
+        "estimate": 0.34771398603937614,
+        "standard_error": 0.0025832808793287993,
+        "normal_approximation_95_interval": [
+          0.3426508485539409,
+          0.3527771235248114
+        ],
+        "replicas": 512
+      },
+      "expected_rework": {
+        "estimate": 48.83417581830099,
+        "standard_error": 0.3790345451698241,
+        "normal_approximation_95_interval": [
+          48.09128176087164,
+          49.577069875730345
+        ],
+        "replicas": 512
+      },
+      "zero_fee_exact_reference": {
+        "input": 1518.7914361142653,
+        "expected_profit": 28146.044460393066,
+        "fulfilment_probability": 0.7050239932538349,
+        "expected_rework": 83.52498413292628,
+        "expected_normal_processing_and_material_cost": 77640.98090432391,
+        "capacity_groups": 166
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6924917953093035,
+        0.7156415896708024
+      ]
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T18:54:57.655514+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round53_quality_setup_decision.py": "bd3b4ea182cb4b84f4bb0f83d3ce028e9d55e119b33002f45986a89ea056c835",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+      "backbone\\round44_random_quality_counts.py": "7b65eadc503cb25f5aa6ac1ceebb48fdb55bcd56cb1dcc1644cb211c2541065b",
+      "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f"
+    }
+  }
+}

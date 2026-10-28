@@ -1,0 +1,3925 @@
+{
+  "question": "Does separating upgrade yield from station yield produce no/partial/full return regions?",
+  "assumptions": "Hypothetical eta sensitivity; deterministic fluid fraction, not a measured grade transition probability.",
+  "headline": {
+    "eta_threshold_before_grade1_filled": 0.29583333333333334,
+    "eta_threshold_after_grade1_filled": 0.39444444444444443,
+    "orders_with_positive_partial_return_probability": {
+      "0.0": 0,
+      "0.2": 0,
+      "0.3": 2,
+      "0.35": 3,
+      "0.39444444444444443": 3,
+      "0.5": 0,
+      "0.97": 0
+    },
+    "max_analytic_gain_error": 1.5688783605583012e-11,
+    "anchors": [
+      {
+        "eta": 0.35,
+        "demands": [
+          650.0,
+          250.0
+        ],
+        "no_rework": {
+          "expected_profit": 25227.992405125366,
+          "fulfilment_probability": 0.9359685590330102,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.5493218891180485,
+          "expected_grade2_shortage": 0.7484379458211082
+        },
+        "always_max_rework": {
+          "expected_profit": 25098.90520579531,
+          "fulfilment_probability": 0.9486622836415535,
+          "expected_rework": 33.53970620618058,
+          "activation_probability": 0.965588170343986,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.380267705962882,
+          "expected_grade2_shortage": 0.7484379458211082
+        },
+        "optimal_rework": {
+          "expected_profit": 25231.13198281253,
+          "fulfilment_probability": 0.9486622836415535,
+          "expected_rework": 0.48301195187190327,
+          "activation_probability": 0.02961961131097582,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 5.380267705962882,
+          "expected_grade2_shortage": 0.7484379458211082
+        },
+        "partial_return_probability": 0.01269372460854326,
+        "profit_gain_vs_always_max": 132.2267770172231
+      },
+      {
+        "eta": 0.35,
+        "demands": [
+          700.0,
+          200.0
+        ],
+        "no_rework": {
+          "expected_profit": 24644.664894278943,
+          "fulfilment_probability": 0.834658821908279,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 11.803242016490561,
+          "expected_grade2_shortage": 0.09988517584325836
+        },
+        "always_max_rework": {
+          "expected_profit": 24369.655333294664,
+          "fulfilment_probability": 0.9289412940301387,
+          "expected_rework": 98.35067998911117,
+          "activation_probability": 0.9875975914790672,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 7.856803384084803,
+          "expected_grade2_shortage": 0.09988517584325836
+        },
+        "optimal_rework": {
+          "expected_profit": 24717.955897452193,
+          "fulfilment_probability": 0.9289412940301387,
+          "expected_rework": 11.275538949730457,
+          "activation_probability": 0.1529387695707881,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 7.856803384084897,
+          "expected_grade2_shortage": 0.09988517584325836
+        },
+        "partial_return_probability": 0.09428247212185965,
+        "profit_gain_vs_always_max": 348.30056415752597
+      },
+      {
+        "eta": 0.35,
+        "demands": [
+          750.0,
+          150.0
+        ],
+        "no_rework": {
+          "expected_profit": 23621.954757155607,
+          "fulfilment_probability": 0.6633718222421918,
+          "expected_rework": 0.0,
+          "activation_probability": 0.0,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 23.369440009913053,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "always_max_rework": {
+          "expected_profit": 23250.609183652505,
+          "fulfilment_probability": 0.776763412296144,
+          "expected_rework": 157.0997309850253,
+          "activation_probability": 0.9238475160096201,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 14.800994995346281,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "optimal_rework": {
+          "expected_profit": 23781.083021711842,
+          "fulfilment_probability": 0.776763412296144,
+          "expected_rework": 24.48127147019077,
+          "activation_probability": 0.26047569376742824,
+          "expected_substitution": 0.0,
+          "expected_grade1_shortage": 14.800994995346281,
+          "expected_grade2_shortage": 0.007734484030524165
+        },
+        "partial_return_probability": 0.11339159005395223,
+        "profit_gain_vs_always_max": 530.4738380593417
+      }
+    ]
+  },
+  "rows": [
+    {
+      "eta": 0.0,
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "no_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "always_max_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "optimal_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "no_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "always_max_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "optimal_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "always_max_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "optimal_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "always_max_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "optimal_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "always_max_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "optimal_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "no_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "always_max_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "optimal_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "always_max_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "optimal_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "no_rework": {
+        "expected_profit": 25227.992405125366,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.5493218891180485,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "always_max_rework": {
+        "expected_profit": 24037.33283480595,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.5493218891180485,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "optimal_rework": {
+        "expected_profit": 25227.992405125366,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.5493218891180485,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 1190.6595703194123
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "no_rework": {
+        "expected_profit": 24644.664894278943,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.803242016490561,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "always_max_rework": {
+        "expected_profit": 21153.2157546655,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.803242016490561,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "optimal_rework": {
+        "expected_profit": 24644.664894278943,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.803242016490561,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 3491.4491396134476
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "no_rework": {
+        "expected_profit": 23621.954757155607,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "always_max_rework": {
+        "expected_profit": 18044.91430718721,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "optimal_rework": {
+        "expected_profit": 23621.954757155607,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 5577.040449968396
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "no_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "always_max_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 3.770832235217039e-14,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "optimal_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "no_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "always_max_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "optimal_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "no_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "always_max_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "optimal_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "no_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "always_max_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "optimal_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.0,
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "no_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "always_max_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "optimal_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "no_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "always_max_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "optimal_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "no_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "always_max_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "optimal_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "always_max_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "optimal_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "always_max_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "optimal_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "always_max_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "optimal_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "no_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "always_max_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "optimal_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "always_max_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "optimal_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "no_rework": {
+        "expected_profit": 25227.992405125366,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.5493218891180485,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "always_max_rework": {
+        "expected_profit": 24644.461162959782,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.435534674365865,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "optimal_rework": {
+        "expected_profit": 25227.992405125366,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.5493218891180485,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 583.531242165581
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "no_rework": {
+        "expected_profit": 24644.664894278943,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.803242016490561,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "always_max_rework": {
+        "expected_profit": 22995.62958075559,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 9.399855806953926,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "optimal_rework": {
+        "expected_profit": 24644.664894278943,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.803242016490561,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 1649.0353135233563
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "no_rework": {
+        "expected_profit": 23621.954757155607,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "always_max_rework": {
+        "expected_profit": 21040.21194536555,
+        "fulfilment_probability": 0.7438909794873729,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 17.78602399498313,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "optimal_rework": {
+        "expected_profit": 23621.954757155607,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 2581.742811790053
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "no_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "always_max_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 3.770832235217039e-14,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "optimal_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "no_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "always_max_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "optimal_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "no_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "always_max_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "optimal_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "no_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "always_max_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "optimal_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.2,
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "no_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "always_max_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "optimal_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "no_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "always_max_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "optimal_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "no_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "always_max_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "optimal_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "always_max_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "optimal_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "always_max_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "optimal_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "always_max_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "optimal_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "no_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "always_max_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "optimal_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "always_max_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "optimal_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "no_rework": {
+        "expected_profit": 25227.992405125366,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.5493218891180485,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "always_max_rework": {
+        "expected_profit": 24947.721715441352,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.388761453500784,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "optimal_rework": {
+        "expected_profit": 25228.260005851393,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.5352014520575454,
+        "activation_probability": 0.02961961131097582,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.388761453500784,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "partial_return_probability": 0.01269372460854326,
+      "profit_gain_vs_always_max": 280.53829041003786
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "no_rework": {
+        "expected_profit": 24644.664894278943,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.803242016490561,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "always_max_rework": {
+        "expected_profit": 23916.836493800645,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.198162702185655,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "optimal_rework": {
+        "expected_profit": 24650.673359802782,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 12.016931047682707,
+        "activation_probability": 0.1529387695707881,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.198162702185751,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 733.8368660021378
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "no_rework": {
+        "expected_profit": 23621.954757155607,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "always_max_rework": {
+        "expected_profit": 22515.3976572548,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 15.743086227516024,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "optimal_rework": {
+        "expected_profit": 23634.66534679293,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 25.42117927465678,
+        "activation_probability": 0.26047569376742824,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 15.743086227516024,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "partial_return_probability": 0.11339159005395223,
+      "profit_gain_vs_always_max": 1119.2676895381314
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "no_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "always_max_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 3.770832235217039e-14,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "optimal_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "no_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "always_max_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "optimal_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "no_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "always_max_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "optimal_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "no_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "always_max_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "optimal_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.3,
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "no_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "always_max_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "optimal_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "no_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "always_max_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "optimal_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "no_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "always_max_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "optimal_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "always_max_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "optimal_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "always_max_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "optimal_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "always_max_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "optimal_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "no_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "always_max_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "optimal_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "always_max_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "optimal_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "no_rework": {
+        "expected_profit": 25227.992405125366,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.5493218891180485,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "always_max_rework": {
+        "expected_profit": 25098.90520579531,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.380267705962882,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "optimal_rework": {
+        "expected_profit": 25231.13198281253,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.48301195187190327,
+        "activation_probability": 0.02961961131097582,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.380267705962882,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "partial_return_probability": 0.01269372460854326,
+      "profit_gain_vs_always_max": 132.2267770172231
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "no_rework": {
+        "expected_profit": 24644.664894278943,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.803242016490561,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "always_max_rework": {
+        "expected_profit": 24369.655333294664,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.856803384084803,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "optimal_rework": {
+        "expected_profit": 24717.955897452193,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 11.275538949730457,
+        "activation_probability": 0.1529387695707881,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.856803384084897,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "partial_return_probability": 0.09428247212185965,
+      "profit_gain_vs_always_max": 348.30056415752597
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "no_rework": {
+        "expected_profit": 23621.954757155607,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "always_max_rework": {
+        "expected_profit": 23250.609183652505,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 14.800994995346281,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "optimal_rework": {
+        "expected_profit": 23781.083021711842,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 24.48127147019077,
+        "activation_probability": 0.26047569376742824,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 14.800994995346281,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "partial_return_probability": 0.11339159005395223,
+      "profit_gain_vs_always_max": 530.4738380593417
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "no_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "always_max_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 3.770832235217039e-14,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "optimal_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "no_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "always_max_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "optimal_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "no_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "always_max_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "optimal_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "no_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "always_max_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "optimal_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.35,
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "no_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "always_max_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "optimal_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "no_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "always_max_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "optimal_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "no_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "always_max_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "optimal_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "always_max_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "optimal_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "always_max_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "optimal_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "always_max_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "optimal_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "no_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "always_max_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "optimal_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "always_max_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "optimal_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "no_rework": {
+        "expected_profit": 25227.992405125366,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.5493218891180485,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "always_max_rework": {
+        "expected_profit": 25233.290530554365,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.372717708151413,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "optimal_rework": {
+        "expected_profit": 25233.290530554365,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.4477289094928776,
+        "activation_probability": 0.02961961131097582,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.372717708151413,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "partial_return_probability": 0.01269372460854326,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "no_rework": {
+        "expected_profit": 24644.664894278943,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.803242016490561,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "always_max_rework": {
+        "expected_profit": 24767.27067846848,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.716382543506051,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "optimal_rework": {
+        "expected_profit": 24767.27067846848,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 10.361052185030912,
+        "activation_probability": 0.1529387695707881,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.716382543506145,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "partial_return_probability": 0.09428247212185965,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "no_rework": {
+        "expected_profit": 23621.954757155607,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "always_max_rework": {
+        "expected_profit": 23904.130540450467,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.963580566750961,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "optimal_rework": {
+        "expected_profit": 23904.130540450467,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 23.845840841819385,
+        "activation_probability": 0.26047569376742824,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 13.963580566750961,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "partial_return_probability": 0.11339159005395223,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "no_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "always_max_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 3.770832235217039e-14,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "optimal_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "no_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "always_max_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "optimal_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "no_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "always_max_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "optimal_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "no_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "always_max_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "optimal_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.39444444444444443,
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "no_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "always_max_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "optimal_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "no_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "always_max_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "optimal_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "no_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "always_max_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "optimal_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "always_max_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "optimal_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "always_max_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "optimal_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "always_max_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "optimal_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "no_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "always_max_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "optimal_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "always_max_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "optimal_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "no_rework": {
+        "expected_profit": 25227.992405125366,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.5493218891180485,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "always_max_rework": {
+        "expected_profit": 25552.455676857153,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.354786463349175,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "optimal_rework": {
+        "expected_profit": 25552.455676857153,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.354786463349175,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "no_rework": {
+        "expected_profit": 24644.664894278943,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.803242016490561,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "always_max_rework": {
+        "expected_profit": 25711.607123256268,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.382883047131508,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "optimal_rework": {
+        "expected_profit": 25711.607123256268,
+        "fulfilment_probability": 0.9289412940301387,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 7.382883047131508,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "no_rework": {
+        "expected_profit": 23621.954757155607,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "always_max_rework": {
+        "expected_profit": 25456.24376284563,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.974721298837073,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "optimal_rework": {
+        "expected_profit": 25456.24376284563,
+        "fulfilment_probability": 0.776763412296144,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.974721298837073,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "no_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "always_max_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 3.770832235217039e-14,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "optimal_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "no_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "always_max_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "optimal_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "no_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "always_max_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "optimal_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "no_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "always_max_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "optimal_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.5,
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "no_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "always_max_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "optimal_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        400.0,
+        500.0
+      ],
+      "no_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "always_max_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "optimal_rework": {
+        "expected_profit": 7643.969809670449,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 145.1851990582147,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 5.9593926212928645
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        450.0,
+        450.0
+      ],
+      "no_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "always_max_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "optimal_rework": {
+        "expected_profit": 10969.4991254301,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 95.3281612419628,
+        "expected_grade1_shortage": 0.2018564962464738,
+        "expected_grade2_shortage": 5.816430437544786
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        500.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "always_max_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "optimal_rework": {
+        "expected_profit": 17154.60609599144,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 46.27152845496627,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 5.593433948760443
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        500.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "always_max_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "optimal_rework": {
+        "expected_profit": 21963.536935696244,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 2.6439100492182765,
+        "expected_grade1_shortage": 0.4248529850308159,
+        "expected_grade2_shortage": 1.3504919358613208
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        400.0,
+        400.0
+      ],
+      "no_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "always_max_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "optimal_rework": {
+        "expected_profit": 14049.275355956413,
+        "fulfilment_probability": 0.965588170343986,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 50.148511795332986,
+        "expected_grade1_shortage": 0.058894312498395,
+        "expected_grade2_shortage": 1.7164506083937416
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        550.0,
+        350.0
+      ],
+      "no_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "always_max_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "optimal_rework": {
+        "expected_profit": 22568.41644650143,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 13.030006851754443,
+        "expected_grade1_shortage": 1.026906975071028,
+        "expected_grade2_shortage": 4.99137995872023
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        600.0,
+        300.0
+      ],
+      "no_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "always_max_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "optimal_rework": {
+        "expected_profit": 24943.946087936707,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8489531720942598,
+        "expected_grade1_shortage": 2.8728381208059215,
+        "expected_grade2_shortage": 3.1454488129853364
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        650.0,
+        250.0
+      ],
+      "no_rework": {
+        "expected_profit": 25227.992405125366,
+        "fulfilment_probability": 0.9359685590330102,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.5493218891180485,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "always_max_rework": {
+        "expected_profit": 26973.580486184277,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.274945236492892,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "optimal_rework": {
+        "expected_profit": 26973.580486184277,
+        "fulfilment_probability": 0.9486622836415535,
+        "expected_rework": 33.53970620618058,
+        "activation_probability": 0.965588170343986,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 5.274945236492892,
+        "expected_grade2_shortage": 0.7484379458211082
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        700.0,
+        200.0
+      ],
+      "no_rework": {
+        "expected_profit": 24644.664894278943,
+        "fulfilment_probability": 0.834658821908279,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 11.803242016490561,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "always_max_rework": {
+        "expected_profit": 29904.609540254187,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.290594598514308,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "optimal_rework": {
+        "expected_profit": 29904.609540254187,
+        "fulfilment_probability": 0.9477817940733309,
+        "expected_rework": 98.35067998911117,
+        "activation_probability": 0.9875975914790672,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 6.290594598514308,
+        "expected_grade2_shortage": 0.09988517584325836
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        750.0,
+        150.0
+      ],
+      "no_rework": {
+        "expected_profit": 23621.954757155607,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "always_max_rework": {
+        "expected_profit": 32192.257299106648,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.95155744568874,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "optimal_rework": {
+        "expected_profit": 32192.257299106648,
+        "fulfilment_probability": 0.8828591194583242,
+        "expected_rework": 157.0997309850253,
+        "activation_probability": 0.9238475160096201,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 8.95155744568874,
+        "expected_grade2_shortage": 0.007734484030524165
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        750.0,
+        337.0
+      ],
+      "no_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "always_max_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 3.770832235217039e-14,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "optimal_rework": {
+        "expected_profit": 28588.593982932103,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.0,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 12.911629430019866
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        750.0,
+        338.0
+      ],
+      "no_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "always_max_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "optimal_rework": {
+        "expected_profit": 28572.487018485834,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.016422924525144114,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.248257607777674
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        750.0,
+        339.0
+      ],
+      "no_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "always_max_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "optimal_rework": {
+        "expected_profit": 28547.032511022084,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.07618693661495712,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 13.584885785535482
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        750.0,
+        352.0
+      ],
+      "no_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "always_max_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "optimal_rework": {
+        "expected_profit": 28216.123913993182,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.8531190937829725,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 17.961052096386975
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    },
+    {
+      "eta": 0.97,
+      "demands": [
+        750.0,
+        353.0
+      ],
+      "no_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "always_max_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "optimal_rework": {
+        "expected_profit": 28178.453130260248,
+        "fulfilment_probability": 0.6633718222421918,
+        "expected_rework": 0.0,
+        "activation_probability": 0.0,
+        "expected_substitution": 0.9782671235395738,
+        "expected_grade1_shortage": 23.369440009913053,
+        "expected_grade2_shortage": 18.29768027414478
+      },
+      "partial_return_probability": 0.0,
+      "profit_gain_vs_always_max": 0.0
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T17:36:43.861167+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\round29_upgrade_yield.py": "4c1cc75ad293d3845f1757427dc39f12a85d152b9367ed23bb651f9b781a2236",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round25_state_policy.py": "42a9a1436e8d6a54761ce43cd62dde38e404669491244258027261feb43678cc",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed"
+    }
+  }
+}

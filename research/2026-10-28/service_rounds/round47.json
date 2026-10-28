@@ -1,0 +1,59 @@
+{
+  "question": "Can exact multinomial service probabilities confirm the Monte Carlo service findings?",
+  "assumptions": "Round47: remove Monte Carlo error for the fixed-forward random-quality policy.\n\nExact binomial conditioning of multinomial quality counts, plus exact weighted\ncapacity enumeration. Restrictions are those of exact_quality_service.py.\nCross-check small batches by direct four-category multinomial enumeration and\ncompare the full-size result with round46's independent confidence intervals.\n",
+  "scope": "Exact service probability for the specified fixed-forward, post-inspection maximal-return policy and known fluid eta=.97; not an exact expected-profit optimizer for random quality or a scheduling theorem.",
+  "headline": {
+    "elapsed_seconds": 0.2148444999984349,
+    "small_batch_exhaustive_cases": 48,
+    "max_exhaustive_probability_error": 1.5543122344752192e-15,
+    "full_size_policies": 2
+  },
+  "rows": [
+    {
+      "input": 1518.7914361142653,
+      "exact_service_probability": 0.7050239932538349,
+      "round46_estimate": 0.7052491817870241,
+      "round46_simultaneous_interval": [
+        0.702095285373421,
+        0.7084030782006272
+      ],
+      "MC_absolute_error": 0.0002251885331892023,
+      "capacity_groups": 166,
+      "weight_mass": 0.9999999999999992,
+      "table_max_probability_mass_error": 2.369660023759934e-12
+    },
+    {
+      "input": 1538.7914361142653,
+      "exact_service_probability": 0.7557204895269274,
+      "round46_estimate": 0.7565125844654761,
+      "round46_simultaneous_interval": [
+        0.753358688051873,
+        0.7596664808790792
+      ],
+      "MC_absolute_error": 0.0007920949385487042,
+      "capacity_groups": 166,
+      "weight_mass": 0.9999999999999992,
+      "table_max_probability_mass_error": 2.369660023759934e-12
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T19:18:24.240231+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round47_exact_quality_service.py": "f0a26da0df12bd1cae722b8479a35b4b6ee5d5c3adf06e5e336e4b0ee712c806",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+      "backbone\\round44_random_quality_counts.py": "7b65eadc503cb25f5aa6ac1ceebb48fdb55bcd56cb1dcc1644cb211c2541065b",
+      "backbone\\round45_threshold_stability.py": "ad84ac8293899a4ad859af3d64763633e0fde0c5e94655f3b6d3dea4edde7caf",
+      "backbone\\round46_independent_service_validation.py": "2151959b14e2f99f53a291939fde4499082275922da271b4f7791f0704e90bff"
+    }
+  }
+}

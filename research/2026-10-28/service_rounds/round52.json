@@ -1,0 +1,526 @@
+{
+  "question": "Are policies optimized under independent item quality robust to batch-level quality variation with the same means?",
+  "assumptions": "Round52: same mean quality proportions, different within-batch correlation.\n\nExploratory Dirichlet-multinomial model: P~Dirichlet(kappa*q), then counts|P,C\n~Multinomial(floor(finished(C)),P). P is drawn independently in each simulated\ncapacity stratum/replica; this is valid stratified integration of a quality law\nindependent of C. Items in one realized batch share P and are correlated.\nAll kappas are hypothetical, with no factory calibration. This is distinct from\ncorrelation between machine states or correlation among KQCs of one product.\n",
+  "grade_shares": [
+    0.625093657341258,
+    0.27434534809090927
+  ],
+  "eligible_fraction": 0.4295362149083248,
+  "replicas": 512,
+  "same_mean_proportions_for_all_kappas": true,
+  "family_error_probability": 0.05,
+  "service_radius": 0.010234806171139805,
+  "headline": {
+    "elapsed_seconds": 41.70013479999761,
+    "cases": 8
+  },
+  "rows": [
+    {
+      "input": 1333.0,
+      "kappa": null,
+      "independent_item_quality": true,
+      "within_batch_same_category_indicator_correlation": 0.0,
+      "seed": 2026102852,
+      "statistics": {
+        "profit": {
+          "estimate": 30775.374830288012,
+          "standard_error": 5.610528268083294,
+          "normal_approximation_95_interval": [
+            30764.378396948327,
+            30786.371263627698
+          ],
+          "replicas": 512
+        },
+        "service": {
+          "estimate": 0.8588921737762261,
+          "standard_error": 0.0009046651387434573,
+          "normal_approximation_95_interval": [
+            0.85711906268622,
+            0.8606652848662322
+          ],
+          "replicas": 512
+        },
+        "grade1_count": {
+          "estimate": 652.0545651731404,
+          "standard_error": 0.0887453421019011,
+          "normal_approximation_95_interval": [
+            651.880627498825,
+            652.2285028474558
+          ],
+          "replicas": 512
+        }
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8486573676050863,
+        0.8691269799473659
+      ],
+      "expected_grade1_count": 652.1296285870803,
+      "independent_item_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "mode_capacity_state": {
+        "counts": [
+          7,
+          6,
+          7,
+          8,
+          6
+        ],
+        "finished_count": 1053,
+        "theoretical_grade1_count_variance": 246.7722104683163,
+        "sample_grade1_count_variance": 283.30428999510764
+      }
+    },
+    {
+      "input": 1333.0,
+      "kappa": 1000.0,
+      "independent_item_quality": false,
+      "within_batch_same_category_indicator_correlation": 0.000999000999000999,
+      "seed": 2026102853,
+      "statistics": {
+        "profit": {
+          "estimate": 30686.524561621194,
+          "standard_error": 8.910036662839916,
+          "normal_approximation_95_interval": [
+            30669.061210661097,
+            30703.98791258129
+          ],
+          "replicas": 512
+        },
+        "service": {
+          "estimate": 0.8013990384710282,
+          "standard_error": 0.001661987686206578,
+          "normal_approximation_95_interval": [
+            0.7981416024633143,
+            0.8046564744787421
+          ],
+          "replicas": 512
+        },
+        "grade1_count": {
+          "estimate": 652.1224203470201,
+          "standard_error": 0.1348159394089683,
+          "normal_approximation_95_interval": [
+            651.8581859612366,
+            652.3866547328037
+          ],
+          "replicas": 512
+        }
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.7911642322998884,
+        0.811633844642168
+      ],
+      "expected_grade1_count": 652.1296285870803,
+      "independent_item_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "mode_capacity_state": {
+        "counts": [
+          7,
+          6,
+          7,
+          8,
+          6
+        ],
+        "finished_count": 1053,
+        "theoretical_grade1_count_variance": 506.11723086059277,
+        "sample_grade1_count_variance": 489.2164223030822
+      }
+    },
+    {
+      "input": 1333.0,
+      "kappa": 100.0,
+      "independent_item_quality": false,
+      "within_batch_same_category_indicator_correlation": 0.009900990099009901,
+      "seed": 2026102854,
+      "statistics": {
+        "profit": {
+          "estimate": 29970.962339786518,
+          "standard_error": 22.430563569890236,
+          "normal_approximation_95_interval": [
+            29926.999243036596,
+            30014.92543653644
+          ],
+          "replicas": 512
+        },
+        "service": {
+          "estimate": 0.6000404608614455,
+          "standard_error": 0.00279983058358993,
+          "normal_approximation_95_interval": [
+            0.5945528937547956,
+            0.6055280279680954
+          ],
+          "replicas": 512
+        },
+        "grade1_count": {
+          "estimate": 651.557326927361,
+          "standard_error": 0.3103936113875683,
+          "normal_approximation_95_interval": [
+            650.9489666280101,
+            652.165687226712
+          ],
+          "replicas": 512
+        }
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.5898056546903057,
+        0.6102752670325853
+      ],
+      "expected_grade1_count": 652.1296285870803,
+      "independent_item_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "mode_capacity_state": {
+        "counts": [
+          7,
+          6,
+          7,
+          8,
+          6
+        ],
+        "finished_count": 1053,
+        "theoretical_grade1_count_variance": 2817.1124620788983,
+        "sample_grade1_count_variance": 2638.5030844850785
+      }
+    },
+    {
+      "input": 1333.0,
+      "kappa": 10.0,
+      "independent_item_quality": false,
+      "within_batch_same_category_indicator_correlation": 0.09090909090909091,
+      "seed": 2026102855,
+      "statistics": {
+        "profit": {
+          "estimate": 27003.779115567333,
+          "standard_error": 68.97966449533472,
+          "normal_approximation_95_interval": [
+            26868.581457490825,
+            27138.97677364384
+          ],
+          "replicas": 512
+        },
+        "service": {
+          "estimate": 0.47641101051043955,
+          "standard_error": 0.0029384423421427654,
+          "normal_approximation_95_interval": [
+            0.47065176934919234,
+            0.48217025167168676
+          ],
+          "replicas": 512
+        },
+        "grade1_count": {
+          "estimate": 651.69198567838,
+          "standard_error": 0.8630609495917062,
+          "normal_approximation_95_interval": [
+            650.0004173007173,
+            653.3835540560426
+          ],
+          "replicas": 512
+        }
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.46617620433929974,
+        0.48664581668157936
+      ],
+      "expected_grade1_count": 652.1296285870803,
+      "independent_item_exact_reference": {
+        "input": 1333.0,
+        "expected_profit": 30784.67939157026,
+        "fulfilment_probability": 0.8591811763443203,
+        "expected_rework": 112.23778906776275,
+        "expected_normal_processing_and_material_cost": 68905.77251680288,
+        "capacity_groups": 158
+      },
+      "mode_capacity_state": {
+        "counts": [
+          7,
+          6,
+          7,
+          8,
+          6
+        ],
+        "finished_count": 1053,
+        "theoretical_grade1_count_variance": 23847.169066165476,
+        "sample_grade1_count_variance": 25419.3125611546
+      }
+    },
+    {
+      "input": 1538.7914361142653,
+      "kappa": null,
+      "independent_item_quality": true,
+      "within_batch_same_category_indicator_correlation": 0.0,
+      "seed": 2026102862,
+      "statistics": {
+        "profit": {
+          "estimate": 28081.117957875445,
+          "standard_error": 6.696174748440302,
+          "normal_approximation_95_interval": [
+            28067.993696534315,
+            28094.242219216576
+          ],
+          "replicas": 512
+        },
+        "service": {
+          "estimate": 0.7544085844659323,
+          "standard_error": 0.0012212094156819455,
+          "normal_approximation_95_interval": [
+            0.7520150579936146,
+            0.75680211093825
+          ],
+          "replicas": 512
+        },
+        "grade1_count": {
+          "estimate": 732.756251937136,
+          "standard_error": 0.10003503467577715,
+          "normal_approximation_95_interval": [
+            732.5601868719792,
+            732.9523170022927
+          ],
+          "replicas": 512
+        }
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.7441737782947925,
+        0.7646433906370721
+      ],
+      "expected_grade1_count": 732.8075348325107,
+      "independent_item_exact_reference": {
+        "input": 1538.7914361142653,
+        "expected_profit": 28083.221313114016,
+        "fulfilment_probability": 0.7557204895269274,
+        "expected_rework": 84.34766584135224,
+        "expected_normal_processing_and_material_cost": 78457.6035731574,
+        "capacity_groups": 166
+      },
+      "mode_capacity_state": {
+        "counts": [
+          7,
+          6,
+          7,
+          8,
+          6
+        ],
+        "finished_count": 1215,
+        "theoretical_grade1_count_variance": 284.73716592498033,
+        "sample_grade1_count_variance": 279.4489932424168
+      }
+    },
+    {
+      "input": 1538.7914361142653,
+      "kappa": 1000.0,
+      "independent_item_quality": false,
+      "within_batch_same_category_indicator_correlation": 0.000999000999000999,
+      "seed": 2026102863,
+      "statistics": {
+        "profit": {
+          "estimate": 28075.843204075085,
+          "standard_error": 10.560436989123815,
+          "normal_approximation_95_interval": [
+            28055.1451279154,
+            28096.54128023477
+          ],
+          "replicas": 512
+        },
+        "service": {
+          "estimate": 0.7485397832697521,
+          "standard_error": 0.001323285972356925,
+          "normal_approximation_95_interval": [
+            0.7459461904226855,
+            0.7511333761168187
+          ],
+          "replicas": 512
+        },
+        "grade1_count": {
+          "estimate": 732.9894190959358,
+          "standard_error": 0.14904836306701852,
+          "normal_approximation_95_interval": [
+            732.6972896723697,
+            733.2815485195018
+          ],
+          "replicas": 512
+        }
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.7383049770986123,
+        0.7587745894408919
+      ],
+      "expected_grade1_count": 732.8075348325107,
+      "independent_item_exact_reference": {
+        "input": 1538.7914361142653,
+        "expected_profit": 28083.221313114016,
+        "fulfilment_probability": 0.7557204895269274,
+        "expected_rework": 84.34766584135224,
+        "expected_normal_processing_and_material_cost": 78457.6035731574,
+        "capacity_groups": 166
+      },
+      "mode_capacity_state": {
+        "counts": [
+          7,
+          6,
+          7,
+          8,
+          6
+        ],
+        "finished_count": 1215,
+        "theoretical_grade1_count_variance": 630.0627597640673,
+        "sample_grade1_count_variance": 665.9660859527886
+      }
+    },
+    {
+      "input": 1538.7914361142653,
+      "kappa": 100.0,
+      "independent_item_quality": false,
+      "within_batch_same_category_indicator_correlation": 0.009900990099009901,
+      "seed": 2026102864,
+      "statistics": {
+        "profit": {
+          "estimate": 27758.060600684257,
+          "standard_error": 25.320123153861704,
+          "normal_approximation_95_interval": [
+            27708.43407121857,
+            27807.687130149945
+          ],
+          "replicas": 512
+        },
+        "service": {
+          "estimate": 0.7281750871890109,
+          "standard_error": 0.0014701252994825827,
+          "normal_approximation_95_interval": [
+            0.725293694549264,
+            0.7310564798287579
+          ],
+          "replicas": 512
+        },
+        "grade1_count": {
+          "estimate": 732.9048567037048,
+          "standard_error": 0.3769567872325079,
+          "normal_approximation_95_interval": [
+            732.1660349770012,
+            733.6436784304084
+          ],
+          "replicas": 512
+        }
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.7179402810178711,
+        0.7384098933601507
+      ],
+      "expected_grade1_count": 732.8075348325107,
+      "independent_item_exact_reference": {
+        "input": 1538.7914361142653,
+        "expected_profit": 28083.221313114016,
+        "fulfilment_probability": 0.7557204895269274,
+        "expected_rework": 84.34766584135224,
+        "expected_normal_processing_and_material_cost": 78457.6035731574,
+        "capacity_groups": 166
+      },
+      "mode_capacity_state": {
+        "counts": [
+          7,
+          6,
+          7,
+          8,
+          6
+        ],
+        "finished_count": 1215,
+        "theoretical_grade1_count_variance": 3707.221516746031,
+        "sample_grade1_count_variance": 3976.5915943003915
+      }
+    },
+    {
+      "input": 1538.7914361142653,
+      "kappa": 10.0,
+      "independent_item_quality": false,
+      "within_batch_same_category_indicator_correlation": 0.09090909090909091,
+      "seed": 2026102865,
+      "statistics": {
+        "profit": {
+          "estimate": 25489.04271950984,
+          "standard_error": 77.58943796931067,
+          "normal_approximation_95_interval": [
+            25336.97021550929,
+            25641.115223510387
+          ],
+          "replicas": 512
+        },
+        "service": {
+          "estimate": 0.6171376755408229,
+          "standard_error": 0.002632447202608459,
+          "normal_approximation_95_interval": [
+            0.6119781738325072,
+            0.6222971772491386
+          ],
+          "replicas": 512
+        },
+        "grade1_count": {
+          "estimate": 731.1670550764721,
+          "standard_error": 1.0720594609772458,
+          "normal_approximation_95_interval": [
+            729.0658571436713,
+            733.2682530092729
+          ],
+          "replicas": 512
+        }
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.6069028693696831,
+        0.6273724817119627
+      ],
+      "expected_grade1_count": 732.8075348325107,
+      "independent_item_exact_reference": {
+        "input": 1538.7914361142653,
+        "expected_profit": 28083.221313114016,
+        "fulfilment_probability": 0.7557204895269274,
+        "expected_rework": 84.34766584135224,
+        "expected_normal_processing_and_material_cost": 78457.6035731574,
+        "capacity_groups": 166
+      },
+      "mode_capacity_state": {
+        "counts": [
+          7,
+          6,
+          7,
+          8,
+          6
+        ],
+        "finished_count": 1215,
+        "theoretical_grade1_count_variance": 31709.366205281898,
+        "sample_grade1_count_variance": 32121.54267062133
+      }
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T18:48:10.911921+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round52_batch_quality_variation.py": "655e077380bd42a2b73905b3dbd36bade59bd670a7da11e953706cfbe30705a8",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+      "backbone\\round44_random_quality_counts.py": "7b65eadc503cb25f5aa6ac1ceebb48fdb55bcd56cb1dcc1644cb211c2541065b",
+      "backbone\\exact_quality_economics.py": "7e2928743b36934f8ca609e192e9d2e3e6d5478ac685fb2a9af38607b0366796",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f"
+    }
+  }
+}

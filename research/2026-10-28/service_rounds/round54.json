@@ -1,0 +1,174 @@
+{
+  "question": "Can a sample-selected deterministic rework-start policy meet a service floor on independent quality draws?",
+  "assumptions": "Round54: train a deterministic startup-loss threshold, independently validate.\n\nKnown eta=.97, fixed input1333, F10000 and workload350 remain hypothetical.\nNo setup and full eligible return are the exact two recourse choices. If paying\nsetup rescues a whole order, its profit sacrifice is loss=F-gain. Train a scalar\nloss threshold using weighted quality samples; include complete ties to obtain\na deterministic rule. Target .85, training buffer .006 chosen in advance.\nIndependent validation controls service simulation error; the sample covering\nbound is not a population optimality certificate.\n",
+  "input": 1333.0,
+  "setup_fee": 10000.0,
+  "target": 0.85,
+  "training": {
+    "seed": 2026102854,
+    "replicas": 512,
+    "target_with_buffer": 0.856,
+    "loss_threshold": 3273.6,
+    "deterministic_service": 0.8560417112350586,
+    "expected_profit": 21704.360535634296,
+    "sample_randomized_covering_profit_gap": 0.13654589908787784,
+    "loss_group_count": 2759
+  },
+  "validation": {
+    "seed": 2026102954,
+    "replicas": 2048,
+    "family_error_probability": 0.05,
+    "hoeffding_radius": 0.004662071562273149
+  },
+  "paired_profit_difference_vs_profit_best": {
+    "estimate": -799.7312070189826,
+    "standard_error": 2.3303782059941884,
+    "normal_approximation_95_interval": [
+      -804.2986643730881,
+      -795.1637496648771
+    ],
+    "replicas": 2048
+  },
+  "paired_profit_gain_vs_all_rescuable": {
+    "estimate": 11.465687003096082,
+    "standard_error": 0.6295853628564441,
+    "normal_approximation_95_interval": [
+      10.231722366703904,
+      12.69965163948826
+    ],
+    "replicas": 2048
+  },
+  "trace": {
+    "path": "research\\2026-10-28\\service_rounds\\round54_validation_values.npz",
+    "sha256": "41f32440604c66ba29225d0c3161f7da0f3a82f456907dafc617d056c192e0a7"
+  },
+  "headline": {
+    "elapsed_seconds": 14.640519000000495,
+    "threshold": 3273.6,
+    "validated_policies": 3
+  },
+  "rows": [
+    {
+      "policy": "profit_best",
+      "profit": {
+        "estimate": 22496.342064250202,
+        "standard_error": 4.502241190500184,
+        "normal_approximation_95_interval": [
+          22487.51783366711,
+          22505.166294833296
+        ],
+        "replicas": 2048
+      },
+      "service": {
+        "estimate": 0.13073862831159733,
+        "standard_error": 0.0010955740014831567,
+        "normal_approximation_95_interval": [
+          0.12859134272629197,
+          0.13288591389690269
+        ],
+        "replicas": 2048
+      },
+      "activation_probability": {
+        "estimate": 0.14020845433969087,
+        "standard_error": 0.0011173029465565711,
+        "normal_approximation_95_interval": [
+          0.13801858080461957,
+          0.14239832787476217
+        ],
+        "replicas": 2048
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.12607655674932416,
+        0.1354006998738705
+      ],
+      "service_lower_bound_meets_85_percent": false
+    },
+    {
+      "policy": "trained_service_threshold",
+      "profit": {
+        "estimate": 21696.61085723122,
+        "standard_error": 3.1478060986618757,
+        "normal_approximation_95_interval": [
+          21690.441270647527,
+          21702.78044381491
+        ],
+        "replicas": 2048
+      },
+      "service": {
+        "estimate": 0.8560723398456715,
+        "standard_error": 0.0004905893731034898,
+        "normal_approximation_95_interval": [
+          0.8551108023431907,
+          0.8570338773481524
+        ],
+        "replicas": 2048
+      },
+      "activation_probability": {
+        "estimate": 0.8655421658737652,
+        "standard_error": 0.00040018477732696033,
+        "normal_approximation_95_interval": [
+          0.8647578181230432,
+          0.8663265136244872
+        ],
+        "replicas": 2048
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8514102682833984,
+        0.8607344114079447
+      ],
+      "service_lower_bound_meets_85_percent": true
+    },
+    {
+      "policy": "all_rescuable_orders",
+      "profit": {
+        "estimate": 21685.145170228127,
+        "standard_error": 3.05408094041311,
+        "normal_approximation_95_interval": [
+          21679.159281579046,
+          21691.131058877207
+        ],
+        "replicas": 2048
+      },
+      "service": {
+        "estimate": 0.8592741404420734,
+        "standard_error": 0.0004587912009923086,
+        "normal_approximation_95_interval": [
+          0.8583749262117046,
+          0.8601733546724422
+        ],
+        "replicas": 2048
+      },
+      "activation_probability": {
+        "estimate": 0.8687439664701668,
+        "standard_error": 0.0003573310847969343,
+        "normal_approximation_95_interval": [
+          0.8680436104134083,
+          0.8694443225269254
+        ],
+        "replicas": 2048
+      },
+      "simultaneous_hoeffding_service_interval": [
+        0.8546120688798002,
+        0.8639362120043466
+      ],
+      "service_lower_bound_meets_85_percent": true
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T18:58:36.536416+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round54_setup_service_policy.py": "d4c41584f5640166272d9a75e1e81b8bc3529ffac3c2d4757b04deb3666a85fc",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\quality_lab.py": "f0adf8ed023e689cd49eaa701ab07ddb64e3ae280eacc0d986957b59de7c84a1",
+      "backbone\\round44_random_quality_counts.py": "7b65eadc503cb25f5aa6ac1ceebb48fdb55bcd56cb1dcc1644cb211c2541065b"
+    }
+  }
+}

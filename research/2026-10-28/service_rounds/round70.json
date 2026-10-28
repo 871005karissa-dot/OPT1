@@ -1,0 +1,2726 @@
+{
+  "question": "Does observing capacity before quality and controlling final normal work change the service feasibility conclusion?",
+  "assumptions": "Round70: does controlled normal work overcome the fixed-forward service limit?\n\nAn optional broader policy class, not a change to the frozen canonical model.\nOnly allow final normal work x to be selected after capacity is known but before\nANY initial quality or repair outcomes are observed. Earlier stations stay\ngreedy. Aggregate workloads only; no job-level schedule or profit claim.\nFor service, larger I expands x's feasible set, so I2100 covers all smaller\ninteger releases and larger ones have identical flows. iid/DM quality laws and\nrepair success probabilities stay unchanged. No setup workload, single route.\n",
+  "finite_control_argument": "Service-only normal/rework allocation at the final station, before quality.\n\nGiven known integer capacity C and normal-flow upper bound U, choose x<=U.\nN=floor(y*x), L=floor(C-x), with setup workload0. Conditional service is\nnondecreasing in N for fixed L (consistent iid/DM item sequences, same repair\nlaw). A fractional x is weakly dominated for SERVICE by ceil(x) if feasible,\nelse U: it has the same L and at least as many initial items. Hence integers\nplus U suffice for exact continuous-x service maximization in this model.\nThis does not establish profit optimality or physical scheduling feasibility.\n",
+  "headline": {
+    "small_continuous_breakpoint_checks": 24,
+    "max_small_error": 4.440892098500626e-16,
+    "quality_laws": 3,
+    "elapsed_seconds": 22.056219600002805
+  },
+  "rows": [
+    {
+      "kappa": null,
+      "fixed_forward_max_all_integer_inputs": 0.7894483131190578,
+      "perfect_unlimited_repair_upper_bound": 0.8103915687705819,
+      "release": 2100.0,
+      "maximum_service_with_control": 0.7909974107488366,
+      "fixed_forward_at_same_release": 0.789448313118018,
+      "service_increase": 0.0015490976308185633,
+      "capacity_upper_groups": 98,
+      "probability_of_normal_curtailment": 0.3919998943870809,
+      "expected_normal_work_reduction": 38.47773716027541,
+      "policy": [
+        {
+          "final_capacity": 0,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.665600000000019e-08
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.5717335298507546e-12
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.687165506861512e-13
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.4846691465494218e-11
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.484664120529645e-11
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 300.0,
+          "chosen_normal_work": 300.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.385632466217265e-06
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.155956325248796e-11
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.052473156854095e-11
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.814954157318581e-10
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.814934472074456e-10
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.1069765230732723e-09
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.893878522526414e-10
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.763826526487001e-08
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.7636454041608e-08
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 600.0,
+          "chosen_normal_work": 600.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00017173173384316134
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2859108768297446e-09
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.1984994832063236e-10
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2146793128620993e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2146752008333266e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.49012873708637e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.0222768469277366e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.684437633106168e-07
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.6840592886914374e-07
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.8655235060661233e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.7143654780901935e-07
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.204623812375717e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.193885802375639e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.492196261766601e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 900.0,
+          "chosen_normal_work": 900.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.003568257441015633
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.510945280274951e-08
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.583236892767432e-09
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.4272481926129678e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.4272433609791598e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.625901266076489e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2011752951400908e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.329214218899749e-06
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.328769664212442e-06
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.191990119627696e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.1893794367559793e-06
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.290432979541472e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.277815817791379e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.278330607575757e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 902.4,
+          "chosen_normal_work": 902.4,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0007349428002159193
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 919.0944,
+          "chosen_normal_work": 919.0944,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00032863291653327514
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 997.87392,
+          "chosen_normal_work": 997.87392,
+          "fixed_forward_service": 4.241368568962479e-23,
+          "controlled_service": 4.241368568962479e-23,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0007162992805104715
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 1080.0,
+          "chosen_normal_work": 1080.0,
+          "fixed_forward_service": 3.852391853528597e-07,
+          "controlled_service": 3.852391853528597e-07,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0005371952420543405
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 1128.0,
+          "chosen_normal_work": 1128.0,
+          "fixed_forward_service": 0.0020940365574444544,
+          "controlled_service": 0.0020940365574444544,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0042874026682880135
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 1200.0,
+          "chosen_normal_work": 1165.0,
+          "fixed_forward_service": 0.011734244665797592,
+          "controlled_service": 0.05559001218541475,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.03532255202433169
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 9.46859042305633e-08
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.6188284528009195e-08
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 8.944088673707905e-07
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 8.944058395469375e-07
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.778898126741252e-06
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.527365182877884e-07
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.7129742438438355e-05
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.712695656239789e-05
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00013736471416333522
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.9986777803670746e-05
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00045686713338459765
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00045607645791492503
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0003307753847414133
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 902.4,
+          "chosen_normal_work": 902.4,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.004605641548019748
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 919.0944,
+          "chosen_normal_work": 919.0944,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.002059432943608518
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 997.87392,
+          "chosen_normal_work": 997.87392,
+          "fixed_forward_service": 4.241368568962479e-23,
+          "controlled_service": 4.241368568962479e-23,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.004488808824532276
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1080.0,
+          "chosen_normal_work": 1080.0,
+          "fixed_forward_service": 3.852391853528597e-07,
+          "controlled_service": 3.852391853528597e-07,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0033664235168738583
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1128.0,
+          "chosen_normal_work": 1128.0,
+          "fixed_forward_service": 0.002094036839591941,
+          "controlled_service": 0.002094036839591941,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.02686772338793814
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1225.4592,
+          "chosen_normal_work": 1225.4592,
+          "fixed_forward_service": 0.8565498350541658,
+          "controlled_service": 0.8565498350541658,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.015354080417512942
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1247.3423999999998,
+          "chosen_normal_work": 1247.3423999999998,
+          "fixed_forward_service": 0.9682907065989493,
+          "controlled_service": 0.9682907065989493,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.022297612775588647
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1296.0,
+          "chosen_normal_work": 1296.0,
+          "fixed_forward_service": 0.9998703659376779,
+          "controlled_service": 0.9998703659376779,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.016550034117188507
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1353.6,
+          "chosen_normal_work": 1353.6,
+          "fixed_forward_service": 0.9999999904509292,
+          "controlled_service": 0.9999999904509292,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.06838074492634955
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1496.8108799999998,
+          "chosen_normal_work": 1413.0,
+          "fixed_forward_service": 0.9999999999988637,
+          "controlled_service": 1.0000000000021112,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.040406803820115654
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1500.0,
+          "chosen_normal_work": 1413.0,
+          "fixed_forward_service": 0.9999999999997766,
+          "controlled_service": 1.0000000000021112,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.058365383295722675
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.47235416602026e-07
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.226940960091285e-08
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.335400931468172e-06
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.3353930254836674e-06
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2478233997602146e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.9654786866403337e-06
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.083877192258896e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.083149769070552e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0003586745314264859
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.218769759847354e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0011929308482820033
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0011908663067778584
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0008636912823803557
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 902.4,
+          "chosen_normal_work": 902.4,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.012025841819829325
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 919.0944,
+          "chosen_normal_work": 919.0944,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0053774082416444555
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 997.87392,
+          "chosen_normal_work": 997.87392,
+          "fixed_forward_service": 4.2413685689624797e-23,
+          "controlled_service": 4.2413685689624797e-23,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.011720778597389816
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1080.0,
+          "chosen_normal_work": 1080.0,
+          "fixed_forward_service": 3.852391853528597e-07,
+          "controlled_service": 3.852391853528597e-07,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.008790105849615062
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1128.0,
+          "chosen_normal_work": 1128.0,
+          "fixed_forward_service": 0.002094036839591941,
+          "controlled_service": 0.002094036839591941,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.07015461106850504
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1225.4592,
+          "chosen_normal_work": 1225.4592,
+          "fixed_forward_service": 0.8565498350541658,
+          "controlled_service": 0.8565498350541658,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.04009120997906151
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1247.3423999999998,
+          "chosen_normal_work": 1247.3423999999998,
+          "fixed_forward_service": 0.9682907065989493,
+          "controlled_service": 0.9682907065989493,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.05822154446959249
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1296.0,
+          "chosen_normal_work": 1296.0,
+          "fixed_forward_service": 0.9998703659376779,
+          "controlled_service": 0.9998703659376779,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.043213977972658815
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1353.6,
+          "chosen_normal_work": 1353.6,
+          "fixed_forward_service": 0.9999999904509292,
+          "controlled_service": 0.9999999904509292,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.17854972286324577
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1496.8108799999998,
+          "chosen_normal_work": 1413.0,
+          "fixed_forward_service": 0.9999999999988729,
+          "controlled_service": 1.0000000000021112,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.10550665441919073
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1512.0,
+          "chosen_normal_work": 1413.0,
+          "fixed_forward_service": 0.9999999999989693,
+          "controlled_service": 1.0000000000021112,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.05727728890169339
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1531.8239999999998,
+          "chosen_normal_work": 1413.0,
+          "fixed_forward_service": 0.9999999999997976,
+          "controlled_service": 1.0000000000021112,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.032612986946066305
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1579.2,
+          "chosen_normal_work": 1413.0,
+          "fixed_forward_service": 0.9999999999993072,
+          "controlled_service": 1.0000000000021112,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.06250822497996042
+        }
+      ]
+    },
+    {
+      "kappa": 1000.0,
+      "fixed_forward_max_all_integer_inputs": 0.7820225177190506,
+      "perfect_unlimited_repair_upper_bound": 0.8011066392998866,
+      "release": 2100.0,
+      "maximum_service_with_control": 0.7844148487514814,
+      "fixed_forward_at_same_release": 0.7820224674628311,
+      "service_increase": 0.0023923812886502693,
+      "capacity_upper_groups": 98,
+      "probability_of_normal_curtailment": 0.2864932399678901,
+      "expected_normal_work_reduction": 7.285943999000618,
+      "policy": [
+        {
+          "final_capacity": 0,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.665600000000019e-08
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.5717335298507546e-12
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.687165506861512e-13
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.4846691465494218e-11
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.484664120529645e-11
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 300.0,
+          "chosen_normal_work": 300.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.385632466217265e-06
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.155956325248796e-11
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.052473156854095e-11
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.814954157318581e-10
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.814934472074456e-10
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.1069765230732723e-09
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.893878522526414e-10
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.763826526487001e-08
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.7636454041608e-08
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 600.0,
+          "chosen_normal_work": 600.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00017173173384316134
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2859108768297446e-09
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.1984994832063236e-10
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2146793128620993e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2146752008333266e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.49012873708637e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.0222768469277366e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.684437633106168e-07
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.6840592886914374e-07
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.8655235060661233e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.7143654780901935e-07
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.204623812375717e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.193885802375639e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.492196261766601e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 900.0,
+          "chosen_normal_work": 900.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.003568257441015633
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.510945280274951e-08
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.583236892767432e-09
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.4272481926129678e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.4272433609791598e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.625901266076489e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2011752951400908e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.329214218899749e-06
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.328769664212442e-06
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.191990119627696e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.1893794367559793e-06
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.290432979541472e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.277815817791379e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.278330607575757e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 902.4,
+          "chosen_normal_work": 902.4,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0007349428002159193
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 919.0944,
+          "chosen_normal_work": 919.0944,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00032863291653327514
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 997.87392,
+          "chosen_normal_work": 997.87392,
+          "fixed_forward_service": 7.737527422874348e-14,
+          "controlled_service": 7.737527422874348e-14,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0007162992805104715
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 1080.0,
+          "chosen_normal_work": 1080.0,
+          "fixed_forward_service": 0.00022549798412585612,
+          "controlled_service": 0.00022549798412585612,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0005371952420543405
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 1128.0,
+          "chosen_normal_work": 1128.0,
+          "fixed_forward_service": 0.02285423359989347,
+          "controlled_service": 0.02285423359989347,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0042874026682880135
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 1200.0,
+          "chosen_normal_work": 1167.0,
+          "fixed_forward_service": 0.06059430124844763,
+          "controlled_service": 0.12832241354824941,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.03532255202433169
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 9.46859042305633e-08
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.6188284528009195e-08
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 8.944088673707905e-07
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 8.944058395469375e-07
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.778898126741252e-06
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.527365182877884e-07
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.7129742438438355e-05
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.712695656239789e-05
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00013736471416333522
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.9986777803670746e-05
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00045686713338459765
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00045607645791492503
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0003307753847414133
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 902.4,
+          "chosen_normal_work": 902.4,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.004605641548019748
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 919.0944,
+          "chosen_normal_work": 919.0944,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.002059432943608518
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 997.87392,
+          "chosen_normal_work": 997.87392,
+          "fixed_forward_service": 7.737527422874348e-14,
+          "controlled_service": 7.737527422874348e-14,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.004488808824532276
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1080.0,
+          "chosen_normal_work": 1080.0,
+          "fixed_forward_service": 0.000225497984126467,
+          "controlled_service": 0.000225497984126467,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0033664235168738583
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1128.0,
+          "chosen_normal_work": 1128.0,
+          "fixed_forward_service": 0.022858877491825864,
+          "controlled_service": 0.022858877491825864,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.02686772338793814
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1225.4592,
+          "chosen_normal_work": 1225.4592,
+          "fixed_forward_service": 0.7668556816466909,
+          "controlled_service": 0.7668556816466909,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.015354080417512942
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1247.3423999999998,
+          "chosen_normal_work": 1247.3423999999998,
+          "fixed_forward_service": 0.8959271755297554,
+          "controlled_service": 0.8959271755297554,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.022297612775588647
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1296.0,
+          "chosen_normal_work": 1296.0,
+          "fixed_forward_service": 0.9926499219353819,
+          "controlled_service": 0.9926499219353819,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.016550034117188507
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1353.6,
+          "chosen_normal_work": 1353.6,
+          "fixed_forward_service": 0.9998911293876381,
+          "controlled_service": 0.9998911293876381,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.06838074492634955
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1496.8108799999998,
+          "chosen_normal_work": 1451.0,
+          "fixed_forward_service": 0.9999995024502762,
+          "controlled_service": 0.9999999853671141,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.040406803820115654
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1500.0,
+          "chosen_normal_work": 1451.0,
+          "fixed_forward_service": 0.9999994370149329,
+          "controlled_service": 0.9999999853671141,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.058365383295722675
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.47235416602026e-07
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.226940960091285e-08
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.335400931468172e-06
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.3353930254836674e-06
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2478233997602146e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.9654786866403337e-06
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.083877192258896e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.083149769070552e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0003586745314264859
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.218769759847354e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0011929308482820033
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0011908663067778584
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0008636912823803557
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 902.4,
+          "chosen_normal_work": 902.4,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.012025841819829325
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 919.0944,
+          "chosen_normal_work": 919.0944,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0053774082416444555
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 997.87392,
+          "chosen_normal_work": 997.87392,
+          "fixed_forward_service": 7.737527422874351e-14,
+          "controlled_service": 7.737527422874351e-14,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.011720778597389816
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1080.0,
+          "chosen_normal_work": 1080.0,
+          "fixed_forward_service": 0.000225497984126467,
+          "controlled_service": 0.000225497984126467,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.008790105849615062
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1128.0,
+          "chosen_normal_work": 1128.0,
+          "fixed_forward_service": 0.022858877491825864,
+          "controlled_service": 0.022858877491825864,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.07015461106850504
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1225.4592,
+          "chosen_normal_work": 1225.4592,
+          "fixed_forward_service": 0.7668556816466909,
+          "controlled_service": 0.7668556816466909,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.04009120997906151
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1247.3423999999998,
+          "chosen_normal_work": 1247.3423999999998,
+          "fixed_forward_service": 0.8959271755297554,
+          "controlled_service": 0.8959271755297554,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.05822154446959249
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1296.0,
+          "chosen_normal_work": 1296.0,
+          "fixed_forward_service": 0.9926499219353819,
+          "controlled_service": 0.9926499219353819,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.043213977972658815
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1353.6,
+          "chosen_normal_work": 1353.6,
+          "fixed_forward_service": 0.9998911293876381,
+          "controlled_service": 0.9998911293876381,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.17854972286324577
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1496.8108799999998,
+          "chosen_normal_work": 1496.8108799999998,
+          "fixed_forward_service": 0.9999999999538082,
+          "controlled_service": 0.9999999999538082,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.10550665441919073
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1512.0,
+          "chosen_normal_work": 1511.0,
+          "fixed_forward_service": 0.9999999999907955,
+          "controlled_service": 0.9999999999954212,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.05727728890169339
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1531.8239999999998,
+          "chosen_normal_work": 1531.0,
+          "fixed_forward_service": 1.0000000000003741,
+          "controlled_service": 1.0000000000005151,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.032612986946066305
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1579.2,
+          "chosen_normal_work": 1558.0,
+          "fixed_forward_service": 0.9999999999995788,
+          "controlled_service": 1.000000000003578,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.06250822497996042
+        }
+      ]
+    },
+    {
+      "kappa": 100.0,
+      "fixed_forward_max_all_integer_inputs": 0.7567397225101158,
+      "perfect_unlimited_repair_upper_bound": 0.770685940038691,
+      "release": 2100.0,
+      "maximum_service_with_control": 0.7589852933597697,
+      "fixed_forward_at_same_release": 0.7567397225101159,
+      "service_increase": 0.002245570849653822,
+      "capacity_upper_groups": 98,
+      "probability_of_normal_curtailment": 0.3935042755217698,
+      "expected_normal_work_reduction": 5.346294093390988,
+      "policy": [
+        {
+          "final_capacity": 0,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.665600000000019e-08
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.5717335298507546e-12
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.687165506861512e-13
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.4846691465494218e-11
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.484664120529645e-11
+        },
+        {
+          "final_capacity": 300,
+          "normal_upper": 300.0,
+          "chosen_normal_work": 300.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.385632466217265e-06
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.155956325248796e-11
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.052473156854095e-11
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.814954157318581e-10
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.814934472074456e-10
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.1069765230732723e-09
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.893878522526414e-10
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.763826526487001e-08
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.7636454041608e-08
+        },
+        {
+          "final_capacity": 600,
+          "normal_upper": 600.0,
+          "chosen_normal_work": 600.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00017173173384316134
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2859108768297446e-09
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.1984994832063236e-10
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2146793128620993e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2146752008333266e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.49012873708637e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.0222768469277366e-08
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.684437633106168e-07
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.6840592886914374e-07
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.8655235060661233e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.7143654780901935e-07
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.204623812375717e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 6.193885802375639e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.492196261766601e-06
+        },
+        {
+          "final_capacity": 900,
+          "normal_upper": 900.0,
+          "chosen_normal_work": 900.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.003568257441015633
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.510945280274951e-08
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.583236892767432e-09
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.4272481926129678e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.4272433609791598e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.625901266076489e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2011752951400908e-07
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.329214218899749e-06
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.328769664212442e-06
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.191990119627696e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 3.1893794367559793e-06
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.290432979541472e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.277815817791379e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.278330607575757e-05
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 902.4,
+          "chosen_normal_work": 902.4,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0007349428002159193
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 919.0944,
+          "chosen_normal_work": 919.0944,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00032863291653327514
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 997.87392,
+          "chosen_normal_work": 997.0,
+          "fixed_forward_service": 0.00025076965905072206,
+          "controlled_service": 0.00025076967099272815,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0007162992805104715
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 1080.0,
+          "chosen_normal_work": 1080.0,
+          "fixed_forward_service": 0.06441849867870636,
+          "controlled_service": 0.06441849867870636,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0005371952420543405
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 1128.0,
+          "chosen_normal_work": 1128.0,
+          "fixed_forward_service": 0.1978385672151445,
+          "controlled_service": 0.1978385672151445,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0042874026682880135
+        },
+        {
+          "final_capacity": 1200,
+          "normal_upper": 1200.0,
+          "chosen_normal_work": 1175.0,
+          "fixed_forward_service": 0.26460305245844845,
+          "controlled_service": 0.3010103708941525,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.03532255202433169
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 9.46859042305633e-08
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.6188284528009195e-08
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 8.944088673707905e-07
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 8.944058395469375e-07
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.778898126741252e-06
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.527365182877884e-07
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.7129742438438355e-05
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.712695656239789e-05
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00013736471416333522
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.9986777803670746e-05
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00045686713338459765
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.00045607645791492503
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0003307753847414133
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 902.4,
+          "chosen_normal_work": 902.4,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.004605641548019748
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 919.0944,
+          "chosen_normal_work": 919.0944,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.002059432943608518
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 997.87392,
+          "chosen_normal_work": 997.87392,
+          "fixed_forward_service": 0.0002507697836736557,
+          "controlled_service": 0.0002507697836736557,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.004488808824532276
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1080.0,
+          "chosen_normal_work": 1080.0,
+          "fixed_forward_service": 0.06448584865887501,
+          "controlled_service": 0.06448584865887501,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0033664235168738583
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1128.0,
+          "chosen_normal_work": 1128.0,
+          "fixed_forward_service": 0.20327108889260606,
+          "controlled_service": 0.20327108889260606,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.02686772338793814
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1225.4592,
+          "chosen_normal_work": 1225.4592,
+          "fixed_forward_service": 0.6254757980717072,
+          "controlled_service": 0.6254757980717072,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.015354080417512942
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1247.3423999999998,
+          "chosen_normal_work": 1247.0,
+          "fixed_forward_service": 0.7042431033147296,
+          "controlled_service": 0.7042431034715285,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.022297612775588647
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1296.0,
+          "chosen_normal_work": 1296.0,
+          "fixed_forward_service": 0.8445481592963255,
+          "controlled_service": 0.8445481592963255,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.016550034117188507
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1353.6,
+          "chosen_normal_work": 1353.0,
+          "fixed_forward_service": 0.9347649308440313,
+          "controlled_service": 0.9347662028314251,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.06838074492634955
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1496.8108799999998,
+          "chosen_normal_work": 1455.0,
+          "fixed_forward_service": 0.9748195915845939,
+          "controlled_service": 0.9841586330982998,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.040406803820115654
+        },
+        {
+          "final_capacity": 1500,
+          "normal_upper": 1500.0,
+          "chosen_normal_work": 1455.0,
+          "fixed_forward_service": 0.9741848504840457,
+          "controlled_service": 0.9841586330982998,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.058365383295722675
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 0.0,
+          "chosen_normal_work": 0.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.47235416602026e-07
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 216.0,
+          "chosen_normal_work": 216.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 4.226940960091285e-08
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 225.6,
+          "chosen_normal_work": 225.6,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.335400931468172e-06
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 249.46848,
+          "chosen_normal_work": 249.46848,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 2.3353930254836674e-06
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 306.3648,
+          "chosen_normal_work": 306.3648,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.2478233997602146e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 432.0,
+          "chosen_normal_work": 432.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 1.9654786866403337e-06
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 451.2,
+          "chosen_normal_work": 451.2,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.083877192258896e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 498.93696,
+          "chosen_normal_work": 498.93696,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 7.083149769070552e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 612.7296,
+          "chosen_normal_work": 612.7296,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0003586745314264859
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 648.0,
+          "chosen_normal_work": 648.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 5.218769759847354e-05
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 676.8,
+          "chosen_normal_work": 676.8,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0011929308482820033
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 748.4054399999999,
+          "chosen_normal_work": 748.4054399999999,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0011908663067778584
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 864.0,
+          "chosen_normal_work": 864.0,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0008636912823803557
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 902.4,
+          "chosen_normal_work": 902.4,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.012025841819829325
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 919.0944,
+          "chosen_normal_work": 919.0944,
+          "fixed_forward_service": 0.0,
+          "controlled_service": 0.0,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.0053774082416444555
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 997.87392,
+          "chosen_normal_work": 997.87392,
+          "fixed_forward_service": 0.0002507697836736558,
+          "controlled_service": 0.0002507697836736558,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.011720778597389816
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1080.0,
+          "chosen_normal_work": 1080.0,
+          "fixed_forward_service": 0.06448584865887501,
+          "controlled_service": 0.06448584865887501,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.008790105849615062
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1128.0,
+          "chosen_normal_work": 1128.0,
+          "fixed_forward_service": 0.2032710888926064,
+          "controlled_service": 0.2032710888926064,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.07015461106850504
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1225.4592,
+          "chosen_normal_work": 1225.4592,
+          "fixed_forward_service": 0.6254757982173319,
+          "controlled_service": 0.6254757982173319,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.04009120997906151
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1247.3423999999998,
+          "chosen_normal_work": 1247.3423999999998,
+          "fixed_forward_service": 0.7042431048635234,
+          "controlled_service": 0.7042431048635234,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.05822154446959249
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1296.0,
+          "chosen_normal_work": 1296.0,
+          "fixed_forward_service": 0.8445483113389927,
+          "controlled_service": 0.8445483113389927,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.043213977972658815
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1353.6,
+          "chosen_normal_work": 1353.6,
+          "fixed_forward_service": 0.9347808727284385,
+          "controlled_service": 0.9347808727284385,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.17854972286324577
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1496.8108799999998,
+          "chosen_normal_work": 1496.0,
+          "fixed_forward_service": 0.9952176090380079,
+          "controlled_service": 0.995217609038044,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.10550665441919073
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1512.0,
+          "chosen_normal_work": 1512.0,
+          "fixed_forward_service": 0.99650659956473,
+          "controlled_service": 0.99650659956473,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.05727728890169339
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1531.8239999999998,
+          "chosen_normal_work": 1531.8239999999998,
+          "fixed_forward_service": 0.9976655165686236,
+          "controlled_service": 0.9976655165686236,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.032612986946066305
+        },
+        {
+          "final_capacity": 1800,
+          "normal_upper": 1579.2,
+          "chosen_normal_work": 1579.0,
+          "fixed_forward_service": 0.9991192257896978,
+          "controlled_service": 0.9991192258486783,
+          "quality_seen_when_choosing_normal_work": false,
+          "probability": 0.06250822497996042
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "run_at_utc": "2026-10-27T22:18:23.599913+00:00",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "capacity_states": 28224,
+    "probability_mass": 0.9999999999999992,
+    "sha256": {
+      "backbone\\service_frontier.py": "ed4d8859829efe0b9a7c5c86bfd780c374f246aa7163885576f3fb8bb72d5b01",
+      "backbone\\round70_nonanticipative_final_control.py": "4723d5c3c24cba3db29a21196ca1cf35a97d412a0ff1d04626460d83171cdc9f",
+      "backbone\\recourse_lab.py": "c70bf1c118b8eecea39bde219dd16a7389c92a7b032d521408c061ce6969a800",
+      "backbone\\ball_screw.py": "b05e1f4a664a79e1f5d45aab99442b72beb33da08c29499d67405b8074d864aa",
+      "backbone\\evaluator.py": "448207a81f4164e9689db8149cec1e68c22f4129339b69348667f6aaf83693d1",
+      "backbone\\round2_share_consistency.py": "ec1adc66537a1ad2897e7b955444b28d4344a22ad57a0d14c3a024c0d9b534ed",
+      "backbone\\final_station_service_control.py": "75ffb8f141daeccaa03ffb5c65ad306876e6837d5f95c58c822fd5385d7e173b",
+      "backbone\\maximal_service_curve.py": "4918c910b2475804433fe7eb940bc043e7cb28d7bc06e2a26f8c94bd27ae241b",
+      "backbone\\batch_stochastic_setup.py": "9c0cd244b6b37e19706b8288ec1643dba5c48ae8100d8c2fb2248d85bdf98471",
+      "backbone\\stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+      "backbone\\integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+      "backbone\\exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+      "backbone\\exact_batch_quality.py": "27ab264d45c4ac12c119558c3bea033279cf3a64bb72ee9f1e04b07a627f7f31",
+      "research\\2026-10-28\\service_rounds\\round63.json": "06416f0b6ce66dcae7ce2737c3eb27eecf278f90fb5f2950b1944ab1713e9f78",
+      "research\\2026-10-28\\service_rounds\\round66.json": "304c6ca56db1f29271be683c81ca56def9d575b1c2c0c13c034066acb38f8aa5",
+      "research\\2026-10-28\\service_rounds\\round67.json": "edf82aa8bba965cf1d3a81be82ac9cb72c5a5b02d03f439e028dde8925b447b0"
+    }
+  }
+}
