@@ -1,0 +1,14 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.3.5",
+  "extra_source_sha256": {
+    "backbone/mean_error_151_decomposition.py": "f86af239399746b1748ff8e339c3fe8d5d93d8865d4d92e913b6d62958202c80",
+    "backbone/validate_mean_error_151.py": "42cbfd3742fbdc5471aba9b92e9b02bcadfab40a3603f5b61bfd2f11123596f7",
+    "backbone/exact_quality_service.py": "9370ea0706e1889152f9d230e2706a721a01c7436a7176d69a8bcf656d47590f",
+    "backbone/stochastic_setup_frontier.py": "1220b39c3ef0767861fa455671192fac94f2fbfc73340c4f01ca468c6f3fb463",
+    "backbone/integer_rework.py": "2387f225fc092c38d963d5b2409add27e014df2c7b4f4304bbf106ff68421e5b",
+    "research/2026-10-28/service_rounds/round71_physical_cache.npz": "12b15ade4645e37b8fdc277255988262cada20dfd6dc5e12c7f4902fdb74554a"
+  },
+  "result_sha256": "8b7841113654ed3f3a54f94ffa0a757c4b211c5dd37025d0a9602442ad55437f",
+  "scope": "No new assumptions; numerical noise excluded from interpretation, not silently clipped in raw results"
+}

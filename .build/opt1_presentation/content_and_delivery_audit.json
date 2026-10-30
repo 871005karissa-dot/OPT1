@@ -1,0 +1,52 @@
+{
+  "pptx": "output\\presentations\\OPT1_研究入門與教授報告_20261030.pptx",
+  "sha256": "9e375ce8f7f6f17695e479141bdfcec3b5bf0220b715e8ce07e47f3418668391",
+  "slides": 22,
+  "notes": 22,
+  "native_flow_slides": [
+    {
+      "slide": 2,
+      "native_connectors": 3
+    },
+    {
+      "slide": 4,
+      "native_connectors": 4
+    },
+    {
+      "slide": 6,
+      "native_connectors": 6
+    },
+    {
+      "slide": 7,
+      "native_connectors": 3
+    },
+    {
+      "slide": 8,
+      "native_connectors": 3
+    },
+    {
+      "slide": 9,
+      "native_connectors": 5
+    },
+    {
+      "slide": 11,
+      "native_connectors": 5
+    },
+    {
+      "slide": 12,
+      "native_connectors": 6
+    },
+    {
+      "slide": 13,
+      "native_connectors": 4
+    },
+    {
+      "slide": 19,
+      "native_connectors": 3
+    }
+  ],
+  "historical_json_unchanged": 63,
+  "powerpoint_native_open_verified": false,
+  "visual_review": "Every slide individually viewed in Artifact Session; changed slides re-rendered and viewed",
+  "passed": true
+}

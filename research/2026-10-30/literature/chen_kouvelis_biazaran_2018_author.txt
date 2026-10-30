@@ -1,0 +1,1080 @@
+[PDF PAGE 1]
+Value of Operational Flexibility in Co-Production Systems
+with Yield and Demand Uncertainty
+Xingxing Chen∗, Panos Kouvelis∗ and Maryam Biazaran
+Olin Business School, Washington University in Saint Louis, Missouri, USA
+xingxing.chen@wustl.edu; kouvelis@wustl.edu; mbiazaran@wustl.edu
+We study the production decisions of a ﬁrm that operates in co-production system (single input but
+multiple simultaneous outputs) with random yield and demand. The ﬁrm uses its outputs to meet multiple
+end-market demands with diﬀerent quality requirements. Outputs serving a market segment may be a
+result of a blending process of diﬀerent quality products of the co-production system. After the realization
+of yield and before the realization of demand, the ﬁrm has the option to upgrade the quality of outputs
+in order to better position itself to meet market demands. With the goal of maximizing expected proﬁts,
+we formulate a three stage stochastic programming problem, to investigate the value of intermediate
+upgrading ﬂexibility. Using a stylized model of two products and two markets with diﬀerent quality
+requirements, we characterize the optimal decisions and show that the quality upgrading policy is of a
+single-threshold type. Although upgrading is costly, it creates value for the ﬁrm through reducing total
+production cost and better managing the yield uncertainty. Positive correlation between demands of the
+end-markets decreases the value of upgrading. The more general model formulation oﬀers the blueprint
+of a stochastic programming model that can be solved for realistic applications.
+Keywords: Stochastic programming, operational ﬂexibility, random yield, product substitution,
+newsvendor demand.
+1. Introduction
+Operational ﬂexibility has been demonstrated to have tremendous value to supply chain manage-
+ment. In a frequently used form of operational ﬂexibility, its execution requires that multiple(one)
+resources are used hedge demand or supply uncertainties in one(multiple) market segment(s).
+The key in this form of ﬂexibility is that ﬁrms have the capability to re-allocate or re-distribute
+resources(products, capacities or services) after any uncertainty (demand or supply) has been re-
+solved, in the most eﬀective way to match supply and demand. Most of the value of this ﬂexibility
+comes from the risk pooling of the resources in handling a diverse set of demand or supply risks.
+Examples of such ﬂexibility include substitution(upgrading/downgrading of products or services)
+and transshipment of products among retailers or distribution channels in a network system. We
+are going to present a new application of this type of ﬂexibility that involves costly upgrading of
+the quality of the resources prior to demand uncertainty resolution in multi-segment markets with
+varied quality requirements.
+We consider a production/market environment with both yield and demand uncertainty. Yield
+uncertainty is a common phenomenon in many production and service environments. Random
+yield can emerge in many forms and measures, ranging from simple fraction defectives to broader
+classiﬁcation schemes based on some quantitative or qualitative evaluation resulting in a ﬁnite
+number of quality levels. We study a co-production system where outputs are diﬀerentiated by
+∗Email: xingxing.chen@wustl.edu and kouvelis@wustl.edu
+[PDF PAGE 2]
+quality levels. A co-production process is one that yields multiple outputs from a single input.
+Outputs are used to meet demands in a multi-segment market, where each market imposes certain
+quality requirement on the outputs that serve them. An output serving a market segment may be
+the blended result of some of the original outputs of the co-production process.
+Prior to decide how to blend the outputs of the co-production process to meet each market
+segment demand, the ﬁrm has the opportunity to upgrade the quality levels of the original prod-
+ucts through reﬁning processes. These processes happen after the realization of the yield of the
+co-production process and before the realization of market segment demands. We consider transfers
+in the direction of increasing inventories of higher quality level outputs and refer to this option
+as ”upgrading ﬂexibility”. This practice is common in agriculture and chemical industries, where
+post-production reﬁning processes can improve quality levels of the crude products produced in
+the co-production process(crushing, milling, etc). Although appealing in many respects, the up-
+grading process is costly and needs to take place prior to the selling season when the uncertainty of
+demand realizes. Therefore, a balance has to be made between the early production decision and
+the subsequent upgrading decision in order to match supply and demand eﬀectively.
+We take the perspective of a proﬁt maximizing ﬁrm operating in the described environment.
+We outline a stylized three-stage stochastic model to study the structure of the optimal decisions
+in this production and quality upgrading process of a co-production system, in the presence of
+both yield and demand uncertainties. We are particularly interested in understanding the value of
+upgrading ﬂexibility in the co-production environment, and when it is best exercised.
+1.1 Motivating Example
+Our motivating example is the growth and production of vegetable seeds in the agriculture industry.
+A typical process comprises of three main stages. (1) growing season, which can take between 6 to 24
+months (depending on the seed type), when the ﬁrm decides the amount of seeds to grow (2) After
+the harvest season and quality assessment, seeds are rated by quality levels. At this stage, the ﬁrm
+has the opportunity to engage in upgrading processes, to increase the proportion of higher quality
+seeds through reﬁning of lower quality seeds inventory. The quality upgrading ﬂexibility occurs
+only before demand uncertainty is resolved. The two most important quality measures of seeds are
+purity and germination. There are many complex processes to separate and enhance the purity
+of seeds, and other processes/treatment to enhance the germination of seeds. All these processes
+incur signiﬁcant cost in order to improve the quality of seeds. (3) With the start of selling season,
+the ﬁrm satisﬁes diﬀerent markets’ demand according to quality requirements. High-end markets
+(like North America) demand can be solely satisﬁed from higher quality product(higher purity and
+germination), whereas the demand of low-end markets (like India, Bangladesh, Malaysia) can be
+fulﬁlled through a blend of low and high quality seeds.
+Our proposed modeling framework and problem formulation apply to other industries as well.
+For instance, in the semiconductor industry, a single input of Silicon Dioxide can be fabricated
+to silicon wafers of diﬀerent quality grades. A frequently heard term ’ingot’, is an intermediate
+outcome of the ﬁrst manufacturing process which is referred to as crystal growth. It is then sliced
+into substrates(wafers) before going through ﬁnal polishing. Though current manufacturing pro-
+cesses can control size(diameter), thickness and other geometric properties, they can not perfectly
+control cleanness, ﬂatness, and certain circuit properties of wafers, which are key quality measures
+of them. However, there are recurrent/post polishing processes which are used to improve wafer
+qualities, though they usually incur additional cost. For example, an Epi layer, which is an addi-
+tional layer of purity Silicon, can be deposited on the top of a polished wafer substrate to improve
+its quality. Finally, wafers of diﬀerent qualities can be used to meet customers’ demands with varied
+quality requirements. Another example could be found in the steel industry, where steel beams of
+strong/weak strength are outputs of a co-production process and additional reﬁnement processes
+2
+[PDF PAGE 3]
+can improve the weak strength steel beams, before they are used to meet customer demands with
+varied quality requirements.
+2. Related Literature
+Relevant literature to this study can be divided into two streams: (1) co-production systems with
+yield uncertainty and substitution; (2) value of operational ﬂexibility.
+In the co-production literature, a common feature of models is full downward substitution, i.e.
+satisfying demand of lower quality speciﬁcations from the inventory of higher quality products.
+Joint inventory and allocation decisions in diﬀerent settings is the main goal of these papers. The
+early work of Bitran and Dasu (1992), Bitran and Leong (1992), and Bitran and Gilbert (1994)
+proposed heuristics and approximation methods for the N-product ﬁnite horizon problem with
+deterministic demand and random yield. Motivated by semi-conductor industry, Hsu and Bassok
+(1999) studied a two-stage stochastic model with N outputs in the presence of both demand and
+yield uncertainty. Tomlin and Wang (2008) considers joint decisions of quantity, down-conversion
+(converting high quality to low quality), pricing and allocation in a customer utility maximization
+framework. In a beef supply chain, Boyabatl et al. (2011) analyzed a co-production system with
+two output quality levels (boxed beef and ground beef), to study the impact of market conditions
+on optimal sourcing decisions. While in most of these papers a unit demand of market with lower
+quality expectations can be fully substituted by higher quality inventory, in our model, we require
+a blend of low and high quality inventories to meet quality requirements for the lower-end market.
+Furthermore, upgrading of quality of available outputs is possible prior to demand realization.
+Operational ﬂexibility provides ﬁrms with a hedge against uncertainties. There is a vast literature
+on the value of operational ﬂexibility in its various forms: e.g. postponement (Van Mieghem and
+Dada 1999), component commonality (Van Mieghem 2004) , substitution (Bassok et al. 1999), and
+responsive pricing (Tomlin and Wang 2008).
+Closest to our work in modeling operational ﬂexibility is the recent work of Dong et al. (2014), in
+which they analyzed early procurement, production and later upgrading decisions of an oil reﬁnery
+facing price uncertainty in both input and output markets, with a co-production system producing
+two quality levels of outputs that we used to meet demand in two end-markets. They investigated
+two types of operational ﬂexibilities: range ﬂexibility (the ability to process crude oil of diverse
+quality), and conversion ﬂexibility (the ability to convert low-quality crude oil to high-quality crude
+oil). In our paper, we only consider conversion ﬂexibility of a low quality output to a high quality
+output. While Dong et al. (2014) considered an environment without any yield uncertainty and with
+end-market price uncertainty, we are interested in co-production systems with yield uncertainty
+and end-markets with preset ﬁxed prices but subject to random demand.
+Contributions: While there is a rich body of literature on production planning under joint
+demand and yield uncertainty, very few have focused on co-production systems with yield uncer-
+tainty and upgrading ﬂexibility of the output quality after yield realization but still in the presence
+of demand uncertainty. Our main results are provided by a model with two products and two end-
+markets. This stylized model oﬀers useful managerial insights on the nature of upgrading policies
+and for what environments upgrading ﬂexibility pays oﬀ. Moreover, we formulate the more general
+problem withn products andm demand segments(markets), and discuss how it can be solved. The
+prevailing full downward substitution serves as a special case in our general model.
+We have organized our remaining paper in 4 sections. In Section 3, we present notations and
+our stylized two product, two market segment model. In Section 4, we present the solutions and
+insights of the previously introduced stylized model. Next in Section 5 we extend the stylized model
+to a general formulation. Finally we conclude our paper with Section 6.
+3
+[PDF PAGE 4]
+3. Model
+In this section, we provide a three-stage stochastic optimization formulation for a single-period
+upgrading problem with uncertain yield and demand. We analyze a two product, two market
+model and explain the main trade-oﬀs and results of our model.
+To be more speciﬁc, we assume that the ﬁrm is selling two products in two markets. The
+end markets are high-end(H) and low-end(L), and the products are high quality(H) and low
+quality(L). As in the agribusiness example, North America is a high-end market, and In-
+dia/Indonesia/Malaysia/other countries are low-end markets. The ﬁrm is a price taker in both
+end markets with exogenous prices for high and low end markets denoted as pH and pL respec-
+tively. The prices are dependent on the end markets which impose certain requirements on product
+qualities. In other words, the prices are market speciﬁc, not product speciﬁc. Given these prices, end
+markets demands are random. The joint distribution of end market demands is characterized by a
+density functionf(dH,dL), wheredH,dL is the demand in each market. To supply the markets, the
+ﬁrm makes production and quality upgrading decisions in the presence of demand uncertainty, and
+market allocation decisions after demand is realized. The detailed decision process is characterized
+as follows:
+Stage 1: Production . The ﬁrm decides on the quantity Q of the single input to be produced at
+an exogenous unit production cost. The yield is uncertain, with αQ realized as high quality
+and (1−α)Q as low quality product.
+Stage 2: Upgrading . After observing the availability of each quality grade ( yH,yL), the ﬁrm
+has the option to upgrade (transfer) inventories from lower to higher quality grade at an
+exogenous unit upgrading cost. After the upgrading, the ﬁrm has inventory levels of ( qH,qL)
+of the two products .
+Stage 3: Allocation . With end market demand realized, the ﬁrm satisﬁes demand from available
+inventory. The quantity of product j allocated to market k is xjk where j ∈{ H,L} and
+k∈{ H,L}. The allocation decision is subject to the usual product supply and end market
+demand constraints as well as quality requirement constraints imposed by each market. We
+will discuss these quality constraints.
+Planting 
+Q  
+High quality 
+Hy  
+Low quality 
+Ly  
+Yield 
+Realization 
+( , )H Ly y   
+Low quality 
+Lq
+Upgrading 
+H Hq y −  
+Demand 
+Realization 
+  
+( , )H Ld d
+HL x   
+LL x   
+HH x   
+High-end 
+Market 
+Hd   
+Low-end 
+Market 
+Ld   
+High quality 
+Hq  
+Production Upgrading Allocation 
+time 
+Upgrading unit 
+Figure 1. Simple model diagram
+4
+[PDF PAGE 5]
+3.1 Quality Constraints
+The markets have heterogeneous requirement on product qualities. For instance, in the agribusi-
+ness industry North America market has a higher requirement on seed quality than Asian/South
+American countries.
+In our model, we normalize the high quality level gH = 1, and the low quality level gL = 0.
+The high end market only accepts high quality product, while the low end market expects that the
+average quality of oﬀered products is above a quality threshold γ. If xjk,j ∈{ H,L},k ∈{ H,L}
+represents the quantity of product j allocated to market k, then xHL≥γ(xHL +xLL), or
+γxLL− (1−γ)xHL≤ 0
+3.2 Mathematical Formulation
+Based on the model speciﬁcation above, we formulate a three stage mathematical programing. Our
+notational convention is that when we compress subscripts of a variable, we denote a vector of the
+corresponding variable.
+In Stage three, the ﬁrm has to decide on the allocation of the two products to the two end markets.
+xHH and xHL are the allocation of the high quality product to markets H and L respectively,
+while xLL is the only possible allocation of the low quality product to the low-end market. The
+optimization problem in this stage, referred to as the ”Allocation” Problem ( AP) is:
+(AP) r(q,d ) = max
+xHH,xHL,xLL
+pHxHH +pL(xHL +xLL) (1)
+subject to: xHH≤dH (1a)
+xHL +xLL≤dL (1b)
+xHH +xHL≤qH (1c)
+xLL≤qL (1d)
+γxLL− (1−γ)xHL≤ 0 (1e)
+xHH,xHL,xLL≥ 0 (1f)
+The revenue functionr(q,d ) has as its state variables the vector of available quantities of the two
+product q and the vector of realized demand d. Constraints (1a) and (1b) are demand constraints
+on allocated quantities in each market for meeting realized demand. Constraints (1c) and (1d) are
+supply constraints on available quantities of the two products. Constraint (1e) captures the quality
+requirement imposed by blending or mixing the quantities of the two quality products in an eﬀort
+to meet the low end market quality requirement.
+In stage two, after the co-production process had its realized yield of high and low quality
+products, the ﬁrm decides on how much of the low quality product to upgrade via reﬁned processing
+to bring up to the high quality level. The resulting optimization problem referred to as ”Upgrading”
+problem (UP) is:
+(UP) Π( y) = max
+qH,qL
+Ed [r(q,d )]−cu(qH−yH) (2)
+subject to: qH +qL =yH +yL, (2a)
+qH≥yH, (2b)
+qL≥ 0. (2c)
+The objective function Π( y) has an state variable the vector of available quantities of the two
+5
+[PDF PAGE 6]
+products after the production stage, including any leftover units from previous periods, and is the
+expected proﬁt from the upgrading decision, which reﬂects the subsequent allocation decision in
+stage three and the costs of upgrading. The upgrading constraints (2a) and (2b) reﬂect that only
+low quality product can be upgraded and the total quantity of the two quality products is preserved
+under upgrading.
+Finally, in the ﬁrst stage our ﬁrm makes a production decision on the total quantity of input in
+the co-production process, Q. The objective function J(Q) will account for all expected proﬁts and
+costs of the upgrading and allocation stages, Eα [Π(αQ, (1−α)Q)], and the relevant production
+cost of the co-production system, cQ. Thus, our ﬁrst stage ”Production” problem ( PP) is:
+(PP) max
+Q≥0
+J(Q) = Eα [Π(αQ, (1−α)Q)]−cQ (3)
+In order to calculate the impact of upgrading ﬂexibility, we deﬁne the value of upgrading (VoU)
+as the diﬀerence between optimal expected proﬁts with upgrading JU(Q∗
+U), and without upgrading
+JO(Q∗
+O):
+VoU =JU(Q∗
+U)−JO(Q∗
+O) (4)
+where JO(Q∗
+O) is solved by imposing q =y(no upgrading).
+4. Analytical Results
+In the following subsections, we ﬁrst characterize optimal allocation decision, then the optimal
+upgrading decision, and ﬁnally the optimal production decision.
+4.1 Optimal Allocation Decision
+The optimal allocation decision is determined by the realization of the demand, relative availability
+of the two products, as well as relative proﬁtability of products due to substitution scheme in place.
+We assume that market prices (pH,pL) favor the high quality product; i.e., γpH≥pL. As a result,
+the ﬁrm prioritizes demand of high-end market.
+Figure 2 illustrates optimal allocation decision. Two graphs indicate diﬀerent cases based on
+relative availability of two products. When available inventory of high quality is low (left), leftover
+of low-quality product is non-negative. This is due to the quality requirement of low demand class
+and low availability of high quality product. When there is ample supply of high quality product
+(right), there are instances with no leftover inventory of either products (region Ω (2)
+1 ).
+Table 1. Optimal allocation and shadow prices
+Region (x∗
+HH,x ∗
+HL +x∗
+LL) λ(q,d )
+Ω0 (dH,dL) (0 , 0)
+Ω1 (dH,qH +qL−dH) ( pL,pL)
+Ω2 (dH, qH −dH
+γ ) ( pL
+ρL
+, 0)
+Ω3 (qH, 0) ( pH, 0)
+It is clear from table 1 that the marginal value of low quality product is non-zero in region Ω (2)
+1 .
+The diﬀerence in the area corresponding to each region depends on relative availability of products
+qH and qL. Next result is about the property of expected value of optimal allocation proﬁt, which
+is analogous to results of multidimensional newsvendor model.
+6
+[PDF PAGE 7]
+ 
+Hq
+γ
+  
+D  
+Ld  Ld  
+Hd  
+H Lq     q +  
+ 
+2Ω
+0Ω
+Hq
+Hq
+  1
+Lq
+γ−
+  
+1
+L
+H
+qq γ
+γ− −
+  
+D  
+3Ω
+2Ω
+Hd   
+(1)
+(1)
+3Ω
+(1)
+(2)
+(2)
+1Ω
+(2)
+0Ω
+(2)
+H Lq     q +  
+H Lq     q +  
+H Lq     q +  
+Figure 2. Left: qH≤γ(qH +qL), Right: qH >γ (qH +qL), line D :dH =qH−γdL
+Lemma 1. Letd be a continuous random variable that is ﬁnite with probability 1. Then the expected
+proﬁt function Edr(q,d ) is diﬀerentiable in q and the gradient is equal to expected shadow price
+∇Edr(q,d ) = Edλ(q,d ), where λ(q,d ) is the shadow price of q.
+The proof follows directly from Harrison and Van Mieghem (1999) and is omitted.
+4.2 Optimal Upgrading Decision
+At the upgrading stage, the ﬁrm adjusts the inventories of the two products by reﬁned processing of
+some of the lower quality product while anticipating demand. The processing is costly and results
+in increasing the inventory of high quality product. Figure 3 illustrates the decision space of the
+upgrading problem for a given realized inventory yH and yL of the high and low quality products
+respectively. We assume thatyH≥αQ andyL≥ (1−α)Q with the interpretation that (yH−αQ)
+and (yL− (1−α)Q) represent initial inventories of the two products before production in this
+period, as a result of previous procurement or production decisions(e.g., in the case of extension
+to a multi-period problem).
+H Ly y+   
+Hy   
+Ly   
+( , ) H Ly y   
+45∘   
+L Hq q   
+Hy  
+Ly  
+Hq
+ 
+Lq  
+H Ly y+   
+1
+2
+Figure 3. Upgrading decision space
+The following result characterizes the optimal upgrading policy.
+Proposition 1. Given total production quantity Q, there exists a unique threshold qt ∈ [0,Q ]
+such that for realized inventory y, the optimal post-upgrading inventory of high quality product is
+7
+[PDF PAGE 8]
+q∗
+H(y) = max
+{
+qt,yH
+}
+. Furthermore,qt(Q) is non-decreasing inQ and there exist thresholds Q and
+Q, with Q≤Q, such that qt(Q) =Q when Q≤Q and qt(Q) is constant when Q≥Q.
+This result states that optimal upgrading decision is a single-threshold policy; i.e., if available
+high quality product quantity yH is less than qt(Q), the ﬁrm should upgrade ( qt(Q)−yH) units
+of its low quality product to reach the optimal target level qt(Q), otherwise, no action is required.
+Figure 4 illustrates the optimal upgrading policy.
+Slope
+γ=
+  
+Q   
+ ( )tq Q   
+ Hy
+ Q   Q   
+Don’t upgrade 
+Upgrade
+Slop
+e = 1   
+Figure 4. Optimal Upgrading Policy
+4.3 Optimal Production Decision
+In this section, we prove that the production stage objective function is concave in Q and an
+optimal Q exists. We are particularly interested in studying the properties of optimal expected
+proﬁt of the upgrading problem and compare with the case of no-upgrading as a benchmark. We
+use JU and JO to refer to proﬁt functions of upgrading model and benchmark, respectively:
+JU(Q) = −cQ + Eα [Π(αQ, (1−α)Q)], and
+JO(Q) = −cQ + Eα [Ed [r(αQ, (1−α)Q,d )]]
+Proposition 2 below summaries the key results on the ﬁrm’s production decision(part 1 of the
+Proposition), and our results of the eﬀects of upgrading ﬂexibility on such decisions and on the
+objective value of the ﬁrm:
+Proposition 2. For the production problem, we have the following results:
+(1) The optimal allocation proﬁt Edr(q,d ) is concave in q, the optimal upgrading proﬁt Π(y) is
+concave in y, and the optimal ﬁrm value J(Q) is concave in Q.
+(2) For any Q≥ 0, JU(Q)≥JO(Q) and therefore, J∗
+U≥J∗
+O. Moreover, Q∗
+U≤Q∗
+O.
+This result states that upgrading ﬂexibility always creates value for the ﬁrm, and yields a lower
+production level compared to the non-upgrading model. In other words, the upgrading ﬂexibility
+enables the ﬁrm to produce at lower production level, and by deploying that ﬂexibility the ﬁrm is
+able to achieve higher expected proﬁt.
+4.4 Sensitivity Analysis
+The purpose of this section is to explore the signiﬁcance of value of upgrading ( VoU ). We study
+the impact of production and upgrading costs, as well as selling price.
+8
+[PDF PAGE 9]
+4.4.1 Impact of Purchase and Upgrading cost
+Production and upgrading costs directly inﬂuence the value of upgrading. The following proposition
+characterizes the impact of these cost parameters.
+Proposition 3. VoU increases in production cost c and decreases in upgrading cost cu. Further-
+more, optimal order quantity Q∗
+U decreases inc and increases in cu.
+With production cost increasing, optimal expected proﬁts of both upgrading and benchmark case
+decrease. However, the decrease in proﬁt is higher when no upgrading takes place. On the other
+hand, when the cost of upgrading increases, the ﬁrm reacts by increasing production quantity and
+reducing upgrading quantity, which overall decreases the total expected proﬁt, resulting in a decline
+in the value of upgrading.
+4.4.2 Impact of Prices
+End-market sales prices are important factors that aﬀect optimal production, upgrading and allo-
+cations decisions. The next result is about the impact of change in high end market selling price
+on the value of upgrading and production decision.
+Proposition 4. Optimal expected proﬁts J∗
+U and J∗
+O increase in pH. Furthermore, increase in pH
+increases order quantities in both cases.
+With higher proﬁt potential in the high-end market, the ﬁrm further increases engagement in
+production and upgrading activities.
+4.4.3 Impact of Demand Correlation and Cost of Upgrading
+In our numerical observations, we have observed decrease in value of upgrading and increase in
+optimal order quantity as demand correlation increases. As upgrading increases the inventory of
+high quality product, which can be used to meet demand of both markets, it allows risk pooling of
+demand risks. Therefore, it is expected that upgrading ﬂexibility will have risk pooling features.
+Our numerical results study the behavior of various optimal proﬁt functions against demand
+correlation and cost of upgrading. Demand distribution assumed in this experiment is a bivariate
+normal with the following parameters µH = 15, µL = 10 and σ2
+H = 9, σ2
+L = 4, σHL = 6ρ. We ﬁx
+c = 3,γ = 0.7. Yield distribution is Beta(3, 1). As expected, our results show that expected proﬁts
+decrease in correlation coeﬃcient ρ. Finally we establish that an increase in the cost of upgrading
+will decrease the optimal upgrading proﬁt as well as value of upgrading. Even with highest cost
+of upgrading at cu = 4, value of upgrading on average accounts for 15% of the optimal expected
+proﬁt without upgrading.
+4.4.4 Impact of Yield Uncertainty
+Uncertainty in yield is a key factor in optimal upgrading decision. In general, we expect the value of
+upgrading to increase when the distribution of yield favors lower rates of the high quality product
+α. The following sensitivity result will help illustrate how the optimal expected proﬁts depend on
+the characteristic of yield distribution. We assume a parametric family of Beta distributions with
+scalar parameter θ such that α(θ) follows Beta(t(1−θ) + 1,tθ + 1), where t >0 and θ∈ [0, 1].
+Figure 6 illustrates the eﬀect of θ on the shape of distribution. We use the properties of stochastic
+order for Beta distribution proved by Adell et al. (1993).(See Shaked and Shanthikumar (2007) for
+more stochastic order results)
+Proposition 5. Let yield rateα(θ) follow beta distribution with scale parameterθ. Optimal expected
+proﬁtsJ∗
+U and J∗
+O are decreasing in θ and VoU is increasing in θ.
+9
+[PDF PAGE 10]
+−1 0 1
+120
+125
+130
+135
+140
+145
+150
+155
+160
+165
+170
+ρ
+Expected Optimal Profit 
+cu=0 
+−1 0 1
+ρ
+cu=2 
+−1 0 1
+ρ
+cu=3 
+−1 0 1
+ρ
+cu=4 
+ 
+ 
+Q > ( α,D) > x 
+Q > α > U > D > x 
+Q > (α ,D) > (U,x) 
+(Q,U,x) 
+Q > α > (U,x) 
+No-upgrading Problem
+Upgrading Problem
+Quick-Upgrading Benchmark
+Deterministic Yield & Demand Benchmark 
+Deterministic Demand Benchmark
+Description Color/Style Sequence of events
+Figure 5. Eﬀect of demand correlation ρ and upgrading cost cu
+0
+1
+2
+3
+4
+0.2 0.4 0.6 0.8 1
+1θ =
+0.8 
+θ =
+0.6 
+θ =
+0.4 
+θ = 0.2 θ = 0θ =
+Figure 6. Family of Beta distributions with t = 3 and scale parameter θ
+Note that as θ increases, average yield decreases and yield variance ﬁrst increases and then
+decreases. One can interpret increases in θ as a transformation of the yield distribution towards
+lower yield rates α. Intuitively, with worse yield rate, the optimal expected proﬁt in both cases
+decrease. Furthermore, when there is no upgrading ﬂexibility, proﬁt declines faster, which results
+in an increase in the value of upgrading. Therefore, upgrading is of more value to the ﬁrm when
+distribution of yield is associated with higher values of θ.
+In our numeric analysis we used a bivariate normal distribution with µH = 15, µL = 10 and
+σ2
+H = 9, σ2
+L = 4, σHL = 0. Yield rate α(θ) follows the parametric beta distribution as previously
+introduced. First observation is the dramatic decrease in the optimal expected proﬁt in case of
+no-upgrading, for both price values, as yield distribution shifts toward lower mean and positive
+skewness. Even though optimal upgrading proﬁt is also decreasing, the overall eﬀect leads to in-
+10
+[PDF PAGE 11]
+0 0. 1 0.2 0.3 0. 4 0.5 0.6 0. 7 0.8 0.9 10
+20 
+40 
+60 
+80 
+100
+120
+140
+160
+180
+θ
+Optimal Expected Profit 
+ 
+Upgrading pH=12 : No-upgrading 
+Upgrading No-upgrading pH=14 : 
+Figure 7. Eﬀect of yield parameter θ and high quality sale price pH
+crease in the value of upgrading. That is, upgrading is more valuable when yield distribution results
+in lower yield rates for the high quality product. The value of upgrading accounts for 7% (θ = 0)to
+almost 100% (θ = 1).
+5. F ormulation of a General Model
+In a general model there can be n markets and m products. Yield rate is denoted by the random
+vector α = (α1,...αn), where ∑
+iαi = 1. In the beginning of the second stage, each product i has
+yi = αiQ available inventory, with speciﬁed quality grade gi∈ [0, 1]. Without loss of generality,
+we assume 0 ≤ gn < ... < g1≤ 1. The ﬁrm can transfer uij units of product from lower quality
+gi to higher quality grade gj at unit cost cij, to arrive at post-upgrade inventory q = (q1,...,q n).
+In the beginning of the selling season and after realization of demand, ﬁrm satisﬁes demand of m
+classes from on-hand inventoryq. Demand is a random vectord = (d1,...,d m) with joint probability
+density function f(d). We denote the set of products as P and set of markets as C.
+Before preceding with the model formulation, we discuss appropriate foundations of quality
+constraints in each end-market as encountered in various applications.
+5.1 Formulation of Quality Constraints
+The end-markets have heterogeneous requirement on product qualities. As noted before, the quality
+level of product j asgj. The end-markets quality requirements can be of two forms: 1) the average
+quality of supplied products to marketk must meet a certain thresholdγk; 2) the fraction of supply
+to market k which meet a quality level γk has to be higher than a percentile ρk. Mathematically
+the two forms can be expressed as:
+11
+[PDF PAGE 12]
+(1): Average quality requirement(γk)
+∑
+jgjxjk
+∑
+jxjk
+≥γk (5a)
+(2): Fractional quality requirement(γk,ρk)
+∑
+j 1{gj≥γk}xjk
+∑
+jxjk
+≥ρk (5b)
+The fractional quality requirement encompass a wider range of situations than the average
+quality requirement, and therefore our model will be focusing on this class.
+We would like to point out that both of the above quality requirement constraints can be captured
+in the following transformed constraint:
+∑
+j∈P
+(1−ajk)xjk≤ 0 (6)
+where ajk is appropriately deﬁned depending on the end-market quality requirement used, when
+using the ”average quality requirement” deﬁnition as in (5a),
+ajk = gj
+γk
+(6a)
+and when using the ”Fractional quality requirement” deﬁnition as in (5b),
+ajk = I{gj≥γk}
+ρk
+(6b)
+5.2 Stochastic Program Formulation
+As for the simpler two product, two market problem, we proceed to formulate the ﬁrm’s decisions
+as a three stage stochastic optimization problem.
+Allocation Decision. In this stage, ﬁrm maximizes the sales revenue from allocation of available
+inventory q to demand classes d, according to quality requirement of each demand class. The
+allocation decision(AP) can be formulated as a linear program:
+(AP) r(q,d ) := maxxjk
+j∈P,k∈C
+∑
+j∈P
+∑
+k∈C
+pkxjk (7)
+subject to:
+∑
+j∈P
+xjk≤dk, ∀k∈C, (7a)
+∑
+k∈C
+xjk≤qj, ∀j∈P, (7b)
+∑
+j∈P
+(1−ajk)xjk≤ 0, ∀k∈C, (7c)
+xjk≥ 0, ∀j∈P,∀k∈C. (7d)
+where (7a) and (7b) are demand and capacity constraints, respectively. The quality constraint (7c)
+is discussed as above.
+12
+[PDF PAGE 13]
+Upgrading Decision . At the second stage, the ﬁrm decides on the optimal target inventory
+level q after using quality upgrading processes. In other words, with y = (y1,...,y n) on hand
+inventories of the various products, and exogenous upgrading costs cij in upgrading product of
+quality i to product of quality j, the ﬁrm seeks a strategy of product upgrading that maximizes
+the expected value of sales minus upgrading costs. The ”Upgrading” problem( UP) in this stage
+can be formulated as follows:
+(UP) Π( y) = maxuij
+i,j∈P, i>j
+Ed [r(q,d )]−
+n−1∑
+j=1
+∑
+i>j
+cijuij (8)
+subject to: qi =yi +
+∑
+j>i
+uji−
+∑
+j<i
+uij, ∀i∈P, (8a)
+∑
+j<i
+uij≤yi, ∀i ={1,...,n}, (8b)
+uij≥ 0, ∀i,j ∈P. (8c)
+Though we don’t put any constraint on possibly downgrading, i.e., uij̸= 0 for i≥j, it will be
+trivial to see that such decisions would never occur if cij≥ 0 for i≥j. Under this condition, any
+downgrading decision would be dominated by a leave-alone decision.
+Production Decision . While facing yield uncertainty, the ﬁrm decides the total quantity of
+the single input Q in the co-production system at unit production cost c. The ”Production” prob-
+lem(PP) at this stage is as follows:
+(PP) max
+Q≥0
+J(Q) := Eα[Π(αQ)]−cQ (9)
+With this general formulation of the three stage optimization problem, the following result can
+be stated:
+Proposition 6. The optimal allocation proﬁt r(q,d ) is concave in q, the optimal upgrading proﬁt
+Π(y) is concave in y and the optimal ﬁrm value J(Q) is concave in Q.
+One important implication of Proposition 6 is that an optimal production quantity Q∗ exists.
+However, solving the general formulation of the problem for multi-product, multi-market appli-
+cation may be computationally challenging. We suggest exploiting the concavity of the objective
+functions in the stochastic variables as follows.
+By considering a deterministic demand equal to expected value of d, we obtain an upper-bound
+on the solution of the expected proﬁt. Also, since Π( .) is concave, replacing α by the deterministic
+yield rate at equal expected value, yields an upper-bound on the optimal expected proﬁt. In other
+words, the solution of a large deterministic linear program would provide reasonable bound on
+expected proﬁts and suggested values on input quantities to the co-production system that can be
+further evaluated on their actual proﬁt performance.
+6. Concluding Remarks and F uture Directions
+In this paper we studied the operational decisions of a co-production system of a single input and
+multiple output products under both yield and demand uncertainty. Products are diﬀerentiated
+by quality levels and the yield rate of the co-production process for each quality level product is
+random. After the yield uncertainty is realized, the ﬁrm has an intermediate opportunity to engage
+in a costly upgrading process to adjust the inventories of products of diﬀerent quality levels. End-
+market demand is segmented into classes with heterogeneous quality requirements. Blending of
+13
+[PDF PAGE 14]
+products of diﬀerent quality levels may be used to meet quality requirements of diﬀerent segments.
+We formulated the problem of deciding the quantity of the early input to the co-production process,
+the quality upgrading decision after yield realization, and the optimal blending decision for meeting
+the multi-segment end-market demand as a three-stage stochastic model, and characterized optimal
+decisions at each stage.
+Our most insightful results are presented for a highly stylized model of a two products, two
+demand segments case, with the high-quality product serving as a sole source for meeting high-end
+market demand and a blend of high and low quality products as a source for meeting low-end
+market demand. We show that if prices favor the high quality product, the blending scheme follows
+a greedy pattern that prioritizes high-end market demand. Furthermore, the quality upgrading
+policy is of a simple single threshold type; i.e., if the realized high quality yield is lower than a
+threshold, the ﬁrm needs to upgrade and otherwise no upgrading is needed.
+Although upgrading is costly, we show that the total expected proﬁt is always higher with
+upgrading. Moreover, the total input quantity to the co-production process is lower when upgrading
+is available than it’s not. Multiple factors of the decision environment can aﬀect the magnitude of
+the value of the upgrading ﬂexibility. We show that increases in co-production costs leads to higher
+value of upgrading. On the other hand, higher costs of upgrading decreases the ﬂexibility value.
+Furthermore, higher demand correlation leads to lower total expected proﬁts, and also decreases
+the value of upgrading ﬂexibility.
+The speciﬁc characteristics of the yield ratio distribution play an important role in aﬀecting
+the value of upgrading as well. We oﬀer insights on the eﬀects of changes in the distribution of
+high quality yield ratio. We show that the value of upgrading ﬂexibility is increasing in the scale
+parameter of a Beta distribution which represents the yield ratio of the high quality output.
+Future research can focus on providing more eﬀective heuristic policies for the general model
+when the number of products and market segments limits the applicability of a stochastic pro-
+gramming approach. In the general model of the problem, we show that optimal decisions of the
+three stage problem exist but it is hard to characterize the exact policy. A good heuristic policy
+may provide great value for practical purposes.
+References
+Adell, Jos´ eA, F Germ´ an Bad´ ıa, Jes´ us de la Cal. 1993. Beta-type operators preserve shape properties.
+Stochastic processes and their applications 48(1) 1–8.
+Bassok, Yehuda, Ravi Anupindi, Ram Akella. 1999. Single-period multiproduct inventory models with
+substitution. Operations Research 47(4) 632–642.
+Bitran, Gabriel R, Sriram Dasu. 1992. Ordering policies in an environment of stochastic yields and substi-
+tutable demands. Operations Research 40(5) 999–1017.
+Bitran, Gabriel R, Stephen M Gilbert. 1994. Co-production processes with random yields in the semicon-
+ductor industry. Operations Research 42(3) 476–491.
+Bitran, Gabriel R, Thin-Yin Leong. 1992. Deterministic approximations to co-production problems with
+service constraints and random yields. Management Science 38(5) 724–742.
+Boyabatl, Onur, Paul R. Kleindorfer, Stephen R. Koontz. 2011. Integrating long-term and short-term
+contracting in beef supply chains. Management Science 57(10) 1771–1787.
+Dong, Lingxiu, Panos Kouvelis, Xiaole Wu. 2014. The value of operational ﬂexibility in the presence of input
+and output price uncertainties with oil reﬁning applications. Management Science 60(12) 2908–2926.
+Harrison, J Michael, Jan A Van Mieghem. 1999. Multi-resource investment strategies: Operational hedging
+under demand uncertainty. European Journal of Operational Research 113(1) 17–29.
+Hsu, Arthur, Yehuda Bassok. 1999. Random yield and random demand in a production system with down-
+ward substitution. Operations Research 47(2) 277–290.
+Shaked, Moshe, J George Shanthikumar. 2007. Stochastic orders. Springer Science & Business Media.
+Tomlin, Brian, Yimin Wang. 2008. Pricing and operational recourse in coproduction systems. Management
+Science 54(3) 522–537.
+14
+[PDF PAGE 15]
+Van Mieghem, Jan A. 2004. Notecommonality strategies: Value drivers and equivalence with ﬂexible capacity
+and inventory substitution. Management Science 50(3) 419–424.
+Van Mieghem, Jan A., Maqbool Dada. 1999. Price versus production postponement: Capacity and compe-
+tition. Management Science 45(12) 1639–1649.
+Appendix A. Proofs
+Proof of Proposition 1 Let π(q,y ) = ED[r(q,d )]−cu(qH−yH). We know from proposition 6
+that π(.,y ) is concave, and by lemma 1 diﬀerentiable in everywhere. Fix Q and deﬁne A(Q) =
+{q|qH +qL =Q} . A(Q) is closed and compact. Therefore, there exists a unique maximizer qt(Q)
+ofπ(q,y ) overA(Q) such thatq∗
+H =qt andQ∗
+L =Q−qt. For the constrained problem with one way
+transfer possibility, the optimal values are adjusted so that q∗
+H(y) =max{qt,yH}. To characterize
+qt(Q), we use the directional derivative of π(q,y ) in the direction d(qH,qL) = (+1,−1)dϵ, where
+dϵ> 0. Using the result of lemma 1 and shadow vectors in table 1, we have:
+√
+2dπ = Eλ(q,d ).(+1,−1)dϵ−cudϵ
+√
+2dπ
+dϵ = pL
+γ P2 +pH P3−cu
+where Pi is shorthand forPr (Ωi(q)). Let F(qH,Q ) = pL
+γ P2+pH P3−cu. We haveF(0, 0) =pH−cu>
+0. Consider partial derivative of F(qH,Q ) w.r.t. qH:
+∂F
+∂qH
+=−
+(
+pH− pL
+γ
+)∫ ∞
+0
+f(qH,l )dl− pL
+1−γ
+∫ ∞
+Q−qH
+1−γ
+f((qH−γQ)+
+1−γ ,l )dl
+− pL
+γ2
+∫ qH
+(
+qH −γQ
+1−γ
+)+f(h,qH−h
+γ )dh< 0 (A1)
+Fix qL = 0. By F decreasing in qH, there exists qH > 0 such that F(qH,qH) = 0. Hence, Q =qH.
+Fix any Q<Q . Since F is decreasing in qH and F(Q,Q )> 0, we have qt(Q) =Q. Fix any Q>Q .
+F =pH−cu> 0 atqH = 0 and negative when qH =Q, hence, there exist a unique qt(Q) such that
+F(qt(Q),Q ) = 0. Next we show that qt(Q) is non-decreasing in Q. ForQ<Q , we haveqt(Q) =Q.
+ForQ>Q , we use the implicit function theorem:
+∂qt(Q)
+∂Q =−
+∂F(qH,Q)
+∂Q
+∂F(qH,Q)
+∂qH
+(A2)
+where
+∂F(qH,Q )
+∂Q = pL
+1−γ
+∫ ∞
+Q−qH
+1−γ
+f((qH−γQ)+
+1−γ ,l )dl≥ 0. (A3)
+By (A1)-(A3), we conclude that qt(Q) is non-decreasing in Q. Finally, note that when qH≤γQ in
+(A3), we get ∂qt(Q)
+∂Q = 0. LetQ satisfyqt(Q) =γQ.Q exists and is unique byqt(Q) non-decreasing.
+Therefore, for any Q≥Q, qt(Q) is constant.
+Proof of proposition 2
+15
+[PDF PAGE 16]
+(1) Proposition 6 proves a general case and the results can be directly borrowed.
+(2) Let Q = 0. Then JU(Q) =JO(Q) = 0. Fix Q> 0. The diﬀerence between JU(Q) and JO(Q)
+can be written as follows:
+JU(Q)−JO(Q) =Eα<qt (Q)
+Q
+[
+Ed
+[
+r(qt(Q),Q−qt(Q),d )
+]
+− Ed [r(αQ, (1−αQ),d )]−cu(qt(Q)−αQ)
+]
+=Eα<qt (Q)
+Q
+[
+Ed
+[
+r(qt(Q),Q−qt(Q),d )
+]
+−cu(qt(Q)−αQ)− Ed [r(αQ, (1−αQ),d )]
+qt(Q)−αQ
+]
+The argument inside the expectation is the directional derivative of π(.,d ) in the direction− →v = (+1,−1)′(qt(Q)−αQ). Recall from the discussion of optimal upgrading policy, that the
+directional derivative is non-negative whenyH =αQ<q t(Q). Therefore, the diﬀerence is non-
+negative. Next, we show that optimal production decision is always smaller with upgrading.
+Let Q∗
+U be a maximizer of JU(Q). Therefore, Q∗
+U satisﬁes the ﬁrst order condition:
+∂JU(Q)
+∂Q =−c +
+∫ qt (Q)
+Q
+0
+[∂Edr
+∂qH
+× ∂qt(Q)
+∂Q + ∂Edr
+∂qL
+× (1− ∂qt(Q)
+∂Q )−cu
+(∂qt(Q)
+∂Q −α
+)]
+g(α)dα
++
+∫ 1
+qt (Q)
+Q
+( ∂
+∂Q Ed [r(αQ, (1−α)Q,d )]
+)
+g(α)dα
+=−c +
+∫ qt (Q)
+Q
+0
+(∂qt(Q)
+∂Q × F(qt(Q),Q ) +pLP1 +αcu
+)
+g(α)dα
++
+∫ 1
+qt (Q)
+Q
+( ∂
+∂Q Ed [r(αQ, (1−α)Q,d )]
+)
+g(α)dα
+=−c +
+∫ qt (Q)
+Q
+0
+(
+pLP1 + αpL
+γ P2 +αpH P3
+)
+g(α)dα +
+∫ 1
+qt (Q)
+Q
+( ∂
+∂Q Ed [r(αQ, (1−α)Q,d )]
+)
+g(α)dα
+Now, we evaluate the derivative of JO(Q) at Q∗
+U. We have:
+∂JO(Q)
+∂Q =−c +
+∫ 1
+0
+( ∂
+∂Q Ed [r(αQ, (1−α)Q,d )]
+)
+g(α)dα
+=−c +
+∫ 1
+0
+(
+pLP1 + αpL
+γ P2 +αpH P3
+)
+g(α)dα
+We ignore the common components in both derivatives and only analyze the diﬀerence. Note
+that Pi is a function of (qH,Q ). We need to compare the value of∂Er
+∂Q =pLP1+αpL
+γ P2+αpH P3
+at (αQ∗
+U,Q∗
+U) versus (qt(Q∗
+U),Q∗
+U). It is easy to show that ∂2Er
+∂Q∂qH
+< 0. Since within the bounds
+of the integral; i.e. α∈
+(
+0, qt(Q)
+Q
+)
+we have αQ∗
+U ≤ qt(Q∗
+U), therefore, ∂JO(Q)
+∂Q |Q=Q∗
+U > 0.
+Therefore,JO(Q) is non-decreasing atQ =Q∗
+U. By concavity ofJO(.), we concludeQ∗
+O >Q∗
+U.
+Proof of proposition 3 We begin by analyzing the eﬀect of production cost c. Observe that
+∂J (Q)
+∂c =−Q. Hence, ∂VoU
+∂c =−Q∗
+U +Q∗
+O and by proposition 2 we conclude that VoU increases in
+16
+[PDF PAGE 17]
+c. Next, we use the implicit function theorem to ﬁnd the impact of c on Q∗
+U.
+∂Q∗
+U
+∂c =−
+∂2J(Q,c)
+∂Q∂c
+∂2J(Q,c)
+∂Q2
+=− −1
+∂2J(Q,c)
+∂Q2
+< 0
+The inequality holds by concavity of J in Q. Hence, Q∗
+U and Q∗
+O both decrease in c. Now,
+consider the eﬀect of upgrading cost cu. Clearly the benchmark problem and it’s optimal solu-
+tion is not aﬀected by a change in cu. For the upgrading problem, we have ∂JU(Q,cu)
+∂cu
+|Q=Q∗
+U =
+Eα<qt (Q)
+Q
+[
+−qt(Q∗
+U) +αQ
+]
+< 0. Hence, J∗
+U and therefore VoU are decreasing in cu. To show that
+Q∗
+U is increasing in cu, we use implicit function theorem:
+∂Q∗
+U
+∂cu
+=−
+∂2J(Q,cu)
+∂Q∂cu
+∂2J(Q,cu)
+∂Q2
+=−
+E[α|α< qt(Q)
+Q ]
+∂2J(Q,c)
+∂Q2
+> 0
+Proof of proposition 5 We begin by showing that Π(y(α,Q )) is concave increasing in α. First,
+note that Π(y) is increasing in y, therefore, Π is increasing in α. Concavity of Π in α is shown
+below:
+Π(αβQ, (1−αβ)Q) =Π(βα1Q +βα2Q,β (1−α1)Q,β(1−α2)Q),
+≥βΠ(α1Q, (1−α1)Q) + (1−β)Π(α2Q, (1−α2)Q). (A4)
+Next, we use the following result by Adell et al. (1993); If X(θ) follows Beta(t(1−θ) + 1,tθ + 1),
+and fort> 0 andθ∈ (0, 1), then{α(θ),θ∈ (0, 1)}∈ SDCX ; i.e. if θ2>θ 1, thenα(θ2)≥dcxα(θ1).
+As a result, E[f(α(θ2))]≥ E[f(α(θ1))] for any convex decreasing f. The result follows by letting
+f =−Π.
+Proof of Proposition 6 Concavity of r(q,d ) in q follows from basic principles of linear pro-
+gramming. We include the proof here for convenience. Let X ={xjk|j∈P,k ∈C}. Let X1 and
+X2 be optimal solutions of the maximization problem (7) for arbitrary q1,q 2∈ Rn
++, respectively.
+Let qβ = βq1 + βq2, where β = 1 − β and β ∈ [0, 1]. By linearity of constraints (7b)-(7d),
+Xβ =βX 1 +βX 2 is a feasible solution for qβ. Therefore,
+r(qβ,d )≥
+∑
+j∈P
+∑
+k∈C
+pkxβ
+jk,
+=β
+∑
+j∈P
+∑
+k∈C
+pkx1
+jk +β
+∑
+j∈P
+∑
+k∈C
+pkx2
+jk,
+=βr(q1,d ) +βr(q2,d ).
+Next, we show concavity of Π( y). By linearity of q in (u,y ) in (8a), concavity of r(.,d ) and
+preservation of concavity under expectation, we have Ed[r(q(u,y ),d )] is jointly concave in ( u,y ).
+Concavity of π(q(u,y )) follows directly from linearity of second term in objective function.
+Now, let C = {(u,y )|u≥ 0, u∈U(y)} be the feasible space of the upgrading problem, where
+U(y) =
+{
+u|∑
+j<iuij≤yi,∀i = 2,...,n
+}
+. It is straightforward to show that U(y) is non-empty
+and C is convex. Let y1,y 2 ∈ Rn
++ be arbitrary. Let δ > 0. There exists ut ∈ U(yt) such that
+17
+[PDF PAGE 18]
+π(q(ut,yt))≥ Π(yt)−δ for t = 1, 2. Let θ∈ [0, 1] and θ = 1−θ. We have:
+θΠ(y1) +θΠ(y2) ≤θπ(q(u1,y 1)) +θπ(q(u2,y 2)) +δ,
+≤π(θq(u1,y 1) +θq(u2,y 2)) +δ,
+=π
+(
+q(θu1 +θu2,θy 1 +θy2)
+)
++δ,
+≤ Π(θy1 +θy2) +δ
+where the ﬁrst inequality follows by assumption, second inequality is by concavity of π(.), third
+inequality follows form linearity of q(u,y ) and last inequality holds by deﬁnition of Π( .). Since δ
+is arbitrary, the inequality must hold for δ = 0. Otherwise, a contradiction can be reached. Hence,
+Π(y) is concave in y. Finally, we need to show that J(.) is concave. Fix α, let Q1,Q 2∈ R+ be
+arbitrary and θ,θ∈ [0, 1] as deﬁned above. We have:
+Π
+(
+α(θQ1 +θQ2)
+)
+−c(θQ1 +θQ2)≥θΠ(αQ1) +θΠ(αQ2)−c(θQ1 +θQ2),
+=θ
+(
+Π(αQ1)−cQ1)
++θ
+(
+Π(αQ2)−cQ2)
+.
+Taking expectation over α from both sides will give the result; that is, J(Q) is concave in Q.
+18

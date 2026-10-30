@@ -1,0 +1,24 @@
+{
+  "scope": "Teaching arithmetic only, not a new manufacturing experiment or fitted quality distribution",
+  "A": 86,
+  "B": 70,
+  "E": 25,
+  "L": 15,
+  "D1": 100,
+  "D2": 50,
+  "R": 15,
+  "eta": 0.97,
+  "needed_successes": 14,
+  "service_if_repair": 0.9270275139940627,
+  "service_if_no_repair": 0,
+  "gain_before_setup": 1091.0024643258962,
+  "setup_fee": 2000,
+  "gain_after_setup": -908.9975356741038,
+  "teaching_weights": [
+    0.5,
+    0.3,
+    0.2
+  ],
+  "teaching_service_if_case2_open": 0.7781082541982187,
+  "teaching_service_if_case2_closed": 0.5
+}

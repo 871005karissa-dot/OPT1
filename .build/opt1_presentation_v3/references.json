@@ -1,0 +1,118 @@
+[
+  {
+    "id":"R1","short":"Chen & Lin (2026)","authors":"Chen, H.-Y., & Lin, Y.-K.","year":"2026",
+    "title":"Assessing system reliability in multi-grade production under different demand fulfilment policies via a multistate flow network",
+    "publication":"Journal of the Operational Research Society. Advance online publication.",
+    "doi":"10.1080/01605682.2026.2708981","url":"https://doi.org/10.1080/01605682.2026.2708981",
+    "status":"原始案例全文已取得，已核對政策、工序與未來工作",
+    "locator":"§3.3：PDF p.7；§5.1與表2–3：PDF p.11起；§7：PDF p.16–17。PDF含封面，與正文頁碼差一頁。",
+    "reading":"原始案例。兩政策見PDF p.7，後續方向見p.17。",
+    "local":"paper/Assessing system reliability in multi-grade production under different demand fulfilment policies via a multistate flow network.pdf"
+  },
+  {
+    "id":"R2","short":"Chen et al. (2018)","authors":"Chen, X., Kouvelis, P., & Biazaran, M.","year":"2018",
+    "title":"Value of operational flexibility in co-production systems with yield and demand uncertainty",
+    "publication":"International Journal of Production Research, 56(1–2), 491–507.",
+    "doi":"10.1080/00207543.2017.1402138","url":"https://doi.org/10.1080/00207543.2017.1402138",
+    "status":"已取得18頁作者稿，實讀部分章節，未與期刊版逐頁對照",
+    "locator":"18頁作者稿PDF p.1,3–8,11–14；p.5式(2)、p.13均值上界、一般化式(8)。期刊頁碼不能套到作者稿。",
+    "reading":"18頁作者稿，已讀p.1,3–8,11–14。",
+    "local":"research/2026-10-30/literature/chen_kouvelis_biazaran_2018_author.pdf",
+    "author_url":"https://facultystaff.richmond.edu/~bchen/Research/OperFlexibility2018.pdf"
+  },
+  {
+    "id":"R3","short":"Jiang et al. (2017)","authors":"Jiang, Y., Xu, J., Shen, S., & Shi, C.","year":"2017",
+    "title":"Production planning problems with joint service-level guarantee: a computational study",
+    "publication":"International Journal of Production Research, 55(1), 38–58.",
+    "doi":"10.1080/00207543.2016.1193245","url":"https://doi.org/10.1080/00207543.2016.1193245",
+    "status":"已取得22頁期刊PDF含封面，實讀部分章節",
+    "locator":"PDF p.2–7,10–12，即期刊正文p.38–43,46–48；PDF p.5式(3)。",
+    "reading":"期刊PDF已讀p.2–7,10–12，含封面頁。",
+    "local":"research/2026-10-30/literature/jiang_et_al_2017.pdf"
+  },
+  {
+    "id":"R4","short":"Kohlmann & Sahling (2024)","authors":"Kohlmann, P., & Sahling, F.","year":"2024",
+    "title":"A flexible planning approach for integrated lot sizing and rework planning with random proportion of defective products",
+    "publication":"International Journal of Production Research, 62(19), 6961–6978.",
+    "doi":"10.1080/00207543.2024.2314717","url":"https://doi.org/10.1080/00207543.2024.2314717",
+    "status":"已取得期刊PDF，實讀模型與數值部分",
+    "locator":"PDF p.5–10,12,16；共享正常／重工產能與分開啟動；式(13)已渲染核對。服務定義是加權期望欠交。",
+    "reading":"期刊PDF已讀p.5–10,12,16，核對式(13)。",
+    "local":"research/2026-10-28/kohlmann_sahling_2024.pdf"
+  },
+  {
+    "id":"R5","short":"Berling & Sonntag (2022)","authors":"Berling, P., & Sonntag, D. R.","year":"2022",
+    "title":"Inventory control in production–inventory systems with random yield and rework: The unit-tracking approach",
+    "publication":"Production and Operations Management, 31(6), 2628–2645.",
+    "doi":"10.1111/poms.13706","url":"https://doi.org/10.1111/poms.13706",
+    "status":"已讀出版社HTML相關章節，沒有本地PDF",
+    "locator":"出版社HTML §6.1、§6.3與§7.2。逐件／批次良率及非完美重工；§7.2未區分合格品質等級。",
+    "reading":"實讀出版社HTML §6.1、§6.3、§7.2。"
+  },
+  {
+    "id":"R6","short":"Dodd et al. (2015)","authors":"Dodd, C., Scanlan, J., Marsh, R., & Wiseall, S.","year":"2015",
+    "title":"Improving profitability of optimal mean setting with multiple feature means for dual quality characteristics",
+    "publication":"The International Journal of Advanced Manufacturing Technology, 81, 1767–1780.",
+    "doi":"10.1007/s00170-015-7254-4","url":"https://doi.org/10.1007/s00170-015-7254-4",
+    "status":"在線讀作者14頁稿的相關部分，本地PDF下載曾403",
+    "locator":"Southampton作者稿PDF p.1–2,6–8。失敗特性、加工方向及多特性製程設定；本案可修比例公式由本案另行推導。",
+    "reading":"在線作者稿已讀p.1–2,6–8，本地下載曾403。",
+    "author_url":"https://eprints.soton.ac.uk/375226/1/MultipleOptimalMeans_Manuscript.pdf"
+  },
+  {
+    "id":"R7","short":"Boutarfa et al. (2024)","authors":"Boutarfa, Y., Senoussi, A., Brahimi, N., & Aouam, T.","year":"2024",
+    "title":"Integration and substitution in hybrid manufacturing and refurbishing systems",
+    "publication":"International Journal of Production Economics, 274, 109308.",
+    "doi":"10.1016/j.ijpe.2024.109308","url":"https://doi.org/10.1016/j.ijpe.2024.109308",
+    "status":"已取得23頁開放期刊PDF，實讀相關部分",
+    "locator":"PDF p.1,5,7–10；式(50)共享產線已渲染核對。已讀多等級模型為確定性，隨機擴充採單等級。",
+    "reading":"23頁期刊PDF，已讀p.1,5,7–10及式(50)。",
+    "local":"research/2026-10-28/boutarfa_et_al_2024.pdf"
+  },
+  {
+    "id":"R8","short":"Sereshti et al. (2022, v1)","authors":"Sereshti, N., Bodur, M., & Luedtke, J. R.","year":"2022",
+    "title":"Stochastic dynamic lot-sizing with supplier-driven substitution and service level constraints",
+    "publication":"arXiv:2301.00258v1. Preprint dated 31 December 2022.",
+    "doi":"10.48550/arXiv.2301.00258","url":"https://arxiv.org/abs/2301.00258v1",
+    "status":"實讀2022預印本v1 p.1–33，未逐頁核對2026期刊版",
+    "locator":"2022-12-31預印本v1 PDF p.1–33，p.25表6另作視覺核對。2026期刊版DOI 10.1016/j.ejor.2026.01.007僅核書目，不作本簡報的模型閱讀版本。",
+    "reading":"實讀2022預印本v1 p.1–33，引用版本固定為v1。",
+    "local":"research/2026-10-28/sereshti_bodur_luedtke_2022_preprint.pdf"
+  },
+  {
+    "id":"R9","short":"Tsai et al. (2024)","authors":"Tsai, S.-C., Yeh, Y., Wang, H., & Chou, T.-C.","year":"2024",
+    "title":"Efficient optimization in stochastic production planning problems with product substitution",
+    "publication":"Computers & Operations Research, 164, 106544.",
+    "doi":"10.1016/j.cor.2024.106544","url":"https://doi.org/10.1016/j.cor.2024.106544",
+    "status":"僅摘要、導言與可見片段，全文尚未取得",
+    "locator":"出版社摘要／導言／可見section片段，PDF曾403。服務事件、安全量與品質後返修需補全文核對。",
+    "reading":"待補全文。現僅摘要、導言及片段。"
+  },
+  {
+    "id":"R10","short":"Hsu & Bassok (1999)","authors":"Hsu, A., & Bassok, Y.","year":"1999",
+    "title":"Random yield and random demand in a production system with downward substitution",
+    "publication":"Operations Research, 47(2), 277–290.",
+    "doi":"10.1287/opre.47.2.277","url":"https://doi.org/10.1287/opre.47.2.277",
+    "status":"僅出版社摘要，全文尚未取得",
+    "locator":"出版社摘要與書目。PDF回傳Cookie HTML，不能以此判定全文沒有共同服務或選別返修。",
+    "reading":"待補全文。現僅出版社摘要及書目。"
+  },
+  {
+    "id":"R11","short":"Bitran & Leong (1992)","authors":"Bitran, G. R., & Leong, T.-Y.","year":"1992",
+    "title":"Deterministic approximations to co-production problems with service constraints and random yields",
+    "publication":"Management Science, 38(5), 724–742.",
+    "doi":"10.1287/mnsc.38.5.724","url":"https://doi.org/10.1287/mnsc.38.5.724",
+    "status":"僅出版社摘要，全文尚未取得",
+    "locator":"出版社摘要與書目。PDF曾403／Cookie頁。無法判定其近似是否含安全量，不能視為本案C比較器。",
+    "reading":"待補全文。現僅出版社摘要及書目。"
+  },
+  {
+    "id":"R12","short":"Hoeffding (1963)","authors":"Hoeffding, W.","year":"1963",
+    "title":"Probability inequalities for sums of bounded random variables",
+    "publication":"Journal of the American Statistical Association, 58(301), 13–30.",
+    "doi":"10.1080/01621459.1963.10500830","url":"https://doi.org/10.1080/01621459.1963.10500830",
+    "status":"標準工具來源，已核摘要與書目，未取得原文PDF",
+    "locator":"本案加權Bernoulli界及聯集界的自含推導見命題條件與證明稽核§8。只用作標準工具歸屬，未聲稱讀完原文證明。",
+    "reading":"已核摘要與書目，加權版本推導見本研究[S1] §8。"
+  }
+]

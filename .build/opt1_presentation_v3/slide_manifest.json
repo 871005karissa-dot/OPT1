@@ -1,0 +1,912 @@
+{
+  "slides": [
+    {
+      "page": 1,
+      "title": "有限批次品質與選別重工",
+      "spoken": "我的研究是接著原稿往下做。原稿比較不同交貨方式能不能交足，我多問一步：如果允許重工，該投多少、看到哪些品質狀況才要修。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/從零理解_研究目標與現況.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md"
+      ],
+      "ids": [
+        "R1",
+        "S1"
+      ],
+      "citation": "研究起點：[R1] Chen & Lin (2026)　　本研究模型：[S1]",
+      "referenceSlides": [
+        31
+      ]
+    },
+    {
+      "page": 2,
+      "title": "這個研究問題從哪裡來",
+      "spoken": "這個方向是從原稿長出來的。原稿已經在看交足訂單的機率，也把多等級重工列成後續方向。我把這件事做成能計算、能比較的決策問題。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ],
+      "ids": [
+        "R1",
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "citation": "[R1] Chen & Lin (2026), §7, PDF p.17　　本案設定與結果：[S1–S3]",
+      "referenceSlides": [
+        31
+      ]
+    },
+    {
+      "page": 3,
+      "title": "研究問題、限制與主要發現",
+      "spoken": "我的問題還是怎麼投料、怎麼重工，讓期望利潤比較好。但有一個前提：高低品一起交足的機率，要先達到要求。教授還需要核定這個範圍。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ],
+      "ids": [
+        "R3",
+        "S1"
+      ],
+      "citation": "共同服務限制的前例：[R3] Jiang et al. (2017)　　本研究決策定義：[S1]",
+      "referenceSlides": [
+        32
+      ]
+    },
+    {
+      "page": 4,
+      "title": "原稿的兩個交貨政策",
+      "spoken": "原稿的兩個政策都在分配成品。第一個只交同等級；第二個可以把剩下的高品補給低品客戶。這個替代不用送回機器。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md",
+        "原始多等級論文PDF第7頁§3.3；原稿JORS_manuscript_anonymous_R5.docx"
+      ],
+      "ids": [
+        "R1",
+        "E1"
+      ],
+      "citation": "[R1] Chen & Lin (2026), §3.3, PDF p.7　　本頁100/50算例為教學示意",
+      "referenceSlides": [
+        31
+      ]
+    },
+    {
+      "page": 5,
+      "title": "向下替代與升級返修",
+      "spoken": "向下替代是高品直接交給低品客戶。重工則是把符合條件的低品再加工，嘗試升成高品。後者會花錢、占產能，而且可能失敗。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md"
+      ],
+      "ids": [
+        "R1",
+        "R2",
+        "S1"
+      ],
+      "citation": "替代政策：[R1] §3.3　　品質後升級前例：[R2] Chen et al. (2018)　　本案：[S1]",
+      "referenceSlides": [
+        31,
+        31
+      ]
+    },
+    {
+      "page": 6,
+      "title": "原有內容與本專案新增內容",
+      "spoken": "原稿已有分級、容量和替代。我加的是有限一批的件數變動、可修品限制，以及檢驗後才決定修不修。相對原稿有新增，還不等於學術首創。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md"
+      ],
+      "ids": [
+        "R1",
+        "S1"
+      ],
+      "citation": "原有模型：[R1]　　另附案例：重工case.docx　　本專案延伸：[S1]",
+      "referenceSlides": [
+        31
+      ]
+    },
+    {
+      "page": 7,
+      "title": "目前保留的產線流程",
+      "spoken": "正常生產先照固定規則做，檢驗後才知道有哪些成品。低品裡只有一部分能修，還得留夠低品訂單，用剩下的產能處理。最後一站只是待確認的例子。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/最小模型規格_v0.1.md"
+      ],
+      "ids": [
+        "R4",
+        "R6",
+        "S1"
+      ],
+      "citation": "共享產能前例：[R4]　　可修特性與方向：[R6]　　本案單向路徑設定：[S1]",
+      "referenceSlides": [
+        32,
+        33
+      ]
+    },
+    {
+      "page": 8,
+      "title": "決策與資訊揭露的時間順序",
+      "spoken": "順序不能顛倒。先投料，再知道容量、做完正常生產，接著看品質決定修不修。修好幾件是最後才知道，程式不能先看答案再選。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/最小模型規格_v0.1.md"
+      ],
+      "ids": [
+        "R2",
+        "S1"
+      ],
+      "citation": "品質揭露後升級前例：[R2] 作者稿p.3–5　　本案資訊時點與未知成功數：[S1]",
+      "referenceSlides": [
+        31
+      ]
+    },
+    {
+      "page": 9,
+      "title": "先算好一張規則表，現場再照表決定",
+      "spoken": "程式先在規劃時算好投入量和一張啟動表。現場不用重算所有可能，只要檢驗後知道件數和剩餘產能，再照表決定要不要修。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ],
+      "ids": [
+        "S1"
+      ],
+      "citation": "本研究規則與求解：[S1] stochastic_setup_frontier.py；命題稽核§3–4",
+      "referenceSlides": []
+    },
+    {
+      "page": 10,
+      "title": "程式需要哪些資料",
+      "spoken": "程式要先有訂單、達標要求、機台和成本，也要有品質和返修的機率。像成功率九成七，目前只是模型假設，不能當成工廠已量到的數據。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ],
+      "ids": [
+        "R1",
+        "S1"
+      ],
+      "citation": "原始機台與品質案例：[R1] §5.1、表2–3　　新增假設與成本口徑：[S1]",
+      "referenceSlides": [
+        31
+      ]
+    },
+    {
+      "page": 11,
+      "title": "固定一個投入量，程式如何計算",
+      "spoken": "先固定一個投入量。程式把可能的容量、品質和修復結果算進去，替每個決定算平均收益和交足率。再換另一個投入量做同樣的比較。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ],
+      "ids": [
+        "S1"
+      ],
+      "citation": "本研究條件分解：[S1] 命題稽核§2–4；求解器（標準機率公式）",
+      "referenceSlides": []
+    },
+    {
+      "page": 12,
+      "title": "合法返修量有三道上限",
+      "spoken": "例如低品有七十件，要留五十件交貨，最多能動二十件。可修的有二十五件，但產能只夠修十五件，所以最後最多只能送十五件。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/最小模型規格_v0.1.md"
+      ],
+      "ids": [
+        "R6",
+        "S1",
+        "E1"
+      ],
+      "citation": "方向與可修資格的文獻依據：[R6]　　本案上限及0/R推導：[S1] §1–2　　算例：[E1]",
+      "referenceSlides": [
+        33
+      ]
+    },
+    {
+      "page": 13,
+      "title": "啟動返修之後，仍可能交不齊",
+      "spoken": "這時高品有八十六件，還缺十四件。送十五件去修，成功十三件還是不夠，成功十四件才交得齊。所以送出十五件，不代表一定補得足。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md"
+      ],
+      "ids": [
+        "S1",
+        "E1"
+      ],
+      "citation": "本頁為教學狀態：[E1]　　合法行動與決策時點：[S1]",
+      "referenceSlides": []
+    },
+    {
+      "page": 14,
+      "title": "送15件返修，交足的機率怎麼算",
+      "spoken": "假設每件有九成七的機會修好，十五件裡至少修好十四件的機率，大約是92.7%。程式把這些可能結果加起來，不會拿平均14.55件直接當成交貨數量。",
+      "reserve": "P(Y≥14)=.97^15+15×.03×.97^14。以售價120、終端值90/30、返修成本12.4及F2000計，此狀態的期望增益約−909。這只解釋服務與收益需分開，未求新的全域政策。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/.build/opt1_presentation_v2/teaching_arithmetic.json"
+      ],
+      "ids": [
+        "S1",
+        "E1"
+      ],
+      "citation": "教學計算：[E1]，二項式尾機率　　模型與0/R條件：[S1] §1–3",
+      "referenceSlides": []
+    },
+    {
+      "page": 15,
+      "title": "整體服務是把各種情況加權相加",
+      "spoken": "接著要把不同情況合在一起。這個教學例裡，一半本來就能交足，三成靠重工，另外兩成仍缺貨。加權後約七成七八，才是整體交足率。",
+      "reserve": "三類情境為教學加總，並非從新多項式、DM或工廠資料擬合。以這張示意表的行動集合計，最大服務77.8108%。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/.build/opt1_presentation_v2/teaching_arithmetic.json"
+      ],
+      "ids": [
+        "E1"
+      ],
+      "citation": "教學權重與算例：[E1]；50%/30%/20%為說明用權重",
+      "referenceSlides": []
+    },
+    {
+      "page": 16,
+      "title": "啟動表如何兼顧利潤與達標",
+      "spoken": "修了可能比較容易交足，但不一定多賺。所以先納入有利潤的重工；如果整體交足率還不足，再找補足服務所需代價較小的情況。",
+      "reserve": "固定I下先開G≥F的正R狀態。未達α時，對b>0的其他狀態按(F−G)/b排序，以w×b累積服務。隨機化LP提供上界，邊界全開給固定可行規則與差距界。這不等於已求得所有確定性政策的最適。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ],
+      "ids": [
+        "S1"
+      ],
+      "citation": "本研究推導：[S1] 命題稽核§4（標準覆蓋排序、LP上界及固定規則差距）",
+      "referenceSlides": []
+    },
+    {
+      "page": 17,
+      "title": "達標後，以期望利潤挑投入",
+      "spoken": "最後只比較達標的投入。這個示意表裡，兩百件已經達標，但兩百一十件的期望利潤更好，所以選兩百一十。最少投入和最賺的投入要分開看。",
+      "reserve": "主模型為max E[profit] s.t. joint-service≥α。最少投入問題另以最大合法回流計算，兩者不能混用。示意表未宣稱經濟VSS或任何現場結果。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ],
+      "ids": [
+        "S1",
+        "E1"
+      ],
+      "citation": "選擇準則：[S1]　　200/210/220與收益數字為教學示意：[E1]",
+      "referenceSlides": []
+    },
+    {
+      "page": 18,
+      "title": "公平比較後，利潤增益多半不大",
+      "spoken": "回到真正的計算，每個基準也都重新選投入。公平比完，選擇重工通常只多賺一點，有的訂單甚至不重工最好。這是目前的結果。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/round73.json",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md"
+      ],
+      "ids": [
+        "S2"
+      ],
+      "citation": "本研究結果：[S2] 第73輪 round73.json；每個基準均重選投入",
+      "referenceSlides": []
+    },
+    {
+      "page": 19,
+      "title": "平均計數可能高估共同交足",
+      "spoken": "圖裡的C把初次分級和成功件數都換成平均，M只平均未來成功件數，T兩層都保留隨機。這一點C算成九成六，T只有五成一左右，主要差在平均初次件數跨過了交貨門檻。",
+      "reserve": "C同時代入平均初次分類及ηr。M保留初次(A,B,E)隨機，只以ηr取代決策後成功數。T保留初次與未來成功的隨機性。三者沿用相同容量來源與最大合法回流規則，各自的R不保證是同一實現。本例M與T差約2.35×10⁻⁹機率單位。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/round79.json",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/mean_error_151/results.json"
+      ],
+      "ids": [
+        "S3"
+      ],
+      "citation": "本研究結果：[S3] 第79輪＋平均近似口徑勘誤；151點拆分 results.json",
+      "referenceSlides": []
+    },
+    {
+      "page": 20,
+      "title": "服務估計會改變投入決策",
+      "spoken": "這會改變決策。五百、三百這張訂單要九成五，平均算法會選一一五二件，完整模型要一一八四件。這裡是在找最少達標投入，和利潤最佳化分開報。",
+      "reserve": "第83輪為最大合法回流下的最小整數投入比較，不是第63/73輪的利潤受限政策最佳化。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/round83.json",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/round71.json"
+      ],
+      "ids": [
+        "S4"
+      ],
+      "citation": "本研究結果：[S4] 第83輪 round83.json；最大合法回流下的最少投入",
+      "referenceSlides": []
+    },
+    {
+      "page": 21,
+      "title": "文獻如何影響模型與貢獻",
+      "spoken": "這些文獻各有用途：有的幫我檢查可修條件，有的提醒我升級、共享產能和共同服務早已有前例。後面有逐篇對照與完整書目，三篇缺全文的會清楚列出。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/literature/全文閱讀與差異核對.md",
+        "Chen et al DOI10.1080/00207543.2017.1402138；作者18頁稿，非期刊逐頁核對",
+        "Jiang et al DOI10.1080/00207543.2016.1193245",
+        "Kohlmann/Sahling DOI10.1080/00207543.2024.2314717",
+        "Boutarfa et al DOI10.1016/j.ijpe.2024.109308"
+      ],
+      "ids": [
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R9",
+        "R10",
+        "R11"
+      ],
+      "citation": "模型前例：[R2–R7]　　直接對照待全文：[R9–R11]　　版本及閱讀範圍見文末",
+      "referenceSlides": [
+        31,
+        32,
+        32,
+        33,
+        34,
+        35,
+        35,
+        36
+      ]
+    },
+    {
+      "page": 22,
+      "title": "教授需要核定的三件事",
+      "spoken": "現在最需要老師確認的是：這個單期問題能不能當主軸、用現場還是合成資料，以及剩餘品價值能不能支持目前的返修規則。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/教授報告與三月成稿計畫.md"
+      ],
+      "ids": [
+        "S1"
+      ],
+      "citation": "本研究候選規格：[S1]；本頁為待教授核定事項",
+      "referenceSlides": []
+    },
+    {
+      "page": 23,
+      "title": "84輪研究的形成順序",
+      "spoken": "八十四輪不用逐輪講。我把它分成六段：先重現，再修假設，接著建立可核對的計算，最後留下有用結果、交代不適用的地方。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/教授報告與三月成稿計畫.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md"
+      ],
+      "ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "citation": "本研究歷程與保存結果：[S1–S6]；輪次代表不同檢查工作",
+      "referenceSlides": []
+    },
+    {
+      "page": 24,
+      "title": "分批報告與2027年3月成稿",
+      "spoken": "接下來以寫成完整文章為主。十一月先核範圍和資料，一月底交完整初稿，再留二月到三月修訂和準備口試。這是建議時程，後面的文獻與方法附錄可以依老師提問再開。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/教授報告與三月成稿計畫.md"
+      ],
+      "ids": [],
+      "citation": "研究與成稿建議時程，規劃日2026/10/30；目標2027年3月完稿",
+      "referenceSlides": []
+    },
+    {
+      "page": 25,
+      "title": "151個誤判點已全部拆分",
+      "spoken": "這一百五十一點是既有模型網格裡選出的誤判點。保留初次品質的隨機件數後，這些點都不再被判成達到八成。它們不是工廠樣本。",
+      "reserve": "151點來源為第79輪C≥.8且T<.8的既有子集；帶符號拆分分量可抵銷，不稱因果解釋比例。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/mean_error_151/results.json",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/mean_error_151/crosscheck.json"
+      ],
+      "ids": [
+        "S3"
+      ],
+      "citation": "本研究結果：[S3] mean_error_151/results.json、crosscheck.json（151個既有點）",
+      "referenceSlides": []
+    },
+    {
+      "page": 26,
+      "title": "附錄A：主要符號與假設",
+      "spoken": "這頁是符號備查。現在只比不修和修滿，是因為假設下多修的期望邊際為正。資料若不支持這個條件，就不能說現在這個解法涵蓋所有返修量。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/論文主軸與章節草稿.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/round77.json"
+      ],
+      "ids": [
+        "S1",
+        "S6"
+      ],
+      "citation": "充分條件：[S1] 命題稽核§1　　條件改變的部分返修反例：[S6] 第77輪",
+      "referenceSlides": []
+    },
+    {
+      "page": 27,
+      "title": "附錄B：文獻怎麼用進模型",
+      "spoken": "這幾篇有實際影響模型設定。共享產能、可修方向和品質波動都有文獻依據；本案再把自己的資訊順序和限制寫清楚，用標準機率工具計算。",
+      "reserve": "Chen作者稿式(2)/(8)中的升級採確定性轉換。Kohlmann的加權期望欠交服務與本案共同交足機率不同。Dodd支持物理方向的檢查，沒有提供本案已驗證的η或可修比例。",
+      "ids": [
+        "R2",
+        "R4",
+        "R5",
+        "R6",
+        "S1"
+      ],
+      "citation": "[R2] 作者稿p.3–8　[R4] PDF p.5–10　[R5] HTML §6.1/6.3/7.2　[R6] 作者稿p.6–8",
+      "referenceSlides": [
+        31,
+        32,
+        33,
+        33
+      ]
+    },
+    {
+      "page": 28,
+      "title": "附錄C：已有前例與待核對的差異",
+      "spoken": "升級和共同服務都有前例，所以我會把重點放在這個限定問題怎麼定義、怎麼算、哪些情況可行。三篇最接近的全文還沒補齊，現在先保留差異定位。",
+      "reserve": "Jiang的共同事件跨期間，且無追索；Sereshti實讀2022v1。Boutarfa已讀多等級模型為確定性、隨機擴充採單等級。Bitran/Tsai不能由摘要推定採用本案C。",
+      "ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R7",
+        "R8",
+        "R9",
+        "R10",
+        "R11",
+        "S1",
+        "S3"
+      ],
+      "citation": "共同服務：[R1、R3、R8]　升級與共享線：[R2、R7]　直接全文待補：[R9–R11]",
+      "referenceSlides": [
+        31,
+        31,
+        32,
+        34,
+        34,
+        35,
+        35,
+        36
+      ]
+    },
+    {
+      "page": 29,
+      "title": "附錄D：計算如何核對",
+      "spoken": "我用了小批全算、另一種機率加總，以及先固定規則再抽樣這幾種檢查。它們幫我找程式和公式的錯誤；真正能不能用在現場，還要確認資料和製程假設。",
+      "reserve": "第69輪三個模擬下界均未跨75%，精算值落在區間內核對的是模型實作。加權Bernoulli Hoeffding與聯集界推導見[S1] §8；原文[R12]僅核摘要與書目。151點另一積分最大差1.6209256159527285e-14，亦共享binomial primitives。",
+      "ids": [
+        "S1",
+        "S3",
+        "S5",
+        "R12"
+      ],
+      "citation": "本研究核對：[S5] 第58/69/72/80輪與151點crosscheck　　標準界來源：[R12]",
+      "referenceSlides": [
+        36
+      ]
+    },
+    {
+      "page": 30,
+      "title": "附錄E：參數來源與待補資料",
+      "spoken": "原案例有機台和品質資料，但新增重工的成功率、可修比例和成本，仍是我們的假設。接下來要請老師決定採現場批次資料，還是把研究明確定位成合成案例。",
+      "reserve": "正常工序良率不能直接當升級成功率。κ沒有估計值；固定p、外生批量的動差診斷不等於現場識別。0/R充分條件仍須依終端價值和成功率核定。",
+      "ids": [
+        "R1",
+        "R6",
+        "S1"
+      ],
+      "citation": "原案例：[R1] §5　　可修特性前例：[R6]　　本案假設與條件：[S1]",
+      "referenceSlides": [
+        31,
+        33
+      ]
+    },
+    {
+      "page": 31,
+      "title": "參考文獻①：原始問題與升級前例",
+      "spoken": "這頁是完整書目與閱讀版本，報告時可以先跳過，老師需要來源再回來看。",
+      "reserve": "[R1] §3.3：PDF p.7；§5.1與表2–3：PDF p.11起；§7：PDF p.16–17。PDF含封面，與正文頁碼差一頁。\n[R2] 18頁作者稿PDF p.1,3–8,11–14；p.5式(2)、p.13均值上界、一般化式(8)。期刊頁碼不能套到作者稿。",
+      "ids": [
+        "R1",
+        "R2"
+      ],
+      "citation": "文獻編號與各頁一致，DOI／預印本連結可點擊開啟",
+      "referenceSlides": [
+        31,
+        31
+      ]
+    },
+    {
+      "page": 32,
+      "title": "參考文獻②：共同服務與共享產能",
+      "spoken": "這頁是完整書目與閱讀版本，報告時可以先跳過，老師需要來源再回來看。",
+      "reserve": "[R3] PDF p.2–7,10–12，即期刊正文p.38–43,46–48；PDF p.5式(3)。\n[R4] PDF p.5–10,12,16；共享正常／重工產能與分開啟動；式(13)已渲染核對。服務定義是加權期望欠交。",
+      "ids": [
+        "R3",
+        "R4"
+      ],
+      "citation": "文獻編號與各頁一致，DOI／預印本連結可點擊開啟",
+      "referenceSlides": [
+        32,
+        32
+      ]
+    },
+    {
+      "page": 33,
+      "title": "參考文獻③：品質法則與可修方向",
+      "spoken": "這頁是完整書目與閱讀版本，報告時可以先跳過，老師需要來源再回來看。",
+      "reserve": "[R5] 出版社HTML §6.1、§6.3與§7.2。逐件／批次良率及非完美重工；§7.2未區分合格品質等級。\n[R6] Southampton作者稿PDF p.1–2,6–8。失敗特性、加工方向及多特性製程設定；本案可修比例公式由本案另行推導。",
+      "ids": [
+        "R5",
+        "R6"
+      ],
+      "citation": "文獻編號與各頁一致，DOI／預印本連結可點擊開啟",
+      "referenceSlides": [
+        33,
+        33
+      ]
+    },
+    {
+      "page": 34,
+      "title": "參考文獻④：整合機制與替代服務",
+      "spoken": "這頁是完整書目與閱讀版本，報告時可以先跳過，老師需要來源再回來看。",
+      "reserve": "[R7] PDF p.1,5,7–10；式(50)共享產線已渲染核對。已讀多等級模型為確定性，隨機擴充採單等級。\n[R8] 2022-12-31預印本v1 PDF p.1–33，p.25表6另作視覺核對。2026期刊版DOI 10.1016/j.ejor.2026.01.007僅核書目，不作本簡報的模型閱讀版本。",
+      "ids": [
+        "R7",
+        "R8"
+      ],
+      "citation": "文獻編號與各頁一致，DOI／預印本連結可點擊開啟",
+      "referenceSlides": [
+        34,
+        34
+      ]
+    },
+    {
+      "page": 35,
+      "title": "參考文獻⑤：待補全文的直接對照",
+      "spoken": "這兩篇直接對照還需要全文，現在只根據已見摘要列出待核問題。",
+      "reserve": "[R9] 出版社摘要／導言／可見section片段，PDF曾403。服務事件、安全量與品質後返修需補全文核對。\n[R10] 出版社摘要與書目。PDF回傳Cookie HTML，不能以此判定全文沒有共同服務或選別返修。",
+      "ids": [
+        "R9",
+        "R10"
+      ],
+      "citation": "文獻編號與各頁一致，DOI／預印本連結可點擊開啟",
+      "referenceSlides": [
+        35,
+        35
+      ]
+    },
+    {
+      "page": 36,
+      "title": "參考文獻⑥：待補對照與標準工具",
+      "spoken": "這頁是完整書目與閱讀版本，報告時可以先跳過，老師需要來源再回來看。",
+      "reserve": "[R11] 出版社摘要與書目。PDF曾403／Cookie頁。無法判定其近似是否含安全量，不能視為本案C比較器。\n[R12] 本案加權Bernoulli界及聯集界的自含推導見命題條件與證明稽核§8。只用作標準工具歸屬，未聲稱讀完原文證明。",
+      "ids": [
+        "R11",
+        "R12"
+      ],
+      "citation": "文獻編號與各頁一致，DOI／預印本連結可點擊開啟",
+      "referenceSlides": [
+        36,
+        36
+      ]
+    },
+    {
+      "page": 37,
+      "title": "本研究結果、程式與教學資料索引",
+      "spoken": "文獻用R編號，我們自己的模型和結果用S編號，教學例用E編號。這樣老師看到一個數字，就能知道它是論文前例、我們算的結果，還是用來解釋的例子。",
+      "reserve": "本頁備註列完整本機路徑。歷史JSON保留原檔；round79引用時以平均近似口徑勘誤為準。",
+      "ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "E1"
+      ],
+      "citation": "R＝外部文獻　S＝本研究模型／結果　E＝教學示意；完整路徑見備註",
+      "referenceSlides": []
+    }
+  ],
+  "referenceCatalog": [
+    {
+      "id": "R1",
+      "short": "Chen & Lin (2026)",
+      "authors": "Chen, H.-Y., & Lin, Y.-K.",
+      "year": "2026",
+      "title": "Assessing system reliability in multi-grade production under different demand fulfilment policies via a multistate flow network",
+      "publication": "Journal of the Operational Research Society. Advance online publication.",
+      "doi": "10.1080/01605682.2026.2708981",
+      "url": "https://doi.org/10.1080/01605682.2026.2708981",
+      "status": "原始案例全文已取得，已核對政策、工序與未來工作",
+      "locator": "§3.3：PDF p.7；§5.1與表2–3：PDF p.11起；§7：PDF p.16–17。PDF含封面，與正文頁碼差一頁。",
+      "reading": "原始案例。兩政策見PDF p.7，後續方向見p.17。",
+      "local": "paper/Assessing system reliability in multi-grade production under different demand fulfilment policies via a multistate flow network.pdf"
+    },
+    {
+      "id": "R2",
+      "short": "Chen et al. (2018)",
+      "authors": "Chen, X., Kouvelis, P., & Biazaran, M.",
+      "year": "2018",
+      "title": "Value of operational flexibility in co-production systems with yield and demand uncertainty",
+      "publication": "International Journal of Production Research, 56(1–2), 491–507.",
+      "doi": "10.1080/00207543.2017.1402138",
+      "url": "https://doi.org/10.1080/00207543.2017.1402138",
+      "status": "已取得18頁作者稿，實讀部分章節，未與期刊版逐頁對照",
+      "locator": "18頁作者稿PDF p.1,3–8,11–14；p.5式(2)、p.13均值上界、一般化式(8)。期刊頁碼不能套到作者稿。",
+      "reading": "18頁作者稿，已讀p.1,3–8,11–14。",
+      "local": "research/2026-10-30/literature/chen_kouvelis_biazaran_2018_author.pdf",
+      "author_url": "https://facultystaff.richmond.edu/~bchen/Research/OperFlexibility2018.pdf"
+    },
+    {
+      "id": "R3",
+      "short": "Jiang et al. (2017)",
+      "authors": "Jiang, Y., Xu, J., Shen, S., & Shi, C.",
+      "year": "2017",
+      "title": "Production planning problems with joint service-level guarantee: a computational study",
+      "publication": "International Journal of Production Research, 55(1), 38–58.",
+      "doi": "10.1080/00207543.2016.1193245",
+      "url": "https://doi.org/10.1080/00207543.2016.1193245",
+      "status": "已取得22頁期刊PDF含封面，實讀部分章節",
+      "locator": "PDF p.2–7,10–12，即期刊正文p.38–43,46–48；PDF p.5式(3)。",
+      "reading": "期刊PDF已讀p.2–7,10–12，含封面頁。",
+      "local": "research/2026-10-30/literature/jiang_et_al_2017.pdf"
+    },
+    {
+      "id": "R4",
+      "short": "Kohlmann & Sahling (2024)",
+      "authors": "Kohlmann, P., & Sahling, F.",
+      "year": "2024",
+      "title": "A flexible planning approach for integrated lot sizing and rework planning with random proportion of defective products",
+      "publication": "International Journal of Production Research, 62(19), 6961–6978.",
+      "doi": "10.1080/00207543.2024.2314717",
+      "url": "https://doi.org/10.1080/00207543.2024.2314717",
+      "status": "已取得期刊PDF，實讀模型與數值部分",
+      "locator": "PDF p.5–10,12,16；共享正常／重工產能與分開啟動；式(13)已渲染核對。服務定義是加權期望欠交。",
+      "reading": "期刊PDF已讀p.5–10,12,16，核對式(13)。",
+      "local": "research/2026-10-28/kohlmann_sahling_2024.pdf"
+    },
+    {
+      "id": "R5",
+      "short": "Berling & Sonntag (2022)",
+      "authors": "Berling, P., & Sonntag, D. R.",
+      "year": "2022",
+      "title": "Inventory control in production–inventory systems with random yield and rework: The unit-tracking approach",
+      "publication": "Production and Operations Management, 31(6), 2628–2645.",
+      "doi": "10.1111/poms.13706",
+      "url": "https://doi.org/10.1111/poms.13706",
+      "status": "已讀出版社HTML相關章節，沒有本地PDF",
+      "locator": "出版社HTML §6.1、§6.3與§7.2。逐件／批次良率及非完美重工；§7.2未區分合格品質等級。",
+      "reading": "實讀出版社HTML §6.1、§6.3、§7.2。"
+    },
+    {
+      "id": "R6",
+      "short": "Dodd et al. (2015)",
+      "authors": "Dodd, C., Scanlan, J., Marsh, R., & Wiseall, S.",
+      "year": "2015",
+      "title": "Improving profitability of optimal mean setting with multiple feature means for dual quality characteristics",
+      "publication": "The International Journal of Advanced Manufacturing Technology, 81, 1767–1780.",
+      "doi": "10.1007/s00170-015-7254-4",
+      "url": "https://doi.org/10.1007/s00170-015-7254-4",
+      "status": "在線讀作者14頁稿的相關部分，本地PDF下載曾403",
+      "locator": "Southampton作者稿PDF p.1–2,6–8。失敗特性、加工方向及多特性製程設定；本案可修比例公式由本案另行推導。",
+      "reading": "在線作者稿已讀p.1–2,6–8，本地下載曾403。",
+      "author_url": "https://eprints.soton.ac.uk/375226/1/MultipleOptimalMeans_Manuscript.pdf"
+    },
+    {
+      "id": "R7",
+      "short": "Boutarfa et al. (2024)",
+      "authors": "Boutarfa, Y., Senoussi, A., Brahimi, N., & Aouam, T.",
+      "year": "2024",
+      "title": "Integration and substitution in hybrid manufacturing and refurbishing systems",
+      "publication": "International Journal of Production Economics, 274, 109308.",
+      "doi": "10.1016/j.ijpe.2024.109308",
+      "url": "https://doi.org/10.1016/j.ijpe.2024.109308",
+      "status": "已取得23頁開放期刊PDF，實讀相關部分",
+      "locator": "PDF p.1,5,7–10；式(50)共享產線已渲染核對。已讀多等級模型為確定性，隨機擴充採單等級。",
+      "reading": "23頁期刊PDF，已讀p.1,5,7–10及式(50)。",
+      "local": "research/2026-10-28/boutarfa_et_al_2024.pdf"
+    },
+    {
+      "id": "R8",
+      "short": "Sereshti et al. (2022, v1)",
+      "authors": "Sereshti, N., Bodur, M., & Luedtke, J. R.",
+      "year": "2022",
+      "title": "Stochastic dynamic lot-sizing with supplier-driven substitution and service level constraints",
+      "publication": "arXiv:2301.00258v1. Preprint dated 31 December 2022.",
+      "doi": "10.48550/arXiv.2301.00258",
+      "url": "https://arxiv.org/abs/2301.00258v1",
+      "status": "實讀2022預印本v1 p.1–33，未逐頁核對2026期刊版",
+      "locator": "2022-12-31預印本v1 PDF p.1–33，p.25表6另作視覺核對。2026期刊版DOI 10.1016/j.ejor.2026.01.007僅核書目，不作本簡報的模型閱讀版本。",
+      "reading": "實讀2022預印本v1 p.1–33，引用版本固定為v1。",
+      "local": "research/2026-10-28/sereshti_bodur_luedtke_2022_preprint.pdf"
+    },
+    {
+      "id": "R9",
+      "short": "Tsai et al. (2024)",
+      "authors": "Tsai, S.-C., Yeh, Y., Wang, H., & Chou, T.-C.",
+      "year": "2024",
+      "title": "Efficient optimization in stochastic production planning problems with product substitution",
+      "publication": "Computers & Operations Research, 164, 106544.",
+      "doi": "10.1016/j.cor.2024.106544",
+      "url": "https://doi.org/10.1016/j.cor.2024.106544",
+      "status": "僅摘要、導言與可見片段，全文尚未取得",
+      "locator": "出版社摘要／導言／可見section片段，PDF曾403。服務事件、安全量與品質後返修需補全文核對。",
+      "reading": "待補全文。現僅摘要、導言及片段。"
+    },
+    {
+      "id": "R10",
+      "short": "Hsu & Bassok (1999)",
+      "authors": "Hsu, A., & Bassok, Y.",
+      "year": "1999",
+      "title": "Random yield and random demand in a production system with downward substitution",
+      "publication": "Operations Research, 47(2), 277–290.",
+      "doi": "10.1287/opre.47.2.277",
+      "url": "https://doi.org/10.1287/opre.47.2.277",
+      "status": "僅出版社摘要，全文尚未取得",
+      "locator": "出版社摘要與書目。PDF回傳Cookie HTML，不能以此判定全文沒有共同服務或選別返修。",
+      "reading": "待補全文。現僅出版社摘要及書目。"
+    },
+    {
+      "id": "R11",
+      "short": "Bitran & Leong (1992)",
+      "authors": "Bitran, G. R., & Leong, T.-Y.",
+      "year": "1992",
+      "title": "Deterministic approximations to co-production problems with service constraints and random yields",
+      "publication": "Management Science, 38(5), 724–742.",
+      "doi": "10.1287/mnsc.38.5.724",
+      "url": "https://doi.org/10.1287/mnsc.38.5.724",
+      "status": "僅出版社摘要，全文尚未取得",
+      "locator": "出版社摘要與書目。PDF曾403／Cookie頁。無法判定其近似是否含安全量，不能視為本案C比較器。",
+      "reading": "待補全文。現僅出版社摘要及書目。"
+    },
+    {
+      "id": "R12",
+      "short": "Hoeffding (1963)",
+      "authors": "Hoeffding, W.",
+      "year": "1963",
+      "title": "Probability inequalities for sums of bounded random variables",
+      "publication": "Journal of the American Statistical Association, 58(301), 13–30.",
+      "doi": "10.1080/01621459.1963.10500830",
+      "url": "https://doi.org/10.1080/01621459.1963.10500830",
+      "status": "標準工具來源，已核摘要與書目，未取得原文PDF",
+      "locator": "本案加權Bernoulli界及聯集界的自含推導見命題條件與證明稽核§8。只用作標準工具歸屬，未聲稱讀完原文證明。",
+      "reading": "已核摘要與書目，加權版本推導見本研究[S1] §8。"
+    }
+  ],
+  "ownSources": {
+    "S1": {
+      "label": "模型、推導與求解",
+      "files": [
+        "research/2026-10-28/教授討論用問題定義.md",
+        "research/2026-10-28/命題條件與證明稽核.md",
+        "backbone/stochastic_setup_frontier.py",
+        "JORS_manuscript_anonymous_R5.docx",
+        "重工case.docx"
+      ]
+    },
+    "S2": {
+      "label": "公平經濟比較",
+      "files": [
+        "research/2026-10-28/service_rounds/round73.json",
+        "backbone/round73_fair_economic_baselines.py"
+      ]
+    },
+    "S3": {
+      "label": "平均比較器與151點拆分",
+      "files": [
+        "research/2026-10-28/service_rounds/round79.json",
+        "research/2026-10-28/平均近似口徑勘誤.md",
+        "research/2026-10-30/mean_error_151/results.json",
+        "research/2026-10-30/mean_error_151/crosscheck.json"
+      ]
+    },
+    "S4": {
+      "label": "最大合法回流的最少投入",
+      "files": [
+        "research/2026-10-28/service_rounds/round83.json"
+      ]
+    },
+    "S5": {
+      "label": "枚舉、替代積分及抽樣核對",
+      "files": [
+        "research/2026-10-28/service_rounds/round58.json",
+        "research/2026-10-28/service_rounds/round69.json",
+        "research/2026-10-28/service_rounds/round72.json",
+        "research/2026-10-28/service_rounds/round80.json",
+        "research/2026-10-30/mean_error_151/crosscheck.json"
+      ]
+    },
+    "S6": {
+      "label": "0/R條件失效的部分返修反例",
+      "files": [
+        "research/2026-10-28/service_rounds/round77.json"
+      ]
+    },
+    "E1": {
+      "label": "簡報教學算例",
+      "files": [
+        ".build/opt1_presentation_v2/teaching_arithmetic.json"
+      ],
+      "note": "三類權重及200/210/220投入表為教學示意；非工廠觀測或新增研究結果。"
+    }
+  },
+  "flowSlides": [
+    2,
+    5,
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14,
+    16,
+    23,
+    24
+  ],
+  "tables": [
+    3,
+    4,
+    6,
+    10,
+    15,
+    17,
+    18,
+    20,
+    21,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    37
+  ],
+  "charts": [
+    19
+  ]
+}

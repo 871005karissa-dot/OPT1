@@ -1,0 +1,16 @@
+{
+  "basis": "User follow-up about provenance and program execution",
+  "historical_json_unchanged": 63,
+  "supplement_local_links_checked": 8,
+  "new_experiments": false,
+  "source_sha256": {
+    "JORS_manuscript_anonymous_R5.docx": "3740bcef0f9e4e427c7a4e197ae0e935f1195be77897aea0b77d36d7aa1d7477",
+    "重工case.docx": "b8f47dfcf163151fb7a2416876b95f50a26c302d4e514f23dd51dbd2be6c142f",
+    "backbone-before-paper.html": "9f31cfbbcf0c1754b98175574938d839736d821bf26fd691abe725029f1bb2f5",
+    "backbone/round1_reproduce.py": "9dfb4602a3ee0778334eb5787750773c14c66ee016637019737c9901884ce556",
+    "backbone/round22_correlated_capacity.py": "3259e3bbd36c748ea855a9f193e0d22af50430c6918fcb825acf4d0598af978b",
+    "backbone/round25_state_policy.py": "42a9a1436e8d6a54761ce43cd62dde38e404669491244258027261feb43678cc",
+    "backbone/round58_integer_rework_success.py": "0513112170e3e760a07021b0012c28ade915dc38eda2ed0e3adb48e2989f7457",
+    "backbone/round73_fair_economic_baselines.py": "a1f9c2275e4dd681542bac4f26bda2e52fc82e8366d71049792b14f5f9e0a3bf"
+  }
+}

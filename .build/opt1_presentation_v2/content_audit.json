@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "final_sha256": "7ddd52699f9c845b0312810d9fe331f08d35be46f270cd09a221c49a1681f37b",
+  "slides": 26,
+  "matched_spoken_notes": 26,
+  "editable_flow_connector_counts": {
+    "2": 3,
+    "5": 4,
+    "7": 6,
+    "8": 3,
+    "9": 6,
+    "11": 3,
+    "12": 3,
+    "13": 5,
+    "14": 2,
+    "16": 4,
+    "23": 5,
+    "24": 3
+  },
+  "native_tables": 11,
+  "chart_values_preserved": [
+    0.9655881703439861,
+    0.509667675058769,
+    0.5096676774039661
+  ],
+  "original_pptx_unchanged": true,
+  "historical_json_unchanged": 63,
+  "claim_boundary": "Package, narration consistency, arithmetic display and provenance-preservation checks. Visual QA was performed separately in the authoring renderer; native PowerPoint execution was not tested."
+}

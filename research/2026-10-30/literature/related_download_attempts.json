@@ -1,0 +1,30 @@
+[
+  {
+    "filename": "chen_kouvelis_biazaran_2018_author.pdf",
+    "requested_url": "https://facultystaff.richmond.edu/~bchen/Research/OperFlexibility2018.pdf",
+    "attempted_at": "2026-10-30T16:56:08.318783+08:00",
+    "saved": false,
+    "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+  },
+  {
+    "filename": "jiang_et_al_2017.pdf",
+    "requested_url": "https://www.tandfonline.com/doi/pdf/10.1080/00207543.2016.1193245?download=true",
+    "attempted_at": "2026-10-30T16:56:08.319785+08:00",
+    "status": 200,
+    "final_url": "https://www.tandfonline.com/doi/pdf/10.1080/00207543.2016.1193245?download=true",
+    "content_type": "application/pdf;charset=UTF-8",
+    "bytes": 898126,
+    "saved": true,
+    "pages": 22,
+    "sha256": "e39126bb6eaffe3c6f82b60b4a80d2f29e4a9502a5540546dcb0fac386bb637f"
+  },
+  {
+    "filename": "chen_kouvelis_biazaran_2018_author.pdf",
+    "requested_url": "https://facultystaff.richmond.edu/~bchen/Research/OperFlexibility2018.pdf",
+    "method": "Windows curl with default TLS validation; Python chain verification failed",
+    "saved": true,
+    "pages": 18,
+    "sha256": "563ed2cd270c9fc6ef4354c965171b306f2fc857f817180ca113f29b1128d658",
+    "bytes": 559561
+  }
+]

@@ -1,0 +1,305 @@
+{
+  "slides": [
+    {
+      "page": 1,
+      "title": "有限批次品質與選別重工",
+      "spoken": "我的研究是接著原稿往下做。原稿比較不同交貨方式能不能交足，我多問一步：如果允許重工，該投多少、看到哪些品質狀況才要修。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/從零理解_研究目標與現況.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md"
+      ]
+    },
+    {
+      "page": 2,
+      "title": "這個研究問題從哪裡來",
+      "spoken": "這個方向是從原稿長出來的。原稿已經在看交足訂單的機率，也把多等級重工列成後續方向。我把這件事做成能計算、能比較的決策問題。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ]
+    },
+    {
+      "page": 3,
+      "title": "研究問題、限制與主要發現",
+      "spoken": "我的問題還是怎麼投料、怎麼重工，讓期望利潤比較好。但有一個前提：高低品一起交足的機率，要先達到要求。教授還需要核定這個範圍。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ]
+    },
+    {
+      "page": 4,
+      "title": "原稿的兩個交貨政策",
+      "spoken": "原稿的兩個政策都在分配成品。第一個只交同等級；第二個可以把剩下的高品補給低品客戶。這個替代不用送回機器。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md",
+        "原始多等級論文PDF第7頁§3.3；原稿JORS_manuscript_anonymous_R5.docx"
+      ]
+    },
+    {
+      "page": 5,
+      "title": "向下替代與升級返修",
+      "spoken": "向下替代是高品直接交給低品客戶。重工則是把符合條件的低品再加工，嘗試升成高品。後者會花錢、占產能，而且可能失敗。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md"
+      ]
+    },
+    {
+      "page": 6,
+      "title": "原有內容與本專案新增內容",
+      "spoken": "原稿已有分級、容量和替代。我加的是有限一批的件數變動、可修品限制，以及檢驗後才決定修不修。相對原稿有新增，還不等於學術首創。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md"
+      ]
+    },
+    {
+      "page": 7,
+      "title": "目前保留的產線流程",
+      "spoken": "正常生產先照固定規則做，檢驗後才知道有哪些成品。低品裡只有一部分能修，還得留夠低品訂單，用剩下的產能處理。最後一站只是待確認的例子。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/最小模型規格_v0.1.md"
+      ]
+    },
+    {
+      "page": 8,
+      "title": "決策與資訊揭露的時間順序",
+      "spoken": "順序不能顛倒。先投料，再知道容量、做完正常生產，接著看品質決定修不修。修好幾件是最後才知道，程式不能先看答案再選。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/最小模型規格_v0.1.md"
+      ]
+    },
+    {
+      "page": 9,
+      "title": "先算好一張規則表，現場再照表決定",
+      "spoken": "程式先在規劃時算好投入量和一張啟動表。現場不用重算所有可能，只要檢驗後知道件數和剩餘產能，再照表決定要不要修。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ]
+    },
+    {
+      "page": 10,
+      "title": "程式需要哪些資料",
+      "spoken": "程式要先有訂單、達標要求、機台和成本，也要有品質和返修的機率。像成功率九成七，目前只是模型假設，不能當成工廠已量到的數據。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ]
+    },
+    {
+      "page": 11,
+      "title": "固定一個投入量，程式如何計算",
+      "spoken": "先固定一個投入量。程式把可能的容量、品質和修復結果算進去，替每個決定算平均收益和交足率。再換另一個投入量做同樣的比較。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ]
+    },
+    {
+      "page": 12,
+      "title": "合法返修量有三道上限",
+      "spoken": "例如低品有七十件，要留五十件交貨，最多能動二十件。可修的有二十五件，但產能只夠修十五件，所以最後最多只能送十五件。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/最小模型規格_v0.1.md"
+      ]
+    },
+    {
+      "page": 13,
+      "title": "啟動返修之後，仍可能交不齊",
+      "spoken": "這時高品有八十六件，還缺十四件。送十五件去修，成功十三件還是不夠，成功十四件才交得齊。所以送出十五件，不代表一定補得足。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md"
+      ]
+    },
+    {
+      "page": 14,
+      "title": "送15件返修，交足的機率怎麼算",
+      "spoken": "假設每件有九成七的機會修好，十五件裡至少修好十四件的機率，大約是92.7%。程式把這些可能結果加起來，不會拿平均14.55件直接當成交貨數量。",
+      "reserve": "P(Y≥14)=.97^15+15×.03×.97^14。以售價120、終端值90/30、返修成本12.4及F2000計，此狀態的期望增益約−909。這只解釋服務與收益需分開，未求新的全域政策。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/.build/opt1_presentation_v2/teaching_arithmetic.json"
+      ]
+    },
+    {
+      "page": 15,
+      "title": "整體服務是把各種情況加權相加",
+      "spoken": "接著要把不同情況合在一起。這個教學例裡，一半本來就能交足，三成靠重工，另外兩成仍缺貨。加權後約七成七八，才是整體交足率。",
+      "reserve": "三類情境為教學加總，並非從新多項式、DM或工廠資料擬合。以這張示意表的行動集合計，最大服務77.8108%。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/.build/opt1_presentation_v2/teaching_arithmetic.json"
+      ]
+    },
+    {
+      "page": 16,
+      "title": "啟動表如何兼顧利潤與達標",
+      "spoken": "修了可能比較容易交足，但不一定多賺。所以先納入有利潤的重工；如果整體交足率還不足，再找補足服務所需代價較小的情況。",
+      "reserve": "固定I下先開G≥F的正R狀態。未達α時，對b>0的其他狀態按(F−G)/b排序，以w×b累積服務。隨機化LP提供上界，邊界全開給固定可行規則與差距界。這不等於已求得所有確定性政策的最適。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ]
+    },
+    {
+      "page": 17,
+      "title": "達標後，以期望利潤挑投入",
+      "spoken": "最後只比較達標的投入。這個示意表裡，兩百件已經達標，但兩百一十件的期望利潤更好，所以選兩百一十。最少投入和最賺的投入要分開看。",
+      "reserve": "主模型為max E[profit] s.t. joint-service≥α。最少投入問題另以最大合法回流計算，兩者不能混用。示意表未宣稱經濟VSS或任何現場結果。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/教授討論用問題定義.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/backbone/stochastic_setup_frontier.py",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/命題條件與證明稽核.md"
+      ]
+    },
+    {
+      "page": 18,
+      "title": "公平比較後，利潤增益多半不大",
+      "spoken": "回到真正的計算，每個基準也都重新選投入。公平比完，選擇重工通常只多賺一點，有的訂單甚至不重工最好。這是目前的結果。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/round73.json",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md"
+      ]
+    },
+    {
+      "page": 19,
+      "title": "平均計數可能高估共同交足",
+      "spoken": "比較明顯的是服務估計。這一點用平均件數會算成九成六，完整隨機模型只有五成一左右。問題主要出在平均件數剛好跨過交貨門檻。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/round79.json",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/mean_error_151/results.json"
+      ]
+    },
+    {
+      "page": 20,
+      "title": "服務估計會改變投入決策",
+      "spoken": "這會改變決策。五百、三百這張訂單要九成五，平均算法會選一一五二件，完整模型要一一八四件。這裡是在找最少達標投入，和利潤最佳化分開報。",
+      "reserve": "第83輪為最大合法回流下的最小整數投入比較，不是第63/73輪的利潤受限政策最佳化。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/round83.json",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/round71.json"
+      ]
+    },
+    {
+      "page": 21,
+      "title": "文獻如何影響模型與貢獻",
+      "spoken": "文獻會幫我檢查哪些做法早就有了。品質後升級、門檻和共同服務都有前例。目前只能提出限定問題的差異，三篇最接近的全文還要補齊。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/literature/全文閱讀與差異核對.md",
+        "Chen et al DOI10.1080/00207543.2017.1402138；作者18頁稿，非期刊逐頁核對",
+        "Jiang et al DOI10.1080/00207543.2016.1193245",
+        "Kohlmann/Sahling DOI10.1080/00207543.2024.2314717",
+        "Boutarfa et al DOI10.1016/j.ijpe.2024.109308"
+      ]
+    },
+    {
+      "page": 22,
+      "title": "教授需要核定的三件事",
+      "spoken": "現在最需要老師確認的是：這個單期問題能不能當主軸、用現場還是合成資料，以及剩餘品價值能不能支持目前的返修規則。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/教授報告與三月成稿計畫.md"
+      ]
+    },
+    {
+      "page": 23,
+      "title": "84輪研究的形成順序",
+      "spoken": "八十四輪不用逐輪講。我把它分成六段：先重現，再修假設，接著建立可核對的計算，最後留下有用結果、交代不適用的地方。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/教授報告與三月成稿計畫.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/原文兩政策_重工來源與84輪程式說明.md"
+      ]
+    },
+    {
+      "page": 24,
+      "title": "分批報告與2027年3月成稿",
+      "spoken": "接下來以寫成完整文章為主。十一月先核範圍和資料，十二月邊審邊寫，一月底交完整初稿，再留二月到三月修訂和準備口試。這是建議時程。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/教授報告與三月成稿計畫.md"
+      ]
+    },
+    {
+      "page": 25,
+      "title": "151個誤判點已全部拆分",
+      "spoken": "這一百五十一點是既有模型網格裡選出的誤判點。保留初次品質的隨機件數後，這些點都不再被判成達到八成。它們不是工廠樣本。",
+      "reserve": "151點來源為第79輪C≥.8且T<.8的既有子集；帶符號拆分分量可抵銷，不稱因果解釋比例。",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/mean_error_151/results.json",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/mean_error_151/crosscheck.json"
+      ]
+    },
+    {
+      "page": 26,
+      "title": "附錄A：主要符號與假設",
+      "spoken": "這頁是符號備查。現在只比不修和修滿，是因為假設下多修的期望邊際為正。資料若不支持這個條件，就不能說現在這個解法涵蓋所有返修量。",
+      "reserve": "",
+      "sources": [
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/論文主軸與章節草稿.md",
+        "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/service_rounds/round77.json"
+      ]
+    }
+  ],
+  "flowSlides": [
+    2,
+    5,
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14,
+    16,
+    23,
+    24
+  ],
+  "tables": [
+    3,
+    4,
+    6,
+    10,
+    15,
+    17,
+    18,
+    20,
+    21,
+    25,
+    26
+  ],
+  "charts": [
+    19
+  ]
+}

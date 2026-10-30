@@ -1,7 +1,12 @@
 {
-  "checked_at_utc": "2026-10-30T04:27:07.171650+00:00",
+  "checked_at_utc": "2026-10-30T09:03:32.241349+00:00",
   "passed": true,
   "local_links": [
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/收斂推進_本次成果與教授決策.md",
+      "exists": true
+    },
     {
       "document": "明晚審閱入口.md",
       "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/從零理解_研究目標與現況.md",
@@ -90,6 +95,21 @@
     {
       "document": "明晚審閱入口.md",
       "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/overnight_handoff.md",
+      "exists": true
+    },
+    {
+      "document": "論文主軸與章節草稿.md",
+      "target": "../2026-10-30/literature/全文閱讀與差異核對.md",
+      "exists": true
+    },
+    {
+      "document": "論文主軸與章節草稿.md",
+      "target": "../2026-10-30/mean_error_151/結果判讀.md",
+      "exists": true
+    },
+    {
+      "document": "文獻差異與候選貢獻矩陣.md",
+      "target": "../2026-10-30/literature/全文閱讀與差異核對.md",
       "exists": true
     }
   ],

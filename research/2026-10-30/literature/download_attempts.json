@@ -1,0 +1,42 @@
+[
+  {
+    "filename": "tsai_2024.pdf",
+    "requested_url": "https://www.sciencedirect.com/science/article/pii/S0305054824000169/pdfft?isDTMRedir=true&download=true",
+    "attempted_at": "2026-10-30T16:55:23.482716+08:00",
+    "saved": false,
+    "error": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+    "filename": "hsu_bassok_1999.pdf",
+    "requested_url": "https://pubsonline.informs.org/doi/pdf/10.1287/opre.47.2.277",
+    "attempted_at": "2026-10-30T16:55:23.482716+08:00",
+    "status": 200,
+    "final_url": "https://pubsonline.informs.org/action/cookieAbsent",
+    "content_type": "text/html;charset=UTF-8",
+    "bytes": 33810,
+    "saved": false,
+    "reason": "Non-PDF response rejected; not full text acquired"
+  },
+  {
+    "filename": "bitran_leong_1992.pdf",
+    "requested_url": "https://pubsonline.informs.org/doi/pdf/10.1287/mnsc.38.5.724",
+    "attempted_at": "2026-10-30T16:55:23.482716+08:00",
+    "status": 200,
+    "final_url": "https://pubsonline.informs.org/action/cookieAbsent",
+    "content_type": "text/html;charset=UTF-8",
+    "bytes": 33810,
+    "saved": false,
+    "reason": "Non-PDF response rejected; not full text acquired"
+  },
+  {
+    "filename": "bitran_leong_1992_accepted.pdf",
+    "requested_url": "https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=1154&context=sis_research",
+    "attempted_at": "2026-10-30T16:55:23.755089+08:00",
+    "status": 200,
+    "final_url": "https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=1154&context=sis_research",
+    "content_type": "text/html",
+    "bytes": 212,
+    "saved": false,
+    "reason": "Non-PDF response rejected; not full text acquired"
+  }
+]
