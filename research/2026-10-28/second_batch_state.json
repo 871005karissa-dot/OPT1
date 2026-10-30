@@ -3,11 +3,13 @@
   "batch": 2,
   "latest_completed_round": 84,
   "background_research_processes": [],
-  "status": "research_checkpoint_review_ready_quota_not_yet_confirmed_exhausted",
+  "status": "stopped_second_quota_exhausted",
   "last_quota_observation": {
-    "used_percent": 98,
-    "ordinary_usage_allowed": true,
-    "time_local": "2026-10-28T07:44:22+08:00"
+    "used_percent": 100,
+    "ordinary_usage_allowed": false,
+    "rate_limit_reached_type": "rate_limit_reached",
+    "observation_date": "2026-10-28",
+    "evidence": "Actual usage tool result in this conversation; recorded into the file during2026-10-30 document review."
   },
   "stop_rule": "Stop immediately on actual exhaustion or tool interruption; never continue into a third reset window.",
   "automation_opt1": "Deleted after one authorized05:20 continuation; no new automation.",
@@ -33,5 +35,7 @@
     "No general novelty claim; exact arithmetic uses double precision.",
     "Simulation is model verification, not independent factory data."
   ],
-  "literature_latest": "Sereshti2022 arXiv v1 PDF pages1--33 read; 2026 journal PDF still unavailable"
+  "literature_latest": "Sereshti2022 arXiv v1 PDF pages1--33 read; 2026 journal PDF still unavailable",
+  "last_review_date": "2026-10-30",
+  "new_experiments_during_review": false
 }

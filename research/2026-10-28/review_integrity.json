@@ -1,7 +1,17 @@
 {
-  "checked_at_utc": "2026-10-27T23:45:05.427890+00:00",
+  "checked_at_utc": "2026-10-30T04:27:07.171650+00:00",
   "passed": true,
   "local_links": [
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/從零理解_研究目標與現況.md",
+      "exists": true
+    },
+    {
+      "document": "明晚審閱入口.md",
+      "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-30/教授報告與三月成稿計畫.md",
+      "exists": true
+    },
     {
       "document": "明晚審閱入口.md",
       "target": "C:/Users/uuuwk/karissa/OPT1/OPT1/research/2026-10-28/最小模型規格_v0.1.md",
@@ -85,7 +95,7 @@
   ],
   "source_manifest_inputs": 5,
   "pdf_pages": 3,
-  "pdf_sha256": "ff973d830a0490d8dd0343b9972061048b2794852011ed47bad503c3a1a1ed8e",
+  "pdf_sha256": "8f50870ea2456eddfccc571ad04cf267e567474882a7ebfca8db2160d67566a8",
   "bibliography_keys": 17,
   "scope": "Local existence, recorded figure-source hashes, page text and unique keys only. Visual PDF review was performed separately; external URLs, citation semantics and novelty are not certified."
 }

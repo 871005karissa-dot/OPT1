@@ -1,7 +1,7 @@
 """Build the short human review entry from completed saved results, no reruns."""
 from datetime import datetime,timedelta,timezone
 from pathlib import Path
-import json,re
+import argparse,json,re
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
@@ -17,6 +17,9 @@ def link(label,path):
 
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--as-of',help='Explicit review date from the client context')
+    args=parser.parse_args()
     iid=read(63)
     batch=read(68)
     coverage=read(71)
@@ -90,10 +93,12 @@ def main():
 
 """
     latest=max(complete)
-    now=datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d %H:%M Asia/Taipei")
+    now=args.as_of or datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d %H:%M Asia/Taipei")
     text=f"""# 夜間研究審閱入口
 
-更新：{now}，完成紀錄至第{latest}輪，第二批仍在研究。05:20單次接續已執行，排程opt1已刪除；不安排第三次刷新。真正停止狀態以overnight_handoff.md最新段落為準。
+更新：{now}，計算紀錄至第{latest}輪。10月28日第二批已實際用量耗盡並停止，opt1排程已刪除；本次10月30日只核對文稿與安排報告，沒有重跑58–84或新增機制。
+
+初次閱讀先看{link('從零理解：目標與現況',HERE.parent/'2026-10-30'/'從零理解_研究目標與現況.md')}，再看{link('分批教授報告與三月成稿',HERE.parent/'2026-10-30'/'教授報告與三月成稿計畫.md')}。已有模型與實驗原型，可開始完整第一稿，尚非接近定稿。
 
 **目前已有可交教授審查的論文研究原型，方向值得做；但還不能以輪數保證論文成立。** 現在最需要的是核定製程與資料、補直接文獻全文、凍結主問題。明年3月完稿仍可作規劃目標，前提是11月完成這些收斂，不持續加機制到最後才開始寫。最有力的是完整服務估計與政策對品質法則的敏感；相對強基準的利潤增益較小，不主打巨大獲利。
 
@@ -119,6 +124,8 @@ def main():
 {chr(10).join(policy_rows)}
 
 這些是在指定正流／替代／返修規則內，確定性整數投入與檢驗後啟動的結果。差距界有理論推導；數值仍是雙精度計算，沒有區間算術的正式機器證明。**不是工廠投料建議，也不是已確認的新穎性。**
+
+差距欄僅六位小數四捨五入，完整界以JSON為準；kappa100的原值0.0062562087368860375，不能以表內0.006256寫成更小的嚴格上界。其服務只高於.75約3.553×10⁻⁶；kappa未校準，不能稱穩健達標。
 
 三政策已凍結為只看初次A與可回流上限R的真假表，另以全新直接品質／成功資料執行核對。精算服務均在95%同時模擬區間，但三個模擬下界都未跨75%；這支持程式對上模型，不是以現場樣本保證75%。
 
